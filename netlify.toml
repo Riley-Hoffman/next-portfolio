@@ -8,6 +8,15 @@ to = '/.netlify/images?url=:url&w=:width&q=:quality'
 status = 200
 force = true
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
 [[headers]]
 for = "/*"
 [headers.values]

@@ -6,7 +6,7 @@
   "main": "layout.tsx",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Riley-Hoffman/react-portfolio.git"
+    "url": "https://github.com/Riley-Hoffman/next-portfolio.git"
   },
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
   "author": "Riley Hoffman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Riley-Hoffman/react-portfolio/issues"
+    "url": "https://github.com/Riley-Hoffman/next-portfolio/issues"
   },
   "scripts": {
     "dev": "next dev",
