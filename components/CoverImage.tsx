@@ -21,7 +21,7 @@ const MyComponent: React.FC<CoverImageProps> = ({ width, height, srcImg, childre
                 height={height}
                 sizes="(max-width: 768px) 100vw, 130vw"
                 alt=""
-                fetchPriority="high"
+                priority={true}
                 className="max-w-none w-[130vw] h-[120vh] absolute z-[-1] object-cover"
             />
             <div className="max-w-screen-xl min-h-[74vh] py-[0.1px]">

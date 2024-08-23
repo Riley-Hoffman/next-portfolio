@@ -83,8 +83,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
           title={title}
           height="570"
           width="570"
-          loading={isFirst ? "eager" : "lazy"}
-          fetchPriority={isFirst ? "high" : "auto"}
+          priority={isFirst}
         />
       </div>
       <div className={`bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${inverted ? 'group-odd:left-[-100%]' : 'group-even:right-[-100%]'}`} />
