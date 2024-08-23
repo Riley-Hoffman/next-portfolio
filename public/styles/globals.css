@@ -131,7 +131,7 @@ outline:.125rem solid #6f00f7
 .fa,.fa-regular,.fa-solid,.fa-brands {
 font-family:"Font Awesome 6 Free"
 }
-main .svg-inline--fa {
+.svg-inline--fa {
 vertical-align:middle
 }
 .button {
