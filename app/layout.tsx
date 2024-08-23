@@ -1,7 +1,7 @@
 import '../public/styles/globals.css';
 import type { Metadata } from 'next';
 import { Suspense, lazy } from 'react';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         <Footer />
       </body>
-      <GoogleTagManager gtmId="G-STET7NGB4K" />
+      <GoogleAnalytics gaId="G-STET7NGB4K" />
     </html>
   );
 }
