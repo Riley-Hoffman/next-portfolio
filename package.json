@@ -1,6 +1,6 @@
 {
   "name": "riley-hoffman-portfolio",
-  "version": "0.3.0",
+  "version": "3.0.0",
   "private": true,
   "description": "A portfolio site for web developer Riley Hoffman made with React, Next.js, Typescript, and Tailwind.",
   "main": "layout.tsx",
