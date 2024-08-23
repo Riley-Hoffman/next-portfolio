@@ -54,9 +54,9 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
         <h2 className="pb-4">{title}</h2>
         <p className="pb-4 mb-8 text-lg font-poppins" translate="no">{skills}</p>
         <p className="pb-4">{description}</p>
-        <h4 className="mb-8">
+        <h3 className="mb-8">
           <span translate="no">{title}</span> Links:
-        </h4>
+        </h3>
         <a 
           className="mx-5 p-y-1 p-x-4 uppercase py-1 px-3 button" 
           href={liveUrl} 
