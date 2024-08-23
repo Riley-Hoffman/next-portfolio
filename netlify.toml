@@ -16,6 +16,12 @@ force = true
 
 [context.deploy-preview]
   environment = { NODE_ENV = "development" }
+  
+[build.cache]
+paths = [
+  ".next/cache",
+  "node_modules/.cache"
+]
 
 [[headers]]
 for = "/*"
