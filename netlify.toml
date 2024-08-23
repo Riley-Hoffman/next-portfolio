@@ -1,3 +1,6 @@
+[build.environment]
+  NODE_VERSION = "18.17.0"
+
 [[redirects]]
 from = '/_next/image/*'
 query = { q = ':quality', url = ':url', w = ':width' }

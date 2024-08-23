@@ -1,4 +1,3 @@
-// app/layout.tsx or wherever your RootLayout is located
 import '../public/styles/globals.css';
 import type { Metadata } from 'next';
 import { Suspense, lazy } from 'react';
