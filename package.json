@@ -1,7 +1,26 @@
 {
-  "name": "next-app",
-  "version": "0.1.0",
+  "name": "riley-hoffman-portfolio",
+  "version": "0.3.0",
   "private": true,
+  "description": "A portfolio site for web developer Riley Hoffman made with React, Next.js, Typescript, and Tailwind.",
+  "main": "layout.tsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Riley-Hoffman/react-portfolio.git"
+  },
+  "keywords": [
+    "react",
+    "next.js",
+    "typescript",
+    "tailwind",
+    "web developer",
+    "web accessibility"
+  ],
+  "author": "Riley Hoffman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Riley-Hoffman/react-portfolio/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +28,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@next/third-parties": "^14.2.6",
     "@types/node": "22.1.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
@@ -19,6 +43,7 @@
     "postcss": "8.4.40",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-router-dom": "^6.26.1",
     "tailwindcss": "3.4.7",
     "typescript": "5.5.4"
   }
