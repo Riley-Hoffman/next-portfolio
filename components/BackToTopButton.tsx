@@ -26,11 +26,7 @@ export default function BackToTopButton() {
 
   return (
     visible && (
-      <button
-        onClick={scrollToTop}
-        className="fixed px-2 py-2 border-2 border-pink-200 right-5 bottom-5 z-[1000] shadow-[0_0.008rem_1rem_-0.563rem_black] rounded-md button hover:border-zinc"
-        aria-label="Back to Top"
-      >
+      <button onClick={scrollToTop} className="fixed px-2 py-2 border-2 border-pink-200 right-5 bottom-5 z-[1000] shadow-[0_0.008rem_1rem_-0.563rem_black] rounded-md button hover:border-zinc" aria-label="Back to Top" >
         <FontAwesomeIcon className="text-2xl" icon={faChevronCircleUp} />
       </button>
     )

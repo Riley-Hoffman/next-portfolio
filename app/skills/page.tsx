@@ -46,13 +46,7 @@ export default function Skills()  {
         <div className="max-w-screen-xl relative">
             <ul className="max-w-5xl pt-5 pb-12 mt-16 grid grid-cols-2 justify-items-center skills-list sm:grid-cols-3 md:grid-cols-4" aria-label="Skills">
               {skills.map((skill, index) => (
-                <SkillItem
-                  key={index}
-                  skill={skill.skill}
-                  devicon={skill.devicon}
-                  icon={skill.icon}
-                  image={skill.image}
-                />
+                <SkillItem key={index} skill={skill.skill} devicon={skill.devicon} icon={skill.icon} image={skill.image} />
               ))}
             </ul>
             <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>

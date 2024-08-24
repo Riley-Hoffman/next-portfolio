@@ -19,21 +19,9 @@ const NavListItem: React.FC<NavListItemProps> = ({
     return (
         <li className="block md:inline">
             {resume ? (
-                <a
-                    className={`button ${commonClasses} ${hiddenClass}`}
-                    href={resume}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Resume
-                </a>
+                <a className={`button new-tab ${commonClasses} ${hiddenClass}`} href={resume} target="_blank" rel="noopener noreferrer" >Resume<span className="sr-only">(opens in a new tab)</span></a>
             ) : (
-                <Link
-                    className={`button ${commonClasses} ${hiddenClass} hover:[&.active]:brightness-100 [&.active]:bg-pink-200 [&.active]:text-zinc`}
-                    href={to}
-                >
-                    {label}
-                </Link>
+                <Link className={`button ${commonClasses} ${hiddenClass} hover:[&.active]:brightness-100 [&.active]:bg-pink-200 [&.active]:text-zinc`} href={to}>{label}</Link>
             )}
         </li>
     );
