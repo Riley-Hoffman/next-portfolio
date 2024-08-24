@@ -61,7 +61,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
           <span className="sr-only">{title} </span>Live{!internal && (<span className="sr-only">(opens in a new tab)</span>)}
         </a>
         {gitUrl && (
-          <a className="mr-5 ml-3 uppercase py-1 px-3 button" href={gitUrl} target="_blank" rel="noopener noreferrer">
+          <a className="mr-5 ml-3 uppercase py-1 px-3 button new-tab" href={gitUrl} target="_blank" rel="noopener noreferrer">
             <span className="sr-only">{title} </span>Repo<span className="sr-only">(opens in a new tab)</span>
           </a>
         )}
