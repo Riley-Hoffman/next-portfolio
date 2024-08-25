@@ -1,14 +1,13 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 
 const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> => {
-    const parallaxRef = useRef<HTMLDivElement>(null); // Changed to HTMLDivElement to accommodate multiple children
+    const parallaxRef = useRef<HTMLDivElement>(null);
     const [scrollPos, setScrollPos] = useState<number>(0);
 
     useEffect(() => {
         const updateImagePosition = () => {
             if (parallaxRef.current) {
-                const img = parallaxRef.current.querySelector('img'); // Select the first <img> child
+                const img = parallaxRef.current.querySelector('img');
                 if (img) {
                     const height = parallaxRef.current.offsetHeight - 18;
                     img.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;

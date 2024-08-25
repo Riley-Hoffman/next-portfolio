@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, MutableRefObject } from 'react';
 
 interface Refs {
