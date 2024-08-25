@@ -13,7 +13,7 @@ type AccordionProps = {
     label: string;
 };
 
-export default function Accordion({ items, label }: AccordionProps) {
+export function Accordion({ items, label }: AccordionProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 

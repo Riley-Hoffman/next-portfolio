@@ -8,7 +8,7 @@ type HTMLElementWithDataset = HTMLElement & {
   };
 };
 
-const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElementWithDataset[]> => {
+export const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([]);
 
   useEffect(() => {
@@ -45,5 +45,3 @@ const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElementWith
 
   return elementsRef;
 };
-
-export default useTriggerOnScroll;

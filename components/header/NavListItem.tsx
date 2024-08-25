@@ -7,7 +7,7 @@ interface NavListItemProps {
     resume?: string;
 }
 
-const NavListItem: React.FC<NavListItemProps> = ({
+export const NavListItem: React.FC<NavListItemProps> = ({
     to = '',
     label = '',
     hide = false,
@@ -26,5 +26,3 @@ const NavListItem: React.FC<NavListItemProps> = ({
         </li>
     );
 };
-
-export default NavListItem;

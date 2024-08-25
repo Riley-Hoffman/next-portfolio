@@ -14,7 +14,7 @@ interface Mouse {
   radius: number;
 }
 
-class Particle {
+export class Particle {
   position: Position;
   size: number;
   color: string;
@@ -122,5 +122,3 @@ class Particle {
     }
   }
 }
-
-export default Particle;

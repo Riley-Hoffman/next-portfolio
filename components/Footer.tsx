@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import packageJson from '../package.json';
 
-export default function Footer() {
+export function Footer() {
     const githubUrl = packageJson.repository?.url.replace(".git", "");
     const version = packageJson.version;
     return (

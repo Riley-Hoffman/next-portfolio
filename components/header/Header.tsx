@@ -1,14 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react';
-import Hamburger from './Hamburger';
-import NavListItem from './NavListItem';
+import { Hamburger } from './Hamburger';
+import { NavListItem } from './NavListItem';
 
 interface MenuLink {
     to: string;
     label: string;
 }
 
-export default function Header() {
+export function Header() {
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
     const [hide, setHide] = useState<boolean>(false);
 

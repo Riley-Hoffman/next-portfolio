@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import useParallax from '../hooks/useParallax';
+import { useParallax } from '../hooks/useParallax';
 import Image, { StaticImageData } from 'next/image';
 
 
@@ -11,7 +11,7 @@ interface CoverImageProps {
     children: React.ReactNode
 }
 
-const MyComponent: React.FC<CoverImageProps> = ({ width, height, srcImg, children }) => {
+export const CoverImage: React.FC<CoverImageProps> = ({ width, height, srcImg, children }) => {
     const parallaxRef = useParallax();
     return (
         <section className="border-b-4 border-solid relative overlay overflow-hidden gradient-border inverted before:bg-[radial-gradient(rgba(255,255,255,0.743)_0%,_rgba(255,255,255,0.498)_100%),_linear-gradient(-30deg,_rgba(0,247,255,0.08)_0%,_#0000_15%,_#0000_80%,_rgba(0,247,255,0.08)_100%)]" ref={parallaxRef}>
@@ -24,5 +24,3 @@ const MyComponent: React.FC<CoverImageProps> = ({ width, height, srcImg, childre
         </section>
     );
 };
-
-export default MyComponent;

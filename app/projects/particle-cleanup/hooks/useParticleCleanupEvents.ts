@@ -10,12 +10,12 @@ type HandleInteraction = (event: Event, isInside: boolean) => void;
 type HandleScroll = (event: Event) => void;
 type InitializeAnimation = () => void;
 
-const useParticleCleanupEvents = (
+export function useParticleCleanupEvents(
   refs: MutableRefObject<Refs>,
   handleInteraction: HandleInteraction,
   handleScroll: HandleScroll,
   initializeAnimation: InitializeAnimation
-) => {
+) {
   useEffect(() => {
     const localRefs = { ...refs.current };
 
@@ -63,5 +63,3 @@ const useParticleCleanupEvents = (
     };
   }, [refs, handleInteraction, handleScroll, initializeAnimation]);
 };
-
-export default useParticleCleanupEvents;

@@ -2,8 +2,8 @@
 import { useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Particle from '../classes/Particle';
-import useParticleCleanupEvents from '../hooks/useParticleCleanupEvents';
+import { Particle } from '../classes/Particle';
+import { useParticleCleanupEvents } from '../hooks/useParticleCleanupEvents';
 
 type Refs = {
   canvas: HTMLCanvasElement | null;
@@ -25,7 +25,7 @@ type State = {
   cursorMessageRead: boolean;
 };
 
-const ParticleCleanup: React.FC = () => {
+export const ParticleCleanup: React.FC = () => {
   const refs = useRef<Refs>({
     canvas: null,
     container: null,
@@ -234,5 +234,3 @@ const ParticleCleanup: React.FC = () => {
     </>
     );
   };
-
-  export default ParticleCleanup;

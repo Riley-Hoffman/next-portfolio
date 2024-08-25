@@ -6,7 +6,7 @@ interface HamburgerProps {
     expanded?: (isExpanded: boolean) => void;
 }
 
-const Hamburger: React.FC<HamburgerProps> = ({ expanded }) => {
+export const Hamburger: React.FC<HamburgerProps> = ({ expanded }) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
     const hamburgerRef = useRef<HTMLButtonElement | null>(null);
     const location = usePathname();
@@ -56,5 +56,3 @@ const Hamburger: React.FC<HamburgerProps> = ({ expanded }) => {
         </>
     );
 };
-
-export default Hamburger;

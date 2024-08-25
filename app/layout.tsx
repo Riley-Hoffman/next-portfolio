@@ -2,8 +2,8 @@ import '../public/styles/globals.css';
 import type { Metadata } from 'next';
 import { Suspense, lazy } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Header from '../components/header/Header';
-import Footer from '../components/Footer';
+import { Header } from '../components/header/Header';
+import { Footer } from '../components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 }
 
-const LazyBackToTopButton = lazy(() => import('../components/BackToTopButton'));
+const LazyBackToTopButton = lazy(() => import('../components/BackToTopButton').then(module => ({ default: module.BackToTopButton })));
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

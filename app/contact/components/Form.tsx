@@ -1,6 +1,6 @@
 'use client';
 import { useState, useRef } from 'react';
-import useValidateEmail from '../hooks/useValidateEmail';
+import { useValidateEmail } from '../hooks/useValidateEmail';
 
 interface FormState {
     name: string;
@@ -8,7 +8,7 @@ interface FormState {
     message: string;
 }
 
-export default function Form() {
+export function Form() {
     const [formState, setFormState] = useState<FormState>({
         name: '',
         email: '',

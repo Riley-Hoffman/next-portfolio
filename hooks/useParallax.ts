@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> => {
+export const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> => {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const [scrollPos, setScrollPos] = useState<number>(0);
 
@@ -42,5 +42,3 @@ const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> =>
 
     return parallaxRef;
 }
-
-export default useParallax;

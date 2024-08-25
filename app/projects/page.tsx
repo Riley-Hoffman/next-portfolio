@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ProjectBox from './components/ProjectBox';
+import { ProjectBox } from './components/ProjectBox';
 import evangeline from '../../images/evangeline-gentle-music.webp';
 import particleCleanup from '../../images/particle-cleanup.webp';
 import outOfContext from '../../images/out-of-context.webp';

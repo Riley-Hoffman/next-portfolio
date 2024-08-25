@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Accordion from './components/Accordion';
+import { Accordion } from './components/Accordion';
 
 export const metadata: Metadata = {
     title: 'FAQ',

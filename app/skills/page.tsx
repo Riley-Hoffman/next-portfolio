@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './styles/deviconcdn.css'
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
-import SkillItem from './components/SkillItem';
+import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
     title: 'Skills',

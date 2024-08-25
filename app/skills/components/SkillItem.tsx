@@ -10,7 +10,7 @@ interface SkillItemProps {
   image?: boolean;
 }
 
-const SkillItem: React.FC<SkillItemProps> = ({ skill, icon, devicon, image }) => {
+export const SkillItem: React.FC<SkillItemProps> = ({ skill, icon, devicon, image }) => {
   return (
     <li className="my-8 text-center">
       <div className="px-3 flex justify-center items-center min-h-[2.766rem] skill-icon-box">
@@ -26,5 +26,3 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, icon, devicon, image }) =>
     </li>
   );
 };
-
-export default SkillItem;
