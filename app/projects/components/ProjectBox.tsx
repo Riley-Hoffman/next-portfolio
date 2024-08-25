@@ -1,34 +1,21 @@
 'use client';
 import { useEffect } from 'react';
-import { ProjectContent } from './ProjectContent';
 import { useTriggerOnScroll } from '../../../hooks/useTriggerOnScroll';
 
+import React from 'react';
+
 interface ProjectBoxProps {
-  title: string;
-  skills: string;
-  description: string;
-  internal?: boolean;
-  liveUrl: string;
-  gitUrl?: string;
-  imgAlt: string;
-  imgUrl: string;
-  animation?: string;
   inverted?: string;
+  animation?: string;
   isFirst?: boolean;
+  children: React.ReactNode;
 }
 
 export const ProjectBox: React.FC<ProjectBoxProps> = ({
-  title,
-  skills,
-  description,
-  internal,
-  liveUrl,
-  gitUrl,
-  imgAlt,
-  imgUrl,
-  animation,
   inverted,
+  animation,
   isFirst,
+  children,
 }) => {
   const elementsRef = useTriggerOnScroll();
 
@@ -42,9 +29,20 @@ export const ProjectBox: React.FC<ProjectBoxProps> = ({
   }, [elementsRef]);
 
   return (
-    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} ${animation} transition-all duration-1000 ease ${isFirst ? 'mt-12' : 'mt-0'} even:flex-row-reverse md:flex group`} ref={(el) => { if (el) { elementsRef.current.push(el); } }} >
-      <ProjectContent title={title} skills={skills} description={description} internal={internal} liveUrl={liveUrl} gitUrl={gitUrl} imgAlt={imgAlt} imgUrl={imgUrl} isFirst={isFirst} />
-      <div className={`bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${ inverted ? 'group-odd:left-[-100%]' : 'group-even:right-[-100%]' }`} />
+    <li
+      className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} ${animation} transition-all duration-1000 ease ${isFirst ? 'mt-12' : 'mt-0'} even:flex-row-reverse md:flex group`}
+      ref={(el) => {
+        if (el) {
+          elementsRef.current.push(el);
+        }
+      }}
+    >
+      {children}
+      <div
+        className={`bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${
+          inverted ? 'group-odd:left-[-100%]' : 'group-even:right-[-100%]'
+        }`}
+      />
     </li>
   );
 };
