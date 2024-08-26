@@ -40,11 +40,6 @@ export function Form() {
 
     const handleSubmitClick = () => {
         setSubmitClicked(true);
-        if (!nameIsValid || !emailIsValid || !messageIsValid) {
-            setTimeout(() => {
-                errorMessageRef.current?.focus();
-            }, 300);
-        }
     };
 
     return (
@@ -60,7 +55,7 @@ export function Form() {
                         <Label label="email" />
                         <EmailInput email={email} handleChange={handleChange} />
                         {(!nameIsValid || !emailIsValid || !messageIsValid) && submitClicked &&
-                            <p className="sr-only" tabIndex={-1} ref={errorMessageRef}>
+                            <p className="sr-only" ref={errorMessageRef} aria-live="polite">
                                 {(!nameIsValid) && <span>Please enter your name.</span>}
                                 {(!emailIsValid) && <span>Please enter a valid email address.</span>}
                                 {(!messageIsValid) && <span>Please enter a message.</span>}
