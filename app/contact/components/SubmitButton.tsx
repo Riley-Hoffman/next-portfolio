@@ -1,5 +1,3 @@
-import { FormState } from './Form';
-
 interface NameInputProps {
     handleSubmitClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   }
