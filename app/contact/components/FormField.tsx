@@ -18,15 +18,13 @@ export const FormField: React.FC<FormFieldProps> = ({
   required = true,
 }) => {
   return (
-    <div className="form-group my-4">
-      <label className="inline-block text-xl capitalize mb-2" htmlFor={name as string}>
-        {name as string}:
-      </label>
+    <>
+      <label className="inline-block text-xl capitalize mb-2" htmlFor={name as string}>{name as string}:</label>
       {type === 'textarea' ? (
         <textarea className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white" id={name as string} name={name as string} placeholder={placeholder} required={required} value={value} spellCheck="true" rows={8} onChange={handleChange(name)} />
       ) : (
         <input className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white" id={name as string} name={name as string} placeholder={placeholder} type={type} enterKeyHint="next" required={required} value={value} onChange={handleChange(name)} />
       )}
-    </div>
+    </>
   );
 };
