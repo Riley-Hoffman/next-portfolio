@@ -1,23 +1,47 @@
 import { useState, useEffect } from 'react';
 import { FormState } from '../components/Form';
 
-export function useFormValidation(formState: FormState) {
+export function useFormValidation(initialState: FormState) {
+    const [formState, setFormState] = useState(initialState);
+    const [submitted, setSubmitted] = useState(false); 
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
 
     useEffect(() => {
-        const validateForm = () => {
-            const { name, email, message } = formState;
-            let newErrors = { name: '', email: '', message: '' };
+        if (submitted) {
+            const validateForm = () => {
+                const { name, email, message } = formState;
+                let newErrors = { name: '', email: '', message: '' };
 
-            if (name.trim() === '') newErrors.name = 'Please enter your name.';
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = 'Please enter a valid email address.';
-            if (message.trim() === '') newErrors.message = 'Please enter a message.';
+                if (name.trim() === '') newErrors.name = 'Please enter your name.';
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = 'Please enter a valid email address.';
+                if (message.trim() === '') newErrors.message = 'Please enter a message.';
 
-            setErrors(newErrors);
-        };
+                setErrors(newErrors);
+            };
 
-        validateForm();
-    }, [formState]);
+            validateForm();
+        }
+    }, [formState, submitted]); 
 
-    return errors;
+    const handleChange = (field: keyof FormState) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormState((prevState) => ({
+            ...prevState,
+            [field]: event.target.value,
+        }));
+
+        setSubmitted(false);
+        setErrors({ name: '', email: '', message: '' });
+    };
+
+    const handleSubmitClick = () => {
+        setSubmitted(true); 
+    };
+
+    return {
+        formState,
+        errors,
+        handleChange,
+        handleSubmitClick,
+        submitted, 
+    };
 }

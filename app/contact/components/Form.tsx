@@ -1,9 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useFormValidation } from '../hooks/useFormValidation';
 import { Legend } from './Legend';
 import { FormField } from './FormField';
 import { SubmitButton } from './SubmitButton';
-import { useFormValidation } from '../hooks/useFormValidation';
 
 export interface FormState {
     name: string;
@@ -12,29 +11,13 @@ export interface FormState {
 }
 
 export function Form() {
-    const [formState, setFormState] = useState<FormState>({
+    const { formState, errors, handleChange, handleSubmitClick, submitted } = useFormValidation({
         name: '',
         email: '',
         message: '',
     });
-    
-    const [submitClicked, setSubmitClicked] = useState(false);
-    const errors = useFormValidation(formState);
+
     const { name, email, message } = formState;
-
-    const handleChange = (field: keyof FormState) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormState((prevState) => ({
-            ...prevState,
-            [field]: event.target.value,
-        }));
-        if (submitClicked) {
-            setSubmitClicked(false);
-        }
-    };
-
-    const handleSubmitClick = () => {
-        setSubmitClicked(true);
-    };
 
     return (
         <form className="max-w-screen-md pt-5 px-5 pb-10" action="https://formspree.io/f/xwkyonza" method="POST">
@@ -46,17 +29,17 @@ export function Form() {
                         <br className="inline md:hidden" />
                         <br className="inline md:hidden" />
                         <FormField type="email" value={email} handleChange={handleChange} name="email" placeholder="Your email.." />
-                        {submitClicked &&
-                            <p className="sr-only" aria-live="polite">
-                                {errors.name && <span>{errors.name}</span>}
-                                {errors.email && <span>{errors.email}</span>}
-                                {errors.message && <span>{errors.message}</span>}
-                            </p>
-                        }
                     </div>
                     <FormField type="textarea" value={message} handleChange={handleChange} name="message" placeholder="Your message.." />
                 </div>
             </fieldset>
+            {Object.values(errors).some(error => error) && submitted && (
+                <p className="sr-only" aria-live="polite">
+                    {errors.name && <span>{errors.name}</span>}
+                    {errors.email && <span>{errors.email}</span>}
+                    {errors.message && <span>{errors.message}</span>}
+                </p>
+            )}
             <SubmitButton handleSubmitClick={handleSubmitClick} />
         </form>
     );
