@@ -1,12 +1,12 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Legend } from './Legend';
 import { Label } from './Label';
 import { NameInput } from './NameInput';
 import { EmailInput } from './EmailInput';
 import { MessageTextarea } from './MessageTextarea';
 import { SubmitButton } from './SubmitButton';
-import { useValidateEmail } from '../hooks/useValidateEmail';
+import { useFormValidation } from '../hooks/useFormValidation';
 
 export interface FormState {
     name: string;
@@ -21,12 +21,10 @@ export function Form() {
         message: '',
     });
     const [submitClicked, setSubmitClicked] = useState(false);
-    const errorMessageRef = useRef<HTMLParagraphElement>(null);
+
+    const errors = useFormValidation(formState);
 
     const { name, email, message } = formState;
-    const emailIsValid = useValidateEmail(email);
-    const nameIsValid = name.length > 0;
-    const messageIsValid = message.length > 0;
 
     const handleChange = (field: keyof FormState) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormState((prevState) => ({
@@ -54,11 +52,11 @@ export function Form() {
                         <br className="inline md:hidden" />
                         <Label label="email" />
                         <EmailInput email={email} handleChange={handleChange} />
-                        {(!nameIsValid || !emailIsValid || !messageIsValid) && submitClicked &&
-                            <p className="sr-only" ref={errorMessageRef} aria-live="polite">
-                                {(!nameIsValid) && <span>Please enter your name.</span>}
-                                {(!emailIsValid) && <span>Please enter a valid email address.</span>}
-                                {(!messageIsValid) && <span>Please enter a message.</span>}
+                        {submitClicked &&
+                            <p className="sr-only" aria-live="polite">
+                                {errors.name && <span>{errors.name}</span>}
+                                {errors.email && <span>{errors.email}</span>}
+                                {errors.message && <span>{errors.message}</span>}
                             </p>
                         }
                     </div>
