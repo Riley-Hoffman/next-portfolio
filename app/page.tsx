@@ -20,7 +20,7 @@ export default function Home() {
             <div className="max-w-screen-xl">
                 <div className="items-center md:flex">
                     <div className="min-h-96 md:w-1/3">
-                        <Image className="w-96 h-96 max-w-full object-cover border-x-2 clip-path-cut-corners" src={headshot} alt="Riley with a flower behind his ear. Shot in black and white." width="384" height="452" priority={false} />
+                        <Image className="size-96 max-w-full object-cover border-x-2 clip-path-cut-corners" src={headshot} alt="Riley with a flower behind his ear. Shot in black and white." width="384" height="452" priority={false} />
                     </div>
                     <div className="py-6 m-6 bg-[whitesmoke] border-2 border-[#d6d2ee] md:w-2/3 lg:px-24 contrast-more:bg-white">
                         <h2>My Journey</h2>
