@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import SchemaOrg from './components/SchemaOrg';
@@ -11,13 +10,6 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 export default function Home() {
   return (
     <>
-        <Head>
-            <title>Riley Hoffman - Web Developer</title>
-            <meta property="og:title" content="Riley Hoffman - Web Developer" />
-            <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
-            <meta property="og:url" content="https://rileyhoffman.com" />
-            <link rel="canonical" href="https://rileyhoffman.com" />
-        </Head>
         <SchemaOrg />
         <CoverImage width={1920} height={1080} srcImg={clouds}>
             <h1 className="font-semibold m-0 text-3xl leading-normal md:text-4xl md:leading-normal" aria-live="polite">Riley Hoffman</h1>
