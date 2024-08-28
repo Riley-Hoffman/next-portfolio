@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Thank You',
     description: 'Thank you for contacting Riley Hoffman - Web Developer.',
+    robots: 'noindex',
     metadataBase: new URL('https://rileyhoffman.com/thank-you'),
     alternates: {
         canonical: '/',
