@@ -11,7 +11,7 @@ export interface FormState {
 }
 
 export function Form() {
-    const { formState, errors, handleChange, handleSubmitClick, submitted } = useFormValidation({
+    const { formState, errors, handleChange, handleSubmitClick, handleSubmit, submitted } = useFormValidation({
         name: '',
         email: '',
         message: '',
@@ -20,7 +20,7 @@ export function Form() {
     const { name, email, message } = formState;
 
     return (
-        <form className="max-w-screen-md pt-5 px-5 pb-10" action="https://formspree.io/f/xwkyonza" method="POST">
+        <form className="max-w-screen-md pt-5 px-5 pb-10" onSubmit={handleSubmit}>
             <fieldset>
                 <Legend />
                 <div className="pb-5">
