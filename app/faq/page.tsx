@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import SchemaOrg from './components/SchemaOrg';
 import { Accordion } from './components/Accordion';
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ const accordionItems: AccordionItem[] = [
 export default function Faq() {
     return (
         <>
+            <SchemaOrg />
             <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Frequently Asked Questions</h1>
             <div className="max-w-screen-md p-[1.875rem_0_13vh]">
                 <Accordion items={accordionItems} label="Frequently Asked Questions" />

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import SchemaOrg from './components/SchemaOrg';
 import { CoverImage } from '../components/CoverImage';
 import clouds from '../images/clouds.webp';
 import headshot from '../images/headshot.webp';
@@ -17,6 +18,7 @@ export default function Home() {
             <meta property="og:url" content="https://rileyhoffman.com" />
             <link rel="canonical" href="https://rileyhoffman.com" />
         </Head>
+        <SchemaOrg />
         <CoverImage width={1920} height={1080} srcImg={clouds}>
             <h1 className="font-semibold m-0 text-3xl leading-normal md:text-4xl md:leading-normal" aria-live="polite">Riley Hoffman</h1>
             <p className="mt-0 relative after:absolute after:bottom-[-0.75rem] after:left-5 after:bg-purple-200 after:h-3 after:w-5"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest font-medium motion-safe:animate-typetext" aria-live="polite">Web Developer</span></p>

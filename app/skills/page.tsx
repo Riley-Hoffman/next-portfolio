@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './styles/deviconcdn.css'
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
+import SchemaOrg from './components/SchemaOrg';
 import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function Skills()  {
 
   return (
     <>
+      <SchemaOrg />
       <section className="pb-16">
         <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Skills</h1>
         <div className="max-w-screen-xl relative">
