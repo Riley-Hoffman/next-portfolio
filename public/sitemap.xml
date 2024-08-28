@@ -39,6 +39,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://rileyhoffman.com/thank-you</loc>
+    <lastmod>2024-08-24</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rileyhoffman.com/nojs</loc>
     <lastmod>2024-08-24</lastmod>
     <priority>0.7</priority>
