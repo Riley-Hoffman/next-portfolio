@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { WebPage, WithContext } from 'schema-dts';
+import SchemaOrg from '../../../components/SchemaOrg';
 import { faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SchemaOrg from '../../components/SchemaOrg';import { ParticleCleanup } from './components/ParticleCleanup';
+import { ParticleCleanup } from './components/ParticleCleanup';
 
 export const metadata: Metadata = {
     title: 'Particle Cleanup Game',
@@ -16,11 +18,27 @@ export const metadata: Metadata = {
       url: 'https://rileyhoffman.com/projects/particle-cleanup',
     },
 };
+
+const structuredData: WithContext<WebPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  headline: 'Particle Cleanup Game - Riley Hoffman - Web Developer',
+  description:
+    "How quickly can you clear all the particles from the board using your cursor or finger?",
+  image: '/static/media/riley.d8092b303038937a099e.jpg',
+  datePublished: '2024-07-04T09:25:01.340Z',
+  author: {
+    '@type': 'Person',
+    name: 'Riley Hoffman',
+    url: 'https://rileyhoffman.com',
+  },
+};
+
 export default function ParticleCleanupWrapper() {
 
   return (
     <>
-      <SchemaOrg />
+      <SchemaOrg structuredData={structuredData} />
       <div className="pb-16">
         <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:leading-normal md:text-5xl contrast-more:bg-white">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
