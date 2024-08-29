@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SchemaOrg from './components/SchemaOrg';
-import { ParticleCleanup } from './components/ParticleCleanup';
+import SchemaOrg from '../../components/SchemaOrg';import { ParticleCleanup } from './components/ParticleCleanup';
 
 export const metadata: Metadata = {
     title: 'Particle Cleanup Game',

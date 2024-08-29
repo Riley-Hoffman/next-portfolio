@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import './styles/deviconcdn.css'
+import { WebPage, WithContext } from 'schema-dts';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
-import SchemaOrg from './components/SchemaOrg';
+import SchemaOrg from '../../components/SchemaOrg';
 import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
@@ -16,7 +17,22 @@ export const metadata: Metadata = {
         title: 'Skills',
         url: 'https://rileyhoffman.com/skills'
       },
-}
+};
+
+const structuredData: WithContext<WebPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  headline: 'Skills - Riley Hoffman - Web Developer',
+  description:
+    "My skills. Riley Hoffman - Web Developer.",
+  image: '/static/media/riley.d8092b303038937a099e.jpg',
+  datePublished: '2024-07-04T09:25:01.340Z',
+  author: {
+    '@type': 'Person',
+    name: 'Riley Hoffman',
+    url: 'https://rileyhoffman.com',
+  },
+};
 
 export default function Skills()  {
   const skills = [
@@ -42,7 +58,7 @@ export default function Skills()  {
 
   return (
     <>
-      <SchemaOrg />
+      <SchemaOrg structuredData={structuredData} />
       <section className="pb-16">
         <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Skills</h1>
         <div className="max-w-screen-xl relative">
