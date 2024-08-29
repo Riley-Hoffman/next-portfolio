@@ -131,7 +131,6 @@ export default function Projects() {
             <ProjectWrapper 
               key={project.title}
               project={project}
-              {...project} 
               inverted={index % 2 !== 0 ? 'inverted' : ''}
               isFirst={ulIndex === 0 && index === 0}
             />
