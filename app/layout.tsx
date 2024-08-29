@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <noscript><meta http-equiv="refresh" content="0; url=/nojs.html" /></noscript>
+        <noscript><meta httpEquiv="refresh" content="0; url=/nojs.html" /></noscript>
       </head>
       <body>
         <Header />
