@@ -129,7 +129,7 @@ export default function Projects() {
         <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
           {filteredProjects.map((project, index) => (
             <ProjectWrapper 
-              key={index} 
+              key={project.title}
               project={project}
               {...project} 
               inverted={index % 2 !== 0 ? 'inverted' : ''}

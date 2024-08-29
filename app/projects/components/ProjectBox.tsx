@@ -2,8 +2,6 @@
 import { useEffect } from 'react';
 import { useTriggerOnScroll } from '../../../hooks/useTriggerOnScroll';
 
-import React from 'react';
-
 interface ProjectBoxProps {
   inverted?: string;
   animation?: string;

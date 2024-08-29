@@ -1,5 +1,4 @@
 'use client'
-import React from 'react';
 import { useParallax } from '../hooks/useParallax';
 import Image, { StaticImageData } from 'next/image';
 
