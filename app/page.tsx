@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../components/SchemaOrg';
-;import { CoverImage } from '../components/CoverImage';
+import { CoverImage } from '../components/CoverImage';
 import clouds from '../images/clouds.webp';
 import headshot from '../images/headshot.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
