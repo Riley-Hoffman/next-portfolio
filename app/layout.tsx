@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-STET7NGB4K" />
+        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS!} />
     </html>
   );
 }
