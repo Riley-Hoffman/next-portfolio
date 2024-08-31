@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../components/SchemaOrg';
 import { CoverImage } from '../components/CoverImage';
+import { MyJourneyWrapper } from './components/MyJourneyWrapper';
+import { useScrollY } from '../hooks/useScrollY';
 import clouds from '../images/clouds.webp';
 import headshot from '../images/headshot.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,7 +34,7 @@ export default function Home() {
             <p className="mt-0 relative after:absolute after:bottom-[-0.75rem] after:left-5 after:bg-purple-200 after:h-3 after:w-5"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest font-medium motion-safe:animate-typetext">Web Developer</span></p>
             <p className="mt-8 font-medium">I&apos;m a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
         </CoverImage>
-        <section className="pt-16 pb-10 bg-diamonds contrast-more:bg-none">
+        <MyJourneyWrapper>
             <div className="max-w-screen-xl">
                 <div className="items-center md:flex">
                     <div className="min-h-96 md:w-1/3">
@@ -52,7 +54,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </section>
+        </MyJourneyWrapper>
     </>
   )
 }

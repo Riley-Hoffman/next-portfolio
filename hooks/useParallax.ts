@@ -1,36 +1,53 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useScrollY } from './useScrollY';
+import { useReducedMotion } from './useReducedMotion';
 
 export const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> => {
+    const prefersReducedMotion = useReducedMotion();
     const parallaxRef = useRef<HTMLDivElement>(null);
-    const [scrollPos, setScrollPos] = useState<number>(0);
+    const scrollPos = useScrollY();
 
     useEffect(() => {
         const updateImagePosition = () => {
-            if (parallaxRef.current) {
+            if (parallaxRef.current && !prefersReducedMotion) {
                 const img = parallaxRef.current.querySelector('img');
                 if (img) {
                     const height = parallaxRef.current.offsetHeight - 18;
-                    img.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;
-                    img.style.top = `-${Math.round((height - scrollPos) * (velocity + 0.1))}px`;
+                    const translateX = -(height - scrollPos) * velocity;
+                    const translateY = -(height - scrollPos) * (velocity + 0.1);
+                    
+                    img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+                    img.style.willChange = 'transform';
                 }
             }
         };
 
         updateImagePosition();
-    }, [scrollPos, velocity]);
+    }, [scrollPos, velocity, prefersReducedMotion]);
 
     useEffect(() => {
         let ticking = false;
 
-        const updateScrollPosition = () => {
-            setScrollPos(window.scrollY);
-            ticking = false;
-        };
-
         const handleScroll = () => {
             if (!ticking) {
-                window.requestAnimationFrame(updateScrollPosition);
+                window.requestAnimationFrame(() => {
+                    updateImagePosition();
+                    ticking = false;
+                });
                 ticking = true;
+            }
+        };
+
+        const updateImagePosition = () => {
+            if (parallaxRef.current && !prefersReducedMotion) {
+                const img = parallaxRef.current.querySelector('img');
+                if (img) {
+                    const height = parallaxRef.current.offsetHeight - 18;
+                    const translateX = -(height - scrollPos) * velocity;
+                    const translateY = -(height - scrollPos) * (velocity + 0.1);
+                    
+                    img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+                }
             }
         };
 
@@ -38,7 +55,7 @@ export const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElem
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [scrollPos, velocity, prefersReducedMotion]);
 
     return parallaxRef;
-}
+};
