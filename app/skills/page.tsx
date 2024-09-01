@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import './styles/deviconcdn.css'
+import './styles/deviconcdn.css';
 import { WebPage, WithContext } from 'schema-dts';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
 import SchemaOrg from '../../components/SchemaOrg';
 import { SkillItem } from './components/SkillItem';
 
@@ -54,6 +55,8 @@ export default function Skills()  {
     { skill: 'Firebase', devicon: 'devicon-firebase-plain' },
     { skill: 'JSON', devicon: 'devicon-json-plain' },
     { skill: 'Netlify', devicon: 'devicon-netlify-plain' },
+    { skill: 'npm', devicon: 'devicon-npm-original-wordmark' },
+    { skill: 'SEO', icon: faMagnifyingGlassChart },
   ];
 
   return (
