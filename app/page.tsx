@@ -4,7 +4,6 @@ import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../components/SchemaOrg';
 import { CoverImage } from '../components/CoverImage';
 import { MyJourneyWrapper } from './components/MyJourneyWrapper';
-import { useScrollY } from '../hooks/useScrollY';
 import clouds from '../images/clouds.webp';
 import headshot from '../images/headshot.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

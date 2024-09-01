@@ -1,4 +1,4 @@
-import '../public/styles/globals.css';
+import './styles/globals.css';
 import type { Metadata } from 'next';
 import { Suspense, lazy } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -34,9 +34,6 @@ const LazyBackToTopButton = lazy(() => import('../components/BackToTopButton').t
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <noscript><meta httpEquiv="refresh" content="0; url=/nojs.html" /></noscript>
-      </head>
       <body>
         <Header />
         <main>

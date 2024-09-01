@@ -1,7 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Hamburger } from './Hamburger';
 import { NavListItem } from './NavListItem';
+import { RouteList } from '../RouteList';
+
 
 interface MenuLink {
     to: string;
@@ -75,6 +78,17 @@ export function Header() {
                     </ul>
                 </nav>
             </div>
+            <noscript>
+                <nav className="px-4 md:hidden">
+                    <ul className="flex flex-wrap gap-2 font-medium">
+                    {RouteList.map(route => (
+                        (route.name !== 'Particle Cleanup Game' && route.name !== 'Accessibility' &&
+                        <li key={route.path}><Link className="button p-1" href={route.path}>{route.name}</Link></li>
+                        )
+                    ))}
+                    </ul>
+                </nav>
+            </noscript>
         </header>
     );
 }

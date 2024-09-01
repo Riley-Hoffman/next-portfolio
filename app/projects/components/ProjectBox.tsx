@@ -22,13 +22,19 @@ export const ProjectBox: React.FC<ProjectBoxProps> = ({
       const element = elementsRef.current[elementsRef.current.length - 1];
       if (element) {
         element.classList.add('trigger-on-scroll');
+        if (animation) {
+          const animationClasses = animation.trim().split(/\s+/);
+          animationClasses.forEach((className) => {
+            element.classList.add(className);
+          });
+        }
       }
     }
-  }, [elementsRef]);
+  }, [elementsRef, animation]);
 
   return (
     <li
-      className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} ${animation} transition-all duration-1000 ease ${isFirst ? 'mt-12' : 'mt-0'} even:flex-row-reverse md:flex group`}
+      className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} transition-all duration-1000 ease ${isFirst ? 'mt-12' : 'mt-0'} even:flex-row-reverse md:flex group`}
       ref={(el) => {
         if (el) {
           elementsRef.current.push(el);
