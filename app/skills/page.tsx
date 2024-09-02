@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './styles/deviconcdn.css';
+import '../styles/devicon.css';
 import { WebPage, WithContext } from 'schema-dts';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';

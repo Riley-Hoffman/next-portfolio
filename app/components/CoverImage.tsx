@@ -1,6 +1,6 @@
 'use client'
-import { useParallax } from '../hooks/useParallax';
 import Image, { StaticImageData } from 'next/image';
+import { useParallax } from '../../hooks/useParallax';
 
 
 interface CoverImageProps {

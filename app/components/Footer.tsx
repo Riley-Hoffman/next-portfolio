@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import packageJson from '../package.json';
+import packageJson from '../../package.json';
 
 export function Footer() {
     const githubUrl = packageJson.repository?.url.replace(".git", "");

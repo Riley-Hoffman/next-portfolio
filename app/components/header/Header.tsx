@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Hamburger } from './Hamburger';
 import { NavListItem } from './NavListItem';
-import { RouteList } from '../RouteList';
+import { RouteList } from '../../../components/RouteList';
 
 
 interface MenuLink {
