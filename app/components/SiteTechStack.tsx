@@ -1,4 +1,3 @@
-import '../styles/devicon.css';
 
 interface Tech {
   name: string;
@@ -31,7 +30,7 @@ const technologies: Tech[] = [
 
 export const SiteTechStack: React.FC = () => {
   return (
-    <section className="pt-8 pb-12 border-solid border-t-2 gradient-border">
+    <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" id="siteTechStack">
       <div className="max-w-screen-xl container mx-auto text-center">
         <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl" aria-label="Site tech stack.">

@@ -1,5 +1,6 @@
 import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../components/SchemaOrg';
+import { LazyLoadLink } from '../hooks/LazyLoadLink';
 import { CoverImage } from './components/CoverImage';
 import { MyJourney } from './components/MyJourney';
 import { SiteTechStack } from './components/SiteTechStack';
@@ -33,6 +34,7 @@ export default function Home() {
         <MyJourneyWrapper>
             <MyJourney/>
         </MyJourneyWrapper>
+        <LazyLoadLink href="/devicon.css" rel="stylesheet" targetSelector="#siteTechStack" />
         <SiteTechStack/>
     </>
   )
