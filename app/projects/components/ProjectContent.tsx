@@ -50,7 +50,7 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
         )}
       </div>
       <div className="text-center relative basis-2/4">
-        <Image alt={imgAlt} src={imgUrl} title={title} height="570" width="570" priority={isFirst} />
+        <Image className="max-w-full w-[35.6rem]" alt={imgAlt} src={imgUrl} title={title} height="640" width="640" priority={isFirst} />
       </div>
     </>
   );
