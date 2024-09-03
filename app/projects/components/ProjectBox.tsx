@@ -20,14 +20,11 @@ export const ProjectBox: React.FC<ProjectBoxProps> = ({
   useEffect(() => {
     if (elementsRef.current) {
       const element = elementsRef.current[elementsRef.current.length - 1];
-      if (element) {
-        element.classList.add('trigger-on-scroll');
-        if (animation) {
-          const animationClasses = animation.trim().split(/\s+/);
-          animationClasses.forEach((className) => {
-            element.classList.add(className);
-          });
-        }
+      if (element && animation) {
+        const animationClasses = animation.trim().split(/\s+/);
+        animationClasses.forEach((className) => {
+          element.classList.add(className);
+        });
       }
     }
   }, [elementsRef, animation]);
