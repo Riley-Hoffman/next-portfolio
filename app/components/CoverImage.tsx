@@ -1,5 +1,5 @@
 'use client'
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useParallax } from '../../hooks/useParallax';
 
 
