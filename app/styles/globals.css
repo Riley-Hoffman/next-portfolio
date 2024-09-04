@@ -137,13 +137,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 outline:.125rem solid #6f00f7
 }
 .new-tab:after {
-content: "\f08e";
-display: inline-block;
-font-family:"FontAwesomeSolid";
-font-size: 63%;
-font-weight: 400;
-height: 0;
-padding-left: 5px;
+  content: "\f08e";
 }
 
 .fa,.fa-regular,.fa-solid,.fa-brands {
@@ -152,70 +146,7 @@ font-family:"Font Awesome 6 Free"
 html .svg-inline--fa {
 vertical-align:middle
 }
-.button {
-background-color:#12121c;
-color:#e5d4ed;
-font-family:inherit;
-text-decoration:none
-}
-.button:hover,.button:focus-visible {
-background-color:#eee3f2;
-color:#12121c
-}
-.gradient-border {
-border-image-slice:1
-}
-.gradient-border:not(.inverted) {
-border-image-source:linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)
-}
-.gradient-border.inverted {
-border-image-source:linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%)
-}
-.overlay:not([class*="before:bg-"]):before {
-background-image:radial-gradient(#ffffffbd 0%,#ffffff7f 100%)
-}
-.overlay:before {
-content:"";
-height:100%;
-width:100%;
-position:absolute;
-top:0;
-bottom:0;
-left:0;
-right:0
-}
-ol.numbered-icons {
-counter-reset:circle;
-list-style:none
-}
-ol.numbered-icons li {
-counter-increment:circle;
-padding:.75rem 0 .75rem 1.25rem;
-position:relative
-}
-ol.numbered-icons li:before {
-border-radius:50%;
-color:#fbfdff;
-content:counter(circle) "";
-font-family:"Poppins",sans-serif;
-font-size:1.094rem;
-font-weight:600;
-margin-right:1.25rem;
-padding:.25rem;
-text-align:center;
-transform:translateY(-50%);
-height:1.875rem;
-width:1.875rem;
-position:absolute;
-top:50%;
-left:-1.25rem
-}
-ol.numbered-icons li:before:not([class*="before:bg-"]) {
-background:#794e8d
-}
-.overlay,.overlay > :not(.absolute) {
-position:relative
-}
+
 @media (max-width: 768px) {
 .hamburger .line {
 border-image-source:linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)
