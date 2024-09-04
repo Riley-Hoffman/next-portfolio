@@ -141,11 +141,7 @@
   .new-tab:after {
     content: "\f08e";
   }
-  
-  .fa,.fa-regular,.fa-solid,.fa-brands {
-  font-family:"Font Awesome 6 Free"
-  }
-  html .svg-inline--fa {
+  html [class*="svg-inline--fa"] {
   vertical-align:middle
   }
   
