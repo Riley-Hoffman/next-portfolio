@@ -12,7 +12,7 @@ const technologies: Tech[] = [
   },
   {
     name: 'Next.js',
-    logo: 'devicon-nextjs-original-wordmark',
+    logo: 'devicon-nextjs-plain',
     url: 'https://nextjs.org',
   },
   {

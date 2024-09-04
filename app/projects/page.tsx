@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { Metadata } from 'next';
 import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../../components/SchemaOrg';
@@ -124,7 +125,7 @@ export default function Projects() {
   const renderProjectsByCategory = (category: string, ulIndex: number) => {
     const filteredProjects = projects.filter(project => project.category === category);
     return (
-      <>
+      <Fragment key={category}>
         <h2 className="max-w-screen-xl text-2xl pb-5 leading-normal md:text-3xl">{category} Projects</h2>
         <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
           {filteredProjects.map((project, index) => (
@@ -136,7 +137,7 @@ export default function Projects() {
             />
           ))}
         </ul>
-      </>
+      </Fragment>
     );
   };
 
