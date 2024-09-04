@@ -19,7 +19,7 @@ export const FormField: React.FC<FormFieldProps> = ({
 }) => {
   return (
     <>
-      <label className="inline-block text-xl capitalize mb-2" htmlFor={name as string}>{name as string}:</label>
+      <label className="inline-block min-w-14 mb-2 text-xl capitalize" htmlFor={name as string}>{name as string}:</label>
       {type === 'textarea' ? (
         <textarea className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white" id={name as string} name={name as string} placeholder={placeholder} required={required} value={value} spellCheck="true" rows={8} onChange={handleChange(name)} />
       ) : (
