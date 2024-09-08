@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': `image/${imageFormat}`,
-        'Cache-Control': 'public, max-age=31536000, immutable',
+        'Cache-Control': 'no-store',
       },
     });
   } catch (error) {
