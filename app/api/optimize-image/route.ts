@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import sharp, { AvailableFormatInfo, FormatEnum } from 'sharp';
 import { join } from 'path';
 import fs from 'fs/promises';
+import crypto from 'crypto';
+
+function generateETag(buffer: Buffer) {
+  return crypto.createHash('md5').update(buffer).digest('hex');
+}
 
 type ImageFormat = keyof FormatEnum | AvailableFormatInfo;
 
@@ -40,11 +45,14 @@ export async function GET(req: NextRequest) {
 
     const optimizedBuffer = await image.toBuffer();
 
+    const etag = generateETag(optimizedBuffer);
+
     return new NextResponse(optimizedBuffer, {
       status: 200,
       headers: {
         'Content-Type': `image/${imageFormat}`,
-        'Cache-Control': 'no-store',
+        'Cache-Control': 'public, max-age=31536000, immutable',
+        'ETag': etag,
       },
     });
   } catch (error) {
