@@ -2,11 +2,11 @@
   NODE_VERSION = "18.17.0"
 
 [[redirects]]
-from = '/_next/image/*'
-query = { q = ':quality', url = ':url', w = ':width' }
-to = '/.netlify/images?url=:url&w=:width&q=:quality'
-status = 200
-force = true
+  from = '/_next/image/*'
+  query = { q = ':quality', url = ':url', w = ':width' }
+  to = '/.netlify/images?url=:url&w=:width&q=:quality'
+  status = 200
+  force = true
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -18,10 +18,10 @@ force = true
   environment = { NODE_ENV = "development" }
   
 [build.cache]
-paths = [
-  ".next/cache",
-  "node_modules/.cache"
-]
+  paths = [
+    ".next/cache",
+    "node_modules/.cache"
+  ]
 
 [[headers]]
 for = "/*"
