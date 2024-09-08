@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import wcag from '../../../images/wcag.png';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface SkillItemProps {
@@ -17,7 +16,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({ skill, icon, devicon, imag
         {devicon ? (
           <i className={`text-5xl ${devicon}`} aria-hidden="true"></i>
         ) : image ? (
-          <Image src={wcag} className="w-20" alt="" width="300" height="71" />
+          <Image src="/api/optimize-image?path=/wcag.png&width=1920&format=png" className="w-20" alt="" width="300" height="71" />
         ) : icon ? (
           <FontAwesomeIcon className="text-5xl" icon={icon} />
         ) : null} 
