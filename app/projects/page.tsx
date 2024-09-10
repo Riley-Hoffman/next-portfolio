@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import type { Metadata } from 'next';
-import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../../components/SchemaOrg';
 import { ProjectWrapper } from './components/ProjectWrapper';
 import evangeline from '../../images/evangeline-gentle-music.webp';
@@ -21,21 +20,6 @@ export const metadata: Metadata = {
     images: '/thumbnail.jpg',
     title: 'Projects',
     url: 'https://rileyhoffman.com/projects',
-  },
-};
-
-const structuredData: WithContext<WebPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  headline: 'Projects - Riley Hoffman - Web Developer',
-  description:
-    "View past projects by Riley Hoffman - Web Developer.",
-  image: '/static/media/riley.d8092b303038937a099e.jpg',
-  datePublished: '2024-07-04T09:25:01.340Z',
-  author: {
-    '@type': 'Person',
-    name: 'Riley Hoffman',
-    url: 'https://rileyhoffman.com',
   },
 };
 
@@ -143,7 +127,7 @@ export default function Projects() {
 
   return (
     <> 
-      <SchemaOrg structuredData={structuredData} />
+      <SchemaOrg headline="Projects - Riley Hoffman - Web Developer" description="View past projects by Riley Hoffman - Web Developer." image="/static/media/riley.d8092b303038937a099e.jpg" datePublished="2024-07-04T09:25:01.340Z" />
       <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Projects</h1>
       <div className="pt-5 pb-20 overflow-hidden">
         {categories.map((category, index) => renderProjectsByCategory(category, index))}
