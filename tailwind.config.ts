@@ -89,7 +89,7 @@ const config: Config = {
             color: theme('colors.zinc'),
           },
         },
-        '.new-tab:after': {
+        '.new-tab > span:last-child:after': {
           display: 'inline-block',
           fontFamily: 'FontAwesomeSolid',
           fontSize: '63%',

@@ -138,7 +138,7 @@
   a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible {
   outline:.125rem solid #6f00f7
   }
-  .new-tab:after {
+  .new-tab > span:last-child:after {
     content: "\f08e";
   }
   html [class*="svg-inline--fa"] {

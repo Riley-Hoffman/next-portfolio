@@ -19,7 +19,7 @@ export const MyJourney: React.FC = () =>  {
                 <p className="mt-10">
                     <Link className="inline-block motion-safe:hover:animate-[wiggle_1s] button group" href="https://www.linkedin.com/in/riley-hoffman-014623213" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon className="p-2 box-content text-5xl text-zinc bg-pink-200 group-hover:bg-zinc group-hover:text-pink-200" icon={faLinkedinIn} /> 
-                        <span className="px-6 new-tab">Follow me on LinkedIn<span className="sr-only">(opens in a new tab)</span></span>
+                        <span className="px-6 new-tab">Follow me on LinkedIn<span className="sr-only">(opens in a new tab)</span><span aria-hidden="true"></span></span>
                     </Link>
                 </p>
             </div>

@@ -40,12 +40,14 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
           <a className={`mx-5 p-y-1 p-x-4 new-tab ${commonClasses}`} href={liveUrl} target="_blank" rel="noopener noreferrer" >
             {liveContent}
             <span className="sr-only">(opens in a new tab)</span>
+            <span aria-hidden="true"></span>
           </a>
         )}
         {gitUrl && (
           <a className={`mr-5 ml-3 ${commonClasses} new-tab`} href={gitUrl} target="_blank" rel="noopener noreferrer" >
             <span className="sr-only">{title} </span>Repo
             <span className="sr-only">(opens in a new tab)</span>
+            <span aria-hidden="true"></span>
           </a>
         )}
       </div>
