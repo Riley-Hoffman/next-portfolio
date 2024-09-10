@@ -2,9 +2,9 @@ import { WebPage, WithContext } from 'schema-dts';
 import SchemaOrg from '../components/SchemaOrg';
 import { LazyLoadLink } from '../hooks/LazyLoadLink';
 import { CoverImage } from './components/CoverImage';
+import { MyJourneyWrapper } from './components/MyJourneyWrapper';
 import { MyJourney } from './components/MyJourney';
 import { SiteTechStack } from './components/SiteTechStack';
-import { MyJourneyWrapper } from './components/MyJourneyWrapper';
 
 const structuredData: WithContext<WebPage> = {
     '@context': 'https://schema.org',
@@ -21,7 +21,21 @@ const structuredData: WithContext<WebPage> = {
     },
   };
 
+
+interface Tech {
+  name: string;
+  logo: string;
+  url: string;
+}
+
 export default function Home() {
+  const technologies: Tech[] = [
+    { name: 'React', logo: 'devicon-react-original', url: 'https://react.dev' },
+    { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },
+    { name: 'TypeScript', logo: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org' },
+    { name: 'Tailwind CSS', logo: 'devicon-tailwindcss-original', url: 'https://tailwindcss.com' },
+  ];
+
   return (
     <>
         <SchemaOrg structuredData={structuredData} />
@@ -34,7 +48,12 @@ export default function Home() {
             <MyJourney/>
         </MyJourneyWrapper>
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetSelector="#siteTechStack" />
-        <SiteTechStack/>
+        <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" id="siteTechStack">
+      <div className="max-w-screen-xl container mx-auto text-center">
+        <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
+        <SiteTechStack technologies={technologies} />
+        </div>
+      </section>
     </>
   )
 }
