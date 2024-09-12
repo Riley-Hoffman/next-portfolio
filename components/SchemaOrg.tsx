@@ -1,4 +1,3 @@
-import React from 'react';
 import { WebPage, WithContext } from 'schema-dts';
 
 interface SchemaOrgProps {
