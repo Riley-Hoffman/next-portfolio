@@ -1,6 +1,6 @@
 'use client';
-import { useScrollY } from '../../hooks/useScrollY';
-import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { useScrollY } from '../../../hooks/useScrollY';
+import { useReducedMotion } from '../../../hooks/useReducedMotion';
 
 interface MyJourneyWrapperProps {
     children: React.ReactNode;

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useParallax } from '../../hooks/useParallax';
+import { useParallax } from '../../../hooks/useParallax';
 
 interface CoverImageProps {
     width: number,

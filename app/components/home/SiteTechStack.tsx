@@ -1,5 +1,5 @@
 'use client'
-import { useTriggerOnScroll } from '../../hooks/useTriggerOnScroll';
+import { useTriggerOnScroll } from '../../../hooks/useTriggerOnScroll';
 
 interface Tech {
   name: string;

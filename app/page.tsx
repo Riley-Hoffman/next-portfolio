@@ -1,10 +1,10 @@
 import SchemaOrg from '../components/SchemaOrg';
 import { LazyLoadLink } from '../hooks/LazyLoadLink';
-import { CoverImage } from './components/CoverImage';
-import { FirstFoldContent } from './components/FirstFoldContent';
-import { MyJourneyWrapper } from './components/MyJourneyWrapper';
-import { MyJourney } from './components/MyJourney';
-import { SiteTechStack } from './components/SiteTechStack';
+import { CoverImage } from './components/home/CoverImage';
+import { FirstFoldContent } from './components/home/FirstFoldContent';
+import { MyJourneyWrapper } from './components/home/MyJourneyWrapper';
+import { MyJourney } from './components/home/MyJourney';
+import { SiteTechStack } from './components/home/SiteTechStack';
 
 interface Tech {
   name: string;
@@ -31,11 +31,11 @@ export default function Home() {
         </MyJourneyWrapper>
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetSelector="#siteTechStack" />
         <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" id="siteTechStack">
-      <div className="max-w-screen-xl container mx-auto text-center">
-        <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
-        <SiteTechStack technologies={technologies} />
-        </div>
-      </section>
+          <div className="max-w-screen-xl container mx-auto text-center">
+            <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
+            <SiteTechStack technologies={technologies} />
+          </div>
+        </section>
     </>
   )
 }
