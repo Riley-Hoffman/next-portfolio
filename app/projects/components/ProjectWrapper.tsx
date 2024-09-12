@@ -1,6 +1,6 @@
 import { ProjectBox } from './ProjectBox';
 import { ProjectContent } from './ProjectContent';
-import { Project } from '../page';
+import { Project } from './ProjectData';
 
 interface ProjectWrapperProps {
   project: Project;
