@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
     : 'jpeg';
 
   try {
-    let imagePath = join(process.cwd(), 'images', path);
+    const imagePath = join(process.cwd(), 'images', path);
 
     const buffer = await fs.readFile(imagePath);
 
