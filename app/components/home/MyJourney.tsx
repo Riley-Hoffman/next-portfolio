@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import headshot from '../../../images/headshot.webp';
+import { LinkedInButtonWrapper } from './LinkedInButtonWrapper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
@@ -17,10 +17,10 @@ export const MyJourney: React.FC = () =>  {
                 <p>Captivated by the potential for creativity and continous growth, I completed Web Development Bootcamp at Juno College of Technology in 2021.</p> 
                 <p>I believe that by prioritizing accessibility in our work as web developers we make our contributions to the online world more meaningful.</p>
                 <p className="mt-10">
-                    <Link className="inline-block motion-safe:hover:animate-[wiggle_1s] button group" href="https://www.linkedin.com/in/riley-hoffman-014623213" target="_blank" rel="noopener noreferrer">
+                    <LinkedInButtonWrapper>
                         <FontAwesomeIcon className="p-2 box-content text-5xl text-zinc bg-pink-200 group-hover:bg-zinc group-hover:text-pink-200" icon={faLinkedinIn} /> 
                         <span className="px-6 new-tab">Follow me on LinkedIn<span className="sr-only">(opens in a new tab)</span><span aria-hidden="true"></span></span>
-                    </Link>
+                    </LinkedInButtonWrapper>
                 </p>
             </div>
         </div>
