@@ -1,5 +1,5 @@
 import SchemaOrg from '../components/SchemaOrg';
-import { LazyLoadLink } from '../hooks/LazyLoadLink';
+import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';
 import { MyJourneyWrapper } from './components/home/MyJourneyWrapper';
@@ -26,7 +26,7 @@ export default function Home() {
         <CoverImage width={1920} height={1080} srcImg="/api/optimize-image?path=/clouds.webp&width=1920&format=webp">
             <FirstFoldContent />
         </CoverImage>
-        <MyJourneyWrapper>
+        <MyJourneyWrapper> 
             <MyJourney/>
         </MyJourneyWrapper>
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetSelector="#siteTechStack" />
