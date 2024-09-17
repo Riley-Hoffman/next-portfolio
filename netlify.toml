@@ -41,6 +41,11 @@ for = "/*"
     Cache-Control = "max-age=31536000"
 
 [[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[[headers]]
   for = "/*.jpg"
   [headers.values]
     Cache-Control = "max-age=31536000"
