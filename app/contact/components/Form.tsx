@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { Legend } from './Legend';
 import { FormField } from './FormField';
@@ -11,14 +12,25 @@ export interface FormState {
 }
 
 export function Form() {
-    const { formState, errors, handleChange, handleSubmitClick, handleSubmit, submitted } = useFormValidation({
+    const { formState, errors, formError, handleChange, handleSubmitClick, handleSubmit, submitted } = useFormValidation({
         name: '',
         email: '',
         message: '',
     });
 
-    const { name, email, message } = formState;
+    useEffect(() => {
+        const generateCsrfToken = async () => {
+            const response = await fetch('/api/csrf-token');
+            const data = await response.json();
+            if (data.token) {
+                localStorage.setItem('csrf-token', data.token);
+            }
+        };
+        
+        generateCsrfToken();
+    }, []);
 
+    const { name, email, message } = formState;
     return (
         <form className="max-w-screen-md pt-5 px-5 pb-10" onSubmit={handleSubmit}>
             <fieldset>
@@ -38,6 +50,11 @@ export function Form() {
                     {errors.name && <span>{errors.name}</span>}
                     {errors.email && <span>{errors.email}</span>}
                     {errors.message && <span>{errors.message}</span>}
+                </p>
+            )}
+            {formError && (
+                <p className="text-red-500" aria-live="polite">
+                    {formError}
                 </p>
             )}
             <SubmitButton handleSubmitClick={handleSubmitClick} />
