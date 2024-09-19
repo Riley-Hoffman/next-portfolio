@@ -1,8 +1,8 @@
 'use client'
 import { useRef, useCallback, useState, useMemo } from 'react';
-import { faMedal } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Particle } from '../classes/Particle';
+import { PlayAgain } from './PlayAgain';
+import { CompletionMessage } from './CompletionMessage';
 import { useParticleCleanupEvents } from '../hooks/useParticleCleanupEvents';
 
 type Refs = {
@@ -211,17 +211,7 @@ export const ParticleCleanup: React.FC = () => {
         <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={(el) => {refs.current.canvas = el}} />
         <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
           {refs.current.allClean && (
-            <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center font-source-sans absolute p-0 m-0 text-2xl text-center bg-white completion-message" tabIndex={-1}>
-              All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
-              <span className="font-extrabold uppercase" aria-live="polite">
-                {medalDetails && (
-                  <span className="text-xl leading-normal md:text-2xl md:leading-normal" aria-live="polite">
-                    {medalDetails.text} <br />
-                    <FontAwesomeIcon className="block mx-auto text-6xl animate-[spin_2.4s_infinite]" icon={faMedal} color={medalDetails.color} />
-                  </span>
-                )}
-              </span>
-            </p>
+            <CompletionMessage medalDetails={medalDetails} time={state.time} />
           )}
         </div>
       </div>
@@ -230,7 +220,7 @@ export const ParticleCleanup: React.FC = () => {
           {state.cursorMessage}
         </p>
       )}
-      <p><button className="p-3 button" onClick={reloadAnimation}>Play Again</button></p>
+      <PlayAgain reloadAnimation={reloadAnimation} />
     </>
     );
   };
