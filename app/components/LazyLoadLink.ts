@@ -1,13 +1,13 @@
 'use client';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 interface LazyLoadLinkProps {
   href: string;
   rel: string;
-  targetSelector: string;
+  targetRef: React.RefObject<HTMLElement>;
 }
 
-export const LazyLoadLink: React.FC<LazyLoadLinkProps> = ({ href, rel, targetSelector }) => {
+export const LazyLoadLink: React.FC<LazyLoadLinkProps> = ({ href, rel, targetRef }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -21,15 +21,15 @@ export const LazyLoadLink: React.FC<LazyLoadLinkProps> = ({ href, rel, targetSel
       },
       { threshold: 0.1 }
     );
-    const targetElement = document.querySelector(targetSelector);
-    if (targetElement) {
-      observer.observe(targetElement);
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
     }
 
     return () => {
       observer.disconnect();
     };
-  }, [href, rel, targetSelector]);
+  }, [href, rel, targetRef]);
 
   return null;
 };

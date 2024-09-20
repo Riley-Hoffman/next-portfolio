@@ -1,3 +1,5 @@
+'use client';
+import { useRef } from 'react';
 import SchemaOrg from '../components/SchemaOrg';
 import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
@@ -13,6 +15,8 @@ interface Tech {
 }
 
 export default function Home() {
+  const targetRef = useRef<HTMLDivElement>(null);
+
   const technologies: Tech[] = [
     { name: 'React', logo: 'devicon-react-original', url: 'https://react.dev' },
     { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },
@@ -29,10 +33,9 @@ export default function Home() {
         <MyJourneyWrapper> 
             <MyJourney/>
         </MyJourneyWrapper>
-        <LazyLoadLink href="/devicon.css" rel="stylesheet" targetSelector="#siteTechStack" />
-        <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" id="siteTechStack">
+        <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
+        <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
           <div className="max-w-screen-xl container mx-auto text-center">
-            <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
             <SiteTechStack technologies={technologies} />
           </div>
         </section>
