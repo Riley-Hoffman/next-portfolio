@@ -6,7 +6,7 @@ import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';
 import { MyJourneyWrapper } from './components/home/MyJourneyWrapper';
 import { MyJourney } from './components/home/MyJourney';
-import { SiteTechStack } from './components/home/SiteTechStack';
+import { SiteTechStack } from './components/home/SiteTechStack/SiteTechStack';
 
 interface Tech {
   name: string;
