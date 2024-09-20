@@ -5,8 +5,14 @@ import { useScrollHandler } from './useScrollHandler';
 export const useParallax = (velocity: number = 0.1): React.RefObject<HTMLDivElement> => {
     const prefersReducedMotion = useReducedMotion();
     const parallaxRef = useRef<HTMLDivElement>(null);
-    const scrollRef = useRef<number>(window.scrollY);
+    const scrollRef = useRef<number>(0);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            scrollRef.current = window.scrollY;
+        }
+    }, []);
+    
     const updateImagePosition = useCallback(() => {
         if (parallaxRef.current && !prefersReducedMotion) {
             const img = parallaxRef.current.querySelector('img');
