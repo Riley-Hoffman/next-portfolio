@@ -5,7 +5,7 @@ import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';
 import { MyJourney } from './components/home/MyJourney';
-import { SiteTechStack } from './components/home/SiteTechStack/SiteTechStack';
+import { SiteTechStack } from './components/home/SiteTechStack';
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);

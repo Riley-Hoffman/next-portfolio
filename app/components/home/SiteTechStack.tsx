@@ -1,6 +1,5 @@
 import { useMemo, useEffect } from 'react';
-import { SiteTechStackHeading } from './SiteTechStackHeading';
-import { useTriggerOnScroll } from '../../../../hooks/useTriggerOnScroll';
+import { useTriggerOnScroll } from '../../../hooks/useTriggerOnScroll';
 
 interface Tech {
   name: string;
@@ -42,7 +41,7 @@ export const SiteTechStack: React.FC<SiteTechStackClientProps> = () => {
 
     return (
     <>
-      <SiteTechStackHeading />
+      <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl min-h-40" aria-label="Site tech stack.">
         {technologies.map((tech) => (
           <li key={tech.name} className="overflow-hidden relative" ref={(el) => { if (el) { elementsRef.current.push(el); } }}>
