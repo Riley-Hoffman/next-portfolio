@@ -1,4 +1,3 @@
-'use client'
 import { useMemo, useEffect } from 'react';
 import { SiteTechStackHeading } from './SiteTechStackHeading';
 import { useTriggerOnScroll } from '../../../../hooks/useTriggerOnScroll';
@@ -13,29 +12,35 @@ interface SiteTechStackClientProps {
   technologies: Tech[];
 }
 
-export const SiteTechStack: React.FC<SiteTechStackClientProps> = ({ technologies }) => {
-  const elementsRef = useTriggerOnScroll();
-  const animation = useMemo(() => [
-    "md:motion-safe:h-[0px]",
-    "[&[data-active='true']]:h-[160px]",
-    "transition-all",
-    "first:duration-300",
-    "[&:nth-child(2)]:duration-500",
-    "[&:nth-child(3)]:duration-700",
-    "last:duration-1000",
-    "ease"
-  ], []);
-  useEffect(() => {
-    if (elementsRef.current) {
-      elementsRef.current.forEach((element: HTMLElement) => {
-        animation.forEach((className) => {
-          element.classList.add(className);
+export const SiteTechStack: React.FC<SiteTechStackClientProps> = () => {
+    const technologies: Tech[] = [
+      { name: 'React', logo: 'devicon-react-original', url: 'https://react.dev' },
+      { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },
+      { name: 'TypeScript', logo: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org' },
+      { name: 'Tailwind CSS', logo: 'devicon-tailwindcss-original', url: 'https://tailwindcss.com' },
+    ];
+    const elementsRef = useTriggerOnScroll();
+    const animation = useMemo(() => [
+      "md:motion-safe:h-[0px]",
+      "[&[data-active='true']]:h-[160px]",
+      "transition-all",
+      "first:duration-300",
+      "[&:nth-child(2)]:duration-500",
+      "[&:nth-child(3)]:duration-700",
+      "last:duration-1000",
+      "ease"
+    ], []);
+    useEffect(() => {
+      if (elementsRef.current) {
+        elementsRef.current.forEach((element: HTMLElement) => {
+          animation.forEach((className) => {
+            element.classList.add(className);
+          });
         });
-      });
-    }
-  }, [animation, elementsRef]);
+      }
+    }, [animation, elementsRef]);
 
-  return (
+    return (
     <>
       <SiteTechStackHeading />
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl min-h-40" aria-label="Site tech stack.">

@@ -7,21 +7,8 @@ import { FirstFoldContent } from './components/home/FirstFoldContent';
 import { MyJourney } from './components/home/MyJourney';
 import { SiteTechStack } from './components/home/SiteTechStack/SiteTechStack';
 
-interface Tech {
-  name: string;
-  logo: string;
-  url: string;
-}
-
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
-
-  const technologies: Tech[] = [
-    { name: 'React', logo: 'devicon-react-original', url: 'https://react.dev' },
-    { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },
-    { name: 'TypeScript', logo: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org' },
-    { name: 'Tailwind CSS', logo: 'devicon-tailwindcss-original', url: 'https://tailwindcss.com' },
-  ];
 
   return (
     <>
@@ -33,7 +20,7 @@ export default function Home() {
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
         <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
           <div className="max-w-screen-xl container mx-auto text-center">
-            <SiteTechStack technologies={technologies} />
+            <SiteTechStack technologies={[]} />
           </div>
         </section>
     </>
