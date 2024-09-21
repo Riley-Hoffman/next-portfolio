@@ -4,8 +4,7 @@ import SchemaOrg from '../components/SchemaOrg';
 import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';
-import { MyJourneyWrapper } from './components/home/MyJourneyWrapper';
-import { MyJourneyContent } from './components/home/MyJourneyContent';
+import { MyJourney } from './components/home/MyJourney';
 import { SiteTechStack } from './components/home/SiteTechStack/SiteTechStack';
 
 interface Tech {
@@ -30,9 +29,7 @@ export default function Home() {
         <CoverImage width={1920} height={1080} srcImg="/api/optimize-image?path=/clouds.webp&width=1920&format=webp">
             <FirstFoldContent />
         </CoverImage>
-        <MyJourneyWrapper> 
-            <MyJourneyContent />
-        </MyJourneyWrapper>
+        <MyJourney /> 
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
         <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
           <div className="max-w-screen-xl container mx-auto text-center">

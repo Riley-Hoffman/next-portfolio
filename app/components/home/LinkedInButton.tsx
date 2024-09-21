@@ -1,12 +1,10 @@
+import { useRef } from 'react';
 import Link from 'next/link';
 import { useTimedEffect } from '../../../hooks/useTimedEffect';
-import { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-interface LinkedInButtonWrapperProps {
-    children: React.ReactNode;
-}
-
-export const LinkedInButtonWrapper: React.FC<LinkedInButtonWrapperProps> = ({ children }) => {
+export const LinkedInButton: React.FC = () => {
     const buttonRef = useRef<HTMLAnchorElement>(null);
     const { triggerEffect } = useTimedEffect(1000);
 
@@ -23,7 +21,8 @@ export const LinkedInButtonWrapper: React.FC<LinkedInButtonWrapperProps> = ({ ch
             rel="noopener noreferrer"
             onMouseEnter={() => triggerEffect(applyEffect)}
         >
-            {children}
+            <FontAwesomeIcon className="p-2 box-content text-5xl text-zinc bg-pink-200 group-hover:bg-zinc group-hover:text-pink-200" icon={faLinkedinIn} /> 
+            <span className="px-6 new-tab">Follow me on LinkedIn<span className="sr-only">(opens in a new tab)</span><span aria-hidden="true"></span></span>
         </Link>
     );
 };
