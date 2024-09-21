@@ -1,5 +1,4 @@
-'use client';
-import { useRef, useEffect} from 'react';
+import { useRef } from 'react';
 import { useReducedMotion } from '../../../hooks/useReducedMotion';
 import { useScrollHandler } from '../../../hooks/useScrollHandler'; 
 
@@ -11,12 +10,6 @@ export const MyJourneyWrapper: React.FC<MyJourneyWrapperProps> = ({ children }) 
     const prefersReducedMotion = useReducedMotion();
     const sectionRef = useRef<HTMLElement | null>(null);
     const scrollRef = useRef<number>(0);
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            scrollRef.current = window.scrollY;
-        }
-    }, []);
 
     useScrollHandler(() => {
         scrollRef.current = window.scrollY;

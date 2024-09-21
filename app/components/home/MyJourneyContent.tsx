@@ -4,7 +4,7 @@ import { LinkedInButtonWrapper } from './LinkedInButtonWrapper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-export const MyJourney: React.FC = () =>  {
+export const MyJourneyContent: React.FC = () =>  {
   return (
     <div className="max-w-screen-xl">
         <div className="items-center md:flex">

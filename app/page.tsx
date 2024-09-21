@@ -5,7 +5,7 @@ import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';
 import { MyJourneyWrapper } from './components/home/MyJourneyWrapper';
-import { MyJourney } from './components/home/MyJourney';
+import { MyJourneyContent } from './components/home/MyJourneyContent';
 import { SiteTechStack } from './components/home/SiteTechStack/SiteTechStack';
 
 interface Tech {
@@ -31,7 +31,7 @@ export default function Home() {
             <FirstFoldContent />
         </CoverImage>
         <MyJourneyWrapper> 
-            <MyJourney/>
+            <MyJourneyContent />
         </MyJourneyWrapper>
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
         <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
