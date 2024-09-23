@@ -1,7 +1,6 @@
 import './styles/globals.css';
 import type { Metadata } from 'next';
-import { Suspense, lazy } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import dynamic from 'next/dynamic';
 import { Header } from './components/header/Header';
 import { Footer } from './components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
   },
 }
 
-const LazyBackToTopButton = lazy(() => import('./components/BackToTopButton').then(module => ({ default: module.BackToTopButton })));
+const DynamicImports = dynamic(() => import('./components/DynamicImports'));
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -40,12 +39,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
           {children}
         </main>
-        <Suspense fallback={null}>
-          <LazyBackToTopButton />
-        </Suspense>
+        <DynamicImports />
         <Footer />
       </body>
-        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS!} />
     </html>
   );
 }
