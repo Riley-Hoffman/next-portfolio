@@ -25,18 +25,7 @@ export function Accordion({ items, label }: AccordionProps) {
             if (button) {
                 button.classList.add('init');
             }
-        });     
-        const peers = document.querySelectorAll('.peer.accordion');
-        peers.forEach(peer => {
-            const isExpanded = peer.getAttribute('aria-expanded') === 'true';
-            if (peer.classList.contains('init') && !isExpanded) {
-                let nextSibling = peer.nextElementSibling!.firstElementChild;
-                while (nextSibling) {
-                    nextSibling.classList.add('hidden');
-                    nextSibling = nextSibling.nextElementSibling;
-                }
-            }
-        });   
+        });      
         if (openIndex !== null && contentRefs.current[openIndex]) {
             contentRefs.current[openIndex]?.focus();
         }
@@ -50,7 +39,7 @@ export function Accordion({ items, label }: AccordionProps) {
                         <div className="p-3 mr-5  mb-[0.063rem] box-content text-xs text-pink-200 bg-zinc rounded-[50%] transition-all duration-200 ease-in-out group-hover:text-zinc group-focus-visible:text-zinc group-aria-expanded:text-zinc group-hover:bg-purple-100 group-focus-visible:bg-purple-100 group-aria-expanded:bg-purple-100 plus-minus after:h-[0.625rem] before:w-[0.625rem]"></div>
                         {item.question}
                     </button>
-                    <div className="px-5 transition-all duration-500 ease-in-out peer-aria-expanded:[&>*]:block peer-aria-expanded:m-b-4 peer-aria-expanded:py-[0.125rem]" tabIndex={-1} ref={(el) => { contentRefs.current[index] = el; }} >
+                    <div className={`px-5 transition-all duration-500 ease-in-out ${openIndex === index ? '[&>*]:block m-b-4 py-[0.125rem]' : 'peer-[.init]:hidden'}`} tabIndex={-1} ref={(el) => { contentRefs.current[index] = el; }} >
                         {item.answer}
                     </div>
                 </li>
