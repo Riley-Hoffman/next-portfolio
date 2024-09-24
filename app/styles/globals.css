@@ -154,11 +154,11 @@
   .button {
   color:#fff
   }
-  ::placeholder {
+  body ::placeholder {
   color:#000
   }
   html,.overlay:before {
-  background-color:#fff
+  background-color:#ffffffa8
   }
   }
 }
