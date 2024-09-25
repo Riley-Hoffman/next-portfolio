@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Hamburger } from './Hamburger';
 import { NavListItem } from './NavListItem';
+import { NewTabSrText } from '../../components/NewTabSrText';
 import { RouteList } from '../../../components/RouteList';
 
 
@@ -80,12 +81,13 @@ export function Header() {
             </div>
             <noscript>
                 <nav className="px-4 md:hidden">
-                    <ul className="flex flex-wrap gap-2 font-medium">
+                    <ul className="flex flex-wrap gap-x-2 gap-y-3 font-medium">
                     {RouteList.map(route => (
                         (route.name !== 'Particle Cleanup Game' && route.name !== 'Accessibility' &&
                         <li key={route.path}><Link className="button p-1" href={route.path}>{route.name}</Link></li>
                         )
                     ))}
+                    <li><a className="button p-1" href="riley-hoffman-resume.pdf">Resume <NewTabSrText /></a></li>
                     </ul>
                 </nav>
             </noscript>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { NewTabSrText } from '../../components/NewTabSrText';
 
 interface NavListItemProps {
     to?: string;
@@ -19,7 +20,7 @@ export const NavListItem: React.FC<NavListItemProps> = ({
     return (
         <li className="block md:inline">
             {resume ? (
-                <a className={`button new-tab ${commonClasses} ${hiddenClass}`} href={resume} target="_blank" rel="noopener noreferrer" >Resume<span className="sr-only">(opens in a new tab)</span><span aria-hidden="true"></span></a>
+                <a className={`button new-tab ${commonClasses} ${hiddenClass}`} href={resume} target="_blank" rel="noopener noreferrer" >Resume<NewTabSrText icon={true} /></a>
             ) : (
                 <Link className={`button ${commonClasses} ${hiddenClass} hover:[&.active]:brightness-100 [&.active]:bg-pink-200 [&.active]:text-zinc`} href={to}>{label}</Link>
             )}

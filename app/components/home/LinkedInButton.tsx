@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import Link from 'next/link';
+import { NewTabSrText } from '../../components/NewTabSrText';
 import { useTimedEffect } from '../../../hooks/useTimedEffect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -22,7 +23,7 @@ export const LinkedInButton: React.FC = () => {
             onMouseEnter={() => triggerEffect(applyEffect)}
         >
             <FontAwesomeIcon className="p-2 box-content text-5xl text-zinc bg-pink-200 group-hover:bg-zinc group-hover:text-pink-200" icon={faLinkedinIn} /> 
-            <span className="px-6 new-tab">Follow me on LinkedIn<span className="sr-only">(opens in a new tab)</span><span aria-hidden="true"></span></span>
+            <span className="px-6 new-tab">Follow me on LinkedIn<NewTabSrText icon={true} /></span>
         </Link>
     );
 };

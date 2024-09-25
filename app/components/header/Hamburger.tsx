@@ -53,6 +53,9 @@ export const Hamburger: React.FC<HamburgerProps> = ({ expanded }) => {
                 ))}
             </button>
             <button className="w-full h-full z-10 cursor-default fixed top-0 right-0 bottom-0 left-0 hidden closer peer-aria-expanded:block" onClick={toggleMenu} aria-hidden="true"></button>
+            <noscript>
+                <style>{`.hamburger { display: none; }`}</style>
+            </noscript>
         </>
     );
 };

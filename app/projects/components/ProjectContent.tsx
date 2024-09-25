@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { NewTabSrText } from '../../components/NewTabSrText';
 
 interface ProjectLinksProps {
   title: string;
@@ -23,7 +24,7 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
 
   return (
     <>
-    <div className="pt-5 pb-10 basis-2/4 project-info">
+      <div className="pt-5 pb-10 basis-2/4 project-info">
         <h2 className="pb-4">{title}</h2>
         <p className="pb-4 mb-8 text-lg font-poppins" translate="no">
           {skills}
@@ -39,15 +40,13 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
         ) : (
           <a className={`mx-5 p-y-1 p-x-4 new-tab ${commonClasses}`} href={liveUrl} target="_blank" rel="noopener noreferrer" >
             {liveContent}
-            <span className="sr-only">(opens in a new tab)</span>
-            <span aria-hidden="true"></span>
+            <NewTabSrText icon={true} />
           </a>
         )}
         {gitUrl && (
           <a className={`mr-5 ml-3 ${commonClasses} new-tab`} href={gitUrl} target="_blank" rel="noopener noreferrer" >
             <span className="sr-only">{title} </span>Repo
-            <span className="sr-only">(opens in a new tab)</span>
-            <span aria-hidden="true"></span>
+            <NewTabSrText icon={true} />
           </a>
         )}
       </div>
