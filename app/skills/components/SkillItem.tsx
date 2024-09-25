@@ -10,19 +10,17 @@ interface SkillItemProps {
   image?: boolean;
 }
 
-export const SkillItem: React.FC<SkillItemProps> = ({ skill, icon, devicon, image }) => {
-  return (
-    <li className="text-center">
-      <div className="flex justify-center items-center min-h-[2.766rem] skill-icon-box">
-        {devicon ? (
-          <i className={`text-5xl ${devicon}`} aria-hidden="true"></i>
-        ) : image ? (
-          <Image src={wcag} className="w-20" alt="" width="300" height="71" />
-        ) : icon ? (
-          <FontAwesomeIcon className="text-5xl" icon={icon} />
-        ) : null} 
-      </div>
-      <p className="mt-1" translate="no">{skill}</p>
-    </li>
-  );
-};
+export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) =>  ( 
+  <li className="text-center">
+    <div className="flex justify-center items-center min-h-[2.766rem] skill-icon-box">
+      {devicon ? (
+        <i className={`text-5xl ${devicon}`} aria-hidden="true"></i>
+      ) : image ? (
+        <Image src={wcag} className="w-20" alt="" width="300" height="71" />
+      ) : icon ? (
+        <FontAwesomeIcon className="text-5xl" icon={icon} />
+      ) : null} 
+    </div>
+    <p className="mt-1" translate="no">{skill}</p>
+  </li>
+);

@@ -8,15 +8,9 @@ interface NavListItemProps {
     resume?: string;
 }
 
-export const NavListItem: React.FC<NavListItemProps> = ({
-    to = '',
-    label = '',
-    hide = false,
-    resume = ''
-}) => {
+export const NavListItem = ({ to = '', label = '', hide = false, resume = '' }: NavListItemProps) =>  {
     const commonClasses = 'w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button md:py-2 md:px-4 md:inline-block md:w-auto hover:[&.button]:bg-pink-200 hover:brightness-90';
     const hiddenClass = hide ? 'hidden' : '';    
-
     return (
         <li className="block md:inline">
             {resume ? (

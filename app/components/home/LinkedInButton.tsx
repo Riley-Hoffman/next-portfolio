@@ -5,7 +5,7 @@ import { useTimedEffect } from '../../../hooks/useTimedEffect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-export const LinkedInButton: React.FC = () => {
+export const LinkedInButton = () => {
     const buttonRef = useRef<HTMLAnchorElement>(null);
     const { triggerEffect } = useTimedEffect(1000);
 

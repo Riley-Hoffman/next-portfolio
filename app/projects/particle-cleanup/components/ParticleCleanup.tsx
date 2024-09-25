@@ -25,7 +25,7 @@ type State = {
   cursorMessageRead: boolean;
 };
 
-export const ParticleCleanup: React.FC = () => {
+export const ParticleCleanup = () => {
   const refs = useRef<Refs>({
     canvas: null,
     container: null,

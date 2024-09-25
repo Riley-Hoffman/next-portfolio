@@ -5,7 +5,7 @@ import { LinkedInButton } from './LinkedInButton';
 import { useReducedMotion } from '../../../hooks/useReducedMotion';
 import { useScrollHandler } from '../../../hooks/useScrollHandler';
 
-export const MyJourney: React.FC = () => {
+export const MyJourney = () => {
     const prefersReducedMotion = useReducedMotion();
     const sectionRef = useRef<HTMLElement | null>(null);
     const scrollRef = useRef<number>(0);

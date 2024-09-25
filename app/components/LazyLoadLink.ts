@@ -5,8 +5,7 @@ interface LazyLoadLinkProps {
   rel: string;
   targetRef: React.RefObject<HTMLElement>;
 }
-
-export const LazyLoadLink: React.FC<LazyLoadLinkProps> = ({ href, rel, targetRef }) => {
+export const LazyLoadLink = ({ href, rel, targetRef }: LazyLoadLinkProps) =>  {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

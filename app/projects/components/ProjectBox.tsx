@@ -9,12 +9,7 @@ interface ProjectBoxProps {
   children: React.ReactNode;
 }
 
-export const ProjectBox: React.FC<ProjectBoxProps> = ({
-  inverted,
-  animation,
-  isFirst,
-  children,
-}) => {
+export const ProjectBox = ({ inverted, animation, isFirst, children, }: ProjectBoxProps) =>  { 
   const elementsRef = useTriggerOnScroll();
 
   useEffect(() => {

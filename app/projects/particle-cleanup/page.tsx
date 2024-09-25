@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function ParticleCleanupWrapper() {
-
   return (
     <>
       <SchemaOrg headline="Particle Cleanup Game - Riley Hoffman - Web Developer" description="How quickly can you clear all the particles from the board using your cursor or finger?" image="/static/media/riley.d8092b303038937a099e.jpg" datePublished="2024-07-04T09:25:01.340Z" />

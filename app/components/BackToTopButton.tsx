@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const BackToTopButton: React.FC = () => {
+export const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
   const handleScroll = () => {

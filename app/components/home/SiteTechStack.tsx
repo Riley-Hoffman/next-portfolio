@@ -7,11 +7,7 @@ interface Tech {
   url: string;
 }
 
-interface SiteTechStackClientProps {
-  technologies: Tech[];
-}
-
-export const SiteTechStack: React.FC<SiteTechStackClientProps> = () => {
+export const SiteTechStack = () => {
     const technologies: Tech[] = [
       { name: 'React', logo: 'devicon-react-original', url: 'https://react.dev' },
       { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },

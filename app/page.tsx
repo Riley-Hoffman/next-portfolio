@@ -20,7 +20,7 @@ export default function Home() {
         <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
         <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
           <div className="max-w-screen-xl container mx-auto text-center">
-            <SiteTechStack technologies={[]} />
+            <SiteTechStack />
           </div>
         </section>
     </>

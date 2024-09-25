@@ -6,8 +6,7 @@ interface SchemaOrgProps {
   image: string;
   datePublished: string;
 }
-
-const SchemaOrg: React.FC<SchemaOrgProps> = ({ headline, description, image, datePublished }) => {
+const SchemaOrg = ({ headline, description, image, datePublished }: SchemaOrgProps) =>  {
   const structuredData: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
