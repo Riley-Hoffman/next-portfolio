@@ -47,7 +47,7 @@ export const SiteTechStack: React.FC<SiteTechStackClientProps> = () => {
           <li key={tech.name} className="overflow-hidden relative" ref={(el) => { if (el) { elementsRef.current.push(el); } }}>
               <a className="p-5 mx-auto w-fit min-w-[13.1rem] min-h-[9.5rem] no-underline block bg-pink-100 hover:bg-zinc hover:text-pink-100 transition-shadow duration-300" href={tech.url}  target="_blank" rel="noopener noreferrer">
                 <i className={`${tech.logo} mx-auto text-7xl`} aria-hidden="true"></i>
-                <p className="my-1 text-xl">{tech.name}</p>
+                <p className="my-1 text-xl" translate="no">{tech.name}</p>
               </a>
           </li>
         ))}
