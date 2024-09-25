@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import SchemaOrg from '../../components/SchemaOrg';
+import SchemaOrg from '../components/SchemaOrg';
 
 export const metadata: Metadata = {
     title: 'Accessibility',

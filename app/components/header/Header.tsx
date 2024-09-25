@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Hamburger } from './Hamburger';
 import { NavListItem } from './NavListItem';
 import { NewTabSrText } from '../../components/NewTabSrText';
-import { RouteList } from '../../../components/RouteList';
+import { RouteList } from '../RouteList';
 
 
 interface MenuLink {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SchemaOrg from '../../components/SchemaOrg';
+import SchemaOrg from '../components/SchemaOrg';
 import { projects } from './components/ProjectData';
 import { ProjectBox } from './components/ProjectBox';
 import { ProjectContent } from './components/ProjectContent';

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import SchemaOrg from '../../components/SchemaOrg';
+import SchemaOrg from '../components/SchemaOrg';
 import { Accordion } from './components/Accordion';
 import { questions, answers } from './components/AccordionItems';
 

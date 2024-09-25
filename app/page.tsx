@@ -1,6 +1,6 @@
 'use client';
 import { useRef } from 'react';
-import SchemaOrg from '../components/SchemaOrg';
+import SchemaOrg from './components/SchemaOrg';
 import { LazyLoadLink } from './components/LazyLoadLink';
 import { CoverImage } from './components/home/CoverImage';
 import { FirstFoldContent } from './components/home/FirstFoldContent';

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import SchemaOrg from '../../components/SchemaOrg';
+import SchemaOrg from '../components/SchemaOrg';
 import { Form } from './components/Form';
 
 export const metadata: Metadata = {

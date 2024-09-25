@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import '../../public/devicon.css';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
-import SchemaOrg from '../../components/SchemaOrg';
+import SchemaOrg from '../components/SchemaOrg';
 import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
