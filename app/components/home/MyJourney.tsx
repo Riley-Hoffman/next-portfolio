@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Image from 'next/image';
-import headshot from '../../../images/headshot.webp';
+import headshot from '../../images/headshot.webp';
 import { LinkedInButton } from './LinkedInButton'; 
 import { useReducedMotion } from '../../../hooks/useReducedMotion';
 import { useScrollHandler } from '../../../hooks/useScrollHandler';
