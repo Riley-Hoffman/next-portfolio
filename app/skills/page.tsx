@@ -1,48 +1,25 @@
 import type { Metadata } from 'next';
 import '../../public/devicon.css';
-import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
 import SchemaOrg from '../components/SchemaOrg';
+import { skills } from './components/SkillList';
 import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
+  title: 'Skills',
+  description: 'My skills. Riley Hoffman - Web Developer.',
+  metadataBase: new URL('https://rileyhoffman.com/skills'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    images: '/thumbnail.jpg',
     title: 'Skills',
-    description: 'My skills. Riley Hoffman - Web Developer.',
-    metadataBase: new URL('https://rileyhoffman.com/skills'),
-    alternates: {
-        canonical: '/',
-    },
-    openGraph: {
-      images: '/thumbnail.jpg',
-        title: 'Skills',
-        url: 'https://rileyhoffman.com/skills'
-      },
+    url: 'https://rileyhoffman.com/skills'
+  },
 };
 
 export default function Skills()  {
-  const skills = [
-    { skill: 'HTML5', devicon: 'devicon-html5-plain' },
-    { skill: 'CSS3', devicon: 'devicon-css3-plain' },
-    { skill: 'Javascript + ES6', devicon: 'devicon-javascript-plain' },
-    { skill: 'Typescript', devicon: 'devicon-typescript-plain' },
-    { skill: 'SASS', devicon: 'devicon-sass-original' },
-    { skill: 'Tailwind CSS', devicon: 'devicon-tailwindcss-original' },
-    { skill: 'React', devicon: 'devicon-react-original' },
-    { skill: 'Next.js', devicon: 'devicon-nextjs-plain' },
-    { skill: 'Vue.js', devicon: 'devicon-vuejs-plain' },
-    { skill: 'Rest API', icon: faArrowsAltH },
-    { skill: 'WCAG', image: true },
-    { skill: 'Git', devicon: 'devicon-git-plain' },
-    { skill: 'jQuery', devicon: 'devicon-jquery-plain' },
-    { skill: 'Wordpress', devicon: 'devicon-wordpress-plain' },
-    { skill: 'PHP', devicon: 'devicon-php-plain' },
-    { skill: 'Firebase', devicon: 'devicon-firebase-plain' },
-    { skill: 'JSON', devicon: 'devicon-json-plain' },
-    { skill: 'Netlify', devicon: 'devicon-netlify-plain' },
-    { skill: 'npm', devicon: 'devicon-npm-original-wordmark' },
-    { skill: 'SEO', icon: faMagnifyingGlassChart },
-  ];
-
+  
   return (
     <>
       <SchemaOrg headline="Skills - Riley Hoffman - Web Developer" description="My skills. Riley Hoffman - Web Developer." image="/static/media/riley.d8092b303038937a099e.jpg" datePublished="2024-07-04T09:25:01.340Z" />
