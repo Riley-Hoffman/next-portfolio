@@ -1,7 +1,7 @@
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
 
-export const skills = [
+export const SkillsData = [
     { skill: 'HTML5', devicon: 'devicon-html5-plain' },
     { skill: 'CSS3', devicon: 'devicon-css3-plain' },
     { skill: 'Javascript + ES6', devicon: 'devicon-javascript-plain' },

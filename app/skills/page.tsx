@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../../public/devicon.css';
 import SchemaOrg from '../components/SchemaOrg';
-import { skills } from './components/SkillList';
+import { SkillsData } from './components/SkillsData';
 import { SkillItem } from './components/SkillItem';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function Skills()  {
         <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Skills</h1>
         <div className="max-w-screen-xl relative">
             <ul className="max-w-5xl pt-9 pb-12 mt-16 grid grid-cols-2 gap-y-16 gap-x-6 justify-items-center skills-list sm:grid-cols-3 md:grid-cols-4" aria-label="Skills">
-              {skills.map((skill, index) => (
+              {SkillsData.map((skill, index) => (
                 <SkillItem key={index} skill={skill.skill} devicon={skill.devicon} icon={skill.icon} image={skill.image} />
               ))}
             </ul>
