@@ -90,10 +90,9 @@ export const Carousel = ({ slides }: CarouselProps) => {
           <li
             key={index}
             className="min-w-full h-fit flex items-center justify-center bg-gray-200"
-          >
+            >
             <Image
-              src={slide.src}
-              alt={slide.alt}
+              {...slide}
               className="max-w-full w-[900px]"
               width="900"
               height="695"
