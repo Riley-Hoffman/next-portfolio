@@ -79,10 +79,8 @@ export const Carousel = ({ slides }: CarouselProps) => {
   }, [currentIndex, totalSlides]);
 
   return (
-    <div className="relative max-w-[700px] overflow-hidden">
+    <div className="relative max-w-[700px] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
       <ol
-        role="listbox"
-        aria-labelledby="#trainingsLabel"
         className={`flex ${isTransitioning && !noTransition ? 'transition-transform duration-500' : ''}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)`, }}
       >
