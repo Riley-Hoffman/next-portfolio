@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import '../../public/devicon.css';
 import SchemaOrg from '../components/SchemaOrg';
-import aws1 from './images/aws1.webp'
-import drupal1 from './images/drupal1.webp'
-import drupal2 from './images/drupal2.webp'
-import { Carousel } from './components/Carousel';
 import { SkillsData } from './components/SkillsData';
 import { SkillItem } from './components/SkillItem';
+import { Carousel } from './components/Carousel';
+import { CarouselData } from './components/CarouselData';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -21,12 +19,6 @@ export const metadata: Metadata = {
     url: 'https://rileyhoffman.com/skills'
   },
 };
-
-const slides = [
-  {src: aws1, alt: 'AWS Essential Training for Developers'},
-  {src: drupal1, alt: 'Drupal 9 Essential Training 1: Introduction and Administration'},
-  {src: drupal2, alt: 'Drupal 9 Essential Training 2: Content and Fields'},
-];
 
 export default function Skills()  {
   return (
@@ -45,7 +37,7 @@ export default function Skills()  {
       </section>
       <section className="pt-7 pb-16">
         <h2 className="max-w-fit pb-5" id="trainingsLabel">Trainings & Certifications</h2>
-        <Carousel slides={slides} />
+        <Carousel slides={CarouselData} />
       </section>
     </>
   );

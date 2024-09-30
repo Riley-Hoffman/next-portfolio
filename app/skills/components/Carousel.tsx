@@ -6,7 +6,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 interface Slide {
   src: StaticImageData;
-  alt: string;
+  label: string;
 }
 
 interface CarouselProps {
@@ -14,6 +14,7 @@ interface CarouselProps {
 }
 
 export const Carousel = ({ slides }: CarouselProps) => {
+  const commonClasses = 'absolute top-1/2 transform -translate-y-1/2 bg-pink-100 rounded-full py-1 px-4 shadow-lg border border-purple-100 hover:bg-offwhite hover:border-zinc focus-visible:bg-offwhite focus-visible:border-zinc';
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isClickable, setIsClickable] = useState(true);
@@ -91,7 +92,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
             >
             <Image
               src={slide.src}
-              alt={slide.alt}
+              alt={slide.label}
               className="max-w-full w-[900px]"
               width="900"
               height="695"
@@ -104,7 +105,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
           aria-label="Previous slide"
           onClick={goToPrev}
           disabled={!isClickable}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-pink-100 rounded-full py-1 px-4 shadow-lg hover:bg-gray-100"
+          className={`left-4 ${commonClasses}`}
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
@@ -112,7 +113,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
           aria-label="Next slide"
           onClick={goToNext}
           disabled={!isClickable}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-pink-100 rounded-full py-1 px-4 shadow-lg hover:bg-gray-100"
+          className={`right-4 ${commonClasses}`}
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
