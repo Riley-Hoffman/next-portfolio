@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Hamburger } from './Hamburger';
 import { NavListItem } from './NavListItem';
 import { NewTabSrText } from '../../components/NewTabSrText';
@@ -19,6 +20,11 @@ export function Header() {
     const handleHamburgerClick = (expanded: boolean) => {
         setIsExpanded(expanded);
     };
+
+    const currentPath = usePathname();
+    const isActive = (path: string) => {
+        return currentPath === path;
+    } 
 
     useEffect(() => {
         let timeoutId: ReturnType<typeof setTimeout> | null = null;
@@ -73,9 +79,9 @@ export function Header() {
                     <Hamburger expanded={handleHamburgerClick} />
                     <ul className="w-52 z-20 text-base shadow-[0_0.008rem_1rem_-0.563rem_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 relative top-[1.625rem] right-0 peer-aria-expanded:scale-100 m-0 md:w-auto md:shadow-none md:scale-x-100 md:static" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
-                            <NavListItem key={to} to={to} label={label} hide={hide} />
+                            <NavListItem key={to} to={to} label={label} hide={hide} isActive={isActive(to)} />
                         ))}
-                        <NavListItem resume="/riley-hoffman-resume.pdf" hide={hide} />
+                        <NavListItem resume="/riley-hoffman-resume.pdf" hide={hide} isActive={false} />
                     </ul>
                 </nav>
             </div>
