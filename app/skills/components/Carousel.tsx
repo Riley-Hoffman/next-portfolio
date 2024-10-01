@@ -23,51 +23,33 @@ export const Carousel = ({ slides }: CarouselProps) => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const totalSlides = slides.length;
-
-  const wrappedSlides = [
-    slides[totalSlides - 1],
-    ...slides,
-    slides[0],
-  ];
+  const wrappedSlides = [slides[totalSlides - 1], ...slides, slides[0]];
 
   const debounceClick = (callback: () => void) => {
     if (isClickable) {
       setIsClickable(false);
       callback();
-      setTimeout(() => {
-        setIsClickable(true);
-      }, transitionDuration);
+      setTimeout(() => setIsClickable(true), transitionDuration);
     }
   };
 
-  const goToNext = () => {
+  const navigate = (direction: 'next' | 'prev') => {
     debounceClick(() => {
       if (!isTransitioning) {
         setIsTransitioning(true);
-        setCurrentIndex((prev) => prev + 1);
+        setCurrentIndex((prev) => direction === 'next' ? prev + 1 : prev - 1);
       }
     });
   };
 
-  const goToPrev = () => {
-    debounceClick(() => {
-      if (!isTransitioning) {
-        setIsTransitioning(true);
-        setCurrentIndex((prev) => prev - 1);
-      }
-    });
-  };
+  const goToNext = () => navigate('next');
+  const goToPrev = () => navigate('prev');
 
   useEffect(() => {
-    if (currentIndex === totalSlides + 1) {
+    if (currentIndex === totalSlides + 1 || currentIndex === 0) {
       timeoutRef.current = setTimeout(() => {
         setNoTransition(true);
-        setCurrentIndex(1);
-      }, transitionDuration);
-    } else if (currentIndex === 0) {
-      timeoutRef.current = setTimeout(() => {
-        setNoTransition(true);
-        setCurrentIndex(totalSlides);
+        setCurrentIndex(currentIndex === totalSlides + 1 ? 1 : totalSlides);
       }, transitionDuration);
     } else {
       setIsTransitioning(false);
@@ -83,13 +65,10 @@ export const Carousel = ({ slides }: CarouselProps) => {
     <div className="relative max-w-[700px] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
       <ol
         className={`flex ${isTransitioning && !noTransition ? 'transition-transform duration-500' : ''}`}
-        style={{ transform: `translateX(-${currentIndex * 100}%)`, }}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {wrappedSlides.map((slide, index) => (
-          <li
-            key={index}
-            className="min-w-full h-fit flex items-center justify-center bg-gray-200"
-            >
+          <li key={index} className="min-w-full h-fit flex items-center justify-center bg-gray-200">
             <Image
               src={slide.src}
               alt={slide.label}
@@ -122,11 +101,11 @@ export const Carousel = ({ slides }: CarouselProps) => {
             <button
               role="option"
               aria-selected={idx + 1 === currentIndex}
-              aria-label={`Slide ${idx + 1} ${ idx + 1 === currentIndex ? '(current)' : ''}`}
+              aria-label={`Slide ${idx + 1} ${idx + 1 === currentIndex ? '(current)' : ''}`}
               key={idx}
               onClick={() => debounceClick(() => setCurrentIndex(idx + 1))}
               disabled={!isClickable}
-              className={`w-3 h-3 mb-2 rounded-full ${ idx + 1 === currentIndex ? 'bg-purple-200' : 'bg-zinc' }`}
+              className={`w-3 h-3 mb-2 rounded-full ${idx + 1 === currentIndex ? 'bg-purple-200' : 'bg-zinc'}`}
             />
           ))}
         </div>
