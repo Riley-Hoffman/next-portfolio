@@ -181,7 +181,7 @@ const config: Config = {
           borderImageSource: 'linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)',
         },
         '.gradient-border.inverted': {
-        borderImageSource: 'linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%)',
+          borderImageSource: 'linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%)',
         }
       });
     }),
