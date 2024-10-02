@@ -1,7 +1,17 @@
-.swiper-pagination-bullet-active {
-    background: #794e8d;
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-pagination-bullet:not(.swiper-pagination-bullet-active)  {
+    min-width: 10px;
+    min-height: 10px;
 }
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
     background: #12121c;
     opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background: #794e8d;
 }
