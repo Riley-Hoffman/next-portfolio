@@ -1,22 +1,22 @@
 .swiper:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 999999;
-    top: 0;
-    left: 0;
     box-shadow: inset 0 0 20px -10px black; 
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999999;
 }
 .swiper-pagination {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     gap: 4px;
+    justify-content: center;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-pagination-bullet:not(.swiper-pagination-bullet-active)  {
-    min-width: 10px;
     min-height: 10px;
+    min-width: 10px;
 }
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
     background: #12121c;
