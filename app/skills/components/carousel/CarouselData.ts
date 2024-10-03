@@ -1,6 +1,6 @@
-import aws1 from '../images/aws1.webp'
-import drupal1 from '../images/drupal1.webp'
-import drupal2 from '../images/drupal2.webp'
+import aws1 from './images/aws1.webp'
+import drupal1 from './images/drupal1.webp'
+import drupal2 from './images/drupal2.webp'
 
 export const CarouselData = [
   {src: aws1, label: 'AWS Essential Training for Developers'},

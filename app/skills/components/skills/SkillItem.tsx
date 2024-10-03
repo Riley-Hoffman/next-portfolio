@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import wcag from '../images/wcag.png';
+import wcag from './images/wcag.png';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface SkillItemProps {

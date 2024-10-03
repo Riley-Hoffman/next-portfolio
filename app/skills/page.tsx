@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import '../../public/devicon.css';
 import SchemaOrg from '../components/SchemaOrg';
-import { SkillsData } from './components/SkillsData';
-import { SkillItem } from './components/SkillItem';
-import { Carousel } from './components/Carousel';
-import { CarouselData } from './components/CarouselData';
+import { SkillsData } from './components/skills/SkillsData';
+import { SkillItem } from './components/skills/SkillItem';
+import { Carousel } from './components/carousel/Carousel';
+import { CarouselData } from './components/carousel/CarouselData';
 
 export const metadata: Metadata = {
   title: 'Skills',
