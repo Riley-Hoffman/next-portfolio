@@ -35,7 +35,7 @@ export default function Skills()  {
             <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
         </div>
       </section>
-      <section className="pt-7 pb-16">
+      <section className="pt-7 pb-16 border-solid border-t-2 gradient-border bg-offwhite">
         <h2 className="max-w-fit pb-5" id="trainingsLabel">Trainings & Certifications</h2>
         <Carousel slides={CarouselData} />
       </section>
