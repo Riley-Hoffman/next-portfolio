@@ -1,6 +1,3 @@
-.swiper {
-    position: relative;
-}
 .swiper:before {
     content: '';
     width: 100%;
