@@ -30,7 +30,7 @@ export const projects: Project[] = [
     },
     {
       title: 'Particle Cleanup Game',
-      skills: 'React, TSX, SCSS',
+      skills: 'React, TSX, Tailwind.css',
       description: 'A game which generates particles from you to clean up by pushing them out of the canvas.',
       internal: true,
       liveUrl: '/projects/particle-cleanup',
