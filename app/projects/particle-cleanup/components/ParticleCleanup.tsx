@@ -79,7 +79,6 @@ export const ParticleCleanup = () => {
       if (['mousemove', 'touchmove'].includes(event.type)) {
         updateCursorPosition(clientX, clientY);
       }
-  
       if (refs.current.cursorInsideCanvas !== isInside) {
         refs.current.cursorInsideCanvas = isInside;
         if (isInside && refs.current.container) {
@@ -87,12 +86,10 @@ export const ParticleCleanup = () => {
             refs.current.container?.scrollIntoView({ block: 'center', behavior: 'smooth' });
           }, 100);
         }
-  
         if (state.gameInProgress) {
           sayMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
         }
       }
-  
       if (isTouchEvent) {
         event.preventDefault();
       }
