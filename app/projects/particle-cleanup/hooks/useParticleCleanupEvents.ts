@@ -18,9 +18,7 @@ export function useParticleCleanupEvents(
 ) {
   useEffect(() => {
     const localRefs = { ...refs.current };
-
     if (!localRefs.container || !localRefs.canvas) return;
-
     const events: string[] = ['mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'];
 
     const handleEvent = (event: Event) => {
@@ -52,11 +50,11 @@ export function useParticleCleanupEvents(
     };
 
     window.addEventListener('resize', handleResize);
-
     return () => {
       if (localRefs.container) {
         manageEventListeners('remove', localRefs.container, events, handleEvent);
       }
+      
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(localRefs.animationFrameId);

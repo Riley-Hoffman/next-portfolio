@@ -15,14 +15,11 @@ export function useFormValidation(initialState: FormState) {
             const validateForm = () => {
                 const { name, email, message } = formState;
                 let newErrors = { name: '', email: '', message: '' };
-
                 if (name.trim() === '') newErrors.name = 'Please enter your name.';
                 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = 'Please enter a valid email address.';
                 if (message.trim() === '') newErrors.message = 'Please enter a message.';
-
                 setErrors(newErrors);
             };
-
             validateForm();
         }
     }, [formState, submitted]); 
@@ -32,7 +29,6 @@ export function useFormValidation(initialState: FormState) {
             ...prevState,
             [field]: event.target.value,
         }));
-
         setSubmitted(false);
         setErrors({ name: '', email: '', message: '' });
         setFormError(''); 
@@ -44,13 +40,12 @@ export function useFormValidation(initialState: FormState) {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    
+
         const csrfToken = localStorage.getItem('csrf-token');
         if (!csrfToken) {
             console.error('CSRF token is missing');
             return;
         }
-    
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -60,7 +55,6 @@ export function useFormValidation(initialState: FormState) {
                 },
                 body: JSON.stringify(formState),
             });
-    
             if (response.ok) {
                 console.log('Form submitted successfully');
                 router.push('/thank-you');

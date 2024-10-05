@@ -23,23 +23,18 @@ export async function GET(req: NextRequest) {
 
   try {
     const imagePath = join(process.cwd(), 'app', 'images', path);
-    
     const buffer = await fs.readFile(imagePath);
-
     let image = sharp(buffer);
 
     if (width) {
       image = image.resize(parseInt(width, 10));
     }
-
     if (height) {
       image = image.resize(null, parseInt(height, 10));
     }
 
     image = image.toFormat(imageFormat);
-
     const optimizedBuffer = await image.toBuffer();
-
     return new NextResponse(optimizedBuffer, {
       status: 200,
       headers: {

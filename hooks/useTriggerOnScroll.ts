@@ -37,7 +37,6 @@ export const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElem
 
     setTimeout(updateTriggerOnScroll, 100);
     window.addEventListener('scroll', updateTriggerOnScroll);
-
     return () => {
       window.removeEventListener('scroll', updateTriggerOnScroll);
     };

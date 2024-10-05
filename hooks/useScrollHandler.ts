@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 export const useScrollHandler = (onScroll: () => void) => {
     const ticking = useRef(false);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             if (!ticking.current) {
@@ -15,7 +15,6 @@ export const useScrollHandler = (onScroll: () => void) => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };

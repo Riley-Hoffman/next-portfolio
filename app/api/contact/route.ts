@@ -11,21 +11,16 @@ export async function POST(request: Request) {
     try {
         const csrfTokenFromRequest = request.headers.get('csrf-token');
         const secret = process.env.CSRF_SECRET;
-
         if (!secret) {
             throw new Error('CSRF secret is not defined in environment variables.');
         }
-
         if (!csrfTokenFromRequest) {
             return NextResponse.json({ success: false, error: 'CSRF token is missing' }, { status: 403 });
         }
-
         if (!csrfProtection.verify(secret, csrfTokenFromRequest)) {
             return NextResponse.json({ success: false, error: 'Invalid CSRF token' }, { status: 403 });
         }
-
         const { name, email, message } = await request.json();
-
         const transporter = nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
             port: process.env.EMAIL_PORT,
@@ -35,7 +30,6 @@ export async function POST(request: Request) {
                 pass: process.env.EMAIL_PASS,
             },
         });
-
         await transporter.sendMail({
             from: email,
             to: process.env.EMAIL_USER,
@@ -45,7 +39,6 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json({ success: true }, { status: 200 });
-
     } catch (error) {
         console.error('Error handling request:', error);
         return NextResponse.json({ success: false, error: 'Error processing request' }, { status: 500 });
