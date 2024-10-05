@@ -71,8 +71,9 @@ export const ParticleCleanup = () => {
 
   const handleInteraction = useCallback((event: Event, isInside: boolean) => {
     const isTouchEvent = event.type.startsWith('touch');
-    const clientX = isTouchEvent ? (event as TouchEvent).touches?.[0]?.clientX : (event as MouseEvent).clientX;
-    const clientY = isTouchEvent ? (event as TouchEvent).touches?.[0]?.clientY : (event as MouseEvent).clientY;
+    const { clientX, clientY } = isTouchEvent 
+      ? (event as TouchEvent).touches[0] 
+      : (event as MouseEvent);
   
     if (clientX !== undefined && clientY !== undefined) {
       if (['mousemove', 'touchmove'].includes(event.type)) {
