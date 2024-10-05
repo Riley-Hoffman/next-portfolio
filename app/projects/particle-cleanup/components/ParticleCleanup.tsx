@@ -113,7 +113,7 @@ export const ParticleCleanup = () => {
     const weight = Math.random() * 0.5 + 0.5;
     const isMobile = refs.current.isMobile;
     const isTallScreen = window.innerHeight > 800;
-    const speedFactor = (isMobile ? 0.4 : 0.8) * (isTallScreen ? 0.54 : 1) * (state.gameCompletedOnce ? 0.4 : 0.8);
+    const speedFactor = (isMobile ? 0.4 : 0.75) * (isTallScreen ? 0.38 : 1) * (state.gameCompletedOnce ? 0.5 : 0.75);
 
     return new Particle(Math.random() * width, Math.random() * height, size, color, weight, speedFactor);
   }, [state.gameCompletedOnce]);
