@@ -174,16 +174,15 @@ export const ParticleCleanup = () => {
   useParticleCleanupEvents(refs, handleInteraction, handleScroll, initializeAnimation);
 
   const getMedalDetails = useCallback((time: number | null) => {
-    if (time !== null) {
-      if (time <= 25) {
-        if (time > 20) return { text: 'Bronze Medal', color: '#A2652A' };
-        if (time > 15) return { text: 'Silver Medal', color: '#737373' };
-        return { text: 'Gold Medal', color: '#8A7400' };
-      }
-    }
-    return null;
+    if (time === null || time > 25) return null;
+    const medals = [
+      { limit: 20, text: 'Gold Medal', color: '#8A7400' },
+      { limit: 15, text: 'Silver Medal', color: '#737373' },
+      { limit: 0, text: 'Bronze Medal', color: '#A2652A' },
+    ];
+    return medals.find(medal => time > medal.limit) || null;
   }, []);
-
+  
   const medalDetails = useMemo(() => refs.current.allClean ? getMedalDetails(state.time) : null, [getMedalDetails, state.time]);
 
   const reloadAnimation = useCallback(() => {
