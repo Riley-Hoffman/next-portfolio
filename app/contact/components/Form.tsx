@@ -37,12 +37,12 @@ export function Form() {
                 <Legend />
                 <div className="pb-5">
                     <div className="pb-3 relative md:flex md:justify-between md:items-center md:gap-5">
-                        <FormField type="text" value={name} handleChange={handleChange} name="name" placeholder="Your name.." />
+                        <FormField type="text" value={name} handleChange={handleChange} name="name" placeholder="Enter your name.." />
                         <br className="inline md:hidden" />
                         <br className="inline md:hidden" />
-                        <FormField type="email" value={email} handleChange={handleChange} name="email" placeholder="Your email.." />
+                        <FormField type="email" value={email} handleChange={handleChange} name="email" placeholder="Enter your email.." />
                     </div>
-                    <FormField type="textarea" value={message} handleChange={handleChange} name="message" placeholder="Your message.." />
+                    <FormField type="textarea" value={message} handleChange={handleChange} name="message" placeholder="Enter your message.." />
                 </div>
             </fieldset>
             {Object.values(errors).some(error => error) && submitted && (
