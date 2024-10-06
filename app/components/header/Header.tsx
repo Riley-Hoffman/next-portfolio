@@ -93,7 +93,7 @@ export function Header() {
                         <li key={route.path}><Link className="button p-1" href={route.path}>{route.name}</Link></li>
                         )
                     ))}
-                    <li><a className="button p-1" href="riley-hoffman-resume.pdf">Resume <NewTabSrText /></a></li>
+                    <li><a className="button p-1" href="/riley-hoffman-resume.pdf">Resume <NewTabSrText /></a></li>
                     </ul>
                 </nav>
             </noscript>
