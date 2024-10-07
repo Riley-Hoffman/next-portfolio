@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     openGraph: {
       images: '/thumbnail.jpg',
       title: 'Particle Cleanup Game',
-      url: 'https://rileyhoffman.com/projects/particle-cleanup',
+      url: 'https://rileyhoffman.com/projects/particle-cleanup/',
     },
 };
 

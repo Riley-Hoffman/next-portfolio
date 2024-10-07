@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
       images: '/thumbnail.jpg',
         title: 'FAQ',
-        url: 'https://rileyhoffman.com/faq'
+        url: 'https://rileyhoffman.com/faq/'
       },
 };
 

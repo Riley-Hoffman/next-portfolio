@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     openGraph: {
       images: '/thumbnail.jpg',
         title: 'Accessibility',
-        url: 'https://rileyhoffman.com/accessibility'
+        url: 'https://rileyhoffman.com/accessibility/'
       },
 }
 
