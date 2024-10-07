@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles/custom-swiper.css';
-import { Pagination, Navigation, A11y } from 'swiper/modules';
+import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules';
 import { CarouselButtons } from './CarouselButtons';
 
 interface Slide {
@@ -21,7 +21,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
   return (
     <div className="relative max-w-[700px] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
+        modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
           prevEl: '.prev-btn',
           nextEl: '.next-btn',
@@ -33,6 +33,12 @@ export const Carousel = ({ slides }: CarouselProps) => {
           renderBullet: (index, className) =>
             `<button class="${className}" aria-label="Slide ${index + 1}"></button>`,
         }}
+        mousewheel={{
+          forceToAxis: true,
+        }}
+        touchEventsTarget="container"
+        touchRatio={1}
+        touchReleaseOnEdges={true}
         loop={true}
         spaceBetween={50}
         slidesPerView={1}
