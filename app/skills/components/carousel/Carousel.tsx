@@ -19,7 +19,7 @@ interface CarouselProps {
 
 export const Carousel = ({ slides }: CarouselProps) => {
   return (
-    <div className="relative max-w-[700px] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
+    <div className="relative max-w-7xl overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
@@ -40,8 +40,13 @@ export const Carousel = ({ slides }: CarouselProps) => {
         touchRatio={1}
         touchReleaseOnEdges={true}
         loop={true}
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={1}
+        breakpoints={{
+          1000: {
+            slidesPerView: 2
+          }
+        }}
         a11y={{
           prevSlideMessage: 'Previous slide',
           nextSlideMessage: 'Next slide',
