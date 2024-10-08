@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         <main>
-          <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
+          <a href="#content" id="content" className="sr-only z-30 button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
           {children}
         </main>
         <DynamicImports />

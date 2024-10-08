@@ -66,8 +66,8 @@ export function Header() {
     ];
 
     return (
-        <header className="min-h-[7.75rem] py-6 border-b-2 border-t-[2.125rem] border-solid sticky top-[-2.125rem] right-[0] left-[0] shadow[0_0.063rem_0.188rem_-0.188rem_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999] contrast-more:bg-white">
-            <a href="#content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
+        <header className="min-h-[7.75rem] py-6 border-b-2 border-t-[2.125rem] border-solid sticky top-[-2.125rem] right-[0] left-[0] shadow[0_0.063rem_0.188rem_-0.188rem_black] bg-[#f4eef6] shadow-zinc gradient-border z-30 contrast-more:bg-white">
+            <a href="#content" className="sr-only button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center justify-between">
                 <div className="logo">
                     <button className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl" onClick={handleClickHome}>
