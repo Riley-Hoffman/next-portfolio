@@ -17,6 +17,7 @@
 .vscode
 .DS_Store
 *.pem
+useFirebase.ts
 
 # debug
 npm-debug.log*
