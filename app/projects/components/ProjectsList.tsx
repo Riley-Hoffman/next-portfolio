@@ -15,7 +15,7 @@ export default function ProjectsList() {
   }
 
   if (error || !projects) {
-    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Error loading projects. Please try again later.</span></div>;
+    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Error loading projects: {error}</span></div>;
   }
 
   const categories: string[] = Array.from(new Set(projects.map((p: Project) => p.category)));
