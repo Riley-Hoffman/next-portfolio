@@ -8,6 +8,12 @@ const config: Config = {
     './components/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'md:motion-safe:left-[-200%]',
+    '[&[data-active="true"]]:left-0',
+    'md:motion-safe:right-[-200%]',
+    '[&[data-active="true"]]:right-0',
+  ],
   theme: {
     extend: {
       backgroundImage: {
