@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ref, onValue, off } from 'firebase/database';
+import { ref, onValue } from 'firebase/database';
 import { db } from '../lib/firebaseConfig';
 
 export const useFetchFirebaseData = <T,>(path: string) => {
@@ -27,7 +27,6 @@ export const useFetchFirebaseData = <T,>(path: string) => {
     const unsubscribe = onValue(dataRef, handleData, handleError);
 
     return () => {
-      off(dataRef);
       unsubscribe();
     };
   }, [path]);
