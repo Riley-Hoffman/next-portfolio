@@ -20,9 +20,10 @@ export const SiteTechStack = () => {
       "md:motion-safe:h-[0px]",
       "[&[data-active='true']]:h-[160px]",
       "transition-all",
-      "first:duration-300",
-      "[&:nth-child(2)]:duration-500",
-      "[&:nth-child(3)]:duration-700",
+      "first:duration-150",
+      "[&:nth-child(2)]:duration-300",
+      "[&:nth-child(3)]:duration-500",
+      "[&:nth-child(4)]:duration-700",
       "last:duration-1000",
       "ease"
     ], []);
