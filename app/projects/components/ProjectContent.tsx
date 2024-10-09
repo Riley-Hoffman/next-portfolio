@@ -2,19 +2,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { NewTabSrText } from '../../components/NewTabSrText';
 
-interface ProjectLinksProps {
+export interface Project {
   title: string;
   skills: string;
   description: string;
   internal?: boolean;
   liveUrl: string;
   gitUrl?: string;
-  imgAlt: string;
   imgUrl: string;
+  alt: string;
+  animation?: string;
+  category: string;
   isFirst?: boolean;
 }
 
-export function ProjectContent({ title, skills, description, internal, liveUrl, gitUrl, imgAlt, imgUrl, isFirst }: ProjectLinksProps) {
+export function ProjectContent({ title, skills, description, internal, liveUrl, gitUrl, alt, imgUrl, isFirst }: Project) {
   const commonClasses = "uppercase py-1 px-3 button";
   const liveContent = (
     <>
@@ -51,7 +53,7 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
         )}
       </div>
       <div className="text-center relative basis-2/4">
-        <Image className="max-w-full w-[35.563rem]" alt={imgAlt} src={imgUrl} title={title} height="569" width="569" priority={isFirst} />
+        <Image className="max-w-full w-[35.563rem]" alt={alt} src={imgUrl} title={title} height="569" width="569" priority={isFirst} />
       </div>
     </>
   );

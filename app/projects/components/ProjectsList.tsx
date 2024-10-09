@@ -2,7 +2,7 @@
 import { ProjectBox } from './ProjectBox';
 import { ProjectContent } from './ProjectContent';
 import { useFetchFirebaseData } from '../../../hooks/useFetchFirebaseData';
-import type { Project } from '../page';
+import type { Project } from './ProjectContent';
 import evangeline from '../images/evangeline-gentle-music-project.webp';
 import particleCleanup from '../images/particle-cleanup-project.webp';
 import outOfContext from '../images/out-of-context-project.webp';

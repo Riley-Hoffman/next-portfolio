@@ -2,19 +2,6 @@ import type { Metadata } from 'next';
 import SchemaOrg from '../components/SchemaOrg';
 import ProjectsList from './components/ProjectsList';
 
-export interface Project {
-  title: string;
-  skills: string;
-  description: string;
-  internal?: boolean;
-  liveUrl: string;
-  gitUrl?: string;
-  imgUrl: string;
-  imgAlt: string;
-  animation?: string;
-  category: string;
-}
-
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'View past projects by Riley Hoffman - Web Developer.',
