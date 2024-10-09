@@ -13,6 +13,7 @@ export const SiteTechStack = () => {
       { name: 'Next.js', logo: 'devicon-nextjs-plain', url: 'https://nextjs.org' },
       { name: 'TypeScript', logo: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org' },
       { name: 'Tailwind CSS', logo: 'devicon-tailwindcss-original', url: 'https://tailwindcss.com' },
+      { name: 'Firebase', logo: 'devicon-firebase-plain', url: 'https://firebase.google.com' },
     ];
     const elementsRef = useTriggerOnScroll();
     const animation = useMemo(() => [
@@ -38,9 +39,14 @@ export const SiteTechStack = () => {
     return (
     <>
       <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl min-h-40" aria-label="Site tech stack.">
-        {technologies.map((tech) => (
-          <li key={tech.name} className="overflow-hidden relative" ref={(el) => { if (el) { elementsRef.current.push(el); } }}>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 lg:gap-x-6 max-w-6xl min-h-40" aria-label="Site tech stack.">
+        {technologies.map((tech, index) => (
+          <li 
+            key={tech.name} 
+            className={`overflow-hidden relative lg:col-auto sm:col-auto ${
+            index === technologies.length - 2 && 'md:col-start-1'} ${index === technologies.length - 1 && 'md:col-start-3'}`} 
+            ref={(el) => { if (el) { elementsRef.current.push(el); } }}
+          >
               <a className="p-5 mx-auto w-fit min-w-[13.1rem] min-h-[9.5rem] no-underline block bg-pink-100 hover:bg-zinc hover:text-pink-100 focus-visible:bg-zinc focus-visible:text-pink-100 transition-shadow duration-300" href={tech.url}  target="_blank" rel="noopener noreferrer">
                 <i className={`${tech.logo} mx-auto text-7xl`} aria-hidden="true"></i>
                 <p className="my-1 text-xl" translate="no">{tech.name}</p>
