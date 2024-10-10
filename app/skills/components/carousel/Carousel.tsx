@@ -61,6 +61,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
               className="max-w-full w-[900px]"
               width="900"
               height="695"
+              loading="eager"
             />
           </SwiperSlide>
         ))}
