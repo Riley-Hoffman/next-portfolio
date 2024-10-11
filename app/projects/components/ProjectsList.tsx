@@ -3,7 +3,6 @@ import { ProjectBox } from './ProjectBox';
 import { ProjectContent } from './ProjectContent';
 import { useFetchFirebaseData } from '../../../hooks/useFetchFirebaseData';
 import type { Project } from './ProjectContent';
-import { ProjectImages } from './ProjectImages';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -38,7 +37,7 @@ function ProjectCategory({ category, index, projects }: { category: string; inde
       <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
         {filteredProjects.map((project: Project, idx: number) => (
           <ProjectBox key={project.title} inverted={idx % 2 !== 0 ? 'inverted' : ''} animation={project.animation} isFirst={index === 0 && idx === 0}>
-            <ProjectContent {...project} imgUrl={ProjectImages[project.title]} isFirst={index === 0 && idx === 0} />
+            <ProjectContent {...project} isFirst={index === 0 && idx === 0} />
           </ProjectBox>
         ))}
       </ul>
