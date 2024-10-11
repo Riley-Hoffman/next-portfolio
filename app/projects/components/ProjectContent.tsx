@@ -17,7 +17,7 @@ export interface Project {
 }
 
 export function ProjectContent({ title, skills, description, internal, liveUrl, gitUrl, alt, imgUrl, isFirst }: Project) {
-  const commonClasses = "uppercase py-1 px-3 button";
+  const commonClasses = "mx-5 py-1 px-3 uppercase button";
   const liveContent = (
     <>
       <span className="sr-only">{title} </span>Live
@@ -36,17 +36,17 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
           <span translate="no">{title} </span>Links:
         </h3>
         {internal ? (
-          <Link className={`mx-5 p-y-1 p-x-4 ${commonClasses}`} href={liveUrl}>
+          <Link className={`${commonClasses}`} href={liveUrl}>
             {liveContent}
           </Link>
         ) : (
-          <a className={`mx-5 p-y-1 p-x-4 new-tab ${commonClasses}`} href={liveUrl} target="_blank" rel="noopener noreferrer" >
+          <a className={`new-tab ${commonClasses}`} href={liveUrl} target="_blank" rel="noopener noreferrer" >
             {liveContent}
             <NewTabSrText icon={true} />
           </a>
         )}
         {gitUrl && (
-          <a className={`mr-5 ml-3 ${commonClasses} new-tab`} href={gitUrl} target="_blank" rel="noopener noreferrer" >
+          <a className={`ml-3 ${commonClasses} new-tab`} href={gitUrl} target="_blank" rel="noopener noreferrer" >
             <span className="sr-only">{title} </span>Repo
             <NewTabSrText icon={true} />
           </a>
