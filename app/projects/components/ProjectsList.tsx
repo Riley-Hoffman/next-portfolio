@@ -35,11 +35,19 @@ function ProjectCategory({ category, index, projects }: { category: string; inde
     <>
       <h2 className="max-w-screen-xl text-2xl pb-5 leading-normal md:text-3xl">{category} Projects</h2>
       <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
-        {filteredProjects.map((project: Project, idx: number) => (
-          <ProjectBox key={project.title} inverted={idx % 2 !== 0 ? 'inverted' : ''} animation={project.animation} isFirst={index === 0 && idx === 0}>
-            <ProjectContent {...project} isFirst={index === 0 && idx === 0} />
-          </ProjectBox>
-        ))}
+      {filteredProjects.map((project: Project, idx: number) => {
+          const originalIndex = projects.findIndex(p => p.title === project.title) + 1;
+          return (
+            <ProjectBox 
+            key={project.title}
+              inverted={originalIndex % 2 === 0 ? 'inverted' : ''}
+              animation={project.animation} 
+              isFirst={index === 0 && project === filteredProjects[0]}
+            >
+              <ProjectContent {...project} isFirst={index === 0 && idx === 0} />
+            </ProjectBox>
+          );
+        })}
       </ul>
     </>
   );
