@@ -8,7 +8,7 @@ interface Vertex {
   y: number;
 }
 
-interface Mouse {
+export interface Mouse {
   x: number;
   y: number;
   radius: number;
