@@ -1,4 +1,3 @@
-// @ts-check
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
@@ -17,7 +16,6 @@ const patchedConfig = fixupConfigRules([...compat.extends("next/core-web-vitals"
 
 const config = [
   ...patchedConfig,
-  // Add more flat configs here
   { ignores: [".next/*"] },
 ];
 
