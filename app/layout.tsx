@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Riley Hoffman - Web Developer',
     default: 'Riley Hoffman - Web Developer',
   },
-  description: 'I\'m a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.',
+  description: 'I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.',
   metadataBase: new URL('https://rileyhoffman.com/'),
   alternates: {
     canonical: '/',
