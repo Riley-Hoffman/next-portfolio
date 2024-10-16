@@ -6,7 +6,6 @@ const LazyUseParallax = dynamic(() => import('./LazyUseParallax'), {
   ssr: false,
 });
 
-
 interface CoverImageProps {
     width: number,
     height: number,
