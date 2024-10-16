@@ -16,7 +16,7 @@ export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) =>  (
       {devicon ? (
         <i className={`text-5xl ${devicon}`} aria-hidden="true"></i>
       ) : image ? (
-        <Image src={wcag} className="w-20" alt="" width="300" height="71" />
+        <Image src={wcag} className="w-20" alt="" />
       ) : icon ? (
         <FontAwesomeIcon className="text-5xl" icon={icon} />
       ) : null} 

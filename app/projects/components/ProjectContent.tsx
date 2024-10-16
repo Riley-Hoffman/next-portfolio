@@ -57,7 +57,7 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
         {gitUrl && renderLink(gitUrl, repoContent)}
       </div>
       <div className="text-center relative basis-2/4">
-        <Image className="max-w-full w-[35.563rem]" alt={alt} src={imgUrl} title={title} height="569" width="569" priority={isFirst} loading="eager" />
+        <Image className="max-w-full w-[35.563rem]" alt={alt} src={imgUrl} title={title} height={569} width={569} priority={isFirst} loading="eager" />
       </div>
     </>
   );
