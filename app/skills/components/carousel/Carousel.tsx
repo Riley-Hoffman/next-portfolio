@@ -19,7 +19,7 @@ interface CarouselProps {
 
 export const Carousel = ({ slides }: CarouselProps) => {
   return (
-    <div className="relative max-w-7xl overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
+    <div className="relative max-w-7xl max-h-[31rem] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
@@ -58,7 +58,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
             <Image
               src={slide.src}
               alt={slide.label}
-              className="max-w-full w-[900px]"
+              className="max-w-full w-[56.25rem]"
               width={900}
               height={695}
               loading="eager"
