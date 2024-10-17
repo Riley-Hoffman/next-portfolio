@@ -17,12 +17,12 @@ export const SkillsData = [
     { skill: 'Wordpress', devicon: 'devicon-wordpress-plain' },
     { skill: 'PHP', devicon: 'devicon-php-plain' },
     { skill: 'Firebase', devicon: 'devicon-firebase-plain' },
-    { skill: 'JSON', devicon: 'devicon-json-plain' },
     { skill: 'Netlify', devicon: 'devicon-netlify-plain' },
     { skill: 'Node.js', devicon: 'devicon-nodejs-plain-wordmark' },
     { skill: 'SEO', icon: faMagnifyingGlassChart },
     { skill: 'Express', devicon: 'devicon-express-original' },
     { skill: 'MongoDB', devicon: 'devicon-mongodb-plain' },
     { skill: 'Mongoose', devicon: 'devicon-mongoose-original' },
+    { skill: 'Homebrew', devicon: 'devicon-homebrew-plain' },
     { skill: 'Swiper', devicon: 'devicon-swiper-original' }
 ];
