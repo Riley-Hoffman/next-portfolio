@@ -19,6 +19,10 @@ export const SkillsData = [
     { skill: 'Firebase', devicon: 'devicon-firebase-plain' },
     { skill: 'JSON', devicon: 'devicon-json-plain' },
     { skill: 'Netlify', devicon: 'devicon-netlify-plain' },
-    { skill: 'npm', devicon: 'devicon-npm-original-wordmark' },
-    { skill: 'SEO', icon: faMagnifyingGlassChart }
+    { skill: 'Node.js', devicon: 'devicon-nodejs-plain-wordmark' },
+    { skill: 'SEO', icon: faMagnifyingGlassChart },
+    { skill: 'Express', devicon: 'devicon-express-original' },
+    { skill: 'MongoDB', devicon: 'devicon-mongodb-plain' },
+    { skill: 'Mongoose', devicon: 'devicon-mongoose-original' },
+    { skill: 'Swiper', devicon: 'devicon-swiper-original' }
 ];
