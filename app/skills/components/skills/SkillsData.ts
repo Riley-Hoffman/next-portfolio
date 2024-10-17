@@ -24,5 +24,5 @@ export const SkillsData = [
     { skill: 'MongoDB', devicon: 'devicon-mongodb-plain' },
     { skill: 'Mongoose', devicon: 'devicon-mongoose-original' },
     { skill: 'Homebrew', devicon: 'devicon-homebrew-plain' },
-    { skill: 'Swiper', devicon: 'devicon-swiper-original' }
+    { skill: 'JSON', devicon: 'devicon-json-plain' }
 ];
