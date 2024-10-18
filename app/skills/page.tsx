@@ -32,7 +32,7 @@ export default function Skills()  {
                 <SkillItem key={index} {...skill} />
               ))}
             </ul>
-            <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
+            <div className="bg-purple-100 rounded-[50%] -z-10 opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
         </div>
       </section>
       <section className="pt-7 pb-16 border-solid border-t-2 gradient-border bg-offwhite">

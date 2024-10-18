@@ -7,7 +7,6 @@ export function useFormValidation(initialState: FormState) {
     const [formState, setFormState] = useState(initialState);
     const [submitted, setSubmitted] = useState(false); 
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
-    const [formError, setFormError] = useState('');
     const router = useRouter();
 
     useEffect(() => {
@@ -31,7 +30,6 @@ export function useFormValidation(initialState: FormState) {
         }));
         setSubmitted(false);
         setErrors({ name: '', email: '', message: '' });
-        setFormError(''); 
     };
 
     const handleSubmitClick = () => {
@@ -73,6 +71,5 @@ export function useFormValidation(initialState: FormState) {
         handleSubmitClick,
         handleSubmit,
         submitted, 
-        formError,
     };
 }

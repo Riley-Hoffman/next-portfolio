@@ -4,6 +4,8 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { Legend } from './Legend';
 import { FormField } from './FormField';
 import { SubmitButton } from './SubmitButton';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export interface FormState {
     name: string;
@@ -12,7 +14,7 @@ export interface FormState {
 }
 
 export function Form() {
-    const { formState, errors, formError, handleChange, handleSubmitClick, handleSubmit, submitted } = useFormValidation({
+    const { formState, errors, handleChange, handleSubmitClick, handleSubmit, submitted } = useFormValidation({
         name: '',
         email: '',
         message: '',
@@ -32,7 +34,7 @@ export function Form() {
 
     const { name, email, message } = formState;
     return (
-        <form className="max-w-screen-md pt-5 px-5 pb-10" onSubmit={handleSubmit}>
+        <form className="max-w-screen-md pt-5 px-5 pb-10 relative" onSubmit={handleSubmit}>
             <fieldset>
                 <Legend />
                 <div className="pb-5">
@@ -46,15 +48,9 @@ export function Form() {
                 </div>
             </fieldset>
             {Object.values(errors).some(error => error) && submitted && (
-                <p className="sr-only" aria-live="polite">
-                    {errors.name && <span>{errors.name}</span>}
-                    {errors.email && <span>{errors.email}</span>}
-                    {errors.message && <span>{errors.message}</span>}
-                </p>
-            )}
-            {formError && (
-                <p className="text-red-500" aria-live="polite">
-                    {formError}
+                <p className="absolute top-[-4rem] text-red-500 font-source-sans" aria-live="polite">
+                    <FontAwesomeIcon icon={faCircleExclamation} />&nbsp;&nbsp;
+                    {Object.values(errors).filter(Boolean).join(' ')}
                 </p>
             )}
             <SubmitButton handleSubmitClick={handleSubmitClick} />
