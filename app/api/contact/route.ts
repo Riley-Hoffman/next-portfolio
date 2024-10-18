@@ -41,7 +41,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: true }, { status: 200 });
     } catch (error) {
         console.error('Error handling request:', error);
-        return NextResponse.json({ success: false, error: 'Error processing request' }, { status: 500 });
+        return NextResponse.json({ success: false, error: 'An unexpected error occurred. Please try again later.' }, { status: 500 });
     }
 }
 
