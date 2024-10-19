@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import Image from 'next/image';
-import headshot from '../../images/headshot.webp';
 import { LinkedInButton } from './LinkedInButton'; 
 import { useReducedMotion } from '../../../hooks/useReducedMotion';
 import { useScrollHandler } from '../../../hooks/useScrollHandler';
@@ -15,7 +14,6 @@ export const MyJourney = () => {
         if (sectionRef.current && !prefersReducedMotion) {
             sectionRef.current.style.filter = `hue-rotate(${scrollRef.current / 2.7}deg)`;
         };
-
     });
 
     return (
@@ -23,7 +21,7 @@ export const MyJourney = () => {
             <div className="max-w-screen-xl">
                 <div className="items-center md:flex">
                     <div className="min-h-96 md:w-1/3">
-                        <Image className="size-96 max-w-full object-cover border-x-2 clip-path-cut-corners" src={headshot} alt="Riley with a flower behind his ear. Shot in black and white." priority={false} />
+                        <Image className="size-96 max-w-full object-cover border-x-2 clip-path-cut-corners" src="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/headshot.webp?alt=media&token=fbf6c056-b4e5-45c4-ac2a-ce9ec21fb154" width={384} height={452} alt="Riley with a flower behind his ear. Shot in black and white." priority={false} />
                     </div>
                     <div className="py-6 m-6 bg-[whitesmoke] border-2 border-[#d6d2ee] md:w-2/3 lg:px-24 contrast-more:bg-white">
                         <h2>My Journey</h2>

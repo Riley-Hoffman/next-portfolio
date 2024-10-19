@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         canonical: '/',
     },
     openGraph: {
-      images: '/thumbnail.jpg',
+      images: 'https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg?alt=media&token=1147051e-169d-4493-b535-14da7b6891dd',
         title: 'Thank You',
         url: 'https://rileyhoffman.com/thank-you/'
       },

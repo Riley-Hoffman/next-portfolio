@@ -12,17 +12,17 @@ export default function Home() {
 
   return (
     <>
-        <SchemaOrg headline="Riley Hoffman - Web Developer" description="I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." image="/static/media/riley.d8092b303038937a099e.jpg" datePublished="2024-07-04T09:25:01.340Z" />
-        <CoverImage width={1920} height={1080} srcImg="/api/optimize-image?path=/clouds.webp&width=1920&format=webp">
-            <FirstFoldContent />
-        </CoverImage>
-        <MyJourney /> 
-        <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
-        <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
-          <div className="max-w-screen-xl container mx-auto text-center">
-            <SiteTechStack />
-          </div>
-        </section>
+      <SchemaOrg headline="Riley Hoffman - Web Developer" description="I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." image="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg?alt=media&token=1147051e-169d-4493-b535-14da7b6891dd" datePublished="2024-07-04T09:25:01.340Z" />
+      <CoverImage width={1920} height={1080} srcImg="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/clouds.webp?alt=media&token=376dd7f9-f10e-412c-b17d-e34048b54196">
+          <FirstFoldContent />
+      </CoverImage>
+      <MyJourney /> 
+      <LazyLoadLink href="/devicon.css" rel="stylesheet" targetRef={targetRef} />
+      <section className="pt-8 pb-12 border-solid border-t-2 gradient-border" ref={targetRef}>
+        <div className="max-w-screen-xl container mx-auto text-center">
+          <SiteTechStack />
+        </div>
+      </section>
     </>
   )
 }
