@@ -1,13 +1,6 @@
 [build.environment]
   NODE_VERSION = "18.18.0"
 
-[[redirects]]
-  from = '/_next/image/*'
-  query = { q = ':quality', url = ':url', w = ':width' }
-  to = '/.netlify/images?url=:url&w=:width&q=:quality&resize=true'
-  status = 200
-  force = true
-
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
