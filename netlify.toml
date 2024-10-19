@@ -42,24 +42,9 @@ for = "/*"
     Cache-Control = "max-age=31536000"
 
 [[headers]]
-  for = "/*.webp"
+  for = "/_next/image/*"
   [headers.values]
-    Cache-Control = "max-age=31536000"
-
-[[headers]]
-  for = "/*.jpg"
-  [headers.values]
-    Cache-Control = "max-age=31536000"
-
-[[headers]]
-  for = "/*.jpeg"
-  [headers.values]
-    Cache-Control = "max-age=31536000"
-
-[[headers]]
-  for = "/*.png"
-  [headers.values]
-    Cache-Control = "max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.ico"
