@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://rileyhoffman.com/projects'),
   alternates: { canonical: '/' },
   openGraph: {
-    images: 'https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg',
+    images: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg',
     title: 'Projects',
     url: 'https://rileyhoffman.com/projects/',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
-      <SchemaOrg headline="Projects - Riley Hoffman - Web Developer" description="View past projects by Riley Hoffman - Web Developer." image="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg" datePublished="2024-07-04T09:25:01.340Z" />
+      <SchemaOrg headline="Projects - Riley Hoffman - Web Developer" description="View past projects by Riley Hoffman - Web Developer." image="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg" datePublished="2024-07-04T09:25:01.340Z" />
       <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white">Projects</h1>
       <ProjectsList />
     </>

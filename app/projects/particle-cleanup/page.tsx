@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       canonical: '/',
     },
     openGraph: {
-      images: 'https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg',
+      images: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg',
       title: 'Particle Cleanup Game',
       url: 'https://rileyhoffman.com/projects/particle-cleanup/',
     },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function ParticleCleanupWrapper() {
   return (
     <>
-      <SchemaOrg headline="Particle Cleanup Game - Riley Hoffman - Web Developer" description="How quickly can you clear all the particles from the board using your cursor or finger?" image="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg" datePublished="2024-07-04T09:25:01.340Z" />
+      <SchemaOrg headline="Particle Cleanup Game - Riley Hoffman - Web Developer" description="How quickly can you clear all the particles from the board using your cursor or finger?" image="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg" datePublished="2024-07-04T09:25:01.340Z" />
       <div className="pb-16">
         <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:leading-normal md:text-5xl contrast-more:bg-white">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">

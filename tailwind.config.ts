@@ -17,8 +17,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'wood': "url('https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/wood-background.webp')",
-        'diamonds': "url('https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/diamonds.svg')",
+        'wood': "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wood-background.webp')",
+        'diamonds': "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds.svg')",
       },
       colors: {
         zinc: '#12121c',

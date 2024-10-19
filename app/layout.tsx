@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    images: 'https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/thumbnail.jpg',
+    images: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg',
     title: {
       template: '%s | Riley Hoffman - Web Developer',
       default: 'Riley Hoffman - Web Developer',
