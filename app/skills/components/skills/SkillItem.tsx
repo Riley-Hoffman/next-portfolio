@@ -15,7 +15,7 @@ export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) =>  (
       {devicon ? (
         <i className={`text-5xl ${devicon}`} aria-hidden="true"></i>
       ) : image ? (
-        <Image src="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/wcag.png?alt=media&token=c1140e2b-36fc-464d-a942-97f354f71649" className="w-20" width="300" height="71" alt="" />
+        <Image src="https://firebasestorage.googleapis.com/v0/b/rileyhoffmandotcom.appspot.com/o/wcag.png" className="w-20" width="300" height="71" alt="" />
       ) : icon ? (
         <FontAwesomeIcon className="text-5xl" icon={icon} />
       ) : null} 
