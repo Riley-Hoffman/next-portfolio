@@ -44,11 +44,11 @@ export const SiteTechStack = () => {
         {technologies.map((tech, index) => (
           <li 
             key={tech.name} 
-            className={`overflow-hidden relative lg:col-auto sm:col-auto ${
+            className={`relative lg:col-auto sm:col-auto ${
             index === technologies.length - 2 && 'md:col-start-1'} ${index === technologies.length - 1 && 'md:col-start-3'}`} 
             ref={(el) => { if (el) { elementsRef.current.push(el); } }}
           >
-              <a className="p-5 mx-auto w-fit min-w-[13.1rem] min-h-[9.5rem] no-underline block bg-pink-100 hover:bg-zinc hover:text-pink-100 focus-visible:bg-zinc focus-visible:text-pink-100 transition-shadow duration-300" href={tech.url}  target="_blank" rel="noopener noreferrer">
+              <a className="shadow-[#12121c_4px_4px_0_0] rounded-md p-5 mx-auto w-fit min-w-[13.1rem] min-h-[9.5rem] no-underline block bg-pink-100 hover:bg-zinc hover:text-pink-100 hover:shadow-none focus-visible:bg-zinc focus-visible:text-pink-100 focus-visible:shadow-none transition-shadow duration-400" href={tech.url}  target="_blank" rel="noopener noreferrer">
                 <i className={`${tech.logo} mx-auto text-7xl`} aria-hidden="true"></i>
                 <p className="my-1 text-xl" translate="no">{tech.name}</p>
               </a>

@@ -32,7 +32,7 @@ export function Accordion({ items, label }: AccordionProps) {
     }, [openIndex]);
 
     return (
-        <ul className="max-w-[90%] mb-12 shadow-[#12121c_0px_0px_0px_0px,_#12121c_0px_0px_0px_0px,_#12121c_4px_4px_0px_0px] rounded-lg leading-loose" aria-label={label}>
+        <ul className="max-w-[90%] mb-12 shadow-[#12121c_4px_4px_0_0] rounded-lg leading-loose" aria-label={label}>
             {items.map((item, index) => (
                 <li className="group" key={index}>
                     <button ref={(el) => { buttonRefs.current[index] = el;}} className="w-full py-6 px-5 bg-pink-100 text-left font-medium text-[#2d2b34] border-b border-solid border-[#e1d7ee] text-lg leading-9 transition-all duration-500 ease-in-out group-first:rounded-t-lg group-last:rounded-b-lg accordion aria-expanded:border-b-0 group-last:border-b-0 group peer" onClick={() => handleAccordionClick(index)} aria-expanded={openIndex === index ? "true" : "false"} >   
