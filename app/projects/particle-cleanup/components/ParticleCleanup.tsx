@@ -205,8 +205,8 @@ export const ParticleCleanup = () => {
   return (
     <>
       <div ref={(el) => {refs.current.container = el}} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-wood bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex={-1}>
-        <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={(el) => {refs.current.canvas = el}} />
-        <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
+        <canvas className="w-full absolute inset-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={(el) => {refs.current.canvas = el}} />
+        <div className="w-full h-full border-1 boder-solid border-pink-200 absolute inset-0">
           {refs.current.allClean && (
             <CompletionMessage medalDetails={medalDetails} time={state.time} />
           )}
