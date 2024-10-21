@@ -34,7 +34,7 @@ export function Form() {
 
     const { name, email, message } = formState;
     return (
-        <form className="max-w-screen-md pt-5 px-5 pb-10 relative" onSubmit={handleSubmit}>
+        <form className="max-w-2xl pt-5 px-5 pb-10 relative" onSubmit={handleSubmit}>
             <fieldset>
                 <Legend />
                 <div className="pb-5">
