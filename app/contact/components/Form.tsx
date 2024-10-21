@@ -38,7 +38,7 @@ export function Form() {
             <fieldset>
                 <Legend />
                 <div className="pb-5">
-                    <div className="pb-3 relative md:flex md:justify-between md:items-center md:gap-5">
+                    <div className="pb-6 relative md:flex md:justify-between md:items-center md:gap-5">
                         <FormField type="text" value={name} handleChange={handleChange} name="name" placeholder="Enter your name.." />
                         <br className="inline md:hidden" />
                         <br className="inline md:hidden" />
