@@ -27,7 +27,7 @@ export const ProjectBox = ({ inverted, animation, isFirst, children, }: ProjectB
   return (
     <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} transition-all duration-1000 ease ${isFirst ? 'mt-12' : 'mt-0'} [&.inverted]:flex-row-reverse md:flex group`} ref={(el) => { if (el) { elementsRef.current.push(el); } }}>
       {children}
-      <div className={`bg-purple-100 rounded-[50%] -z-10 opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${inverted ? 'group-odd:-left-full' : 'group-even:-right-full' }`} />
+      <div className={`bg-purple-100 rounded-[50%] -z-10 opacity-10 absolute inset-0 top-[5%] oval ${inverted ? 'group-odd:-left-full' : 'group-even:-right-full' }`} />
     </li>
   );
 };
