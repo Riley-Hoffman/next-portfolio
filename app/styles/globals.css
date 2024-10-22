@@ -119,10 +119,6 @@
   p a,li a {
   text-decoration:underline
   }
-  ul,ol {
-  margin-top:1rem;
-  margin-bottom:1rem
-  }
   :not(.flex) > [class*="max-"] {
   margin-left:auto;
   margin-right:auto
