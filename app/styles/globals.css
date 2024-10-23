@@ -104,7 +104,8 @@
   line-height:1.5
   }
   h1,h2 {
-  font-size:1.5rem
+  font-size:1.5rem;
+  font-variant: small-caps;
   }
   p,ul,ol {
   font-size:1.125rem

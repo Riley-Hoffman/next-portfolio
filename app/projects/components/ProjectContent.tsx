@@ -47,12 +47,12 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
   return (
     <>
       <div className="pt-5 pb-10 basis-2/4 project-info">
-        <h2 className="pb-4">{title}</h2>
+        <h3 className="pb-4 text-2xl">{title}</h3>
         <p className="pb-4 mb-8 text-lg font-poppins" translate="no">{skills}</p>
         <p className="pb-4">{description}</p>
-        <h3 className="mb-8">
+        <h4 className="mb-8 text-base">
           <span translate="no">{title} </span>Links:
-        </h3>
+        </h4>
         {renderLink(liveUrl, liveContent, internal)}
         {gitUrl && renderLink(gitUrl, repoContent)}
       </div>
