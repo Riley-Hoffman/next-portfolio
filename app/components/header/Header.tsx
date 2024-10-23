@@ -70,7 +70,7 @@ export function Header() {
             <a href="#content" className="sr-only button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center justify-between">
                 <div className="logo">
-                    <button className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl" onClick={handleClickHome}>
+                    <button className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wider md:text-2xl md:font-normal" onClick={handleClickHome}>
                         <span aria-hidden="true">Riley Hoffman</span>
                         <span className="sr-only">Back To Home Page</span>
                     </button>
