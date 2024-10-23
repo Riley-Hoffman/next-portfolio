@@ -39,7 +39,7 @@ export const SiteTechStack = () => {
 
     return (
     <>
-      <h2 className="text-2xl font-inconsolata mb-8">Technologies Used To Build This Site</h2>
+      <h2 className="text-2xl font-inconsolata mb-8 reg-caps">Technologies Used To Build This Site</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 lg:gap-x-6 max-w-6xl min-h-40" aria-label="Site tech stack.">
         {technologies.map((tech, index) => (
           <li 
