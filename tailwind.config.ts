@@ -184,10 +184,13 @@ const config: Config = {
           borderImageSlice: '1',
         },
         '.gradient-border:not(.inverted)': {
-          borderImageSource: 'linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)',
+          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpink')} 0%,${theme('colors.gradientpink')} 50%,${theme('colors.gradientpurple')} 70%)`,
         },
         '.gradient-border.inverted': {
-          borderImageSource: 'linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%)',
+          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
+        },
+        '.drop-shadow-stroke': {
+          filter: `drop-shadow(-1px -1px 0 ${theme('colors.zinc')}) drop-shadow(1px -1px 0 ${theme('colors.zinc')}) drop-shadow(-1px 1px 0 ${theme('colors.zinc')}) drop-shadow(1px 1px 0 ${theme('colors.zinc')})`,
         }
       });
     }),
