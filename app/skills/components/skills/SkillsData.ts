@@ -23,6 +23,6 @@ export const SkillsData = [
     { skill: 'Express', devicon: 'devicon-express-original' },
     { skill: 'MongoDB', devicon: 'devicon-mongodb-plain' },
     { skill: 'Mongoose', devicon: 'devicon-mongoose-original' },
-    { skill: 'Homebrew', devicon: 'devicon-homebrew-plain' },
+    { skill: 'Elasticsearch', devicon: 'devicon-elasticsearch-plain' },
     { skill: 'JSON', devicon: 'devicon-json-plain' }
 ];
