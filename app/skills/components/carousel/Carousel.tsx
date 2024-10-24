@@ -31,7 +31,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
           bulletClass: 'swiper-pagination-bullet !h-6 !w-6 !mx-3',
           bulletActiveClass: 'swiper-pagination-bullet-active',
           renderBullet: (index, className) =>
-            `<button class="${className}" aria-label="Slide ${index + 1}"></button>`,
+            `<button class="${className}" aria-label="${slides[index]?.label || `Slide ${index + 1}`}"></button>`,
         }}
         mousewheel={{
           forceToAxis: true,
@@ -50,7 +50,6 @@ export const Carousel = ({ slides }: CarouselProps) => {
         a11y={{
           prevSlideMessage: 'Previous slide',
           nextSlideMessage: 'Next slide',
-          paginationBulletMessage: 'Go to slide {{index}}',
         }}
       >
         {slides.map((slide, index) => (
