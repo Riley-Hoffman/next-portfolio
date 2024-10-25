@@ -10,7 +10,7 @@ export default function ProjectsList() {
   const { data: projects, loading, error } = useFetchFirebaseData<Project[]>('/projects');
 
   if (loading) {
-    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Loading... <FontAwesomeIcon className="block mx-auto text-4xl text-purple-100 animate-[rotate_5s_infinite] drop-shadow-stroke" icon={faGear} /></span></div>;
+    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Loading... <FontAwesomeIcon className="block mx-auto text-4xl text-pink-100 animate-[rotate_5s_infinite] drop-shadow-stroke" icon={faGear} /></span></div>;
   }
 
   if (error || !projects) {
