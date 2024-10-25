@@ -184,7 +184,7 @@ const config: Config = {
           borderImageSlice: '1',
         },
         '.gradient-border:not(.inverted)': {
-          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpink')} 0%,${theme('colors.gradientpink')} 50%,${theme('colors.gradientpurple')} 70%)`,
+          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientlightpurple')} 0%,${theme('colors.gradientpink')} 50%,${theme('colors.gradientpurple')} 70%)`,
         },
         '.gradient-border.inverted': {
           borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
