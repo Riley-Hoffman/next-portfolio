@@ -1,5 +1,6 @@
 'use client';
 import { ProjectBox } from './ProjectBox';
+import { ProjectCatHeading } from './ProjectCatHeading';
 import { ProjectContent } from './ProjectContent';
 import { useFetchFirebaseData } from '../../../hooks/useFetchFirebaseData';
 import type { Project } from './ProjectContent';
@@ -33,7 +34,7 @@ function ProjectCategory({ category, index, projects }: { category: string; inde
 
   return (
     <>
-      <h2 className="max-w-screen-xl text-2xl pb-5 leading-normal md:text-3xl">{category} Projects</h2>
+      <ProjectCatHeading category={category} />
       <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
       {filteredProjects.map((project: Project, idx: number) => {
           const originalIndex = projects.findIndex(p => p.title === project.title) + 1;
