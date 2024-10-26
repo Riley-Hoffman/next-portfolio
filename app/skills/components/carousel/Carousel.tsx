@@ -50,7 +50,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
         }}
         a11y={{
           containerRole: 'region',
-          containerRoleDescriptionMessage: 'Trainings & Certifications',
+          containerRoleDescriptionMessage: 'Trainings & Certifications Carousel',
         }}
       >
         {slides.map((slide, index) => (
