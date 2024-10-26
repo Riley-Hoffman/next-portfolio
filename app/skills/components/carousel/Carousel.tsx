@@ -19,13 +19,14 @@ interface CarouselProps {
 
 export const Carousel = ({ slides }: CarouselProps) => {
   return (
-    <div className="relative max-w-7xl max-h-[31rem] overflow-hidden" role="listbox" aria-label="Trainings & Certifications">
+    <div className="relative max-w-7xl max-h-[31rem] overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
           prevEl: '.prev-btn',
           nextEl: '.next-btn',
         }}
+        effect='cube'
         pagination={{
           clickable: true,
           bulletClass: 'swiper-pagination-bullet !h-6 !w-6 !mx-3',
@@ -48,8 +49,8 @@ export const Carousel = ({ slides }: CarouselProps) => {
           }
         }}
         a11y={{
-          prevSlideMessage: 'Previous slide',
-          nextSlideMessage: 'Next slide',
+          containerRole: 'region',
+          containerRoleDescriptionMessage: 'Trainings & Certifications',
         }}
       >
         {slides.map((slide, index) => (
