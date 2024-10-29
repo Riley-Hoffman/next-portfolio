@@ -53,6 +53,7 @@ const config: Config = {
       },
       animation: {
         typetext: 'typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.5s forwards',
+        loading: 'rotate2 1s ease-in-out infinite alternate, rotate 1.5s linear infinite alternate',
       },
       keyframes: {
         wiggle: {
@@ -61,12 +62,10 @@ const config: Config = {
           '50%': { transform: 'rotate(2deg)' },
         },
         rotate: {
-          '0%': { transform: 'rotate(0)' },
-          '100%': { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(360deg)' },
         },
         spin: {
-          '0%': { transform: 'rotateY(0)' },
-          '100%': { transform: 'rotateY(360deg)' },
+          to: { transform: 'rotateY(360deg)' },
         },
         typing: {
           from: { maxWidth: '0' },
@@ -78,6 +77,11 @@ const config: Config = {
         },
         borderfade: {
           to: { borderColor: 'transparent' },
+        },
+        rotate2: {
+          '0%': { strokeDasharray: '1, 800', strokeDashoffset: '0' },
+          '50%': { strokeDasharray: '400, 400', strokeDashoffset: '-200px' },
+          '100%': { strokeDasharray: '800, 1', strokeDashoffset: '-800px' },
         },
       },
     },
@@ -188,9 +192,6 @@ const config: Config = {
         },
         '.gradient-border.inverted': {
           borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
-        },
-        '.drop-shadow-stroke': {
-          filter: `drop-shadow(-1px -1px 0 ${theme('colors.zinc')}) drop-shadow(1px -1px 0 ${theme('colors.zinc')}) drop-shadow(-1px 1px 0 ${theme('colors.zinc')}) drop-shadow(1px 1px 0 ${theme('colors.zinc')})`,
         }
       });
     }),

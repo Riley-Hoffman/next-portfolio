@@ -4,14 +4,12 @@ import { ProjectCatHeading } from './ProjectCatHeading';
 import { ProjectContent } from './ProjectContent';
 import { useFetchFirebaseData } from '../../../hooks/useFetchFirebaseData';
 import type { Project } from './ProjectContent';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ProjectsList() {
   const { data: projects, loading, error } = useFetchFirebaseData<Project[]>('/projects');
 
   if (loading) {
-    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Loading... <FontAwesomeIcon className="block mx-auto text-4xl text-pink-100 animate-[rotate_5s_infinite] drop-shadow-stroke" icon={faGear} /></span></div>;
+    return <div className="min-h-screen pt-44 text-center text-3xl"><span>Loading... <svg viewBox="0 0 50 50" className="max-w-12 inline" xmlns="http://www.w3.org/2000/svg"><circle className="animate-loading origin-center" cx="25" cy="25" fill="none" r="15" stroke-width="5" stroke="#794e8d" stroke-dasharray="1 800" stroke-linecap="round" /></svg></span></div>;
   }
 
   if (error || !projects) {
