@@ -1,8 +1,11 @@
 type PlayAgainProps = {
-    reloadAnimation: () => void;
+  reloadAnimation: () => void;
 };
 
-export const PlayAgain = ({ reloadAnimation }: PlayAgainProps) =>  ( 
-    <p><button className="p-3 button" onClick={reloadAnimation}>Play Again</button></p>
+export const PlayAgain = ({ reloadAnimation }: PlayAgainProps) => (
+  <p>
+    <button className="button p-3" onClick={reloadAnimation}>
+      Play Again
+    </button>
+  </p>
 );
-  

@@ -1,4 +1,4 @@
-import { WebPage, WithContext } from 'schema-dts';
+import { WebPage, WithContext } from "schema-dts";
 
 interface SchemaOrgProps {
   headline: string;
@@ -6,18 +6,23 @@ interface SchemaOrgProps {
   image: string;
   datePublished: string;
 }
-const SchemaOrg = ({ headline, description, image, datePublished }: SchemaOrgProps) =>  {
+const SchemaOrg = ({
+  headline,
+  description,
+  image,
+  datePublished,
+}: SchemaOrgProps) => {
   const structuredData: WithContext<WebPage> = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    "@context": "https://schema.org",
+    "@type": "WebPage",
     headline: headline,
     description: description,
     image: image,
     datePublished: datePublished,
     author: {
-      '@type': 'Person',
-      name: 'Riley Hoffman',
-      url: 'https://rileyhoffman.com',
+      "@type": "Person",
+      name: "Riley Hoffman",
+      url: "https://rileyhoffman.com",
     },
   };
 

@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject } from 'react';
+import { useEffect, MutableRefObject } from "react";
 
 interface Refs {
   container: HTMLElement | null;
@@ -14,30 +14,40 @@ export function useParticleCleanupEvents(
   refs: MutableRefObject<Refs>,
   handleInteraction: HandleInteraction,
   handleScroll: HandleScroll,
-  initializeAnimation: InitializeAnimation
+  initializeAnimation: InitializeAnimation,
 ) {
   useEffect(() => {
     const localRefs = { ...refs.current };
     if (!localRefs.container || !localRefs.canvas) return;
-    const events: string[] = ['mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'];
+    const events: string[] = [
+      "mousemove",
+      "mouseleave",
+      "touchmove",
+      "touchend",
+      "touchstart",
+    ];
 
     const handleEvent = (event: Event) => {
-      const isInside = event.type !== 'mouseleave' && event.type !== 'touchend';
+      const isInside = event.type !== "mouseleave" && event.type !== "touchend";
       handleInteraction(event, isInside);
     };
 
     const manageEventListeners = (
-      action: 'add' | 'remove',
+      action: "add" | "remove",
       element: HTMLElement,
       eventTypes: string[],
       handler: EventListener,
-      options?: AddEventListenerOptions
+      options?: AddEventListenerOptions,
     ) => {
-      eventTypes.forEach(eventType => element[`${action}EventListener`](eventType, handler, options));
+      eventTypes.forEach((eventType) =>
+        element[`${action}EventListener`](eventType, handler, options),
+      );
     };
 
-    manageEventListeners('add', localRefs.container, events, handleEvent, { passive: false });
-    window.addEventListener('wheel', handleScroll, { passive: false });
+    manageEventListeners("add", localRefs.container, events, handleEvent, {
+      passive: false,
+    });
+    window.addEventListener("wheel", handleScroll, { passive: false });
 
     initializeAnimation();
 
@@ -49,15 +59,20 @@ export function useParticleCleanupEvents(
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
       if (localRefs.container) {
-        manageEventListeners('remove', localRefs.container, events, handleEvent);
+        manageEventListeners(
+          "remove",
+          localRefs.container,
+          events,
+          handleEvent,
+        );
       }
-      
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('resize', handleResize);
+
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(localRefs.animationFrameId);
     };
   }, [refs, handleInteraction, handleScroll, initializeAnimation]);
-};
+}

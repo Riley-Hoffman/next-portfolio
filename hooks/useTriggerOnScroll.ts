@@ -1,4 +1,4 @@
-import { useEffect, useRef, MutableRefObject } from 'react';
+import { useEffect, useRef, MutableRefObject } from "react";
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -8,20 +8,22 @@ type HTMLElementWithDataset = HTMLElement & {
   };
 };
 
-export const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElementWithDataset[]> => {
+export const useTriggerOnScroll = (
+  force: number = 0,
+): MutableRefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([]);
 
   useEffect(() => {
     const updateElementActivation = (
       element: HTMLElementWithDataset,
       rect: DOMRect,
-      distance: number
+      distance: number,
     ) => {
       const isActive = rect.top < distance;
-      element.dataset.active = isActive || force ? 'true' : 'false';
+      element.dataset.active = isActive || force ? "true" : "false";
 
       if (element.dataset.repeat && !isActive && !force) {
-        element.dataset.active = 'false';
+        element.dataset.active = "false";
       }
     };
 
@@ -29,16 +31,16 @@ export const useTriggerOnScroll = (force: number = 0): MutableRefObject<HTMLElem
       requestAnimationFrame(() => {
         elementsRef.current.forEach((element) => {
           const rect = element.getBoundingClientRect();
-          const distance = parseInt(element.dataset.distance ?? '800', 10);
+          const distance = parseInt(element.dataset.distance ?? "800", 10);
           updateElementActivation(element, rect, distance);
         });
       });
     };
 
     setTimeout(updateTriggerOnScroll, 100);
-    window.addEventListener('scroll', updateTriggerOnScroll);
+    window.addEventListener("scroll", updateTriggerOnScroll);
     return () => {
-      window.removeEventListener('scroll', updateTriggerOnScroll);
+      window.removeEventListener("scroll", updateTriggerOnScroll);
     };
   }, [force]);
 

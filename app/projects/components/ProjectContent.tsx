@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { NewTabSrText } from '../../components/NewTabSrText';
+import Link from "next/link";
+import Image from "next/image";
+import { NewTabSrText } from "../../components/NewTabSrText";
 
 export interface Project {
   title: string;
@@ -16,21 +16,39 @@ export interface Project {
   isFirst?: boolean;
 }
 
-export function ProjectContent({ title, skills, description, internal, liveUrl, gitUrl, alt, imgUrl, isFirst }: Project) {
+export function ProjectContent({
+  title,
+  skills,
+  description,
+  internal,
+  liveUrl,
+  gitUrl,
+  alt,
+  imgUrl,
+  isFirst,
+}: Project) {
   const commonClasses = "mx-5 py-1 px-3 uppercase button";
-  
-  const renderLink = (url: string, content: JSX.Element, isInternal?: boolean) => (
+
+  const renderLink = (
+    url: string,
+    content: JSX.Element,
+    isInternal?: boolean,
+  ) =>
     isInternal ? (
       <Link className={commonClasses} href={url}>
         {content}
       </Link>
     ) : (
-      <a className={`new-tab ${commonClasses}`} href={url} target="_blank" rel="noopener noreferrer">
+      <a
+        className={`new-tab ${commonClasses}`}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {content}
         <NewTabSrText icon={true} />
       </a>
-    )
-  );
+    );
 
   const liveContent = (
     <>
@@ -46,9 +64,11 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
 
   return (
     <>
-      <div className="pt-5 pb-10 basis-2/4 project-info">
+      <div className="project-info basis-2/4 pb-10 pt-5">
         <h3 className="pb-4 text-2xl">{title}</h3>
-        <p className="pb-4 mb-8 text-lg font-poppins" translate="no">{skills}</p>
+        <p className="mb-8 pb-4 font-poppins text-lg" translate="no">
+          {skills}
+        </p>
         <p className="pb-4">{description}</p>
         <h4 className="mb-8 text-base">
           <span translate="no">{title} </span>Links:
@@ -56,8 +76,16 @@ export function ProjectContent({ title, skills, description, internal, liveUrl, 
         {renderLink(liveUrl, liveContent, internal)}
         {gitUrl && renderLink(gitUrl, repoContent)}
       </div>
-      <div className="text-center relative basis-2/4">
-        <Image className="max-w-full w-[35.563rem]" alt={alt} src={imgUrl} title={title} height={569} width={569} priority={isFirst} />
+      <div className="relative basis-2/4 text-center">
+        <Image
+          className="w-[35.563rem] max-w-full"
+          alt={alt}
+          src={imgUrl}
+          title={title}
+          height={569}
+          width={569}
+          priority={isFirst}
+        />
       </div>
     </>
   );

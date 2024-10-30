@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { ref, onValue, off } from 'firebase/database';
-import { db } from '../lib/firebaseConfig';
+import { useState, useEffect } from "react";
+import { ref, onValue, off } from "firebase/database";
+import { db } from "../lib/firebaseConfig";
 
-export const useFetchFirebaseData = <T,>(path: string) => {
+export const useFetchFirebaseData = <T>(path: string) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +14,7 @@ export const useFetchFirebaseData = <T,>(path: string) => {
       if (snapshot.exists()) {
         setData(snapshot.val());
       } else {
-        setError('No data available');
+        setError("No data available");
       }
       setLoading(false);
     };
@@ -27,7 +27,7 @@ export const useFetchFirebaseData = <T,>(path: string) => {
     const unsubscribe = onValue(dataRef, handleData, handleError);
 
     return () => {
-      off(dataRef)
+      off(dataRef);
       unsubscribe();
     };
   }, [path]);

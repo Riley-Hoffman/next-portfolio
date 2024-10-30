@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 export const useTimedEffect = (duration: number = 1000) => {
   const isCountingRef = useRef(false);
@@ -16,12 +16,12 @@ export const useTimedEffect = (duration: number = 1000) => {
     }
   };
 
-  return { 
+  return {
     triggerEffect,
     cleanup: () => {
       if (timeoutId.current) {
         clearTimeout(timeoutId.current);
       }
-    }
+    },
   };
 };

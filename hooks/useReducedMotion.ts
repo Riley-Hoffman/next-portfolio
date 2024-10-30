@@ -10,7 +10,7 @@ export const useReducedMotion = (): boolean => {
     const handler = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(event.matches);
     };
-    
+
     mediaQuery.addEventListener("change", handler);
     return () => {
       mediaQuery.removeEventListener("change", handler);

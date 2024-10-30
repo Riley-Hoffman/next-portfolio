@@ -30,7 +30,7 @@ export class Particle {
     size: number,
     color: string,
     weight: number,
-    speedFactor: number
+    speedFactor: number,
   ) {
     this.position = { x, y };
     this.size = size;
@@ -67,15 +67,25 @@ export class Particle {
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = this.color;
     ctx.beginPath();
-    ctx.moveTo(this.position.x + this.vertices[0].x, this.position.y + this.vertices[0].y);
+    ctx.moveTo(
+      this.position.x + this.vertices[0].x,
+      this.position.y + this.vertices[0].y,
+    );
     for (let i = 1; i < this.vertices.length; i++) {
-      ctx.lineTo(this.position.x + this.vertices[i].x, this.position.y + this.vertices[i].y);
+      ctx.lineTo(
+        this.position.x + this.vertices[i].x,
+        this.position.y + this.vertices[i].y,
+      );
     }
     ctx.closePath();
     ctx.fill();
   }
 
-  update(ctx: CanvasRenderingContext2D, mouse: Mouse, canvas: HTMLCanvasElement): void {
+  update(
+    ctx: CanvasRenderingContext2D,
+    mouse: Mouse,
+    canvas: HTMLCanvasElement,
+  ): void {
     this.updateDirection(mouse);
     this.updatePosition();
     this.checkCanvasBounds(canvas);
@@ -95,9 +105,17 @@ export class Particle {
     }
   }
 
-  applyMouseEffect(dx: number, dy: number, distance: number, mouseRadius: number): void {
+  applyMouseEffect(
+    dx: number,
+    dy: number,
+    distance: number,
+    mouseRadius: number,
+  ): void {
     const adjustedDistance = Math.max(distance, 50);
-    const forceDirection = { x: -dx / adjustedDistance, y: -dy / adjustedDistance };
+    const forceDirection = {
+      x: -dx / adjustedDistance,
+      y: -dy / adjustedDistance,
+    };
     const force = (mouseRadius - adjustedDistance) / mouseRadius + 0.5;
     const magnitude = force * this.weight * 5 * this.speedFactor;
     this.direction.x = forceDirection.x * magnitude;
@@ -116,8 +134,12 @@ export class Particle {
 
   checkCanvasBounds(canvas: HTMLCanvasElement): void {
     const { width, height } = canvas;
-    if (this.position.x < -7.4 || this.position.x > width + 7.4 ||
-        this.position.y < -7.4 || this.position.y > height + 7.4) {
+    if (
+      this.position.x < -7.4 ||
+      this.position.x > width + 7.4 ||
+      this.position.y < -7.4 ||
+      this.position.y > height + 7.4
+    ) {
       this.inCanvas = false;
     }
   }
