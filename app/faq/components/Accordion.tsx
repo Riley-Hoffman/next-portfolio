@@ -32,7 +32,6 @@ export function Accordion({ items, label }: AccordionProps) {
 
     contentRefs.current.forEach((content, index) => {
       if (!content) return;
-
       if (openIndex === index) {
         content.style.maxHeight = `${content.scrollHeight + 44}px`;
       } else {
@@ -64,12 +63,6 @@ export function Accordion({ items, label }: AccordionProps) {
           </button>
           <div
             className={`overflow-hidden px-5 transition-all duration-500 ease-in-out ${openIndex === index ? "py-[0.125rem]" : "peer-[.init]:hidden"}`}
-            style={{
-              maxHeight:
-                openIndex === index
-                  ? `${contentRefs.current[index]?.scrollHeight}px`
-                  : "initial",
-            }}
             tabIndex={-1}
             ref={(el) => {
               contentRefs.current[index] = el;
