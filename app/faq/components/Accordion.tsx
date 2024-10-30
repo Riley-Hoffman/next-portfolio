@@ -52,7 +52,7 @@ export function Accordion({ items, label }: AccordionProps) {
                         <div className="p-3 mr-5  mb-[0.063rem] box-content text-xs text-pink-200 bg-zinc rounded-[50%] transition-all duration-200 ease-in-out group-hover:text-zinc group-focus-visible:text-zinc group-aria-expanded:text-zinc group-hover:bg-purple-100 group-focus-visible:bg-purple-100 group-aria-expanded:bg-purple-100 plus-minus after:h-[0.625rem] before:w-[0.625rem]"></div>
                         {item.question}
                     </button>
-                    <div className={`px-5 transition-all duration-500 ease-in-out overflow-hidden ${openIndex === index ? 'm-b-4 py-[0.125rem]' : 'peer-[.init]:hidden'}`} style={{ maxHeight: openIndex === index ? `${contentRefs.current[index]?.scrollHeight}px` : 'initial' }} tabIndex={-1} ref={(el) => { contentRefs.current[index] = el; }} >
+                    <div className={`px-5 transition-all duration-500 ease-in-out overflow-hidden ${openIndex === index ? 'py-[0.125rem]' : 'peer-[.init]:hidden'}`} style={{ maxHeight: openIndex === index ? `${contentRefs.current[index]?.scrollHeight}px` : 'initial' }} tabIndex={-1} ref={(el) => { contentRefs.current[index] = el; }} >
                         {item.answer}
                     </div>
                 </li>
