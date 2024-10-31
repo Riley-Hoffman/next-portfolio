@@ -1,13 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FormState } from "../components/Form";
-import { useRouter } from "next/navigation";
 
 export function useFormValidation(initialState: FormState) {
   const [formState, setFormState] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });
-  const router = useRouter();
 
   useEffect(() => {
     if (submitted) {
@@ -40,40 +38,11 @@ export function useFormValidation(initialState: FormState) {
     setSubmitted(true);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const csrfToken = localStorage.getItem("csrf-token");
-    if (!csrfToken) {
-      console.error("CSRF token is missing");
-      return;
-    }
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "csrf-token": csrfToken,
-        },
-        body: JSON.stringify(formState),
-      });
-      if (response.ok) {
-        console.log("Form submitted successfully");
-        router.push("/thank-you");
-      } else {
-        console.error("Form submission failed");
-      }
-    } catch (error) {
-      console.error("An error occurred", error);
-    }
-  };
-
   return {
     formState,
     errors,
     handleChange,
     handleSubmitClick,
-    handleSubmit,
     submitted,
   };
 }

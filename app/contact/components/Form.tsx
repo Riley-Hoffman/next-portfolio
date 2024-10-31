@@ -1,5 +1,6 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useFormValidation } from "../hooks/useFormValidation";
 import { Legend } from "./Legend";
 import { FormField } from "./FormField";
@@ -14,12 +15,15 @@ export interface FormState {
 }
 
 export function Form() {
+  const [csrfToken, setCsrfToken] = useState<string | null>(null);
+  const [csrfSecret, setCsrfSecret] = useState<string | null>(null);
+  const router = useRouter();
+
   const {
     formState,
     errors,
     handleChange,
     handleSubmitClick,
-    handleSubmit,
     submitted,
   } = useFormValidation({
     name: "",
@@ -28,22 +32,61 @@ export function Form() {
   });
 
   useEffect(() => {
-    const generateCsrfToken = async () => {
-      const response = await fetch("/api/csrf-token");
-      const data = await response.json();
-      if (data.token) {
-        localStorage.setItem("csrf-token", data.token);
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await fetch("/api/csrf-token");
+        const data = await response.json();
+
+        if (data.token && data.secret) {
+          setCsrfToken(data.token);
+          setCsrfSecret(data.secret);
+        } else {
+          console.error("Failed to fetch CSRF token and secret.");
+        }
+      } catch (error) {
+        console.error("Error fetching CSRF token:", error);
       }
     };
 
-    generateCsrfToken();
+    fetchCsrfToken();
   }, []);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!csrfToken || !csrfSecret) {
+      console.error("CSRF token or secret is missing.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "csrf-token": csrfToken,
+          "csrf-secret": csrfSecret,
+        },
+        body: JSON.stringify(formState),
+      });
+      
+      const result = await response.json();
+      if (!response.ok) {
+        console.error("Form submission failed:", result.error);
+      } else {
+        console.log("Form submitted successfully:", result);
+        router.push("/thank-you");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   const { name, email, message } = formState;
   return (
     <form
       className="relative max-w-2xl px-5 pb-10 pt-5"
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit}
     >
       <fieldset>
         <Legend />
