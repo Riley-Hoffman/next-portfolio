@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useAccordion } from "../../../hooks/useAccordion";
 
 type AccordionItem = {
   question: string;
@@ -12,37 +12,8 @@ type AccordionProps = {
 };
 
 export function Accordion({ items, label }: AccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const handleAccordionClick = (index: number) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  useEffect(() => {
-    buttonRefs.current.forEach((button, index) => {
-      if (!button) return;
-      if (openIndex === index) {
-        setTimeout(() => button.classList.remove("init"), 500);
-      } else {
-        setTimeout(() => button.classList.add("init"), 500);
-      }
-    });
-
-    contentRefs.current.forEach((content, index) => {
-      if (!content) return;
-      if (openIndex === index) {
-        content.style.maxHeight = `${content.scrollHeight + 44}px`;
-      } else {
-        content.style.maxHeight = "0px";
-      }
-    });
-    if (openIndex !== null && contentRefs.current[openIndex]) {
-      contentRefs.current[openIndex]?.focus();
-    }
-  }, [openIndex]);
-
+  const { openIndex, handleAccordionClick, buttonRefs, contentRefs } =
+    useAccordion(items.length);
   return (
     <ul
       className="mb-12 max-w-[90%] rounded-lg leading-loose shadow-[#12121c_4px_4px_0_0]"
