@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import SchemaOrg from "../components/SchemaOrg";
 import ProjectsList from "./components/ProjectsList";
+import { db } from "../../lib/firebaseConfig";
+import { ref, get } from "firebase/database";
+import type { Project } from "./components/ProjectContent";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -15,7 +18,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Projects() {
+async function fetchProjectsData(): Promise<Project[]> {
+  try {
+    const snapshot = await get(ref(db, "/projects"));
+    return snapshot.exists() ? snapshot.val() : [];
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    return [];
+  }
+}
+
+export default async function Projects() {
+  const initialProjects = await fetchProjectsData();
+
   return (
     <>
       <SchemaOrg
@@ -27,7 +42,7 @@ export default function Projects() {
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Projects
       </h1>
-      <ProjectsList />
+      <ProjectsList initialProjects={initialProjects} />
     </>
   );
 }
