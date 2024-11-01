@@ -53,7 +53,6 @@ const config: Config = {
       },
       animation: {
         typetext: 'typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.5s forwards',
-        loading: 'rotate2 1s ease-in-out infinite alternate, rotate 1.5s linear infinite alternate',
       },
       keyframes: {
         wiggle: {
@@ -77,12 +76,7 @@ const config: Config = {
         },
         borderfade: {
           to: { borderColor: 'transparent' },
-        },
-        rotate2: {
-          '0%': { strokeDasharray: '1, 800', strokeDashoffset: '0' },
-          '50%': { strokeDasharray: '400, 400', strokeDashoffset: '-200px' },
-          '100%': { strokeDasharray: '800, 1', strokeDashoffset: '-800px' },
-        },
+        }
       },
     },
   },
