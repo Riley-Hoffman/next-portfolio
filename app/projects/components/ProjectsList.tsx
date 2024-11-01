@@ -3,7 +3,11 @@ import { ProjectCatHeading } from "./ProjectCatHeading";
 import { ProjectContent } from "./ProjectContent";
 import type { Project } from "./ProjectContent";
 
-export default function ProjectsList({ initialProjects }: { initialProjects: Project[] }) {
+export default function ProjectsList({
+  initialProjects,
+}: {
+  initialProjects: Project[];
+}) {
   const projects = initialProjects;
 
   if (!projects || projects.length === 0) {
