@@ -95,70 +95,65 @@
 
   body {
   font-family:Inconsolata,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
-  color: #12121c;
+  @apply text-zinc
   }
   h1,h2,h3,h4,h5,h6,label,legend {
-  font-family:'Poppins',sans-serif
+  @apply font-poppins
   }
   h1,h2,p,ul,ol {
-  line-height:1.5
+  @apply leading-6
   }
   h1:not(.reg-caps),h2:not(.reg-caps) {
   font-variant: small-caps;
   }
   h1,h2 {
-  font-size:1.5rem;
+  @apply text-2xl;
   }
   p,ul,ol {
-  font-size:1.125rem
+  @apply text-lg
   }
   p,h1,h2,h3,h4,h5,h6 {
-  padding:0 1.25rem;
-  margin:1.25rem 0
+  @apply my-5 mx-0 px-5;
   }
   html {
-  background-color:#f5f5f5
+  @apply bg-[#f5f5f5];
   }
   p a,li a {
-  text-decoration:underline
+  @apply underline
   }
   :not(.flex) > [class*="max-"] {
-  margin-left:auto;
-  margin-right:auto
+  @apply mx-auto;
   }
   main ::placeholder {
-  color:#73738c;
-  font-size: 1rem;
-  font-weight:300;
-  opacity:1
+  @apply text-[#73738c] text-base font-light opacity-100;
   }
   a,a > *,.button {
-  transition:color .2s ease-in-out,background-color .2s ease-in-out
+  transition:color .2s ease-in-out,background-color .2s ease-in-out;
   }
   a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible {
-  outline:.125rem solid #6f00f7
+  @apply outline outline-2 outline-[#6f00f7];
   }
   .new-tab > span:last-child:after {
-    content: "\f08e";
+  @apply content-["\f08e"]
   }
   html [class*="svg-inline--fa"] {
-  vertical-align:middle
+  @apply align-middle
   }
   
   @media (max-width: 768px) {
-  .hamburger .line {
-  border-image-source:linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)
-  }
-  }
-  @media (prefers-contrast: more) {
-  .button {
-  color:#fff
-  }
-  body ::placeholder {
-  color:#000
-  }
-  html,.overlay:before {
-  background-color:#ffffffa8
-  }
+    .hamburger .line {
+    border-image-source:linear-gradient(90deg,#a8a1d9 0%,#ae4971 50%,#794e8e 70%)
+    }
+    }
+    @media (prefers-contrast: more) {
+    .button {
+    @apply text-white
+    }
+    body ::placeholder {
+    @apply text-black
+    }
+    html,.overlay:before {
+    @apply bg-[##ffffffa8]
+    }
   }
 }
