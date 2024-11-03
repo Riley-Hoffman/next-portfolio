@@ -5,8 +5,6 @@ const config: Config = {
   content: [
     './app/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
     'md:motion-safe:left-[-200%]',
@@ -83,6 +81,40 @@ const config: Config = {
   plugins: [
     plugin(function({ addComponents, theme }) {
       addComponents({
+        'html': {
+          'backgroundColor': '#f5f5f5',
+        },
+        'body': {
+          fontFamily: 'Inconsolata, sans-serif',
+        },
+        'h1,h2,h3,h4,h5,h6,label,legend': {
+          fontFamily: 'Poppins, sans-serif',
+        },
+        'h1,h2,p,ul,ol': {
+          lineHeight: '1.5rem',
+        },
+        'h1,h2': {
+          fontSize: '1.5rem',
+          lineHeight: '2rem',
+        },
+        'p,ul,ol': {
+          fontSize: '1.125rem', 
+          lineHeight: '1.75rem',
+        },
+        'p,h1,h2,h3,h4,h5,h6': {
+          margin: '1.25rem 0',
+          padding: '0 1.25rem',
+        },
+        'p a,li a': {
+          textDecoration: 'underline',
+        },
+        'main ::placeholder': {
+          color: '#73738c',
+          fontSize: '1rem',
+          fontWeight: '300',
+          lineHeight: '1.5rem',
+          opacity: '1',
+        },
         '.button': {
           backgroundColor: theme('colors.zinc'),
           color: theme('colors.pink.200'),
@@ -175,6 +207,9 @@ const config: Config = {
           transform: 'translate(-50%, -50%) rotate(0deg)',
           transition: 'transform 0.3s ease-in-out',
         },
+        '.small-caps': {
+          fontVariant: 'small-caps',
+        },
         '[aria-expanded="true"] .plus-minus::after': {
           transform: 'translate(-50%, -50%) rotate(90deg)',
         },
@@ -186,7 +221,12 @@ const config: Config = {
         },
         '.gradient-border.inverted': {
           borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
-        }
+        },
+        '@media (max-width: 768px)': {
+          '.hamburger .line': {
+            borderImageSource: `linear-gradient(90deg, ${theme('colors.gradientlightpurple')} 0%, ${theme('colors.gradientpink')} 50%, ${theme('colors.gradientpurple')} 70%)`,
+          },
+        },
       });
     }),
   ],
