@@ -107,7 +107,7 @@ export function Header() {
       </div>
       <noscript>
         <nav className="px-4 md:hidden">
-          <ul className="flex flex-wrap gap-x-2 gap-y-3 font-medium">
+          <ul className="flex flex-wrap gap-x-2 gap-y-3">
             {RouteList.map(
               (route) =>
                 route.name !== "Particle Cleanup Game" &&
