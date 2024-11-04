@@ -40,6 +40,7 @@ const config: Config = {
         inconsolata: ['"Inconsolata", monospace'],
         'source-sans': ['"Source Sans 3", sans-serif'],
         urbanist: ['"Urbanist", sans-serif'],
+        fontAwesomeSolid: ['FontAwesomeSolid'],
       },
       clipPath: {
         'cut-corners': 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
@@ -85,10 +86,10 @@ const config: Config = {
           'backgroundColor': '#f5f5f5',
         },
         'body': {
-          fontFamily: 'Inconsolata, sans-serif',
+          fontFamily: theme('fontFamily.inconsolata'),
         },
         'h1,h2,h3,h4,h5,h6,label,legend': {
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily:  theme('fontFamily.poppins'),
         },
         'h1,h2,p,ul,ol': {
           lineHeight: '1.5rem',
@@ -127,7 +128,7 @@ const config: Config = {
         },
         '.new-tab > span:last-child:after': {
           display: 'inline-block',
-          fontFamily: 'FontAwesomeSolid',
+          fontFamily: theme('fontFamily.fontAwesomeSolid'),
           fontSize: '63%',
           fontWeight: '400',
           height: '0',
