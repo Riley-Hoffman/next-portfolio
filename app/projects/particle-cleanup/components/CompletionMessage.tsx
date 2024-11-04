@@ -22,15 +22,12 @@ export const CompletionMessage = ({
         {time} seconds
       </span>
     </small>
-    <span className="font-extrabold uppercase" aria-live="polite">
+    <span className="font-semibold uppercase" aria-live="polite">
       {medalDetails && (
-        <span
-          className="text-xl leading-normal md:text-2xl md:leading-normal"
-          aria-live="polite"
-        >
+        <span className="text-xl md:text-2xl" aria-live="polite">
           {medalDetails.text} <br />
           <FontAwesomeIcon
-            className="mx-auto block animate-[spin_2.4s_infinite] text-6xl"
+            className="mx-auto mt-2 block animate-[spin_2.4s_infinite] text-6xl"
             icon={faMedal}
             color={medalDetails.color}
           />
