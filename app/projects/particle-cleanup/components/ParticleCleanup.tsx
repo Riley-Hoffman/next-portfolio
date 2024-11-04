@@ -20,6 +20,7 @@ type Refs = {
 type State = {
   time: number | null;
   gameInProgress: boolean;
+  gameCompletedOnce: boolean;
   cursorMessage: string;
   cursorMessageRead: boolean;
 };
@@ -34,6 +35,7 @@ type Action =
 const initialState: State = {
   time: null,
   gameInProgress: true,
+  gameCompletedOnce: false,
   cursorMessage: "",
   cursorMessageRead: true,
 };
@@ -50,7 +52,10 @@ function reducer(state: State, action: Action): State {
     case "END_GAME":
       return { ...state, time: action.time, gameInProgress: false };
     case "RESET_GAME":
-      return { ...initialState };
+      return {
+        ...initialState,
+        gameCompletedOnce: state.gameCompletedOnce,
+      };
     case "SET_CURSOR_MESSAGE":
       return {
         ...state,
@@ -148,26 +153,31 @@ export const ParticleCleanup = () => {
     [state.gameInProgress],
   );
 
-  const createParticle = useCallback((canvas: HTMLCanvasElement) => {
-    const { width, height } = canvas;
-    const size = Math.random() * 30 + 10;
-    const colors = ["#A8A0D9", "#794E8D", "#ae4971"];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const weight = Math.random() * 0.5 + 0.5;
-    const isMobile = refs.current.isMobile;
-    const isTallScreen = window.innerHeight > 800;
-    const speedFactor =
-      (isMobile ? 0.4 : 0.75) * (isTallScreen ? 0.38 : 1) * 0.75;
+  const createParticle = useCallback(
+    (canvas: HTMLCanvasElement) => {
+      const { width, height } = canvas;
+      const size = Math.random() * 30 + 10;
+      const colors = ["#A8A0D9", "#794E8D", "#ae4971"];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const weight = Math.random() * 0.5 + 0.5;
+      const isMobile = refs.current.isMobile;
+      const isTallScreen = window.innerHeight > 800;
+      const speedFactor =
+        (isMobile ? 0.4 : 0.75) *
+        (isTallScreen ? 0.38 : 1) *
+        (state.gameCompletedOnce ? 0.5 : 0.75);
 
-    return new Particle(
-      Math.random() * width,
-      Math.random() * height,
-      size,
-      color,
-      weight,
-      speedFactor,
-    );
-  }, []);
+      return new Particle(
+        Math.random() * width,
+        Math.random() * height,
+        size,
+        color,
+        weight,
+        speedFactor,
+      );
+    },
+    [state.gameCompletedOnce],
+  );
 
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
