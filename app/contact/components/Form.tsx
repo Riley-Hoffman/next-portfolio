@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useFormValidation } from "../hooks/useFormValidation";
 import { Legend } from "./Legend";
@@ -15,8 +15,8 @@ export interface FormState {
 }
 
 export function Form() {
-  const [csrfToken, setCsrfToken] = useState<string | null>(null);
-  const [csrfSecret, setCsrfSecret] = useState<string | null>(null);
+  const csrfTokenRef = useRef<string | null>(null);
+  const csrfSecretRef = useRef<string | null>(null);
   const router = useRouter();
 
   const {
@@ -38,8 +38,8 @@ export function Form() {
         const data = await response.json();
 
         if (data.token && data.secret) {
-          setCsrfToken(data.token);
-          setCsrfSecret(data.secret);
+          csrfTokenRef.current = data.token;
+          csrfSecretRef.current = data.secret;
         } else {
           console.error("Failed to fetch CSRF token and secret.");
         }
@@ -54,7 +54,7 @@ export function Form() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!csrfToken || !csrfSecret) {
+    if (!csrfTokenRef.current || !csrfSecretRef.current) {
       console.error("CSRF token or secret is missing.");
       return;
     }
@@ -64,8 +64,8 @@ export function Form() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "csrf-token": csrfToken,
-          "csrf-secret": csrfSecret,
+          "csrf-token": csrfTokenRef.current,
+          "csrf-secret": csrfSecretRef.current,
         },
         body: JSON.stringify(formState),
       });
