@@ -35,12 +35,6 @@ for = "/*"
     Cache-Control = "max-age=31536000"
 
 [[headers]]
-  for = "/_next/image/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Vary = "Accept"
-
-[[headers]]
   for = "/*.ico"
   [headers.values]
     Cache-Control = "max-age=31536000"
