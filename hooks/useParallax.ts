@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useReducedMotion } from "./useReducedMotion";
 import { useScrollHandler } from "./useScrollHandler";
+import { pxToRem } from "../lib/pxToRem";
 
 export const useParallax = (
   velocity: number = 0.1,
@@ -19,8 +20,7 @@ export const useParallax = (
         const height = parallaxRef.current.offsetHeight - 18;
         const translateX = -(height - scrollRef.current) * velocity;
         const translateY = -(height - scrollRef.current) * (velocity + 0.1);
-
-        img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+        img.style.transform = `translate3d(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem, 0)`;
         img.style.willChange = "transform";
       }
     }

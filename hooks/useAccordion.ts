@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { pxToRem } from '../lib/pxToRem';
 
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -26,9 +27,9 @@ export const useAccordion = (itemsLength: number) => {
     contentRefs.current.forEach((content, index) => {
       if (!content) return;
       if (openIndex === index) {
-        content.style.maxHeight = `${content.scrollHeight + 44}px`;
+        content.style.maxHeight = `${pxToRem(content.scrollHeight) + 2.75}rem`;
       } else {
-        content.style.maxHeight = "0px";
+        content.style.maxHeight = "0rem";
       }
     });
 

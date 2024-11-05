@@ -34,8 +34,8 @@ export const SiteTechStack = () => {
   const elementsRef = useTriggerOnScroll();
   const animation = useMemo(
     () => [
-      "md:motion-safe:h-[0px]",
-      "[&[data-active='true']]:h-[160px]",
+      "md:motion-safe:h-[0rem]",
+      "[&[data-active='true']]:h-[10rem]",
       "transition-all",
       "first:duration-150",
       "[&:nth-child(2)]:duration-300",
@@ -78,7 +78,7 @@ export const SiteTechStack = () => {
             }}
           >
             <a
-              className="duration-400 mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_4px_4px_0_0] transition-shadow hover:bg-zinc hover:text-pink-100 hover:shadow-none focus-visible:bg-zinc focus-visible:text-pink-100 focus-visible:shadow-none active:min-h-fit"
+              className="duration-400 mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0] transition-shadow hover:bg-zinc hover:text-pink-100 hover:shadow-none focus-visible:bg-zinc focus-visible:text-pink-100 focus-visible:shadow-none active:min-h-fit"
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"

@@ -16,7 +16,7 @@ export function Accordion({ items, label }: AccordionProps) {
     useAccordion(items.length);
   return (
     <ul
-      className="mb-12 max-w-[90%] rounded-lg leading-loose shadow-[#12121c_4px_4px_0_0]"
+      className="mb-12 max-w-[90%] rounded-lg leading-loose shadow-[#12121c_0.25rem_0.25rem_0_0]"
       aria-label={label}
     >
       {items.map((item, index) => (

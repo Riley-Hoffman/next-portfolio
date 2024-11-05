@@ -132,7 +132,7 @@ const config: Config = {
           fontSize: '63%',
           fontWeight: '400',
           height: '0',
-          paddingLeft: '5px',
+          paddingLeft: '0.313rem',
         },
         '.overlay:before': {
           content: '""',

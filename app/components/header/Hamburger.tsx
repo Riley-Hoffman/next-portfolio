@@ -58,7 +58,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         {[...Array(4)].map((_, index) => (
           <span
             key={index}
-            className="line gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 transition-all duration-200 ease-in-out first:top-2 last:top-6 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:left-[15px] group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:top-[21px] group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:w-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:border-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:transition-none group-aria-expanded:[&:nth-child(2)]:rotate-45 group-aria-expanded:[&:nth-child(3)]:-rotate-45"
+            className="line gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 transition-all duration-200 ease-in-out first:top-2 last:top-6 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:left-[0.938rem] group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:top-[1.313rem] group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:w-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:border-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:transition-none group-aria-expanded:[&:nth-child(2)]:rotate-45 group-aria-expanded:[&:nth-child(3)]:-rotate-45"
           ></span>
         ))}
       </button>

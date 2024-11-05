@@ -24,7 +24,7 @@ export const MyJourney = () => {
     >
       <div className="max-w-screen-xl">
         <div className="items-center md:flex">
-          <div className="min-h-96 drop-shadow-[0_0_1px_#877ADB] md:w-1/3">
+          <div className="min-h-96 drop-shadow-[0_0_0.063rem_#877ADB] md:w-1/3">
             <Image
               className="size-96 max-w-full rounded-3xl object-cover"
               src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
