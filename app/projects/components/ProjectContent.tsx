@@ -16,7 +16,7 @@ export interface Project {
   isFirst?: boolean;
 }
 
-export function ProjectContent({
+export const ProjectContent = ({
   title,
   skills,
   description,
@@ -26,7 +26,7 @@ export function ProjectContent({
   alt,
   imgUrl,
   isFirst,
-}: Project) {
+}: Project) => {
   const commonClasses = "mx-5 py-1 px-3 uppercase button";
 
   const renderLink = (
@@ -89,4 +89,4 @@ export function ProjectContent({
       </div>
     </>
   );
-}
+};

@@ -11,7 +11,7 @@ type AccordionProps = {
   label: string;
 };
 
-export function Accordion({ items, label }: AccordionProps) {
+export const Accordion = ({ items, label }: AccordionProps) => {
   const { openIndex, handleAccordionClick, buttonRefs, contentRefs } =
     useAccordion(items.length);
   return (
@@ -45,4 +45,4 @@ export function Accordion({ items, label }: AccordionProps) {
       ))}
     </ul>
   );
-}
+};

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { FormState } from "../components/Form";
 
-export function useFormValidation(initialState: FormState) {
+export const useFormValidation = (initialState: FormState) => {
   const [formState, setFormState] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });

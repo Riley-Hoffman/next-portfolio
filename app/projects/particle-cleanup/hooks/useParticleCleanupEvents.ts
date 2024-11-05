@@ -10,12 +10,12 @@ type HandleInteraction = (event: Event, isInside: boolean) => void;
 type HandleScroll = (event: Event) => void;
 type InitializeAnimation = () => void;
 
-export function useParticleCleanupEvents(
+export const useParticleCleanupEvents = (
   refs: MutableRefObject<Refs>,
   handleInteraction: HandleInteraction,
   handleScroll: HandleScroll,
   initializeAnimation: InitializeAnimation,
-) {
+) => {
   useEffect(() => {
     const localRefs = { ...refs.current };
     if (!localRefs.container || !localRefs.canvas) return;
@@ -75,4 +75,4 @@ export function useParticleCleanupEvents(
       cancelAnimationFrame(localRefs.animationFrameId);
     };
   }, [refs, handleInteraction, handleScroll, initializeAnimation]);
-}
+};

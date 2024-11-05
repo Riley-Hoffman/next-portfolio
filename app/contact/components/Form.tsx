@@ -14,7 +14,7 @@ export interface FormState {
   message: string;
 }
 
-export function Form() {
+export const Form = () => {
   const csrfTokenRef = useRef<string | null>(null);
   const csrfSecretRef = useRef<string | null>(null);
   const router = useRouter();

@@ -14,7 +14,7 @@ interface MenuLink {
   label: string;
 }
 
-export function Header() {
+export const Header = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [hide, setHide] = useState<boolean>(false);
 
@@ -114,4 +114,4 @@ export function Header() {
       </noscript>
     </header>
   );
-}
+};
