@@ -1,4 +1,4 @@
-import { useParallax } from '../../../hooks/useParallax';
+import { useParallax } from "../../../hooks/useParallax";
 
 interface LazyUseParallaxProps {
   parallaxRef: React.RefObject<HTMLDivElement>;
@@ -10,4 +10,3 @@ export const LazyUseParallax = ({ parallaxRef }: LazyUseParallaxProps) => {
 };
 
 export default LazyUseParallax;
-
