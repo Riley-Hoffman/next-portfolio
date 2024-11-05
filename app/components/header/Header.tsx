@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SkipToContent } from "./SkipToContent";
+import { HeaderLogo } from "./HeaderLogo";
 import { Hamburger } from "./Hamburger";
 import { NavListItem } from "./NavListItem";
 import { NewTabSrText } from "../../components/NewTabSrText";
@@ -52,10 +54,6 @@ export function Header() {
     };
   }, [isExpanded]);
 
-  const handleClickHome = () => {
-    window.location.href = "/";
-  };
-
   const menuLinks: MenuLink[] = [
     { to: "/", label: "Home" },
     { to: "/projects", label: "Projects" },
@@ -66,22 +64,9 @@ export function Header() {
 
   return (
     <header className="shadow[0_0.063rem_0.188rem_-0.188rem_black] gradient-border sticky left-[0] right-[0] top-[-2.125rem] z-30 min-h-[7.75rem] border-b-2 border-t-[2.125rem] border-solid bg-[#f4eef6] py-6 shadow-zinc contrast-more:bg-white">
-      <a
-        href="#content"
-        className="button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4"
-      >
-        Skip To Content
-      </a>
+      <SkipToContent />
       <div className="flex max-w-screen-xl items-center justify-between">
-        <div className="logo">
-          <button
-            className="m-0 pl-4 pr-0 text-center font-urbanist text-lg font-medium uppercase tracking-wider md:text-2xl md:font-normal"
-            onClick={handleClickHome}
-          >
-            <span aria-hidden="true">Riley Hoffman</span>
-            <span className="sr-only">Back To Home Page</span>
-          </button>
-        </div>
+        <HeaderLogo />
         <nav className="h-10">
           <Hamburger expanded={handleHamburgerClick} />
           <ul
