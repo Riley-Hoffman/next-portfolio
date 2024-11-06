@@ -1,4 +1,3 @@
-'use client'
 import { Metadata } from "next";
 import SchemaOrg from "../components/SchemaOrg";
 import { Accordion } from "./components/Accordion";
