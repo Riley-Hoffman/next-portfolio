@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SchemaOrg from "../components/SchemaOrg";
+import { WebPage, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "Accessibility",
@@ -19,14 +20,32 @@ export const metadata: Metadata = {
 };
 
 export default function Accessibility() {
+  const schema: WithContext<WebPage> = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Accessibility - Riley Hoffman - Web Developer",
+    description: "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.",
+    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    url: "https://rileyhoffman.com/accessibility",
+    datePublished: "2024-07-04T09:25:01.340Z",
+    mainEntity: {
+      "@type": "Person",
+      name: "Riley Hoffman",
+      url: "https://rileyhoffman.com",
+      jobTitle: "Web Developer",
+      sameAs: [
+        "https://www.linkedin.com/in/rileyhoffman",
+        "https://github.com/rileyhoffman",
+      ],
+    },
+    author: {
+      "@type": "Person",
+      name: "Riley Hoffman",
+    },
+  };
   return (
     <>
-      <SchemaOrg
-        headline="Accessibility - Riley Hoffman - Web Developer"
-        description="As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users."
-        image="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg"
-        datePublished="2024-07-04T09:25:01.340Z"
-      />
+      <SchemaOrg structuredData={schema} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Accessibility
       </h1>

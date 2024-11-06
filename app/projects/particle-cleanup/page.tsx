@@ -3,6 +3,7 @@ import SchemaOrg from "../../components/SchemaOrg";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ParticleCleanup } from "./components/ParticleCleanup";
+import { WebPage, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "Particle Cleanup Game",
@@ -21,14 +22,33 @@ export const metadata: Metadata = {
 };
 
 export default function ParticleCleanupWrapper() {
+  const schema: WithContext<WebPage> = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Particle Cleanup Game - Riley Hoffman - Web Developer",
+    description: "How quickly can you clear all the particles from the board using your cursor or finger?",
+    url: "https://rileyhoffman.com/projects/particle-cleanup",
+    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    datePublished: "2024-07-04T09:25:01.340Z",
+    mainEntity: {
+      "@type": "Person",
+      name: "Riley Hoffman",
+      url: "https://rileyhoffman.com",
+      jobTitle: "Web Developer",
+      sameAs: [
+        "https://www.linkedin.com/in/rileyhoffman",
+        "https://github.com/rileyhoffman",
+      ],
+    },
+    author: {
+      "@type": "Person",
+      name: "Riley Hoffman",
+    },
+  };
+
   return (
     <>
-      <SchemaOrg
-        headline="Particle Cleanup Game - Riley Hoffman - Web Developer"
-        description="How quickly can you clear all the particles from the board using your cursor or finger?"
-        image="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg"
-        datePublished="2024-07-04T09:25:01.340Z"
-      />
+      <SchemaOrg structuredData={schema} />
       <div className="pb-16">
         <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Particle Cleanup Game
