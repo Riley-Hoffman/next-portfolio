@@ -34,7 +34,7 @@ export default function Faq() {
     description: description,
     image: getImageUrl(),
     url: `${getBaseUrl()}/faq`,
-    datePublished: "2024-07-04T09:25:01.340Z",
+    datePublished: "2024-07-29T09:25:01.340Z",
     mainEntity: questions.map((question, index) => ({
       "@type": "Question",
       name: question,

@@ -38,7 +38,7 @@ export default function ParticleCleanupWrapper() {
     description: `View past projects by ${getPageTitle()}.`,
     image: getImageUrl(),
     url: `${getBaseUrl()}/projects/particle-cleanup`,
-    datePublished: "2024-07-04T09:25:01.340Z",
+    datePublished: "2024-08-05T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
       name: getName(),

@@ -37,7 +37,7 @@ export default function Accessibility() {
       description,
     image: getImageUrl(),
     url: `${getBaseUrl()}/accessibility`,
-    datePublished: "2024-07-04T09:25:01.340Z",
+    datePublished: "2024-08-07T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
       name: getName(),
