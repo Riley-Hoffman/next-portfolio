@@ -7,30 +7,36 @@ import { FirstFoldContent } from "./components/home/FirstFoldContent";
 import { MyJourney } from "./components/home/MyJourney";
 import { SiteTechStack } from "./components/home/SiteTechStack";
 import { WebPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../lib/constants";
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Riley Hoffman - Web Developer",
-    description: "I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
-    url: "https://rileyhoffman.com",
+    name: getPageTitle(),
+    description:
+      "I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.",
+    image: getImageUrl(),
+    url: getBaseUrl(),
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
-      ],
+      sameAs: [getLinkedIn(), getGithub()],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: `${getName()}/`,
     },
   };
 

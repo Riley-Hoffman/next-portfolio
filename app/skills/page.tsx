@@ -6,19 +6,28 @@ import { SkillItem } from "./components/skills/SkillItem";
 import { Carousel } from "./components/carousel/Carousel";
 import { CarouselData } from "./components/carousel/CarouselData";
 import { WebPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../../lib/constants";
+
+const description = `My skills. ${getPageTitle()}.`;
 
 export const metadata: Metadata = {
   title: "Skills",
-  description: "My skills. Riley Hoffman - Web Developer.",
-  metadataBase: new URL("https://rileyhoffman.com/skills"),
+  description: description,
+  metadataBase: new URL(`${getBaseUrl()}/skills`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Skills",
-    url: "https://rileyhoffman.com/skills/",
+    url: `${getBaseUrl()}/skills`,
   },
 };
 
@@ -26,24 +35,21 @@ export default function Skills() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Skills - Riley Hoffman - Web Developer",
-    description: "My skills. Riley Hoffman - Web Developer.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
-    url: "https://rileyhoffman.com/skills",
+    name: getPageTitle("Skills - "),
+    description: description,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/skills`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
-      ],
+      sameAs: [getLinkedIn(), getGithub()],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: getName(),
     },
   };
   return (

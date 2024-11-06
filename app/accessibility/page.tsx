@@ -2,20 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SchemaOrg from "../components/SchemaOrg";
 import { WebPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../../lib/constants";
+
+const description = "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.";
 
 export const metadata: Metadata = {
   title: "Accessibility",
   description:
-    "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.",
-  metadataBase: new URL("https://rileyhoffman.com/accessibility"),
+    description,
+  metadataBase: new URL(`${getBaseUrl()}/accessibility`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Accessibility",
-    url: "https://rileyhoffman.com/accessibility/",
+    url: `${getBaseUrl()}/accessibility`,
   },
 };
 
@@ -23,24 +32,22 @@ export default function Accessibility() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Accessibility - Riley Hoffman - Web Developer",
-    description: "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
-    url: "https://rileyhoffman.com/accessibility",
+    name: getPageTitle("Accessibility - "),
+    description:
+      description,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/accessibility`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
-      ],
+      sameAs: [getLinkedIn(), getGithub()],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: getName(),
     },
   };
   return (

@@ -3,19 +3,26 @@ import SchemaOrg from "../components/SchemaOrg";
 import { Accordion } from "./components/Accordion";
 import { questions, answers } from "./components/AccordionItems";
 import { FAQPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+} from "../../lib/constants";
+
+const description = "Find the answers to my most frequently asked questions.";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Find the answers to my most frequently asked questions.",
-  metadataBase: new URL("https://rileyhoffman.com/faq"),
+  description: description,
+  metadataBase: new URL(`${getBaseUrl()}/faq`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "FAQ",
-    url: "https://rileyhoffman.com/faq/",
+    url: `${getBaseUrl()}/faq`,
   },
 };
 
@@ -23,18 +30,23 @@ export default function Faq() {
   const schema: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    headline: "FAQ - Riley Hoffman - Web Developer",
-    description: "Find the answers to my most frequently asked questions.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    name: getPageTitle("FAQ - "),
+    description: description,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/faq`,
     datePublished: "2024-07-04T09:25:01.340Z",
-    "mainEntity": questions.map((question, index) => ({
+    mainEntity: questions.map((question, index) => ({
       "@type": "Question",
-      "name": question,
-      "acceptedAnswer": {
+      name: question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": `${answers[index].props.children}`,
+        text: `${answers[index].props.children}`,
       },
     })),
+    author: {
+      "@type": "Person",
+      name: getName(),
+    },
   };
   return (
     <>

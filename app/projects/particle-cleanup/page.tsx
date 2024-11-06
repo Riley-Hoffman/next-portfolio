@@ -4,20 +4,29 @@ import { faLessThan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ParticleCleanup } from "./components/ParticleCleanup";
 import { WebPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../../../lib/constants";
+
+const description = "How quickly can you clear all the particles from the board using your cursor or finger?";
 
 export const metadata: Metadata = {
   title: "Particle Cleanup Game",
   description:
-    "How quickly can you clear all the particles from the board using your cursor or finger?",
-  metadataBase: new URL("https://rileyhoffman.com/projects/particle-cleanup"),
+    description,
+  metadataBase: new URL(`${getBaseUrl()}/projects/particle-cleanup`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Particle Cleanup Game",
-    url: "https://rileyhoffman.com/projects/particle-cleanup/",
+    url: `${getBaseUrl()}/projects/particle-cleanup`,
   },
 };
 
@@ -25,24 +34,21 @@ export default function ParticleCleanupWrapper() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Particle Cleanup Game - Riley Hoffman - Web Developer",
-    description: "How quickly can you clear all the particles from the board using your cursor or finger?",
-    url: "https://rileyhoffman.com/projects/particle-cleanup",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    name: getPageTitle("Particle Cleanup Game - "),
+    description: `View past projects by ${getPageTitle()}.`,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/projects/particle-cleanup`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
-      ],
+      sameAs: [getLinkedIn(), getGithub()],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: getName(),
     },
   };
 

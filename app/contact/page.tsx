@@ -2,20 +2,29 @@ import { Metadata } from "next";
 import SchemaOrg from "../components/SchemaOrg";
 import { Form } from "./components/Form";
 import { ContactPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../../lib/constants";
+
+const description = "Get in touch with web developer Riley Hoffman with the form on this page.";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with web developer Riley Hoffman with the form on this page.",
-  metadataBase: new URL("https://rileyhoffman.com/contact"),
+    description,
+  metadataBase: new URL(`${getBaseUrl()}/contact`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Contact",
-    url: "https://rileyhoffman.com/contact/",
+    url: `${getBaseUrl()}/contact`,
   },
 };
 
@@ -23,24 +32,22 @@ export default function Contact() {
   const schema: WithContext<ContactPage> = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact - Riley Hoffman - Web Developer",
-    description: "Get in touch with web developer Riley Hoffman with the form on this page.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
-    url: "https://rileyhoffman.com/contact",
+    name: getPageTitle("Contact - "),
+    description:
+      description,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/skills`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
-      ],
+      sameAs: [getLinkedIn(), getGithub()],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: getName(),
     },
   };
   return (

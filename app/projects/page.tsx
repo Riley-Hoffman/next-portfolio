@@ -4,17 +4,28 @@ import ProjectsList from "./components/ProjectsList";
 import { fetchFirebaseData } from "../../lib/fetchFirebaseData";
 import type { Project } from "./components/ProjectContent";
 import { WebPage, WithContext } from "schema-dts";
+import {
+  getBaseUrl,
+  getPageTitle,
+  getName,
+  getImageUrl,
+  getGithub,
+  getLinkedIn,
+} from "../../lib/constants";
+
+const description = `View past projects by ${getPageTitle()}.`;
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "View past projects by Riley Hoffman - Web Developer.",
-  metadataBase: new URL("https://rileyhoffman.com/projects"),
-  alternates: { canonical: "/" },
+  description: description,
+  metadataBase: new URL(`${getBaseUrl()}/projects`),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Projects",
-    url: "https://rileyhoffman.com/projects/",
+    url: `${getBaseUrl()}/projects`,
   },
 };
 
@@ -23,24 +34,24 @@ export default async function ProjectsPage() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Projects - Riley Hoffman - Web Developer",
-    description: "View past projects by Riley Hoffman - Web Developer.",
-    image: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
-    url: "https://rileyhoffman.com/projects",
+    name: getPageTitle('Projects - '),
+    description: description,
+    image: getImageUrl(),
+    url: `${getBaseUrl()}/projects`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: "Riley Hoffman",
-      url: "https://rileyhoffman.com",
+      name: getName(),
+      url: getBaseUrl(),
       jobTitle: "Web Developer",
       sameAs: [
-        "https://www.linkedin.com/in/rileyhoffman",
-        "https://github.com/rileyhoffman",
+        getLinkedIn(),
+        getGithub(),
       ],
     },
     author: {
       "@type": "Person",
-      name: "Riley Hoffman",
+      name: getName(),
     },
   };
 
