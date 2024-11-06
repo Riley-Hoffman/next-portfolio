@@ -10,6 +10,7 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
+  getBaseDescription,
   getName,
   getImageUrl,
   getGithub,
@@ -22,8 +23,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: getPageTitle(),
-    description:
-      "I am a web developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.",
+    description: getBaseDescription(),
     image: getImageUrl(),
     url: getBaseUrl(),
     datePublished: "2024-07-04T09:25:01.340Z",
