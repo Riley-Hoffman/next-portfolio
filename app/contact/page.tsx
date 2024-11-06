@@ -5,10 +5,10 @@ import { ContactPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../../lib/constants";
 
 const description = "Get in touch with web developer Riley Hoffman with the form on this page.";
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     description,
-  metadataBase: new URL(`${getBaseUrl()}/contact`),
+  metadataBase: new URL(`${getBaseUrl('/contact')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Contact",
-    url: `${getBaseUrl()}/contact`,
+    url: `${getBaseUrl('/contact')}`,
   },
 };
 
@@ -36,18 +36,18 @@ export default function Contact() {
     description:
       description,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/skills`,
+    url: `${getBaseUrl('/contact')}`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
+      name: author,
       url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [getLinkedIn(), getGithub()],
+      sameAs: [linkedInUrl, githubUrl],
     },
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
   return (

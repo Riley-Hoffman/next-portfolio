@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   getBaseUrl,
   getPageTitle,
-  getBaseDescription,
+  baseDescription,
   getImageUrl,
 } from "../lib/constants";
 
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     template: `%s | ${getPageTitle()}`,
     default: getPageTitle(),
   },
-  description: getBaseDescription(),
-  metadataBase: new URL(`${getBaseUrl()}/`),
+  description: baseDescription,
+  metadataBase: new URL(`${getBaseUrl()}`),
   alternates: {
     canonical: "/",
   },

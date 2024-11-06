@@ -7,10 +7,10 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../../../lib/constants";
 
 const description = "How quickly can you clear all the particles from the board using your cursor or finger?";
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   title: "Particle Cleanup Game",
   description:
     description,
-  metadataBase: new URL(`${getBaseUrl()}/projects/particle-cleanup`),
+  metadataBase: new URL(`${getBaseUrl('/projects/particle-cleanup')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Particle Cleanup Game",
-    url: `${getBaseUrl()}/projects/particle-cleanup`,
+    url: `${getBaseUrl('/projects/particle-cleanup')}`,
   },
 };
 
@@ -37,18 +37,18 @@ export default function ParticleCleanupWrapper() {
     name: getPageTitle("Particle Cleanup Game - "),
     description: `View past projects by ${getPageTitle()}.`,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/projects/particle-cleanup`,
+    url: `${getBaseUrl('/projects/particle-cleanup')}`,
     datePublished: "2024-08-05T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
+      name: author,
       url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [getLinkedIn(), getGithub()],
+      sameAs: [linkedInUrl, githubUrl],
     },
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
 

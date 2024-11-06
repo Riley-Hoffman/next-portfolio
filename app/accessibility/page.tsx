@@ -5,10 +5,10 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../../lib/constants";
 
 const description = "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.";
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   title: "Accessibility",
   description:
     description,
-  metadataBase: new URL(`${getBaseUrl()}/accessibility`),
+  metadataBase: new URL(`${getBaseUrl('/accessibility')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Accessibility",
-    url: `${getBaseUrl()}/accessibility`,
+    url: `${getBaseUrl('/accessibility')}`,
   },
 };
 
@@ -36,18 +36,18 @@ export default function Accessibility() {
     description:
       description,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/accessibility`,
+    url: `${getBaseUrl('/accessibility')}`,
     datePublished: "2024-08-07T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
-      url: getBaseUrl(),
+      name: author,
+      url: getBaseUrl(''),
       jobTitle: "Web Developer",
-      sameAs: [getLinkedIn(), getGithub()],
+      sameAs: [linkedInUrl, githubUrl],
     },
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
   return (

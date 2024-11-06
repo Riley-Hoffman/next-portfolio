@@ -9,10 +9,10 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../../lib/constants";
 
 const description = `My skills. ${getPageTitle()}.`;
@@ -20,14 +20,14 @@ const description = `My skills. ${getPageTitle()}.`;
 export const metadata: Metadata = {
   title: "Skills",
   description: description,
-  metadataBase: new URL(`${getBaseUrl()}/skills`),
+  metadataBase: new URL(`${getBaseUrl('/skills')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Skills",
-    url: `${getBaseUrl()}/skills`,
+    url: `${getBaseUrl('/skills')}`,
   },
 };
 
@@ -38,18 +38,18 @@ export default function Skills() {
     name: getPageTitle("Skills - "),
     description: description,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/skills`,
+    url: `${getBaseUrl('/skills')}`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
+      name: author,
       url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [getLinkedIn(), getGithub()],
+      sameAs: [linkedInUrl, githubUrl],
     },
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
   return (

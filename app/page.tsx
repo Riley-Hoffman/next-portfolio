@@ -10,11 +10,11 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getBaseDescription,
-  getName,
+  baseDescription,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../lib/constants";
 
 export default function Home() {
@@ -23,20 +23,20 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: getPageTitle(),
-    description: getBaseDescription(),
+    description: baseDescription,
     image: getImageUrl(),
     url: getBaseUrl(),
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
+      name: author,
       url: getBaseUrl(),
       jobTitle: "Web Developer",
-      sameAs: [getLinkedIn(), getGithub()],
+      sameAs: [linkedInUrl, githubUrl],
     },
     author: {
       "@type": "Person",
-      name: `${getName()}/`,
+      name: `${author}/`,
     },
   };
 

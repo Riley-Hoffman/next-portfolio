@@ -6,7 +6,7 @@ import { FAQPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
 } from "../../lib/constants";
 
@@ -15,14 +15,14 @@ const description = "Find the answers to my most frequently asked questions.";
 export const metadata: Metadata = {
   title: "FAQ",
   description: description,
-  metadataBase: new URL(`${getBaseUrl()}/faq`),
+  metadataBase: new URL(`${getBaseUrl('/faq')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "FAQ",
-    url: `${getBaseUrl()}/faq`,
+    url: `${getBaseUrl('/faq')}`,
   },
 };
 
@@ -33,7 +33,7 @@ export default function Faq() {
     name: getPageTitle("FAQ - "),
     description: description,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/faq`,
+    url: `${getBaseUrl('/faq')}`,
     datePublished: "2024-07-29T09:25:01.340Z",
     mainEntity: questions.map((question, index) => ({
       "@type": "Question",
@@ -45,7 +45,7 @@ export default function Faq() {
     })),
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
   return (

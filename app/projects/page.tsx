@@ -7,10 +7,10 @@ import { WebPage, WithContext } from "schema-dts";
 import {
   getBaseUrl,
   getPageTitle,
-  getName,
+  author,
   getImageUrl,
-  getGithub,
-  getLinkedIn,
+  githubUrl,
+  linkedInUrl,
 } from "../../lib/constants";
 
 const description = `View past projects by ${getPageTitle()}.`;
@@ -18,14 +18,14 @@ const description = `View past projects by ${getPageTitle()}.`;
 export const metadata: Metadata = {
   title: "Projects",
   description: description,
-  metadataBase: new URL(`${getBaseUrl()}/projects`),
+  metadataBase: new URL(`${getBaseUrl('/projects')}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Projects",
-    url: `${getBaseUrl()}/projects`,
+    url: `${getBaseUrl('/projects')}`,
   },
 };
 
@@ -37,21 +37,21 @@ export default async function ProjectsPage() {
     name: getPageTitle('Projects - '),
     description: description,
     image: getImageUrl(),
-    url: `${getBaseUrl()}/projects`,
+    url: `${getBaseUrl('/projects')}`,
     datePublished: "2024-07-04T09:25:01.340Z",
     mainEntity: {
       "@type": "Person",
-      name: getName(),
+      name: author,
       url: getBaseUrl(),
       jobTitle: "Web Developer",
       sameAs: [
-        getLinkedIn(),
-        getGithub(),
+        linkedInUrl,
+        githubUrl,
       ],
     },
     author: {
       "@type": "Person",
-      name: getName(),
+      name: author,
     },
   };
 
