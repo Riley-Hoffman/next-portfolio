@@ -16,7 +16,7 @@ config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${getPageTitle()}`,
+    template: `%s - ${getPageTitle()}`,
     default: getPageTitle(),
   },
   description: baseDescription,

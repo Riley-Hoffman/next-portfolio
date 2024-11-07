@@ -34,7 +34,7 @@ export default function ParticleCleanupWrapper() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: getPageTitle("Particle Cleanup Game - "),
+    name: getPageTitle("Particle Cleanup Game"),
     description: `View past projects by ${getPageTitle()}.`,
     image: getImageUrl(),
     url: `${getBaseUrl('/projects/particle-cleanup')}`,

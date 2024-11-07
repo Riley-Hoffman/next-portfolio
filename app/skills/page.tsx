@@ -35,7 +35,7 @@ export default function Skills() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: getPageTitle("Skills - "),
+    name: getPageTitle("Skills"),
     description: description,
     image: getImageUrl(),
     url: `${getBaseUrl('/skills')}`,

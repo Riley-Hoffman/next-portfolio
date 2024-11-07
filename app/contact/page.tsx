@@ -32,7 +32,7 @@ export default function Contact() {
   const schema: WithContext<ContactPage> = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: getPageTitle("Contact - "),
+    name: getPageTitle("Contact"),
     description:
       description,
     image: getImageUrl(),

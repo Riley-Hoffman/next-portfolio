@@ -30,7 +30,7 @@ export default function Faq() {
   const schema: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    name: getPageTitle("FAQ - "),
+    name: getPageTitle("FAQ"),
     description: description,
     image: getImageUrl(),
     url: `${getBaseUrl('/faq')}`,

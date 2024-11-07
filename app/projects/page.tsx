@@ -34,7 +34,7 @@ export default async function ProjectsPage() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: getPageTitle('Projects - '),
+    name: getPageTitle('Projects'),
     description: description,
     image: getImageUrl(),
     url: `${getBaseUrl('/projects')}`,

@@ -32,7 +32,7 @@ export default function Accessibility() {
   const schema: WithContext<WebPage> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: getPageTitle("Accessibility - "),
+    name: getPageTitle("Accessibility"),
     description:
       description,
     image: getImageUrl(),
