@@ -1,10 +1,10 @@
 import { Thing, WithContext } from "schema-dts";
 
-interface SchemaOrgProps<T extends Thing> {
+interface SchemaInjectorProps<T extends Thing> {
   structuredData: WithContext<T>;
 }
 
-const SchemaOrg = <T extends Thing,>({ structuredData }: SchemaOrgProps<T>) => {
+const SchemaInjector = <T extends Thing>({ structuredData }: SchemaInjectorProps<T>) => {
   return (
     <script
       type="application/ld+json"
@@ -13,4 +13,4 @@ const SchemaOrg = <T extends Thing,>({ structuredData }: SchemaOrgProps<T>) => {
   );
 };
 
-export default SchemaOrg;
+export default SchemaInjector;

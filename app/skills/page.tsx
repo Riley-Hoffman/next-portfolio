@@ -1,60 +1,38 @@
 import type { Metadata } from "next";
 import "../../public/devicon.css";
-import SchemaOrg from "../components/SchemaOrg";
+import { SchemaGenerator } from "../components/SchemaGenerator";
 import { SkillsData } from "./components/skills/SkillsData";
 import { SkillItem } from "./components/skills/SkillItem";
 import { Carousel } from "./components/carousel/Carousel";
 import { CarouselData } from "./components/carousel/CarouselData";
-import { WebPage, WithContext } from "schema-dts";
-import {
-  getBaseUrl,
-  getPageTitle,
-  author,
-  getImageUrl,
-  githubUrl,
-  linkedInUrl,
-} from "../../lib/constants";
+import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants";
 
 const description = `My skills. ${getPageTitle()}.`;
 
 export const metadata: Metadata = {
   title: "Skills",
   description: description,
-  metadataBase: new URL(`${getBaseUrl('/skills')}`),
+  metadataBase: new URL(`${getBaseUrl("/skills")}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Skills",
-    url: `${getBaseUrl('/skills')}`,
+    url: `${getBaseUrl("/skills")}`,
   },
 };
 
 export default function Skills() {
-  const schema: WithContext<WebPage> = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: getPageTitle("Skills"),
-    description: description,
-    image: getImageUrl(),
-    url: `${getBaseUrl('/skills')}`,
-    datePublished: "2024-07-04T09:25:01.340Z",
-    mainEntity: {
-      "@type": "Person",
-      name: author,
-      url: getBaseUrl(),
-      jobTitle: "Web Developer",
-      sameAs: [linkedInUrl, githubUrl],
-    },
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-  };
   return (
     <>
-      <SchemaOrg structuredData={schema} />
+      <SchemaGenerator
+        title="Skills"
+        description={description}
+        urlPath="/skills"
+        publishDate="2024-07-04T09:25:01.340Z"
+        schemaType="WebPage"
+      />
       <section className="pb-16">
         <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Skills

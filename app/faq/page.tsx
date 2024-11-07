@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SchemaOrg from "../components/SchemaOrg";
+import SchemaInjector from "../components/SchemaInjector";
 import { Accordion } from "./components/Accordion";
 import { questions, answers } from "./components/AccordionItems";
 import { FAQPage, WithContext } from "schema-dts";
@@ -15,14 +15,14 @@ const description = "Find the answers to my most frequently asked questions.";
 export const metadata: Metadata = {
   title: "FAQ",
   description: description,
-  metadataBase: new URL(`${getBaseUrl('/faq')}`),
+  metadataBase: new URL(`${getBaseUrl("/faq")}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "FAQ",
-    url: `${getBaseUrl('/faq')}`,
+    url: `${getBaseUrl("/faq")}`,
   },
 };
 
@@ -33,7 +33,7 @@ export default function Faq() {
     name: getPageTitle("FAQ"),
     description: description,
     image: getImageUrl(),
-    url: `${getBaseUrl('/faq')}`,
+    url: `${getBaseUrl("/faq")}`,
     datePublished: "2024-07-29T09:25:01.340Z",
     mainEntity: questions.map((question, index) => ({
       "@type": "Question",
@@ -50,7 +50,7 @@ export default function Faq() {
   };
   return (
     <>
-      <SchemaOrg structuredData={schema} />
+      <SchemaInjector structuredData={schema} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Frequently Asked Questions
       </h1>

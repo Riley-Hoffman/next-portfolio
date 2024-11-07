@@ -1,60 +1,37 @@
 import type { Metadata } from "next";
-import SchemaOrg from "../../components/SchemaOrg";
+import { SchemaGenerator } from "../../components/SchemaGenerator";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ParticleCleanup } from "./components/ParticleCleanup";
-import { WebPage, WithContext } from "schema-dts";
-import {
-  getBaseUrl,
-  getPageTitle,
-  author,
-  getImageUrl,
-  githubUrl,
-  linkedInUrl,
-} from "../../../lib/constants";
+import { getBaseUrl, getImageUrl } from "../../../lib/constants";
 
-const description = "How quickly can you clear all the particles from the board using your cursor or finger?";
+const description =
+  "How quickly can you clear all the particles from the board using your cursor or finger?";
 
 export const metadata: Metadata = {
   title: "Particle Cleanup Game",
-  description:
-    description,
-  metadataBase: new URL(`${getBaseUrl('/projects/particle-cleanup')}`),
+  description: description,
+  metadataBase: new URL(`${getBaseUrl("/projects/particle-cleanup")}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     images: getImageUrl(),
     title: "Particle Cleanup Game",
-    url: `${getBaseUrl('/projects/particle-cleanup')}`,
+    url: `${getBaseUrl("/projects/particle-cleanup")}`,
   },
 };
 
 export default function ParticleCleanupWrapper() {
-  const schema: WithContext<WebPage> = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: getPageTitle("Particle Cleanup Game"),
-    description: `View past projects by ${getPageTitle()}.`,
-    image: getImageUrl(),
-    url: `${getBaseUrl('/projects/particle-cleanup')}`,
-    datePublished: "2024-08-05T09:25:01.340Z",
-    mainEntity: {
-      "@type": "Person",
-      name: author,
-      url: getBaseUrl(),
-      jobTitle: "Web Developer",
-      sameAs: [linkedInUrl, githubUrl],
-    },
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-  };
-
   return (
     <>
-      <SchemaOrg structuredData={schema} />
+      <SchemaGenerator
+        title="Particle Cleanup Game"
+        description={description}
+        urlPath="/projects/particle-cleanup"
+        publishDate="2024-08-05T09:25:01.340Z"
+        schemaType="WebPage"
+      />
       <div className="pb-16">
         <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Particle Cleanup Game
