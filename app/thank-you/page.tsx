@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
+import {
+  getBaseUrl,
+  getImageUrl,
+} from "../../lib/constants";
+
 
 export const metadata: Metadata = {
   title: "Thank You",
   description: "Thank you for contacting Riley Hoffman - Web Developer.",
-  robots: "noindex",
-  metadataBase: new URL("https://rileyhoffman.com/thank-you"),
+  metadataBase: new URL(`${getBaseUrl("/thank-you")}`),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    images:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/thumbnail.jpg",
+    images: getImageUrl(),
     title: "Thank You",
-    url: "https://rileyhoffman.com/thank-you/",
+    url: `${getBaseUrl("/thank-you")}`,
   },
 };
+
 
 export default function ThankYou() {
   return (

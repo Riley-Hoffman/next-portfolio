@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: getImageUrl(),
     title: {
-      template: `%s | ${getPageTitle()}`,
+      template: `%s - ${getPageTitle()}`,
       default: `${getPageTitle()}`,
     },
     url: getBaseUrl(),
