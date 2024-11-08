@@ -134,56 +134,53 @@ const config: Config = {
           height: '0',
           paddingLeft: '0.313rem',
         },
-        '.overlay:before': {
-          content: '""',
-          height: '100%',
-          width: '100%',
-          position: 'absolute',
-          top: '0',
-          bottom: '0',
-          left: '0',
-          right: '0',
-          backgroundImage: `radial-gradient(${theme('colors.overlayGradient')} 0%, ${theme('colors.overlayGradientEnd')} 100%)`,
-        },
-        '.overlay:not([class*="before:bg-"]):before': {
-          backgroundImage: 'radial-gradient(#ffffffbd 0%,#ffffff7f 100%)',
-        },
-        '.overlay,.overlay > :not(.absolute)': {
+        '.overlay': {
           position: 'relative',
+          '&:before': {
+            content: '""',
+            height: '100%',
+            width: '100%',
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            backgroundImage: `radial-gradient(${theme('colors.overlayGradient')} 0%, ${theme('colors.overlayGradientEnd')} 100%)`,
+          },
+          '&:not([class*="before:bg-"])': {
+            '&:before': {
+              backgroundImage: 'radial-gradient(#ffffffbd 0%, #ffffff7f 100%)',
+            },
+          },
         },
-        '.numbered-icons': {
+        '.ol.numbered-icons': {
           counterReset: 'circle',
           listStyle: 'none',
         },
-        '.numbered-icons li': {
+        'ol.numbered-icons li': {
           counterIncrement: 'circle',
           padding: '.75rem 0 .75rem 1.25rem',
           position: 'relative',
-        },
-        '.numbered-icons li:before': {
-          borderRadius: '50%',
-          color: '#fbfdff',
-          content: 'counter(circle) ""',
-          fontFamily: theme('fontFamily.poppins'),
-          fontSize: '1.094rem',
-          fontWeight: '600',
-          marginRight: '1.25rem',
-          padding: '.25rem',
-          textAlign: 'center',
-          transform: 'translateY(-50%)',
-          height: '1.875rem',
-          width: '1.875rem',
-          position: 'absolute',
-          top: '50%',
-          left: '-1.25rem',
-        },
-        'ol.numbered-icons li:before:not([class*="before:bg-"])': {
-          backgroundColor: theme('colors.purple.200'),
-        },
-        '.plus-minus': {
-          position: 'relative',
-          display: 'inline-block',
-          verticalAlign: 'middle',
+          '&:before': {
+            borderRadius: '50%',
+            color: '#fbfdff',
+            content: 'counter(circle) ""',
+            fontFamily: theme('fontFamily.poppins'),
+            fontSize: '1.094rem',
+            fontWeight: '600',
+            marginRight: '1.25rem',
+            padding: '.25rem',
+            textAlign: 'center',
+            transform: 'translateY(-50%)',
+            height: '1.875rem',
+            width: '1.875rem',
+            position: 'absolute',
+            top: '50%',
+            left: '-1.25rem',
+          },
+          '&:not([class*="before:bg-"]):before': {
+            backgroundColor: theme('colors.purple.200'),
+          },
         },
         '.plus-minus::before': {
           content: '""',
@@ -205,20 +202,20 @@ const config: Config = {
           transform: 'translate(-50%, -50%) rotate(0deg)',
           transition: 'transform 0.3s ease-in-out',
         },
-        '.small-caps': {
-          fontVariant: 'small-caps',
-        },
         '[aria-expanded="true"] .plus-minus::after': {
           transform: 'translate(-50%, -50%) rotate(90deg)',
         },
+        '.small-caps': {
+          fontVariant: 'small-caps',
+        },
         '.gradient-border': {
           borderImageSlice: '1',
-        },
-        '.gradient-border:not(.inverted)': {
-          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientlightpurple')} 0%,${theme('colors.gradientpink')} 50%,${theme('colors.gradientpurple')} 70%)`,
-        },
-        '.gradient-border.inverted': {
-          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
+          '&[class*="inverted"]': {
+            borderImageSource: `linear-gradient(90deg,${theme('colors.gradientpurple')},${theme('colors.gradientpink')} 50%,${theme('colors.gradientlightpurple')} 70%)`,
+          },
+          '&:not([class*="inverted"])': {
+            borderImageSource: `linear-gradient(90deg,${theme('colors.gradientlightpurple')} 0%,${theme('colors.gradientpink')} 50%,${theme('colors.gradientpurple')} 70%)`,
+          },
         },
         '@media (max-width: 768px)': {
           '.hamburger .line': {
