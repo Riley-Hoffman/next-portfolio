@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import packageJson from "../../package.json";
+import { githubUrl, version } from "../../lib/constants";
 
 export const Footer = () => {
-  const githubUrl = packageJson.repository?.url.replace(".git", "");
-  const version = packageJson.version;
   return (
     <footer className="gradient-border min-h-[5.563rem] border-t border-solid bg-pink-200 contrast-more:bg-white">
       <h2 className="sr-only">Footer</h2>
