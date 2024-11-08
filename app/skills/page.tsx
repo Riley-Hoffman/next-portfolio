@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "../../public/devicon.css";
-import { SchemaGenerator } from "../components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "../components/SchemaGenerator";
 import { SkillsData } from "./components/skills/SkillsData";
 import { SkillItem } from "./components/skills/SkillItem";
 import { Carousel } from "./components/carousel/Carousel";
@@ -24,15 +27,16 @@ export const metadata: Metadata = {
 };
 
 export default function Skills() {
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "Skills",
+    description,
+    urlPath: "/skills",
+    publishDate: "2024-07-04T09:25:01.340Z",
+    schemaType: "WebPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title="Skills"
-        description={description}
-        urlPath="/skills"
-        publishDate="2024-07-04T09:25:01.340Z"
-        schemaType="WebPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <section className="pb-16">
         <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Skills

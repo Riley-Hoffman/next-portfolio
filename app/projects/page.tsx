@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { SchemaGenerator } from "../components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "../components/SchemaGenerator";
 import ProjectsList from "./components/ProjectsList";
 import { fetchFirebaseData } from "../../lib/fetchFirebaseData";
 import type { Project } from "./components/ProjectContent";
@@ -23,15 +26,16 @@ export const metadata: Metadata = {
 
 export default async function ProjectsPage() {
   const projects = await fetchFirebaseData<Project[]>("/projects");
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "Projects",
+    description,
+    urlPath: "/projects",
+    publishDate: "2024-07-04T09:25:01.340Z",
+    schemaType: "WebPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title="Projects"
-        description={description}
-        urlPath="/projects"
-        publishDate="2024-07-04T09:25:01.340Z"
-        schemaType="WebPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Projects
       </h1>

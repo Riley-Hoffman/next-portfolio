@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SchemaGenerator } from "../components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "../components/SchemaGenerator";
 import { getBaseUrl, getImageUrl } from "../../lib/constants";
 
 const description =
@@ -21,15 +24,16 @@ export const metadata: Metadata = {
 };
 
 export default function Accessibility() {
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "Accessibility",
+    description,
+    urlPath: "/accessibility",
+    publishDate: "2024-08-07T09:25:01.340Z",
+    schemaType: "WebPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title="Accessibility"
-        description={description}
-        urlPath="/accessibility"
-        publishDate="2024-08-07T09:25:01.340Z"
-        schemaType="WebPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Accessibility
       </h1>

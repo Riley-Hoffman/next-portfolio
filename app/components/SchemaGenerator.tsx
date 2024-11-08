@@ -9,12 +9,14 @@ import {
   linkedInUrl,
 } from "../../lib/constants";
 
-interface SchemaGeneratorProps {
-  title: string;
-  description: string;
-  urlPath: string;
-  publishDate?: string;
-  schemaType: "WebPage" | "ContactPage";
+export interface SchemaGeneratorProps {
+  schemaData: {
+    title: string;
+    description: string;
+    urlPath: string;
+    publishDate?: string;
+    schemaType: "WebPage" | "ContactPage";
+  };
 }
 
 type SchemaMap = {
@@ -48,16 +50,11 @@ const generateSchema = <T extends keyof SchemaMap>(
       "@type": "Person",
       name: author,
     },
-  } as unknown as WithContext<SchemaMap[T]>;
+  } as WithContext<SchemaMap[T]>;
 };
 
-export const SchemaGenerator = ({
-  title,
-  description,
-  urlPath,
-  publishDate,
-  schemaType,
-}: SchemaGeneratorProps) => {
+export const SchemaGenerator = ({ schemaData }: SchemaGeneratorProps) => {
+  const { title, description, urlPath, publishDate, schemaType } = schemaData;
   const schema = generateSchema(
     schemaType,
     title,
@@ -65,6 +62,7 @@ export const SchemaGenerator = ({
     urlPath,
     publishDate,
   );
+
   return (
     <>
       <SchemaInjector structuredData={schema} />

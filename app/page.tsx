@@ -1,6 +1,9 @@
 "use client";
 import { useRef } from "react";
-import { SchemaGenerator } from "./components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "./components/SchemaGenerator";
 import { LazyLoadLink } from "./components/LazyLoadLink";
 import { CoverImage } from "./components/home/CoverImage";
 import { FirstFoldContent } from "./components/home/FirstFoldContent";
@@ -10,15 +13,17 @@ import { baseDescription } from "../lib/constants";
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
+  const description = baseDescription;
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "",
+    description,
+    urlPath: "",
+    publishDate: "2024-07-04T09:25:01.340Z",
+    schemaType: "WebPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title=""
-        description={baseDescription}
-        urlPath=""
-        publishDate="2024-07-04T09:25:01.340Z"
-        schemaType="WebPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <CoverImage
         width={1920}
         height={1080}

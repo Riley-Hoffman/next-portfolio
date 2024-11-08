@@ -1,5 +1,8 @@
 import { Metadata } from "next";
-import { SchemaGenerator } from "../components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "../components/SchemaGenerator";
 import { Form } from "./components/Form";
 import { getBaseUrl, getImageUrl } from "../../lib/constants";
 
@@ -21,15 +24,16 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "Contact",
+    description,
+    urlPath: "/contact",
+    publishDate: "2024-07-04T09:25:01.340Z",
+    schemaType: "ContactPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title="Contact"
-        description={description}
-        urlPath="/contact"
-        publishDate="2024-07-04T09:25:01.340Z"
-        schemaType="ContactPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Contact Me
       </h1>

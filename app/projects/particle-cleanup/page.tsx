@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { SchemaGenerator } from "../../components/SchemaGenerator";
+import {
+  SchemaGenerator,
+  SchemaGeneratorProps,
+} from "../../components/SchemaGenerator";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ParticleCleanup } from "./components/ParticleCleanup";
@@ -23,15 +26,16 @@ export const metadata: Metadata = {
 };
 
 export default function ParticleCleanupWrapper() {
+  const schemaData: SchemaGeneratorProps["schemaData"] = {
+    title: "Particle Cleanup Game",
+    description,
+    urlPath: "/projects/particle-cleanup",
+    publishDate: "2024-08-05T09:25:01.340Z",
+    schemaType: "WebPage",
+  };
   return (
     <>
-      <SchemaGenerator
-        title="Particle Cleanup Game"
-        description={description}
-        urlPath="/projects/particle-cleanup"
-        publishDate="2024-08-05T09:25:01.340Z"
-        schemaType="WebPage"
-      />
+      <SchemaGenerator schemaData={schemaData} />
       <div className="pb-16">
         <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Particle Cleanup Game
