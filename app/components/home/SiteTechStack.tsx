@@ -85,7 +85,7 @@ export const SiteTechStack = () => {
             >
               <i
                 className={`${tech.logo} mx-auto text-7xl`}
-                aria-hidden="true"
+                aria-hidden={true}
               ></i>
               <p className="my-1 text-xl" translate="no">
                 {tech.name}

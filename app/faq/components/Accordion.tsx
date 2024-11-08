@@ -27,7 +27,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             }}
             className="accordion group peer w-full border-b border-solid border-[#e1d7ee] bg-pink-100 px-5 py-6 text-left text-lg font-medium leading-9 text-[#2d2b34] transition-all duration-500 ease-in-out group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0 aria-expanded:border-b-0"
             onClick={() => handleAccordionClick(index)}
-            aria-expanded={openIndex === index ? "true" : "false"}
+            aria-expanded={openIndex === index ? true : false}
           >
             <div className="plus-minus mb-[0.063rem] mr-5 box-content rounded-[50%] bg-zinc p-3 text-xs text-pink-200 transition-all duration-200 ease-in-out before:w-[0.625rem] after:h-[0.625rem] group-hover:bg-purple-100 group-hover:text-zinc group-focus-visible:bg-purple-100 group-focus-visible:text-zinc group-aria-expanded:bg-purple-100 group-aria-expanded:text-zinc"></div>
             {item.question}

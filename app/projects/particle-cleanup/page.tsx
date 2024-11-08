@@ -54,17 +54,17 @@ export default function ParticleCleanupWrapper() {
           >
             <li className="before:bg-[#8a7400]">
               <span className="sr-only">Gold, Less Than 15 seconds.</span>
-              <span aria-hidden="true">
+              <span aria-hidden={true}>
                 <FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;
               </span>
             </li>
             <li className="before:bg-[#737373]">
               <span className="sr-only">Silver, 15 to 20 seconds.</span>
-              <span aria-hidden="true">15s-20s &nbsp;&nbsp;</span>
+              <span aria-hidden={true}>15s-20s &nbsp;&nbsp;</span>
             </li>
             <li className="before:bg-[#a2652a]">
               <span className="sr-only">Bronze, 21 to 25 seconds.</span>
-              <span aria-hidden="true">21s-25s &nbsp;&nbsp;</span>
+              <span aria-hidden={true}>21s-25s &nbsp;&nbsp;</span>
             </li>
           </ol>
           <ParticleCleanup />

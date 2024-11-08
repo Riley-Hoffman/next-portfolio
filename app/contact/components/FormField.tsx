@@ -36,7 +36,7 @@ export const FormField = ({
         placeholder={placeholder}
         required={required}
         value={value}
-        spellCheck="true"
+        spellCheck={true}
         rows={8}
         onChange={handleChange(name)}
       />
