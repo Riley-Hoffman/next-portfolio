@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function Faq() {
-  const schema: WithContext<FAQPage> = {
+  const faqSchemaData: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     name: getPageTitle("FAQ"),
@@ -50,7 +50,7 @@ export default function Faq() {
   };
   return (
     <>
-      <SchemaInjector structuredData={schema} />
+      <SchemaInjector structuredData={faqSchemaData} />
       <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Frequently Asked Questions
       </h1>
