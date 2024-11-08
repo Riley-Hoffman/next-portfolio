@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { githubUrl, version } from "../../lib/constants";
+import { getPageTitle, githubUrl, version } from "../../lib/constants";
 
 export const Footer = () => {
   return (
@@ -9,7 +9,7 @@ export const Footer = () => {
       <h2 className="sr-only">Footer</h2>
       <div className="max-w-screen-xl py-7 md:flex md:items-center md:justify-between">
         <p className="m-0 px-3 py-1 font-urbanist text-base">
-          Riley Hoffman <span aria-hidden={true}>|</span> Web Developer <small>(v{version}) </small>
+          {getPageTitle()} <small>(v{version}) </small>
           <a
             className="group inline-block min-h-[1.875rem] min-w-[2.125rem] no-underline md:min-h-[1.25rem] md:min-w-[1.5rem]"
             href={githubUrl}
