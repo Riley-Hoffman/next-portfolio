@@ -5,20 +5,16 @@ const LazyUseParallax = dynamic(() => import("./LazyUseParallax"), {
   ssr: false,
 });
 
-interface CoverImageProps {
-  width: number;
-  height: number;
-  srcImg: string;
-  srcImgMobile: string;
-  children: React.ReactNode;
+export interface CoverImageProps {
+  coverImageData: {
+    width: number;
+    height: number;
+    srcImg: string;
+    srcImgMobile: string;
+    children: React.ReactNode;
+  }
 }
-export const CoverImage = ({
-  width,
-  height,
-  srcImg,
-  srcImgMobile,
-  children,
-}: CoverImageProps) => {
+export const CoverImage = ({coverImageData}: CoverImageProps) => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   return (
     <section
@@ -27,10 +23,10 @@ export const CoverImage = ({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={srcImg}
-        srcSet={`${srcImgMobile} 768w, ${srcImg} 1024w`}
-        width={width}
-        height={height}
+        src={coverImageData.srcImg}
+        srcSet={`${coverImageData.srcImgMobile} 768w, ${coverImageData.srcImg} 1024w`}
+        width={coverImageData.width}
+        height={coverImageData.height}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 115vw, 130vw"
         alt=""
         fetchPriority="high"
@@ -38,7 +34,7 @@ export const CoverImage = ({
       />
       <div className="min-h-[74vh] max-w-screen-xl py-[0.1px]">
         <div className="m-[18vh_1.25rem_6.625rem_0] py-5 text-left md:w-3/5 md:translate-y-[1.25rem]">
-          {children}
+          {coverImageData.children}
         </div>
       </div>
       <LazyUseParallax parallaxRef={parallaxRef} />

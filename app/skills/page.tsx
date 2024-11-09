@@ -4,7 +4,7 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../components/SchemaGenerator";
-import { SkillsData } from "./components/skills/SkillsData";
+import { skillsData } from "./components/skills/SkillsData";
 import { SkillItem } from "./components/skills/SkillItem";
 import { Carousel } from "./components/carousel/Carousel";
 import { CarouselData } from "./components/carousel/CarouselData";
@@ -46,7 +46,7 @@ export default function Skills() {
             className="skills-list mt-16 grid max-w-5xl grid-cols-2 justify-items-center gap-x-6 gap-y-16 pb-12 pt-9 sm:grid-cols-3 md:grid-cols-4"
             aria-label="Skills"
           >
-            {SkillsData.map((skill, index) => (
+            {skillsData.map((skill, index) => (
               <SkillItem key={index} {...skill} />
             ))}
           </ul>
