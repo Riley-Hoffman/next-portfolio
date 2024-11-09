@@ -153,6 +153,9 @@ const config: Config = {
             },
           },
         },
+        '.overlay > *': {
+          position: 'relative',
+        },
         '.ol.numbered-icons': {
           counterReset: 'circle',
           listStyle: 'none',
