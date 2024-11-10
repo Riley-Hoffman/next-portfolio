@@ -1,5 +1,7 @@
 import { useMemo, useEffect } from "react";
 import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll";
+import { NewTabSrText } from "../../components/NewTabSrText";
+
 
 interface Tech {
   name: string;
@@ -89,6 +91,7 @@ export const SiteTechStack = () => {
               ></i>
               <p className="my-1 text-xl" translate="no">
                 {tech.name}
+                <NewTabSrText />
               </p>
             </a>
           </li>

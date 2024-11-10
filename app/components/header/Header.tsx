@@ -1,13 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SkipToContent } from "./SkipToContent";
 import { HeaderLogo } from "./HeaderLogo";
 import { Hamburger } from "./Hamburger";
 import { NavListItem } from "./NavListItem";
-import { NewTabSrText } from "../../components/NewTabSrText";
-import { RouteList } from "../RouteList";
+import { NoJsMenu } from "./NoJsMenu";
 
 interface MenuLink {
   to: string;
@@ -90,28 +88,7 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-      <noscript>
-        <nav className="px-4 md:hidden" aria-label="No JS Menu Links">
-          <ul className="flex flex-wrap gap-x-2 gap-y-3">
-            {RouteList.map(
-              (route) =>
-                route.name !== "Particle Cleanup Game" &&
-                route.name !== "Accessibility" && (
-                  <li key={route.path}>
-                    <Link className="button p-1" href={route.path}>
-                      {route.name}
-                    </Link>
-                  </li>
-                ),
-            )}
-            <li>
-              <a className="button p-1" href="/riley-hoffman-resume.pdf">
-                Resume <NewTabSrText />
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </noscript>
+      <NoJsMenu />
     </header>
   );
 };
