@@ -91,7 +91,7 @@ export const Header = () => {
         </nav>
       </div>
       <noscript>
-        <nav className="px-4 md:hidden">
+        <nav className="px-4 md:hidden" aria-label="No JS Menu Links">
           <ul className="flex flex-wrap gap-x-2 gap-y-3">
             {RouteList.map(
               (route) =>
