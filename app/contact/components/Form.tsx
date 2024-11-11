@@ -85,7 +85,7 @@ export const Form = () => {
   const { name, email, message } = formState;
   return (
     <form
-      className="relative max-w-2xl px-5 pb-10 pt-5"
+      className="relative px-5 pb-10 pt-5"
       onSubmit={handleFormSubmit}
     >
       <fieldset>
