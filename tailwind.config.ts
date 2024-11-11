@@ -29,6 +29,9 @@ const config: Config = {
           100: '#a8a0d9',
           200: '#794e8d',
         },
+        gray: {
+          400: '#73738c',
+        },
         gradientpurple: '#794e8e',
         gradientpink: '#ae4971',
         gradientlightpurple: '#a8a1d9',
@@ -110,7 +113,7 @@ const config: Config = {
           textDecoration: 'underline',
         },
         'main ::placeholder': {
-          color: '#73738c',
+          color:  theme('colors.gray.400'),
           fontSize: '1rem',
           fontWeight: '300',
           lineHeight: '1.5rem',
