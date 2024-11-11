@@ -1,28 +1,26 @@
 import { NewTabSrText } from "../../components/NewTabSrText";
 import { githubUrl, linkedInUrl } from "../../../lib/constants";
 
+const links = [
+  { name: "Github", url: githubUrl },
+  { name: "LinkedIn", url: linkedInUrl },
+];
+
 export const Sidebar = () => (
-  <aside className="ml-auto mt-9 h-full overflow-hidden rounded-sm bg-pink-100 py-[0.1px] text-center md:sticky md:top-24 md:w-[30%]">
-    <h3 className="mx-auto mt-0 bg-zinc text-pink-100">Links</h3>
-    <p>
+  <aside className="ml-auto mt-9 overflow-hidden rounded-sm bg-pink-100 py-[0.1px] text-center md:sticky md:top-24 md:w-11/12">
+    <h3 className="mx-auto my-0 bg-zinc text-pink-100">Links</h3>
+    {links.map(({ name, url }, index) => (
       <a
-        className="new-tab font-urbanist no-underline"
-        href={githubUrl}
+        key={name}
+        className={`new-tab block ${
+          index === 0 ? "pb-2 pt-3" : "pb-3 pt-2"
+        } font-urbanist no-underline`}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Github <NewTabSrText icon={true} />
+        {name} <NewTabSrText icon={true} />
       </a>
-    </p>
-    <p>
-      <a
-        className="new-tab font-urbanist no-underline"
-        href={linkedInUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn <NewTabSrText icon={true} />
-      </a>
-    </p>
+    ))}
   </aside>
 );
