@@ -39,7 +39,7 @@ export default function Contact() {
         Contact Me
       </h1>
       <div className="max-w-5xl md:flex">
-        <div className="pt-[1.875rem] md:w-3/4 md:pb-[13vh]">
+        <div className="pt-[1.875rem] md:w-5/6 md:pb-[13vh]">
           <div className="border-purple mb-10 max-w-[calc(100%-1.563rem)] rounded-t-md bg-zinc py-[0.1px] text-pink-200 shadow-[#e5d4ed_0.188rem_0.125rem_0_0]">
             <h2 className="mb-1 inline-block w-80 overflow-hidden whitespace-nowrap border-r-2 border-solid border-purple-200 font-medium tracking-widest motion-safe:animate-typetext">
               Write me a message...
@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
           <Form />
         </div>
-        <div className="m-0 md:w-1/4">
+        <div className="m-0 md:w-1/6">
           <Sidebar />
         </div>
       </div>
