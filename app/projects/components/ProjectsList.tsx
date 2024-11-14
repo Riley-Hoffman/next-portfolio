@@ -1,7 +1,8 @@
+import type { Project } from "./ProjectContent";
 import { ProjectBox } from "./ProjectBox";
 import { ProjectCatHeading } from "./ProjectCatHeading";
 import { ProjectContent } from "./ProjectContent";
-import type { Project } from "./ProjectContent";
+import { ProjectErrorContent } from "./ProjectErrorContent";
 
 export default function ProjectsList({
   initialProjects,
@@ -12,9 +13,7 @@ export default function ProjectsList({
 
   if (!projects || projects.length === 0) {
     return (
-      <div className="min-h-screen pt-44 text-center text-3xl">
-        <span>Error loading projects.</span>
-      </div>
+      <ProjectErrorContent />
     );
   }
 
