@@ -12,9 +12,7 @@ export default function ProjectsList({
   const projects = initialProjects;
 
   if (!projects || projects.length === 0) {
-    return (
-      <ProjectError />
-    );
+    return <ProjectError />;
   }
 
   const categories: string[] = Array.from(
