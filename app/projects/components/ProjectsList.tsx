@@ -2,7 +2,7 @@ import type { Project } from "./ProjectContent";
 import { ProjectBox } from "./ProjectBox";
 import { ProjectCatHeading } from "./ProjectCatHeading";
 import { ProjectContent } from "./ProjectContent";
-import { ProjectErrorContent } from "./ProjectErrorContent";
+import { ProjectError } from "./ProjectError";
 
 export default function ProjectsList({
   initialProjects,
@@ -13,7 +13,7 @@ export default function ProjectsList({
 
   if (!projects || projects.length === 0) {
     return (
-      <ProjectErrorContent />
+      <ProjectError />
     );
   }
 
