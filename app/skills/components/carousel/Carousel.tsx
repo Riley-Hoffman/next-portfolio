@@ -1,10 +1,7 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./styles/custom-swiper.css";
 import { Pagination, Navigation, A11y, Mousewheel } from "swiper/modules";
 import { CarouselButtons } from "./CarouselButtons";
 
@@ -18,8 +15,21 @@ interface CarouselProps {
 }
 
 export const Carousel = ({ slides }: CarouselProps) => {
+  const swiperContainerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const loadStyles = async () => {
+      await Promise.all([
+        import("swiper/css"),
+        import("swiper/css/navigation"),
+        import("swiper/css/pagination"),
+        import("./styles/custom-swiper.css"),
+      ]);
+    };
+    loadStyles();
+  }, []);
+
   return (
-    <div className="relative max-h-[31rem] max-w-7xl overflow-hidden">
+    <div className="relative max-w-7xl" ref={swiperContainerRef}>
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
