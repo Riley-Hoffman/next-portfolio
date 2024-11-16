@@ -26,7 +26,6 @@ export const Carousel = ({ slides }: CarouselProps) => {
           prevEl: ".prev-btn",
           nextEl: ".next-btn",
         }}
-        effect="cube"
         pagination={{
           clickable: true,
           bulletClass: "swiper-pagination-bullet !h-6 !w-6 !mx-3",
