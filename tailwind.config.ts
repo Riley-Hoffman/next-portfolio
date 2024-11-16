@@ -7,9 +7,9 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
-    'md:motion-safe:left-[-200%]',
+    'motion-safe:md:left-[-200%]',
     '[&[data-active="true"]]:left-0',
-    'md:motion-safe:right-[-200%]',
+    'motion-safe:md:right-[-200%]',
     '[&[data-active="true"]]:right-0',
   ],
   theme: {

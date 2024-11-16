@@ -35,7 +35,7 @@ export const SiteTechStack = () => {
   const elementsRef = useTriggerOnScroll();
   const animation = useMemo(
     () => [
-      "md:motion-safe:h-[0rem]",
+      "motion-safe:md:h-[0rem]",
       "[&[data-active='true']]:h-[10rem]",
       "transition-all",
       "first:duration-150",
@@ -79,7 +79,7 @@ export const SiteTechStack = () => {
             }}
           >
             <a
-              className="mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0_inset_#12121c_0_0_150px_0] transition-shadow duration-200 active:min-h-fit hover:bg-zinc hover:text-pink-100 motion-safe:hover:bg-pink-100 motion-safe:hover:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:hover:duration-1000 focus-visible:bg-zinc focus-visible:text-pink-100 motion-safe:focus-visible:bg-pink-100 motion-safe:focus-visible:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:focus-visible:duration-1000"
+              className="mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0_inset_#12121c_0_0_150px_0] transition-shadow duration-200 hover:bg-zinc hover:text-pink-100 focus-visible:bg-zinc focus-visible:text-pink-100 active:min-h-fit motion-safe:md:hover:bg-pink-100 motion-safe:md:hover:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:md:hover:duration-1000 motion-safe:md:focus-visible:bg-pink-100 motion-safe:md:focus-visible:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:md:focus-visible:duration-1000"
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
