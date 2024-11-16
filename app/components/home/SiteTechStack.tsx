@@ -2,7 +2,6 @@ import { useMemo, useEffect } from "react";
 import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll";
 import { NewTabSrText } from "../../components/NewTabSrText";
 
-
 interface Tech {
   name: string;
   logo: string;
@@ -80,7 +79,7 @@ export const SiteTechStack = () => {
             }}
           >
             <a
-              className="duration-400 mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0] transition-shadow hover:bg-zinc hover:text-pink-100 hover:shadow-none focus-visible:bg-zinc focus-visible:text-pink-100 focus-visible:shadow-none active:min-h-fit"
+              className="mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0_inset_#12121c_0_0_20px_0] transition-shadow duration-200 hover:text-pink-100 hover:shadow-[inset_#12121c_100vw_100vh_2px_0] hover:duration-1000 focus-visible:text-pink-100 focus-visible:shadow-[inset_#12121c_100vw_100vh_0_0] focus-visible:duration-1000 active:min-h-fit"
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
