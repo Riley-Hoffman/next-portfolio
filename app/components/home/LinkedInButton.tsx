@@ -1,20 +1,20 @@
-import { useRef } from "react";
-import Link from "next/link";
-import { NewTabSrText } from "../../components/NewTabSrText";
-import { useTimedEffect } from "../../../hooks/useTimedEffect";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { useRef } from "react"
+import Link from "next/link"
+import { NewTabSrText } from "../../components/NewTabSrText"
+import { useTimedEffect } from "../../../hooks/useTimedEffect"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
 export const LinkedInButton = () => {
-  const buttonRef = useRef<HTMLAnchorElement>(null);
-  const { triggerEffect } = useTimedEffect(1000);
+  const buttonRef = useRef<HTMLAnchorElement>(null)
+  const { triggerEffect } = useTimedEffect(1000)
 
   const applyEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
       "motion-safe:animate-[wiggle_1s]",
-      isCounting,
-    );
-  };
+      isCounting
+    )
+  }
 
   return (
     <Link
@@ -34,5 +34,5 @@ export const LinkedInButton = () => {
         <NewTabSrText icon={true} />
       </span>
     </Link>
-  );
-};
+  )
+}

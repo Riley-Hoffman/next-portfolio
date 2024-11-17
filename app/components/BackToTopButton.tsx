@@ -1,28 +1,28 @@
-"use client";
-import { useState, useEffect } from "react";
-import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+"use client"
+import { useState, useEffect } from "react"
+import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const BackToTopButton = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   const handleScroll = () => {
     if (window.scrollY > window.innerHeight / 2) {
-      setVisible(true);
+      setVisible(true)
     } else {
-      setVisible(false);
+      setVisible(false)
     }
-  };
+  }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return visible ? (
     <button
@@ -32,5 +32,5 @@ export const BackToTopButton = () => {
     >
       <FontAwesomeIcon className="text-2xl" icon={faChevronCircleUp} />
     </button>
-  ) : null;
-};
+  ) : null
+}

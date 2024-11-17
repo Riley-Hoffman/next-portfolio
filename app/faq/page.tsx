@@ -1,16 +1,16 @@
-import { Metadata } from "next";
-import SchemaInjector from "../components/SchemaInjector";
-import { Accordion } from "./components/Accordion";
-import { questions, answers } from "./components/AccordionItems";
-import { FAQPage, WithContext } from "schema-dts";
+import { Metadata } from "next"
+import SchemaInjector from "../components/SchemaInjector"
+import { Accordion } from "./components/Accordion"
+import { questions, answers } from "./components/AccordionItems"
+import { FAQPage, WithContext } from "schema-dts"
 import {
   getBaseUrl,
   getPageTitle,
   author,
   getImageUrl,
-} from "../../lib/constants";
+} from "../../lib/constants"
 
-const description = "Find the answers to my most frequently asked questions.";
+const description = "Find the answers to my most frequently asked questions."
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "FAQ",
     url: `${getBaseUrl("/faq")}`,
   },
-};
+}
 
 export default function Faq() {
   const faqSchemaData: WithContext<FAQPage> = {
@@ -47,11 +47,11 @@ export default function Faq() {
       "@type": "Person",
       name: author,
     },
-  };
+  }
   return (
     <>
       <SchemaInjector structuredData={faqSchemaData} />
-      <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+      <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Frequently Asked Questions
       </h1>
       <div className="max-w-screen-md p-[1.875rem_0_13vh]">
@@ -64,5 +64,5 @@ export default function Faq() {
         />
       </div>
     </>
-  );
+  )
 }

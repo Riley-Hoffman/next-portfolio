@@ -1,10 +1,10 @@
-import { NewTabSrText } from "../../components/NewTabSrText";
-import { githubUrl, linkedInUrl } from "../../../lib/constants";
+import { NewTabSrText } from "../../components/NewTabSrText"
+import { githubUrl, linkedInUrl } from "../../../lib/constants"
 
 const links = [
   { name: "Github", url: githubUrl },
   { name: "LinkedIn", url: linkedInUrl },
-];
+]
 
 export const Sidebar = () => (
   <aside className="ml-auto mt-9 bg-pink-100 py-[0.1px] text-center md:sticky md:top-24 md:w-11/12 md:overflow-hidden md:rounded-sm md:border-x md:border-b md:border-solid md:border-gray-400">
@@ -23,4 +23,4 @@ export const Sidebar = () => (
       </a>
     ))}
   </aside>
-);
+)

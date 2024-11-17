@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { getPageTitle, githubUrl, version } from "../../lib/constants";
+import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { getPageTitle, githubUrl, version } from "../../lib/constants"
 
 export const Footer = () => {
   return (
@@ -36,5 +36,5 @@ export const Footer = () => {
         </p>
       </div>
     </footer>
-  );
-};
+  )
+}

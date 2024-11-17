@@ -1,7 +1,7 @@
 export const HeaderLogo = () => {
   const handleClickHome = () => {
-    window.location.href = "/";
-  };
+    window.location.href = "/"
+  }
   return (
     <div className="logo">
       <button
@@ -12,5 +12,5 @@ export const HeaderLogo = () => {
         <span className="sr-only">Back To Home Page</span>
       </button>
     </div>
-  );
-};
+  )
+}

@@ -16,4 +16,4 @@ export const FirstFoldContent = () => (
       developers.
     </p>
   </>
-);
+)

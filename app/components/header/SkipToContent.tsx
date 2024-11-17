@@ -5,4 +5,4 @@ export const SkipToContent = () => (
   >
     Skip To Content
   </a>
-);
+)

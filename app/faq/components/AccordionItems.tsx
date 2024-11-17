@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from "next/link"
 
 interface AccordionItem {
-  question: string;
-  answer: React.ReactElement;
+  question: string
+  answer: React.ReactElement
 }
 
 const accordionItems: AccordionItem[] = [
@@ -48,7 +48,7 @@ const accordionItems: AccordionItem[] = [
       </p>
     ),
   },
-];
+]
 
-export const questions = accordionItems.map((item) => item.question);
-export const answers = accordionItems.map((item) => item.answer);
+export const questions = accordionItems.map((item) => item.question)
+export const answers = accordionItems.map((item) => item.answer)

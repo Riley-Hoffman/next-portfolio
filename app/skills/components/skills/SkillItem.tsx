@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 interface SkillItemProps {
-  skill: string;
-  icon?: IconProp;
-  devicon?: string;
-  image?: boolean;
+  skill: string
+  icon?: IconProp
+  devicon?: string
+  image?: boolean
 }
 
 export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) => (
@@ -30,4 +30,4 @@ export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) => (
       {skill}
     </p>
   </li>
-);
+)

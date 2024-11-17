@@ -6,4 +6,4 @@ export const RouteList = [
   { path: "/faq/", name: "FAQ" },
   { path: "/contact/", name: "Contact" },
   { path: "/accessibility/", name: "Accessibility" },
-];
+]

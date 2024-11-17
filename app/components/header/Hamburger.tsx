@@ -1,49 +1,49 @@
-"use client";
-import { usePathname } from "next/navigation";
-import { useState, useRef, useCallback, useEffect } from "react";
+"use client"
+import { usePathname } from "next/navigation"
+import { useState, useRef, useCallback, useEffect } from "react"
 
 interface HamburgerProps {
-  expanded?: (isExpanded: boolean) => void;
+  expanded?: (isExpanded: boolean) => void
 }
 
 export const Hamburger = ({ expanded }: HamburgerProps) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const hamburgerRef = useRef<HTMLButtonElement | null>(null);
-  const location = usePathname();
+  const [isExpanded, setIsExpanded] = useState<boolean>(false)
+  const hamburgerRef = useRef<HTMLButtonElement | null>(null)
+  const location = usePathname()
 
   const updateAttributes = useCallback((newIsExpanded: boolean) => {
     if (hamburgerRef.current) {
-      const { current: hamburgerElement } = hamburgerRef;
-      hamburgerElement.setAttribute("aria-expanded", newIsExpanded.toString());
+      const { current: hamburgerElement } = hamburgerRef
+      hamburgerElement.setAttribute("aria-expanded", newIsExpanded.toString())
     }
-  }, []);
+  }, [])
 
   const toggleMenu = useCallback(() => {
     setIsExpanded((prevState) => {
-      const newIsExpanded = !prevState;
-      updateAttributes(newIsExpanded);
-      expanded?.(newIsExpanded);
-      return newIsExpanded;
-    });
-  }, [updateAttributes, expanded]);
+      const newIsExpanded = !prevState
+      updateAttributes(newIsExpanded)
+      expanded?.(newIsExpanded)
+      return newIsExpanded
+    })
+  }, [updateAttributes, expanded])
 
   const handleResize = useCallback(() => {
     if (window.innerWidth > 700 && isExpanded) {
-      setIsExpanded(false);
-      updateAttributes(false);
-      expanded?.(false);
+      setIsExpanded(false)
+      updateAttributes(false)
+      expanded?.(false)
     }
-  }, [isExpanded, updateAttributes, expanded]);
+  }, [isExpanded, updateAttributes, expanded])
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [handleResize]);
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [handleResize])
 
   useEffect(() => {
-    setIsExpanded(false);
-    updateAttributes(false);
-  }, [location, updateAttributes]);
+    setIsExpanded(false)
+    updateAttributes(false)
+  }, [location, updateAttributes])
 
   return (
     <>
@@ -73,5 +73,5 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         <style>{`.hamburger { display: none; }`}</style>
       </noscript>
     </>
-  );
-};
+  )
+}

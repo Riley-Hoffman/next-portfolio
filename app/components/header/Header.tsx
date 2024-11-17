@@ -1,56 +1,56 @@
-"use client";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { SkipToContent } from "./SkipToContent";
-import { HeaderLogo } from "./HeaderLogo";
-import { Hamburger } from "./Hamburger";
-import { NavListItem } from "./NavListItem";
-import { NoJsMenu } from "./NoJsMenu";
+"use client"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { SkipToContent } from "./SkipToContent"
+import { HeaderLogo } from "./HeaderLogo"
+import { Hamburger } from "./Hamburger"
+import { NavListItem } from "./NavListItem"
+import { NoJsMenu } from "./NoJsMenu"
 
 interface MenuLink {
-  to: string;
-  label: string;
+  to: string
+  label: string
 }
 
 export const Header = () => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [hide, setHide] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false)
+  const [hide, setHide] = useState<boolean>(false)
 
   const handleHamburgerClick = (expanded: boolean) => {
-    setIsExpanded(expanded);
-  };
+    setIsExpanded(expanded)
+  }
 
-  const currentPath = usePathname();
+  const currentPath = usePathname()
   const isActive = (path: string) => {
-    return currentPath === path;
-  };
+    return currentPath === path
+  }
 
   useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null
     const handleHideShowLinks = () => {
       if (timeoutId) {
-        clearTimeout(timeoutId);
+        clearTimeout(timeoutId)
       }
 
       if (window.innerWidth <= 700 && !isExpanded) {
         timeoutId = setTimeout(() => {
-          setHide(true);
-        }, 500);
+          setHide(true)
+        }, 500)
       } else {
-        setHide(false);
+        setHide(false)
       }
-    };
+    }
 
-    window.addEventListener("resize", handleHideShowLinks);
-    handleHideShowLinks();
+    window.addEventListener("resize", handleHideShowLinks)
+    handleHideShowLinks()
 
     return () => {
-      window.removeEventListener("resize", handleHideShowLinks);
+      window.removeEventListener("resize", handleHideShowLinks)
       if (timeoutId) {
-        clearTimeout(timeoutId);
+        clearTimeout(timeoutId)
       }
-    };
-  }, [isExpanded]);
+    }
+  }, [isExpanded])
 
   const menuLinks: MenuLink[] = [
     { to: "/", label: "Home" },
@@ -58,7 +58,7 @@ export const Header = () => {
     { to: "/skills", label: "Skills" },
     { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
-  ];
+  ]
 
   return (
     <header className="shadow[0_0.063rem_0.188rem_-0.188rem_black] gradient-border sticky left-[0] right-[0] top-[-2.125rem] z-30 min-h-[7.75rem] border-b-2 border-t-[2.125rem] border-solid bg-[#f4eef6] py-6 shadow-zinc contrast-more:bg-white">
@@ -90,5 +90,5 @@ export const Header = () => {
       </div>
       <NoJsMenu />
     </header>
-  );
-};
+  )
+}

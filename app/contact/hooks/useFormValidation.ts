@@ -1,27 +1,26 @@
-"use client";
-import { useState, useEffect } from "react";
-import { FormState } from "../components/Form";
+"use client"
+import { useState, useEffect } from "react"
+import { FormState } from "../components/Form"
 
 export const useFormValidation = (initialState: FormState) => {
-  const [formState, setFormState] = useState(initialState);
-  const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
+  const [formState, setFormState] = useState(initialState)
+  const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" })
 
   useEffect(() => {
     if (submitted) {
       const validateForm = () => {
-        const { name, email, message } = formState;
-        let newErrors = { name: "", email: "", message: "" };
-        if (name.trim() === "") newErrors.name = "Please enter your name.";
+        const { name, email, message } = formState
+        let newErrors = { name: "", email: "", message: "" }
+        if (name.trim() === "") newErrors.name = "Please enter your name."
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-          newErrors.email = "Please enter a valid email address.";
-        if (message.trim() === "")
-          newErrors.message = "Please enter a message.";
-        setErrors(newErrors);
-      };
-      validateForm();
+          newErrors.email = "Please enter a valid email address."
+        if (message.trim() === "") newErrors.message = "Please enter a message."
+        setErrors(newErrors)
+      }
+      validateForm()
     }
-  }, [formState, submitted]);
+  }, [formState, submitted])
 
   const handleChange =
     (field: keyof FormState) =>
@@ -29,14 +28,14 @@ export const useFormValidation = (initialState: FormState) => {
       setFormState((prevState) => ({
         ...prevState,
         [field]: event.target.value,
-      }));
-      setSubmitted(false);
-      setErrors({ name: "", email: "", message: "" });
-    };
+      }))
+      setSubmitted(false)
+      setErrors({ name: "", email: "", message: "" })
+    }
 
   const handleSubmitClick = () => {
-    setSubmitted(true);
-  };
+    setSubmitted(true)
+  }
 
   return {
     formState,
@@ -44,5 +43,5 @@ export const useFormValidation = (initialState: FormState) => {
     handleChange,
     handleSubmitClick,
     submitted,
-  };
+  }
 }

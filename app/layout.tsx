@@ -1,18 +1,18 @@
-import "./styles/globals.css";
-import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-import { Header } from "./components/header/Header";
-import { Footer } from "./components/Footer";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./styles/globals.css"
+import type { Metadata } from "next"
+import dynamic from "next/dynamic"
+import { Header } from "./components/header/Header"
+import { Footer } from "./components/Footer"
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import {
   getBaseUrl,
   getPageTitle,
   baseDescription,
   getImageUrl,
-} from "../lib/constants";
+} from "../lib/constants"
 
-config.autoAddCss = false;
+config.autoAddCss = false
 
 export const metadata: Metadata = {
   title: {
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     },
     url: getBaseUrl(),
   },
-};
+}
 
-const DynamicImports = dynamic(() => import("./components/DynamicImports"));
+const DynamicImports = dynamic(() => import("./components/DynamicImports"))
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -58,5 +58,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }

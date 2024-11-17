@@ -1,20 +1,20 @@
-import { useRef } from "react";
-import Image from "next/image";
-import { LinkedInButton } from "./LinkedInButton";
-import { useReducedMotion } from "../../../hooks/useReducedMotion";
-import { useScrollHandler } from "../../../hooks/useScrollHandler";
+import { useRef } from "react"
+import Image from "next/image"
+import { LinkedInButton } from "./LinkedInButton"
+import { useReducedMotion } from "../../../hooks/useReducedMotion"
+import { useScrollHandler } from "../../../hooks/useScrollHandler"
 
 export const MyJourney = () => {
-  const prefersReducedMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const scrollRef = useRef<number>(0);
+  const prefersReducedMotion = useReducedMotion()
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const scrollRef = useRef<number>(0)
 
   useScrollHandler(() => {
-    scrollRef.current = window.scrollY;
+    scrollRef.current = window.scrollY
     if (sectionRef.current && !prefersReducedMotion) {
-      sectionRef.current.style.filter = `hue-rotate(${scrollRef.current / 2.7}deg)`;
+      sectionRef.current.style.filter = `hue-rotate(${scrollRef.current / 2.7}deg)`
     }
-  });
+  })
 
   return (
     <section
@@ -60,5 +60,5 @@ export const MyJourney = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

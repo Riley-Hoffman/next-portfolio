@@ -1,26 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react"
 
 export const useScrollHandler = (onScroll: () => void) => {
-  const ticking = useRef(false);
-  const animationFrameId = useRef<number | null>(null);
+  const ticking = useRef(false)
+  const animationFrameId = useRef<number | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
         animationFrameId.current = window.requestAnimationFrame(() => {
-          onScroll();
-          ticking.current = false;
-        });
-        ticking.current = true;
+          onScroll()
+          ticking.current = false
+        })
+        ticking.current = true
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll)
       if (animationFrameId.current !== null) {
-        window.cancelAnimationFrame(animationFrameId.current);
+        window.cancelAnimationFrame(animationFrameId.current)
       }
-    };
-  }, [onScroll]);
-};
+    }
+  }, [onScroll])
+}

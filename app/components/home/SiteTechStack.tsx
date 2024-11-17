@@ -1,11 +1,11 @@
-import { useMemo, useEffect } from "react";
-import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll";
-import { NewTabSrText } from "../../components/NewTabSrText";
+import { useMemo, useEffect } from "react"
+import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll"
+import { NewTabSrText } from "../../components/NewTabSrText"
 
 interface Tech {
-  name: string;
-  logo: string;
-  url: string;
+  name: string
+  logo: string
+  url: string
 }
 
 export const SiteTechStack = () => {
@@ -31,8 +31,8 @@ export const SiteTechStack = () => {
       logo: "devicon-firebase-plain",
       url: "https://firebase.google.com",
     },
-  ];
-  const elementsRef = useTriggerOnScroll();
+  ]
+  const elementsRef = useTriggerOnScroll()
   const animation = useMemo(
     () => [
       "motion-safe:md:h-[0rem]",
@@ -45,17 +45,17 @@ export const SiteTechStack = () => {
       "last:duration-1000",
       "ease",
     ],
-    [],
-  );
+    []
+  )
   useEffect(() => {
     if (elementsRef.current) {
       elementsRef.current.forEach((element: HTMLElement) => {
         animation.forEach((className) => {
-          element.classList.add(className);
-        });
-      });
+          element.classList.add(className)
+        })
+      })
     }
-  }, [animation, elementsRef]);
+  }, [animation, elementsRef])
 
   return (
     <>
@@ -74,7 +74,7 @@ export const SiteTechStack = () => {
             } ${index === technologies.length - 1 && "md:col-start-3"}`}
             ref={(el) => {
               if (el) {
-                elementsRef.current.push(el);
+                elementsRef.current.push(el)
               }
             }}
           >
@@ -97,5 +97,5 @@ export const SiteTechStack = () => {
         ))}
       </ul>
     </>
-  );
-};
+  )
+}

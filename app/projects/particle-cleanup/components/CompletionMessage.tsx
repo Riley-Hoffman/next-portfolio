@@ -1,9 +1,9 @@
-import { faMedal } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMedal } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 interface CompletionMessageProps {
-  medalDetails: { text: string; color: string } | null;
-  time: number | null;
+  medalDetails: { text: string; color: string } | null
+  time: number | null
 }
 
 export const CompletionMessage = ({
@@ -35,4 +35,4 @@ export const CompletionMessage = ({
       )}
     </span>
   </p>
-);
+)

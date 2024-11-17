@@ -1,24 +1,24 @@
-import dynamic from "next/dynamic";
-import { useRef } from "react";
+import dynamic from "next/dynamic"
+import { useRef } from "react"
 
 const LazyUseParallax = dynamic(() => import("./LazyUseParallax"), {
   ssr: false,
-});
+})
 
 export interface CoverImageProps {
   coverImageData: {
-    width: number;
-    height: number;
-    srcImg: string;
-    srcImgMobile: string;
-    children: React.ReactNode;
+    width: number
+    height: number
+    srcImg: string
+    srcImgMobile: string
+    children: React.ReactNode
   }
 }
-export const CoverImage = ({coverImageData}: CoverImageProps) => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
+export const CoverImage = ({ coverImageData }: CoverImageProps) => {
+  const parallaxRef = useRef<HTMLDivElement>(null)
   return (
     <section
-      className="overlay gradient-border inverted overflow-hidden border-b-4 border-solid before:bg-[radial-gradient(rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.55)_100%),_linear-gradient(-30deg,_rgba(0,247,255,0.08)_0%,_#0000_15%,_#0000_80%,_rgba(0,247,255,0.08)_100%)]"
+      className="inverted overlay gradient-border overflow-hidden border-b-4 border-solid before:bg-[radial-gradient(rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.55)_100%),_linear-gradient(-30deg,_rgba(0,247,255,0.08)_0%,_#0000_15%,_#0000_80%,_rgba(0,247,255,0.08)_100%)]"
       ref={parallaxRef}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,5 +39,5 @@ export const CoverImage = ({coverImageData}: CoverImageProps) => {
       </div>
       <LazyUseParallax parallaxRef={parallaxRef} />
     </section>
-  );
-};
+  )
+}

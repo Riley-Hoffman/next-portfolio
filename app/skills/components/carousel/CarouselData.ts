@@ -23,4 +23,4 @@ export const CarouselData = [
     src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/drupal2.webp",
     label: "Drupal 9 Essential Training 2: Content and Fields",
   },
-];
+]

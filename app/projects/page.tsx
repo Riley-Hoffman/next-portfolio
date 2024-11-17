@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../components/SchemaGenerator";
-import ProjectsList from "./components/ProjectsList";
-import { fetchFirebaseData } from "../../lib/fetchFirebaseData";
-import type { Project } from "./components/ProjectContent";
-import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants";
+} from "../components/SchemaGenerator"
+import ProjectsList from "./components/ProjectsList"
+import { fetchFirebaseData } from "../../lib/fetchFirebaseData"
+import type { Project } from "./components/ProjectContent"
+import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
 
-const description = `View past projects by ${getPageTitle()}.`;
+const description = `View past projects by ${getPageTitle()}.`
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -22,24 +22,24 @@ export const metadata: Metadata = {
     title: "Projects",
     url: `${getBaseUrl("/projects")}`,
   },
-};
+}
 
 export default async function ProjectsPage() {
-  const projects = await fetchFirebaseData<Project[]>("/projects");
+  const projects = await fetchFirebaseData<Project[]>("/projects")
   const schemaData: SchemaGeneratorProps["schemaData"] = {
     title: "Projects",
     description,
     urlPath: "/projects",
     publishDate: "2024-07-04T09:25:01.340Z",
     schemaType: "WebPage",
-  };
+  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+      <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Projects
       </h1>
       <ProjectsList initialProjects={projects ?? []} />
     </>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from "next"
+import Link from "next/link"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../components/SchemaGenerator";
-import { getBaseUrl, getImageUrl } from "../../lib/constants";
+} from "../components/SchemaGenerator"
+import { getBaseUrl, getImageUrl } from "../../lib/constants"
 
 const description =
-  "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.";
+  "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users."
 
 export const metadata: Metadata = {
   title: "Accessibility",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Accessibility",
     url: `${getBaseUrl("/accessibility")}`,
   },
-};
+}
 
 export default function Accessibility() {
   const schemaData: SchemaGeneratorProps["schemaData"] = {
@@ -30,11 +30,11 @@ export default function Accessibility() {
     urlPath: "/accessibility",
     publishDate: "2024-08-07T09:25:01.340Z",
     schemaType: "WebPage",
-  };
+  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+      <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
         Accessibility
       </h1>
       <div className="max-w-screen-md p-[1.875rem_0_13vh]">
@@ -62,5 +62,5 @@ export default function Accessibility() {
         </p>
       </div>
     </>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 export const CarouselButtons = () => {
   const commonClasses =
-    "absolute top-1/2 transform -translate-y-1/2 bg-pink-100 rounded-full py-1 px-4 z-10 transition-shadow";
+    "absolute top-1/2 transform -translate-y-1/2 bg-pink-100 rounded-full py-1 px-4 z-10 transition-shadow"
   return (
     <>
       <button
@@ -19,5 +19,5 @@ export const CarouselButtons = () => {
         <FontAwesomeIcon icon={faArrowRight} />
       </button>
     </>
-  );
-};
+  )
+}

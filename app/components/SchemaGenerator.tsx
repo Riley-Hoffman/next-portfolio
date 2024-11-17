@@ -1,5 +1,5 @@
-import { WithContext, WebPage, ContactPage } from "schema-dts";
-import SchemaInjector from "./SchemaInjector";
+import { WithContext, WebPage, ContactPage } from "schema-dts"
+import SchemaInjector from "./SchemaInjector"
 import {
   getPageTitle,
   getBaseUrl,
@@ -7,29 +7,29 @@ import {
   getImageUrl,
   githubUrl,
   linkedInUrl,
-} from "../../lib/constants";
+} from "../../lib/constants"
 
 export interface SchemaGeneratorProps {
   schemaData: {
-    title: string;
-    description: string;
-    urlPath: string;
-    publishDate?: string;
-    schemaType: "WebPage" | "ContactPage";
-  };
+    title: string
+    description: string
+    urlPath: string
+    publishDate?: string
+    schemaType: "WebPage" | "ContactPage"
+  }
 }
 
 type SchemaMap = {
-  WebPage: WebPage;
-  ContactPage: ContactPage;
-};
+  WebPage: WebPage
+  ContactPage: ContactPage
+}
 
 const generateSchema = <T extends keyof SchemaMap>(
   schemaType: T,
   title: string,
   description: string,
   urlPath: string,
-  publishDate?: string,
+  publishDate?: string
 ): WithContext<SchemaMap[T]> => {
   return {
     "@context": "https://schema.org",
@@ -50,22 +50,22 @@ const generateSchema = <T extends keyof SchemaMap>(
       "@type": "Person",
       name: author,
     },
-  } as WithContext<SchemaMap[T]>;
-};
+  } as WithContext<SchemaMap[T]>
+}
 
 export const SchemaGenerator = ({ schemaData }: SchemaGeneratorProps) => {
-  const { title, description, urlPath, publishDate, schemaType } = schemaData;
+  const { title, description, urlPath, publishDate, schemaType } = schemaData
   const schema = generateSchema(
     schemaType,
     title,
     description,
     urlPath,
-    publishDate,
-  );
+    publishDate
+  )
 
   return (
     <>
       <SchemaInjector structuredData={schema} />
     </>
-  );
-};
+  )
+}

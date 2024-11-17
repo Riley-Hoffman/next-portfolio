@@ -1,11 +1,11 @@
-import csrf from "csrf";
-import { NextResponse } from "next/server";
+import csrf from "csrf"
+import { NextResponse } from "next/server"
 
-const csrfProtection = new csrf();
+const csrfProtection = new csrf()
 
 export async function GET() {
-  const secret = csrfProtection.secretSync();
-  const token = csrfProtection.create(secret);
-  
-  return NextResponse.json({ token, secret });
+  const secret = csrfProtection.secretSync()
+  const token = csrfProtection.create(secret)
+
+  return NextResponse.json({ token, secret })
 }

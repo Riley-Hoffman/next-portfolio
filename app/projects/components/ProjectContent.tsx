@@ -1,19 +1,19 @@
-import Link from "next/link";
-import Image from "next/image";
-import { NewTabSrText } from "../../components/NewTabSrText";
+import Link from "next/link"
+import Image from "next/image"
+import { NewTabSrText } from "../../components/NewTabSrText"
 
 export interface Project {
-  title: string;
-  skills: string;
-  description: string;
-  internal?: boolean;
-  liveUrl: string;
-  gitUrl?: string;
-  imgUrl: string;
-  alt: string;
-  animation?: string;
-  category: string;
-  isFirst?: boolean;
+  title: string
+  skills: string
+  description: string
+  internal?: boolean
+  liveUrl: string
+  gitUrl?: string
+  imgUrl: string
+  alt: string
+  animation?: string
+  category: string
+  isFirst?: boolean
 }
 
 export const ProjectContent = ({
@@ -27,12 +27,12 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const commonClasses = "mx-5 py-1 px-3 uppercase button";
+  const commonClasses = "mx-5 py-1 px-3 uppercase button"
 
   const renderLink = (
     url: string,
     content: JSX.Element,
-    isInternal?: boolean,
+    isInternal?: boolean
   ) =>
     isInternal ? (
       <Link className={commonClasses} href={url}>
@@ -48,19 +48,19 @@ export const ProjectContent = ({
         {content}
         <NewTabSrText icon={true} />
       </a>
-    );
+    )
 
   const liveContent = (
     <>
       <span className="sr-only">{title} </span>Live
     </>
-  );
+  )
 
   const repoContent = (
     <>
       <span className="sr-only">{title} </span>Repo
     </>
-  );
+  )
 
   return (
     <>
@@ -88,5 +88,5 @@ export const ProjectContent = ({
         />
       </div>
     </>
-  );
-};
+  )
+}

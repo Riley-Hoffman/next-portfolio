@@ -14,4 +14,4 @@ export const ContactContent = () => (
       Your report is appreciated!
     </p>
   </div>
-);
+)

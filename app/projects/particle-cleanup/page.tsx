@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../../components/SchemaGenerator";
-import { faLessThan } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ParticleCleanup } from "./components/ParticleCleanup";
-import { getBaseUrl, getImageUrl } from "../../../lib/constants";
+} from "../../components/SchemaGenerator"
+import { faLessThan } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { ParticleCleanup } from "./components/ParticleCleanup"
+import { getBaseUrl, getImageUrl } from "../../../lib/constants"
 
 const description =
-  "How quickly can you clear all the particles from the board using your cursor or finger?";
+  "How quickly can you clear all the particles from the board using your cursor or finger?"
 
 export const metadata: Metadata = {
   title: "Particle Cleanup Game",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Particle Cleanup Game",
     url: `${getBaseUrl("/projects/particle-cleanup")}`,
   },
-};
+}
 
 export default function ParticleCleanupWrapper() {
   const schemaData: SchemaGeneratorProps["schemaData"] = {
@@ -32,12 +32,12 @@ export default function ParticleCleanupWrapper() {
     urlPath: "/projects/particle-cleanup",
     publishDate: "2024-08-05T09:25:01.340Z",
     schemaType: "WebPage",
-  };
+  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
       <div className="pb-16">
-        <h1 className="gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+        <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
           Particle Cleanup Game
         </h1>
         <div className="max-w-screen-md">
@@ -71,5 +71,5 @@ export default function ParticleCleanupWrapper() {
         </div>
       </div>
     </>
-  );
+  )
 }

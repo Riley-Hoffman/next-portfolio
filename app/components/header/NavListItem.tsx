@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { NewTabSrText } from "../../components/NewTabSrText";
+import Link from "next/link"
+import { NewTabSrText } from "../../components/NewTabSrText"
 
 interface NavListItemProps {
-  to?: string;
-  label?: string;
-  hide?: boolean;
-  isActive: boolean;
-  resume?: string;
+  to?: string
+  label?: string
+  hide?: boolean
+  isActive: boolean
+  resume?: string
 }
 
 export const NavListItem = ({
@@ -17,8 +17,8 @@ export const NavListItem = ({
   isActive,
 }: NavListItemProps) => {
   const commonClasses =
-    "w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button md:py-2 md:px-4 md:inline-block md:w-auto hover:[&.button]:bg-pink-200 hover:brightness-90";
-  const hiddenClass = hide ? "hidden" : "";
+    "w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button md:py-2 md:px-4 md:inline-block md:w-auto hover:[&.button]:bg-pink-200 hover:brightness-90"
+  const hiddenClass = hide ? "hidden" : ""
   return (
     <li className="block md:inline">
       {resume ? (
@@ -40,5 +40,5 @@ export const NavListItem = ({
         </Link>
       )}
     </li>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { RouteList } from "../RouteList";
-import { NewTabSrText } from "../../components/NewTabSrText";
+import Link from "next/link"
+import { RouteList } from "../RouteList"
+import { NewTabSrText } from "../../components/NewTabSrText"
 
 export const NoJsMenu = () => (
   <noscript>
@@ -15,7 +15,7 @@ export const NoJsMenu = () => (
                   {route.name}
                 </Link>
               </li>
-            ),
+            )
         )}
         <li>
           <a className="button p-1" href="/riley-hoffman-resume.pdf">
@@ -25,4 +25,4 @@ export const NoJsMenu = () => (
       </ul>
     </nav>
   </noscript>
-);
+)

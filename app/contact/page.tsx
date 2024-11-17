@@ -1,15 +1,15 @@
-import { Metadata } from "next";
+import { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../components/SchemaGenerator";
-import { ContactContent } from "./components/ContactContent";
-import { Form } from "./components/Form";
-import { Sidebar } from "./components/Sidebar";
-import { getBaseUrl, getImageUrl } from "../../lib/constants";
+} from "../components/SchemaGenerator"
+import { ContactContent } from "./components/ContactContent"
+import { Form } from "./components/Form"
+import { Sidebar } from "./components/Sidebar"
+import { getBaseUrl, getImageUrl } from "../../lib/constants"
 
 const description =
-  "Get in touch with web developer Riley Hoffman with the form on this page.";
+  "Get in touch with web developer Riley Hoffman with the form on this page."
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Contact",
     url: `${getBaseUrl("/contact")}`,
   },
-};
+}
 
 export default function Contact() {
   const schemaData: SchemaGeneratorProps["schemaData"] = {
@@ -32,7 +32,7 @@ export default function Contact() {
     urlPath: "/contact",
     publishDate: "2024-07-04T09:25:01.340Z",
     schemaType: "ContactPage",
-  };
+  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
@@ -49,5 +49,5 @@ export default function Contact() {
         </div>
       </div>
     </>
-  );
+  )
 }

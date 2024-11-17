@@ -1,16 +1,16 @@
-import { FormState } from "./Form";
+import { FormState } from "./Form"
 
 interface FormFieldProps {
-  type: "text" | "email" | "textarea";
-  value: string;
+  type: "text" | "email" | "textarea"
+  value: string
   handleChange: (
-    field: keyof FormState,
+    field: keyof FormState
   ) => (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  name: keyof FormState;
-  placeholder: string;
-  required?: boolean;
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  name: keyof FormState
+  placeholder: string
+  required?: boolean
 }
 
 export const FormField = ({
@@ -30,7 +30,7 @@ export const FormField = ({
     </label>
     {type === "textarea" ? (
       <textarea
-        className="gradient-border inverted w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
+        className="inverted gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
         id={name as string}
         name={name as string}
         placeholder={placeholder}
@@ -54,4 +54,4 @@ export const FormField = ({
       />
     )}
   </>
-);
+)
