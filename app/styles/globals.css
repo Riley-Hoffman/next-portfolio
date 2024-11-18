@@ -125,6 +125,9 @@
   .form-field {
     @apply gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white;
   }
+  .nav-link {
+    @apply button inline-block w-full whitespace-nowrap py-3 pl-14 pr-5 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-pink-200;
+  }
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal;
   }
