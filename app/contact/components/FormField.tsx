@@ -20,7 +20,9 @@ export const FormField = ({
   name,
   placeholder,
   required = true,
-}: FormFieldProps) => (
+}: FormFieldProps) => {
+  const commonClasses = "gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
+  return (
   <>
     <label
       className="mb-2 inline-block min-w-14 text-xl capitalize"
@@ -30,7 +32,7 @@ export const FormField = ({
     </label>
     {type === "textarea" ? (
       <textarea
-        className="form-field inverted"
+        className={`inverted ${commonClasses}`}
         id={name as string}
         name={name as string}
         placeholder={placeholder}
@@ -42,7 +44,7 @@ export const FormField = ({
       />
     ) : (
       <input
-        className="form-field"
+        className={commonClasses}
         id={name as string}
         name={name as string}
         placeholder={placeholder}
@@ -54,4 +56,6 @@ export const FormField = ({
       />
     )}
   </>
-)
+  )
+}
+

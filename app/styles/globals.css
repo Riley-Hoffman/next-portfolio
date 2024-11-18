@@ -116,14 +116,8 @@
   html [class*="svg-inline--fa"] {
     @apply align-middle;
   }
-  .full {
-    @apply h-full w-full;
-  }
   .tab-focus-button {
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
-  }
-  .form-field {
-    @apply gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white;
   }
   .nav-link {
     @apply button inline-block w-full whitespace-nowrap py-3 pl-14 pr-5 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-pink-200;
