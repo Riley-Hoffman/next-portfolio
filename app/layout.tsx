@@ -45,11 +45,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main>
-          <a
-            href="#content"
-            id="content"
-            className="button sr-only z-30 focus:not-sr-only focus:absolute focus:left-4 focus:p-4"
-          >
+          <a href="#content" id="content" className="tab-focus-button z-30">
             Start of main content
           </a>
           {children}

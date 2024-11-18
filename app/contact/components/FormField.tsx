@@ -30,7 +30,7 @@ export const FormField = ({
     </label>
     {type === "textarea" ? (
       <textarea
-        className="inverted gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
+        className="gradient-border inverted w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
         id={name as string}
         name={name as string}
         placeholder={placeholder}
