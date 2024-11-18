@@ -21,41 +21,41 @@ export const FormField = ({
   placeholder,
   required = true,
 }: FormFieldProps) => {
-  const commonClasses = "gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
+  const commonClasses =
+    "gradient-border w-full rounded-sm border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg contrast-more:bg-white"
   return (
-  <>
-    <label
-      className="mb-2 inline-block min-w-14 text-xl capitalize"
-      htmlFor={name as string}
-    >
-      {name as string}:
-    </label>
-    {type === "textarea" ? (
-      <textarea
-        className={`inverted ${commonClasses}`}
-        id={name as string}
-        name={name as string}
-        placeholder={placeholder}
-        required={required}
-        value={value}
-        spellCheck={true}
-        rows={8}
-        onChange={handleChange(name)}
-      />
-    ) : (
-      <input
-        className={commonClasses}
-        id={name as string}
-        name={name as string}
-        placeholder={placeholder}
-        type={type}
-        enterKeyHint="next"
-        required={required}
-        value={value}
-        onChange={handleChange(name)}
-      />
-    )}
-  </>
+    <>
+      <label
+        className="mb-2 inline-block min-w-14 text-xl capitalize"
+        htmlFor={name as string}
+      >
+        {name as string}:
+      </label>
+      {type === "textarea" ? (
+        <textarea
+          className={`inverted ${commonClasses}`}
+          id={name as string}
+          name={name as string}
+          placeholder={placeholder}
+          required={required}
+          value={value}
+          spellCheck={true}
+          rows={8}
+          onChange={handleChange(name)}
+        />
+      ) : (
+        <input
+          className={commonClasses}
+          id={name as string}
+          name={name as string}
+          placeholder={placeholder}
+          type={type}
+          enterKeyHint="next"
+          required={required}
+          value={value}
+          onChange={handleChange(name)}
+        />
+      )}
+    </>
   )
 }
-
