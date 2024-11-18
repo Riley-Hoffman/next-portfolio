@@ -19,7 +19,7 @@ export default function ThankYou() {
   return (
     <>
       <section className="pb-16">
-        <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+        <h1 className="heading-one inverted">
           Thank You
         </h1>
         <div className="max-w-screen-xl p-[15vh_0_20vh] text-center">

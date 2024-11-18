@@ -34,7 +34,7 @@ export default function Accessibility() {
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="inverted gradient-border mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal">
+      <h1 className="heading-one inverted">
         Accessibility
       </h1>
       <div className="max-w-screen-md p-[1.875rem_0_13vh]">
