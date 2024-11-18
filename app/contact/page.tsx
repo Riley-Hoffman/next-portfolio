@@ -36,9 +36,7 @@ export default function Contact() {
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="heading-one inverted">
-        Contact Me
-      </h1>
+      <h1 className="heading-one">Contact Me</h1>
       <div className="max-w-5xl md:flex">
         <div className="pt-[1.875rem] md:w-5/6 md:pb-[13vh]">
           <ContactContent />

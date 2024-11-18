@@ -221,12 +221,12 @@ const config: Config = {
         },
         ".gradient-border": {
           borderImageSlice: "1",
-          '&[class*="inverted"]': {
-            borderImageSource: `linear-gradient(90deg,${theme("colors.gradientpurple")},${theme("colors.gradientpink")} 50%,${theme("colors.gradientlightpurple")} 70%)`,
-          },
           '&:not([class*="inverted"])': {
             borderImageSource: `linear-gradient(90deg,${theme("colors.gradientlightpurple")} 0%,${theme("colors.gradientpink")} 50%,${theme("colors.gradientpurple")} 70%)`,
           },
+        },
+        ".gradient-border.inverted": {
+          borderImageSource: `linear-gradient(90deg,${theme("colors.gradientpurple")},${theme("colors.gradientpink")} 50%,${theme("colors.gradientlightpurple")} 70%)`,
         },
         "@media (max-width: 768px)": {
           ".hamburger .line": {

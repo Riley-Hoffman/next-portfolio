@@ -19,9 +19,7 @@ export default function ThankYou() {
   return (
     <>
       <section className="pb-16">
-        <h1 className="heading-one inverted">
-          Thank You
-        </h1>
+        <h1 className="heading-one">Thank You</h1>
         <div className="max-w-screen-xl p-[15vh_0_20vh] text-center">
           <p className="text-5xl">
             Thank you for contacting me.{" "}

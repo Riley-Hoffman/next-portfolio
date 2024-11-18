@@ -36,9 +36,7 @@ export default async function ProjectsPage() {
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="heading-one inverted">
-        Projects
-      </h1>
+      <h1 className="heading-one">Projects</h1>
       <ProjectsList initialProjects={projects ?? []} />
     </>
   )

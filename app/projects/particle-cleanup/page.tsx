@@ -37,9 +37,7 @@ export default function ParticleCleanupWrapper() {
     <>
       <SchemaGenerator schemaData={schemaData} />
       <div className="pb-16">
-        <h1 className="heading-one inverted">
-          Particle Cleanup Game
-        </h1>
+        <h1 className="heading-one">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
           <h2 translate="no">
             <span translate="no">React</span>, TSX, SCSS

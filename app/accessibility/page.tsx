@@ -34,9 +34,7 @@ export default function Accessibility() {
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
-      <h1 className="heading-one inverted">
-        Accessibility
-      </h1>
+      <h1 className="heading-one">Accessibility</h1>
       <div className="max-w-screen-md p-[1.875rem_0_13vh]">
         <h2>My Commitment</h2>
         <p>

@@ -4,9 +4,7 @@ import { RouteList } from "./components/RouteList"
 export default function Custom404() {
   return (
     <>
-      <h1 className="heading-one inverted">
-        Page Not Found
-      </h1>
+      <h1 className="heading-one">Page Not Found</h1>
       <div className="max-w-screen-md p-[1.875rem_0_20vh]">
         <h2 className="text-4xl">404</h2>
         <p className="mb-0 text-xl">
