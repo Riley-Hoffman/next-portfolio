@@ -291,7 +291,7 @@ export const ParticleCleanup = () => {
             refs.current.canvas = el
           }}
         />
-        <div className="border-1h-full w-fullabsolute inset-0 border-solid border-pink-200">
+        <div className="border-1 absolute inset-0 h-full w-full border-solid border-pink-200">
           {refs.current.allClean && (
             <CompletionMessage medalDetails={medalDetails} time={state.time} />
           )}
