@@ -38,7 +38,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
         }}
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet !h-6 !w-6 !mx-3",
+          bulletClass: "swiper-pagination-bullet tool-tip !h-6 !w-6 !mx-3",
           bulletActiveClass: "swiper-pagination-bullet-active",
           renderBullet: (index, className) =>
             `<button class="${className}" aria-label="${slides[index]?.label || `Slide ${index + 1}`}"></button>`,

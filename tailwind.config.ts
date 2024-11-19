@@ -226,6 +226,43 @@ const config: Config = {
         ".inverted": {
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientpurple")},${theme("colors.gradientpink")} 50%,${theme("colors.gradientlightpurple")} 70%)`,
         },
+        '.tool-tip': {
+          position: 'relative',
+          '&[aria-label]:before': {
+            borderRight: '0.5rem solid transparent',
+            borderLeft: '0.5rem solid transparent',
+            borderTop: '0.5rem solid #12121c',
+            content: '""',
+            opacity: '0',
+            pointerEvents: 'none',
+            position: 'absolute',
+            transition: 'opacity 0.2s',
+            top: '0',
+            left: '0',
+          },
+          '&[aria-label]:after': {
+            backgroundColor: '#12121c',
+            borderRadius: '0.25rem',
+            color: '#e5d4ed',
+            content: 'attr(aria-label)',
+            display: 'flex',
+            fontSize: '0.75rem',
+            opacity: '0',
+            padding: '0.25rem 0.375rem',
+            pointerEvents: 'none',
+            position: 'absolute',
+            transform: 'translateY(-100%) translateX(-50%)',
+            transition: 'opacity 0.2s',
+            top: '0',
+            left: '50%',
+            width: '6.25rem',
+            zIndex: '1',
+          },
+          '&[aria-label]:hover:before, &[aria-label]:hover:after': {
+            opacity: '1',
+            pointerEvents: 'auto',
+          },
+        },
         "@media (max-width: 768px)": {
           ".hamburger .line": {
             borderImageSource: `linear-gradient(90deg, ${theme("colors.gradientlightpurple")} 0%, ${theme("colors.gradientpink")} 50%, ${theme("colors.gradientpurple")} 70%)`,

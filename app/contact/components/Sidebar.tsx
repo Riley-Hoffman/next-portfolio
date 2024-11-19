@@ -2,7 +2,7 @@ import { NewTabSrText } from "../../components/NewTabSrText"
 import { githubUrl, linkedInUrl } from "../../../lib/constants"
 
 const links = [
-  { name: "Github", url: githubUrl },
+  { name: "GitHub", url: githubUrl },
   { name: "LinkedIn", url: linkedInUrl },
 ]
 
