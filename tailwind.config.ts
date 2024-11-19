@@ -135,9 +135,6 @@ const config: Config = {
           height: "0",
           paddingLeft: "0.313rem",
         },
-        ".small-caps": {
-          fontVariant: "small-caps",
-        },
         ".gradient-border": {
           borderImageSlice: "1",
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientlightpurple")} 0%,${theme("colors.gradientpink")} 50%,${theme("colors.gradientpurple")} 70%)`,

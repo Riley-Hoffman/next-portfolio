@@ -94,7 +94,7 @@
 @layer base {
   h1:not(.reg-caps),
   h2:not(.reg-caps) {
-    @apply small-caps;
+    font-variant: small-caps;
   }
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
