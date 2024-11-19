@@ -1,5 +1,6 @@
 "use client"
 import { useRef, useCallback, useReducer, useMemo } from "react"
+import "../../../styles/overlay.css"
 import { Particle } from "../classes/Particle"
 import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"

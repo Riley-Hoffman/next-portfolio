@@ -3,6 +3,7 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../../components/SchemaGenerator"
+import "../../styles/numbered-icons.css"
 import { faLessThan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ParticleCleanup } from "./components/ParticleCleanup"

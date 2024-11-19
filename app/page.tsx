@@ -4,6 +4,7 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "./components/SchemaGenerator"
+import "./styles/overlay.css"
 import { LazyLoadLink } from "./components/LazyLoadLink"
 import { CoverImage, CoverImageProps } from "./components/home/CoverImage"
 import { FirstFoldContent } from "./components/home/FirstFoldContent"

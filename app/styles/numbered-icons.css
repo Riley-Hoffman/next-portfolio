@@ -1,0 +1,10 @@
+ol.numbered-icons li {
+  counter-increment: circle;
+  @apply relative py-3 pl-5;
+}
+ol.numbered-icons li:before {
+  @apply absolute -left-5 top-1/2 mr-5 h-[1.875rem] w-[1.875rem] -translate-y-1/2 rounded-[50%] p-1 text-center font-poppins text-[1.094rem] font-semibold text-[#fbfdff] content-[counter(circle)_''];
+}
+ol.numbered-icons li:not([class*="before:bg-"]):before {
+  @apply bg-purple-200;
+}

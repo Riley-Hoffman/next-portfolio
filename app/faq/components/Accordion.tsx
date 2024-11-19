@@ -1,5 +1,6 @@
 "use client"
 import { useAccordion } from "../../../hooks/useAccordion"
+import "./styles/accordion.css"
 
 type AccordionItem = {
   question: string
@@ -29,7 +30,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             onClick={() => handleAccordionClick(index)}
             aria-expanded={openIndex === index ? true : false}
           >
-            <div className="plus-minus mb-[0.063rem] mr-5 box-content rounded-[50%] bg-zinc p-3 text-xs text-pink-200 transition-all duration-200 ease-in-out before:w-[0.625rem] after:h-[0.625rem] group-hover:bg-purple-100 group-hover:text-zinc group-focus-visible:bg-purple-100 group-focus-visible:text-zinc group-aria-expanded:bg-purple-100 group-aria-expanded:text-zinc"></div>
+            <div className="plus-minus mb-[0.063rem] mr-5 box-content rounded-[50%] bg-zinc p-3 text-xs text-pink-200 transition-all duration-200 ease-in-out group-hover:bg-purple-100 group-hover:text-zinc group-focus-visible:bg-purple-100 group-focus-visible:text-zinc group-aria-expanded:bg-purple-100 group-aria-expanded:text-zinc"></div>
             {item.question}
           </button>
           <div

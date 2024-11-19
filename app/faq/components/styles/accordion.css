@@ -1,0 +1,12 @@
+.plus-minus {
+    @apply relative inline-block align-middle;
+}
+.plus-minus:before, .plus-minus:after {
+    @apply absolute left-1/2 top-1/2 h-[0.125rem] w-[0.625rem] -translate-x-1/2 -translate-y-1/2 bg-[currentColor] transition-transform duration-300 ease-in-out content-[''];
+}
+.plus-minus:after {
+    @apply h-[0.625rem] w-[0.125rem] rotate-0;
+}
+[aria-expanded="true"] .plus-minus::after {
+    @apply rotate-90;
+}

@@ -1,0 +1,13 @@
+.overlay {
+    @apply relative;
+}
+.overlay:before {
+    background-image: radial-gradient(#ffffffbd 0%, #ffffff7f 100%);
+    @apply absolute bottom-0 left-0 right-0 top-0 h-full w-full content-[''];
+}
+.overlay:before:not([class*="before:bg-"]) {
+    background-image: radial-gradient(#ffffffbd 0%, #ffffff7f 100%);
+}
+.overlay > *:not(.absolute) {
+    @apply relative;
+}
