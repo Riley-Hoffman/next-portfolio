@@ -11,7 +11,7 @@ export const Footer = () => {
         <p className="m-0 px-3 py-1 font-urbanist text-base">
           {getPageTitle()} <small>(v{version}) </small>
           <a
-            className="tool-tip group inline-block min-h-[1.875rem] min-w-[2.125rem] no-underline md:min-h-[1.25rem] md:min-w-[1.5rem]"
+            className="group tool-tip inline-block min-h-[1.875rem] min-w-[2.125rem] no-underline md:min-h-[1.25rem] md:min-w-[1.5rem]"
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
