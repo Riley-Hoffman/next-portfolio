@@ -99,6 +99,9 @@ const config: Config = {
           fontSize: "1.5rem",
           lineHeight: "2rem",
         },
+        "h1:not(.reg-caps),h2:not(.reg-caps)": {
+          fontVariant: "small-caps",
+        },
         "p,ul,ol": {
           fontSize: "1.125rem",
           lineHeight: "1.75rem",

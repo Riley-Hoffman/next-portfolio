@@ -92,10 +92,6 @@
   font-display: block;
 }
 @layer base {
-  h1:not(.reg-caps),
-  h2:not(.reg-caps) {
-    font-variant: small-caps;
-  }
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
   }
