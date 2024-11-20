@@ -27,7 +27,7 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const commonClasses = "button new-tab mx-5 px-3 py-1 uppercase"
+  const commonClasses = "button mx-5 px-3 py-1 uppercase"
 
   const renderLink = (
     url: string,
@@ -40,7 +40,7 @@ export const ProjectContent = ({
       </Link>
     ) : (
       <a
-        className={`new-tab ${commonClasses}`}
+        className={commonClasses}
         href={url}
         target="_blank"
         rel="noopener noreferrer"

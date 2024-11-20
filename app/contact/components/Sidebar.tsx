@@ -12,7 +12,7 @@ export const Sidebar = () => (
     {links.map(({ name, url }, index) => (
       <a
         key={name}
-        className={`new-tab block ${
+        className={`block ${
           index === 0 ? "pb-2 pt-3" : "pb-3 pt-2"
         } font-urbanist no-underline`}
         href={url}

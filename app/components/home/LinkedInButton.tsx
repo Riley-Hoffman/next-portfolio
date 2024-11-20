@@ -29,7 +29,7 @@ export const LinkedInButton = () => {
         className="box-content bg-pink-200 p-2 text-5xl text-zinc group-hover:bg-zinc group-hover:text-pink-200"
         icon={faLinkedinIn}
       />
-      <span className="new-tab px-6">
+      <span className="px-6">
         Follow me on LinkedIn
         <NewTabSrText icon={true} />
       </span>

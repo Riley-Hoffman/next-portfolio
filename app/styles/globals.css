@@ -106,9 +106,6 @@
   textarea:focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
   }
-  .new-tab > span:last-child:after {
-    @apply content-["\f08e"];
-  }
   html [class*="svg-inline--fa"] {
     @apply align-middle;
   }

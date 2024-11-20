@@ -21,7 +21,7 @@ export const NavListItem = ({
     <li className="block md:inline">
       {resume ? (
         <a
-          className={`nav-link button new-tab ${hiddenClass}`}
+          className={`nav-link button ${hiddenClass}`}
           href={resume}
           target="_blank"
           rel="noopener noreferrer"

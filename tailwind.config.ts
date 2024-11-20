@@ -39,7 +39,7 @@ const config: Config = {
         inconsolata: ['"Inconsolata", monospace'],
         "source-sans": ['"Source Sans 3", sans-serif'],
         urbanist: ['"Urbanist", sans-serif'],
-        fontAwesomeSolid: ["FontAwesomeSolid"],
+        fontawesomesolid: ["FontAwesomeSolid"],
       },
       clipPath: {
         "cut-corners":
@@ -130,14 +130,6 @@ const config: Config = {
             color: theme("colors.zinc"),
           },
         },
-        ".new-tab > span:last-child:after": {
-          display: "inline-block",
-          fontFamily: theme("fontFamily.fontAwesomeSolid"),
-          fontSize: "63%",
-          fontWeight: "400",
-          height: "0",
-          paddingLeft: "0.313rem",
-        },
         ".gradient-border": {
           borderImageSlice: "1",
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientlightpurple")} 0%,${theme("colors.gradientpink")} 50%,${theme("colors.gradientpurple")} 70%)`,
@@ -177,7 +169,7 @@ const config: Config = {
             width: "6.25rem",
             zIndex: "1",
           },
-          "&:hover:before, &:hover:after": {
+          "&:hover:before, &:hover:after, &:focus-visible:before, &:focus-visible:after": {
             opacity: "1",
             pointerEvents: "auto",
           },

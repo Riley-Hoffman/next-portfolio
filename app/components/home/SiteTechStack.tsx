@@ -32,7 +32,7 @@ export const SiteTechStack = () => {
   ]
   return (
     <>
-      <h2 className="reg-caps mb-8 font-inconsolata text-2xl">
+      <h2 className="reg-caps mb-2 font-inconsolata text-2xl">
         Technologies Used To Build This Site
       </h2>
       <ul
@@ -42,12 +42,12 @@ export const SiteTechStack = () => {
         {technologies.map((tech, index) => (
           <li
             key={tech.name}
-            className={`relative sm:col-auto lg:col-auto ${
+            className={`relative overflow-hidden pt-8 sm:col-auto lg:col-auto ${
               index === technologies.length - 2 && "md:col-start-1"
             } ${index === technologies.length - 1 && "md:col-start-3"}`}
           >
             <a
-              className="tool-tip mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0_inset_#12121c_0_0_150px_0] transition-shadow duration-200 before:border-t-pink-100 after:left-0 after:bg-pink-100 after:leading-5 after:text-zinc after:content-['Opens_new_window'] hover:bg-zinc hover:text-pink-100 focus-visible:bg-zinc focus-visible:text-pink-100 active:min-h-fit motion-safe:md:hover:bg-pink-100 motion-safe:md:hover:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:md:hover:duration-1000 motion-safe:md:hover:before:duration-700 motion-safe:md:hover:after:duration-700 motion-safe:md:focus-visible:bg-pink-100 motion-safe:md:focus-visible:shadow-[inset_#12121c_100vw_100vh_150px_0] motion-safe:md:focus-visible:duration-1000"
+              className="mx-auto block min-h-[9.5rem] w-fit min-w-[13.1rem] rounded-md bg-pink-100 p-5 no-underline shadow-[#12121c_0.25rem_0.25rem_0_0_inset_#12121c_0_0_150px_0] md:tool-tip before:left-1 before:inline-block before:h-0 before:border-0 before:pl-[0.313rem] before:font-fontawesomesolid before:text-[63%] before:font-normal before:duration-0 after:w-full after:rounded-bl-none after:rounded-br-none after:text-center after:leading-5 after:duration-0 focus-visible:bg-zinc focus-visible:text-pink-100 active:min-h-fit md:before:content-['\f08e'] md:after:content-['Opens_new_window'] md:hover:rounded-tl-none md:hover:rounded-tr-none md:hover:bg-zinc md:hover:text-pink-100 md:hover:shadow-[inset_#12121c_100vw_100vh_150px_0] md:focus-visible:rounded-tl-none md:focus-visible:rounded-tr-none md:focus-visible:bg-pink-100 md:focus-visible:shadow-[inset_#12121c_100vw_100vh_150px_0] md:focus-visible:outline-none"
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
