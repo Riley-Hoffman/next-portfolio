@@ -27,7 +27,9 @@ export const useParallax = (
   }, [parallaxRef, prefersReducedMotion, velocity])
 
   useScrollHandler(() => {
-    scrollRef.current = window.scrollY
+    if (typeof window !== "undefined") {
+      scrollRef.current = window.scrollY
+    }
     updateImagePosition()
   })
 

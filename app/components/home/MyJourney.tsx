@@ -10,7 +10,9 @@ export const MyJourney = () => {
   const scrollRef = useRef<number>(0)
 
   useScrollHandler(() => {
-    scrollRef.current = window.scrollY
+    if (typeof window !== "undefined") {
+      scrollRef.current = window.scrollY
+    }
     if (sectionRef.current && !prefersReducedMotion) {
       sectionRef.current.style.filter = `hue-rotate(${scrollRef.current / 2.7}deg)`
     }

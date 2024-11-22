@@ -1,6 +1,8 @@
 export const HeaderLogo = () => {
   const handleClickHome = () => {
-    window.location.href = "/"
+    if (typeof window !== "undefined") {
+      window.location.href = "/"
+    }
   }
   return (
     <div className="logo">
