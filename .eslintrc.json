@@ -10,12 +10,7 @@
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "tailwindcss"
-  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "tailwindcss"],
   "rules": {
     "no-console": ["error", { "allow": ["info", "warn", "error"] }],
     "@typescript-eslint/no-unused-vars": "warn",
@@ -41,10 +36,5 @@
     "es2021": true,
     "node": true
   },
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    "out/",
-    "public/"
-  ]
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "public/"]
 }

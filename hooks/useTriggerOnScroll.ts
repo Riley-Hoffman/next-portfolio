@@ -12,38 +12,38 @@ export const useTriggerOnScroll = (
   force: number = 0
 ): MutableRefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])
-  if (typeof window !== "undefined") {
-    useEffect(() => {
-      const updateElementActivation = (
-        element: HTMLElementWithDataset,
-        rect: DOMRect,
-        distance: number
-      ) => {
-        const isActive = rect.top < distance
-        element.dataset.active = isActive || force ? "true" : "false"
+  useEffect(() => {
+    const updateElementActivation = (
+      element: HTMLElementWithDataset,
+      rect: DOMRect,
+      distance: number
+    ) => {
+      const isActive = rect.top < distance
+      element.dataset.active = isActive || force ? "true" : "false"
 
-        if (element.dataset.repeat && !isActive && !force) {
-          element.dataset.active = "false"
-        }
+      if (element.dataset.repeat && !isActive && !force) {
+        element.dataset.active = "false"
       }
+    }
 
-      const updateTriggerOnScroll = () => {
-        requestAnimationFrame(() => {
-          elementsRef.current.forEach((element) => {
-            const rect = element.getBoundingClientRect()
-            const distance = parseInt(element.dataset.distance ?? "800", 10)
-            updateElementActivation(element, rect, distance)
-          })
+    const updateTriggerOnScroll = () => {
+      requestAnimationFrame(() => {
+        elementsRef.current.forEach((element) => {
+          const rect = element.getBoundingClientRect()
+          const distance = parseInt(element.dataset.distance ?? "800", 10)
+          updateElementActivation(element, rect, distance)
         })
-      }
+      })
+    }
 
-      setTimeout(updateTriggerOnScroll, 100)
+    setTimeout(updateTriggerOnScroll, 100)
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", updateTriggerOnScroll)
       return () => {
         window.removeEventListener("scroll", updateTriggerOnScroll)
       }
-    }, [force])
-  }
+    }
+  }, [force])
 
   return elementsRef
 }

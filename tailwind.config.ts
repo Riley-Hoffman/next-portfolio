@@ -169,10 +169,11 @@ const config: Config = {
             width: "6.25rem",
             zIndex: "1",
           },
-          "&:hover:before, &:hover:after, &:focus-visible:before, &:focus-visible:after": {
-            opacity: "1",
-            pointerEvents: "auto",
-          },
+          "&:hover:before, &:hover:after, &:focus-visible:before, &:focus-visible:after":
+            {
+              opacity: "1",
+              pointerEvents: "auto",
+            },
         },
         "@media (max-width: 768px)": {
           ".hamburger .line": {
