@@ -7,9 +7,15 @@ interface HamburgerProps {
 }
 
 export const Hamburger = ({ expanded }: HamburgerProps) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false)
+  const [localIsExpanded, setLocalIsExpanded] = useState<boolean>(false)
   const hamburgerRef = useRef<HTMLButtonElement | null>(null)
   const location = usePathname()
+
+  useEffect(() => {
+    if (expanded) {
+      expanded(localIsExpanded)
+    }
+  }, [localIsExpanded, expanded])
 
   const updateAttributes = useCallback((newIsExpanded: boolean) => {
     if (hamburgerRef.current) {
@@ -19,21 +25,19 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   }, [])
 
   const toggleMenu = useCallback(() => {
-    setIsExpanded((prevState) => {
+    setLocalIsExpanded((prevState) => {
       const newIsExpanded = !prevState
       updateAttributes(newIsExpanded)
-      expanded?.(newIsExpanded)
       return newIsExpanded
     })
-  }, [updateAttributes, expanded])
+  }, [updateAttributes])
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth > 700 && isExpanded) {
-      setIsExpanded(false)
+    if (window.innerWidth > 700 && localIsExpanded) {
+      setLocalIsExpanded(false)
       updateAttributes(false)
-      expanded?.(false)
     }
-  }, [isExpanded, updateAttributes, expanded])
+  }, [localIsExpanded, updateAttributes])
 
   useEffect(() => {
     window.addEventListener("resize", handleResize)
@@ -41,7 +45,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   }, [handleResize])
 
   useEffect(() => {
-    setIsExpanded(false)
+    setLocalIsExpanded(false)
     updateAttributes(false)
   }, [location, updateAttributes])
 
@@ -49,8 +53,8 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
     <>
       <button
         id="hamburger"
-        aria-expanded={isExpanded}
-        aria-label={isExpanded ? "Close Menu" : "Open Menu"}
+        aria-expanded={localIsExpanded}
+        aria-label={localIsExpanded ? "Close Menu" : "Open Menu"}
         onClick={toggleMenu}
         ref={hamburgerRef}
         className="group peer hamburger relative ml-auto block h-10 w-16 px-5 md:hidden"
