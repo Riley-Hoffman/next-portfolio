@@ -84,7 +84,7 @@ const config: Config = {
     plugin(function ({ addComponents, theme }) {
       addComponents({
         html: {
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "whitesmoke",
         },
         body: {
           fontFamily: theme("fontFamily.inconsolata"),
