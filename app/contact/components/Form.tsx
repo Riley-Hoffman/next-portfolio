@@ -112,7 +112,7 @@ export const Form = () => {
       </fieldset>
       {Object.values(errors).some((error) => error) && submitted && (
         <p
-          className="absolute top-[-4rem] font-source-sans text-red-500"
+          className="absolute left-1 right-1 top-[-5rem] bg-offwhite p-2 font-source-sans text-red-500"
           aria-live="polite"
         >
           <FontAwesomeIcon icon={faCircleExclamation} />
