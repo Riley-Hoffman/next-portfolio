@@ -27,7 +27,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm install --include=dev && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
