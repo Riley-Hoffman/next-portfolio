@@ -23,7 +23,7 @@
     "url": "https://github.com/Riley-Hoffman/next-portfolio/issues"
   },
   "engines": {
-    "node": ">=18.8.0"
+    "node": ">=18.18.0"
   },
   "scripts": {
     "dev": "next dev",
