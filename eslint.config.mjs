@@ -19,41 +19,40 @@ const compat = new FlatCompat({
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended",
-    "prettier"
+    "prettier",
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks", "tailwindcss"],
   rules: {
-    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    "no-console": ["error", { allow: ["info", "warn", "error"] }],
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "tailwindcss/classnames-order": "warn",
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
   },
   overrides: [
     {
-      "files": ["*.ts", "*.tsx", "*.js"],
-      "parser": "@typescript-eslint/parser"
-    }
+      files: ["*.ts", "*.tsx"],
+      parser: "@typescript-eslint/parser",
+    },
   ],
   settings: {
-    "react": {
-      "version": "detect"
-    }
+    react: {
+      version: "detect",
+    },
   },
   env: {
-    "browser": true,
-    "es2021": true,
-    "node": true
+    browser: true,
+    es2021: true,
+    node: true,
   },
-  ignorePatterns: ["node_modules/", ".next/", "out/", "public/"],
 })
 
 const patchedConfig = fixupConfigRules([
   ...compat.extends("next/core-web-vitals"),
 ])
 
-const config = [...patchedConfig, { ignores: [".next/*"] }]
+const config = [...patchedConfig, { ignores: ["node_modules/", ".next/", ".netlify/", "out/", "public/"] }]
 
 export default config
