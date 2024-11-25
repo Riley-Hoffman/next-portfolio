@@ -25,29 +25,29 @@ export const metadata: Metadata = {
     url: `${getBaseUrl("/faq")}`,
   },
 }
+const faqSchemaData: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  name: getPageTitle("FAQ"),
+  description: description,
+  image: getImageUrl(),
+  url: `${getBaseUrl("/faq")}`,
+  datePublished: "2024-07-29T09:25:01.340Z",
+  mainEntity: questions.map((question, index) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: `${answers[index].props.children}`,
+    },
+  })),
+  author: {
+    "@type": "Person",
+    name: author,
+  },
+}
 
 export default function Faq() {
-  const faqSchemaData: WithContext<FAQPage> = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    name: getPageTitle("FAQ"),
-    description: description,
-    image: getImageUrl(),
-    url: `${getBaseUrl("/faq")}`,
-    datePublished: "2024-07-29T09:25:01.340Z",
-    mainEntity: questions.map((question, index) => ({
-      "@type": "Question",
-      name: question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: `${answers[index].props.children}`,
-      },
-    })),
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-  }
   return (
     <>
       <SchemaInjector structuredData={faqSchemaData} />

@@ -5,31 +5,31 @@ interface Tech {
   logo: string
   url: string
 }
+const technologies: Tech[] = [
+  { name: "React", logo: "devicon-react-original", url: "https://react.dev" },
+  {
+    name: "Next.js",
+    logo: "devicon-nextjs-plain",
+    url: "https://nextjs.org",
+  },
+  {
+    name: "TypeScript",
+    logo: "devicon-typescript-plain",
+    url: "https://www.typescriptlang.org",
+  },
+  {
+    name: "Tailwind CSS",
+    logo: "devicon-tailwindcss-original",
+    url: "https://tailwindcss.com",
+  },
+  {
+    name: "Firebase",
+    logo: "devicon-firebase-plain",
+    url: "https://firebase.google.com",
+  },
+]
 
 export const SiteTechStack = () => {
-  const technologies: Tech[] = [
-    { name: "React", logo: "devicon-react-original", url: "https://react.dev" },
-    {
-      name: "Next.js",
-      logo: "devicon-nextjs-plain",
-      url: "https://nextjs.org",
-    },
-    {
-      name: "TypeScript",
-      logo: "devicon-typescript-plain",
-      url: "https://www.typescriptlang.org",
-    },
-    {
-      name: "Tailwind CSS",
-      logo: "devicon-tailwindcss-original",
-      url: "https://tailwindcss.com",
-    },
-    {
-      name: "Firebase",
-      logo: "devicon-firebase-plain",
-      url: "https://firebase.google.com",
-    },
-  ]
   return (
     <>
       <h2 className="reg-caps mb-2 font-inconsolata text-2xl">

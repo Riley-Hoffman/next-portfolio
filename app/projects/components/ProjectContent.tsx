@@ -15,6 +15,7 @@ export interface Project {
   category: string
   isFirst?: boolean
 }
+const commonClasses = "button mx-5 px-3 py-1 uppercase"
 
 export const ProjectContent = ({
   title,
@@ -27,8 +28,6 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const commonClasses = "button mx-5 px-3 py-1 uppercase"
-
   const renderLink = (
     url: string,
     content: JSX.Element,

@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     url: `${getBaseUrl("/projects/particle-cleanup")}`,
   },
 }
+const schemaData: SchemaGeneratorProps["schemaData"] = {
+  title: "Particle Cleanup Game",
+  description,
+  urlPath: "/projects/particle-cleanup",
+  publishDate: "2024-08-05T09:25:01.340Z",
+  schemaType: "WebPage",
+}
 
 export default function ParticleCleanupWrapper() {
-  const schemaData: SchemaGeneratorProps["schemaData"] = {
-    title: "Particle Cleanup Game",
-    description,
-    urlPath: "/projects/particle-cleanup",
-    publishDate: "2024-08-05T09:25:01.340Z",
-    schemaType: "WebPage",
-  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />

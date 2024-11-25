@@ -12,25 +12,25 @@ import { MyJourney } from "./components/home/MyJourney"
 import { SiteTechStack } from "./components/home/SiteTechStack"
 import { baseDescription } from "../lib/constants"
 
+const description = baseDescription
+const schemaData: SchemaGeneratorProps["schemaData"] = {
+  title: "",
+  description,
+  urlPath: "",
+  publishDate: "2024-07-04T09:25:01.340Z",
+  schemaType: "WebPage",
+}
+const coverImageData: CoverImageProps["coverImageData"] = {
+  width: 1920,
+  height: 1080,
+  srcImg:
+    "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds3.webp",
+  srcImgMobile:
+    "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds2.webp",
+  children: <FirstFoldContent />,
+}
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null)
-  const description = baseDescription
-  const schemaData: SchemaGeneratorProps["schemaData"] = {
-    title: "",
-    description,
-    urlPath: "",
-    publishDate: "2024-07-04T09:25:01.340Z",
-    schemaType: "WebPage",
-  }
-  const coverImageData: CoverImageProps["coverImageData"] = {
-    width: 1920,
-    height: 1080,
-    srcImg:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds3.webp",
-    srcImgMobile:
-      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds2.webp",
-    children: <FirstFoldContent />,
-  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />

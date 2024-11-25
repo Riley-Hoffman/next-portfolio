@@ -24,15 +24,15 @@ export const metadata: Metadata = {
     url: `${getBaseUrl("/contact")}`,
   },
 }
+const schemaData: SchemaGeneratorProps["schemaData"] = {
+  title: "Contact",
+  description,
+  urlPath: "/contact",
+  publishDate: "2024-07-04T09:25:01.340Z",
+  schemaType: "ContactPage",
+}
 
 export default function Contact() {
-  const schemaData: SchemaGeneratorProps["schemaData"] = {
-    title: "Contact",
-    description,
-    urlPath: "/contact",
-    publishDate: "2024-07-04T09:25:01.340Z",
-    schemaType: "ContactPage",
-  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
