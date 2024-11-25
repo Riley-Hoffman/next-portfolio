@@ -53,6 +53,9 @@ const patchedConfig = fixupConfigRules([
   ...compat.extends("next/core-web-vitals"),
 ])
 
-const config = [...patchedConfig, { ignores: ["node_modules/", ".next/", ".netlify/", "public/"] }]
+const config = [
+  ...patchedConfig,
+  { ignores: ["node_modules/", ".next/", ".netlify/", "public/"] },
+]
 
 export default config
