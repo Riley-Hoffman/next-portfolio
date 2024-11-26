@@ -3,9 +3,7 @@ type PlayAgainProps = {
 }
 
 export const PlayAgain = ({ reloadAnimation }: PlayAgainProps) => (
-  <p>
-    <button className="button p-3" onClick={reloadAnimation}>
-      Play Again
-    </button>
-  </p>
+  <button className="button m-5 p-3" onClick={reloadAnimation}>
+    Play Again
+  </button>
 )
