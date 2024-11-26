@@ -1,14 +1,14 @@
-import { FormState } from "./Form"
+import { FormData } from "./Form"
 
 interface FormFieldProps {
   type: "text" | "email" | "textarea"
   value: string
   handleChange: (
-    field: keyof FormState
+    field: keyof FormData
   ) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void
-  name: keyof FormState
+  name: keyof FormData
   placeholder: string
   required?: boolean
 }

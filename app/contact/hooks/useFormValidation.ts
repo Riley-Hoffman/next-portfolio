@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react"
-import { FormState } from "../components/Form"
+import { FormData } from "../components/Form"
 
-export const useFormValidation = (initialState: FormState) => {
+export const useFormValidation = (initialState: FormData) => {
   const [formState, setFormState] = useState(initialState)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({ name: "", email: "", message: "" })
@@ -23,7 +23,7 @@ export const useFormValidation = (initialState: FormState) => {
   }, [formState, submitted])
 
   const handleChange =
-    (field: keyof FormState) =>
+    (field: keyof FormData) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormState((prevState) => ({
         ...prevState,
