@@ -1,11 +1,16 @@
 import { useEffect } from "react"
 
 interface LazyLoadLinkProps {
-  href: string
-  rel: string
-  targetRef: React.RefObject<HTMLElement>
+  attributes: {
+    href: string
+    rel: string
+    targetRef: React.RefObject<HTMLElement>
+  }
 }
-export const LazyLoadLink = ({ href, rel, targetRef }: LazyLoadLinkProps) => {
+
+export const LazyLoadLink = ({ attributes }: LazyLoadLinkProps) => {
+  const { href, rel, targetRef } = attributes
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

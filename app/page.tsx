@@ -29,6 +29,7 @@ const coverImageData: CoverImageProps["coverImageData"] = {
     "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds2.webp",
   children: <FirstFoldContent />,
 }
+
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null)
   return (
@@ -37,9 +38,11 @@ export default function Home() {
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
       <LazyLoadLink
-        href="/devicon.css"
-        rel="stylesheet"
-        targetRef={targetRef}
+        attributes={{
+          href: "/devicon.css",
+          rel: "stylesheet",
+          targetRef: targetRef,
+        }}
       />
       <section
         className="gradient-border border-t-2 border-solid pb-12 pt-8"
