@@ -18,7 +18,7 @@ type Refs = {
   isMobile: boolean | null
 }
 
-type State = {
+type GameData = {
   time: number | null
   gameInProgress: boolean
   gameCompletedOnce: boolean
@@ -33,7 +33,7 @@ type Action =
   | { type: "SET_CURSOR_MESSAGE"; message: string }
   | { type: "MARK_MESSAGE_READ" }
 
-const initialState: State = {
+const initialGameData: GameData = {
   time: null,
   gameInProgress: true,
   gameCompletedOnce: false,
@@ -41,32 +41,32 @@ const initialState: State = {
   cursorMessageRead: true,
 }
 
-function reducer(state: State, action: Action): State {
+function reducer(gameData: GameData, action: Action): GameData {
   switch (action.type) {
     case "START_GAME":
       return {
-        ...state,
+        ...gameData,
         gameInProgress: true,
         cursorMessage: "",
         cursorMessageRead: true,
       }
     case "END_GAME":
-      return { ...state, time: action.time, gameInProgress: false }
+      return { ...gameData, time: action.time, gameInProgress: false }
     case "RESET_GAME":
       return {
-        ...initialState,
-        gameCompletedOnce: state.gameCompletedOnce,
+        ...initialGameData,
+        gameCompletedOnce: gameData.gameCompletedOnce,
       }
     case "SET_CURSOR_MESSAGE":
       return {
-        ...state,
+        ...gameData,
         cursorMessage: action.message,
         cursorMessageRead: false,
       }
     case "MARK_MESSAGE_READ":
-      return { ...state, cursorMessageRead: true }
+      return { ...gameData, cursorMessageRead: true }
     default:
-      return state
+      return gameData
   }
 }
 
@@ -83,7 +83,7 @@ export const ParticleCleanup = () => {
     isMobile: null,
   })
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [gameData, dispatch] = useReducer(reducer, initialGameData)
   const mouse = useMemo(() => ({ x: 0, y: 0, radius: 150 }), [])
 
   const updateCursorPosition = useCallback(
@@ -130,7 +130,7 @@ export const ParticleCleanup = () => {
               100
             )
           }
-          if (state.gameInProgress) {
+          if (gameData.gameInProgress) {
             sayMessageTemporarily(
               `Your cursor has ${isInside ? "entered" : "exited"} Particle Cleanup Game play area`
             )
@@ -142,16 +142,16 @@ export const ParticleCleanup = () => {
         }
       }
     },
-    [updateCursorPosition, state.gameInProgress, sayMessageTemporarily]
+    [updateCursorPosition, gameData.gameInProgress, sayMessageTemporarily]
   )
 
   const handleScroll = useCallback(
     (event: Event) => {
-      if (state.gameInProgress && refs.current.cursorInsideCanvas) {
+      if (gameData.gameInProgress && refs.current.cursorInsideCanvas) {
         event.preventDefault()
       }
     },
-    [state.gameInProgress]
+    [gameData.gameInProgress]
   )
 
   const createParticle = useCallback(
@@ -164,7 +164,7 @@ export const ParticleCleanup = () => {
       const isMobile = refs.current.isMobile
       const speedFactor = 
         (isMobile ? 0.8 : 1) *
-        (state.gameCompletedOnce ? 0.3 : 0.5)
+        (gameData.gameCompletedOnce ? 0.3 : 0.5)
       return new Particle(
         Math.random() * width,
         Math.random() * height,
@@ -174,7 +174,7 @@ export const ParticleCleanup = () => {
         speedFactor
       )
     },
-    [state.gameCompletedOnce]
+    [gameData.gameCompletedOnce]
   )
 
   const initParticles = useCallback(
@@ -246,7 +246,7 @@ export const ParticleCleanup = () => {
 
   const getMedalDetails = useCallback(
     (time: number | null) => {
-      state.gameCompletedOnce = true
+      gameData.gameCompletedOnce = true
       if (time === null || time > 25) return null
       const medals = [
         { cutoff: 15, text: "Gold Medal", color: "#8A7400" },
@@ -255,12 +255,12 @@ export const ParticleCleanup = () => {
       ]
       return medals.find((medal) => time < medal.cutoff) || null
     },
-    [state]
+    [gameData]
   )
 
   const medalDetails = useMemo(
-    () => (refs.current.allClean ? getMedalDetails(state.time) : null),
-    [getMedalDetails, state.time]
+    () => (refs.current.allClean ? getMedalDetails(gameData.time) : null),
+    [getMedalDetails, gameData.time]
   )
 
   const reloadAnimation = useCallback(() => {
@@ -295,15 +295,15 @@ export const ParticleCleanup = () => {
         />
         <div className="border-1 absolute inset-0 h-full w-full border-solid border-pink-200">
           {refs.current.allClean && (
-            <CompletionMessage medalDetails={medalDetails} time={state.time} />
+            <CompletionMessage medalDetails={medalDetails} time={gameData.time} />
           )}
         </div>
       </div>
-      {state.gameInProgress &&
+      {gameData.gameInProgress &&
         !refs.current.allClean &&
-        !state.cursorMessageRead && (
+        !gameData.cursorMessageRead && (
           <div className="invisible h-0 w-0 overflow-hidden">
-            <p aria-live="polite">{state.cursorMessage}</p>
+            <p aria-live="polite">{gameData.cursorMessage}</p>
           </div>
         )}
       <PlayAgain reloadAnimation={reloadAnimation} />
