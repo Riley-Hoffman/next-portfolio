@@ -162,11 +162,9 @@ export const ParticleCleanup = () => {
       const color = colors[Math.floor(Math.random() * colors.length)]
       const weight = Math.random() * 0.5 + 0.5
       const isMobile = refs.current.isMobile
-      const isTallScreen = window.innerHeight > 800
-      const speedFactor =
-        (isMobile ? 0.7 : 1) *
-        (isTallScreen ? 0.1 : 1) *
-        (state.gameCompletedOnce ? 1.5 : 3.5)
+      const speedFactor = 
+        (isMobile ? 0.8 : 1) *
+        (state.gameCompletedOnce ? 0.3 : 0.5)
       return new Particle(
         Math.random() * width,
         Math.random() * height,
