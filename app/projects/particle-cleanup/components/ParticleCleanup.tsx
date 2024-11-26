@@ -246,16 +246,19 @@ export const ParticleCleanup = () => {
     initializeAnimation
   )
 
-  const getMedalDetails = useCallback((time: number | null) => {
-    state.gameCompletedOnce = true
-    if (time === null || time > 25) return null
-    const medals = [
-      { cutoff: 15, text: "Gold Medal", color: "#8A7400" },
-      { cutoff: 21, text: "Silver Medal", color: "#737373" },
-      { cutoff: 26, text: "Bronze Medal", color: "#A2652A" },
-    ]
-    return medals.find((medal) => time < medal.cutoff) || null
-  }, [state])
+  const getMedalDetails = useCallback(
+    (time: number | null) => {
+      state.gameCompletedOnce = true
+      if (time === null || time > 25) return null
+      const medals = [
+        { cutoff: 15, text: "Gold Medal", color: "#8A7400" },
+        { cutoff: 21, text: "Silver Medal", color: "#737373" },
+        { cutoff: 26, text: "Bronze Medal", color: "#A2652A" },
+      ]
+      return medals.find((medal) => time < medal.cutoff) || null
+    },
+    [state]
+  )
 
   const medalDetails = useMemo(
     () => (refs.current.allClean ? getMedalDetails(state.time) : null),
