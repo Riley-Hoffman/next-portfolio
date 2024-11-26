@@ -250,9 +250,9 @@ export const ParticleCleanup = () => {
   const getMedalDetails = useCallback((time: number | null) => {
     if (time === null || time > 25) return null
     const medals = [
-      { limit: 20, text: "Gold Medal", color: "#8A7400" },
+      { limit: 0, text: "Gold Medal", color: "#8A7400" },
       { limit: 15, text: "Silver Medal", color: "#737373" },
-      { limit: 0, text: "Bronze Medal", color: "#A2652A" },
+      { limit: 20, text: "Bronze Medal", color: "#A2652A" },
     ]
     return medals.find((medal) => time > medal.limit) || null
   }, [])
