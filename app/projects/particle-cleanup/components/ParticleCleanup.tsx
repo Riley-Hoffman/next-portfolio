@@ -164,10 +164,9 @@ export const ParticleCleanup = () => {
       const isMobile = refs.current.isMobile
       const isTallScreen = window.innerHeight > 800
       const speedFactor =
-        (isMobile ? 0.4 : 0.75) *
-        (isTallScreen ? 0.38 : 1) *
-        (state.gameCompletedOnce ? 0.5 : 0.75)
-
+        (isMobile ? 0.7 : 1) *
+        (isTallScreen ? 0.1 : 1) *
+        (state.gameCompletedOnce ? 1.5 : 3.5)
       return new Particle(
         Math.random() * width,
         Math.random() * height,
@@ -248,14 +247,15 @@ export const ParticleCleanup = () => {
   )
 
   const getMedalDetails = useCallback((time: number | null) => {
+    state.gameCompletedOnce = true
     if (time === null || time > 25) return null
     const medals = [
-      { limit: 0, text: "Gold Medal", color: "#8A7400" },
-      { limit: 15, text: "Silver Medal", color: "#737373" },
-      { limit: 20, text: "Bronze Medal", color: "#A2652A" },
+      { cutoff: 15, text: "Gold Medal", color: "#8A7400" },
+      { cutoff: 21, text: "Silver Medal", color: "#737373" },
+      { cutoff: 26, text: "Bronze Medal", color: "#A2652A" },
     ]
-    return medals.find((medal) => time > medal.limit) || null
-  }, [])
+    return medals.find((medal) => time < medal.cutoff) || null
+  }, [state])
 
   const medalDetails = useMemo(
     () => (refs.current.allClean ? getMedalDetails(state.time) : null),
