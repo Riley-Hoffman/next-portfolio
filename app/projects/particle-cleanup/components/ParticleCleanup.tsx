@@ -162,9 +162,8 @@ export const ParticleCleanup = () => {
       const color = colors[Math.floor(Math.random() * colors.length)]
       const weight = Math.random() * 0.5 + 0.5
       const isMobile = refs.current.isMobile
-      const speedFactor = 
-        (isMobile ? 0.8 : 1) *
-        (gameData.gameCompletedOnce ? 0.3 : 0.5)
+      const speedFactor =
+        (isMobile ? 0.8 : 1) * (gameData.gameCompletedOnce ? 0.3 : 0.5)
       return new Particle(
         Math.random() * width,
         Math.random() * height,
@@ -295,7 +294,10 @@ export const ParticleCleanup = () => {
         />
         <div className="border-1 absolute inset-0 h-full w-full border-solid border-pink-200">
           {refs.current.allClean && (
-            <CompletionMessage medalDetails={medalDetails} time={gameData.time} />
+            <CompletionMessage
+              medalDetails={medalDetails}
+              time={gameData.time}
+            />
           )}
         </div>
       </div>
