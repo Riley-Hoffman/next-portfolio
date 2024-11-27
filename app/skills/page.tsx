@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     url: `${getBaseUrl("/skills")}`,
   },
 }
+const schemaData: SchemaGeneratorProps["schemaData"] = {
+  title: "Skills",
+  description,
+  urlPath: "/skills",
+  publishDate: "2024-07-04T09:25:01.340Z",
+  schemaType: "WebPage",
+}
 
 export default function Skills() {
-  const schemaData: SchemaGeneratorProps["schemaData"] = {
-    title: "Skills",
-    description,
-    urlPath: "/skills",
-    publishDate: "2024-07-04T09:25:01.340Z",
-    schemaType: "WebPage",
-  }
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
