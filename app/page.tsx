@@ -38,11 +38,9 @@ export default function Home() {
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
       <LazyLoadLink
-        attributes={{
-          href: "/devicon.css",
-          rel: "stylesheet",
-          targetRef: targetRef,
-        }}
+        href="/devicon.css"
+        rel="stylesheet"
+        targetRef={targetRef}
       />
       <section
         className="gradient-border border-t-2 border-solid pb-12 pt-8"

@@ -1,38 +1,33 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 interface LazyLoadLinkProps {
-  attributes: {
-    href: string
-    rel: string
-    targetRef: React.RefObject<HTMLElement>
-  }
+  href: string;
+  rel: string;
+  targetRef: React.RefObject<HTMLElement>;
 }
-
-export const LazyLoadLink = ({ attributes }: LazyLoadLinkProps) => {
-  const { href, rel, targetRef } = attributes
-
+export const LazyLoadLink = ({ href, rel, targetRef }: LazyLoadLinkProps) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const link = document.createElement("link")
-          link.rel = rel
-          link.href = href
-          document.head.appendChild(link)
-          observer.disconnect()
+          const link = document.createElement("link");
+          link.rel = rel;
+          link.href = href;
+          document.head.appendChild(link);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 }
-    )
+      { threshold: 0.1 },
+    );
 
     if (targetRef.current) {
-      observer.observe(targetRef.current)
+      observer.observe(targetRef.current);
     }
 
     return () => {
-      observer.disconnect()
-    }
-  }, [href, rel, targetRef])
+      observer.disconnect();
+    };
+  }, [href, rel, targetRef]);
 
-  return null
-}
+  return null;
+};
