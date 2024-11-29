@@ -49,9 +49,6 @@ export default function RootLayout({
         >
           <LayoutContent>{children}</LayoutContent>
         </ThemeProvider>
-        <noscript>
-          <LayoutContent>{children}</LayoutContent>
-        </noscript>
       </body>
     </html>
   )
