@@ -49,6 +49,12 @@ export default function RootLayout({
         >
           <LayoutContent>{children}</LayoutContent>
         </ThemeProvider>
+        <div className="nojslayout hidden">
+          <LayoutContent>{children}</LayoutContent>
+        </div>
+        <noscript>
+          <style>{`.nojslayout.hidden {display: block}`}</style>
+        </noscript>
       </body>
     </html>
   )
