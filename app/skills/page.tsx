@@ -48,10 +48,10 @@ export default function Skills() {
               <SkillItem key={index} {...skill} />
             ))}
           </ul>
-          <div className="oval absolute bottom-[3%] left-[5%] right-[5%] top-[3%] -z-10 rounded-[50%] bg-purple-100 opacity-10"></div>
+          <div className="oval absolute bottom-[3%] left-[5%] right-[5%] top-[3%] -z-10 rounded-[50%] bg-accenttwo-100 opacity-10"></div>
         </div>
       </section>
-      <section className="gradient-border border-t-2 border-solid bg-offwhite pb-16 pt-7">
+      <section className="gradient-border border-t-2 border-solid bg-sitebackground pb-16 pt-7">
         <h2 className="max-w-fit pb-5" id="trainingsLabel">
           Trainings & Certifications
         </h2>

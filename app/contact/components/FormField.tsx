@@ -22,7 +22,7 @@ export const FormField = ({
   required = true,
 }: FormFieldProps) => {
   const commonClasses =
-    "gradient-border w-full border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg focus-visible:m-[2px] focus-visible:w-[calc(100%-4px)] focus-visible:border-0 contrast-more:bg-white"
+    "gradient-border w-full border-2 bg-[#f8f3f9] p-2 dark:text-[#12121c] font-source-sans text-lg focus-visible:m-[2px] focus-visible:w-[calc(100%-4px)] focus-visible:border-0 contrast-more:bg-white"
   return (
     <>
       <label

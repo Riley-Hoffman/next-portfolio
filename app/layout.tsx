@@ -1,6 +1,7 @@
 import "./styles/globals.css"
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
+import { ThemeProvider } from "./components/header/ThemeProvider"
 import { Header } from "./components/header/Header"
 import { Footer } from "./components/Footer"
 import { config } from "@fortawesome/fontawesome-svg-core"
@@ -43,15 +44,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>
-          <a href="#content" id="content" className="tab-focus-button z-30">
-            Start of main content
-          </a>
-          {children}
-        </main>
-        <DynamicImports />
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>
+            <a href="#content" id="content" className="tab-focus-button z-30">
+              Start of main content
+            </a>
+            {children}
+          </main>
+          <DynamicImports />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

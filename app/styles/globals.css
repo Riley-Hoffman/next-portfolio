@@ -92,6 +92,35 @@
   font-display: block;
 }
 @layer base {
+  :root {
+    --color-textcolor: #12121c;
+    --color-accentone-100: #eee3f2;
+    --color-accentone-200: #e5d4ed;
+    --color-sitebackground: #f5eef7;
+    --color-accenttwo-100: #a8a0d9;
+    --color-accenttwo-200: #794e8d;
+    --color-bordercolor: #73738c;
+    --color-gradientthree: #794e8e;
+    --color-gradienttwo: #ae4971;
+    --color-gradientone: #a8a1d9;
+    --color-siteblack: #0a0a0a;
+  }
+  :root[class~="dark"] {
+    --color-textcolor: #edede3;
+    --color-accentone-100: #0d191c;
+    --color-accentone-200: #12272b;
+    --color-sitebackground: #081011;
+    --color-accenttwo-100: #265f5e;
+    --color-accenttwo-200: #72b1b1;
+    --color-bordercolor: #8c8c73;
+    --color-gradientthree: #71b1b0;
+    --color-gradienttwo: #51b6b6;
+    --color-gradientone: #265e44;
+  }
+
+  html.dark {
+    @apply bg-siteblack;
+  }
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
   }
@@ -113,10 +142,10 @@
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .nav-link {
-    @apply button inline-block w-full whitespace-nowrap py-3 pl-14 pr-5 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-pink-200;
+    @apply button inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-200;
   }
   .heading-one {
-    @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white md:text-5xl md:leading-normal;
+    @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
   }
   @media (prefers-contrast: more) {
     .button {

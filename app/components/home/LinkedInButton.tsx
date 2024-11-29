@@ -26,7 +26,7 @@ export const LinkedInButton = () => {
       onMouseEnter={() => triggerEffect(applyEffect)}
     >
       <FontAwesomeIcon
-        className="box-content bg-pink-200 p-2 text-5xl text-zinc group-hover:bg-zinc group-hover:text-pink-200"
+        className="box-content bg-accentone-200 p-2 text-5xl text-textcolor group-hover:bg-textcolor group-hover:text-accentone-200"
         icon={faLinkedinIn}
       />
       <span className="px-6">

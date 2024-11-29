@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { SkipToContent } from "./SkipToContent"
+import { ThemeChanger } from "./ThemeChanger"
 import { HeaderLogo } from "./HeaderLogo"
 import { Hamburger } from "./Hamburger"
 import { NavListItem } from "./NavListItem"
@@ -61,14 +62,15 @@ export const Header = () => {
   ]
 
   return (
-    <header className="shadow[0_0.063rem_0.188rem_-0.188rem_black] gradient-border sticky left-[0] right-[0] top-[-2.125rem] z-30 min-h-[7.75rem] border-b-2 border-t-[2.125rem] border-solid bg-[#f4eef6] py-6 shadow-zinc contrast-more:bg-white">
+    <header className="shadow[0_0.063rem_0.188rem_-0.188rem_black] gradient-border sticky left-[0] right-[0] top-[-2.125rem] z-30 min-h-[7.75rem] border-b-2 border-t-[2.125rem] border-solid bg-[#f4eef6] py-6 shadow-textcolor contrast-more:bg-white dark:bg-[#0b1109]">
       <SkipToContent />
       <div className="flex max-w-screen-xl items-center justify-between">
         <HeaderLogo />
-        <nav className="h-10">
+        <ThemeChanger />
+        <nav className="h-10 min-w-36 md:order-2">
           <Hamburger expanded={handleHamburgerClick} />
           <ul
-            className="relative right-0 top-[1.625rem] z-20 m-0 w-52 origin-right scale-x-0 text-base shadow-[0_0.008rem_1rem_-0.563rem_black] shadow-zinc transition-transform duration-200 ease-in-out peer-aria-expanded:scale-100 md:static md:w-auto md:scale-x-100 md:shadow-none"
+            className="w-38 relative right-0 top-[1.625rem] z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.008rem_1rem_-0.563rem_black] shadow-textcolor transition-transform duration-200 ease-in-out peer-aria-expanded:scale-100 sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none"
             aria-label="Menu Links"
           >
             {menuLinks.map(({ to, label }) => (

@@ -282,7 +282,7 @@ export const ParticleCleanup = () => {
         ref={(el) => {
           refs.current.container = el
         }}
-        className="particle-cleanup overlay mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
+        className="particle-cleanup overlay mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-sm border-2 border-solid border-accentone-200 bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
         role="application"
         aria-label="Cleanup Game"
       >
@@ -292,7 +292,7 @@ export const ParticleCleanup = () => {
             refs.current.canvas = el
           }}
         />
-        <div className="border-1 absolute inset-0 h-full w-full border-solid border-pink-200">
+        <div className="border-1 absolute inset-0 h-full w-full border-solid border-accentone-200">
           {refs.current.allClean && (
             <CompletionMessage
               medalDetails={medalDetails}

@@ -21,7 +21,7 @@ export const MyJourney = () => {
   return (
     <section
       ref={sectionRef}
-      className="scroll-color motion-reduce:scroll-color:hue-rotate-0 bg-diamonds pb-10 pt-16 contrast-more:bg-none"
+      className="scroll-color motion-reduce:scroll-color:hue-rotate-0 bg-diamonds pb-10 pt-16 contrast-more:bg-none dark:bg-diamondsdark"
       style={{ filter: `hue-rotate(0deg)` }}
     >
       <div className="max-w-screen-xl">
@@ -36,7 +36,7 @@ export const MyJourney = () => {
               priority={false}
             />
           </div>
-          <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 contrast-more:bg-white md:w-2/3 lg:px-24">
+          <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 contrast-more:bg-white dark:bg-siteblack md:w-2/3 lg:px-24">
             <h2>My Journey</h2>
             <p>
               My career journey began in customer service, tech support, and

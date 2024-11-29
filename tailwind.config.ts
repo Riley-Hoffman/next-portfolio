@@ -9,30 +9,32 @@ const config: Config = {
     "motion-safe:md:right-[-200%]",
     '[&[data-active="true"]]:right-0',
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
         wood: "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wood-background.webp')",
         diamonds:
           "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds.svg')",
+        diamondsdark:
+          "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds-dark.svg')",
       },
       colors: {
-        zinc: "#12121c",
-        pink: {
-          100: "#eee3f2",
-          200: "#e5d4ed",
+        textcolor: "var(--color-textcolor)",
+        accentone: {
+          100: "var(--color-accentone-100)",
+          200: "var(--color-accentone-200)",
         },
-        offwhite: "#f5eef7",
-        purple: {
-          100: "#a8a0d9",
-          200: "#794e8d",
+        sitebackground: "var(--color-sitebackground)",
+        accenttwo: {
+          100: "var(--color-accenttwo-100)",
+          200: "var(--color-accenttwo-200)",
         },
-        gray: {
-          400: "#73738c",
-        },
-        gradientpurple: "#794e8e",
-        gradientpink: "#ae4971",
-        gradientlightpurple: "#a8a1d9",
+        bordercolor: "var(--color-bordercolor)",
+        gradientthree: "var(--color-gradientthree)",
+        gradienttwo: "var(--color-gradienttwo)",
+        gradientone: "var(--color-gradientone)",
+        siteblack: "var(--color-siteblack)",
       },
       fontFamily: {
         poppins: ['"Poppins", sans-serif'],
@@ -87,6 +89,7 @@ const config: Config = {
           backgroundColor: "whitesmoke",
         },
         body: {
+          color: theme("colors.textcolor"),
           fontFamily: theme("fontFamily.inconsolata"),
         },
         "h1,h2,h3,h4,h5,h6,label,legend": {
@@ -114,28 +117,28 @@ const config: Config = {
           textDecoration: "underline",
         },
         "main ::placeholder": {
-          color: theme("colors.gray.400"),
+          color: theme("colors.bordercolor.400"),
           fontSize: "1rem",
           fontWeight: "300",
           lineHeight: "1.5rem",
           opacity: "1",
         },
         ".button": {
-          backgroundColor: theme("colors.zinc"),
-          color: theme("colors.pink.200"),
+          backgroundColor: theme("colors.textcolor"),
+          color: theme("colors.accentone.200"),
           fontFamily: "inherit",
           textDecoration: "none",
           "&:hover, &:focus-visible": {
-            backgroundColor: theme("colors.pink.100"),
-            color: theme("colors.zinc"),
+            backgroundColor: theme("colors.accentone.100"),
+            color: theme("colors.textcolor"),
           },
         },
         ".gradient-border": {
           borderImageSlice: "1",
-          borderImageSource: `linear-gradient(90deg,${theme("colors.gradientlightpurple")} 0%,${theme("colors.gradientpink")} 50%,${theme("colors.gradientpurple")} 70%)`,
+          borderImageSource: `linear-gradient(90deg,${theme("colors.gradientone")} 0%,${theme("colors.gradienttwo")} 50%,${theme("colors.gradientthree")} 70%)`,
         },
         ".inverted": {
-          borderImageSource: `linear-gradient(90deg,${theme("colors.gradientpurple")},${theme("colors.gradientpink")} 50%,${theme("colors.gradientlightpurple")} 70%)`,
+          borderImageSource: `linear-gradient(90deg,${theme("colors.gradientthree")},${theme("colors.gradienttwo")} 50%,${theme("colors.gradientone")} 70%)`,
         },
         ".tool-tip:not(.fixed,.absolute)": {
           position: "relative",
@@ -177,7 +180,7 @@ const config: Config = {
           },
         "@media (max-width: 768px)": {
           ".hamburger .line": {
-            borderImageSource: `linear-gradient(90deg, ${theme("colors.gradientlightpurple")} 0%, ${theme("colors.gradientpink")} 50%, ${theme("colors.gradientpurple")} 70%)`,
+            borderImageSource: `linear-gradient(90deg, ${theme("colors.gradientone")} 0%, ${theme("colors.gradienttwo")} 50%, ${theme("colors.gradientthree")} 70%)`,
           },
         },
       })

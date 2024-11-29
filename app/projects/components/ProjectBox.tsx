@@ -39,7 +39,7 @@ export const ProjectBox = ({
       }}
     >
       {children}
-      <div className="oval absolute inset-0 top-[5%] -z-10 rounded-[50%] bg-purple-100 opacity-10" />
+      <div className="oval absolute inset-0 top-[5%] -z-10 rounded-[50%] bg-accenttwo-100 opacity-10" />
     </li>
   )
 }

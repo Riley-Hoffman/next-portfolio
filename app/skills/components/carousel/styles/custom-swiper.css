@@ -1,6 +1,6 @@
 .prev-btn,
 .next-btn {
-  @apply absolute top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-pink-100 px-4 py-1 transition-shadow active:shadow-none;
+  @apply absolute top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-accentone-100 px-4 py-1 transition-shadow active:shadow-none;
 }
 .swiper-pagination {
   @apply flex items-center justify-center gap-1;
@@ -13,8 +13,17 @@
   @apply min-h-[.625rem] min-w-[.625rem];
 }
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  @apply bg-zinc opacity-100;
+  @apply opacity-100;
 }
-.swiper-pagination-bullet-active {
-  @apply bg-purple-200;
+.light .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  @apply bg-textcolor;
+}
+.dark .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  @apply bg-gradienttwo;
+}
+.light .swiper-pagination-bullet-active {
+  @apply bg-accenttwo-200;
+}
+.dark .swiper-pagination-bullet-active {
+  @apply bg-gradientone;
 }
