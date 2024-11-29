@@ -1,9 +1,7 @@
 import "./styles/globals.css"
 import type { Metadata } from "next"
-import dynamic from "next/dynamic"
-import { ThemeProvider } from "./components/header/ThemeProvider"
-import { Header } from "./components/header/Header"
-import { Footer } from "./components/Footer"
+import { ThemeProvider } from "./components/ThemeProvider"
+import { LayoutContent } from "./components/LayoutContent"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import {
@@ -35,7 +33,6 @@ export const metadata: Metadata = {
   },
 }
 
-const DynamicImports = dynamic(() => import("./components/DynamicImports"))
 export default function RootLayout({
   children,
 }: {
@@ -50,16 +47,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main>
-            <a href="#content" id="content" className="tab-focus-button z-30">
-              Start of main content
-            </a>
-            {children}
-          </main>
-          <DynamicImports />
-          <Footer />
+          <LayoutContent>{children}</LayoutContent>
         </ThemeProvider>
+        <noscript>
+          <LayoutContent>{children}</LayoutContent>
+        </noscript>
       </body>
     </html>
   )
