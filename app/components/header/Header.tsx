@@ -14,8 +14,13 @@ interface MenuLink {
 }
 
 export const Header = () => {
+  const [jsEnabled, setJsEnabled] = useState(false)
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
   const [hide, setHide] = useState<boolean>(false)
+
+  useEffect(() => {
+    setJsEnabled(true)
+  }, [])
 
   const handleHamburgerClick = (expanded: boolean) => {
     setIsExpanded(expanded)
@@ -66,7 +71,7 @@ export const Header = () => {
       <SkipToContent />
       <div className="flex max-w-screen-xl items-center justify-between">
         <HeaderLogo />
-        <ThemeChanger />
+        {jsEnabled && <ThemeChanger />}
         <nav className="h-10 min-w-36 md:order-2">
           <Hamburger expanded={handleHamburgerClick} />
           <ul

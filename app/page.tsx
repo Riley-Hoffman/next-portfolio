@@ -35,6 +35,10 @@ export default function Home() {
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
+      <noscript>
+        {/* eslint-disable-next-line @next/next/no-css-tags */}
+        <link href="/devicon.css" rel="stylesheet"></link>
+      </noscript>
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
       <LazyLoadLink
