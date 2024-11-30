@@ -26,7 +26,7 @@ const coverImageData: CoverImageProps["coverImageData"] = {
   srcImg:
     "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds3.webp",
   srcImgMobile:
-    "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds2.webp",
+    "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds4.webp",
   children: <FirstFoldContent />,
 }
 
