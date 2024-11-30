@@ -287,7 +287,7 @@ export const ParticleCleanup = () => {
         aria-label="Cleanup Game"
       >
         <canvas
-          className="absolute inset-0 w-full drop-shadow-[0.063rem_0.063rem_0_#00000061]"
+          className="absolute inset-0 z-10 w-full drop-shadow-[0.063rem_0.063rem_0_#00000061]"
           ref={(el) => {
             refs.current.canvas = el
           }}
