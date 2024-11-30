@@ -2,7 +2,10 @@
   @apply relative;
 }
 .overlay:before {
-  @apply absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full bg-[radial-gradient(#ffffffbd_0%,#ffffff7f_100%)] content-[''] dark:bg-[radial-gradient(#000000bf_0%,#00000080_100%)];
+  @apply absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full bg-[radial-gradient(#ffffffbd_0%,#ffffff7f_100%)] content-[''];
+}
+.overlay:not(.light-overlay):before {
+  @apply dark:bg-[radial-gradient(#000000bf_0%,#00000080_100%)];
 }
 .overlay:before:not([class*="before:bg-"]) {
   background-image: radial-gradient(#ffffffbd 0%, #ffffff7f 100%);
