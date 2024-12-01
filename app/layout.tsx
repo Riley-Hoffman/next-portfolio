@@ -40,6 +40,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="icon" sizes="512x512" href="/android-chrome-256x256.png" />
+        <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png" />
+        <noscript>
+          <style>{`.nojslayout.hidden {display: block}`}</style>
+        </noscript>
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LayoutContent>{children}</LayoutContent>
@@ -47,9 +56,6 @@ export default function RootLayout({
         <div className="nojslayout hidden">
           <LayoutContent>{children}</LayoutContent>
         </div>
-        <noscript>
-          <style>{`.nojslayout.hidden {display: block}`}</style>
-        </noscript>
       </body>
     </html>
   )

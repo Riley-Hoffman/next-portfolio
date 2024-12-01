@@ -1,4 +1,5 @@
 "use client"
+import Head from "next/head";
 import { useRef } from "react"
 import {
   SchemaGenerator,
@@ -34,11 +35,13 @@ export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null)
   return (
     <>
+      <Head>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <link href="/devicon.css" rel="stylesheet"></link>
+        </noscript>
+      </Head>
       <SchemaGenerator schemaData={schemaData} />
-      <noscript>
-        {/* eslint-disable-next-line @next/next/no-css-tags */}
-        <link href="/devicon.css" rel="stylesheet"></link>
-      </noscript>
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
       <LazyLoadLink

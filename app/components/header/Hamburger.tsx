@@ -1,4 +1,5 @@
 "use client"
+import Head from "next/head";
 import { usePathname } from "next/navigation"
 import { useState, useRef, useCallback, useEffect } from "react"
 
@@ -51,6 +52,11 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
 
   return (
     <>
+      <Head>
+        <noscript>
+          <style>{`.hamburger { display: none; }`}</style>
+        </noscript>
+      </Head>
       <button
         id="hamburger"
         aria-expanded={localIsExpanded}
@@ -73,9 +79,6 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
       >
         Close Menu on Background Click
       </button>
-      <noscript>
-        <style>{`.hamburger { display: none; }`}</style>
-      </noscript>
     </>
   )
 }
