@@ -47,6 +47,8 @@ export default function RootLayout({
         <link rel="icon" sizes="192x192" href="/icons/android-chrome-192x192.png" />
         <link rel="icon" sizes="512x512" href="/icons/android-chrome-256x256.png" />
         <link rel="icon" sizes="512x512" href="/icons/android-chrome-512x512.png" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#eee3f2" />
+        <meta name="theme-color" content="#eee3f2" />
         <noscript>
           <style>{`.nojslayout.hidden {display: block}`}</style>
         </noscript>
