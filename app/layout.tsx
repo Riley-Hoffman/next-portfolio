@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_CA",
     images: getImageUrl(),
     title: {
       template: `%s - ${getPageTitle()}`,
