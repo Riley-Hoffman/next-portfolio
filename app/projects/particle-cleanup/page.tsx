@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    type: "website",
+    locale: "en_CA",
     images: getImageUrl(),
     title: "Particle Cleanup Game",
     url: `${getBaseUrl("/projects/particle-cleanup")}`,

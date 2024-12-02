@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    type: "website",
+    locale: "en_CA",
     images: getImageUrl(),
     title: "Projects",
     url: `${getBaseUrl("/projects")}`,
