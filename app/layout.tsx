@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    type: "website",
     images: getImageUrl(),
     title: {
       template: `%s - ${getPageTitle()}`,
