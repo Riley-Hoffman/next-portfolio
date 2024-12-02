@@ -9,8 +9,8 @@ export interface CoverImageProps {
   coverImageData: {
     width: number
     height: number
-    srcImg: string
-    srcImgMobile: string
+    highResSrc: string
+    lowResSrc: string
     children: React.ReactNode
   }
 }
@@ -23,11 +23,11 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={coverImageData.srcImg}
-        srcSet={`${coverImageData.srcImgMobile} 768w, ${coverImageData.srcImg} 1024w`}
+        src={coverImageData.highResSrc}
+        srcSet={`${coverImageData.lowResSrc} 768w, ${coverImageData.highResSrc} 1024w`}
         width={coverImageData.width}
         height={coverImageData.height}
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 115vw, 130vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         alt=""
         fetchPriority="high"
         className="absolute z-[1] h-[120vh] w-[130vw] max-w-none object-cover blur-[0.047rem] saturate-[1.4] dark:hue-rotate-[266deg] sm:blur-0"

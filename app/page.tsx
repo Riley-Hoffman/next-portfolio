@@ -24,9 +24,9 @@ const schemaData: SchemaGeneratorProps["schemaData"] = {
 const coverImageData: CoverImageProps["coverImageData"] = {
   width: 1920,
   height: 1080,
-  srcImg:
+  highResSrc:
     "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds5.webp",
-  srcImgMobile:
+  lowResSrc:
     "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds4.webp",
   children: <FirstFoldContent />,
 }
