@@ -28,7 +28,6 @@ export const Header = () => {
 
   const currentPath = usePathname()
   const isActive = (path: string) => {
-    console.log(currentPath === path)
     return currentPath === path
   }
 
