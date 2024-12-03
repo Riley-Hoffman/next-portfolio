@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import "../styles/oval.css"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
