@@ -117,9 +117,11 @@
     --color-gradienttwo: #51b6b6;
     --color-gradientone: #265e44;
   }
-
+  html {
+    @apply contrast-more:bg-white;
+  }
   html.dark {
-    @apply bg-siteblack;
+    @apply bg-siteblack contrast-more:bg-black;
   }
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
@@ -128,6 +130,12 @@
   a > *,
   .button {
     @apply transition-[color,_background-color] duration-200 ease-in-out;
+  }
+  .button {
+    @apply contrast-more:!text-white contrast-more:hover:!text-black contrast-more:dark:!text-black contrast-more:dark:hover:!text-white;
+  }
+  .button.active {
+    @apply contrast-more:!text-black contrast-more:dark:!text-white;
   }
   a:focus-visible,
   button:focus-visible,
@@ -142,21 +150,15 @@
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .nav-link {
-    @apply button inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-200;
+    @apply inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:inline-block md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-200;
   }
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl leading-normal contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
   }
-  @media (prefers-contrast: more) {
-    .button {
-      @apply !text-white;
-    }
-    body ::placeholder {
-      @apply !text-black;
-    }
-    html,
-    .overlay:before {
-      @apply !bg-[#ffffffa8];
-    }
+  .overlay:before {
+    @apply contrast-more:bg-[#ffffffa8] contrast-more:dark:bg-[#0000578f];
+  }
+  body ::placeholder {
+    @apply contrast-more:text-black;
   }
 }
