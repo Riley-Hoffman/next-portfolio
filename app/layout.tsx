@@ -44,15 +44,50 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/icons/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/icons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/icons/favicon-96x96.png"
+        />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link rel="icon" sizes="192x192" href="/icons/android-chrome-192x192.png" />
-        <link rel="icon" sizes="512x512" href="/icons/android-chrome-256x256.png" />
-        <link rel="icon" sizes="512x512" href="/icons/android-chrome-512x512.png" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eee3f2" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d191c" />
+        <link
+          rel="icon"
+          sizes="192x192"
+          href="/icons/android-chrome-192x192.png"
+        />
+        <link
+          rel="icon"
+          sizes="512x512"
+          href="/icons/android-chrome-256x256.png"
+        />
+        <link
+          rel="icon"
+          sizes="512x512"
+          href="/icons/android-chrome-512x512.png"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#eee3f2"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#0d191c"
+        />
         <noscript>
           <style>{`.nojslayout.hidden {display: block}`}</style>
         </noscript>

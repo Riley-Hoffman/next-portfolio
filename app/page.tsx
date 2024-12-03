@@ -1,5 +1,5 @@
 "use client"
-import Head from "next/head";
+import Head from "next/head"
 import { useRef } from "react"
 import {
   SchemaGenerator,
