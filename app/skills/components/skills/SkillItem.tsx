@@ -17,7 +17,7 @@ export const SkillItem = ({ skill, icon, devicon, image }: SkillItemProps) => (
       ) : image ? (
         <Image
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wcag.png"
-          className="w-20"
+          className="w-20 dark:invert"
           width={300}
           height={71}
           alt=""
