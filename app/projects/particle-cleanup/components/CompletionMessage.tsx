@@ -12,7 +12,7 @@ export const CompletionMessage = ({
 }: CompletionMessageProps) => (
   <p
     id="completionMessage"
-    className="completion-message absolute m-0 flex h-full w-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl"
+    className="completion-message absolute z-10 m-0 flex h-full w-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl"
     tabIndex={-1}
   >
     All clean!{" "}

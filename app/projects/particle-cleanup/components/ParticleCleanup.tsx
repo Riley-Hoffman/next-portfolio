@@ -1,10 +1,11 @@
 "use client"
-import { useRef, useCallback, useReducer, useMemo } from "react"
+import { useRef, useCallback, useMemo } from "react"
 import "../../../styles/overlay.css"
 import { Particle } from "../classes/Particle"
 import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
+import { useGameData } from "../hooks/useGameData"
 
 type Refs = {
   canvas: HTMLCanvasElement | null
@@ -16,58 +17,6 @@ type Refs = {
   elapsedTime: number
   cursorInsideCanvas: boolean
   isMobile: boolean | null
-}
-
-type GameData = {
-  time: number | null
-  gameInProgress: boolean
-  gameCompletedOnce: boolean
-  cursorMessage: string
-  cursorMessageRead: boolean
-}
-
-type Action =
-  | { type: "START_GAME" }
-  | { type: "END_GAME"; time: number }
-  | { type: "RESET_GAME" }
-  | { type: "SET_CURSOR_MESSAGE"; message: string }
-  | { type: "MARK_MESSAGE_READ" }
-
-const initialGameData: GameData = {
-  time: null,
-  gameInProgress: true,
-  gameCompletedOnce: false,
-  cursorMessage: "",
-  cursorMessageRead: true,
-}
-
-function reducer(gameData: GameData, action: Action): GameData {
-  switch (action.type) {
-    case "START_GAME":
-      return {
-        ...gameData,
-        gameInProgress: true,
-        cursorMessage: "",
-        cursorMessageRead: true,
-      }
-    case "END_GAME":
-      return { ...gameData, time: action.time, gameInProgress: false }
-    case "RESET_GAME":
-      return {
-        ...initialGameData,
-        gameCompletedOnce: gameData.gameCompletedOnce,
-      }
-    case "SET_CURSOR_MESSAGE":
-      return {
-        ...gameData,
-        cursorMessage: action.message,
-        cursorMessageRead: false,
-      }
-    case "MARK_MESSAGE_READ":
-      return { ...gameData, cursorMessageRead: true }
-    default:
-      return gameData
-  }
 }
 
 export const ParticleCleanup = () => {
@@ -83,7 +32,8 @@ export const ParticleCleanup = () => {
     isMobile: null,
   })
 
-  const [gameData, dispatch] = useReducer(reducer, initialGameData)
+  const [gameData, dispatch] = useGameData()
+
   const mouse = useMemo(() => ({ x: 0, y: 0, radius: 150 }), [])
 
   const updateCursorPosition = useCallback(
@@ -104,7 +54,7 @@ export const ParticleCleanup = () => {
   const sayMessageTemporarily = useCallback((message: string) => {
     dispatch({ type: "SET_CURSOR_MESSAGE", message })
     setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 10)
-  }, [])
+  }, [dispatch])
 
   const handleInteraction = useCallback(
     (event: Event, isInside: boolean) => {
@@ -213,7 +163,7 @@ export const ParticleCleanup = () => {
         )
       }
     },
-    [mouse]
+    [mouse, dispatch]
   )
 
   const initializeAnimation = useCallback(() => {
@@ -274,7 +224,7 @@ export const ParticleCleanup = () => {
     })
     dispatch({ type: "RESET_GAME" })
     initializeAnimation()
-  }, [initializeAnimation])
+  }, [initializeAnimation, dispatch])
 
   return (
     <>
