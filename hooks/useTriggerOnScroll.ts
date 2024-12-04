@@ -7,15 +7,15 @@ type HTMLElementWithDataset = HTMLElement & {
   }
 }
 
-export const useTriggerOnScroll = (
- 
-): MutableRefObject<HTMLElementWithDataset[]> => {
+export const useTriggerOnScroll = (): MutableRefObject<
+  HTMLElementWithDataset[]
+> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])
 
   const getActiveState = (rect: DOMRect, distance: number) => {
     const isActive = rect.top < distance
     const newActiveState = isActive ? "true" : "false"
-    
+
     if (!isActive) {
       return "false"
     }
