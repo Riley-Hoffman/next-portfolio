@@ -3,26 +3,36 @@ import { useEffect, useRef, MutableRefObject } from "react"
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
     active?: string
-    repeat?: string
     distance?: string
   }
 }
 
 export const useTriggerOnScroll = (
-  force: number = 0
+ 
 ): MutableRefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])
+
+  const getActiveState = (rect: DOMRect, distance: number) => {
+    const isActive = rect.top < distance
+    const newActiveState = isActive ? "true" : "false"
+    
+    if (!isActive) {
+      return "false"
+    }
+
+    return newActiveState
+  }
+
   useEffect(() => {
     const updateElementActivation = (
       element: HTMLElementWithDataset,
       rect: DOMRect,
       distance: number
     ) => {
-      const isActive = rect.top < distance
-      element.dataset.active = isActive || force ? "true" : "false"
+      const newActiveState = getActiveState(rect, distance)
 
-      if (element.dataset.repeat && !isActive && !force) {
-        element.dataset.active = "false"
+      if (element.dataset.active !== newActiveState) {
+        element.dataset.active = newActiveState
       }
     }
 
@@ -37,13 +47,14 @@ export const useTriggerOnScroll = (
     }
 
     setTimeout(updateTriggerOnScroll, 100)
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", updateTriggerOnScroll)
       return () => {
         window.removeEventListener("scroll", updateTriggerOnScroll)
       }
     }
-  }, [force])
+  }, [])
 
   return elementsRef
 }
