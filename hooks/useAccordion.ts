@@ -1,27 +1,26 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 import { pxToRem } from "../lib/pxToRem"
 
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(
-    Array(itemsLength).fill(null)
-  )
-  const contentRefs = useRef<(HTMLDivElement | null)[]>(
-    Array(itemsLength).fill(null)
-  )
 
-  const handleAccordionClick = (index: number) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
-  }
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(Array(itemsLength).fill(null))
+  const contentRefs = useRef<(HTMLDivElement | null)[]>(Array(itemsLength).fill(null))
+
+  const handleAccordionClick = useCallback(
+    (index: number) => {
+      setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
+    },
+    []
+  )
 
   useEffect(() => {
     buttonRefs.current.forEach((button, index) => {
       if (!button) return
-      if (openIndex === index) {
-        setTimeout(() => button.classList.remove("init"), 500)
-      } else {
-        setTimeout(() => button.classList.add("init"), 500)
-      }
+      const isOpen = openIndex === index
+      setTimeout(() => {
+        button.classList.toggle("init", !isOpen)
+      }, 500)
     })
 
     contentRefs.current.forEach((content, index) => {

@@ -38,7 +38,9 @@ export const Accordion = ({ items, label }: AccordionProps) => {
         <li className="group" key={index}>
           <button
             ref={(el) => {
-              buttonRefs.current[index] = el
+              if (el) {
+                buttonRefs.current[index] = el
+              }
             }}
             className="accordion group peer w-full border-b border-solid border-[#e1d7ee] bg-accentone-100 px-5 py-6 text-left text-lg font-medium leading-9 text-[#2d2b34] transition-all duration-500 ease-in-out group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0 aria-expanded:border-b-0 dark:border-[#1e2811] dark:text-[#d2d4cb]"
             onClick={() => handleDebouncedClick(index)}
@@ -51,7 +53,9 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             className={`overflow-hidden px-5 transition-all duration-500 ease-in-out ${openIndex === index ? "py-[0.125rem]" : "peer-[.init]:hidden"}`}
             tabIndex={-1}
             ref={(el) => {
-              contentRefs.current[index] = el
+              if (el) {
+                contentRefs.current[index] = el
+              }
             }}
           >
             {item.answer}
