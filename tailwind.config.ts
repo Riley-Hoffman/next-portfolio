@@ -91,6 +91,7 @@ const config: Config = {
         body: {
           color: theme("colors.textcolor"),
           fontFamily: theme("fontFamily.inconsolata"),
+          textWrap: "pretty",
         },
         "h1,h2,h3,h4,h5,h6,label,legend": {
           fontFamily: theme("fontFamily.poppins"),
