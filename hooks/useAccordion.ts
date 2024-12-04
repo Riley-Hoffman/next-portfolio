@@ -4,15 +4,16 @@ import { pxToRem } from "../lib/pxToRem"
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(Array(itemsLength).fill(null))
-  const contentRefs = useRef<(HTMLDivElement | null)[]>(Array(itemsLength).fill(null))
-
-  const handleAccordionClick = useCallback(
-    (index: number) => {
-      setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
-    },
-    []
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(
+    Array(itemsLength).fill(null)
   )
+  const contentRefs = useRef<(HTMLDivElement | null)[]>(
+    Array(itemsLength).fill(null)
+  )
+
+  const handleAccordionClick = useCallback((index: number) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
+  }, [])
 
   useEffect(() => {
     buttonRefs.current.forEach((button, index) => {
