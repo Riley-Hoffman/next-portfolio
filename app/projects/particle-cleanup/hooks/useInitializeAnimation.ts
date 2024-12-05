@@ -4,7 +4,10 @@ export const useInitializeAnimation = (
   refs: React.MutableRefObject<any>,
   dispatch: React.Dispatch<any>,
   initParticles: (canvas: HTMLCanvasElement) => void,
-  animateParticles: (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => void
+  animateParticles: (
+    ctx: CanvasRenderingContext2D,
+    canvas: HTMLCanvasElement
+  ) => void
 ) => {
   const initializeAnimation = useCallback(() => {
     const ctx = refs.current.canvas?.getContext("2d")

@@ -6,9 +6,9 @@ import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 import { useGameData } from "../hooks/useGameData"
-import { useCreateParticle } from "../hooks/useCreateParticle" 
+import { useCreateParticle } from "../hooks/useCreateParticle"
+import { useInitializeAnimation } from "../hooks/useInitializeAnimation"
 import { useMedalDetails } from "../hooks/useMedalDetails"
-import { useInitializeAnimation } from "../hooks/useInitializeAnimation" 
 
 type Refs = {
   canvas: HTMLCanvasElement | null
@@ -55,10 +55,13 @@ export const ParticleCleanup = () => {
     [mouse]
   )
 
-  const sayMessageTemporarily = useCallback((message: string) => {
-    dispatch({ type: "SET_CURSOR_MESSAGE", message })
-    setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 10)
-  }, [dispatch])
+  const sayMessageTemporarily = useCallback(
+    (message: string) => {
+      dispatch({ type: "SET_CURSOR_MESSAGE", message })
+      setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 10)
+    },
+    [dispatch]
+  )
 
   const handleInteraction = useCallback(
     (event: Event, isInside: boolean) => {
@@ -148,7 +151,12 @@ export const ParticleCleanup = () => {
     [mouse, dispatch]
   )
 
-  const initializeAnimation = useInitializeAnimation(refs, dispatch, initParticles, animateParticles)
+  const initializeAnimation = useInitializeAnimation(
+    refs,
+    dispatch,
+    initParticles,
+    animateParticles
+  )
 
   useParticleCleanupEvents(
     refs,
@@ -157,7 +165,9 @@ export const ParticleCleanup = () => {
     initializeAnimation
   )
 
-  const medalDetails = useMedalDetails(refs.current.allClean ? gameData.time : null)
+  const medalDetails = useMedalDetails(
+    refs.current.allClean ? gameData.time : null
+  )
 
   const reloadAnimation = useCallback(() => {
     cancelAnimationFrame(refs.current.animationFrameId)
