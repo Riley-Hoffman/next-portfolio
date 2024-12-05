@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { useGameData } from "../hooks/useGameData"
+import { useGameData } from "./useGameData"
 import { Refs } from "../components/ParticleCleanup"
 export const useReloadAnimation = (
   refs: React.MutableRefObject<Refs>,

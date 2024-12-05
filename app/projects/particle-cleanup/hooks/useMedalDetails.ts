@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { useGameData } from "../hooks/useGameData"
+import { useGameData } from "./useGameData"
 
 interface Medal {
   cutoff: number

@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { useGameData } from "../hooks/useGameData"
+import { useGameData } from "./useGameData"
 
 export const useHandleInteraction = (
   refs: React.RefObject<any>,

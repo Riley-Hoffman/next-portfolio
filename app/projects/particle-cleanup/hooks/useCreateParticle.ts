@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { Particle } from "../classes/Particle"
-import { useGameData } from "../hooks/useGameData"
+import { useGameData } from "./useGameData"
 
 export const useCreateParticle = () => {
   const [gameData] = useGameData()
