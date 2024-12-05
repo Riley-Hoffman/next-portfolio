@@ -14,7 +14,7 @@ export const useCreateParticle = () => {
       const weight = Math.random() * 0.5 + 0.5
       const isMobile = window.innerWidth <= 768
       const speedFactor =
-        (isMobile ? 0.8 : 1) * (gameData.gameCompletedOnce ? 0.3 : 0.5)
+        (isMobile ? 0.8 : 1) * 0.5
 
       return new Particle(
         Math.random() * width,
@@ -25,6 +25,6 @@ export const useCreateParticle = () => {
         speedFactor
       )
     },
-    [gameData.gameCompletedOnce]
+    []
   )
 }

@@ -3,7 +3,6 @@ import { useReducer } from "react"
 type GameData = {
   time: number | null
   gameInProgress: boolean
-  gameCompletedOnce: boolean
   cursorMessage: string
   cursorMessageRead: boolean
 }
@@ -18,7 +17,6 @@ type Action =
 const initialGameData: GameData = {
   time: null,
   gameInProgress: true,
-  gameCompletedOnce: false,
   cursorMessage: "",
   cursorMessageRead: true,
 }
@@ -37,7 +35,6 @@ function reducer(gameData: GameData, action: Action): GameData {
     case "RESET_GAME":
       return {
         ...initialGameData,
-        gameCompletedOnce: gameData.gameCompletedOnce,
       }
     case "SET_CURSOR_MESSAGE":
       return {
