@@ -4,12 +4,13 @@ import "../../../styles/overlay.css"
 import { Particle } from "../classes/Particle"
 import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
-import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 import { useGameData } from "../hooks/useGameData"
 import { useCreateParticle } from "../hooks/useCreateParticle"
+import { useHandleInteraction } from "../hooks/useHandleInteraction"
 import { useInitializeAnimation } from "../hooks/useInitializeAnimation"
 import { useMedalDetails } from "../hooks/useMedalDetails"
 import { useReloadAnimation } from "../hooks/useReloadAnimation"
+import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 
 export type Refs = {
   canvas: HTMLCanvasElement | null
@@ -64,43 +65,10 @@ export const ParticleCleanup = () => {
     [dispatch]
   )
 
-  const handleInteraction = useCallback(
-    (event: Event, isInside: boolean) => {
-      const isTouchEvent = event.type.startsWith("touch")
-      const { clientX, clientY } = isTouchEvent
-        ? (event as TouchEvent).touches[0]
-        : (event as MouseEvent)
-
-      if (clientX !== undefined && clientY !== undefined) {
-        if (["mousemove", "touchmove"].includes(event.type)) {
-          updateCursorPosition(clientX, clientY)
-        }
-
-        if (refs.current.cursorInsideCanvas !== isInside) {
-          refs.current.cursorInsideCanvas = isInside
-          if (isInside && refs.current.container) {
-            setTimeout(
-              () =>
-                refs.current.container?.scrollIntoView({
-                  block: "center",
-                  behavior: "smooth",
-                }),
-              100
-            )
-          }
-          if (gameData.gameInProgress) {
-            sayMessageTemporarily(
-              `Your cursor has ${isInside ? "entered" : "exited"} Particle Cleanup Game play area`
-            )
-          }
-        }
-
-        if (isTouchEvent) {
-          event.preventDefault()
-        }
-      }
-    },
-    [updateCursorPosition, gameData.gameInProgress, sayMessageTemporarily]
+  const handleInteraction = useHandleInteraction(
+    refs,
+    updateCursorPosition,
+    sayMessageTemporarily
   )
 
   const handleScroll = useCallback(
@@ -171,7 +139,7 @@ export const ParticleCleanup = () => {
   const medalDetails = useMedalDetails(
     refs.current.allClean ? gameData.time : null
   )
-  
+
   return (
     <>
       <div
