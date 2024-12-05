@@ -53,5 +53,6 @@ function reducer(gameData: GameData, action: Action): GameData {
 }
 
 export function useGameData() {
-  return useReducer(reducer, initialGameData)
+  const [gameData, dispatch] = useReducer(reducer, initialGameData)
+  return [gameData, dispatch] as const
 }

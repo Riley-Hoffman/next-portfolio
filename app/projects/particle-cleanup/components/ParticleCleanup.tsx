@@ -9,8 +9,9 @@ import { useGameData } from "../hooks/useGameData"
 import { useCreateParticle } from "../hooks/useCreateParticle"
 import { useInitializeAnimation } from "../hooks/useInitializeAnimation"
 import { useMedalDetails } from "../hooks/useMedalDetails"
+import { useReloadAnimation } from "../hooks/useReloadAnimation"
 
-type Refs = {
+export type Refs = {
   canvas: HTMLCanvasElement | null
   container: HTMLDivElement | null
   particlesArray: Particle[]
@@ -158,6 +159,8 @@ export const ParticleCleanup = () => {
     animateParticles
   )
 
+  const reloadAnimation = useReloadAnimation(refs, initializeAnimation)
+
   useParticleCleanupEvents(
     refs,
     handleInteraction,
@@ -168,21 +171,7 @@ export const ParticleCleanup = () => {
   const medalDetails = useMedalDetails(
     refs.current.allClean ? gameData.time : null
   )
-
-  const reloadAnimation = useCallback(() => {
-    cancelAnimationFrame(refs.current.animationFrameId)
-    Object.assign(refs.current, {
-      allClean: false,
-      startTime: null,
-      elapsedTime: 0,
-      cursorInsideCanvas: false,
-      particlesArray: [],
-      isMobile: null,
-    })
-    dispatch({ type: "RESET_GAME" })
-    initializeAnimation()
-  }, [initializeAnimation, dispatch])
-
+  
   return (
     <>
       <div
