@@ -6,6 +6,7 @@ import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 import { useGameData } from "../hooks/useGameData"
+import { useCreateParticle } from "../hooks/useCreateParticle" 
 import { useMedalDetails } from "../hooks/useMedalDetails"
 
 type Refs = {
@@ -34,6 +35,7 @@ export const ParticleCleanup = () => {
   })
 
   const [gameData, dispatch] = useGameData()
+  const createParticle = useCreateParticle()
 
   const mouse = useMemo(() => ({ x: 0, y: 0, radius: 150 }), [])
 
@@ -105,28 +107,6 @@ export const ParticleCleanup = () => {
     [gameData.gameInProgress]
   )
 
-  const createParticle = useCallback(
-    (canvas: HTMLCanvasElement) => {
-      const { width, height } = canvas
-      const size = Math.random() * 30 + 10
-      const colors = ["#A8A0D9", "#794E8D", "#ae4971"]
-      const color = colors[Math.floor(Math.random() * colors.length)]
-      const weight = Math.random() * 0.5 + 0.5
-      const isMobile = refs.current.isMobile
-      const speedFactor =
-        (isMobile ? 0.8 : 1) * (gameData.gameCompletedOnce ? 0.3 : 0.5)
-      return new Particle(
-        Math.random() * width,
-        Math.random() * height,
-        size,
-        color,
-        weight,
-        speedFactor
-      )
-    },
-    [gameData.gameCompletedOnce]
-  )
-
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
       refs.current.particlesArray = Array.from({ length: 150 }, () =>
@@ -193,7 +173,7 @@ export const ParticleCleanup = () => {
     handleScroll,
     initializeAnimation
   )
-  
+
   const medalDetails = useMedalDetails(refs.current.allClean ? gameData.time : null)
 
   const reloadAnimation = useCallback(() => {
