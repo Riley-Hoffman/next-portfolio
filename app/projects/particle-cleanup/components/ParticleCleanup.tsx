@@ -6,6 +6,7 @@ import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 import { useGameData } from "../hooks/useGameData"
+import { useMedalDetails } from "../hooks/useMedalDetails"
 
 type Refs = {
   canvas: HTMLCanvasElement | null
@@ -192,25 +193,8 @@ export const ParticleCleanup = () => {
     handleScroll,
     initializeAnimation
   )
-
-  const getMedalDetails = useCallback(
-    (time: number | null) => {
-      gameData.gameCompletedOnce = true
-      if (time === null || time > 25) return null
-      const medals = [
-        { cutoff: 15, text: "Gold Medal", color: "#8A7400" },
-        { cutoff: 21, text: "Silver Medal", color: "#737373" },
-        { cutoff: 26, text: "Bronze Medal", color: "#A2652A" },
-      ]
-      return medals.find((medal) => time < medal.cutoff) || null
-    },
-    [gameData]
-  )
-
-  const medalDetails = useMemo(
-    () => (refs.current.allClean ? getMedalDetails(gameData.time) : null),
-    [getMedalDetails, gameData.time]
-  )
+  
+  const medalDetails = useMedalDetails(refs.current.allClean ? gameData.time : null)
 
   const reloadAnimation = useCallback(() => {
     cancelAnimationFrame(refs.current.animationFrameId)
