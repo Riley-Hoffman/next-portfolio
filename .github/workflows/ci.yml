@@ -13,26 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: |
-        npm ci  # Install project dependencies (including dev dependencies)
+      - name: Install dependencies
+        run: |
+          npm ci  # Install project dependencies (including dev dependencies)
 
-    - name: Lint the code
-      run: |
-        npm run lint  # Run linting to catch potential issues
+      - name: Lint the code
+        run: |
+          npm run lint  # Run linting to catch potential issues
 
-    - name: Run Jest tests
-      run: |
-        npx jest
+      - name: Run Jest tests
+        run: |
+          npx jest
 
-    - name: Build the project
-      run: |
-        npm run build  # Build the Next.js project
+      - name: Build the project
+        run: |
+          npm run build  # Build the Next.js project
