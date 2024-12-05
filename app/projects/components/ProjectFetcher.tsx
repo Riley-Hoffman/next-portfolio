@@ -11,7 +11,7 @@ export const ProjectFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       const fetchedProjects = await fetchFirebaseData<Project[]>("/projects")
-      setProjects(fetchedProjects ?? [])
+      setProjects(fetchedProjects?.flat() ?? [])
       setLoading(false)
     }
 
