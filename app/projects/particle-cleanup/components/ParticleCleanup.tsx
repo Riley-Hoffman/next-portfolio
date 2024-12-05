@@ -8,6 +8,7 @@ import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
 import { useGameData } from "../hooks/useGameData"
 import { useCreateParticle } from "../hooks/useCreateParticle" 
 import { useMedalDetails } from "../hooks/useMedalDetails"
+import { useInitializeAnimation } from "../hooks/useInitializeAnimation" 
 
 type Refs = {
   canvas: HTMLCanvasElement | null
@@ -147,25 +148,7 @@ export const ParticleCleanup = () => {
     [mouse, dispatch]
   )
 
-  const initializeAnimation = useCallback(() => {
-    const ctx = refs.current.canvas?.getContext("2d")
-
-    if (refs.current.container?.classList.contains("done")) {
-      refs.current.container.classList.remove("done")
-    }
-
-    if (refs.current.container) {
-      const { width, height } = refs.current.container.getBoundingClientRect()
-      if (refs.current.canvas) {
-        refs.current.canvas.width = width
-        refs.current.canvas.height = height
-      }
-      refs.current.isMobile = window.innerWidth <= 768
-
-      initParticles(refs.current.canvas!)
-      animateParticles(ctx!, refs.current.canvas!)
-    }
-  }, [initParticles, animateParticles])
+  const initializeAnimation = useInitializeAnimation(refs, dispatch, initParticles, animateParticles)
 
   useParticleCleanupEvents(
     refs,
