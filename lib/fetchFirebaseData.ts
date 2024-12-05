@@ -12,6 +12,11 @@ const app = initializeApp(firebaseConfig)
 const db = getDatabase(app)
 
 export async function fetchFirebaseData<T>(path: string): Promise<T | null> {
+  if (typeof window === "undefined") {
+    console.error("Firebase is not available on the server side")
+    return null
+  }
+
   try {
     const snapshot = await get(ref(db, path))
     return snapshot.exists() ? snapshot.val() : null
