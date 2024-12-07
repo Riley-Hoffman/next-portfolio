@@ -1,5 +1,5 @@
 "use client"
-import { useAccordion } from "../../../hooks/useAccordion"
+import { useAccordion } from "../hooks/useAccordion"
 import { useRef } from "react"
 import "./styles/accordion.css"
 
