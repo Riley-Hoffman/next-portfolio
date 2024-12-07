@@ -115,7 +115,7 @@ const config: Config = {
           textDecoration: "underline",
         },
         "main ::placeholder": {
-          color: theme("colors.bordercolor.400"),
+          color: theme("colors.bordercolor"),
           fontSize: "1rem",
           fontWeight: "300",
           lineHeight: "1.5rem",
