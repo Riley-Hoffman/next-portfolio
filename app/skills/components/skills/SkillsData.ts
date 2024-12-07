@@ -25,7 +25,7 @@ export const skillsData = [
   { skill: "SEO", icon: faMagnifyingGlassChart },
   { skill: "Express", devicon: "devicon-express-original" },
   { skill: "MongoDB", devicon: "devicon-mongodb-plain" },
-  { skill: "GitHub Actions", devicon: "devicon-githubactions-original" },
+  { skill: "GitHub Actions", devicon: "devicon-githubactions-plain" },
   { skill: "Elasticsearch", devicon: "devicon-elasticsearch-plain" },
   { skill: "Jest", devicon: "devicon-jest-plain" },
 ]
