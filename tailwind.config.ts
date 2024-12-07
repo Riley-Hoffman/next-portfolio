@@ -62,10 +62,7 @@ const config: Config = {
           "25%, 75%": { transform: "rotate(-2deg)" },
           "50%": { transform: "rotate(2deg)" },
         },
-        rotate: {
-          to: { transform: "rotate(360deg)" },
-        },
-        spin: {
+        twirl: {
           to: { transform: "rotateY(360deg)" },
         },
         typing: {

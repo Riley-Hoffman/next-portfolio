@@ -27,7 +27,7 @@ export const CompletionMessage = ({
         <span className="text-xl md:text-2xl" aria-live="polite">
           {medalDetails.text} <br />
           <FontAwesomeIcon
-            className="mx-auto mt-2 block animate-[spin_2.4s_infinite] text-6xl"
+            className="mx-auto mt-2 block animate-[twirl.4s_infinite] text-6xl"
             icon={faMedal}
             color={medalDetails.color}
           />
