@@ -6,7 +6,7 @@ jest.useFakeTimers()
 describe("useTimedEffect", () => {
   it("should trigger the effect and reset after the specified duration", () => {
     const mockApplyEffect = jest.fn()
-    const { result } = renderHook(() => useTimedEffect(1000)) 
+    const { result } = renderHook(() => useTimedEffect(1000))
 
     act(() => {
       result.current.triggerEffect(mockApplyEffect)
