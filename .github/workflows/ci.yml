@@ -42,8 +42,8 @@ jobs:
         with:
           urls: "https://rileyhoffman.com"
 
-       - name: Upload Lighthouse Report
+      - name: Upload Lighthouse Report
         uses: actions/upload-artifact@v3
         with:
           name: lighthouse-report
-          path: .lighthouseci 
+          path: .lighthouseci
