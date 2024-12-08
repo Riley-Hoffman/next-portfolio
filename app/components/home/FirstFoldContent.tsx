@@ -10,7 +10,7 @@ export const FirstFoldContent = () => (
         </span>
       </p>
     </div>
-    <p className="mx-5 mt-8 rounded-sm border border-textcolor bg-[#f5eef6a3] px-4 py-3 font-medium dark:bg-[#0a110999]">
+    <p className="mx-5 mt-8 rounded-sm border border-bordercolor bg-[#f5eef6a3] px-4 py-3 font-medium dark:bg-[#0a110999]">
       I am a web developer with a passion for building accessible and responsive
       web applications. I quickly learn new concepts and love adding to my
       growing skill set. I am a proactive problem solver who enjoys writing
