@@ -41,10 +41,5 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: "https://rileyhoffman.com"
-
-      - name: Upload Lighthouse Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: lighthouse-report
-          path: .lighthousecis
-          include-hidden-files: true
+          uploadArtifacts: true
+          temporaryPublicStorage: true
