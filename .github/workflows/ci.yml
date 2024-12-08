@@ -41,5 +41,6 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: "https://rileyhoffman.com"
+          args: "--accessibility 100 --seo 100 --best-practices 100"
           uploadArtifacts: true
           temporaryPublicStorage: true
