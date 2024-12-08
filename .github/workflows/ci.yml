@@ -23,11 +23,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci  # Install project dependencies (including dev dependencies)
+          npm ci
 
       - name: Lint the code
         run: |
-          npm run lint  # Run linting to catch potential issues
+          npm run lint
 
       - name: Run Jest tests
         run: |
@@ -36,12 +36,12 @@ jobs:
       - name: Build the project
         run: |
           npm run build  # Build the Next.js project
-          
+
   lighthouse:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Run Lighthouse CI
