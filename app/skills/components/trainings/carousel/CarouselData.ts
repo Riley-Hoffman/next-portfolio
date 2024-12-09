@@ -1,5 +1,9 @@
 export const CarouselData = [
   {
+    src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/mongodbwithnode.webp",
+    label: "Using MongoDB with Node.js",
+  },
+  {
     src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/elasticsearch1.webp",
     label: "Elasticsearch Essential Training",
   },
