@@ -1,6 +1,7 @@
 "use client"
 import { useEffect } from "react"
 import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll"
+import { OvalDecor } from "../../components/OvalDecor"
 
 interface ProjectBoxProps {
   inverted?: string
@@ -39,7 +40,7 @@ export const ProjectBox = ({
       }}
     >
       {children}
-      <div className="oval inset-0" />
+      <OvalDecor classes="inset-0" />
     </li>
   )
 }

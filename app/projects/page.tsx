@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import "../styles/oval.css"
+import "../styles/oval-decor.css"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,

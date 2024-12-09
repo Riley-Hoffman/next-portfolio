@@ -16,7 +16,7 @@ export const NavListItem = ({
   resume = "",
   isActive,
 }: NavListItemProps) => {
-  const hiddenClass = hide ? "hidden" : ""
+  const hiddenClass = hide ? " hidden" : ""
   return (
     <li className="block md:inline">
       {resume ? (
@@ -31,7 +31,7 @@ export const NavListItem = ({
         </a>
       ) : (
         <Link
-          className={`nav-link button ${hiddenClass} ${isActive ? "active" : ""} [&.active]:bg-accentone-200 [&.active]:text-textcolor hover:[&.active]:brightness-100`}
+          className={`nav-link button${hiddenClass}${isActive ? "active" : ""} [&.active]:bg-accentone-200 [&.active]:text-textcolor hover:[&.active]:brightness-100`}
           href={to}
         >
           {label}

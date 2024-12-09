@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import "../styles/oval.css"
+import "../styles/oval-decor.css"
 import "../../public/devicon.css"
 import {
   SchemaGenerator,
@@ -9,6 +9,7 @@ import { skillsData } from "./components/skills/SkillsData"
 import { SkillItem } from "./components/skills/SkillItem"
 import { Carousel } from "./components/carousel/Carousel"
 import { CarouselData } from "./components/carousel/CarouselData"
+import { OvalDecor } from "../components/OvalDecor"
 import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
 
 const description = `My skills. ${getPageTitle()}.`
@@ -51,7 +52,7 @@ export default function Skills() {
               <SkillItem key={index} {...skill} />
             ))}
           </ul>
-          <div className="oval"></div>
+          <OvalDecor />
         </div>
       </section>
       <section className="gradient-border border-t-2 border-solid bg-sitebackground pb-16 pt-7">

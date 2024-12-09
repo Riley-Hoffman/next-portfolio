@@ -1,28 +1,30 @@
-import { renderHook } from '@testing-library/react'
-import { useCreateParticle } from '../hooks/useCreateParticle'
-import { Particle } from '../classes/Particle'
-import { useGameData } from '../hooks/useGameData'
+import { renderHook } from "@testing-library/react"
+import { useCreateParticle } from "../hooks/useCreateParticle"
+import { Particle } from "../classes/Particle"
+import { useGameData } from "../hooks/useGameData"
 
-jest.mock('../classes/Particle', () => ({
-  Particle: jest.fn().mockImplementation((x, y, size, color, weight, speedFactor) => ({
-    x,
-    y,
-    size,
-    color,
-    weight,
-    speedFactor,
-  })),
+jest.mock("../classes/Particle", () => ({
+  Particle: jest
+    .fn()
+    .mockImplementation((x, y, size, color, weight, speedFactor) => ({
+      x,
+      y,
+      size,
+      color,
+      weight,
+      speedFactor,
+    })),
 }))
 
-jest.mock('../hooks/useGameData', () => ({
+jest.mock("../hooks/useGameData", () => ({
   useGameData: jest.fn(),
 }))
 
-describe('useCreateParticle', () => {
+describe("useCreateParticle", () => {
   const mockGameData: {} = {}
 
-  it('should create a particle with random values', () => {
-    (useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
+  it("should create a particle with random values", () => {
+    ;(useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
 
     const mockCanvas = { width: 800, height: 600 } as HTMLCanvasElement
 
@@ -36,12 +38,12 @@ describe('useCreateParticle', () => {
       expect.any(Number), // size
       expect.any(String), // color
       expect.any(Number), // weight
-      expect.any(Number)  // speedFactor
+      expect.any(Number) // speedFactor
     )
   })
 
-  it('should adjust speedFactor based on mobile vs desktop', () => {
-    (useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
+  it("should adjust speedFactor based on mobile vs desktop", () => {
+    ;(useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
 
     const mockCanvas = { width: 800, height: 600 } as HTMLCanvasElement
 
@@ -58,19 +60,19 @@ describe('useCreateParticle', () => {
     expect(mobileParticle.speedFactor).toBeCloseTo(0.4)
   })
 
-  it('should create a particle with a random color', () => {
-    (useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
+  it("should create a particle with a random color", () => {
+    ;(useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
 
     const mockCanvas = { width: 800, height: 600 } as HTMLCanvasElement
     const { result } = renderHook(() => useCreateParticle())
 
     const particle = result.current(mockCanvas)
 
-    expect(['#A8A0D9', '#794E8D', '#ae4971']).toContain(particle.color)
+    expect(["#A8A0D9", "#794E8D", "#ae4971"]).toContain(particle.color)
   })
 
-  it('should create a particle with a size between 10 and 40', () => {
-    (useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
+  it("should create a particle with a size between 10 and 40", () => {
+    ;(useGameData as jest.Mock).mockReturnValue([mockGameData, jest.fn()])
 
     const mockCanvas = { width: 800, height: 600 } as HTMLCanvasElement
     const { result } = renderHook(() => useCreateParticle())
