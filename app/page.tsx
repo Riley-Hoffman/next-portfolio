@@ -1,12 +1,10 @@
 "use client"
 import Head from "next/head"
-import { useRef } from "react"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "./components/SchemaGenerator"
 import "./styles/overlay.css"
-import { LazyLoadLink } from "./components/LazyLoadLink"
 import { CoverImage, CoverImageProps } from "./components/home/CoverImage"
 import { FirstFoldContent } from "./components/home/FirstFoldContent"
 import { MyJourney } from "./components/home/MyJourney"
@@ -32,7 +30,6 @@ const coverImageData: CoverImageProps["coverImageData"] = {
 }
 
 export default function Home() {
-  const targetRef = useRef<HTMLDivElement>(null)
   return (
     <>
       <Head>
@@ -44,19 +41,7 @@ export default function Home() {
       <SchemaGenerator schemaData={schemaData} />
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
-      <LazyLoadLink
-        href="/devicon.css"
-        rel="stylesheet"
-        targetRef={targetRef}
-      />
-      <section
-        className="gradient-border border-t-2 border-solid pb-12 pt-8"
-        ref={targetRef}
-      >
-        <div className="container mx-auto max-w-screen-xl text-center">
-          <SiteTechStack />
-        </div>
-      </section>
+      <SiteTechStack />
     </>
   )
 }
