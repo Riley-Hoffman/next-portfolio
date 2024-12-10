@@ -56,7 +56,7 @@ export const useParticleCleanup = () => {
   const sayMessageTemporarily = useCallback(
     (message: string) => {
       dispatch({ type: "SET_CURSOR_MESSAGE", message })
-      setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 10)
+      setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 100)
     },
     [dispatch]
   )

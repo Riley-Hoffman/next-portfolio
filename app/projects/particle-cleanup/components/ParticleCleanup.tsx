@@ -23,20 +23,15 @@ export const ParticleCleanup = () => {
             refs.current.canvas = el
           }}
         />
-        <div className="border-1 absolute inset-0 h-full w-full border-solid border-accentone-200">
-          {refs.current.allClean && (
-            <CompletionMessage
-              medalDetails={medalDetails}
-              time={gameData.time}
-            />
-          )}
-        </div>
+        {refs.current.allClean && (
+          <CompletionMessage medalDetails={medalDetails} time={gameData.time} />
+        )}
       </div>
       {gameData.gameInProgress &&
         !refs.current.allClean &&
         !gameData.cursorMessageRead && (
-          <div className="invisible h-0 w-0 overflow-hidden">
-            <p aria-live="polite">{gameData.cursorMessage}</p>
+          <div className="sr-only" aria-live="assertive">
+            {gameData.cursorMessage}
           </div>
         )}
       <PlayAgain reloadAnimation={reloadAnimation} />
