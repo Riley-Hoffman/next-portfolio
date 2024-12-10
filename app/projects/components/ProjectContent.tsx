@@ -70,7 +70,7 @@ export const ProjectContent = ({
         </p>
         <p className="pb-4">{description}</p>
         <h4 className="mb-8 text-base">
-          <span translate="no">{title} </span>Links:
+          <span translate="no">{title}</span> Links:
         </h4>
         {renderLink(liveUrl, liveContent, internal)}
         {gitUrl && renderLink(gitUrl, repoContent)}
