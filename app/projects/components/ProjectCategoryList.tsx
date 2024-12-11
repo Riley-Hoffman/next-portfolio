@@ -1,39 +1,9 @@
-import type { Project } from "./ProjectContent"
-import { ProjectBox } from "./ProjectBox"
 import { ProjectCatHeading } from "./ProjectCatHeading"
+import { ProjectBox } from "./ProjectListItem"
 import { ProjectContent } from "./ProjectContent"
-import { ProjectError } from "./ProjectError"
+import { Project } from "./ProjectContent"
 
-export default function ProjectsList({
-  initialProjects,
-}: {
-  initialProjects: Project[]
-}) {
-  const projects = initialProjects
-
-  if (!projects || projects.length === 0) {
-    return <ProjectError />
-  }
-
-  const categories: string[] = Array.from(
-    new Set(projects.map((p: Project) => p.category))
-  )
-
-  return (
-    <div className="overflow-hidden pb-20 pt-5">
-      {categories.map((category: string, idx: number) => (
-        <ProjectCategory
-          key={category}
-          category={category}
-          index={idx}
-          projects={projects}
-        />
-      ))}
-    </div>
-  )
-}
-
-function ProjectCategory({
+export const ProjectCategoryList = ({
   category,
   index,
   projects,
@@ -41,9 +11,9 @@ function ProjectCategory({
   category: string
   index: number
   projects: Project[]
-}) {
+}) => {
   const filteredProjects = projects.filter(
-    (p: Project) => p.category === category
+    (project) => project.category === category
   )
 
   return (
@@ -53,7 +23,7 @@ function ProjectCategory({
         className="max-w-screen-xl pb-5 text-base"
         aria-label={`${category} Projects`}
       >
-        {filteredProjects.map((project: Project, idx: number) => {
+        {filteredProjects.map((project, idx) => {
           const originalIndex =
             projects.findIndex((p) => p.title === project.title) + 1
           return (

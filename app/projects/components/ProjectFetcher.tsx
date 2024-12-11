@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { fetchFirebaseData } from "../../../lib/fetchFirebaseData"
 import { Project } from "./ProjectContent"
-import ProjectsList from "./ProjectsList"
+import { ProjectsCategoryMapper } from "./ProjectsCategoryMapper"
 
 export const ProjectFetcher = () => {
   const [projects, setProjects] = useState<Project[]>([])
@@ -42,5 +42,5 @@ export const ProjectFetcher = () => {
     )
   }
 
-  return <ProjectsList initialProjects={projects} />
+  return <ProjectsCategoryMapper initialProjects={projects} />
 }
