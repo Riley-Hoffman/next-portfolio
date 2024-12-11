@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { NewTabSrText } from "../../NewTabSrText"
 
 interface NavListItemProps {
   to?: string

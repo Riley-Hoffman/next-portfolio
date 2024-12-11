@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { RouteList } from "../RouteList"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { RouteList } from "../../RouteList"
+import { NewTabSrText } from "../../NewTabSrText"
 
 export const NoJsMenu = () => (
   <noscript>
