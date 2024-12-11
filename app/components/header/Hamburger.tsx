@@ -1,4 +1,3 @@
-"use client"
 import Head from "next/head"
 import { usePathname } from "next/navigation"
 import { useState, useRef, useCallback, useEffect } from "react"
