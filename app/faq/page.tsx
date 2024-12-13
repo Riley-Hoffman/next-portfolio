@@ -40,7 +40,7 @@ const faqSchemaData: WithContext<FAQPage> = {
     name: question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: `${answers[index].props.children}`,
+      text: `${answers[index]}`,
     },
   })),
   author: {
