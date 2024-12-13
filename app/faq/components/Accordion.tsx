@@ -1,12 +1,8 @@
 "use client"
-import { useAccordion } from "../hooks/useAccordion"
 import { useRef } from "react"
+import { AccordionItem } from "./AccordionItems"
+import { useAccordion } from "../hooks/useAccordion"
 import "./styles/accordion.css"
-
-type AccordionItem = {
-  question: string
-  answer: React.ReactElement
-}
 
 type AccordionProps = {
   items: AccordionItem[]

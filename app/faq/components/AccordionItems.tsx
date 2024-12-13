@@ -1,8 +1,8 @@
 import Link from "next/link"
 
-interface AccordionItem {
+export interface AccordionItem {
   question: string
-  answer: React.ReactElement
+  answer: React.ReactElement<{ children: React.ReactNode }>
 }
 
 const accordionItems: AccordionItem[] = [
