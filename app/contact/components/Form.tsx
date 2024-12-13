@@ -5,8 +5,6 @@ import { useFormValidation } from "../hooks/useFormValidation"
 import { Legend } from "./Legend"
 import { FormField } from "./FormField"
 import { SubmitButton } from "./SubmitButton"
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export interface FormData {
   name: string
@@ -14,7 +12,11 @@ export interface FormData {
   message: string
 }
 
-export const Form = () => {
+interface FormProps {
+  onErrors: (errors: string[]) => void
+}
+
+export const Form = ({ onErrors }: FormProps) => {
   const csrfTokenRef = useRef<string | null>(null)
   const csrfSecretRef = useRef<string | null>(null)
   const router = useRouter()
@@ -25,6 +27,13 @@ export const Form = () => {
       email: "",
       message: "",
     })
+
+  useEffect(() => {
+    if (Object.values(errors).some((error) => error)) {
+      const errorMessages = Object.values(errors).filter(Boolean) as string[]
+      onErrors(errorMessages)
+    }
+  }, [errors, onErrors])
 
   useEffect(() => {
     const fetchCsrfToken = async () => {
@@ -110,16 +119,6 @@ export const Form = () => {
           />
         </div>
       </fieldset>
-      {Object.values(errors).some((error) => error) && submitted && (
-        <p
-          className="absolute left-1 right-1 top-[-5rem] bg-[whitesmoke] p-2 font-source-sans text-red-500"
-          aria-live="polite"
-        >
-          <FontAwesomeIcon icon={faCircleExclamation} />
-          &nbsp;&nbsp;
-          {Object.values(errors).filter(Boolean).join(" ")}
-        </p>
-      )}
       <SubmitButton handleSubmitClick={handleSubmitClick} />
     </form>
   )

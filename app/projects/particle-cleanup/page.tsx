@@ -50,20 +50,20 @@ export default function ParticleCleanupWrapper() {
             your cursor or finger?
           </p>
           <ol
-            className="numbered-icons pl-10 pr-5 text-xl leading-normal sm:flex md:text-2xl md:leading-normal"
+            className="numbered-icons icon-color pl-10 pr-5 text-xl leading-normal sm:flex md:text-2xl md:leading-normal"
             aria-label="Medal Criteria"
           >
-            <li className="before:bg-[#8a7400]">
+            <li className="before:bg-[#8a7400] before:text-[#fbfdff]">
               <span className="sr-only">Gold, Less Than 15 seconds.</span>
               <span aria-hidden={true}>
                 <FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;
               </span>
             </li>
-            <li className="before:bg-[#737373]">
+            <li className="before:bg-[#737373] before:text-[#fbfdff]">
               <span className="sr-only">Silver, 15 to 20 seconds.</span>
               <span aria-hidden={true}>15s-20s &nbsp;&nbsp;</span>
             </li>
-            <li className="before:bg-[#a2652a]">
+            <li className="before:bg-[#a2652a] before:text-[#fbfdff]">
               <span className="sr-only">Bronze, 21 to 25 seconds.</span>
               <span aria-hidden={true}>21s-25s &nbsp;&nbsp;</span>
             </li>
