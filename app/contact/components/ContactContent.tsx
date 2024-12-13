@@ -18,7 +18,7 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
           Reports:
         </h3>
         <p className="mt-0 text-base">
-          Did you find a bug or accessibility issue while browsing this site?{" "}
+          Did you find a bug or accessibility issue while browsing this site?
           <span className="block">Your report is appreciated!</span>
         </p>
       </>
