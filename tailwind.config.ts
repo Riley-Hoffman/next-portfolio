@@ -156,7 +156,7 @@ const config: Config = {
         ".tool-tip:after": {
           backgroundColor: "#12121c",
           borderRadius: "0.25rem",
-          color: "#e5d4ed",
+          color: "#f5f5f5",
           content: "attr(aria-label)",
           display: "flex",
           fontSize: "0.75rem",
