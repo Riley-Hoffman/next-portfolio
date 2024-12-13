@@ -5,8 +5,8 @@ import { pxToRem } from "../lib/pxToRem"
 
 export const useParallax = (
   velocity: number = 0.1,
-  externalRef?: React.RefObject<HTMLDivElement>
-): React.RefObject<HTMLDivElement> => {
+  externalRef?: React.RefObject<HTMLDivElement | null>
+): React.RefObject<HTMLDivElement | null> => {
   const prefersReducedMotion = useReducedMotion()
   const internalRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<number>(0)

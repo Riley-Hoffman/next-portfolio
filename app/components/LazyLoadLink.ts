@@ -3,7 +3,7 @@ import { useEffect } from "react"
 interface LazyLoadLinkProps {
   href: string
   rel: string
-  targetRef: React.RefObject<HTMLElement>
+  targetRef: React.RefObject<HTMLElement | null>
 }
 export const LazyLoadLink = ({ href, rel, targetRef }: LazyLoadLinkProps) => {
   useEffect(() => {

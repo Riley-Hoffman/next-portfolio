@@ -32,7 +32,7 @@ const technologies: Tech[] = [
 ]
 
 export const SiteTechStack = () => {
-  const targetRef = useRef<HTMLDivElement>(null)
+  const targetRef = useRef<HTMLDivElement | null>(null)
   return (
     <>
       <LazyLoadLink
