@@ -30,7 +30,7 @@ export const ProjectContent = ({
 }: Project) => {
   const renderLink = (
     url: string,
-    content: JSX.Element,
+    content: React.ReactElement,
     isInternal?: boolean
   ) =>
     isInternal ? (
