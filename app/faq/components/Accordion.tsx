@@ -1,5 +1,5 @@
 "use client"
-import { useDebounce } from "../../../hooks/useDebounce";
+import { useDebounce } from "../../../hooks/useDebounce"
 import { AccordionItem } from "./AccordionItems"
 import { useAccordion } from "../hooks/useAccordion"
 import "./styles/accordion.css"
@@ -13,7 +13,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
   const { openIndex, handleAccordionClick, buttonRefs, contentRefs } =
     useAccordion(items.length)
 
-  const handleDebouncedClick = useDebounce(handleAccordionClick, 500);
+  const handleDebouncedClick = useDebounce(handleAccordionClick, 500)
 
   return (
     <ul
