@@ -1,9 +1,9 @@
 "use client"
-import { useProjects } from "../hooks/useProjects"
+import { useFetchProjects } from "../hooks/useFetchProjects"
 import { ProjectsCategoryMapper } from "./ProjectsCategoryMapper"
 
-export const ProjectFetcher = () => {
-  const { projects, loading } = useProjects()
+export const ProjectLoader = () => {
+  const { projects, loading } = useFetchProjects()
 
   if (loading) {
     return (

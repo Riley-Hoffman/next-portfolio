@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { fetchFirebaseData } from "../../../lib/fetchFirebaseData"
 import { Project } from "../components/ProjectContent"
 
-export const useProjects = () => {
+export const useFetchProjects = () => {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState<boolean>(true)
 
