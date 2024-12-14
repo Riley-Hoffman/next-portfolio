@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from "react"
+import { useDebounce } from "../../../hooks/useDebounce";
 import { AccordionItem } from "./AccordionItems"
 import { useAccordion } from "../hooks/useAccordion"
 import "./styles/accordion.css"
@@ -13,17 +13,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
   const { openIndex, handleAccordionClick, buttonRefs, contentRefs } =
     useAccordion(items.length)
 
-  const debounceRef = useRef<NodeJS.Timeout | null>(null)
-
-  const handleDebouncedClick = (index: number) => {
-    if (debounceRef.current) return
-
-    handleAccordionClick(index)
-
-    debounceRef.current = setTimeout(() => {
-      debounceRef.current = null
-    }, 500)
-  }
+  const handleDebouncedClick = useDebounce(handleAccordionClick, 500);
 
   return (
     <ul
