@@ -126,7 +126,7 @@
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
   }
-  :not(img)::selection {
+  ::selection {
     @apply bg-[rgba(58,_178,_215,_0.82)];
   }
   a,
