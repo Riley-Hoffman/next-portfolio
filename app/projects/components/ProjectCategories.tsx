@@ -1,4 +1,4 @@
-import type { Project } from "./ProjectContent"
+import type { Project } from "./content/ProjectContent"
 import { ProjectCategoryList } from "./ProjectCategoryList"
 import { ProjectError } from "./ProjectError"
 

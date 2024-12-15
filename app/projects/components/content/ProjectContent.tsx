@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { NewTabSrText } from "../../../components/NewTabSrText"
 
 export interface Project {
   title: string

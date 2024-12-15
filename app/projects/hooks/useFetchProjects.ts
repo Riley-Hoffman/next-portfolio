@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { fetchFirebaseData } from "../../../lib/fetchFirebaseData"
-import { Project } from "../components/ProjectContent"
+import { Project } from "../components/content/ProjectContent"
 
 export const useFetchProjects = () => {
   const [projects, setProjects] = useState<Project[]>([])
