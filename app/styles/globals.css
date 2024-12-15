@@ -126,6 +126,9 @@
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
   }
+  :not(img)::selection {
+    @apply bg-[rgba(71,_155,_181,_0.82)];
+  }
   a,
   a > *,
   .button {
