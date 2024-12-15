@@ -1,8 +1,8 @@
 "use client"
 import { useFetchProjects } from "../hooks/useFetchProjects"
-import { ProjectsCategoryMapper } from "./ProjectsCategoryMapper"
+import { ProjectCategories } from "./ProjectCategories"
 
-export const ProjectLoader = () => {
+export const ProjectsLoader = () => {
   const { projects, loading } = useFetchProjects()
 
   if (loading) {
@@ -29,5 +29,5 @@ export const ProjectLoader = () => {
     )
   }
 
-  return <ProjectsCategoryMapper initialProjects={projects} />
+  return <ProjectCategories initialProjects={projects} />
 }

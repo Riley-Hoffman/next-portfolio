@@ -4,7 +4,7 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../components/SchemaGenerator"
-import { ProjectLoader } from "./components/ProjectLoader"
+import { ProjectsLoader } from "./components/ProjectsLoader"
 import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
 
 const description = `View past projects by ${getPageTitle()}.`
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
     <>
       <SchemaGenerator schemaData={schemaData} />
       <h1 className="heading-one">Projects</h1>
-      <ProjectLoader />
+      <ProjectsLoader />
     </>
   )
 }

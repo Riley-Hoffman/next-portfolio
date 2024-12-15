@@ -2,7 +2,7 @@ import type { Project } from "./ProjectContent"
 import { ProjectCategoryList } from "./ProjectCategoryList"
 import { ProjectError } from "./ProjectError"
 
-export const ProjectsCategoryMapper = ({
+export const ProjectCategories = ({
   initialProjects,
 }: {
   initialProjects: Project[]
