@@ -127,7 +127,7 @@
     @apply mx-auto;
   }
   ::selection {
-    @apply bg-[rgba(58,_178,_215,_0.82)];
+    @apply bg-[rgba(58,_178,_215,_0.52)];
   }
   a,
   a > *,
