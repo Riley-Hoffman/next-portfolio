@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { FormData } from "../components/Form"
+import { FormData } from "../components/form/Form"
 
 export const useFormValidation = (initialState: FormData) => {
   const [formState, setFormState] = useState(initialState)
