@@ -4,14 +4,10 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation, A11y, Mousewheel } from "swiper/modules"
 import { CarouselButtons } from "./CarouselButtons"
-
-interface Slide {
-  src: string
-  label: string
-}
+import { CarouselDataTypes } from "./CarouselData"
 
 interface CarouselProps {
-  slides: Slide[]
+  slides: CarouselDataTypes[]
 }
 
 export const Carousel = ({ slides }: CarouselProps) => {

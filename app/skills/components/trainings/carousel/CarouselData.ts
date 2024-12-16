@@ -1,4 +1,9 @@
-export const CarouselData = [
+export interface CarouselDataTypes {
+  src: string,
+  label: string
+}
+
+export const CarouselData: CarouselDataTypes[] = [
   {
     src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/mongodbwithnode.webp",
     label: "Using MongoDB with Node.js",
