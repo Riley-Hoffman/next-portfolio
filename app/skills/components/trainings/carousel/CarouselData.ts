@@ -1,5 +1,5 @@
 export interface CarouselDataTypes {
-  src: string,
+  src: string
   label: string
 }
 
