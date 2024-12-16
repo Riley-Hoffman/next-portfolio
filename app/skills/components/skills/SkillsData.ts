@@ -1,9 +1,19 @@
 import {
   faArrowsAltH,
   faMagnifyingGlassChart,
+  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons"
 
-export const skillsData = [
+interface SkillBase {
+  skill: string
+}
+
+export type Skill =
+  | (SkillBase & { devicon: string; icon?: never; image?: never })
+  | (SkillBase & { icon: IconDefinition; devicon?: never; image?: never })
+  | (SkillBase & { image: string; devicon?: never; icon?: never })
+
+export const skillsData: Skill[] = [
   { skill: "HTML5", devicon: "devicon-html5-plain" },
   { skill: "CSS3", devicon: "devicon-css3-plain" },
   { skill: "Javascript + ES6", devicon: "devicon-javascript-plain" },
@@ -14,7 +24,11 @@ export const skillsData = [
   { skill: "Next.js", devicon: "devicon-nextjs-plain" },
   { skill: "Vue.js", devicon: "devicon-vuejs-plain" },
   { skill: "Rest API", icon: faArrowsAltH },
-  { skill: "WCAG", image: true },
+  {
+    skill: "WCAG",
+    image:
+      "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wcag.png",
+  },
   { skill: "Git", devicon: "devicon-git-plain" },
   { skill: "jQuery", devicon: "devicon-jquery-plain" },
   { skill: "Wordpress", devicon: "devicon-wordpress-plain" },

@@ -24,7 +24,9 @@ describe("useFormValidation", () => {
     })
 
     expect(result.current.errors.name).toBe("Please enter your name.")
-    expect(result.current.errors.email).toBe("Please enter a valid email address.")
+    expect(result.current.errors.email).toBe(
+      "Please enter a valid email address."
+    )
     expect(result.current.errors.message).toBe("Please enter a message.")
   })
 
@@ -32,9 +34,15 @@ describe("useFormValidation", () => {
     const { result } = renderHook(() => useFormValidation(initialState))
 
     act(() => {
-      result.current.handleChange("name")({ target: { value: "John Doe" } } as any)
-      result.current.handleChange("email")({ target: { value: "john@example.com" } } as any)
-      result.current.handleChange("message")({ target: { value: "Hello, this is a message." } } as any)
+      result.current.handleChange("name")({
+        target: { value: "John Doe" },
+      } as any)
+      result.current.handleChange("email")({
+        target: { value: "john@example.com" },
+      } as any)
+      result.current.handleChange("message")({
+        target: { value: "Hello, this is a message." },
+      } as any)
     })
 
     expect(result.current.formState.name).toBe("John Doe")
@@ -50,25 +58,39 @@ describe("useFormValidation", () => {
     const { result } = renderHook(() => useFormValidation(initialState))
 
     act(() => {
-      result.current.handleChange("name")({ target: { value: "John Doe" } } as any)
-      result.current.handleChange("email")({ target: { value: "invalid-email" } } as any)
-      result.current.handleChange("message")({ target: { value: "Message content" } } as any)
+      result.current.handleChange("name")({
+        target: { value: "John Doe" },
+      } as any)
+      result.current.handleChange("email")({
+        target: { value: "invalid-email" },
+      } as any)
+      result.current.handleChange("message")({
+        target: { value: "Message content" },
+      } as any)
     })
 
     act(() => {
       result.current.handleSubmitClick()
     })
 
-    expect(result.current.errors.email).toBe("Please enter a valid email address.")
+    expect(result.current.errors.email).toBe(
+      "Please enter a valid email address."
+    )
   })
 
   it("should not show email error if a valid email is entered", async () => {
     const { result } = renderHook(() => useFormValidation(initialState))
 
     act(() => {
-      result.current.handleChange("name")({ target: { value: "John Doe" } } as any)
-      result.current.handleChange("email")({ target: { value: "john.doe@example.com" } } as any)
-      result.current.handleChange("message")({ target: { value: "Message content" } } as any)
+      result.current.handleChange("name")({
+        target: { value: "John Doe" },
+      } as any)
+      result.current.handleChange("email")({
+        target: { value: "john.doe@example.com" },
+      } as any)
+      result.current.handleChange("message")({
+        target: { value: "Message content" },
+      } as any)
     })
 
     act(() => {
