@@ -111,7 +111,7 @@ const config: Config = {
           margin: "1.25rem 0",
           padding: "0 1.25rem",
         },
-        ":where(p,li) a:not(.button)": {
+        ":where(p,li) a:not(.button,.no-underline)": {
           textDecoration: "underline",
         },
         "main ::placeholder": {
