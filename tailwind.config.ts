@@ -155,7 +155,6 @@ const config: Config = {
           borderRadius: "0.25rem",
           color: "#f5f5f5",
           content: "attr(aria-label)",
-          display: "flex",
           fontSize: "0.75rem",
           opacity: "0",
           padding: "0.25rem 0.375rem",
