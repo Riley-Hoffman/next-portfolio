@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from "react"
 import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll"
 import { OvalDecor } from "../../components/OvalDecor"
