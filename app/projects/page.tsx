@@ -4,8 +4,8 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../components/SchemaGenerator"
-import { fetchFirebaseData } from "../../lib/fetchFirebaseData";
-import {Project } from "./components/content/ProjectContent"
+import { fetchFirebaseData } from "../../lib/fetchFirebaseData"
+import { Project } from "./components/content/ProjectContent"
 import { ProjectCategories } from "./components/ProjectCategories"
 import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
 
@@ -35,7 +35,7 @@ const schemaData: SchemaGeneratorProps["schemaData"] = {
 }
 
 export default async function ProjectsPage() {
-  const projects = (await fetchFirebaseData<Project[]>("/projects")).flat();
+  const projects = (await fetchFirebaseData<Project[]>("/projects")).flat()
   return (
     <>
       <SchemaGenerator schemaData={schemaData} />
