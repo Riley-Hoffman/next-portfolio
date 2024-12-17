@@ -8,10 +8,6 @@
 .swiper-pagination-bullet {
   @apply relative;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active,
-.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  @apply min-h-[.625rem] min-w-[.625rem];
-}
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   @apply opacity-100;
 }

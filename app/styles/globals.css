@@ -140,10 +140,7 @@
   .button.active {
     @apply contrast-more:!text-black contrast-more:dark:!text-white;
   }
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  textarea:focus-visible {
+  :where(a, button, input, textarea):focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
   }
   html [class*="svg-inline--fa"] {

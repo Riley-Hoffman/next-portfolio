@@ -171,7 +171,7 @@ const config: Config = {
           width: "6.25rem",
           zIndex: "1",
         },
-        ".tool-tip:hover:before, .tool-tip:hover:after, .tool-tip:focus-visible:before, .tool-tip:focus-visible:after":
+        ".tool-tip:where(:hover,:focus-visible):before, .tool-tip:where(:hover,:focus-visible):after":
           {
             opacity: "1",
             pointerEvents: "auto",
