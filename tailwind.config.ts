@@ -90,7 +90,7 @@ const config: Config = {
           fontFamily: theme("fontFamily.inconsolata"),
           textWrap: "pretty",
         },
-        "h1,h2,h3,h4,h5,h6,label,legend": {
+        ":where(h1,h2,h3,h4,h5,h6,label,legend)": {
           fontFamily: theme("fontFamily.poppins"),
         },
         "h1,h2,p,ul,ol": {
@@ -100,7 +100,7 @@ const config: Config = {
           fontSize: "1.5rem",
           lineHeight: "2rem",
         },
-        "h1:not(.reg-caps),h2:not(.reg-caps)": {
+        ":where(h1,h2):not(.reg-caps)": {
           fontVariant: "small-caps",
         },
         "p,ul,ol": {
@@ -111,14 +111,11 @@ const config: Config = {
           margin: "1.25rem 0",
           padding: "0 1.25rem",
         },
-        "p a,li a": {
+        ":where(p,li) a:not(.button)": {
           textDecoration: "underline",
         },
         "main ::placeholder": {
           color: theme("colors.accenttwo.200"),
-          fontSize: "1rem",
-          fontWeight: "300",
-          lineHeight: "1.5rem",
           opacity: "1",
         },
         ".button": {
