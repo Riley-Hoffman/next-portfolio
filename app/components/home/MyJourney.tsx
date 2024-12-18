@@ -41,7 +41,7 @@ export const MyJourney = () => {
               </figcaption>
             </figure>
           </div>
-          <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 contrast-more:bg-white dark:border-[#292d11] dark:bg-siteblack md:w-2/3 lg:px-24">
+          <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 contrast-more:bg-white dark:border-[#292d11] dark:bg-siteblack md:w-2/3 lg:px-[8%]">
             <h2>My Journey</h2>
             <p>
               My career journey began in customer service, tech support, and
