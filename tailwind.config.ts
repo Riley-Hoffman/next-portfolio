@@ -116,7 +116,7 @@ const config: Config = {
         },
         "main ::placeholder": {
           color: theme("colors.accenttwo.200"),
-          opacity: "1",
+          opacity: "0.9",
         },
         ".button": {
           backgroundColor: theme("colors.textcolor"),

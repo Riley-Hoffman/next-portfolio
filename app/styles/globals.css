@@ -159,6 +159,6 @@
     @apply contrast-more:bg-[#ffffffa8] contrast-more:dark:bg-[#0000578f];
   }
   body ::placeholder {
-    @apply contrast-more:text-black dark:text-accenttwo-100;
+    @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
   }
 }
