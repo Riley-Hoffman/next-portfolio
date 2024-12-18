@@ -1,7 +1,3 @@
-.prev-btn,
-.next-btn {
-  @apply absolute top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-accentone-100 px-4 py-1 transition-shadow active:shadow-none;
-}
 .swiper-pagination {
   @apply flex items-center justify-center gap-1;
 }
