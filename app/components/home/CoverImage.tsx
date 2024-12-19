@@ -32,7 +32,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         fetchPriority="high"
         className="absolute z-[1] h-[120vh] w-[130vw] max-w-none object-cover blur-[0.047rem] saturate-[1.4] dark:hue-rotate-[266deg] sm:blur-0"
       />
-      <div className="z-10 min-h-[74vh] max-w-screen-xl py-[0.1px]">
+      <div className="z-10 min-h-[75vh] max-w-screen-xl py-[0.1px]">
         <div className="m-[18vh_1.25rem_6.625rem_0] py-5 text-left md:w-3/5 md:translate-y-[1.25rem]">
           {coverImageData.children}
         </div>

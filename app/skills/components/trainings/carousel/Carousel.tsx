@@ -34,7 +34,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
         }}
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet md:tool-tip !h-6 !w-6 !mx-3",
+          bulletClass: "swiper-pagination-bullet md:tool-tip !size-6 !mx-3",
           bulletActiveClass: "swiper-pagination-bullet-active",
           renderBullet: (index, className) =>
             `<button class="${className}" aria-label="${slides[index]?.label || `Slide ${index + 1}`}"></button>`,
@@ -64,7 +64,7 @@ export const Carousel = ({ slides }: CarouselProps) => {
             <Image
               src={slide.src}
               alt={slide.label}
-              className="w-[56.25rem] max-w-full"
+              className="w-[56.25rem]"
               width={900}
               height={695}
               loading="eager"

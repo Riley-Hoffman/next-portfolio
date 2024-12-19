@@ -7,7 +7,7 @@ const links = [
 ]
 
 export const Sidebar = () => (
-  <aside className="ml-auto mt-9 bg-accentone-100 py-[0.1px] text-center md:sticky md:top-24 md:w-11/12 md:overflow-hidden md:rounded-sm md:border-x md:border-b md:border-solid md:border-bordercolor">
+  <aside className="mx-auto mt-9 bg-accentone-100 py-[0.1px] text-center md:sticky md:top-24 md:w-11/12 md:rounded-sm md:border-x md:border-b md:border-solid md:border-bordercolor">
     <h3 className="mx-auto my-0 bg-textcolor text-accentone-100">Links</h3>
     {links.map(({ name, url }, index) => (
       <a

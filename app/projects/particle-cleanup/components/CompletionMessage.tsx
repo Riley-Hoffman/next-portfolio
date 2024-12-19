@@ -10,10 +10,10 @@ export const CompletionMessage = ({
   medalDetails,
   time,
 }: CompletionMessageProps) => (
-  <div className="border-1 absolute inset-0 h-full w-full border-solid border-accentone-200">
+  <div className="border-1 absolute inset-0 size-full border-solid border-accentone-200">
     <p
       id="completionMessage"
-      className="completion-message absolute z-10 m-0 flex h-full w-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-100"
+      className="completion-message absolute z-10 m-0 flex size-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-100"
       tabIndex={-1}
     >
       All clean!{" "}

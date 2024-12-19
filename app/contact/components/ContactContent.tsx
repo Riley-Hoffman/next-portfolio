@@ -8,7 +8,7 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
   <div className="border-accenttwo mb-10 min-h-[16rem] max-w-[calc(100%-1.563rem)] rounded-t-md bg-textcolor py-[0.1px] text-accentone-200 shadow-[#e5d4ed_0.188rem_0.125rem_0_0] dark:shadow-[#1a2b12_0.188rem_0.125rem_0_0]">
     {errors.length === 0 && (
       <>
-        <h2 className="mb-1 inline-block w-80 overflow-hidden whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">
+        <h2 className="mb-1 inline-block w-80 overflow-clip whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">
           Write me a message...
         </h2>
         <p className="text-[1.375rem]">

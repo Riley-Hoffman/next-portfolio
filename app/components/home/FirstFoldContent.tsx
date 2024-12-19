@@ -5,7 +5,7 @@ export const FirstFoldContent = () => (
         Riley Hoffman
       </h1>
       <p className="relative mt-0 after:absolute after:bottom-[-0.75rem] after:left-5 after:h-3 after:w-5 after:bg-accenttwo-200">
-        <span className="mr-auto inline-block w-40 overflow-hidden whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">
+        <span className="mr-auto inline-block w-40 overflow-clip whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">
           Web Developer
         </span>
       </p>
