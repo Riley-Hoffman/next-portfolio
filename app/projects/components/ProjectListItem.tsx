@@ -32,7 +32,7 @@ export const ProjectBox = ({
 
   return (
     <li
-      className={`gradient-border relative my-28 gap-14 border-t-8 border-solid ${inverted} ease transition-all duration-1000 ${isFirst ? "mt-12" : "mt-0"} group md:flex [&.inverted]:flex-row-reverse`}
+      className={`gradient-border relative my-28 gap-14 border-t-8 border-solid ${inverted} ease ${inverted ? "transition-[left]" : "transition-[right]"} duration-1000 ${isFirst ? "mt-12" : "mt-0"} group md:flex [&.inverted]:flex-row-reverse`}
       ref={(el) => {
         if (el) {
           elementsRef.current.push(el)
