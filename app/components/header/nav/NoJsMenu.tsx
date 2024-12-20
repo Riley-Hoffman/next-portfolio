@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { RouteList } from "../../RouteList"
+import { RouteList } from "../../../../constants/routeList"
 import { NewTabSrText } from "../../NewTabSrText"
 
 export const NoJsMenu = () => (

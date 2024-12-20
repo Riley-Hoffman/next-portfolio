@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { RouteList } from "./components/RouteList"
+import { RouteList } from "../constants/routeList"
 
 export default function Custom404() {
   return (

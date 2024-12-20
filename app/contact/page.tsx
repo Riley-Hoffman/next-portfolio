@@ -5,7 +5,7 @@ import {
 } from "../components/SchemaGenerator"
 import { ContactWrapper } from "./components/ContactWrapper"
 import { Sidebar } from "./components/Sidebar"
-import { getBaseUrl, getImageUrl } from "../../lib/constants"
+import { getBaseUrl, getImageUrl } from "../../constants/baseData"
 
 const description =
   "Get in touch with web developer Riley Hoffman with the form on this page."

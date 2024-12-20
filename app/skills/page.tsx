@@ -7,7 +7,7 @@ import {
 } from "../components/SchemaGenerator"
 import { SkillsSection } from "./components/skills/SkillsSection"
 import { TrainingsSection } from "./components/trainings/TrainingsSection"
-import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
+import { getBaseUrl, getPageTitle, getImageUrl } from "../../constants/baseData"
 
 const description = `My skills. ${getPageTitle()}.`
 

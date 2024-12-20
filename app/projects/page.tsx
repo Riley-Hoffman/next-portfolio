@@ -7,7 +7,7 @@ import {
 import { fetchFirebaseData } from "../../lib/fetchFirebaseData"
 import { Project } from "./components/content/ProjectContent"
 import { ProjectCategories } from "./components/ProjectCategories"
-import { getBaseUrl, getPageTitle, getImageUrl } from "../../lib/constants"
+import { getBaseUrl, getPageTitle, getImageUrl } from "../../constants/baseData"
 
 const description = `View past projects by ${getPageTitle()}.`
 

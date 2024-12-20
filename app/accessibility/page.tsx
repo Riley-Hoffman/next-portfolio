@@ -4,7 +4,7 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../components/SchemaGenerator"
-import { getBaseUrl, getImageUrl } from "../../lib/constants"
+import { getBaseUrl, getImageUrl } from "../../constants/baseData"
 
 const description =
   "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users."

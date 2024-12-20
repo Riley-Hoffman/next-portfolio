@@ -8,7 +8,7 @@ import {
   getPageTitle,
   author,
   getImageUrl,
-} from "../../lib/constants"
+} from "../../constants/baseData"
 
 const description = "Find the answers to my most frequently asked questions."
 

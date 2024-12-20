@@ -7,7 +7,7 @@ import "../../styles/numbered-icons.css"
 import { faLessThan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ParticleCleanup } from "./components/ParticleCleanup"
-import { getBaseUrl, getImageUrl } from "../../../lib/constants"
+import { getBaseUrl, getImageUrl } from "../../../constants/baseData"
 
 const description =
   "How quickly can you clear all the particles from the board using your cursor or finger?"

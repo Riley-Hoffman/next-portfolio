@@ -9,7 +9,7 @@ import {
   getPageTitle,
   baseDescription,
   getImageUrl,
-} from "../lib/constants"
+} from "../constants/baseData"
 
 config.autoAddCss = false
 

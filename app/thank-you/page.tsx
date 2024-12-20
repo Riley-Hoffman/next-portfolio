@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { getBaseUrl, getImageUrl } from "../../lib/constants"
+import { getBaseUrl, getImageUrl } from "../../constants/baseData"
 
 export const metadata: Metadata = {
   title: "Thank You",

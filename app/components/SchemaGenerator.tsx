@@ -7,7 +7,7 @@ import {
   getImageUrl,
   githubUrl,
   linkedInUrl,
-} from "../../lib/constants"
+} from "../../constants/baseData"
 
 export interface SchemaGeneratorProps {
   schemaData: {

@@ -1,5 +1,5 @@
 import { NewTabSrText } from "../../components/NewTabSrText"
-import { githubUrl, linkedInUrl } from "../../../lib/constants"
+import { githubUrl, linkedInUrl } from "../../../constants/baseData"
 
 const links = [
   { name: "GitHub", url: githubUrl },
