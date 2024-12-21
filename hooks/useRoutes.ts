@@ -6,7 +6,7 @@ export interface Route {
   name: string
 }
 
-export const getRoutes = (
+export const useRoutes = (
   dir = path.join(process.cwd(), "app"),
   basePath = "",
   excludedPaths: string[] = ["/thank-you"]
@@ -41,7 +41,7 @@ export const getRoutes = (
         })
       }
 
-      routes.push(...getRoutes(fullPath, routePath, excludedPaths))
+      routes.push(...useRoutes(fullPath, routePath, excludedPaths))
     }
   }
 
