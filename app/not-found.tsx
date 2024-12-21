@@ -1,9 +1,7 @@
 import Link from "next/link"
-import { getRoutes } from "../lib/getRoutes"
+import { RouteList } from "../constants/routeList"
 
-export default async function Custom404() {
-  const routes = await getRoutes()
-
+export default function Custom404() {
   return (
     <>
       <h1 className="heading-one">Page Not Found</h1>
@@ -19,7 +17,7 @@ export default async function Custom404() {
           className="max-w-screen-md px-5 text-left text-lg md:text-2xl"
           aria-label="Available pages"
         >
-          {routes.map((route) => (
+          {RouteList.map((route) => (
             <li className="py-1 md:py-2" key={route.path}>
               <h3 className="my-1 px-1 text-lg">{route.name}:</h3>
               <Link

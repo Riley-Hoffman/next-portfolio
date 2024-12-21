@@ -1,30 +1,22 @@
-import { getRoutes, Route } from "../../lib/getRoutes"
-import { Header } from "./header/Header"
-import { Footer } from "./Footer"
-import { NoJsMenu } from "./header/nav/NoJsMenu"
+import dynamic from "next/dynamic"
+import { Header } from "../components/header/Header"
+import { Footer } from "../components/Footer"
 
 interface LayoutContentProps {
   children: React.ReactNode
-  routes: Route[]
 }
+const DynamicImports = dynamic(() => import("../components/DynamicImports"))
 
-export const LayoutContent = async ({
-  children,
-  routes,
-}: LayoutContentProps) => {
-  routes = await getRoutes()
-
-  return (
-    <>
-      <Header />
-      <NoJsMenu routes={routes} />
-      <main>
-        <a href="#content" id="content" className="tab-focus-button z-30">
-          Start of main content
-        </a>
-        {children}
-      </main>
-      <Footer />
-    </>
-  )
-}
+export const LayoutContent = ({ children }: LayoutContentProps) => (
+  <>
+    <Header />
+    <main>
+      <a href="#content" id="content" className="tab-focus-button z-30">
+        Start of main content
+      </a>
+      {children}
+    </main>
+    <DynamicImports />
+    <Footer />
+  </>
+)
