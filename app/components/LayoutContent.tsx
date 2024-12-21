@@ -1,4 +1,4 @@
-import { getRoutes, Route } from "../../hooks/getRoutes"
+import { getRoutes, Route } from "../../lib/getRoutes"
 import { Header } from "./header/Header"
 import { Footer } from "./Footer"
 import { NoJsMenu } from "./header/nav/NoJsMenu"

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getRoutes } from "../hooks/getRoutes"
+import { getRoutes } from "../lib/getRoutes"
 
 export default function Custom404() {
   return (
