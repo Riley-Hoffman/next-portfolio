@@ -4,10 +4,18 @@ import { usePathname } from "next/navigation"
 import { Hamburger } from "./Hamburger"
 import { NavListItem } from "./NavListItem"
 
-interface MenuLink {
+interface NavLink {
   to: string
   label: string
 }
+
+export const navLinks: NavLink[] = [
+  { to: "/", label: "Home" },
+  { to: "/projects/", label: "Projects" },
+  { to: "/skills/", label: "Skills" },
+  { to: "/faq/", label: "FAQ" },
+  { to: "/contact/", label: "Contact" },
+]
 
 export const Nav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
@@ -49,14 +57,6 @@ export const Nav = () => {
     return currentPath === path
   }
 
-  const menuLinks: MenuLink[] = [
-    { to: "/", label: "Home" },
-    { to: "/projects/", label: "Projects" },
-    { to: "/skills/", label: "Skills" },
-    { to: "/faq/", label: "FAQ" },
-    { to: "/contact/", label: "Contact" },
-  ]
-
   return (
     <nav className="h-10 min-w-36 md:order-2">
       <Hamburger expanded={handleHamburgerClick} />
@@ -64,7 +64,7 @@ export const Nav = () => {
         className="w-38 relative right-0 top-[1.625rem] z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.008rem_1rem_-0.563rem_black] shadow-textcolor transition-transform duration-200 ease-in-out peer-aria-expanded:scale-100 sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none"
         aria-label="Menu Links"
       >
-        {menuLinks.map(({ to, label }) => (
+        {navLinks.map(({ to, label }) => (
           <NavListItem
             key={to}
             to={to}

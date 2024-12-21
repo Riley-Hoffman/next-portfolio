@@ -18,12 +18,12 @@ export default function Custom404() {
           aria-label="Available pages"
         >
           {RouteList.map((route) => (
-            <li className="py-1 md:py-2" key={route.path}>
-              <h3 className="my-1 px-1 text-lg">{route.name}:</h3>
+            <li className="py-1 md:py-2" key={route.to}>
+              <h3 className="my-1 px-1 text-lg">{route.label}:</h3>
               <Link
                 className="button block w-fit px-2 py-1 no-underline"
-                href={route.path}
-              >{`${route.path}`}</Link>
+                href={route.to}
+              >{`${route.to}`}</Link>
             </li>
           ))}
         </ul>
