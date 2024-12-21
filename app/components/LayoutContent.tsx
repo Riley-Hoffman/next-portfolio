@@ -1,4 +1,4 @@
-import { useRoutes, Route } from "../../hooks/useRoutes"
+import { getRoutes, Route } from "../../hooks/getRoutes"
 import { Header } from "./header/Header"
 import { Footer } from "./Footer"
 import { NoJsMenu } from "./header/nav/NoJsMenu"
@@ -8,7 +8,7 @@ interface LayoutContentProps {
 }
 
 export const LayoutContent = ({ children }: LayoutContentProps) => {
-  const routes: Route[] = useRoutes()
+  const routes: Route[] = getRoutes()
 
   return (
     <>

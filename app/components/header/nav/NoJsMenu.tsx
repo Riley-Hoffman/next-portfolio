@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { NewTabSrText } from "../../NewTabSrText"
-import { Route } from "../../../../hooks/useRoutes"
+import { Route } from "../../../../hooks/getRoutes"
 
 interface NoJsMenuProps {
   routes: Route[]
