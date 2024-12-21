@@ -5,10 +5,14 @@ import { NoJsMenu } from "./header/nav/NoJsMenu"
 
 interface LayoutContentProps {
   children: React.ReactNode
+  routes: Route[]
 }
 
-export const LayoutContent = ({ children }: LayoutContentProps) => {
-  const routes: Route[] = getRoutes()
+export const LayoutContent = async ({
+  children,
+  routes,
+}: LayoutContentProps) => {
+  routes = await getRoutes()
 
   return (
     <>

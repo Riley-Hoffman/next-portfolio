@@ -2,6 +2,7 @@ import "./styles/globals.css"
 import type { Metadata } from "next"
 import { ThemeProvider } from "./components/ThemeProvider"
 import { LayoutContent } from "./components/LayoutContent"
+import { Route } from "../lib/getRoutes"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import {
@@ -37,9 +38,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  routes,
 }: {
   children: React.ReactNode
+  routes: Route[] | undefined
 }) {
+  const flattenedRoutes = routes ? routes.flat() : []
   return (
     <html lang="en">
       <head>
@@ -94,10 +98,10 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LayoutContent>{children}</LayoutContent>
+          <LayoutContent routes={flattenedRoutes}>{children}</LayoutContent>
         </ThemeProvider>
         <div className="nojslayout hidden">
-          <LayoutContent>{children}</LayoutContent>
+          <LayoutContent routes={flattenedRoutes}>{children}</LayoutContent>
         </div>
       </body>
     </html>

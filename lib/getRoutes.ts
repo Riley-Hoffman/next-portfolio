@@ -1,3 +1,4 @@
+"use server"
 import fs from "fs"
 import path from "path"
 
@@ -6,7 +7,7 @@ export interface Route {
   name: string
 }
 
-export const getRoutes = (
+export const getRoutes = async (
   dir = path.join(process.cwd(), "app"),
   basePath = "",
   excludedPaths: string[] = ["/thank-you"]
@@ -41,7 +42,7 @@ export const getRoutes = (
         })
       }
 
-      routes.push(...getRoutes(fullPath, routePath, excludedPaths))
+      routes.push(...(await getRoutes(fullPath, routePath, excludedPaths)))
     }
   }
 
