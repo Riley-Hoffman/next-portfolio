@@ -7,8 +7,8 @@ interface LayoutContentProps {
   children: React.ReactNode
 }
 
-export const LayoutContent = async ({ children }: LayoutContentProps) => {
-  const routes: Route[] = await getRoutes()
+export const LayoutContent = ({ children }: LayoutContentProps) => {
+  const routes: Route[] = getRoutes()
 
   return (
     <>
