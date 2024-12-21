@@ -26,6 +26,11 @@ export const ParticleCleanup = () => {
         {refs.current.allClean && (
           <CompletionMessage medalDetails={medalDetails} time={gameData.time} />
         )}
+        <noscript>
+          <p className="relative z-10 text-center">
+            JavaScript is required to play this game.
+          </p>
+        </noscript>
       </div>
       {gameData.gameInProgress &&
         !refs.current.allClean &&

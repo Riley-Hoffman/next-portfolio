@@ -89,7 +89,7 @@ export default function RootLayout({
           content="#0d191c"
         />
         <noscript>
-          <style>{`.nojslayout.hidden {display: block}`}</style>
+          <style>{`.nojslayout.hidden {display: block}.hamburger {display: none}`}</style>
         </noscript>
       </head>
       <body>

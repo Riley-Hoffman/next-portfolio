@@ -1,12 +1,19 @@
 import Link from "next/link"
-import { RouteList } from "../../../../constants/routeList"
 import { NewTabSrText } from "../../NewTabSrText"
+import { Route } from "../../../../hooks/getRoutes"
 
-export const NoJsMenu = () => (
+interface NoJsMenuProps {
+  routes: Route[]
+}
+
+export const NoJsMenu = ({ routes }: NoJsMenuProps) => (
   <noscript>
-    <nav className="px-4 md:hidden" aria-label="No JS Menu Links">
-      <ul className="flex flex-wrap gap-x-2 gap-y-3">
-        {RouteList.map(
+    <nav
+      className="sticky top-0 z-30 bg-accentone-100 px-4 md:hidden"
+      aria-label="No JS Menu Links"
+    >
+      <ul className="flex flex-wrap gap-x-2 gap-y-3 p-4">
+        {routes.map(
           (route) =>
             route.name !== "Particle Cleanup Game" &&
             route.name !== "Accessibility" && (

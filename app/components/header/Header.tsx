@@ -4,7 +4,6 @@ import { SkipToContent } from "./SkipToContent"
 import { ThemeChanger } from "./ThemeChanger"
 import { HeaderLogo } from "./HeaderLogo"
 import { Nav } from "./nav/Nav"
-import { NoJsMenu } from "./nav/NoJsMenu"
 
 export const Header = () => {
   const [jsEnabled, setJsEnabled] = useState(false)
@@ -21,7 +20,6 @@ export const Header = () => {
         {jsEnabled && <ThemeChanger />}
         <Nav />
       </div>
-      <NoJsMenu />
     </header>
   )
 }

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { RouteList } from "../constants/routeList"
+import { getRoutes } from "../hooks/getRoutes"
 
 export default function Custom404() {
   return (
@@ -17,7 +17,7 @@ export default function Custom404() {
           className="max-w-screen-md px-5 text-left text-lg md:text-2xl"
           aria-label="Available pages"
         >
-          {RouteList.map((route) => (
+          {getRoutes().map((route) => (
             <li className="py-1 md:py-2" key={route.path}>
               <h3 className="my-1 px-1 text-lg">{route.name}:</h3>
               <Link
