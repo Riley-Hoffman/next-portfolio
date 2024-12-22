@@ -3,7 +3,7 @@ import { useGameData } from "./useGameData"
 import { Refs } from "./useParticleCleanup"
 
 export const useReloadAnimation = (
-  refs: React.MutableRefObject<Refs>,
+  refs: React.RefObject<Refs>,
   initializeAnimation: () => void
 ) => {
   const [gameData, dispatch] = useGameData()

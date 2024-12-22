@@ -1,4 +1,4 @@
-import { useEffect, useRef, MutableRefObject } from "react"
+import { useEffect, useRef, RefObject } from "react"
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -7,7 +7,7 @@ type HTMLElementWithDataset = HTMLElement & {
   }
 }
 
-export const useTriggerOnScroll = (): MutableRefObject<
+export const useTriggerOnScroll = (): RefObject<
   HTMLElementWithDataset[]
 > => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])

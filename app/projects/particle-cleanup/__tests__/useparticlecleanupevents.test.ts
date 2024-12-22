@@ -3,10 +3,10 @@
  */
 import { renderHook } from "@testing-library/react"
 import { useParticleCleanupEvents } from "../hooks/useParticleCleanupEvents"
-import { MutableRefObject } from "react"
+import { RefObject } from "react"
 
 describe("useParticleCleanupEvents", () => {
-  let refs: MutableRefObject<any>
+  let refs: RefObject<any>
   let handleInteraction: jest.Mock
   let handleScroll: jest.Mock
   let initializeAnimation: jest.Mock

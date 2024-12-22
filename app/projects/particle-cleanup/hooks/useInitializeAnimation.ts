@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 
 export const useInitializeAnimation = (
-  refs: React.MutableRefObject<any>,
+  refs: React.RefObject<any>,
   dispatch: React.Dispatch<any>,
   initParticles: (canvas: HTMLCanvasElement) => void,
   animateParticles: (

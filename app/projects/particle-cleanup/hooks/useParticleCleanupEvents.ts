@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject } from "react"
+import { useEffect, RefObject } from "react"
 
 interface Refs {
   container: HTMLElement | null
@@ -11,7 +11,7 @@ type HandleScroll = (event: Event) => void
 type InitializeAnimation = () => void
 
 export const useParticleCleanupEvents = (
-  refs: MutableRefObject<Refs>,
+  refs: RefObject<Refs>,
   handleInteraction: HandleInteraction,
   handleScroll: HandleScroll,
   initializeAnimation: InitializeAnimation

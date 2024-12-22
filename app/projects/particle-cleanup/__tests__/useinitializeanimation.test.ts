@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react"
 import { useInitializeAnimation } from "../hooks/useInitializeAnimation"
 
 describe("useInitializeAnimation", () => {
-  let refs: React.MutableRefObject<any>
+  let refs: React.RefObject<any>
   let dispatch: jest.Mock
   let initParticles: jest.Mock
   let animateParticles: jest.Mock
