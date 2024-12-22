@@ -2,14 +2,14 @@ import "./styles/globals.css"
 import type { Metadata } from "next"
 import { ThemeProvider } from "./components/ThemeProvider"
 import { LayoutContent } from "./components/LayoutContent"
-import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
 import {
   getBaseUrl,
   getPageTitle,
   baseDescription,
   getImageUrl,
 } from "../constants/baseData"
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 

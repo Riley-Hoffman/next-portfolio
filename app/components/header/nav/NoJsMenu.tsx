@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { NewTabSrText } from "../../NewTabSrText"
 import { useRoutes } from "../../../../hooks/useRoutes"
+import { NewTabSrText } from "../../NewTabSrText"
 
 export const NoJsMenu = () => (
   <noscript>

@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import Link from "next/link"
-import { NewTabSrText } from "../../components/NewTabSrText"
 import { useTimedEffect } from "../../../hooks/useTimedEffect"
+import { NewTabSrText } from "../../components/NewTabSrText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 

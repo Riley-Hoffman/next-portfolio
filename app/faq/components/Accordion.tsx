@@ -1,7 +1,7 @@
 "use client"
+import { useAccordion } from "../hooks/useAccordion"
 import { useDebounce } from "../../../hooks/useDebounce"
 import { AccordionItem } from "./AccordionItems"
-import { useAccordion } from "../hooks/useAccordion"
 import "./styles/accordion.css"
 
 type AccordionProps = {

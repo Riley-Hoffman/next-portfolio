@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic"
 import { useRef } from "react"
+import dynamic from "next/dynamic"
 
 const LazyUseParallax = dynamic(() => import("./LazyUseParallax"), {
   ssr: false,

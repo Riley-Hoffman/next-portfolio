@@ -1,9 +1,9 @@
 "use client"
 import { useState, useEffect } from "react"
 import { SkipToContent } from "./SkipToContent"
-import { ThemeChanger } from "./ThemeChanger"
 import { HeaderLogo } from "./HeaderLogo"
 import { Nav } from "./nav/Nav"
+import { ThemeChanger } from "./ThemeChanger"
 import { NoJsMenu } from "./nav/NoJsMenu"
 
 export const Header = () => {

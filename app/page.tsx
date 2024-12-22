@@ -4,12 +4,12 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "./components/SchemaGenerator"
-import "./styles/overlay.css"
 import { CoverImage, CoverImageProps } from "./components/home/CoverImage"
 import { FirstFoldContent } from "./components/home/FirstFoldContent"
 import { MyJourney } from "./components/home/MyJourney"
 import { SiteTechStack } from "./components/home/SiteTechStack"
 import { baseDescription } from "../constants/baseData"
+import "./styles/overlay.css"
 
 const description = baseDescription
 const schemaData: SchemaGeneratorProps["schemaData"] = {

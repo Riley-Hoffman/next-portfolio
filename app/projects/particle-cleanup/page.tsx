@@ -3,11 +3,11 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../../components/SchemaGenerator"
-import "../../styles/numbered-icons.css"
-import { faLessThan } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ParticleCleanup } from "./components/ParticleCleanup"
 import { getBaseUrl, getImageUrl } from "../../../constants/baseData"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLessThan } from "@fortawesome/free-solid-svg-icons"
+import "../../styles/numbered-icons.css"
 
 const description =
   "How quickly can you clear all the particles from the board using your cursor or finger?"

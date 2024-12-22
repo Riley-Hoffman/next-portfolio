@@ -1,5 +1,5 @@
-import { faMedal } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMedal } from "@fortawesome/free-solid-svg-icons"
 
 interface CompletionMessageProps {
   medalDetails: { text: string; color: string } | null

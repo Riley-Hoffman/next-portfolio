@@ -1,8 +1,8 @@
 "use client"
-import "../../../styles/overlay.css"
+import { useParticleCleanup } from "../hooks/useParticleCleanup"
 import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
-import { useParticleCleanup } from "../hooks/useParticleCleanup"
+import "../../../styles/overlay.css"
 
 export const ParticleCleanup = () => {
   const { refs, gameData, medalDetails, reloadAnimation } = useParticleCleanup()

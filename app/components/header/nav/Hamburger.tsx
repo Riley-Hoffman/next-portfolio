@@ -1,6 +1,6 @@
+import { useState, useRef, useCallback, useEffect } from "react"
 import Head from "next/head"
 import { usePathname } from "next/navigation"
-import { useState, useRef, useCallback, useEffect } from "react"
 
 interface HamburgerProps {
   expanded?: (isExpanded: boolean) => void

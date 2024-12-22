@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
-import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons"
 
 export const BackToTopButton = () => {
   const [visible, setVisible] = useState(false)
