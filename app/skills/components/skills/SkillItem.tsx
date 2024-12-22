@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { Skill } from "./SkillsData"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Skill } from "./SkillsData"
 
 export const SkillItem = ({ skill, icon, devicon, image }: Skill) => (
   <li className="text-center">

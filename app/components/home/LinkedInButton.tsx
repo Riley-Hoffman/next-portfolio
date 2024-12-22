@@ -1,9 +1,9 @@
 import { useRef } from "react"
 import Link from "next/link"
-import { useTimedEffect } from "../../../hooks/useTimedEffect"
-import { NewTabSrText } from "../../components/NewTabSrText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { useTimedEffect } from "../../../hooks/useTimedEffect"
+import { NewTabSrText } from "../../components/NewTabSrText"
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
