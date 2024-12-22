@@ -9,7 +9,11 @@ interface Route {
 export const RouteList: Route[] = [
   { to: "/", label: "Home", includeInFilter: true },
   { to: "/projects/", label: "Projects", includeInFilter: true },
-  { to: "/projects/particle-cleanup/", label: "Particle Cleanup Game", includeInFilter: false },
+  {
+    to: "/projects/particle-cleanup/",
+    label: "Particle Cleanup Game",
+    includeInFilter: false,
+  },
   { to: "/skills/", label: "Skills", includeInFilter: true },
   { to: "/faq/", label: "FAQ", includeInFilter: true },
   { to: "/contact/", label: "Contact", includeInFilter: true },

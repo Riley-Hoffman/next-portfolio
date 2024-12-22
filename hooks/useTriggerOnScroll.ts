@@ -7,9 +7,7 @@ type HTMLElementWithDataset = HTMLElement & {
   }
 }
 
-export const useTriggerOnScroll = (): RefObject<
-  HTMLElementWithDataset[]
-> => {
+export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])
 
   const getActiveState = (rect: DOMRect, distance: number) => {
