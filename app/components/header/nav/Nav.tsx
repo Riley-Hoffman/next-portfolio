@@ -5,7 +5,7 @@ import { useRoutes } from "../../../../hooks/useRoutes"
 import { Hamburger } from "./Hamburger"
 import { NavListItem } from "./NavListItem"
 
-export const Nav = () => {
+const Nav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
   const [hide, setHide] = useState<boolean>(false)
 
@@ -70,3 +70,5 @@ export const Nav = () => {
     </nav>
   )
 }
+
+export default Nav

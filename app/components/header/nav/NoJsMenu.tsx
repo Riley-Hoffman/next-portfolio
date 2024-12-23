@@ -2,19 +2,21 @@ import Link from "next/link"
 import { useRoutes } from "../../../../hooks/useRoutes"
 import { NewTabSrText } from "../../NewTabSrText"
 
+const noJsMenuLinkClasses = "button p-2 py-3 md:p-4"
+
 export const NoJsMenu = () => (
   <noscript>
-    <nav className="px-4 md:hidden" aria-label="No JS Menu Links">
-      <ul className="flex flex-wrap gap-x-2 gap-y-3">
+    <nav className="px-4" aria-label="No JS Menu Links">
+      <ul className="flex flex-wrap justify-center py-2 gap-x-0 gap-y-2 md:gap-0">
         {useRoutes("filtered").map((route) => (
           <li key={route.to}>
-            <Link className="button p-1" href={route.to}>
+            <Link className={noJsMenuLinkClasses} href={route.to}>
               {route.label}
             </Link>
           </li>
         ))}
         <li>
-          <a className="button p-1" href="/riley-hoffman-resume.pdf">
+          <a className={noJsMenuLinkClasses} href="/riley-hoffman-resume.pdf">
             Resume <NewTabSrText />
           </a>
         </li>

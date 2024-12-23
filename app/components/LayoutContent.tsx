@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer"
 interface LayoutContentProps {
   children: React.ReactNode
 }
-const DynamicImports = dynamic(() => import("../components/DynamicImports"))
+const GlobalDynamicImports = dynamic(() => import("./GlobalDynamicImports"))
 
 export const LayoutContent = ({ children }: LayoutContentProps) => (
   <>
@@ -16,7 +16,7 @@ export const LayoutContent = ({ children }: LayoutContentProps) => (
       </a>
       {children}
     </main>
-    <DynamicImports />
+    <GlobalDynamicImports />
     <Footer />
   </>
 )

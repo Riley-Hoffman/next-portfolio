@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes"
 
-export const ThemeChanger = () => {
+const ThemeChanger = () => {
   const { theme, setTheme } = useTheme()
 
   return (
@@ -13,3 +13,5 @@ export const ThemeChanger = () => {
     ></button>
   )
 }
+
+export default ThemeChanger

@@ -1,11 +1,11 @@
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { BackToTopButton } from "./BackToTopButton"
 
-const DynamicImports = () => (
+const GlobalDynamicImports = () => (
   <>
     <BackToTopButton />
     <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS!} />
   </>
 )
 
-export default DynamicImports
+export default GlobalDynamicImports

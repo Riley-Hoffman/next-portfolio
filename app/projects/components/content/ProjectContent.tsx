@@ -15,7 +15,7 @@ export interface Project {
   category: string
   isFirst?: boolean
 }
-const commonClasses = "button mx-5 px-3 py-1 uppercase"
+const commonProjectLinkClasses = "button mx-5 px-3 py-1 uppercase"
 
 export const ProjectContent = ({
   title,
@@ -34,12 +34,12 @@ export const ProjectContent = ({
     isInternal?: boolean
   ) =>
     isInternal ? (
-      <Link className={commonClasses} href={url}>
+      <Link className={commonProjectLinkClasses} href={url}>
         {content}
       </Link>
     ) : (
       <a
-        className={commonClasses}
+        className={commonProjectLinkClasses}
         href={url}
         target="_blank"
         rel="noopener noreferrer"
