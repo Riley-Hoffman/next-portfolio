@@ -152,7 +152,7 @@ const config: Config = {
         },
         ".tool-tip:after": {
           backgroundColor: "#12121c",
-          borderRadius: "0.25rem",
+          borderRadius: "0.375rem",
           color: "#f5f5f5",
           content: "attr(aria-label)",
           fontSize: "0.75rem",
@@ -162,7 +162,7 @@ const config: Config = {
           position: "absolute",
           transform: "translateY(-100%) translateX(-50%)",
           transition: "opacity 0.2s",
-          top: "0",
+          top: "1px",
           left: "50%",
           width: "6.25rem",
           zIndex: "1",
