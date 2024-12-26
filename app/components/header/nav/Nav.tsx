@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import { usePathname } from "next/navigation"
 import { useRoutes } from "../../../../hooks/useRoutes"
 import { Hamburger } from "./Hamburger"
 import { NavListItem } from "./NavListItem"
@@ -40,11 +39,6 @@ const Nav = () => {
     }
   }, [isExpanded])
 
-  const currentPath = usePathname()
-  const isActive = (path: string) => {
-    return currentPath === path
-  }
-
   return (
     <nav className="h-10 min-w-36 md:order-2">
       <Hamburger expanded={handleHamburgerClick} />
@@ -53,19 +47,9 @@ const Nav = () => {
         aria-label="Menu Links"
       >
         {useRoutes("filtered").map(({ to, label }) => (
-          <NavListItem
-            key={to}
-            to={to}
-            label={label}
-            hide={hide}
-            isActive={isActive(to)}
-          />
+          <NavListItem key={to} to={to} label={label} hide={hide} />
         ))}
-        <NavListItem
-          resume="/riley-hoffman-resume.pdf"
-          hide={hide}
-          isActive={false}
-        />
+        <NavListItem resume="/riley-hoffman-resume.pdf" hide={hide} />
       </ul>
     </nav>
   )

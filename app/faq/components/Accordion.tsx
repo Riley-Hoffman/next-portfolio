@@ -1,4 +1,5 @@
 "use client"
+import clsx from "clsx"
 import { useAccordion } from "../hooks/useAccordion"
 import { useDebounce } from "../../../hooks/useDebounce"
 import { AccordionItem } from "./AccordionItems"
@@ -36,7 +37,10 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             {item.question}
           </button>
           <div
-            className={`overflow-hidden px-5 duration-500 ease-in-out ${openIndex === index ? "py-[0.125rem]" : "peer-[.init]:hidden"}`}
+            className={clsx("overflow-hidden px-5 duration-500 ease-in-out", {
+              "py-[0.125rem]": openIndex === index,
+              "peer-[.init]:hidden": openIndex !== index,
+            })}
             tabIndex={-1}
             ref={(el) => {
               if (el) {

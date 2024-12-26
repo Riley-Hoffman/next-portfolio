@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { NewTabSrText } from "../../components/NewTabSrText"
 import { githubUrl, linkedInUrl } from "../../../constants/baseData"
 
@@ -12,9 +13,10 @@ export const Sidebar = () => (
     {links.map(({ name, url }, index) => (
       <a
         key={name}
-        className={`block ${
+        className={clsx(
+          "block font-urbanist no-underline",
           index === 0 ? "pb-2 pt-3" : "pb-3 pt-2"
-        } font-urbanist no-underline`}
+        )}
         href={url}
         target="_blank"
         rel="noopener noreferrer"

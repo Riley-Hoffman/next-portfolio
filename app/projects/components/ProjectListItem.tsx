@@ -1,5 +1,6 @@
 "use client"
 import { useEffect } from "react"
+import clsx from "clsx"
 import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll"
 import { OvalDecor } from "../../components/OvalDecor"
 
@@ -32,7 +33,18 @@ export const ProjectBox = ({
 
   return (
     <li
-      className={`gradient-border relative my-28 gap-14 border-t-8 border-solid ${inverted} ease ${inverted ? "transition-[left]" : "transition-[right]"} duration-1000 ${isFirst ? "mt-12" : "mt-0"} group md:flex [&.inverted]:flex-row-reverse`}
+      className={clsx(
+        "ease group gradient-border relative my-28 gap-14 border-t-8 border-solid md:flex",
+        {
+          "transition-[left]": inverted,
+          "transition-[right]": !inverted,
+          "duration-1000": true,
+          "mt-12": isFirst,
+          "mt-0": !isFirst,
+          "flex-row-reverse": inverted,
+        },
+        inverted
+      )}
       ref={(el) => {
         if (el) {
           elementsRef.current.push(el)

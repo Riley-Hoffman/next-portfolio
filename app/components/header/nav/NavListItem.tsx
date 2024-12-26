@@ -1,11 +1,12 @@
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import clsx from "clsx"
 import { NewTabSrText } from "../../NewTabSrText"
 
 interface NavListItemProps {
   to?: string
   label?: string
   hide?: boolean
-  isActive: boolean
   resume?: string
 }
 
@@ -14,15 +15,15 @@ export const NavListItem = ({
   label = "",
   hide = false,
   resume = "",
-  isActive,
 }: NavListItemProps) => {
-  const hiddenClass = hide ? " hidden" : ""
-  const activeClass = isActive ? " active" : ""
+  const currentPath = usePathname()
+  const isActive = to && currentPath === to
+
   return (
     <li className="block md:inline">
       {resume ? (
         <a
-          className={`nav-link button ${hiddenClass}`}
+          className={clsx("nav-link button", { hidden: hide })}
           href={resume}
           target="_blank"
           rel="noopener noreferrer"
@@ -32,7 +33,10 @@ export const NavListItem = ({
         </a>
       ) : (
         <Link
-          className={`nav-link button no-underline [&.active]:bg-accentone-200 [&.active]:text-textcolor hover:[&.active]:brightness-100${hiddenClass}${activeClass}`}
+          className={clsx(
+            "nav-link button no-underline [&.active]:bg-accentone-200 [&.active]:text-textcolor hover:[&.active]:brightness-100",
+            { hidden: hide, active: isActive }
+          )}
           href={to}
         >
           {label}
