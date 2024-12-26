@@ -13,9 +13,6 @@ interface FormFieldProps {
   required?: boolean
 }
 
-const commonFormFieldClasses =
-  "gradient-border w-full border-2 bg-[#f8f3f9] p-2 font-source-sans text-lg caret-[#12121c] focus-visible:m-[2px] focus-visible:w-[calc(100%-4px)] focus-visible:border-0 contrast-more:bg-white dark:bg-[#F3F9F6] dark:text-[#12121c]"
-
 export const FormField = ({
   type,
   value,
@@ -33,7 +30,7 @@ export const FormField = ({
     </label>
     {type === "textarea" ? (
       <textarea
-        className={`inverted ${commonFormFieldClasses}`}
+        className="form-field inverted"
         id={name as string}
         name={name as string}
         placeholder={placeholder}
@@ -45,7 +42,7 @@ export const FormField = ({
       />
     ) : (
       <input
-        className={commonFormFieldClasses}
+        className="form-field"
         id={name as string}
         name={name as string}
         placeholder={placeholder}
