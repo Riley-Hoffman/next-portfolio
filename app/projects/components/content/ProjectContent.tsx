@@ -65,7 +65,7 @@ export const ProjectContent = ({
     <>
       <div className="project-info basis-2/4 pb-10 pt-5">
         <h3 className="pb-4 text-2xl">{title}</h3>
-        <p className="mb-8 pb-4 font-poppins text-lg" translate="no">
+        <p className="mb-8 pb-4 font-poppins" translate="no">
           {skills}
         </p>
         <p className="pb-4">{description}</p>

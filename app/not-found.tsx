@@ -14,7 +14,7 @@ export default function Custom404() {
           Please select one of the available pages below:
         </p>
         <ul
-          className="max-w-screen-md px-5 text-left text-lg md:text-2xl"
+          className="max-w-screen-md px-5 text-left md:text-2xl"
           aria-label="Available pages"
         >
           {useRoutes("all").map((route) => (

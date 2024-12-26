@@ -103,7 +103,7 @@ const config: Config = {
         ":where(h1,h2):not(.reg-caps)": {
           fontVariant: "small-caps",
         },
-        "p,ul,ol": {
+        "p,ul,ol,form": {
           fontSize: "1.125rem",
           lineHeight: "1.75rem",
         },
