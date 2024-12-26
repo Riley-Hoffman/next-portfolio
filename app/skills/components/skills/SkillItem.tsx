@@ -17,7 +17,7 @@ export const SkillItem = ({ skill, icon, devicon, image }: Skill) => (
         />
       )}
     </div>
-    <p className="mt-1" translate="no">
+    <p className="mt-1 text-xl" translate="no">
       {skill}
     </p>
   </li>
