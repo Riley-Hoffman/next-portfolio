@@ -10,7 +10,6 @@ interface FormFieldProps {
   ) => void
   name: keyof FormData
   placeholder: string
-  required?: boolean
 }
 
 export const FormField = ({
@@ -19,7 +18,6 @@ export const FormField = ({
   handleChange,
   name,
   placeholder,
-  required = true,
 }: FormFieldProps) => (
   <>
     <label
@@ -34,7 +32,7 @@ export const FormField = ({
         id={name as string}
         name={name as string}
         placeholder={placeholder}
-        required={required}
+        required={true}
         value={value}
         spellCheck={true}
         rows={8}
@@ -48,7 +46,7 @@ export const FormField = ({
         placeholder={placeholder}
         type={type}
         enterKeyHint="next"
-        required={required}
+        required={true}
         value={value}
         onChange={handleChange(name)}
       />
