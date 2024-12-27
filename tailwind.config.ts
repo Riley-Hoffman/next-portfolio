@@ -93,19 +93,14 @@ const config: Config = {
         ":where(h1,h2,h3,h4,h5,h6,label,legend)": {
           fontFamily: theme("fontFamily.poppins"),
         },
-        "h1,h2,p,ul,ol": {
-          lineHeight: "1.5rem",
-        },
         "h1,h2": {
           fontSize: "1.5rem",
-          lineHeight: "2rem",
         },
         ":where(h1,h2):not(.reg-caps)": {
           fontVariant: "small-caps",
         },
         "p,ul,ol,form": {
           fontSize: "1.125rem",
-          lineHeight: "1.75rem",
         },
         "p,h1,h2,h3,h4,h5,h6": {
           margin: "1.25rem 0",
