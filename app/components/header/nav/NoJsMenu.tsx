@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useRoutes } from "../../../../hooks/useRoutes"
+import { useRoutes } from "@/hooks/useRoutes"
 import { NewTabSrText } from "../../NewTabSrText"
 
 const noJsMenuLinkClasses = "button p-2 py-3 md:p-4"

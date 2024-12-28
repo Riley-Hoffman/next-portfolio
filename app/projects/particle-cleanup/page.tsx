@@ -6,7 +6,7 @@ import {
   SchemaGeneratorProps,
 } from "../../components/SchemaGenerator"
 import { ParticleCleanup } from "./components/ParticleCleanup"
-import { getBaseUrl, getImageUrl } from "../../../constants/baseData"
+import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 import "../../styles/numbered-icons.css"
 
 const description =

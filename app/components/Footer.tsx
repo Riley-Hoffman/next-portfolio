@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { getPageTitle, githubUrl, version } from "../../constants/baseData"
+import { getPageTitle, githubUrl, version } from "@/constants/baseData"
 
 export const Footer = () => {
   return (

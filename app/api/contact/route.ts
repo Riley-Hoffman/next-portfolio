@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import nodemailer from "nodemailer"
 import csrf from "csrf"
-import { contactEmailTemplate } from "../../../lib/contactEmailTemplate"
+import { contactEmailTemplate } from "@/lib/contactEmailTemplate"
 
 const csrfProtection = new csrf()
 

@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { NewTabSrText } from "../../components/NewTabSrText"
-import { githubUrl, linkedInUrl } from "../../../constants/baseData"
+import { githubUrl, linkedInUrl } from "@/constants/baseData"
 
 const links = [
   { name: "GitHub", url: githubUrl },

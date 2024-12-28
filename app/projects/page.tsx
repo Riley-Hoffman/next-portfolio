@@ -3,10 +3,10 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from "../components/SchemaGenerator"
-import { fetchFirebaseData } from "../../lib/fetchFirebaseData"
+import { fetchFirebaseData } from "@/lib/fetchFirebaseData"
 import { Project } from "./components/content/ProjectContent"
 import { ProjectCategories } from "./components/ProjectCategories"
-import { getBaseUrl, getPageTitle, getImageUrl } from "../../constants/baseData"
+import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"
 import "../styles/oval-decor.css"
 
 const description = `View past projects by ${getPageTitle()}.`

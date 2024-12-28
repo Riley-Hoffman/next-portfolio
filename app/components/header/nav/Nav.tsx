@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { useRoutes } from "../../../../hooks/useRoutes"
+import { useRoutes } from "@/hooks/useRoutes"
 import { Hamburger } from "./Hamburger"
 import { NavListItem } from "./NavListItem"
 

@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react"
 import { useAccordion } from "../hooks/useAccordion"
-import { pxToRem } from "../../../lib/pxToRem"
+import { pxToRem } from "@/lib/pxToRem"
 
 jest.mock("../../../lib/pxToRem", () => ({
   pxToRem: jest.fn((value: number) => value / 16),

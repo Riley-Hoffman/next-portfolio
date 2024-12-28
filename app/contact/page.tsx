@@ -5,7 +5,7 @@ import {
 } from "../components/SchemaGenerator"
 import { ContactWrapper } from "./components/ContactWrapper"
 import { Sidebar } from "./components/Sidebar"
-import { getBaseUrl, getImageUrl } from "../../constants/baseData"
+import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 import "./components/form/styles/form.css"
 
 const description =

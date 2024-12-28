@@ -5,7 +5,7 @@ import {
 } from "../components/SchemaGenerator"
 import { SkillsSection } from "./components/skills/SkillsSection"
 import { TrainingsSection } from "./components/trainings/TrainingsSection"
-import { getBaseUrl, getPageTitle, getImageUrl } from "../../constants/baseData"
+import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"
 import "../styles/oval-decor.css"
 import "../../public/devicon.css"
 

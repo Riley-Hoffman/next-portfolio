@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react"
-import { pxToRem } from "../../../lib/pxToRem"
+import { pxToRem } from "@/lib/pxToRem"
 
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)

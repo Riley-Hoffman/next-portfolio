@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react"
 import { useReducedMotion } from "./useReducedMotion"
 import { useScrollHandler } from "./useScrollHandler"
-import { pxToRem } from "../lib/pxToRem"
+import { pxToRem } from "@/lib/pxToRem"
 
 export const useParallax = (
   velocity: number = 0.1,

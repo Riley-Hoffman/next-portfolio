@@ -1,8 +1,8 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { LinkedInButton } from "./LinkedInButton"
-import { useReducedMotion } from "../../../hooks/useReducedMotion"
-import { useScrollHandler } from "../../../hooks/useScrollHandler"
+import { useReducedMotion } from "@/hooks/useReducedMotion"
+import { useScrollHandler } from "@/hooks/useScrollHandler"
 
 export const MyJourney = () => {
   const prefersReducedMotion = useReducedMotion()

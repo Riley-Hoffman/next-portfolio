@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react"
 import clsx from "clsx"
-import { useTriggerOnScroll } from "../../../hooks/useTriggerOnScroll"
+import { useTriggerOnScroll } from "@/hooks/useTriggerOnScroll"
 import { OvalDecor } from "../../components/OvalDecor"
 
 interface ProjectBoxProps {
