@@ -1,4 +1,4 @@
-import packageJson from "../package.json"
+import packageJson from "@/package.json"
 
 export const getBaseUrl = (path: string = "") =>
   `https://rileyhoffman.com${path}/`
