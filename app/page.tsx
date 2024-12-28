@@ -9,7 +9,7 @@ import { FirstFoldContent } from "./components/home/FirstFoldContent"
 import { MyJourney } from "./components/home/MyJourney"
 import { SiteTechStack } from "./components/home/SiteTechStack"
 import { baseDescription } from "@/constants/baseData"
-import "./styles/overlay.css"
+import "@/app/styles/overlay.css"
 
 const description = baseDescription
 const schemaData: SchemaGeneratorProps["schemaData"] = {

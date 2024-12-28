@@ -1,7 +1,7 @@
 "use client"
 import clsx from "clsx"
 import { useAccordion } from "../hooks/useAccordion"
-import { useDebounce } from "../../../hooks/useDebounce"
+import { useDebounce } from "@/hooks/useDebounce"
 import { AccordionItem } from "./AccordionItems"
 import "./styles/accordion.css"
 

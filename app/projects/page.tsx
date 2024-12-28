@@ -7,7 +7,7 @@ import { fetchFirebaseData } from "@/lib/fetchFirebaseData"
 import { Project } from "./components/content/ProjectContent"
 import { ProjectCategories } from "./components/ProjectCategories"
 import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"
-import "../styles/oval-decor.css"
+import "@/app/styles/oval-decor.css"
 
 const description = `View past projects by ${getPageTitle()}.`
 

@@ -6,8 +6,8 @@ import {
 import { SkillsSection } from "./components/skills/SkillsSection"
 import { TrainingsSection } from "./components/trainings/TrainingsSection"
 import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"
-import "../styles/oval-decor.css"
-import "../../public/devicon.css"
+import "@/app/styles/oval-decor.css"
+import "@/public/devicon.css"
 
 const description = `My skills. ${getPageTitle()}.`
 

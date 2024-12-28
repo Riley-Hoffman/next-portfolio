@@ -7,7 +7,7 @@ import {
 } from "@/app/components/SchemaGenerator"
 import { ParticleCleanup } from "./components/ParticleCleanup"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
-import "../../styles/numbered-icons.css"
+import "@/app/styles/numbered-icons.css"
 
 const description =
   "How quickly can you clear all the particles from the board using your cursor or finger?"
