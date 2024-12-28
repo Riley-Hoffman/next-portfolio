@@ -4,7 +4,7 @@ import { faLessThan } from "@fortawesome/free-solid-svg-icons"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../../components/SchemaGenerator"
+} from "@/app/components/SchemaGenerator"
 import { ParticleCleanup } from "./components/ParticleCleanup"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 import "../../styles/numbered-icons.css"

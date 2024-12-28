@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../components/SchemaGenerator"
+} from "@/app/components/SchemaGenerator"
 import { SkillsSection } from "./components/skills/SkillsSection"
 import { TrainingsSection } from "./components/trainings/TrainingsSection"
 import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"

@@ -1,6 +1,6 @@
 import { skillsData } from "./SkillsData"
 import { SkillItem } from "./SkillItem"
-import { OvalDecor } from "../../../components/OvalDecor"
+import { OvalDecor } from "@/app/components/OvalDecor"
 
 export const SkillsSection = () => (
   <section className="pb-16">

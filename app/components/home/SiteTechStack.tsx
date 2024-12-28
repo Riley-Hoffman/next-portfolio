@@ -1,6 +1,6 @@
 import { useRef } from "react"
-import { LazyLoadLink } from "../../components/LazyLoadLink"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { LazyLoadLink } from "@/app/components/LazyLoadLink"
+import { NewTabSrText } from "@/app/components/NewTabSrText"
 
 interface Tech {
   name: string

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { useTimedEffect } from "@/hooks/useTimedEffect"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { NewTabSrText } from "@/app/components/NewTabSrText"
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)

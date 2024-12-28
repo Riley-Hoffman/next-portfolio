@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { NewTabSrText } from "../../components/NewTabSrText"
+import { NewTabSrText } from "@/app/components/NewTabSrText"
 import { githubUrl, linkedInUrl } from "@/constants/baseData"
 
 const links = [

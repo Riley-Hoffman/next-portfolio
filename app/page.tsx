@@ -3,7 +3,7 @@ import Head from "next/head"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "./components/SchemaGenerator"
+} from "@/app/components/SchemaGenerator"
 import { CoverImage, CoverImageProps } from "./components/home/CoverImage"
 import { FirstFoldContent } from "./components/home/FirstFoldContent"
 import { MyJourney } from "./components/home/MyJourney"

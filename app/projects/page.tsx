@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "../components/SchemaGenerator"
+} from "@/app/components/SchemaGenerator"
 import { fetchFirebaseData } from "@/lib/fetchFirebaseData"
 import { Project } from "./components/content/ProjectContent"
 import { ProjectCategories } from "./components/ProjectCategories"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { ThemeProvider } from "./components/ThemeProvider"
-import { LayoutContent } from "./components/LayoutContent"
+import { ThemeProvider } from "@/app/components/ThemeProvider"
+import { LayoutContent } from "@/app/components/LayoutContent"
 import {
   getBaseUrl,
   getPageTitle,
