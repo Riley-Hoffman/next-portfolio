@@ -31,7 +31,7 @@ export const LinkedInButton = () => {
       />
       <span className="px-6">
         Follow me on LinkedIn
-        <NewTabSrText icon={true} />
+        <NewTabSrText />
       </span>
     </Link>
   )

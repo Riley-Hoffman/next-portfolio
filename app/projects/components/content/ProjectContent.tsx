@@ -45,7 +45,7 @@ export const ProjectContent = ({
         rel="noopener noreferrer"
       >
         {content}
-        <NewTabSrText icon={true} />
+        <NewTabSrText />
       </a>
     )
 

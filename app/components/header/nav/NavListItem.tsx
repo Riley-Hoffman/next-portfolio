@@ -29,7 +29,7 @@ export const NavListItem = ({
           rel="noopener noreferrer"
         >
           Resume
-          <NewTabSrText icon={true} />
+          <NewTabSrText />
         </a>
       ) : (
         <Link

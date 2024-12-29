@@ -17,7 +17,7 @@ export const NoJsMenu = () => (
         ))}
         <li>
           <a className={noJsMenuLinkClasses} href="/riley-hoffman-resume.pdf">
-            Resume <NewTabSrText />
+            Resume <NewTabSrText icon={false} />
           </a>
         </li>
       </ul>

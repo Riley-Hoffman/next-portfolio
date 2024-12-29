@@ -1,14 +1,17 @@
-import clsx from 'clsx';
+import clsx from "clsx"
 
 interface NewTabSrTextProps {
-  useText?: boolean;
-  icon?: boolean;
+  text?: boolean
+  icon?: boolean
 }
 
-export const NewTabSrText = ({ useText = true, icon = false }: NewTabSrTextProps) => {
+export const NewTabSrText = ({
+  text = true,
+  icon = true,
+}: NewTabSrTextProps) => {
   return (
     <span className={clsx({ "new-tab-sr-text": icon })}>
-      {useText && <span className="sr-only"> (Opens in a new tab)</span>}
+      {text && <span className="sr-only"> (Opens in a new tab)</span>}
     </span>
-  );
-};
+  )
+}

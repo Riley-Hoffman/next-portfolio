@@ -21,7 +21,7 @@ export const Sidebar = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        {name} <NewTabSrText icon={true} />
+        {name} <NewTabSrText />
       </a>
     ))}
   </aside>
