@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
-import { NewTabSrText } from "../../NewTabSrText"
+import { NewTabContent } from "../../NewTabContent"
 
 interface NavListItemProps {
   to?: string
@@ -29,7 +29,7 @@ export const NavListItem = ({
           rel="noopener noreferrer"
         >
           Resume
-          <NewTabSrText />
+          <NewTabContent />
         </a>
       ) : (
         <Link

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRoutes } from "@/hooks/useRoutes"
-import { NewTabSrText } from "../../NewTabSrText"
+import { NewTabContent } from "../../NewTabContent"
 
 const noJsMenuLinkClasses = "button p-2 py-3 md:p-4"
 
@@ -17,7 +17,7 @@ export const NoJsMenu = () => (
         ))}
         <li>
           <a className={noJsMenuLinkClasses} href="/riley-hoffman-resume.pdf">
-            Resume <NewTabSrText icon={false} />
+            Resume <NewTabContent icon={false} />
           </a>
         </li>
       </ul>

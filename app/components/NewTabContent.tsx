@@ -1,16 +1,16 @@
 import clsx from "clsx"
 
-interface NewTabSrTextProps {
+interface NewTabContentProps {
   text?: boolean
   icon?: boolean
 }
 
-export const NewTabSrText = ({
+export const NewTabContent = ({
   text = true,
   icon = true,
-}: NewTabSrTextProps) => {
+}: NewTabContentProps) => {
   return (
-    <span className={clsx({ "new-tab-sr-text": icon })}>
+    <span className={clsx({ "new-tab-content": icon })}>
       {text && <span className="sr-only"> (Opens in a new tab)</span>}
     </span>
   )

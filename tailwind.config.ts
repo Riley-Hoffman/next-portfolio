@@ -130,7 +130,7 @@ const config: Config = {
         ".inverted": {
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientthree")},${theme("colors.gradienttwo")} 50%,${theme("colors.gradientone")} 70%)`,
         },
-        ".new-tab-sr-text": {
+        ".new-tab-content": {
           "&:after": {
             content: '"\\f08e"',
             display: "inline-block",

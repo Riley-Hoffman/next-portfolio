@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { NewTabSrText } from "@/app/components/NewTabSrText"
+import { NewTabContent } from "@/app/components/NewTabContent"
 
 export interface Project {
   title: string
@@ -45,7 +45,7 @@ export const ProjectContent = ({
         rel="noopener noreferrer"
       >
         {content}
-        <NewTabSrText />
+        <NewTabContent />
       </a>
     )
 

@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { LazyLoadLink } from "@/app/components/LazyLoadLink"
-import { NewTabSrText } from "@/app/components/NewTabSrText"
+import { NewTabContent } from "@/app/components/NewTabContent"
 
 interface Tech {
   name: string
@@ -66,7 +66,7 @@ export const SiteTechStack = () => {
                   ></i>
                   <p className="my-1 text-xl" translate="no">
                     {tech.name}
-                    <NewTabSrText text={false} />
+                    <NewTabContent text={false} />
                   </p>
                 </a>
               </li>

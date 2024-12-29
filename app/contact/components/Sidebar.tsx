@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { NewTabSrText } from "@/app/components/NewTabSrText"
+import { NewTabContent } from "@/app/components/NewTabContent"
 import { githubUrl, linkedInUrl } from "@/constants/baseData"
 
 const links = [
@@ -21,7 +21,7 @@ export const Sidebar = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        {name} <NewTabSrText />
+        {name} <NewTabContent />
       </a>
     ))}
   </aside>
