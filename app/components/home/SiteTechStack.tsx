@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { LazyLoadLink } from "@/app/components/LazyLoadLink"
+import { Icon } from "@iconify/react"
 import { NewTabContent } from "@/app/components/NewTabContent"
 
 interface Tech {
@@ -8,25 +8,25 @@ interface Tech {
   url: string
 }
 const technologies: Tech[] = [
-  { name: "React", logo: "devicon-react-original", url: "https://react.dev" },
+  { name: "React", logo: "cib:react", url: "https://react.dev" },
   {
     name: "Next.js",
-    logo: "devicon-nextjs-plain",
+    logo: "devicon-plain:nextjs",
     url: "https://nextjs.org",
   },
   {
     name: "TypeScript",
-    logo: "devicon-typescript-plain",
+    logo: "cib:typescript",
     url: "https://www.typescriptlang.org",
   },
   {
     name: "Tailwind CSS",
-    logo: "devicon-tailwindcss-original",
+    logo: "bxl:tailwind-css",
     url: "https://tailwindcss.com",
   },
   {
     name: "Firebase",
-    logo: "devicon-firebase-plain",
+    logo: "bxl:firebase",
     url: "https://firebase.google.com",
   },
 ]
@@ -35,11 +35,6 @@ export const SiteTechStack = () => {
   const targetRef = useRef<HTMLDivElement | null>(null)
   return (
     <>
-      <LazyLoadLink
-        href="/devicon.css"
-        rel="stylesheet"
-        targetRef={targetRef}
-      />
       <section
         className="gradient-border border-t-2 border-solid pb-12 pt-8"
         ref={targetRef}
@@ -60,10 +55,7 @@ export const SiteTechStack = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i
-                    className={`${tech.logo} mx-auto text-7xl`}
-                    aria-hidden={true}
-                  ></i>
+                  <Icon icon={tech.logo} className="mx-auto text-7xl" />
                   <p className="my-1 text-xl" translate="no">
                     {tech.name}
                     <NewTabContent text={false} />

@@ -1,45 +1,38 @@
-import {
-  faArrowsAltH,
-  faMagnifyingGlassChart,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons"
-
 interface SkillBase {
   skill: string
 }
 
 export type Skill =
-  | (SkillBase & { devicon: string; icon?: never; image?: never })
-  | (SkillBase & { icon: IconDefinition; devicon?: never; image?: never })
-  | (SkillBase & { image: string; devicon?: never; icon?: never })
+  | (SkillBase & { icon: string; image?: never })
+  | (SkillBase & { image: string; icon?: never })
 
 export const skillsData: Skill[] = [
-  { skill: "HTML5", devicon: "devicon-html5-plain" },
-  { skill: "CSS3", devicon: "devicon-css3-plain" },
-  { skill: "Javascript + ES6", devicon: "devicon-javascript-plain" },
-  { skill: "Typescript", devicon: "devicon-typescript-plain" },
-  { skill: "SASS", devicon: "devicon-sass-original" },
-  { skill: "Tailwind CSS", devicon: "devicon-tailwindcss-original" },
-  { skill: "React", devicon: "devicon-react-original" },
-  { skill: "Next.js", devicon: "devicon-nextjs-plain" },
-  { skill: "Vue.js", devicon: "devicon-vuejs-plain" },
-  { skill: "Rest API", icon: faArrowsAltH },
+  { skill: "HTML5", icon: "devicon-plain:html5" },
+  { skill: "CSS3", icon: "devicon-plain:css3" },
+  { skill: "Javascript + ES6", icon: "devicon-plain:javascript" },
+  { skill: "Typescript", icon: "cib:typescript" },
+  { skill: "SASS", icon: "cib:sass-alt" },
+  { skill: "Tailwind CSS", icon: "bxl:tailwind-css" },
+  { skill: "React", icon: "cib:react" },
+  { skill: "Next.js", icon: "devicon-plain:nextjs" },
+  { skill: "Vue.js", icon: "devicon-plain:vuejs" },
+  { skill: "Rest API", icon: "fa6-solid:arrows-left-right" },
   {
     skill: "WCAG",
     image:
       "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wcag.png",
   },
-  { skill: "Git", devicon: "devicon-git-plain" },
-  { skill: "jQuery", devicon: "devicon-jquery-plain" },
-  { skill: "Wordpress", devicon: "devicon-wordpress-plain" },
-  { skill: "PHP", devicon: "devicon-php-plain" },
-  { skill: "Firebase", devicon: "devicon-firebase-plain" },
-  { skill: "Netlify", devicon: "devicon-netlify-plain" },
-  { skill: "Node.js", devicon: "devicon-nodejs-plain" },
-  { skill: "SEO", icon: faMagnifyingGlassChart },
-  { skill: "Express", devicon: "devicon-express-original" },
-  { skill: "MongoDB", devicon: "devicon-mongodb-plain" },
-  { skill: "GitHub Actions", devicon: "devicon-githubactions-plain" },
-  { skill: "Elasticsearch", devicon: "devicon-elasticsearch-plain" },
-  { skill: "Jest", devicon: "devicon-jest-plain" },
+  { skill: "Git", icon: "devicon-plain:git" },
+  { skill: "jQuery", icon: "devicon-plain:jquery" },
+  { skill: "Wordpress", icon: "devicon-plain:wordpress" },
+  { skill: "PHP", icon: "devicon-plain:php" },
+  { skill: "Firebase", icon: "bxl:firebase" },
+  { skill: "Netlify", icon: "devicon-plain:netlify" },
+  { skill: "Node.js", icon: "devicon-plain:nodejs" },
+  { skill: "SEO", icon: "fa6-solid:magnifying-glass-chart" },
+  { skill: "Express", icon: "devicon:express" },
+  { skill: "MongoDB", icon: "devicon-plain:mongodb" },
+  { skill: "GitHub Actions", icon: "devicon-plain:githubactions" },
+  { skill: "Elasticsearch", icon: "devicon-plain:elasticsearch" },
+  { skill: "Jest", icon: "devicon-plain:jest" },
 ]

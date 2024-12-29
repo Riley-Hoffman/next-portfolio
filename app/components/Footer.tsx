@@ -1,6 +1,5 @@
 import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { Icon } from "@iconify/react"
 import { getPageTitle, githubUrl, version } from "@/constants/baseData"
 
 export const Footer = () => {
@@ -18,9 +17,9 @@ export const Footer = () => {
             aria-label="Site repo on GitHub (Opens in a new tab)"
           >
             {" "}
-            <FontAwesomeIcon
+            <Icon
               className="ml-1 text-3xl group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200 md:text-base"
-              icon={faGithub}
+              icon="fa6-brands:github"
             />
           </a>
         </p>

@@ -152,8 +152,8 @@
   :where(a, button, input, textarea):focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
   }
-  html [class*="svg-inline--fa"] {
-    @apply align-middle;
+  html [class*="iconify"] {
+    @apply inline-block align-middle;
   }
   .tab-focus-button {
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;

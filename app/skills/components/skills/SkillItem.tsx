@@ -1,12 +1,11 @@
 import Image from "next/image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Icon } from "@iconify/react"
 import { Skill } from "./SkillsData"
 
-export const SkillItem = ({ skill, icon, devicon, image }: Skill) => (
+export const SkillItem = ({ skill, icon, image }: Skill) => (
   <li className="text-center">
     <div className="skill-icon-box flex min-h-[2.766rem] items-center justify-center">
-      {devicon && <i className={`text-5xl ${devicon}`} aria-hidden={true} />}
-      {icon && <FontAwesomeIcon className="text-5xl" icon={icon} />}
+      {icon && <Icon className="text-5xl" icon={icon} />}
       {image && (
         <Image
           src={image}

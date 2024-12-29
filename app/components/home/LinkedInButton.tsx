@@ -1,7 +1,6 @@
 import { useRef } from "react"
 import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { Icon } from "@iconify/react"
 import { useTimedEffect } from "@/hooks/useTimedEffect"
 import { NewTabContent } from "@/app/components/NewTabContent"
 
@@ -25,9 +24,9 @@ export const LinkedInButton = () => {
       rel="noopener noreferrer"
       onMouseEnter={() => triggerEffect(applyEffect)}
     >
-      <FontAwesomeIcon
+      <Icon
         className="box-content bg-accentone-200 p-2 text-5xl text-textcolor group-hover:bg-textcolor group-hover:text-accentone-200 dark:bg-[#292d11]"
-        icon={faLinkedinIn}
+        icon="fa6-brands:linkedin-in"
       />
       <span className="px-6">
         Follow me on LinkedIn

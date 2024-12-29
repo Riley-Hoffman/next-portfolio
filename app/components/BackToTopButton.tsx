@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons"
+import { Icon } from "@iconify/react"
 
 export const BackToTopButton = () => {
   const [visible, setVisible] = useState(false)
@@ -30,7 +29,7 @@ export const BackToTopButton = () => {
       className="button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-200 px-2 py-2 shadow-[0_0.008rem_1rem_-0.563rem_black] md:tool-tip hover:border-textcolor focus-visible:border-textcolor"
       aria-label="Back to Top"
     >
-      <FontAwesomeIcon className="text-2xl" icon={faChevronCircleUp} />
+      <Icon className="text-2xl" icon="fa6-solid:circle-chevron-up" />
     </button>
   ) : null
 }

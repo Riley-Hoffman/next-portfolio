@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMedal } from "@fortawesome/free-solid-svg-icons"
+import { Icon } from "@iconify/react"
 
 interface CompletionMessageProps {
   medalDetails: { text: string; color: string } | null
@@ -27,9 +26,9 @@ export const CompletionMessage = ({
         {medalDetails && (
           <span className="text-xl md:text-2xl" aria-live="polite">
             {medalDetails.text} <br />
-            <FontAwesomeIcon
+            <Icon
               className="mx-auto mt-2 block animate-[twirl.4s_infinite] text-6xl"
-              icon={faMedal}
+              icon="fa6-solid:medal"
               color={medalDetails.color}
             />
           </span>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLessThan } from "@fortawesome/free-solid-svg-icons"
+import { Icon } from "@iconify/react"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
@@ -56,7 +55,7 @@ export default function ParticleCleanupWrapper() {
             <li className="before:bg-[#8a7400] before:text-[#fbfdff]">
               <span className="sr-only">Gold, Less Than 15 seconds.</span>
               <span aria-hidden={true}>
-                <FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;
+                <Icon icon="fa6-solid:less-than" /> 15s &nbsp;&nbsp;
               </span>
             </li>
             <li className="before:bg-[#737373] before:text-[#fbfdff]">

@@ -1,5 +1,4 @@
 "use client"
-import Head from "next/head"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
@@ -32,12 +31,6 @@ const coverImageData: CoverImageProps["coverImageData"] = {
 export default function Home() {
   return (
     <>
-      <Head>
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-css-tags */}
-          <link href="/devicon.css" rel="stylesheet"></link>
-        </noscript>
-      </Head>
       <SchemaGenerator schemaData={schemaData} />
       <CoverImage coverImageData={coverImageData} />
       <MyJourney />
