@@ -130,6 +130,17 @@ const config: Config = {
         ".inverted": {
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientthree")},${theme("colors.gradienttwo")} 50%,${theme("colors.gradientone")} 70%)`,
         },
+        ".new-tab-sr-text": {
+          "&:after": {
+            content: '"\\f08e"',
+            display: "inline-block",
+            height: "0",
+            paddingLeft: "0.313rem",
+            fontFamily: theme("fontFamily.fontawesomesolid"),
+            fontSize: "63%",
+            fontWeight: "normal",
+          },
+        },
         ".tool-tip": {
           "&:not(.fixed,.absolute)": {
             position: "relative",

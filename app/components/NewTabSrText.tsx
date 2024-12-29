@@ -1,15 +1,14 @@
+import clsx from 'clsx';
+
 interface NewTabSrTextProps {
-  icon?: boolean
+  useText?: boolean;
+  icon?: boolean;
 }
 
-export const NewTabSrText = ({ icon = false }: NewTabSrTextProps) => (
-  <>
-    <span className="sr-only"> (opens in a new tab)</span>
-    {icon && (
-      <span
-        className="after:inline-block after:h-0 after:pl-[0.313rem] after:font-fontawesomesolid after:text-[63%] after:font-normal after:content-['\f08e']"
-        aria-hidden={true}
-      ></span>
-    )}
-  </>
-)
+export const NewTabSrText = ({ useText = true, icon = false }: NewTabSrTextProps) => {
+  return (
+    <span className={clsx({ "new-tab-sr-text": icon })}>
+      {useText && <span className="sr-only"> (Opens in a new tab)</span>}
+    </span>
+  );
+};
