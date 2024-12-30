@@ -55,7 +55,7 @@ export default function ParticleCleanupWrapper() {
             <li className="before:bg-[#8a7400] before:text-[#fbfdff]">
               <span className="sr-only">Gold, Less Than 15 seconds.</span>
               <span aria-hidden={true}>
-                <Icon icon="fa6-solid:less-than" /> 15s &nbsp;&nbsp;
+                <Icon icon="hugeicons:less-than" /> 15s &nbsp;&nbsp;
               </span>
             </li>
             <li className="before:bg-[#737373] before:text-[#fbfdff]">

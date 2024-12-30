@@ -19,7 +19,7 @@ export const Footer = () => {
             {" "}
             <Icon
               className="ml-1 text-3xl group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200 md:text-base"
-              icon="fa6-brands:github"
+              icon="cib:github"
             />
           </a>
         </p>
