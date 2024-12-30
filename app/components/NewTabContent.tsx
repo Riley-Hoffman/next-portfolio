@@ -10,11 +10,11 @@ export const NewTabContent = ({
   icon = true,
 }: NewTabContentProps) => {
   return (
-    <span>
+    <>
       {text && <span className="sr-only"> (Opens in a new tab)</span>}
       {icon && (
         <Icon className="ml-[0.12rem]" icon="fluent:window-new-16-regular" />
       )}
-    </span>
+    </>
   )
 }

@@ -44,7 +44,7 @@ export const SiteTechStack = () => {
             Technologies Used To Build This Site
           </h2>
           <ul
-            className="block min-h-40 max-w-6xl sm:flex sm:flex-wrap sm:justify-center sm:gap-x-6"
+            className="block min-h-40 max-w-6xl sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5"
             aria-label="Site tech stack."
           >
             {technologies.map((tech) => (
