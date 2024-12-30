@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react'
+import { Icon } from "@iconify/react"
 
 interface NewTabContentProps {
   text?: boolean
@@ -12,7 +12,9 @@ export const NewTabContent = ({
   return (
     <span>
       {text && <span className="sr-only"> (Opens in a new tab)</span>}
-      {icon && <Icon className="ml-[0.12rem]" icon="fluent:window-new-16-regular" />}
+      {icon && (
+        <Icon className="ml-[0.12rem]" icon="fluent:window-new-16-regular" />
+      )}
     </span>
   )
 }

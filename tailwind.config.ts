@@ -41,7 +41,6 @@ const config: Config = {
         inconsolata: ['"Inconsolata", monospace'],
         "source-sans": ['"Source Sans 3", sans-serif'],
         urbanist: ['"Urbanist", sans-serif'],
-        fontawesomesolid: ["FontAwesomeSolid"],
       },
       clipPath: {
         "cut-corners":
