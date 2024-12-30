@@ -4,7 +4,7 @@ export interface Skill {
   classes?: string
 }
 
-const sharedSkillClasses = " p-[0.313rem] rounded-2xl"
+const sharedNoBgIconClasses = " p-[0.313rem] rounded-2xl"
 
 export const skillsData: Skill[] = [
   { skill: "HTML5", icon: "skill-icons:html" },
@@ -23,7 +23,7 @@ export const skillsData: Skill[] = [
   {
     skill: "Rest API",
     icon: "catppuccin:api-blueprint",
-    classes: `${sharedSkillClasses} bg-[#edff74]`,
+    classes: `${sharedNoBgIconClasses} bg-[#edff74]`,
   },
   { skill: "Express", icon: "skill-icons:expressjs-dark" },
   { skill: "MongoDB", icon: "skill-icons:mongodb" },
@@ -31,7 +31,7 @@ export const skillsData: Skill[] = [
   {
     skill: "Firebase",
     icon: "devicon:firebase",
-    classes: `${sharedSkillClasses} bg-white`,
+    classes: `${sharedNoBgIconClasses} bg-white`,
   },
   { skill: "Git", icon: "skill-icons:git" },
   { skill: "GitHub Actions", icon: "skill-icons:githubactions-dark" },
@@ -40,11 +40,11 @@ export const skillsData: Skill[] = [
   {
     skill: "WCAG",
     icon: "file-icons:w3c",
-    classes: `${sharedSkillClasses} bg-[#005a9c] text-white`,
+    classes: `${sharedNoBgIconClasses} bg-[#005a9c] text-white`,
   },
   {
     skill: "SEO",
     icon: "fa6-solid:magnifying-glass-chart",
-    classes: `${sharedSkillClasses} bg-[#FBBC05] text-[#4285F4]`,
+    classes: `${sharedNoBgIconClasses} bg-[#FBBC05] text-[#4285F4]`,
   },
 ]
