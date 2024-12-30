@@ -21,7 +21,7 @@ export const CarouselButtons = () => {
         aria-label="Previous slide"
         className={`prev-btn left-4 hidden shadow-[#12121c_0.125rem_0.188rem_0_0] dark:shadow-[#edede3_0.125rem_0.188rem_0_0]`}
       >
-        <Icon icon="fa6-solid:arrow-left" />
+        <Icon icon="fluent:arrow-left-48-regular" />
       </button>
       <button
         ref={(el) => {
@@ -30,7 +30,7 @@ export const CarouselButtons = () => {
         aria-label="Next slide"
         className={`next-btn right-4 hidden shadow-[#12121c_-0.125rem_0.188rem_0_0] dark:shadow-[#edede3_-0.125rem_0.188rem_0_0]`}
       >
-        <Icon icon="fa6-solid:arrow-right" />
+        <Icon icon="fluent:arrow-right-48-regular" />
       </button>
     </>
   )
