@@ -29,7 +29,7 @@ export const BackToTopButton = () => {
       className="button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-200 px-2 py-2 shadow-[0_0.008rem_1rem_-0.563rem_black] md:tool-tip hover:border-textcolor focus-visible:border-textcolor"
       aria-label="Back to Top"
     >
-      <Icon className="text-2xl" icon="ion:chevron-up-circle" />
+      <Icon className="text-2xl" icon="fluent:chevron-circle-up-32-filled" />
     </button>
   ) : null
 }
