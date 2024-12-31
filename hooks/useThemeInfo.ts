@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes"
 
-const useThemeInfo = () => {
+export const useThemeInfo = () => {
   const { theme, resolvedTheme, setTheme } = useTheme()
 
   const currentTheme = theme === "system" ? resolvedTheme : theme
@@ -25,5 +25,3 @@ const useThemeInfo = () => {
     toggleTheme: () => setTheme(currentTheme === "light" ? "dark" : "light"),
   }
 }
-
-export default useThemeInfo
