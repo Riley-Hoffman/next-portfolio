@@ -11,7 +11,7 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
         <h2 className="mb-1 inline-block w-80 overflow-clip whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">
           Write me a message...
         </h2>
-        <p className="text-[1.375rem]">
+        <p className="text-xl">
           I&apos;d love to know your ideas, questions, or information.
         </p>
         <h3 className="mb-0 font-inconsolata uppercase tracking-widest">
