@@ -37,7 +37,7 @@ export default function Accessibility() {
     <>
       <SchemaGenerator schemaData={schemaData} />
       <h1 className="heading-one">Accessibility</h1>
-      <div className="max-w-screen-md p-[1.875rem_0_13vh]">
+      <div className="max-w-screen-md pb-[13vh] pt-7">
         <h2>My Commitment</h2>
         <p>
           As a dedicated web developer, I am committed to creating an accessible

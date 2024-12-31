@@ -54,7 +54,7 @@ export default function Faq() {
     <>
       <SchemaInjector structuredData={faqSchemaData} />
       <h1 className="heading-one">Frequently Asked Questions</h1>
-      <div className="max-w-screen-md p-[1.875rem_0_13vh]">
+      <div className="max-w-screen-md pb-[13vh] pt-7">
         <Accordion
           items={questions.map((question, index) => ({
             question,
