@@ -33,7 +33,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             onClick={() => handleDebouncedClick(index)}
             aria-expanded={openIndex === index ? true : false}
           >
-            <div className="plus-minus mb-[0.063rem] mr-5 box-content shrink-0 grow-0 rounded-full bg-textcolor p-3 text-xs text-accentone-200 duration-200 ease-in-out group-hover:bg-accenttwo-100 group-hover:text-textcolor group-focus-visible:bg-accenttwo-100 group-focus-visible:text-textcolor group-aria-expanded:bg-accenttwo-100 group-aria-expanded:text-textcolor"></div>
+            <div className="plus-minus mb-[0.063rem] mr-5 box-content rounded-full bg-textcolor p-3 text-xs text-accentone-200 duration-200 ease-in-out group-hover:bg-accenttwo-100 group-hover:text-textcolor group-focus-visible:bg-accenttwo-100 group-focus-visible:text-textcolor group-aria-expanded:bg-accenttwo-100 group-aria-expanded:text-textcolor"></div>
             {item.question}
           </button>
           <div

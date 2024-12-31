@@ -13,7 +13,7 @@ const ThemeChanger = () => {
       }
     >
       <Icon
-        className="absolute left-1 top-1 h-6 w-6 shrink-0 grow-0 rounded-full bg-accenttwo-200 p-1 text-sitebackground transition-transform dark:translate-x-8 dark:text-siteblack dark:content-['\\f185']"
+        className="absolute left-1 top-1 h-6 w-6 rounded-full bg-accenttwo-200 p-1 text-sitebackground transition-transform dark:translate-x-8 dark:text-siteblack dark:content-['\\f185']"
         icon={theme === "light" ? "solar:moon-bold" : "solar:sun-2-bold"}
       />
     </button>
