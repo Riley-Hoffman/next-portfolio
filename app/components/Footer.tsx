@@ -4,7 +4,7 @@ import { getPageTitle, githubUrl, version } from "@/constants/baseData"
 
 export const Footer = () => {
   return (
-    <footer className="gradient-border min-h-[5.563rem] border-t border-solid bg-accentone-200 contrast-more:bg-white dark:bg-accentone-100">
+    <footer className="gradient-border min-h-24 border-t border-solid bg-accentone-200 contrast-more:bg-white dark:bg-accentone-100">
       <h2 className="sr-only">Footer</h2>
       <div className="max-w-screen-xl py-7 md:flex md:items-center md:justify-between">
         <p className="m-0 px-3 py-1 font-urbanist text-base">
