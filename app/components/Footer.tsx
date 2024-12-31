@@ -10,7 +10,7 @@ export const Footer = () => {
         <p className="m-0 px-3 py-1 font-urbanist text-base">
           {getPageTitle()} <small>(v{version}) </small>
           <a
-            className="group inline-block min-h-[1.875rem] min-w-[2.125rem] no-underline md:tool-tip md:min-h-[1.25rem] md:min-w-[1.5rem]"
+            className="group inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6"
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +29,7 @@ export const Footer = () => {
           </Link>
         </p>
         <p className="m-0 px-3 py-1 text-base">
-          <span className="mr-[0.125rem]">©</span>
+          <span className="mr-0.5">©</span>
           {new Date().getFullYear()}
         </p>
       </div>

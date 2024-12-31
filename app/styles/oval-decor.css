@@ -1,3 +1,3 @@
 .oval-decor {
-  @apply absolute bottom-[3%] left-[5%] right-[5%] top-[5%] -z-10 rounded-[50%] bg-[#ececf2] dark:bg-sitebackground;
+  @apply absolute bottom-[3%] left-[5%] right-[5%] top-[5%] -z-10 shrink-0 grow-0 rounded-full bg-[#ececf2] dark:bg-sitebackground;
 }
