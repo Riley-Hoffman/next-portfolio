@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   },
 }
 
+const isClient = typeof window !== "undefined"
+
 export default function RootLayout({
   children,
 }: {
@@ -84,21 +86,19 @@ export default function RootLayout({
           media="(prefers-color-scheme: dark)"
           content="#0d191c"
         />
-        <noscript>
-          <style>{`.nojslayout.hidden {display: block}.hamburger {display: none}`}</style>
-        </noscript>
       </head>
       <body>
-        <DynamicThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        >
+        {isClient ? (
+          <DynamicThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+          >
+            <LayoutContent>{children}</LayoutContent>
+          </DynamicThemeProvider>
+        ) : (
           <LayoutContent>{children}</LayoutContent>
-        </DynamicThemeProvider>
-        <div className="nojslayout hidden">
-          <LayoutContent>{children}</LayoutContent>
-        </div>
+        )}
       </body>
     </html>
   )
