@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import clsx from "clsx"
 import { useTriggerOnScroll } from "@/hooks/useTriggerOnScroll"
-import { OvalDecor } from "@/app/components/OvalDecor"
+import { OvalDecor } from "@/app/components/decorative/OvalDecor"
 
 interface ProjectBoxProps {
   inverted?: string
