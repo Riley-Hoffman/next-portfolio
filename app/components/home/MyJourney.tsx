@@ -51,7 +51,7 @@ export const MyJourney = () => {
               development through one of these non-profits.
             </p>
             <p>
-              Captivated by the potential for creativity and continous growth, I
+              Captivated by the potential for creativity and continuous growth, I
               completed Web Development Bootcamp at Juno College of Technology
               in 2021.
             </p>
