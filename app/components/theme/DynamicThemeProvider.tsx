@@ -1,5 +1,5 @@
 "use client"
-type ThemeProviderProps = React.ComponentProps<typeof NextThemesProvider>
+type DynamicThemeProviderProps = React.ComponentProps<typeof NextThemesProvider>
 import dynamic from "next/dynamic"
 
 const NextThemesProvider = dynamic(
@@ -8,6 +8,6 @@ const NextThemesProvider = dynamic(
     ssr: false,
   }
 )
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+export function DynamicThemeProvider({ children, ...props }: DynamicThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

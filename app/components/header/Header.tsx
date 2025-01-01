@@ -8,7 +8,7 @@ const Nav = dynamic(() => import("./nav/Nav"), {
   ssr: false,
 })
 
-const ThemeChanger = dynamic(() => import("./ThemeChanger"), {
+const ThemeChanger = dynamic(() => import("../theme/ThemeChanger"), {
   ssr: false,
 })
 

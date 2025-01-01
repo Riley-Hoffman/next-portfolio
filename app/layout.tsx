@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { ThemeProvider } from "@/app/components/ThemeProvider"
+import { DynamicThemeProvider } from "@/app/components/theme/DynamicThemeProvider"
 import { LayoutContent } from "@/app/components/LayoutContent"
 import {
   getBaseUrl,
@@ -89,9 +89,9 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <DynamicThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LayoutContent>{children}</LayoutContent>
-        </ThemeProvider>
+        </DynamicThemeProvider>
         <div className="nojslayout hidden">
           <LayoutContent>{children}</LayoutContent>
         </div>
