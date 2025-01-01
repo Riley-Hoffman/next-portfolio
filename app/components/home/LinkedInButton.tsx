@@ -2,7 +2,7 @@ import { useRef } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
 import { useTimedEffect } from "@/hooks/useTimedEffect"
-import { NewTabContent } from "@/app/components/NewTabContent"
+import { NewTabContent } from "@/app/components/utils/NewTabContent"
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)

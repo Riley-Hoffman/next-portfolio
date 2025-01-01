@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { Icon } from "@iconify/react"
-import { NewTabContent } from "@/app/components/NewTabContent"
+import { NewTabContent } from "@/app/components/utils/NewTabContent"
 
 interface Tech {
   name: string

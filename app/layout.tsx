@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { DynamicThemeProvider } from "@/app/components/theme/DynamicThemeProvider"
-import { LayoutContent } from "@/app/components/LayoutContent"
+import { LayoutContent } from "@/app/components/layout/LayoutContent"
 import {
   getBaseUrl,
   getPageTitle,

@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
-import { Header } from "../components/header/Header"
-import { Footer } from "../components/Footer"
+import { Header } from "./header/Header"
+import { Footer } from "./Footer"
 
 interface LayoutContentProps {
   children: React.ReactNode
