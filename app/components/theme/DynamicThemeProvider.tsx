@@ -1,16 +1,35 @@
 "use client"
-type DynamicThemeProviderProps = React.ComponentProps<typeof NextThemesProvider>
 import dynamic from "next/dynamic"
+import React, { useEffect, useState } from "react"
+import type { ThemeProviderProps } from 'next-themes'
 
-const NextThemesProvider = dynamic(
-  () => import("next-themes").then((e) => e.ThemeProvider),
-  {
-    ssr: false,
-  }
-)
+const NextThemesProvider = dynamic(() => import("next-themes").then((e) => e.ThemeProvider), {
+  ssr: false,
+})
+
 export function DynamicThemeProvider({
   children,
-  ...props
-}: DynamicThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  attribute = "class",
+  defaultTheme = "system",
+  enableSystem = true,
+}: ThemeProviderProps) {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return <div>{children}</div>
+  }
+
+  return (
+    <NextThemesProvider
+      attribute={attribute}
+      defaultTheme={defaultTheme}
+      enableSystem={enableSystem}
+    >
+      {children}
+    </NextThemesProvider>
+  )
 }

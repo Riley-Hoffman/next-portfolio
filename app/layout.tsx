@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   },
 }
 
-const isClient = typeof window !== "undefined"
-
 export default function RootLayout({
   children,
 }: {
@@ -88,17 +86,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {isClient ? (
-          <DynamicThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-          >
-            <LayoutContent>{children}</LayoutContent>
-          </DynamicThemeProvider>
-        ) : (
+        <DynamicThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
           <LayoutContent>{children}</LayoutContent>
-        )}
+        </DynamicThemeProvider>
       </body>
     </html>
   )
