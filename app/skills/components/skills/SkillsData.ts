@@ -22,8 +22,8 @@ export const skillsData: Skill[] = [
   { skill: "Node.js", icon: "skill-icons:nodejs-dark" },
   {
     skill: "Rest API",
-    icon: "catppuccin:api-blueprint",
-    classes: `${sharedNoBgIconClasses} bg-[#edff74]`,
+    icon: "file-icons:api-blueprint",
+    classes: `${sharedNoBgIconClasses} bg-[#edff74] text-teal-800`,
   },
   { skill: "Express", icon: "skill-icons:expressjs-dark" },
   { skill: "MongoDB", icon: "skill-icons:mongodb" },
@@ -44,7 +44,7 @@ export const skillsData: Skill[] = [
   },
   {
     skill: "SEO",
-    icon: "fa6-solid:magnifying-glass-chart",
+    icon: "fluent:globe-search-20-filled",
     classes: `${sharedNoBgIconClasses} bg-[#FBBC05] text-[#4285F4]`,
   },
 ]
