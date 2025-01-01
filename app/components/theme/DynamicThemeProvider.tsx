@@ -1,11 +1,14 @@
 "use client"
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
-import type { ThemeProviderProps } from 'next-themes'
+import type { ThemeProviderProps } from "next-themes"
 
-const NextThemesProvider = dynamic(() => import("next-themes").then((e) => e.ThemeProvider), {
-  ssr: false,
-})
+const NextThemesProvider = dynamic(
+  () => import("next-themes").then((e) => e.ThemeProvider),
+  {
+    ssr: false,
+  }
+)
 
 export function DynamicThemeProvider({
   children,
