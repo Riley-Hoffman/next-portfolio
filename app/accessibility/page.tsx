@@ -3,7 +3,7 @@ import Link from "next/link"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/SchemaGenerator"
+} from "@/app/components/schema/SchemaGenerator"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 
 const description =

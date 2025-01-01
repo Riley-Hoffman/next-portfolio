@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { FAQPage, WithContext } from "schema-dts"
 import { Accordion } from "./components/Accordion"
 import { questions, answers } from "./components/AccordionItems"
-import SchemaInjector from "../components/SchemaInjector"
+import SchemaInjector from "../components/schema/SchemaInjector"
 import {
   getBaseUrl,
   getPageTitle,

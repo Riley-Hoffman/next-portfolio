@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/SchemaGenerator"
+} from "@/app/components/schema/SchemaGenerator"
 import { ParticleCleanup } from "./components/ParticleCleanup"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 import "@/app/styles/numbered-icons.css"

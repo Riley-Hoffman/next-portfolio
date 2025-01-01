@@ -2,7 +2,7 @@
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/SchemaGenerator"
+} from "@/app/components/schema/SchemaGenerator"
 import { CoverImage, CoverImageProps } from "./components/home/CoverImage"
 import { FirstFoldContent } from "./components/home/FirstFoldContent"
 import { MyJourney } from "./components/home/MyJourney"

@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/SchemaGenerator"
+} from "@/app/components/schema/SchemaGenerator"
 import { ContactWrapper } from "./components/ContactWrapper"
 import { Sidebar } from "./components/Sidebar"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
