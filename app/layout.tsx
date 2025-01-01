@@ -89,7 +89,11 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-        <DynamicThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <DynamicThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
           <LayoutContent>{children}</LayoutContent>
         </DynamicThemeProvider>
         <div className="nojslayout hidden">

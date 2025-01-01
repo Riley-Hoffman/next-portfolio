@@ -10,7 +10,7 @@ export const LinkedInButton = () => {
 
   const applyEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
-      "motion-safe:animate-[wiggle_1s]",
+      "motion-safe:animate-wiggle",
       isCounting
     )
   }

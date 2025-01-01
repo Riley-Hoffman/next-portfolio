@@ -54,6 +54,8 @@ const config: Config = {
       animation: {
         typetext:
           "typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.5s forwards",
+        wiggle: "wiggle 1s",
+        twirl: "twirl 1s infinite",
       },
       keyframes: {
         wiggle: {

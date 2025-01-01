@@ -8,6 +8,9 @@ const NextThemesProvider = dynamic(
     ssr: false,
   }
 )
-export function DynamicThemeProvider({ children, ...props }: DynamicThemeProviderProps) {
+export function DynamicThemeProvider({
+  children,
+  ...props
+}: DynamicThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
