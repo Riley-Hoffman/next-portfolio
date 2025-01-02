@@ -51,9 +51,15 @@ export const MyJourney = () => {
               development through one of these non-profits.
             </p>
             <p>
-              Captivated by the potential for creativity and continuous growth,
+              Captivated by the potential for creativity and constant learning,
               I completed Web Development Bootcamp at Juno College of Technology
               in 2021.
+            </p>
+            <p>
+              I have professional experience as a web developer, building and
+              maintaining dynamic, user-friendly websites. I’m now excited to
+              bring my skills and passion to new opportunities, eager to
+              contribute to innovative projects and grow further in the field.
             </p>
             <p>
               I believe that by prioritizing accessibility in our work as web
