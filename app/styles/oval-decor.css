@@ -1,3 +1,7 @@
 .oval-decor {
-  @apply absolute bottom-[3%] left-[5%] right-[5%] top-[5%] -z-10 rounded-full bg-[#ececf2] dark:bg-sitebackground;
+  @apply absolute -z-10 rounded-full bg-[#ececf2] dark:bg-sitebackground;
+}
+
+.oval-decor:not([class*="inset-"]) {
+  @apply inset-x-[5%] bottom-[3%] top-[5%];
 }
