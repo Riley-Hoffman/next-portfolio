@@ -1,5 +1,4 @@
 import { useCallback } from "react"
-import { useGameData } from "./useGameData"
 
 interface Medal {
   cutoff: number
@@ -8,8 +7,6 @@ interface Medal {
 }
 
 export const useMedalDetails = (time: number | null) => {
-  const [gameData] = useGameData()
-
   const getMedalDetails = useCallback((time: number | null): Medal | null => {
     if (time === null || time > 25) return null
 

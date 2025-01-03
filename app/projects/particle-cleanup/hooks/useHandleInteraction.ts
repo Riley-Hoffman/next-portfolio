@@ -6,7 +6,7 @@ export const useHandleInteraction = (
   updateCursorPosition: (clientX: number, clientY: number) => void,
   sayMessageTemporarily: (message: string) => void
 ) => {
-  const [gameData, dispatch] = useGameData()
+  const [gameData] = useGameData()
 
   const handleInteraction = useCallback(
     (event: Event, isInside: boolean) => {
