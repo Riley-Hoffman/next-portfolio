@@ -65,13 +65,9 @@ export const ProjectContent = ({
     <>
       <div className="project-info basis-2/4 pb-10 pt-5">
         <h3 className="pb-4 text-2xl">{title}</h3>
-        <p className="mb-8 pb-4 font-poppins" translate="no">
-          {skills}
-        </p>
+        <p className="mb-8 pb-4 font-poppins">{skills}</p>
         <p className="pb-4">{description}</p>
-        <h4 className="mb-8 text-base">
-          <span translate="no">{title}</span> Links:
-        </h4>
+        <h4 className="mb-8 text-base">{title} Links:</h4>
         {renderLink(liveUrl, liveContent, internal)}
         {gitUrl && renderLink(gitUrl, repoContent)}
       </div>

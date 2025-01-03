@@ -56,7 +56,7 @@ export const SiteTechStack = () => {
                   rel="noopener noreferrer"
                 >
                   <Icon icon={tech.logo} className="mx-auto text-7xl" />
-                  <p className="my-1 text-xl" translate="no">
+                  <p className="my-1 text-xl">
                     {tech.name}
                     <NewTabContent />
                   </p>

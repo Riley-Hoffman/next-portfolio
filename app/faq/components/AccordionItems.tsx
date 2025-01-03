@@ -31,11 +31,9 @@ const accordionItems: AccordionItem[] = [
     answer: (
       <p>
         Depending on your project&apos;s needs, I can work with various
-        technologies including HTML, <span translate="no">React</span>,{" "}
-        <span translate="no">Next.js</span>, Typescript,{" "}
-        <span translate="no">Vue.js</span>, PHP, and custom WordPress themes. I
-        adapt quickly to new systems and structures, ensuring seamless
-        integration and efficiency.
+        technologies including HTML, React, Next.js, Typescript, Vue.js, PHP,
+        and custom WordPress themes. I adapt quickly to new systems and
+        structures, ensuring seamless integration and efficiency.
       </p>
     ),
   },

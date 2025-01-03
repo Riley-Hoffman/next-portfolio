@@ -8,8 +8,6 @@ export const SkillItem = ({ skill, icon, classes }: Skill) => (
         <Icon className={`text-5xl outline-black${classes}`} icon={icon} />
       )}
     </div>
-    <p className="mt-1 text-xl" translate="no">
-      {skill}
-    </p>
+    <p className="mt-1 text-xl">{skill}</p>
   </li>
 )

@@ -41,9 +41,7 @@ export default function ParticleCleanupWrapper() {
       <div className="pb-16">
         <h1 className="heading-one">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
-          <h2 translate="no">
-            <span translate="no">React</span>, TSX, SCSS
-          </h2>
+          <h2>React, TSX, SCSS</h2>
           <p>
             How quickly can you clear all the particles from the board using
             your cursor or finger?
