@@ -1,11 +1,8 @@
 import { useCallback } from "react"
 import { Particle } from "../classes/Particle"
-import { useGameData } from "./useGameData"
 
-export const useCreateParticle = () => {
-  const [gameData] = useGameData()
-
-  return useCallback((canvas: HTMLCanvasElement) => {
+export const useCreateParticle = () =>
+  useCallback((canvas: HTMLCanvasElement) => {
     const { width, height } = canvas
     const size = Math.random() * 30 + 10
     const colors = ["#A8A0D9", "#794E8D", "#ae4971"]
@@ -23,4 +20,3 @@ export const useCreateParticle = () => {
       speedFactor
     )
   }, [])
-}
