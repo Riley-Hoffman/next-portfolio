@@ -62,7 +62,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         aria-label={localIsExpanded ? "Close Menu" : "Open Menu"}
         onClick={toggleMenu}
         ref={hamburgerRef}
-        className="group peer hamburger relative z-10 ml-auto block h-10 w-16 px-5 md:hidden"
+        className="hamburger group peer relative z-10 ml-auto block h-10 w-16 px-5 md:hidden"
       >
         {[...Array(4)].map((_, index) => (
           <span
