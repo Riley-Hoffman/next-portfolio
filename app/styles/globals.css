@@ -137,7 +137,7 @@
     @apply leading-7;
   }
   footer p {
-    @apply text-reduced m-0;
+    @apply m-0 text-reduced;
   }
   a > *,
   .button {
