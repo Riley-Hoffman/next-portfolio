@@ -177,7 +177,7 @@ const config: Config = {
           },
         },
         "@media (max-width: 768px)": {
-          ".hamburger .line": {
+          ".hamburger-line": {
             borderImageSource: `linear-gradient(90deg, ${theme("colors.gradientone")} 0%, ${theme("colors.gradienttwo")} 50%, ${theme("colors.gradientthree")} 70%)`,
           },
         },

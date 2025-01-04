@@ -136,8 +136,11 @@
   ul:not(#_) {
     @apply leading-7;
   }
+  .hamburger-line {
+    @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
+  }
   footer p {
-    @apply m-0 text-reduced;
+    @apply m-0 px-3 py-1 text-reduced;
   }
   a > *,
   .button {

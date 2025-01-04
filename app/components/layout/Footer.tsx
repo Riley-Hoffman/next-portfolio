@@ -6,7 +6,7 @@ export const Footer = () => (
   <footer className="gradient-border min-h-24 border-t border-solid bg-accentone-200 contrast-more:bg-white dark:bg-accentone-100">
     <h2 className="sr-only">Footer</h2>
     <div className="max-w-screen-xl py-7 md:flex md:items-center md:justify-between">
-      <p className="px-3 py-1 font-urbanist">
+      <p className="font-urbanist">
         {getPageTitle()} <small>(v{version}) </small>
         <a
           className="group inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6"
@@ -27,7 +27,7 @@ export const Footer = () => (
           Accessibility
         </Link>
       </p>
-      <p className="px-3 py-1">
+      <p>
         <span className="mr-0.5">©</span>
         {new Date().getFullYear()}
       </p>
