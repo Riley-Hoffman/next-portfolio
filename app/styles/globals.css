@@ -134,12 +134,11 @@
     @apply leading-7;
   }
   footer p {
-    @apply m-0 text-reduced;
+    @apply text-reduced m-0;
   }
-  a,
   a > *,
   .button {
-    @apply transition-[color,_background-color] duration-200 ease-in-out;
+    @apply transition-[color,background-color] duration-200 ease-in-out;
   }
   .button {
     @apply contrast-more:!text-white contrast-more:hover:!text-black contrast-more:dark:!text-black contrast-more:dark:hover:!text-white;
