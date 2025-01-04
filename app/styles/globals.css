@@ -118,6 +118,9 @@
   html.dark {
     @apply bg-siteblack contrast-more:bg-black;
   }
+  body {
+    @apply contrast-more:!text-heading;
+  }
   :not(.flex) > [class*="max-"] {
     @apply mx-auto;
   }
