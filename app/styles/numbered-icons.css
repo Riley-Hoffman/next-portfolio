@@ -9,5 +9,5 @@ ol.numbered-icons li:not([class*="before:bg-"]):before {
   @apply bg-accenttwo-100;
 }
 ol.numbered-icons:not(.icon-color) li:before {
-  @apply text-textcolor;
+  @apply text-heading;
 }

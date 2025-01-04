@@ -8,7 +8,7 @@
   @apply opacity-100;
 }
 .light .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  @apply bg-textcolor;
+  @apply bg-heading;
 }
 .dark .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   @apply bg-gradienttwo;

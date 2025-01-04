@@ -86,7 +86,8 @@
 }
 @layer base {
   :root {
-    --color-textcolor: #12121c;
+    --color-heading: #12121c;
+    --color-textcolor: #2d2b34;
     --color-accentone-100: #eee3f2;
     --color-accentone-200: #e5d4ed;
     --color-sitebackground: #f5eef7;
@@ -99,7 +100,8 @@
     --color-siteblack: #0a0a0a;
   }
   :root[class~="dark"] {
-    --color-textcolor: #edede3;
+    --color-heading: #edede3;
+    --color-textcolor: #d2d4cb;
     --color-accentone-100: #0d191c;
     --color-accentone-200: #12272b;
     --color-sitebackground: #081011;
@@ -130,6 +132,9 @@
   ol:not(#_),
   ul:not(#_) {
     @apply leading-7;
+  }
+  footer p {
+    @apply m-0 text-reduced;
   }
   a,
   a > *,

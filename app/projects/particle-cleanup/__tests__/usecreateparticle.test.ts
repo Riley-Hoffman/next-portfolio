@@ -68,7 +68,9 @@ describe("useCreateParticle", () => {
 
     const particle = result.current(mockCanvas)
 
-    expect(["#A8A0D9", "#794E8D", "#ae4971"]).toContain(particle.color)
+    expect(["#121226", "#21213b", "#363659", "#505077", "#6868a6"]).toContain(
+      particle.color
+    )
   })
 
   it("should create a particle with a size between 10 and 40", () => {

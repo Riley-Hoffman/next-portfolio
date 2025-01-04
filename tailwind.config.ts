@@ -20,6 +20,7 @@ const config: Config = {
           "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds-dark.svg')",
       },
       colors: {
+        heading: "var(--color-heading)",
         textcolor: "var(--color-textcolor)",
         accentone: {
           100: "var(--color-accentone-100)",
@@ -41,6 +42,9 @@ const config: Config = {
         inconsolata: ['"Inconsolata", monospace'],
         "source-sans": ['"Source Sans 3", sans-serif'],
         urbanist: ['"Urbanist", sans-serif'],
+      },
+      fontSize: {
+        reduced: "17px",
       },
       clipPath: {
         "cut-corners":
@@ -92,6 +96,7 @@ const config: Config = {
           textWrap: "pretty",
         },
         ":where(h1,h2,h3,h4,h5,h6,label,legend)": {
+          color: theme("colors.heading"),
           fontFamily: theme("fontFamily.poppins"),
         },
         "h1,h2": {
@@ -115,13 +120,13 @@ const config: Config = {
           opacity: "0.9",
         },
         ".button": {
-          backgroundColor: theme("colors.textcolor"),
+          backgroundColor: theme("colors.heading"),
           color: theme("colors.accentone.200"),
           fontFamily: "inherit",
           textDecoration: "none",
           "&:hover, &:focus-visible": {
             backgroundColor: theme("colors.accentone.100"),
-            color: theme("colors.textcolor"),
+            color: theme("colors.heading"),
           },
         },
         ".gradient-border": {
