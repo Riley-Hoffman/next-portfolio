@@ -1,7 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google"
-import { BackToTopButton } from "./BackToTopButton"
+import { BackToTopButton } from "../BackToTopButton"
 
-export const GlobalDynamicImports = () => (
+export const BackToTopAndAnalytics = () => (
   <>
     <BackToTopButton />
     <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS!} />

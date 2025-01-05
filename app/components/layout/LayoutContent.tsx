@@ -6,8 +6,8 @@ interface LayoutContentProps {
   children: React.ReactNode
 }
 
-const GlobalDynamicImports = dynamic(() =>
-  import("./GlobalDynamicImports").then((mod) => mod.GlobalDynamicImports)
+const BackToTopAndAnalytics = dynamic(() =>
+  import("./dynamic-imports/BackToTopAndAnalytics").then((mod) => mod.BackToTopAndAnalytics)
 )
 
 export const LayoutContent = ({ children }: LayoutContentProps) => (
@@ -19,7 +19,7 @@ export const LayoutContent = ({ children }: LayoutContentProps) => (
       </a>
       {children}
     </main>
-    <GlobalDynamicImports />
+    <BackToTopAndAnalytics />
     <Footer />
   </>
 )

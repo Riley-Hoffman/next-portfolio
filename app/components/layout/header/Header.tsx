@@ -4,13 +4,8 @@ import { SkipToContent } from "./SkipToContent"
 import { HeaderLogo } from "./HeaderLogo"
 import { NoJsMenu } from "./nav/NoJsMenu"
 
-const Nav = dynamic(() =>
-  import('./nav/Nav').then((mod) => mod.Nav), {
-  ssr: false,
-})
-
-const ThemeChanger = dynamic(() =>
-  import('../../theme/ThemeChanger').then((mod) => mod.ThemeChanger), {
+const ThemeChangerAndNav = dynamic(() =>
+  import('./dynamic-imports/ThemeChangerAndNav').then((mod) => mod.ThemeChangerAndNav), {
   ssr: false,
 })
 
@@ -19,8 +14,7 @@ export const Header = () => (
     <SkipToContent />
     <div className="flex max-w-screen-xl items-center justify-between">
       <HeaderLogo />
-      <ThemeChanger />
-      <Nav />
+      <ThemeChangerAndNav />
     </div>
     <NoJsMenu />
   </header>
