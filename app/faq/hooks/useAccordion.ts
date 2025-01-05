@@ -4,6 +4,11 @@ import { pxToRem } from "@/lib/pxToRem"
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
+  const accOpen = useCallback(
+    (index: number) => openIndex === index,
+    [openIndex]
+  )
+
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>(
     Array(itemsLength).fill(null)
   )
@@ -18,15 +23,14 @@ export const useAccordion = (itemsLength: number) => {
   useEffect(() => {
     buttonRefs.current.forEach((button, index) => {
       if (!button) return
-      const isOpen = openIndex === index
       setTimeout(() => {
-        button.classList.toggle("init", !isOpen)
+        button.classList.toggle("init", !accOpen(index))
       }, 500)
     })
 
     contentRefs.current.forEach((content, index) => {
       if (!content) return
-      if (openIndex === index) {
+      if (accOpen(index)) {
         content.style.maxHeight = `${pxToRem(content.scrollHeight) + 2.75}rem`
       } else {
         content.style.maxHeight = "0rem"
@@ -36,10 +40,10 @@ export const useAccordion = (itemsLength: number) => {
     if (openIndex !== null && contentRefs.current[openIndex]) {
       contentRefs.current[openIndex]?.focus()
     }
-  }, [openIndex])
+  }, [accOpen, openIndex])
 
   return {
-    openIndex,
+    accOpen,
     handleAccordionClick,
     buttonRefs,
     contentRefs,

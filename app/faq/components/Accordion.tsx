@@ -11,7 +11,7 @@ type AccordionProps = {
 }
 
 export const Accordion = ({ items, label }: AccordionProps) => {
-  const { openIndex, handleAccordionClick, buttonRefs, contentRefs } =
+  const { accOpen, handleAccordionClick, buttonRefs, contentRefs } =
     useAccordion(items.length)
 
   const handleDebouncedClick = useDebounce(handleAccordionClick, 500)
@@ -31,15 +31,15 @@ export const Accordion = ({ items, label }: AccordionProps) => {
             }}
             className="accordion group peer w-full border-b border-solid border-[#e1d7ee] bg-accentone-100 px-5 py-6 text-left text-xl font-medium leading-9 duration-500 ease-in-out group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0 aria-expanded:border-b-0 dark:border-[#1e2811] dark:text-[#d2d4cb]"
             onClick={() => handleDebouncedClick(index)}
-            aria-expanded={openIndex === index ? true : false}
+            aria-expanded={accOpen(index) ? true : false}
           >
             <div className="plus-minus mb-[0.063rem] mr-5 box-content rounded-full bg-heading p-3 text-xs text-accentone-200 duration-200 ease-in-out group-hover:bg-accenttwo-100 group-hover:text-heading group-focus-visible:bg-accenttwo-100 group-focus-visible:text-heading group-aria-expanded:bg-accenttwo-100 group-aria-expanded:text-heading"></div>
             {item.question}
           </button>
           <div
             className={clsx("overflow-hidden px-5 duration-500 ease-in-out", {
-              "py-0.5": openIndex === index,
-              "peer-[.init]:hidden": openIndex !== index,
+              "py-0.5": accOpen(index),
+              "peer-[.init]:hidden": !accOpen(index),
             })}
             tabIndex={-1}
             ref={(el) => {
