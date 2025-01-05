@@ -7,7 +7,9 @@ interface LayoutContentProps {
 }
 
 const BackToTopAndAnalytics = dynamic(() =>
-  import("./dynamic-imports/BackToTopAndAnalytics").then((mod) => mod.BackToTopAndAnalytics)
+  import("./dynamic-imports/BackToTopAndAnalytics").then(
+    (mod) => mod.BackToTopAndAnalytics
+  )
 )
 
 export const LayoutContent = ({ children }: LayoutContentProps) => (
