@@ -106,11 +106,11 @@
     --color-accentone-200: #12272b;
     --color-sitebackground: #081011;
     --color-accenttwo-100: #265f5e;
-    --color-accenttwo-200: #72b1b1;
-    --color-bordercolor: #8c8c73;
+    --color-accenttwo-200: #7fc5c8;
+    --color-bordercolor: #7a8b8e;
     --color-gradientthree: #71b1b0;
     --color-gradienttwo: #51b6b6;
-    --color-gradientone: #265e44;
+    --color-gradientone: #22728b;
   }
   html {
     @apply contrast-more:bg-white;
