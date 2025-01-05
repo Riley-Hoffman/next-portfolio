@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react"
 import { useThemeInfo } from "./hooks/useThemeInfo"
 
-const ThemeChanger = () => {
+export const ThemeChanger = () => {
   const themeInfo = useThemeInfo()
 
   if (!themeInfo.isReady) return null
@@ -21,5 +21,3 @@ const ThemeChanger = () => {
     </button>
   )
 }
-
-export default ThemeChanger

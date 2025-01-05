@@ -4,11 +4,13 @@ import { SkipToContent } from "./SkipToContent"
 import { HeaderLogo } from "./HeaderLogo"
 import { NoJsMenu } from "./nav/NoJsMenu"
 
-const Nav = dynamic(() => import("./nav/Nav"), {
+const Nav = dynamic(() =>
+  import('./nav/Nav').then((mod) => mod.Nav), {
   ssr: false,
 })
 
-const ThemeChanger = dynamic(() => import("../../theme/ThemeChanger"), {
+const ThemeChanger = dynamic(() =>
+  import('../../theme/ThemeChanger').then((mod) => mod.ThemeChanger), {
   ssr: false,
 })
 

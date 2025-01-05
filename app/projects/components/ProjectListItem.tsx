@@ -4,19 +4,19 @@ import clsx from "clsx"
 import { useTriggerOnScroll } from "@/hooks/useTriggerOnScroll"
 import { OvalDecor } from "@/app/components/decorative/OvalDecor"
 
-interface ProjectBoxProps {
+interface ProjectListItemProps {
   inverted?: string
   animation?: string
   isFirst?: boolean
   children: React.ReactNode
 }
 
-export const ProjectBox = ({
+export const ProjectListItem = ({
   inverted,
   animation,
   isFirst,
   children,
-}: ProjectBoxProps) => {
+}: ProjectListItemProps) => {
   const elementsRef = useTriggerOnScroll()
 
   useEffect(() => {

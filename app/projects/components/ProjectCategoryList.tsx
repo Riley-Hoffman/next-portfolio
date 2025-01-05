@@ -1,5 +1,5 @@
 import { ProjectCatHeading } from "./content/ProjectCatHeading"
-import { ProjectBox } from "./ProjectListItem"
+import { ProjectListItem } from "./ProjectListItem"
 import { ProjectContent } from "./content/ProjectContent"
 import { Project } from "./content/ProjectContent"
 
@@ -27,14 +27,14 @@ export const ProjectCategoryList = ({
           const originalIndex =
             projects.findIndex((p) => p.title === project.title) + 1
           return (
-            <ProjectBox
+            <ProjectListItem
               key={project.title}
               inverted={originalIndex % 2 === 0 ? "inverted" : ""}
               animation={project.animation}
               isFirst={index === 0 && project === filteredProjects[0]}
             >
               <ProjectContent {...project} isFirst={index === 0 && idx === 0} />
-            </ProjectBox>
+            </ProjectListItem>
           )
         })}
       </ul>
