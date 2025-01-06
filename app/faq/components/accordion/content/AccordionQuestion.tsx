@@ -1,4 +1,4 @@
-import { AccordionIcon } from './AccordionIcon'
+import { AccordionIcon } from "./AccordionIcon"
 
 type AccordionQuestionProps = {
   data: {
