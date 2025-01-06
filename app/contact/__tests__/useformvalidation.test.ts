@@ -20,7 +20,7 @@ describe("useFormValidation", () => {
     const { result } = renderHook(() => useFormValidation(initialState))
 
     act(() => {
-      result.current.handleSubmitClick()
+      result.current.handleSubmission()
     })
 
     expect(result.current.errors.name).toBe("Please enter your name.")
@@ -70,7 +70,7 @@ describe("useFormValidation", () => {
     })
 
     act(() => {
-      result.current.handleSubmitClick()
+      result.current.handleSubmission()
     })
 
     expect(result.current.errors.email).toBe(
@@ -94,7 +94,7 @@ describe("useFormValidation", () => {
     })
 
     act(() => {
-      result.current.handleSubmitClick()
+      result.current.handleSubmission()
     })
 
     expect(result.current.errors.email).toBe("")

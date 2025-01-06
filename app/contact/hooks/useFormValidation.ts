@@ -33,7 +33,7 @@ export const useFormValidation = (initialState: FormData) => {
       setErrors({ name: "", email: "", message: "" })
     }
 
-  const handleSubmitClick = () => {
+  const handleSubmission = () => {
     setSubmitted(true)
   }
 
@@ -41,7 +41,7 @@ export const useFormValidation = (initialState: FormData) => {
     formState,
     errors,
     handleChange,
-    handleSubmitClick,
+    handleSubmission,
     submitted,
   }
 }

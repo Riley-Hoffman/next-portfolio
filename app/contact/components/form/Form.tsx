@@ -21,7 +21,7 @@ export const Form = ({ onErrors }: FormProps) => {
   const csrfSecretRef = useRef<string | null>(null)
   const router = useRouter()
 
-  const { formState, errors, handleChange, handleSubmitClick, submitted } =
+  const { formState, errors, handleChange, handleSubmission, submitted } =
     useFormValidation({
       name: "",
       email: "",
@@ -119,7 +119,7 @@ export const Form = ({ onErrors }: FormProps) => {
           />
         </div>
       </fieldset>
-      <SubmitButton handleSubmitClick={handleSubmitClick} />
+      <SubmitButton handleSubmission={handleSubmission} />
     </form>
   )
 }
