@@ -1,7 +1,10 @@
 import { Metadata } from "next"
 import { FAQPage, WithContext } from "schema-dts"
-import { Accordion } from "./components/Accordion"
-import { questions, answers } from "./components/AccordionItems"
+import { Accordion } from "./components/accordion/Accordion"
+import {
+  questions,
+  answers,
+} from "./components/accordion/constants/AccordionItems"
 import SchemaInjector from "../components/schema/SchemaInjector"
 import {
   getBaseUrl,
