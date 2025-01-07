@@ -2,82 +2,127 @@ import { renderHook, act } from "@testing-library/react"
 import { useAccordion } from "../hooks/useAccordion"
 import { pxToRem } from "@/lib/pxToRem"
 
-jest.mock("../../../lib/pxToRem", () => ({
-  pxToRem: jest.fn((value: number) => value / 16),
+jest.mock("@/hooks/useDebounce", () => ({
+  useDebounce: jest.fn().mockImplementation((cb, delay) => cb),
 }))
 
-describe("useAccordion hook", () => {
+describe("useAccordion", () => {
   const itemsLength = 3
 
-  it("should initialize with no open index", () => {
+  it("should initialize with the correct state", () => {
     const { result } = renderHook(() => useAccordion(itemsLength))
+
     expect(result.current.openIndex).toBeNull()
+    expect(result.current.accOpen(0)).toBe(false)
   })
 
-  it("should toggle the openIndex on accordion click", () => {
+  it("should toggle openIndex when handleAccordionClick is called", () => {
     const { result } = renderHook(() => useAccordion(itemsLength))
 
     act(() => {
       result.current.handleAccordionClick(1)
     })
+
     expect(result.current.openIndex).toBe(1)
 
     act(() => {
       result.current.handleAccordionClick(1)
     })
+
     expect(result.current.openIndex).toBeNull()
   })
 
-  it("should update button and content refs correctly", () => {
+  it("should open content when index matches openIndex", () => {
+    jest.useFakeTimers()
+
     const { result } = renderHook(() => useAccordion(itemsLength))
 
-    const mockButtons = Array(itemsLength)
-      .fill(null)
-      .map(() => document.createElement("button"))
-    const mockContents = Array(itemsLength)
-      .fill(null)
-      .map(() => document.createElement("div"))
+    const mockButtonRef = {
+      classList: { contains: jest.fn(), toggle: jest.fn() },
+    }
+    const mockContentRef = {
+      style: { maxHeight: "" },
+      scrollHeight: 100,
+      focus: jest.fn(),
+    }
 
-    result.current.buttonRefs.current = mockButtons
-    result.current.contentRefs.current = mockContents
+    result.current.buttonRefs.current[0] =
+      mockButtonRef as unknown as HTMLButtonElement
+    result.current.contentRefs.current[0] =
+      mockContentRef as unknown as HTMLDivElement
 
     act(() => {
       result.current.handleAccordionClick(0)
     })
 
-    setTimeout(() => {
-      expect(mockButtons[0].classList.contains("init")).toBe(false)
-      expect(mockButtons[1].classList.contains("init")).toBe(true)
-      expect(mockContents[0].style.maxHeight).toBe(`${pxToRem(0)}rem`)
-    }, 500)
+    jest.advanceTimersByTime(500)
+
+    expect(mockContentRef.style.maxHeight).toBe(
+      `${pxToRem(mockContentRef.scrollHeight) + 2.75}rem`
+    )
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", false)
+    expect(mockContentRef.focus).toHaveBeenCalled()
 
     act(() => {
-      result.current.handleAccordionClick(2)
+      result.current.handleAccordionClick(0)
     })
 
-    setTimeout(() => {
-      expect(mockContents[2].style.maxHeight).toBe("0rem")
-    }, 500)
+    jest.advanceTimersByTime(500)
+
+    expect(mockContentRef.style.maxHeight).toBe("0rem")
   })
 
-  it("should reset maxHeight of closed items to 0rem", () => {
+  it('should toggle the "init" class on buttons when accordion is clicked', () => {
+    jest.useFakeTimers()
+
     const { result } = renderHook(() => useAccordion(itemsLength))
 
-    const mockContents = Array(itemsLength)
-      .fill(null)
-      .map(() => document.createElement("div"))
-    result.current.contentRefs.current = mockContents
+    const mockButtonRef = {
+      classList: { contains: jest.fn(), toggle: jest.fn() },
+    }
+    result.current.buttonRefs.current[0] =
+      mockButtonRef as unknown as HTMLButtonElement
+
+    expect(mockButtonRef.classList.toggle).not.toHaveBeenCalled()
+
+    act(() => {
+      result.current.handleAccordionClick(0)
+    })
+
+    jest.advanceTimersByTime(500)
+
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", false)
+
+    jest.clearAllMocks()
+
+    act(() => {
+      result.current.handleAccordionClick(0)
+    })
+
+    jest.advanceTimersByTime(500)
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", true)
+  })
+
+  it("should handle debouncing of handleAccordionClick", () => {
+    jest.useFakeTimers()
+
+    const { result } = renderHook(() => useAccordion(itemsLength))
 
     act(() => {
       result.current.handleAccordionClick(1)
     })
 
-    expect(mockContents[1].style.maxHeight).not.toBe("0rem")
+    jest.advanceTimersByTime(500)
+
+    expect(result.current.openIndex).toBe(1)
 
     act(() => {
-      result.current.handleAccordionClick(2)
+      result.current.handleAccordionClick(1)
     })
 
-    expect(mockContents[1].style.maxHeight).toBe("0rem")
+    jest.advanceTimersByTime(500)
+    expect(result.current.openIndex).toBeNull()
+
+    jest.useRealTimers()
   })
 })

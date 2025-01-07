@@ -10,6 +10,12 @@ const config = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
+  fakeTimers: {
+    enableGlobally: true,
+  },
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1",
+  },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 }
 
