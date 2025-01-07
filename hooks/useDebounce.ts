@@ -1,12 +1,13 @@
 import { useRef, useCallback } from "react"
 
-type DebounceJob = (...args: unknown[]) => void
-
-export const useDebounce = (func: DebounceJob, delay: number): DebounceJob => {
+export const useDebounce = <T extends (...args: any[]) => void>(
+  func: T,
+  delay: number
+): ((...args: Parameters<T>) => void) => {
   const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
-  const debouncedFunction = useCallback<DebounceJob>(
-    (...args) => {
+  return useCallback(
+    (...args: Parameters<T>) => {
       if (debounceRef.current) return
 
       func(...args)
@@ -17,6 +18,4 @@ export const useDebounce = (func: DebounceJob, delay: number): DebounceJob => {
     },
     [func, delay]
   )
-
-  return debouncedFunction
 }
