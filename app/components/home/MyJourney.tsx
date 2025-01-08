@@ -23,7 +23,7 @@ export const MyJourney = () => {
       ref={sectionRef}
       className="scroll-color bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark"
     >
-      <div className="max-w-screen-xl items-center md:flex">
+      <div className="max-w-screen-xl md:flex md:items-center">
         <div className="min-h-96 drop-shadow-[0_0_0.063rem_#877ADB] md:w-1/3">
           <figure itemScope itemType="https://schema.org/ImageObject">
             <Image
@@ -50,9 +50,9 @@ export const MyJourney = () => {
             development through one of these non-profits.
           </p>
           <p>
-            Captivated by the potential for creativity and constant learning,
-            I completed Web Development Bootcamp at Juno College of Technology
-            in 2021.
+            Captivated by the potential for creativity and constant learning, I
+            completed Web Development Bootcamp at Juno College of Technology in
+            2021.
           </p>
           <p>
             I have professional experience as a web developer, building and
