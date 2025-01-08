@@ -36,10 +36,8 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         className="absolute z-[1] h-[120vh] w-[130vw] max-w-none object-cover blur-[0.047rem] saturate-150 dark:hue-rotate-[266deg] sm:blur-0"
         style={{ transform: "translate3d(-4rem, -8rem, 0px)" }}
       />
-      <div className="z-10 min-h-[75vh] max-w-screen-xl py-[0.1px]">
-        <div className="mb-24 mr-5 mt-[18vh] py-5 md:w-3/5 md:translate-y-5">
-          {coverImageData.children}
-        </div>
+      <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
+        {coverImageData.children}
       </div>
       <LazyUseParallax parallaxRef={parallaxRef} />
     </section>
