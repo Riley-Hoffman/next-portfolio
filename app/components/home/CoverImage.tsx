@@ -37,7 +37,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         style={{ transform: "translate3d(-4rem, -8rem, 0px)" }}
       />
       <div className="z-10 min-h-[75vh] max-w-screen-xl py-[0.1px]">
-        <div className="mb-24 mr-5 mt-[18vh] py-5 text-left md:w-3/5 md:translate-y-5">
+        <div className="mb-24 mr-5 mt-[18vh] py-5 md:w-3/5 md:translate-y-5">
           {coverImageData.children}
         </div>
       </div>
