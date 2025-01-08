@@ -21,7 +21,7 @@ export const MyJourney = () => {
   return (
     <section
       ref={sectionRef}
-      className="scroll-color bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark"
+      className="bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark"
     >
       <div className="max-w-screen-xl md:flex md:items-center">
         <div className="min-h-96 drop-shadow-[0_0_0.063rem_#877ADB] md:w-1/3">
