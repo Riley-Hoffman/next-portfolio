@@ -44,9 +44,7 @@ export default function Contact() {
         <div className="pt-7 md:w-5/6 md:pb-[13vh]">
           <ContactWrapper />
         </div>
-        <div className="m-0 md:w-1/6">
-          <Sidebar />
-        </div>
+        <Sidebar />
       </div>
     </>
   )
