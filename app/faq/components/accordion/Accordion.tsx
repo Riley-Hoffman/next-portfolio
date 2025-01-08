@@ -29,7 +29,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
                 isOpen,
                 onClick: () => handleAccordionClick(index),
                 buttonRef: (el) => {
-                  if (el) buttonRefs.current[index] = el
+                  buttonRefs.current[index] = el
                 },
               }}
             />
@@ -38,7 +38,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
                 answer: item.answer,
                 isOpen,
                 contentRef: (el) => {
-                  if (el) contentRefs.current[index] = el
+                  contentRefs.current[index] = el
                 },
               }}
             />
