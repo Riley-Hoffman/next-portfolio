@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import { Icon } from "@iconify/react"
 import { NewTabContent } from "@/app/components/utils/NewTabContent"
 
@@ -32,13 +31,9 @@ const technologies: Tech[] = [
 ]
 
 export const SiteTechStack = () => {
-  const targetRef = useRef<HTMLDivElement | null>(null)
   return (
     <>
-      <section
-        className="gradient-border border-t-2 border-solid pb-12 pt-8"
-        ref={targetRef}
-      >
+      <section className="gradient-border border-t-2 border-solid pb-12 pt-8">
         <div className="container mx-auto max-w-screen-xl text-center">
           <h2 className="reg-caps mb-2 font-inconsolata text-2xl">
             Technologies Used To Build This Site
