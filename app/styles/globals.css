@@ -131,9 +131,9 @@
   h2:not(#_) {
     @apply leading-normal;
   }
-  p:not(#_),
-  ol:not(#_),
-  ul:not(#_) {
+  p:not(#_, .text-5xl, .text-4xl),
+  ol:not(#_, .text-5xl, .text-4xl),
+  ul:not(#_, .text-5xl, .text-4xl) {
     @apply leading-7;
   }
   .hamburger-line {
