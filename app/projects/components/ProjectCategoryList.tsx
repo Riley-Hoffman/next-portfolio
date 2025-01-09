@@ -17,7 +17,7 @@ export const ProjectCategoryList = ({
   )
 
   return (
-    <>
+    <section className="overflow-hidden first:pt-5 last:pb-20">
       <ProjectCatHeading category={category} />
       <ul
         className="max-w-screen-xl pb-5 text-base"
@@ -38,6 +38,6 @@ export const ProjectCategoryList = ({
           )
         })}
       </ul>
-    </>
+    </section>
   )
 }

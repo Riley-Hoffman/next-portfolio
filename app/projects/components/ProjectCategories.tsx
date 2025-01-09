@@ -16,7 +16,7 @@ export const ProjectCategories = ({
   )
 
   return (
-    <div className="overflow-hidden pb-20 pt-5">
+    <>
       {categories.map((category: string, idx: number) => (
         <ProjectCategoryList
           key={category}
@@ -25,6 +25,6 @@ export const ProjectCategories = ({
           projects={initialProjects}
         />
       ))}
-    </div>
+    </>
   )
 }
