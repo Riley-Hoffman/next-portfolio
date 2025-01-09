@@ -24,22 +24,20 @@ export const MyJourney = () => {
       className="bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark"
     >
       <div className="max-w-screen-xl md:flex md:items-center">
-        <div className="min-h-96 drop-shadow-[0_0_0.063rem_#877ADB] md:w-1/3">
-          <figure itemScope itemType="https://schema.org/ImageObject">
-            <Image
-              className="size-96 max-w-full rounded-3xl object-cover"
-              src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
-              width={384}
-              height={452}
-              alt="Riley with a flower behind his ear. Shot in black and white."
-              priority={false}
-              itemProp="contentUrl"
-            />
-            <figcaption className="sr-only" itemProp="creditText">
-              Photo by Kristen Mommertz
-            </figcaption>
-          </figure>
-        </div>
+        <figure itemScope itemType="https://schema.org/ImageObject">
+          <Image
+            className="size-96 max-w-full rounded-3xl object-cover drop-shadow-[0_0_0.063rem_#877ADB]"
+            src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
+            width={384}
+            height={452}
+            alt="Riley with a flower behind his ear. Shot in black and white."
+            priority={false}
+            itemProp="contentUrl"
+          />
+          <figcaption className="sr-only" itemProp="creditText">
+            Photo by Kristen Mommertz
+          </figcaption>
+        </figure>
         <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 contrast-more:bg-white dark:border-[#292d11] dark:bg-siteblack md:w-2/3 lg:px-[8%]">
           <h2>My Journey</h2>
           <p>
