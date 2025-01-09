@@ -17,9 +17,9 @@ export const ContactWrapper = () => {
     [formErrors]
   )
   return (
-    <>
+    <div className="pt-7 md:w-5/6 md:pb-[13vh]">
       <ContactContent errors={formErrors} />
       <Form onErrors={handleErrors} />
-    </>
+    </div>
   )
 }

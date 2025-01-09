@@ -20,7 +20,7 @@ export default function ThankYou() {
     <>
       <div className="pb-16">
         <h1 className="heading-one">Thank You</h1>
-        <p className="max-w-screen-xl pt-[15vh] pb-[20vh] text-center text-5xl">
+        <p className="max-w-screen-xl pb-[20vh] pt-[15vh] text-center text-5xl">
           Thank you for contacting me.{" "}
           <span className="mt-10 block text-4xl">
             I will get back to you as soon as possible.

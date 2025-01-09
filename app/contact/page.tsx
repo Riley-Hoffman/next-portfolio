@@ -41,9 +41,7 @@ export default function Contact() {
       <SchemaGenerator schemaData={schemaData} />
       <h1 className="heading-one">Contact Me</h1>
       <div className="max-w-5xl md:flex">
-        <div className="pt-7 md:w-5/6 md:pb-[13vh]">
-          <ContactWrapper />
-        </div>
+        <ContactWrapper />
         <Sidebar />
       </div>
     </>
