@@ -6,7 +6,6 @@ import {
 import { SkillsSection } from "./components/skills/SkillsSection"
 import { TrainingsSection } from "./components/trainings/TrainingsSection"
 import { getBaseUrl, getPageTitle, getImageUrl } from "@/constants/baseData"
-import "@/app/styles/background-accent.css"
 
 const description = `My skills. ${getPageTitle()}.`
 
