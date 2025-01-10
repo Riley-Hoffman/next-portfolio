@@ -1,11 +1,14 @@
 "use client"
+import { useRef } from "react"
 import { useParticleCleanupGame } from "../hooks/useParticleCleanupGame"
 import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import "@/app/styles/overlay.css"
 
 export const ParticleCleanupGame = () => {
-  const { refs, gameData, medalDetails, reloadAnimation } = useParticleCleanupGame()
+  const completionMessageRef = useRef<HTMLParagraphElement | null>(null)
+  const { refs, gameData, medalDetails, reloadAnimation } =
+    useParticleCleanupGame(completionMessageRef)
 
   return (
     <>
@@ -24,7 +27,11 @@ export const ParticleCleanupGame = () => {
           }}
         />
         {refs.current.allClean && (
-          <CompletionMessage medalDetails={medalDetails} time={gameData.time} />
+          <CompletionMessage
+            medalDetails={medalDetails}
+            time={gameData.time}
+            ref={completionMessageRef}
+          />
         )}
         <noscript>
           <p className="relative z-10 text-center">

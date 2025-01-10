@@ -20,7 +20,9 @@ export type Refs = {
   isMobile: boolean | null
 }
 
-export const useParticleCleanupGame = () => {
+export const useParticleCleanupGame = (
+  completionMessageRef: React.RefObject<HTMLParagraphElement | null>
+) => {
   const refs = useRef<Refs>({
     canvas: null,
     container: null,
@@ -102,7 +104,7 @@ export const useParticleCleanupGame = () => {
             ((Date.now() - refs.current.startTime!) / 1000).toFixed(1)
           )
           dispatch({ type: "END_GAME", time: refs.current.elapsedTime })
-          document.getElementById("completionMessage")?.focus()
+          completionMessageRef.current?.focus()
           refs.current.container?.classList.add("done")
         } else {
           cancelAnimationFrame(refs.current.animationFrameId)
@@ -113,7 +115,7 @@ export const useParticleCleanupGame = () => {
         )
       }
     },
-    [mouse, dispatch]
+    [mouse, dispatch, completionMessageRef]
   )
 
   const initializeAnimation = useInitializeAnimation(
