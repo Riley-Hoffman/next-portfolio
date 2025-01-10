@@ -4,7 +4,7 @@ import { PlayAgain } from "./PlayAgain"
 import { CompletionMessage } from "./CompletionMessage"
 import "@/app/styles/overlay.css"
 
-export const ParticleCleanup = () => {
+export const ParticleCleanupGame = () => {
   const { refs, gameData, medalDetails, reloadAnimation } = useParticleCleanup()
 
   return (
