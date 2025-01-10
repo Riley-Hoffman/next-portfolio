@@ -26,7 +26,7 @@ const config: Config = {
           100: "var(--color-accentone-100)",
           200: "var(--color-accentone-200)",
         },
-        sitebackground: "var(--color-sitebackground)",
+        altcolor: "var(--color-altcolor)",
         accenttwo: {
           100: "var(--color-accenttwo-100)",
           200: "var(--color-accenttwo-200)",
