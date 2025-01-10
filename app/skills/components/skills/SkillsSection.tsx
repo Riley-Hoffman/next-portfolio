@@ -7,7 +7,7 @@ export const SkillsSection = () => (
     <h1 className="heading-one">Skills</h1>
     <div className="relative max-w-screen-xl">
       <ul
-        className="skills-list mt-12 grid max-w-5xl grid-cols-2 justify-items-center gap-x-6 gap-y-16 pb-12 pt-14 sm:grid-cols-3 md:grid-cols-4"
+        className="mt-12 grid max-w-5xl grid-cols-2 justify-items-center gap-x-6 gap-y-16 pb-12 pt-14 sm:grid-cols-3 md:grid-cols-4"
         aria-label="Skills"
       >
         {skillsData.map((skill, index) => (

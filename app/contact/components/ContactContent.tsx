@@ -25,7 +25,7 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
     )}
     {errors.length > 0 && (
       <>
-        <div className="contact-error flex items-center pl-5">
+        <div className="flex items-center pl-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
