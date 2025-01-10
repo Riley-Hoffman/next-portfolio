@@ -1,6 +1,6 @@
 import { skillsData } from "./SkillsData"
 import { SkillItem } from "./SkillItem"
-import { OvalDecor } from "@/app/components/decorative/OvalDecor"
+import { BackgroundAccent } from "@/app/components/decorative/BackgroundAccent"
 
 export const SkillsSection = () => (
   <section className="pb-16">
@@ -14,7 +14,7 @@ export const SkillsSection = () => (
           <SkillItem key={index} {...skill} />
         ))}
       </ul>
-      <OvalDecor />
+      <BackgroundAccent classes="inset-x-[5%] bottom-[3%] top-[5%] rounded-full" />
     </div>
   </section>
 )

@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import clsx from "clsx"
 import { useTriggerOnScroll } from "@/hooks/useTriggerOnScroll"
-import { OvalDecor } from "@/app/components/decorative/OvalDecor"
+import { BackgroundAccent } from "@/app/components/decorative/BackgroundAccent"
 
 interface ProjectListItemProps {
   inverted?: string
@@ -52,7 +52,7 @@ export const ProjectListItem = ({
       }}
     >
       {children}
-      <OvalDecor classes="inset-0" />
+      <BackgroundAccent classes="inset-0 rounded-t-full rounded-b-[14rem]" />
     </li>
   )
 }
