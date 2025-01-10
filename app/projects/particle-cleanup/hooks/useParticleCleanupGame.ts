@@ -20,7 +20,7 @@ export type Refs = {
   isMobile: boolean | null
 }
 
-export const useParticleCleanup = () => {
+export const useParticleCleanupGame = () => {
   const refs = useRef<Refs>({
     canvas: null,
     container: null,
