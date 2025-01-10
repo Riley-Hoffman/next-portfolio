@@ -5,6 +5,10 @@ export interface CarouselDataTypes {
 
 export const CarouselData: CarouselDataTypes[] = [
   {
+    src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnsql.webp",
+    label: "Learn SQL",
+  },
+  {
     src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/mongodbwithnode.webp",
     label: "Using MongoDB with Node.js",
   },
