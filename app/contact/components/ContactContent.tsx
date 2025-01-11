@@ -5,7 +5,7 @@ interface ContactContentProps {
 }
 
 export const ContactContent = ({ errors }: ContactContentProps) => (
-  <div className="contact-content border-accenttwo mb-10 min-h-64 max-w-[calc(100%-1.563rem)] rounded-t-md bg-heading py-[0.1px] shadow-[#e5d4ed_0.188rem_0.125rem_0_0] dark:shadow-[#1a2b12_0.188rem_0.125rem_0_0]">
+  <div className="contact-content border-accenttwo mb-10 min-h-64 max-w-[calc(100%-1.563rem)] rounded-t-md bg-heading py-[0.1px] shadow-[0.188rem_0.125rem_0_0] shadow-accentone-200 dark:shadow-accentone-100">
     {errors.length === 0 && (
       <>
         <h2 className="mb-1 inline-block w-80 overflow-clip whitespace-nowrap border-r-2 border-solid border-accenttwo-200 font-medium tracking-widest motion-safe:animate-typetext">

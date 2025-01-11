@@ -26,7 +26,7 @@ export const BackToTopButton = () => {
   return visible ? (
     <button
       onClick={scrollToTop}
-      className="button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-200 px-2 py-2 shadow-[0_0.128px_1rem_-0.56rem_black] md:tool-tip hover:border-heading focus-visible:border-heading"
+      className="button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-200 px-2 py-2 md:tool-tip hover:border-heading focus-visible:border-heading"
       aria-label="Back to Top"
     >
       <Icon className="text-2xl" icon="fluent:chevron-circle-up-32-filled" />

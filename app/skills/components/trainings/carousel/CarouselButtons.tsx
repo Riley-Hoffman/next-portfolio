@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { Icon } from "@iconify/react"
-import { buttonsConfig } from "./constants/buttonsConfig"
+import { carouselButtonsConfig } from "./constants/carouselButtonsConfig"
 
 export const CarouselButtons = () => {
   const buttonsRef = useRef<(HTMLButtonElement | null)[]>([])
@@ -15,7 +15,7 @@ export const CarouselButtons = () => {
 
   return (
     <>
-      {buttonsConfig.map((config, index) => (
+      {carouselButtonsConfig.map((config, index) => (
         <button
           key={index}
           ref={(el) => {
