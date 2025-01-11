@@ -5,7 +5,7 @@ export interface CarouselDataTypes {
 
 export const CarouselData: CarouselDataTypes[] = [
   {
-    src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnsql.webp",
+    src: "https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnsqlcourse.webp",
     label: "Learn SQL",
   },
   {
