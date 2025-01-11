@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation, A11y, Mousewheel } from "swiper/modules"
 import { CarouselButtons } from "./CarouselButtons"
 import { CarouselDataTypes } from "./CarouselData"
+import { NewTabContent } from "@/app/components/utils/NewTabContent"
 
 interface CarouselProps {
   slides: CarouselDataTypes[]
@@ -61,14 +62,17 @@ export const Carousel = ({ slides }: CarouselProps) => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Image
-              src={slide.src}
-              alt={slide.label}
-              className="w-[56.25rem]"
-              width={900}
-              height={695}
-              loading="eager"
-            />
+            <a href={slide.url} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={slide.src}
+                alt={slide.label}
+                className="w-[56.25rem]"
+                width={900}
+                height={695}
+                loading="eager"
+              />
+              <NewTabContent icon={false} />
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>
