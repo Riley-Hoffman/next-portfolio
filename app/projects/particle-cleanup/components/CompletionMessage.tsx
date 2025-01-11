@@ -15,7 +15,7 @@ export const CompletionMessage = ({
     <p
       id="completionMessage"
       ref={ref}
-      className="absolute z-10 m-0 flex size-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-100"
+      className="absolute z-10 m-0 flex size-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-200"
       tabIndex={-1}
     >
       All clean!{" "}

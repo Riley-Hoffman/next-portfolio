@@ -88,9 +88,9 @@
   :root {
     --color-heading: #12121c;
     --color-textcolor: #2d2b34;
-    --color-accentone-100: #eee3f2;
-    --color-accentone-200: #e5d4ed;
-    --color-altcolor: #f5eef7;
+    --color-accentone-100: #f5eef7;
+    --color-accentone-200: #eee3f2;
+    --color-accentone-300: #e5d4ed;
     --color-accenttwo-100: #d4c6eb;
     --color-accenttwo-200: #745492;
     --color-bordercolor: #73738c;
@@ -102,9 +102,9 @@
   :root[class~="dark"] {
     --color-heading: #edede3;
     --color-textcolor: #d2d4cb;
-    --color-accentone-100: #0d191c;
-    --color-accentone-200: #12272b;
-    --color-altcolor: #081011;
+    --color-accentone-100: #081011;
+    --color-accentone-200: #0d191c;
+    --color-accentone-300: #12272b;
     --color-accenttwo-100: #265f5e;
     --color-accenttwo-200: #7fc5c8;
     --color-bordercolor: #7a8b8e;
@@ -162,7 +162,7 @@
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .nav-link {
-    @apply inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-200;
+    @apply hover:[&.button]:bg-accentone-300 inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
   }
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl;

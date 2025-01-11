@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react"
 import { getPageTitle, githubUrl, version } from "@/constants/baseData"
 
 export const Footer = () => (
-  <footer className="gradient-border min-h-24 border-t border-solid bg-accentone-200 contrast-more:bg-white dark:bg-accentone-100">
+  <footer className="gradient-border min-h-24 border-t border-solid bg-accentone-300 contrast-more:bg-white dark:bg-accentone-200">
     <h2 className="sr-only">Footer</h2>
     <div className="max-w-screen-xl py-7 md:flex md:items-center md:justify-between">
       <p className="font-urbanist">

@@ -25,8 +25,8 @@ const config: Config = {
         accentone: {
           100: "var(--color-accentone-100)",
           200: "var(--color-accentone-200)",
+          300: "var(--color-accentone-300)",
         },
-        altcolor: "var(--color-altcolor)",
         accenttwo: {
           100: "var(--color-accenttwo-100)",
           200: "var(--color-accenttwo-200)",
