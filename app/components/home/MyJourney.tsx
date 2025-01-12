@@ -26,7 +26,7 @@ export const MyJourney = () => {
       <div className="max-w-screen-xl md:flex md:items-center">
         <figure itemScope itemType="https://schema.org/ImageObject">
           <Image
-            className="size-96 max-w-full rounded-3xl object-cover drop-shadow-[0_0_0.063rem_#877ADB]"
+            className="size-96 max-w-full rounded-3xl object-cover drop-shadow-[0_0_0.063rem_#877ADB] dark:drop-shadow-[0_0_0.063rem_#788524]"
             src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
             width={384}
             height={452}
