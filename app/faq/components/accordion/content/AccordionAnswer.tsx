@@ -11,8 +11,8 @@ type AccordionAnswerProps = {
 export const AccordionAnswer = ({ data }: AccordionAnswerProps) => {
   const { answer, isOpen, contentRef } = data
   return (
-    <div
-      className={clsx("overflow-hidden px-5 duration-500 ease-in-out", {
+    <p
+      className={clsx("overflow-hidden px-10 duration-500 ease-in-out", {
         "py-0.5": isOpen,
         "peer-[.init]:hidden": !isOpen,
       })}
@@ -20,6 +20,6 @@ export const AccordionAnswer = ({ data }: AccordionAnswerProps) => {
       ref={contentRef}
     >
       {answer}
-    </div>
+    </p>
   )
 }
