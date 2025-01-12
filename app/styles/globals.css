@@ -162,7 +162,7 @@
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .nav-link {
-    @apply hover:[&.button]:bg-accentone-300 inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
+    @apply inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
   }
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl;

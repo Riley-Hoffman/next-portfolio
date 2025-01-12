@@ -4,7 +4,7 @@ import {
   SchemaGeneratorProps,
 } from "@/app/components/schema/SchemaGenerator"
 import { ContactWrapper } from "./components/ContactWrapper"
-import { Sidebar } from "./components/Sidebar"
+import { Sidebar } from "./components/sidebar/Sidebar"
 import { getBaseUrl, getImageUrl } from "@/constants/baseData"
 import "./styles/form.css"
 

@@ -11,4 +11,5 @@ export const getImageUrl = (imagePath: string = "thumbnail.jpg") =>
   `https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/${imagePath}`
 export const githubUrl = packageJson.repository.url.replace(".git", "")
 export const linkedInUrl = "https://www.linkedin.com/in/rileyhoffman"
+export const codeacademyUrl = "https://www.codecademy.com/profiles/RileyHoffman"
 export const version = packageJson.version
