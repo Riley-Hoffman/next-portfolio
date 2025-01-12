@@ -18,7 +18,7 @@ export const LinkedInButton = () => {
   return (
     <Link
       ref={buttonRef}
-      className="group button inline-block"
+      className="group button m-5 inline-block text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
       target="_blank"
       rel="noopener noreferrer"

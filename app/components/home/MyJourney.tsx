@@ -63,9 +63,7 @@ export const MyJourney = () => {
             developers we make our contributions to the online world more
             meaningful.
           </p>
-          <p className="mt-10">
-            <LinkedInButton />
-          </p>
+          <LinkedInButton />
         </div>
       </div>
     </section>
