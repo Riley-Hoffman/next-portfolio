@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react"
 import { Skill } from "./SkillsData"
 
 export const SkillItem = ({ skill, icon, classes }: Skill) => (
-  <li className="text-center min-h-11">
+  <li className="min-h-11 text-center">
     {icon && (
       <Icon className={`text-5xl outline-black${classes}`} icon={icon} />
     )}
