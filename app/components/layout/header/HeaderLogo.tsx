@@ -11,6 +11,5 @@ export const HeaderLogo = () => {
       Riley Hoffman
       <span className="sr-only">Back To Home Page</span>
     </button>
-
   )
 }
