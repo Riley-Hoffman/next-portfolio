@@ -129,6 +129,10 @@ const config: Config = {
             color: theme("colors.heading"),
           },
         },
+        ".pad-wrap": {
+          paddingLeft: "calc(50% - 640px)",
+          paddingRight: "calc(50% - 640px)",
+        },
         ".gradient-border": {
           borderImageSlice: "1",
           borderImageSource: `linear-gradient(90deg,${theme("colors.gradientone")} 0%,${theme("colors.gradienttwo")} 50%,${theme("colors.gradientthree")} 70%)`,
