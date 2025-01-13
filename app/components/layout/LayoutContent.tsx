@@ -1,13 +1,13 @@
-import dynamic from "next/dynamic"
-import { Header } from "./header/Header"
-import { Footer } from "./Footer"
+import dynamic from 'next/dynamic'
+import { Header } from './header/Header'
+import { Footer } from './Footer'
 
 interface LayoutContentProps {
   children: React.ReactNode
 }
 
 const BackToTopAndAnalytics = dynamic(() =>
-  import("./dynamic-imports/BackToTopAndAnalytics").then(
+  import('./dynamic-imports/BackToTopAndAnalytics').then(
     (mod) => mod.BackToTopAndAnalytics
   )
 )

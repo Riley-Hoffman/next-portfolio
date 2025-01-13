@@ -1,22 +1,22 @@
-import { renderHook, act } from "@testing-library/react"
-import { useAccordion } from "../hooks/useAccordion"
-import { pxToRem } from "@/lib/pxToRem"
+import { renderHook, act } from '@testing-library/react'
+import { useAccordion } from '../hooks/useAccordion'
+import { pxToRem } from '@/lib/pxToRem'
 
-jest.mock("@/hooks/useDebounce", () => ({
+jest.mock('@/hooks/useDebounce', () => ({
   useDebounce: jest.fn().mockImplementation((cb, delay) => cb),
 }))
 
-describe("useAccordion", () => {
+describe('useAccordion', () => {
   const itemsLength = 3
 
-  it("should initialize with the correct state", () => {
+  it('should initialize with the correct state', () => {
     const { result } = renderHook(() => useAccordion(itemsLength))
 
     expect(result.current.openIndex).toBeNull()
     expect(result.current.accOpen(0)).toBe(false)
   })
 
-  it("should toggle openIndex when handleAccordionClick is called", () => {
+  it('should toggle openIndex when handleAccordionClick is called', () => {
     const { result } = renderHook(() => useAccordion(itemsLength))
 
     act(() => {
@@ -32,7 +32,7 @@ describe("useAccordion", () => {
     expect(result.current.openIndex).toBeNull()
   })
 
-  it("should open content when index matches openIndex", () => {
+  it('should open content when index matches openIndex', () => {
     jest.useFakeTimers()
 
     const { result } = renderHook(() => useAccordion(itemsLength))
@@ -41,7 +41,7 @@ describe("useAccordion", () => {
       classList: { contains: jest.fn(), toggle: jest.fn() },
     }
     const mockContentRef = {
-      style: { maxHeight: "" },
+      style: { maxHeight: '' },
       scrollHeight: 100,
       focus: jest.fn(),
     }
@@ -60,7 +60,7 @@ describe("useAccordion", () => {
     expect(mockContentRef.style.maxHeight).toBe(
       `${pxToRem(mockContentRef.scrollHeight) + 2.75}rem`
     )
-    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", false)
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith('init', false)
     expect(mockContentRef.focus).toHaveBeenCalled()
 
     act(() => {
@@ -69,7 +69,7 @@ describe("useAccordion", () => {
 
     jest.advanceTimersByTime(500)
 
-    expect(mockContentRef.style.maxHeight).toBe("0rem")
+    expect(mockContentRef.style.maxHeight).toBe('0rem')
   })
 
   it('should toggle the "init" class on buttons when accordion is clicked', () => {
@@ -91,7 +91,7 @@ describe("useAccordion", () => {
 
     jest.advanceTimersByTime(500)
 
-    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", false)
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith('init', false)
 
     jest.clearAllMocks()
 
@@ -100,10 +100,10 @@ describe("useAccordion", () => {
     })
 
     jest.advanceTimersByTime(500)
-    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith("init", true)
+    expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith('init', true)
   })
 
-  it("should handle debouncing of handleAccordionClick", () => {
+  it('should handle debouncing of handleAccordionClick', () => {
     jest.useFakeTimers()
 
     const { result } = renderHook(() => useAccordion(itemsLength))

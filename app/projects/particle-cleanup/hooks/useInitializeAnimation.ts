@@ -1,4 +1,4 @@
-import { useCallback } from "react"
+import { useCallback } from 'react'
 
 export const useInitializeAnimation = (
   refs: React.RefObject<any>,
@@ -10,10 +10,10 @@ export const useInitializeAnimation = (
   ) => void
 ) => {
   const initializeAnimation = useCallback(() => {
-    const ctx = refs.current.canvas?.getContext("2d")
+    const ctx = refs.current.canvas?.getContext('2d')
 
-    if (refs.current.container?.classList.contains("done")) {
-      refs.current.container.classList.remove("done")
+    if (refs.current.container?.classList.contains('done')) {
+      refs.current.container.classList.remove('done')
     }
 
     if (refs.current.container) {

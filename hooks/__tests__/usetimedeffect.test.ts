@@ -1,10 +1,10 @@
-import { renderHook, act } from "@testing-library/react"
-import { useTimedEffect } from "../useTimedEffect"
+import { renderHook, act } from '@testing-library/react'
+import { useTimedEffect } from '../useTimedEffect'
 
 jest.useFakeTimers()
 
-describe("useTimedEffect", () => {
-  it("should trigger the effect and reset after the specified duration", () => {
+describe('useTimedEffect', () => {
+  it('should trigger the effect and reset after the specified duration', () => {
     const mockApplyEffect = jest.fn()
     const { result } = renderHook(() => useTimedEffect(1000))
 
@@ -23,7 +23,7 @@ describe("useTimedEffect", () => {
     expect(mockApplyEffect).toHaveBeenCalledWith(false)
   })
 
-  it("should not trigger the effect again while still counting", () => {
+  it('should not trigger the effect again while still counting', () => {
     const mockApplyEffect = jest.fn()
     const { result } = renderHook(() => useTimedEffect(1000))
 
@@ -39,7 +39,7 @@ describe("useTimedEffect", () => {
     expect(mockApplyEffect).toHaveBeenCalledWith(false)
   })
 
-  it("should clean up the timeout when cleanup is called", () => {
+  it('should clean up the timeout when cleanup is called', () => {
     const mockApplyEffect = jest.fn()
     const { result } = renderHook(() => useTimedEffect(1000))
 

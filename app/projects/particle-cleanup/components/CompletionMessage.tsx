@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react"
+import { Icon } from '@iconify/react'
 
 interface CompletionMessageProps {
   ref?: React.Ref<HTMLParagraphElement>
@@ -18,9 +18,9 @@ export const CompletionMessage = ({
       className="absolute z-10 m-0 flex size-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-200"
       tabIndex={-1}
     >
-      All clean!{" "}
+      All clean!{' '}
       <small aria-live="polite">
-        Time taken:{" "}
+        Time taken:{' '}
         <span className="font-semibold" aria-live="polite">
           {time} seconds
         </span>

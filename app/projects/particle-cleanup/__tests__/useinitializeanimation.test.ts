@@ -1,7 +1,7 @@
-import { renderHook } from "@testing-library/react"
-import { useInitializeAnimation } from "../hooks/useInitializeAnimation"
+import { renderHook } from '@testing-library/react'
+import { useInitializeAnimation } from '../hooks/useInitializeAnimation'
 
-describe("useInitializeAnimation", () => {
+describe('useInitializeAnimation', () => {
   let refs: React.RefObject<any>
   let dispatch: jest.Mock
   let initParticles: jest.Mock
@@ -37,7 +37,7 @@ describe("useInitializeAnimation", () => {
     animateParticles = jest.fn()
   })
 
-  it("should initialize animation correctly", () => {
+  it('should initialize animation correctly', () => {
     const { result } = renderHook(() =>
       useInitializeAnimation(refs, dispatch, initParticles, animateParticles)
     )
@@ -53,13 +53,13 @@ describe("useInitializeAnimation", () => {
     expect(refs.current.isMobile).toBe(window.innerWidth <= 768)
 
     expect(refs.current.container?.classList.contains).toHaveBeenCalledWith(
-      "done"
+      'done'
     )
     expect(refs.current.container?.classList.remove).not.toHaveBeenCalled()
 
     expect(initParticles).toHaveBeenCalledWith(refs.current.canvas)
     expect(animateParticles).toHaveBeenCalledWith(
-      refs.current.canvas.getContext("2d"),
+      refs.current.canvas.getContext('2d'),
       refs.current.canvas
     )
   })
@@ -76,7 +76,7 @@ describe("useInitializeAnimation", () => {
     initializeAnimation()
 
     expect(refs.current.container?.classList.remove).toHaveBeenCalledWith(
-      "done"
+      'done'
     )
   })
 })

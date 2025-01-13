@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: '18'
 
       - name: Install dependencies
         run: |
@@ -52,7 +52,7 @@ jobs:
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: "https://rileyhoffman.com"
+          urls: 'https://rileyhoffman.com'
           uploadArtifacts: true
           temporaryPublicStorage: true
-          budgetPath: "./lighthouse-budget.json"
+          budgetPath: './lighthouse-budget.json'

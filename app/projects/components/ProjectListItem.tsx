@@ -1,8 +1,8 @@
-"use client"
-import { useEffect } from "react"
-import clsx from "clsx"
-import { useTriggerOnScroll } from "@/hooks/useTriggerOnScroll"
-import { BackgroundAccent } from "@/app/components/decorative/BackgroundAccent"
+'use client'
+import { useEffect } from 'react'
+import clsx from 'clsx'
+import { useTriggerOnScroll } from '@/hooks/useTriggerOnScroll'
+import { BackgroundAccent } from '@/app/components/decorative/BackgroundAccent'
 
 interface ProjectListItemProps {
   inverted?: string
@@ -34,14 +34,14 @@ export const ProjectListItem = ({
   return (
     <li
       className={clsx(
-        "ease group gradient-border relative my-28 gap-14 border-t-8 border-solid md:flex",
+        'ease group gradient-border relative my-28 gap-14 border-t-8 border-solid md:flex',
         {
-          "transition-[left]": inverted,
-          "transition-[right]": !inverted,
-          "duration-1000": true,
-          "mt-12": isFirst,
-          "mt-0": !isFirst,
-          "flex-row-reverse": inverted,
+          'transition-[left]': inverted,
+          'transition-[right]': !inverted,
+          'duration-1000': true,
+          'mt-12': isFirst,
+          'mt-0': !isFirst,
+          'flex-row-reverse': inverted,
         },
         inverted
       )}

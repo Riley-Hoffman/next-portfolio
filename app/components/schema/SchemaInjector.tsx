@@ -1,4 +1,4 @@
-import { Thing, WithContext } from "schema-dts"
+import { Thing, WithContext } from 'schema-dts'
 
 interface SchemaInjectorProps<T extends Thing> {
   structuredData: WithContext<T>

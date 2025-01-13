@@ -1,5 +1,5 @@
-import { useCallback } from "react"
-import { useGameData } from "./useGameData"
+import { useCallback } from 'react'
+import { useGameData } from './useGameData'
 
 export const useHandleInteraction = (
   refs: React.RefObject<any>,
@@ -10,13 +10,13 @@ export const useHandleInteraction = (
 
   const handleInteraction = useCallback(
     (event: Event, isInside: boolean) => {
-      const isTouchEvent = event.type.startsWith("touch")
+      const isTouchEvent = event.type.startsWith('touch')
       const { clientX, clientY } = isTouchEvent
         ? (event as TouchEvent).touches[0]
         : (event as MouseEvent)
 
       if (clientX !== undefined && clientY !== undefined) {
-        if (["mousemove", "touchmove"].includes(event.type)) {
+        if (['mousemove', 'touchmove'].includes(event.type)) {
           updateCursorPosition(clientX, clientY)
         }
 
@@ -26,8 +26,8 @@ export const useHandleInteraction = (
             setTimeout(
               () =>
                 refs.current.container?.scrollIntoView({
-                  block: "center",
-                  behavior: "smooth",
+                  block: 'center',
+                  behavior: 'smooth',
                 }),
               100
             )
@@ -35,7 +35,7 @@ export const useHandleInteraction = (
 
           if (gameData.gameInProgress) {
             sayMessageTemporarily(
-              `Your cursor has ${isInside ? "entered" : "exited"} Particle Cleanup Game play area`
+              `Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`
             )
           }
         }

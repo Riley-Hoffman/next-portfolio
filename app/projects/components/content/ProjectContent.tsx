@@ -1,6 +1,6 @@
-import Link from "next/link"
-import Image from "next/image"
-import { NewTabContent } from "@/app/components/utils/NewTabContent"
+import Link from 'next/link'
+import Image from 'next/image'
+import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 export interface Project {
   title: string
@@ -15,7 +15,7 @@ export interface Project {
   category: string
   isFirst?: boolean
 }
-const projectLinkClasses = "button mx-5 px-3 py-1 uppercase"
+const projectLinkClasses = 'button mx-5 px-3 py-1 uppercase'
 
 export const ProjectContent = ({
   title,

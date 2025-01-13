@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react"
-import { Icon } from "@iconify/react"
-import { carouselButtonsConfig } from "./constants/carouselButtonsConfig"
+import { useEffect, useRef } from 'react'
+import { Icon } from '@iconify/react'
+import { carouselButtonsConfig } from './constants/carouselButtonsConfig'
 
 export const CarouselButtons = () => {
   const buttonsRef = useRef<(HTMLButtonElement | null)[]>([])
@@ -8,7 +8,7 @@ export const CarouselButtons = () => {
   useEffect(() => {
     buttonsRef.current.forEach((button) => {
       if (button) {
-        button.classList.remove("hidden")
+        button.classList.remove('hidden')
       }
     })
   }, [])

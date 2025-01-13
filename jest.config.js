@@ -1,25 +1,25 @@
-const nextJest = require("next/jest.js")
+const nextJest = require('next/jest.js')
 
 const createJestConfig = nextJest({
-  dir: "./",
+  dir: './',
 })
 
 const config = {
-  preset: "ts-jest",
-  testEnvironment: "jsdom",
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    '^.+\\.tsx?$': 'ts-jest',
   },
   fakeTimers: {
     enableGlobally: true,
   },
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/$1",
+    '^@/(.*)$': '<rootDir>/$1',
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 }
 
 module.exports = async () => ({
   ...(await createJestConfig(config)()),
-  transformIgnorePatterns: ["node_modules/(?!.*\\.mjs$)"],
+  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
 })

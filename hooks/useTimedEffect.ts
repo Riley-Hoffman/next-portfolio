@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef } from 'react'
 
 export const useTimedEffect = (duration: number = 1000) => {
   const isCountingRef = useRef(false)

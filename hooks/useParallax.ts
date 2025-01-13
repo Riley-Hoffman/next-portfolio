@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef } from "react"
-import { useReducedMotion } from "./useReducedMotion"
-import { useScrollHandler } from "./useScrollHandler"
-import { pxToRem } from "@/lib/pxToRem"
+import { useCallback, useEffect, useRef } from 'react'
+import { useReducedMotion } from './useReducedMotion'
+import { useScrollHandler } from './useScrollHandler'
+import { pxToRem } from '@/lib/pxToRem'
 
 export const useParallax = (
   velocity: number = 0.1,
@@ -15,19 +15,19 @@ export const useParallax = (
 
   const updateImagePosition = useCallback(() => {
     if (parallaxRef.current && !prefersReducedMotion) {
-      const img = parallaxRef.current.querySelector("img")
+      const img = parallaxRef.current.querySelector('img')
       if (img) {
         const height = parallaxRef.current.offsetHeight - 18
         const translateX = -(height - scrollRef.current) * velocity
         const translateY = -(height - scrollRef.current) * (velocity + 0.1)
         img.style.transform = `translate3d(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem, 0)`
-        img.style.willChange = "transform"
+        img.style.willChange = 'transform'
       }
     }
   }, [parallaxRef, prefersReducedMotion, velocity])
 
   useScrollHandler(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       scrollRef.current = window.scrollY
     }
     updateImagePosition()

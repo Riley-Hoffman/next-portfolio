@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 export interface AccordionItem {
   question: string
@@ -7,7 +7,7 @@ export interface AccordionItem {
 
 const accordionItems: AccordionItem[] = [
   {
-    question: "Are you available for freelance work?",
+    question: 'Are you available for freelance work?',
     answer: (
       <>
         Absolutely! Feel free to <Link href="/contact">get in touch</Link> to
@@ -16,7 +16,7 @@ const accordionItems: AccordionItem[] = [
     ),
   },
   {
-    question: "What services do you offer?",
+    question: 'What services do you offer?',
     answer: (
       <>
         I offer a range of web services, including designing and building new
@@ -27,7 +27,7 @@ const accordionItems: AccordionItem[] = [
     ),
   },
   {
-    question: "What technologies and tools do you use?",
+    question: 'What technologies and tools do you use?',
     answer: (
       <>
         Depending on your project&apos;s needs, I can work with various
@@ -38,7 +38,7 @@ const accordionItems: AccordionItem[] = [
     ),
   },
   {
-    question: "Do you offer ongoing support and maintenance?",
+    question: 'Do you offer ongoing support and maintenance?',
     answer: (
       <>
         While the initial project cost does not cover support and maintenance, I

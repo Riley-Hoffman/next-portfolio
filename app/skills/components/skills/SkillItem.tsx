@@ -1,5 +1,5 @@
-import { Icon } from "@iconify/react"
-import { Skill } from "./SkillsData"
+import { Icon } from '@iconify/react'
+import { Skill } from './SkillsData'
 
 export const SkillItem = ({ skill, icon, classes }: Skill) => (
   <li className="min-h-11 text-center">

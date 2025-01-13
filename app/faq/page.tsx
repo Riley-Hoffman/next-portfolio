@@ -1,53 +1,53 @@
-import { Metadata } from "next"
-import { FAQPage, WithContext } from "schema-dts"
-import { Accordion } from "./components/accordion/Accordion"
+import { Metadata } from 'next'
+import { FAQPage, WithContext } from 'schema-dts'
+import { Accordion } from './components/accordion/Accordion'
 import {
   questions,
   answers,
-} from "./components/accordion/constants/AccordionItems"
-import SchemaInjector from "../components/schema/SchemaInjector"
+} from './components/accordion/constants/AccordionItems'
+import SchemaInjector from '../components/schema/SchemaInjector'
 import {
   getBaseUrl,
   getPageTitle,
   author,
   getImageUrl,
-} from "@/constants/baseData"
+} from '@/constants/baseData'
 
-const description = "Find the answers to my most frequently asked questions."
+const description = 'Find the answers to my most frequently asked questions.'
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: 'FAQ',
   description: description,
-  metadataBase: new URL(`${getBaseUrl("/faq")}`),
+  metadataBase: new URL(`${getBaseUrl('/faq')}`),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    locale: "en_CA",
+    type: 'website',
+    locale: 'en_CA',
     images: getImageUrl(),
-    title: "FAQ",
-    url: `${getBaseUrl("/faq")}`,
+    title: 'FAQ',
+    url: `${getBaseUrl('/faq')}`,
   },
 }
 const faqSchemaData: WithContext<FAQPage> = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  name: getPageTitle("FAQ"),
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  name: getPageTitle('FAQ'),
   description: description,
   image: getImageUrl(),
-  url: `${getBaseUrl("/faq")}`,
-  datePublished: "2024-07-29T09:25:01.340Z",
+  url: `${getBaseUrl('/faq')}`,
+  datePublished: '2024-07-29T09:25:01.340Z',
   mainEntity: questions.map((question, index) => ({
-    "@type": "Question",
+    '@type': 'Question',
     name: question,
     acceptedAnswer: {
-      "@type": "Answer",
+      '@type': 'Answer',
       text: `${answers[index].props.children}`,
     },
   })),
   author: {
-    "@type": "Person",
+    '@type': 'Person',
     name: author,
   },
 }

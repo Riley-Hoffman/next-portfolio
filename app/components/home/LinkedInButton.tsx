@@ -1,8 +1,8 @@
-import { useRef } from "react"
-import Link from "next/link"
-import { Icon } from "@iconify/react"
-import { useTimedEffect } from "@/hooks/useTimedEffect"
-import { NewTabContent } from "@/app/components/utils/NewTabContent"
+import { useRef } from 'react'
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
+import { useTimedEffect } from '@/hooks/useTimedEffect'
+import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
@@ -10,7 +10,7 @@ export const LinkedInButton = () => {
 
   const applyEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
-      "motion-safe:animate-wiggle",
+      'motion-safe:animate-wiggle',
       isCounting
     )
   }

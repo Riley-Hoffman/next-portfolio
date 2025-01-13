@@ -1,7 +1,7 @@
-"use client"
-import { useState, useCallback } from "react"
-import { ContactContent } from "./ContactContent"
-import { Form } from "./form/Form"
+'use client'
+import { useState, useCallback } from 'react'
+import { ContactContent } from './ContactContent'
+import { Form } from './form/Form'
 
 export const ContactWrapper = () => {
   const [formErrors, setFormErrors] = useState<string[]>([])

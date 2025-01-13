@@ -1,7 +1,7 @@
-import { ProjectCatHeading } from "./content/ProjectCatHeading"
-import { ProjectListItem } from "./ProjectListItem"
-import { ProjectContent } from "./content/ProjectContent"
-import { Project } from "./content/ProjectContent"
+import { ProjectCatHeading } from './content/ProjectCatHeading'
+import { ProjectListItem } from './ProjectListItem'
+import { ProjectContent } from './content/ProjectContent'
+import { Project } from './content/ProjectContent'
 
 export const ProjectCategoryList = ({
   category,
@@ -29,7 +29,7 @@ export const ProjectCategoryList = ({
           return (
             <ProjectListItem
               key={project.title}
-              inverted={originalIndex % 2 === 0 ? "inverted" : ""}
+              inverted={originalIndex % 2 === 0 ? 'inverted' : ''}
               animation={project.animation}
               isFirst={index === 0 && project === filteredProjects[0]}
             >

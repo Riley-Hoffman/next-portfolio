@@ -1,9 +1,9 @@
-"use client"
-import { useRef } from "react"
-import { useParticleCleanupGame } from "../hooks/useParticleCleanupGame"
-import { PlayAgain } from "./PlayAgain"
-import { CompletionMessage } from "./CompletionMessage"
-import "@/app/styles/overlay.css"
+'use client'
+import { useRef } from 'react'
+import { useParticleCleanupGame } from '../hooks/useParticleCleanupGame'
+import { PlayAgain } from './PlayAgain'
+import { CompletionMessage } from './CompletionMessage'
+import '@/app/styles/overlay.css'
 
 export const ParticleCleanupGame = () => {
   const completionMessageRef = useRef<HTMLParagraphElement | null>(null)

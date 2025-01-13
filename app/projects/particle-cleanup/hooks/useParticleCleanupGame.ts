@@ -1,12 +1,12 @@
-import { useRef, useCallback, useMemo } from "react"
-import { useGameData } from "./useGameData"
-import { useCreateParticle } from "./useCreateParticle"
-import { useHandleInteraction } from "./useHandleInteraction"
-import { useInitializeAnimation } from "./useInitializeAnimation"
-import { useMedalDetails } from "./useMedalDetails"
-import { useReloadAnimation } from "./useReloadAnimation"
-import { useParticleCleanupEvents } from "./useParticleCleanupEvents"
-import { Particle } from "../classes/Particle"
+import { useRef, useCallback, useMemo } from 'react'
+import { useGameData } from './useGameData'
+import { useCreateParticle } from './useCreateParticle'
+import { useHandleInteraction } from './useHandleInteraction'
+import { useInitializeAnimation } from './useInitializeAnimation'
+import { useMedalDetails } from './useMedalDetails'
+import { useReloadAnimation } from './useReloadAnimation'
+import { useParticleCleanupEvents } from './useParticleCleanupEvents'
+import { Particle } from '../classes/Particle'
 
 export type Refs = {
   canvas: HTMLCanvasElement | null
@@ -57,8 +57,8 @@ export const useParticleCleanupGame = (
 
   const sayMessageTemporarily = useCallback(
     (message: string) => {
-      dispatch({ type: "SET_CURSOR_MESSAGE", message })
-      setTimeout(() => dispatch({ type: "MARK_MESSAGE_READ" }), 100)
+      dispatch({ type: 'SET_CURSOR_MESSAGE', message })
+      setTimeout(() => dispatch({ type: 'MARK_MESSAGE_READ' }), 100)
     },
     [dispatch]
   )
@@ -103,9 +103,9 @@ export const useParticleCleanupGame = (
           refs.current.elapsedTime = parseFloat(
             ((Date.now() - refs.current.startTime!) / 1000).toFixed(1)
           )
-          dispatch({ type: "END_GAME", time: refs.current.elapsedTime })
+          dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
           completionMessageRef.current?.focus()
-          refs.current.container?.classList.add("done")
+          refs.current.container?.classList.add('done')
         } else {
           cancelAnimationFrame(refs.current.animationFrameId)
         }

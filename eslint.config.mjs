@@ -1,8 +1,8 @@
-import path from "node:path"
-import { fileURLToPath } from "node:url"
-import js from "@eslint/js"
-import { FlatCompat } from "@eslint/eslintrc"
-import { fixupConfigRules } from "@eslint/compat"
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import js from '@eslint/js'
+import { FlatCompat } from '@eslint/eslintrc'
+import { fixupConfigRules } from '@eslint/compat'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -12,34 +12,43 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
   root: true,
   extends: [
-    "next/core-web-vitals",
-    "next/typescript",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:tailwindcss/recommended",
-    "prettier",
+    'next/core-web-vitals',
+    'next/typescript',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:tailwindcss/recommended',
+    'prettier',
   ],
-  plugins: ["@typescript-eslint", "react", "react-hooks", "tailwindcss"],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'tailwindcss'],
   rules: {
-    "no-console": ["error", { allow: ["info", "warn", "error"] }],
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-    "tailwindcss/classnames-order": "warn",
-    "tailwindcss/no-custom-classname": "off",
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'tailwindcss/classnames-order': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
+    'jsx-quotes': ['error', 'prefer-double'],
+    quotes: [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
   },
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
     },
   ],
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
   env: {
@@ -50,12 +59,12 @@ const compat = new FlatCompat({
 })
 
 const patchedConfig = fixupConfigRules([
-  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends('next/core-web-vitals'),
 ])
 
 const config = [
   ...patchedConfig,
-  { ignores: ["node_modules/", ".next/", ".netlify/", "public/"] },
+  { ignores: ['node_modules/', '.next/', '.netlify/', 'public/'] },
 ]
 
 export default config

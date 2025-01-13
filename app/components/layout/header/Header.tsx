@@ -1,12 +1,12 @@
-"use client"
-import dynamic from "next/dynamic"
-import { SkipToContent } from "./SkipToContent"
-import { HeaderLogo } from "./HeaderLogo"
-import { NoJsMenu } from "./nav/NoJsMenu"
+'use client'
+import dynamic from 'next/dynamic'
+import { SkipToContent } from './SkipToContent'
+import { HeaderLogo } from './HeaderLogo'
+import { NoJsMenu } from './nav/NoJsMenu'
 
 const ThemeChangerAndNav = dynamic(
   () =>
-    import("./dynamic-imports/ThemeChangerAndNav").then(
+    import('./dynamic-imports/ThemeChangerAndNav').then(
       (mod) => mod.ThemeChangerAndNav
     ),
   {

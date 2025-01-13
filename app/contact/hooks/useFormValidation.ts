@@ -1,21 +1,21 @@
-"use client"
-import { useState, useEffect } from "react"
-import { FormData } from "../components/form/Form"
+'use client'
+import { useState, useEffect } from 'react'
+import { FormData } from '../components/form/Form'
 
 export const useFormValidation = (initialState: FormData) => {
   const [formState, setFormState] = useState(initialState)
   const [submitted, setSubmitted] = useState(false)
-  const [errors, setErrors] = useState({ name: "", email: "", message: "" })
+  const [errors, setErrors] = useState({ name: '', email: '', message: '' })
 
   useEffect(() => {
     if (submitted) {
       const validateForm = () => {
         const { name, email, message } = formState
-        let newErrors = { name: "", email: "", message: "" }
-        if (name.trim() === "") newErrors.name = "Please enter your name."
+        let newErrors = { name: '', email: '', message: '' }
+        if (name.trim() === '') newErrors.name = 'Please enter your name.'
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-          newErrors.email = "Please enter a valid email address."
-        if (message.trim() === "") newErrors.message = "Please enter a message."
+          newErrors.email = 'Please enter a valid email address.'
+        if (message.trim() === '') newErrors.message = 'Please enter a message.'
         setErrors(newErrors)
       }
       validateForm()
@@ -30,7 +30,7 @@ export const useFormValidation = (initialState: FormData) => {
         [field]: event.target.value,
       }))
       setSubmitted(false)
-      setErrors({ name: "", email: "", message: "" })
+      setErrors({ name: '', email: '', message: '' })
     }
 
   const handleSubmission = () => {

@@ -5,7 +5,7 @@ ol.numbered-icons li {
 ol.numbered-icons li:before {
   @apply absolute -left-5 top-1/2 mr-5 flex size-7 -translate-y-1/2 items-center justify-center rounded-full p-1 text-center font-poppins text-base font-semibold content-[counter(circle)_''];
 }
-ol.numbered-icons li:not([class*="before:bg-"]):before {
+ol.numbered-icons li:not([class*='before:bg-']):before {
   @apply bg-accenttwo-100;
 }
 ol.numbered-icons:not(.icon-color) li:before {

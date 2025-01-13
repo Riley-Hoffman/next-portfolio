@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react"
+import { useEffect, RefObject } from 'react'
 
 interface Refs {
   container: HTMLElement | null
@@ -20,20 +20,20 @@ export const useParticleCleanupEvents = (
     const localRefs = { ...refs.current }
     if (!localRefs.container || !localRefs.canvas) return
     const events: string[] = [
-      "mousemove",
-      "mouseleave",
-      "touchmove",
-      "touchend",
-      "touchstart",
+      'mousemove',
+      'mouseleave',
+      'touchmove',
+      'touchend',
+      'touchstart',
     ]
 
     const handleEvent = (event: Event) => {
-      const isInside = event.type !== "mouseleave" && event.type !== "touchend"
+      const isInside = event.type !== 'mouseleave' && event.type !== 'touchend'
       handleInteraction(event, isInside)
     }
 
     const manageEventListeners = (
-      action: "add" | "remove",
+      action: 'add' | 'remove',
       element: HTMLElement,
       eventTypes: string[],
       handler: EventListener,
@@ -44,10 +44,10 @@ export const useParticleCleanupEvents = (
       )
     }
 
-    manageEventListeners("add", localRefs.container, events, handleEvent, {
+    manageEventListeners('add', localRefs.container, events, handleEvent, {
       passive: false,
     })
-    window.addEventListener("wheel", handleScroll, { passive: false })
+    window.addEventListener('wheel', handleScroll, { passive: false })
 
     initializeAnimation()
 
@@ -59,14 +59,14 @@ export const useParticleCleanupEvents = (
       }
     }
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
     return () => {
       if (localRefs.container) {
-        manageEventListeners("remove", localRefs.container, events, handleEvent)
+        manageEventListeners('remove', localRefs.container, events, handleEvent)
       }
 
-      window.removeEventListener("wheel", handleScroll)
-      window.removeEventListener("resize", handleResize)
+      window.removeEventListener('wheel', handleScroll)
+      window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(localRefs.animationFrameId)
     }
   }, [refs, handleInteraction, handleScroll, initializeAnimation])

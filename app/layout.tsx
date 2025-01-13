@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
-import { DynamicThemeProvider } from "@/app/components/theme/DynamicThemeProvider"
-import { LayoutContent } from "@/app/components/layout/LayoutContent"
+import type { Metadata } from 'next'
+import { DynamicThemeProvider } from '@/app/components/theme/DynamicThemeProvider'
+import { LayoutContent } from '@/app/components/layout/LayoutContent'
 import {
   getBaseUrl,
   getPageTitle,
   baseDescription,
   getImageUrl,
-} from "@/constants/baseData"
-import "@/app/styles/globals.css"
+} from '@/constants/baseData'
+import '@/app/styles/globals.css'
 
 export const metadata: Metadata = {
   title: {
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   description: baseDescription,
   metadataBase: new URL(`${getBaseUrl()}`),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    locale: "en_CA",
+    type: 'website',
+    locale: 'en_CA',
     images: getImageUrl(),
     title: {
       template: `%s - ${getPageTitle()}`,

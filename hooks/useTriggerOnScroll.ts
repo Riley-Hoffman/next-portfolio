@@ -1,4 +1,4 @@
-import { useEffect, useRef, RefObject } from "react"
+import { useEffect, useRef, RefObject } from 'react'
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -12,10 +12,10 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
 
   const getActiveState = (rect: DOMRect, distance: number) => {
     const isActive = rect.top < distance
-    const newActiveState = isActive ? "true" : "false"
+    const newActiveState = isActive ? 'true' : 'false'
 
     if (!isActive) {
-      return "false"
+      return 'false'
     }
 
     return newActiveState
@@ -38,7 +38,7 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
       requestAnimationFrame(() => {
         elementsRef.current.forEach((element) => {
           const rect = element.getBoundingClientRect()
-          const distance = parseInt(element.dataset.distance ?? "800", 10)
+          const distance = parseInt(element.dataset.distance ?? '800', 10)
           updateElementActivation(element, rect, distance)
         })
       })
@@ -46,10 +46,10 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
 
     setTimeout(updateTriggerOnScroll, 100)
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", updateTriggerOnScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', updateTriggerOnScroll)
       return () => {
-        window.removeEventListener("scroll", updateTriggerOnScroll)
+        window.removeEventListener('scroll', updateTriggerOnScroll)
       }
     }
   }, [])

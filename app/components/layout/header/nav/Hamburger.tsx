@@ -1,6 +1,6 @@
-import { useState, useRef, useCallback, useEffect } from "react"
-import Head from "next/head"
-import { usePathname } from "next/navigation"
+import { useState, useRef, useCallback, useEffect } from 'react'
+import Head from 'next/head'
+import { usePathname } from 'next/navigation'
 
 interface HamburgerProps {
   expanded?: (isExpanded: boolean) => void
@@ -20,7 +20,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   const updateAttributes = useCallback((newIsExpanded: boolean) => {
     if (hamburgerRef.current) {
       const { current: hamburgerElement } = hamburgerRef
-      hamburgerElement.setAttribute("aria-expanded", newIsExpanded.toString())
+      hamburgerElement.setAttribute('aria-expanded', newIsExpanded.toString())
     }
   }, [])
 
@@ -40,8 +40,8 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   }, [localIsExpanded, updateAttributes])
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [handleResize])
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
       <button
         id="hamburger"
         aria-expanded={localIsExpanded}
-        aria-label={localIsExpanded ? "Close Menu" : "Open Menu"}
+        aria-label={localIsExpanded ? 'Close Menu' : 'Open Menu'}
         onClick={toggleMenu}
         ref={hamburgerRef}
         className="hamburger group peer relative z-10 ml-auto block h-10 w-16 px-5 md:hidden"

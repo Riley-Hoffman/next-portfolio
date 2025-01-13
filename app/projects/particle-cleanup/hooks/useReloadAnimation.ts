@@ -1,6 +1,6 @@
-import { useCallback } from "react"
-import { useGameData } from "./useGameData"
-import { Refs } from "./useParticleCleanupGame"
+import { useCallback } from 'react'
+import { useGameData } from './useGameData'
+import { Refs } from './useParticleCleanupGame'
 
 export const useReloadAnimation = (
   refs: React.RefObject<Refs>,
@@ -18,7 +18,7 @@ export const useReloadAnimation = (
       particlesArray: [],
       isMobile: null,
     })
-    dispatch({ type: "RESET_GAME" })
+    dispatch({ type: 'RESET_GAME' })
     initializeAnimation()
   }, [refs, initializeAnimation, dispatch])
 

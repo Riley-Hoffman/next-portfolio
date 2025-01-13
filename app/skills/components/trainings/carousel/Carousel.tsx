@@ -1,11 +1,11 @@
-"use client"
-import { useEffect, useRef } from "react"
-import Image from "next/image"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Navigation, A11y, Mousewheel } from "swiper/modules"
-import { CarouselButtons } from "./CarouselButtons"
-import { CarouselDataTypes } from "./CarouselData"
-import { NewTabContent } from "@/app/components/utils/NewTabContent"
+'use client'
+import { useEffect, useRef } from 'react'
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
+import { CarouselButtons } from './CarouselButtons'
+import { CarouselDataTypes } from './CarouselData'
+import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 interface CarouselProps {
   slides: CarouselDataTypes[]
@@ -16,10 +16,10 @@ export const Carousel = ({ slides }: CarouselProps) => {
   useEffect(() => {
     const loadStyles = async () => {
       await Promise.all([
-        import("swiper/css"),
-        import("swiper/css/navigation"),
-        import("swiper/css/pagination"),
-        import("./styles/custom-swiper.css"),
+        import('swiper/css'),
+        import('swiper/css/navigation'),
+        import('swiper/css/pagination'),
+        import('./styles/custom-swiper.css'),
       ])
     }
     loadStyles()
@@ -30,13 +30,13 @@ export const Carousel = ({ slides }: CarouselProps) => {
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
-          prevEl: ".prev-btn",
-          nextEl: ".next-btn",
+          prevEl: '.prev-btn',
+          nextEl: '.next-btn',
         }}
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet md:tool-tip !size-6 !mx-3",
-          bulletActiveClass: "swiper-pagination-bullet-active",
+          bulletClass: 'swiper-pagination-bullet md:tool-tip !size-6 !mx-3',
+          bulletActiveClass: 'swiper-pagination-bullet-active',
           renderBullet: (index, className) =>
             `<button class="${className}" aria-label="${slides[index]?.label || `Slide ${index + 1}`}"></button>`,
         }}
@@ -55,9 +55,9 @@ export const Carousel = ({ slides }: CarouselProps) => {
           },
         }}
         a11y={{
-          containerRole: "region",
+          containerRole: 'region',
           containerRoleDescriptionMessage:
-            "Trainings & Certifications Carousel",
+            'Trainings & Certifications Carousel',
         }}
       >
         {slides.map((slide, index) => (

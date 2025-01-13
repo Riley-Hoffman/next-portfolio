@@ -1,10 +1,10 @@
-"use client"
-import { useEffect, useRef } from "react"
-import { useRouter } from "next/navigation"
-import { useFormValidation } from "../../hooks/useFormValidation"
-import { Legend } from "./Legend"
-import { FormField } from "./FormField"
-import { SubmitButton } from "./SubmitButton"
+'use client'
+import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
+import { useFormValidation } from '../../hooks/useFormValidation'
+import { Legend } from './Legend'
+import { FormField } from './FormField'
+import { SubmitButton } from './SubmitButton'
 
 export interface FormData {
   name: string
@@ -23,9 +23,9 @@ export const Form = ({ onErrors }: FormProps) => {
 
   const { formState, errors, handleChange, handleSubmission, submitted } =
     useFormValidation({
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     })
 
   useEffect(() => {
@@ -38,17 +38,17 @@ export const Form = ({ onErrors }: FormProps) => {
   useEffect(() => {
     const fetchCsrfToken = async () => {
       try {
-        const response = await fetch("/api/csrf-token")
+        const response = await fetch('/api/csrf-token')
         const data = await response.json()
 
         if (data.token && data.secret) {
           csrfTokenRef.current = data.token
           csrfSecretRef.current = data.secret
         } else {
-          console.error("Failed to fetch CSRF token and secret.")
+          console.error('Failed to fetch CSRF token and secret.')
         }
       } catch (error) {
-        console.error("Error fetching CSRF token:", error)
+        console.error('Error fetching CSRF token:', error)
       }
     }
 
@@ -59,30 +59,30 @@ export const Form = ({ onErrors }: FormProps) => {
     e.preventDefault()
 
     if (!csrfTokenRef.current || !csrfSecretRef.current) {
-      console.error("CSRF token or secret is missing.")
+      console.error('CSRF token or secret is missing.')
       return
     }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          "csrf-token": csrfTokenRef.current,
-          "csrf-secret": csrfSecretRef.current,
+          'Content-Type': 'application/json',
+          'csrf-token': csrfTokenRef.current,
+          'csrf-secret': csrfSecretRef.current,
         },
         body: JSON.stringify(formState),
       })
 
       const result = await response.json()
       if (!response.ok) {
-        console.error("Form submission failed:", result.error)
+        console.error('Form submission failed:', result.error)
       } else {
-        console.log("Form submitted successfully:", result)
-        router.push("/thank-you")
+        console.log('Form submitted successfully:', result)
+        router.push('/thank-you')
       }
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error('Error submitting form:', error)
     }
   }
 

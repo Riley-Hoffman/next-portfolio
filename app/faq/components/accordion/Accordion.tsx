@@ -1,9 +1,9 @@
-"use client"
-import { useAccordion } from "../../hooks/useAccordion"
-import { AccordionItem } from "./constants/AccordionItems"
-import { AccordionQuestion } from "./content/AccordionQuestion"
-import { AccordionAnswer } from "./content/AccordionAnswer"
-import "./styles/accordion.css"
+'use client'
+import { useAccordion } from '../../hooks/useAccordion'
+import { AccordionItem } from './constants/AccordionItems'
+import { AccordionQuestion } from './content/AccordionQuestion'
+import { AccordionAnswer } from './content/AccordionAnswer'
+import './styles/accordion.css'
 
 type AccordionProps = {
   items: AccordionItem[]

@@ -1,5 +1,5 @@
-import { WithContext, WebPage, ContactPage } from "schema-dts"
-import SchemaInjector from "./SchemaInjector"
+import { WithContext, WebPage, ContactPage } from 'schema-dts'
+import SchemaInjector from './SchemaInjector'
 import {
   getPageTitle,
   getBaseUrl,
@@ -7,7 +7,7 @@ import {
   getImageUrl,
   githubUrl,
   linkedInUrl,
-} from "@/constants/baseData"
+} from '@/constants/baseData'
 
 export interface SchemaGeneratorProps {
   schemaData: {
@@ -15,7 +15,7 @@ export interface SchemaGeneratorProps {
     description: string
     urlPath: string
     publishDate?: string
-    schemaType: "WebPage" | "ContactPage"
+    schemaType: 'WebPage' | 'ContactPage'
   }
 }
 
@@ -32,22 +32,22 @@ const generateSchema = <T extends keyof SchemaMap>(
   publishDate?: string
 ): WithContext<SchemaMap[T]> => {
   return {
-    "@context": "https://schema.org",
-    "@type": schemaType,
+    '@context': 'https://schema.org',
+    '@type': schemaType,
     name: getPageTitle(title),
     description,
     image: getImageUrl(),
     url: getBaseUrl(urlPath),
     datePublished: publishDate,
     mainEntity: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
       url: getBaseUrl(),
-      jobTitle: "Web Developer",
+      jobTitle: 'Web Developer',
       sameAs: [linkedInUrl, githubUrl],
     },
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
     },
   } as WithContext<SchemaMap[T]>

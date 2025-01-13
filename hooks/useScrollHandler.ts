@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react'
 
 export const useScrollHandler = (onScroll: () => void) => {
   const ticking = useRef(false)
@@ -14,10 +14,10 @@ export const useScrollHandler = (onScroll: () => void) => {
       }
     }
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
       return () => {
-        window.removeEventListener("scroll", handleScroll)
+        window.removeEventListener('scroll', handleScroll)
         if (animationFrameId.current !== null) {
           window.cancelAnimationFrame(animationFrameId.current)
         }

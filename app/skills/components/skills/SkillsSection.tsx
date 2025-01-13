@@ -1,6 +1,6 @@
-import { skillsData } from "./SkillsData"
-import { SkillItem } from "./SkillItem"
-import { BackgroundAccent } from "@/app/components/decorative/BackgroundAccent"
+import { skillsData } from './SkillsData'
+import { SkillItem } from './SkillItem'
+import { BackgroundAccent } from '@/app/components/decorative/BackgroundAccent'
 
 export const SkillsSection = () => (
   <section className="pb-16">

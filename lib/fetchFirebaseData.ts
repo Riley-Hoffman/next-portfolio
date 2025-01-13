@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app"
-import { getDatabase, ref, get, Database } from "firebase/database"
+import { initializeApp } from 'firebase/app'
+import { getDatabase, ref, get, Database } from 'firebase/database'
 
 let db: Database
 const firebaseConfig = {

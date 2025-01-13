@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect, useCallback } from "react"
-import { useDebounce } from "@/hooks/useDebounce"
-import { pxToRem } from "@/lib/pxToRem"
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { useDebounce } from '@/hooks/useDebounce'
+import { pxToRem } from '@/lib/pxToRem'
 
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -28,7 +28,7 @@ export const useAccordion = (itemsLength: number) => {
     buttonRefs.current.forEach((button, index) => {
       if (!button) return
       setTimeout(() => {
-        button.classList.toggle("init", !accOpen(index))
+        button.classList.toggle('init', !accOpen(index))
       }, 500)
     })
 
@@ -37,7 +37,7 @@ export const useAccordion = (itemsLength: number) => {
       if (accOpen(index)) {
         content.style.maxHeight = `${pxToRem(content.scrollHeight) + 2.75}rem`
       } else {
-        content.style.maxHeight = "0rem"
+        content.style.maxHeight = '0rem'
       }
     })
 

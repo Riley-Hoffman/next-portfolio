@@ -1,37 +1,37 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+import type { Metadata } from 'next'
+import Link from 'next/link'
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/schema/SchemaGenerator"
-import { getBaseUrl, getImageUrl } from "@/constants/baseData"
+} from '@/app/components/schema/SchemaGenerator'
+import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
 const description =
-  "As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users."
+  'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'
 
 export const metadata: Metadata = {
-  title: "Accessibility",
+  title: 'Accessibility',
   description: description,
-  metadataBase: new URL(`${getBaseUrl("/accessibility")}`),
+  metadataBase: new URL(`${getBaseUrl('/accessibility')}`),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    locale: "en_CA",
+    type: 'website',
+    locale: 'en_CA',
     images: getImageUrl(),
-    title: "Accessibility",
-    url: `${getBaseUrl("/accessibility")}`,
+    title: 'Accessibility',
+    url: `${getBaseUrl('/accessibility')}`,
   },
 }
 
 export default function Accessibility() {
-  const schemaData: SchemaGeneratorProps["schemaData"] = {
-    title: "Accessibility",
+  const schemaData: SchemaGeneratorProps['schemaData'] = {
+    title: 'Accessibility',
     description,
-    urlPath: "/accessibility",
-    publishDate: "2024-08-07T09:25:01.340Z",
-    schemaType: "WebPage",
+    urlPath: '/accessibility',
+    publishDate: '2024-08-07T09:25:01.340Z',
+    schemaType: 'WebPage',
   }
   return (
     <>
@@ -57,7 +57,7 @@ export default function Accessibility() {
         <p>
           Your feedback is invaluable in helping me enhance the accessibility of
           my website. If you encounter any difficulties accessing any part of
-          the site, please feel free to{" "}
+          the site, please feel free to{' '}
           <Link href="/contact">reach out to me</Link>.
         </p>
       </div>

@@ -1,5 +1,5 @@
-import { Icon } from "@iconify/react"
-import { NewTabContent } from "@/app/components/utils/NewTabContent"
+import { Icon } from '@iconify/react'
+import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 interface Tech {
   name: string
@@ -7,26 +7,26 @@ interface Tech {
   url: string
 }
 const technologies: Tech[] = [
-  { name: "React", logo: "cib:react", url: "https://react.dev" },
+  { name: 'React', logo: 'cib:react', url: 'https://react.dev' },
   {
-    name: "Next.js",
-    logo: "devicon-plain:nextjs",
-    url: "https://nextjs.org",
+    name: 'Next.js',
+    logo: 'devicon-plain:nextjs',
+    url: 'https://nextjs.org',
   },
   {
-    name: "TypeScript",
-    logo: "cib:typescript",
-    url: "https://www.typescriptlang.org",
+    name: 'TypeScript',
+    logo: 'cib:typescript',
+    url: 'https://www.typescriptlang.org',
   },
   {
-    name: "Tailwind CSS",
-    logo: "bxl:tailwind-css",
-    url: "https://tailwindcss.com",
+    name: 'Tailwind CSS',
+    logo: 'bxl:tailwind-css',
+    url: 'https://tailwindcss.com',
   },
   {
-    name: "Firebase",
-    logo: "bxl:firebase",
-    url: "https://firebase.google.com",
+    name: 'Firebase',
+    logo: 'bxl:firebase',
+    url: 'https://firebase.google.com',
   },
 ]
 

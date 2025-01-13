@@ -1,6 +1,6 @@
-"use client"
-import { useState, useEffect } from "react"
-import { Icon } from "@iconify/react"
+'use client'
+import { useState, useEffect } from 'react'
+import { Icon } from '@iconify/react'
 
 export const BackToTopButton = () => {
   const [visible, setVisible] = useState(false)
@@ -14,13 +14,13 @@ export const BackToTopButton = () => {
   }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return visible ? (

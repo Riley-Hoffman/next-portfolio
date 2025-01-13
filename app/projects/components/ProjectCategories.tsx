@@ -1,6 +1,6 @@
-import type { Project } from "./content/ProjectContent"
-import { ProjectCategoryList } from "./ProjectCategoryList"
-import { ProjectError } from "./ProjectError"
+import type { Project } from './content/ProjectContent'
+import { ProjectCategoryList } from './ProjectCategoryList'
+import { ProjectError } from './ProjectError'
 
 export const ProjectCategories = ({
   initialProjects,

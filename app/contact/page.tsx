@@ -1,38 +1,38 @@
-import { Metadata } from "next"
+import { Metadata } from 'next'
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
-} from "@/app/components/schema/SchemaGenerator"
-import { ContactWrapper } from "./components/ContactWrapper"
-import { Sidebar } from "./components/sidebar/Sidebar"
-import { getBaseUrl, getImageUrl } from "@/constants/baseData"
-import "./styles/form.css"
+} from '@/app/components/schema/SchemaGenerator'
+import { ContactWrapper } from './components/ContactWrapper'
+import { Sidebar } from './components/sidebar/Sidebar'
+import { getBaseUrl, getImageUrl } from '@/constants/baseData'
+import './styles/form.css'
 
 const description =
-  "Get in touch with web developer Riley Hoffman with the form on this page."
+  'Get in touch with web developer Riley Hoffman with the form on this page.'
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: 'Contact',
   description: description,
-  metadataBase: new URL(`${getBaseUrl("/contact")}`),
+  metadataBase: new URL(`${getBaseUrl('/contact')}`),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    locale: "en_CA",
+    type: 'website',
+    locale: 'en_CA',
     images: getImageUrl(),
-    title: "Contact",
-    url: `${getBaseUrl("/contact")}`,
+    title: 'Contact',
+    url: `${getBaseUrl('/contact')}`,
   },
 }
 
-const schemaData: SchemaGeneratorProps["schemaData"] = {
-  title: "Contact",
+const schemaData: SchemaGeneratorProps['schemaData'] = {
+  title: 'Contact',
   description,
-  urlPath: "/contact",
-  publishDate: "2024-07-04T09:25:01.340Z",
-  schemaType: "ContactPage",
+  urlPath: '/contact',
+  publishDate: '2024-07-04T09:25:01.340Z',
+  schemaType: 'ContactPage',
 }
 
 export default function Contact() {

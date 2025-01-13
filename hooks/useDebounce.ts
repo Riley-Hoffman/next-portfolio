@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react"
+import { useRef, useCallback } from 'react'
 
 export const useDebounce = <T extends (...args: any[]) => void>(
   func: T,

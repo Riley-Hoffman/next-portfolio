@@ -1,8 +1,8 @@
-import { useRef } from "react"
-import Image from "next/image"
-import { LinkedInButton } from "./LinkedInButton"
-import { useReducedMotion } from "@/hooks/useReducedMotion"
-import { useScrollHandler } from "@/hooks/useScrollHandler"
+import { useRef } from 'react'
+import Image from 'next/image'
+import { LinkedInButton } from './LinkedInButton'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useScrollHandler } from '@/hooks/useScrollHandler'
 
 export const MyJourney = () => {
   const prefersReducedMotion = useReducedMotion()
@@ -10,7 +10,7 @@ export const MyJourney = () => {
   const scrollRef = useRef<number>(0)
 
   useScrollHandler(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       scrollRef.current = window.scrollY
     }
     if (sectionRef.current && !prefersReducedMotion) {

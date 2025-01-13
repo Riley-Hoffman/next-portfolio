@@ -8,6 +8,6 @@
 .plus-minus:after {
   @apply h-2 w-0.5 rotate-0;
 }
-[aria-expanded="true"] .plus-minus::after {
+[aria-expanded='true'] .plus-minus::after {
   @apply rotate-90;
 }

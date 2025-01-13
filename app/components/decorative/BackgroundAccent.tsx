@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 
 interface BackgroundAccentProps {
   classes?: string
@@ -6,6 +6,6 @@ interface BackgroundAccentProps {
 
 export const BackgroundAccent = ({ classes }: BackgroundAccentProps) => (
   <div
-    className={clsx("absolute -z-10 bg-[#ececf2] dark:bg-[#0d1213]", classes)}
+    className={clsx('absolute -z-10 bg-[#ececf2] dark:bg-[#0d1213]', classes)}
   ></div>
 )

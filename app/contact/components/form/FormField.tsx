@@ -1,7 +1,7 @@
-import { FormData } from "./Form"
+import { FormData } from './Form'
 
 interface FormFieldProps {
-  type: "text" | "email" | "textarea"
+  type: 'text' | 'email' | 'textarea'
   value: string
   handleChange: (
     field: keyof FormData
@@ -26,7 +26,7 @@ export const FormField = ({
     >
       {name as string}:
     </label>
-    {type === "textarea" ? (
+    {type === 'textarea' ? (
       <textarea
         className="form-field inverted"
         id={name as string}
