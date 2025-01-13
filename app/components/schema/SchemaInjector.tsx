@@ -1,4 +1,5 @@
 import { Thing, WithContext } from 'schema-dts'
+import DOMPurify from 'isomorphic-dompurify'
 
 interface SchemaInjectorProps<T extends Thing> {
   structuredData: WithContext<T>
@@ -10,7 +11,9 @@ const SchemaInjector = <T extends Thing>({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(JSON.stringify(structuredData)),
+      }}
     />
   )
 }
