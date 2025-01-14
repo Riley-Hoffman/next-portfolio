@@ -25,12 +25,9 @@ type SchemaMap = {
   ContactPage: ContactPage
 }
 
-const SchemaInjector = dynamic(
-  () => import('./SchemaInjector'),
-  {
-    ssr: false,
-  }
-)
+const SchemaInjector = dynamic(() => import('./SchemaInjector'), {
+  ssr: false,
+})
 
 const generateSchema = <T extends keyof SchemaMap>(
   schemaType: T,

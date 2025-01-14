@@ -11,7 +11,9 @@ const SchemaInjector = <T extends Thing>({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(structuredData)) }}
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(JSON.stringify(structuredData)),
+      }}
     />
   )
 }
