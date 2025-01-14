@@ -1,3 +1,4 @@
+'use client'
 import { Thing, WithContext } from 'schema-dts'
 import DOMPurify from 'dompurify'
 

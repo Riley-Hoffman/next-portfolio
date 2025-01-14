@@ -1,4 +1,3 @@
-'use client'
 import dynamic from 'next/dynamic'
 import { WithContext, WebPage, ContactPage } from 'schema-dts'
 import {
