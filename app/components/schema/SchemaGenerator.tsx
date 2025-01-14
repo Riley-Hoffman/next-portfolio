@@ -1,5 +1,6 @@
+'use client'
+import dynamic from 'next/dynamic'
 import { WithContext, WebPage, ContactPage } from 'schema-dts'
-import SchemaInjector from './SchemaInjector'
 import {
   getPageTitle,
   getBaseUrl,
@@ -23,6 +24,13 @@ type SchemaMap = {
   WebPage: WebPage
   ContactPage: ContactPage
 }
+
+const SchemaInjector = dynamic(
+  () => import('./SchemaInjector'),
+  {
+    ssr: false,
+  }
+)
 
 const generateSchema = <T extends keyof SchemaMap>(
   schemaType: T,
