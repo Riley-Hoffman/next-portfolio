@@ -44,7 +44,7 @@ const config: Config = {
         urbanist: ['"Urbanist", sans-serif'],
       },
       fontSize: {
-        reduced: '17px',
+        reduced: '1.063rem',
       },
       clipPath: {
         'cut-corners':
