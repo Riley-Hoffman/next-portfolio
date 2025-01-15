@@ -51,12 +51,12 @@ export const SiteTechStack = () => {
               >
                 <Icon
                   icon={tech.logo}
-                  className="mx-auto text-7xl text-heading group-hover:text-inherit"
+                  className="text-7xl text-heading group-hover:text-inherit"
                 />
-                <p className="my-1 text-xl">
+                <span className="mt-1 block text-xl">
                   {tech.name}
                   <NewTabContent />
-                </p>
+                </span>
               </a>
             </li>
           ))}
