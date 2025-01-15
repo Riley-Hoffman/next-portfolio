@@ -1,15 +1,12 @@
-const carouselButtonsBaseClasses =
-  'hidden shadow-heading dark:shadow-gradientthree'
-
 export const carouselButtonsConfig = [
   {
     label: 'Previous slide',
-    className: `prev-btn left-4 shadow-[0.125rem_0.188rem_0_0] ${carouselButtonsBaseClasses}`,
+    className: 'left-4 shadow-[0.125rem_0.188rem_0_0]',
     icon: 'raphael:arrowleft',
   },
   {
     label: 'Next slide',
-    className: `next-btn right-4 shadow-[-0.125rem_0.188rem_0_0] ${carouselButtonsBaseClasses}`,
+    className: 'right-4 shadow-[-0.125rem_0.188rem_0_0]',
     icon: 'raphael:arrowright',
   },
 ]

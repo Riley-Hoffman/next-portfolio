@@ -20,7 +20,7 @@ export const CarouselButtons = () => {
         buttonsRef.current[index] = el
       }}
       aria-label={config.label}
-      className={config.className}
+      className={`carousel-button hidden ${config.className}`}
     >
       {' '}
       <Icon icon={config.icon} />{' '}
