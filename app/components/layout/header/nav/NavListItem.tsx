@@ -34,7 +34,7 @@ export const NavListItem = ({
       ) : (
         <Link
           className={clsx(
-            'button no-underline [&.active]:bg-accentone-300 [&.active]:text-heading hover:[&.active]:brightness-100',
+            'button [&.active]:bg-accentone-300 [&.active]:text-heading hover:[&.active]:brightness-100',
             { hidden: hide, active: isActive }
           )}
           href={to}

@@ -18,7 +18,7 @@ export default function Custom404() {
             <li className="py-1 md:py-2" key={route.to}>
               <h3 className="my-1 px-1 text-lg">{route.label}:</h3>
               <Link
-                className="button block w-fit px-2 py-1 no-underline"
+                className="button block w-fit px-2 py-1"
                 href={route.to}
               >{`${route.to}`}</Link>
             </li>
