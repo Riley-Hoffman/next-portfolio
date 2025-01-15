@@ -13,10 +13,7 @@ export default function Custom404() {
         <p className="mt-0 pb-4 text-xl">
           Please select one of the available pages below:
         </p>
-        <ul
-          className="max-w-screen-md px-5 text-left md:text-2xl"
-          aria-label="Available pages"
-        >
+        <ul className="px-5 md:text-2xl" aria-label="Available pages">
           {useRoutes('all').map((route) => (
             <li className="py-1 md:py-2" key={route.to}>
               <h3 className="my-1 px-1 text-lg">{route.label}:</h3>

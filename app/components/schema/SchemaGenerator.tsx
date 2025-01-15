@@ -68,9 +68,5 @@ export const SchemaGenerator = ({ schemaData }: SchemaGeneratorProps) => {
     publishDate
   )
 
-  return (
-    <>
-      <SchemaInjector structuredData={schema} />
-    </>
-  )
+  return <SchemaInjector structuredData={schema} />
 }

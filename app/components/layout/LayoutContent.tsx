@@ -6,10 +6,8 @@ interface LayoutContentProps {
   children: React.ReactNode
 }
 
-const BackToTopAndAnalytics = dynamic(() =>
-  import('./dynamic-imports/BackToTopAndAnalytics').then(
-    (mod) => mod.BackToTopAndAnalytics
-  )
+const BackToTopAndAnalytics = dynamic(
+  () => import('./dynamic-imports/BackToTopAndAnalytics')
 )
 
 export const LayoutContent = ({ children }: LayoutContentProps) => (

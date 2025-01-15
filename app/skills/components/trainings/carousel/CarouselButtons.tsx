@@ -13,20 +13,17 @@ export const CarouselButtons = () => {
     })
   }, [])
 
-  return (
-    <>
-      {carouselButtonsConfig.map((config, index) => (
-        <button
-          key={index}
-          ref={(el) => {
-            buttonsRef.current[index] = el
-          }}
-          aria-label={config.label}
-          className={config.className}
-        >
-          <Icon icon={config.icon} />
-        </button>
-      ))}
-    </>
-  )
+  return carouselButtonsConfig.map((config, index) => (
+    <button
+      key={index}
+      ref={(el) => {
+        buttonsRef.current[index] = el
+      }}
+      aria-label={config.label}
+      className={config.className}
+    >
+      {' '}
+      <Icon icon={config.icon} />{' '}
+    </button>
+  ))
 }

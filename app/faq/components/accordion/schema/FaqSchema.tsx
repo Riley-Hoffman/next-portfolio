@@ -41,9 +41,5 @@ const faqSchemaData: WithContext<FAQPage> = {
 }
 
 export const FaqSchema = () => {
-  return (
-    <>
-      <SchemaInjector structuredData={faqSchemaData} />
-    </>
-  )
+  return <SchemaInjector structuredData={faqSchemaData} />
 }

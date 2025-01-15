@@ -23,7 +23,7 @@ export function DynamicThemeProvider({
   }, [])
 
   if (!isMounted) {
-    return <div>{children}</div>
+    return <>{children}</>
   }
 
   return (

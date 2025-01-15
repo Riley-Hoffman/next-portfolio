@@ -18,13 +18,11 @@ export const metadata: Metadata = {
 export default function ThankYou() {
   return (
     <>
-      <div className="pb-16">
-        <h1 className="heading-one">Thank You</h1>
-        <p className="max-w-screen-xl pb-[20vh] pt-[15vh] text-center text-5xl">
-          Thank you for contacting me.{' '}
-          <span className="mt-10 block text-4xl">
-            I will get back to you as soon as possible.
-          </span>
+      <h1 className="heading-one">Thank You</h1>
+      <div className="max-w-screen-xl pb-[calc(20vh+3rem)] pt-[14vh] text-center">
+        <p className="text-5xl">Thank you for contacting me.</p>
+        <p className="mt-10 text-4xl">
+          I will get back to you as soon as possible.
         </p>
       </div>
     </>
