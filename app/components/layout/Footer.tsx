@@ -26,9 +26,6 @@ export const Footer = () => (
         Accessibility
       </Link>
     </p>
-    <p>
-      <span className="mr-0.5">©</span>
-      {new Date().getFullYear()}
-    </p>
+    <p>©{new Date().getFullYear()}</p>
   </footer>
 )
