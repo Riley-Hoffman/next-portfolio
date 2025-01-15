@@ -33,7 +33,7 @@ const technologies: Tech[] = [
 export const SiteTechStack = () => {
   return (
     <>
-      <section className="gradient-border border-t-2 border-solid pb-12 pt-8 text-center">
+      <section className="gradient-border border-t-2 border-solid pb-12 pt-2 text-center">
         <h2 className="reg-caps mb-2 font-inconsolata text-2xl">
           Technologies Used To Build This Site
         </h2>
