@@ -1,9 +1,11 @@
 import { Nav } from '../nav/Nav'
 import { ThemeChanger } from '../../../theme/ThemeChanger'
 
-export const ThemeChangerAndNav = () => (
+const ThemeChangerAndNav = () => (
   <>
     <ThemeChanger />
     <Nav />
   </>
 )
+
+export default ThemeChangerAndNav

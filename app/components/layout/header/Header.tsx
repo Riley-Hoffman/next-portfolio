@@ -5,10 +5,7 @@ import { HeaderLogo } from './HeaderLogo'
 import { NoJsMenu } from './nav/NoJsMenu'
 
 const ThemeChangerAndNav = dynamic(
-  () =>
-    import('./dynamic-imports/ThemeChangerAndNav').then(
-      (mod) => mod.ThemeChangerAndNav
-    ),
+  () => import('./dynamic-imports/ThemeChangerAndNav'),
   {
     ssr: false,
   }

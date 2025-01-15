@@ -10,12 +10,12 @@ const NextThemesProvider = dynamic(
   }
 )
 
-export function DynamicThemeProvider({
+export const DynamicThemeProvider = ({
   children,
   attribute = 'class',
   defaultTheme = 'system',
   enableSystem = true,
-}: ThemeProviderProps) {
+}: ThemeProviderProps) => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
