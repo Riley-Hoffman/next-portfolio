@@ -18,20 +18,18 @@ export const LinkedInButton = () => {
   return (
     <Link
       ref={buttonRef}
-      className="group button m-5 inline-block text-lg"
+      className="group button m-5 inline-block pr-6 text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={() => triggerEffect(applyEffect)}
     >
       <Icon
-        className="box-content bg-accentone-300 p-2 text-5xl text-heading group-hover:bg-heading group-hover:text-accentone-300 dark:bg-[#292d11]"
+        className="mr-6 box-content bg-accentone-300 p-2 text-5xl text-heading group-hover:bg-heading group-hover:text-accentone-300 dark:bg-[#292d11]"
         icon="fa6-brands:linkedin-in"
       />
-      <span className="px-6">
-        Follow me on LinkedIn
-        <NewTabContent />
-      </span>
+      Follow me on LinkedIn
+      <NewTabContent />
     </Link>
   )
 }
