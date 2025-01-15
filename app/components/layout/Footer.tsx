@@ -21,11 +21,9 @@ export const Footer = () => (
         />
       </a>
     </p>
-    <p className="mr-auto p-0 font-medium">
-      <Link className="px-3 py-1" href="/accessibility">
-        Accessibility
-      </Link>
-    </p>
+    <Link className="mr-auto px-3 underline" href="/accessibility">
+      Accessibility
+    </Link>
     <p>©{new Date().getFullYear()}</p>
   </footer>
 )
