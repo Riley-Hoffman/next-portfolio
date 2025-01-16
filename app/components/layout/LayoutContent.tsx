@@ -13,10 +13,7 @@ const BackToTopAndAnalytics = dynamic(
 export const LayoutContent = ({ children }: LayoutContentProps) => (
   <>
     <Header />
-    <main>
-      <a href="#content" id="content" className="tab-focus-button z-30">
-        Start of main content
-      </a>
+    <main id="main">
       {children}
     </main>
     <BackToTopAndAnalytics />
