@@ -1,32 +1,43 @@
 import { Icon } from '@iconify/react'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import packageJson from '@/package.json'
 
 interface Tech {
   name: string
   logo: string
   url: string
+  version: string
 }
 const technologies: Tech[] = [
-  { name: 'React', logo: 'cib:react', url: 'https://react.dev' },
+  {
+    name: 'React',
+    logo: 'cib:react',
+    url: 'https://react.dev',
+    version: packageJson.dependencies.react,
+  },
   {
     name: 'Next.js',
     logo: 'devicon-plain:nextjs',
     url: 'https://nextjs.org',
+    version: packageJson.dependencies.next,
   },
   {
     name: 'TypeScript',
     logo: 'cib:typescript',
     url: 'https://www.typescriptlang.org',
+    version: packageJson.dependencies.typescript,
   },
   {
     name: 'Tailwind CSS',
     logo: 'bxl:tailwind-css',
     url: 'https://tailwindcss.com',
+    version: packageJson.dependencies.tailwindcss,
   },
   {
     name: 'Firebase',
     logo: 'bxl:firebase',
     url: 'https://firebase.google.com',
+    version: packageJson.dependencies.firebase,
   },
 ]
 
@@ -42,18 +53,19 @@ export const SiteTechStack = () => {
           aria-label="Site tech stack."
         >
           {technologies.map((tech) => (
-            <li key={tech.name} className="relative overflow-hidden pt-8">
+            <li key={tech.name} className="relative pt-8">
               <a
-                className="mx-auto block min-h-36 w-fit min-w-52 rounded-md bg-accentone-200 p-5 text-heading no-underline duration-0 focus-visible:bg-heading focus-visible:text-accentone-200 md:hover:bg-heading md:hover:text-accentone-200 md:focus-visible:bg-heading md:focus-visible:outline-none"
+                className="inline-block min-h-36 min-w-52 rounded-md bg-accentone-200 p-5 text-sm text-heading no-underline duration-0 focus-visible:bg-heading focus-visible:text-accentone-200 md:hover:bg-heading md:hover:text-accentone-200 md:focus-visible:bg-heading md:focus-visible:outline-none"
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Icon icon={tech.logo} className="text-7xl" />
-                <span className="mt-1 block text-xl">
+                <span className="mt-2 block text-lg leading-none">
                   {tech.name}
                   <NewTabContent />
                 </span>
+                {tech.version}
               </a>
             </li>
           ))}
