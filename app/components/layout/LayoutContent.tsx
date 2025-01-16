@@ -13,9 +13,7 @@ const BackToTopAndAnalytics = dynamic(
 export const LayoutContent = ({ children }: LayoutContentProps) => (
   <>
     <Header />
-    <main id="main">
-      {children}
-    </main>
+    <main id="main">{children}</main>
     <BackToTopAndAnalytics />
     <Footer />
   </>

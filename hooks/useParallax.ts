@@ -9,33 +9,28 @@ export const useParallax = (
 ): React.RefObject<HTMLDivElement | null> => {
   const prefersReducedMotion = useReducedMotion()
   const internalRef = useRef<HTMLDivElement>(null)
-  const scrollRef = useRef<number>(0)
+  const imgRef = useRef<HTMLImageElement | null>(null)
 
   const parallaxRef = externalRef ?? internalRef
 
   const updateImagePosition = useCallback(() => {
-    if (parallaxRef.current && !prefersReducedMotion) {
-      const img = parallaxRef.current.querySelector('img')
-      if (img) {
-        const height = parallaxRef.current.offsetHeight - 18
-        const translateX = -(height - scrollRef.current) * velocity
-        const translateY = -(height - scrollRef.current) * (velocity + 0.1)
-        img.style.transform = `translate3d(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem, 0)`
-        img.style.willChange = 'transform'
-      }
+    if (parallaxRef.current && imgRef.current && !prefersReducedMotion) {
+      const height = parallaxRef.current.offsetHeight - 18
+      const translateX = -(height - window.scrollY) * velocity
+      const translateY = -(height - window.scrollY) * (velocity + 0.1)
+      imgRef.current.style.transform = `translate3d(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem, 0)`
+      imgRef.current.style.willChange = 'transform'
     }
   }, [parallaxRef, prefersReducedMotion, velocity])
 
-  useScrollHandler(() => {
-    if (typeof window !== 'undefined') {
-      scrollRef.current = window.scrollY
-    }
-    updateImagePosition()
-  })
+  useScrollHandler(updateImagePosition)
 
   useEffect(() => {
+    if (parallaxRef.current) {
+      imgRef.current = parallaxRef.current.querySelector('img')
+    }
     updateImagePosition()
-  }, [updateImagePosition])
+  }, [parallaxRef, updateImagePosition])
 
   return parallaxRef
 }
