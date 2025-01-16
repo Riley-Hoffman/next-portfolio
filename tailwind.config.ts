@@ -71,7 +71,7 @@ const config: Config = {
           to: { transform: 'rotateY(360deg)' },
         },
         typing: {
-          from: { maxWidth: '0' },
+          from: { maxWidth: '0', overflow: 'clip' },
           to: { maxWidth: '100%' },
         },
         blinkcaret: {
