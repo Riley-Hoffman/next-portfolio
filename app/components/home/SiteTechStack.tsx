@@ -44,15 +44,12 @@ export const SiteTechStack = () => {
           {technologies.map((tech) => (
             <li key={tech.name} className="relative overflow-hidden pt-8">
               <a
-                className="group mx-auto block min-h-36 w-fit min-w-52 rounded-md bg-accentone-200 p-5 no-underline duration-0 focus-visible:bg-heading focus-visible:text-accentone-200 md:hover:bg-heading md:hover:text-accentone-200 md:focus-visible:bg-heading md:focus-visible:outline-none"
+                className="mx-auto block min-h-36 w-fit min-w-52 rounded-md bg-accentone-200 p-5 text-heading no-underline duration-0 focus-visible:bg-heading focus-visible:text-accentone-200 md:hover:bg-heading md:hover:text-accentone-200 md:focus-visible:bg-heading md:focus-visible:outline-none"
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon
-                  icon={tech.logo}
-                  className="text-7xl text-heading group-hover:text-inherit"
-                />
+                <Icon icon={tech.logo} className="text-7xl" />
                 <span className="mt-1 block text-xl">
                   {tech.name}
                   <NewTabContent />
