@@ -11,10 +11,13 @@ export const CompletionMessage = ({
   medalDetails,
   time,
 }: CompletionMessageProps) => (
-  <div className="completion-message border-1 inset-0 size-full absolute z-10 bg-white text-center" id="completionMessage"
+  <div
+    className="completion-message border-1 absolute inset-0 z-10 size-full bg-white text-center"
+    id="completionMessage"
     ref={ref}
-    tabIndex={-1}>
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    tabIndex={-1}
+  >
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <p className="text-2xl">All clean!</p>
       <p aria-live="polite">
         Time taken:{' '}

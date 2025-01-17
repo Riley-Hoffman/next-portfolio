@@ -5,3 +5,7 @@
 .contact-content * {
   @apply text-accentone-300;
 }
+
+fieldset br {
+  @apply inline md:hidden;
+}
