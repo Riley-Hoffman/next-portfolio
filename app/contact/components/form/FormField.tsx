@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { FormData } from './Form'
 
 interface FormFieldProps {
@@ -10,6 +11,7 @@ interface FormFieldProps {
   ) => void
   name: keyof FormData
   placeholder: string
+  classes?: string
 }
 
 export const FormField = ({
@@ -18,6 +20,7 @@ export const FormField = ({
   handleChange,
   name,
   placeholder,
+  classes,
 }: FormFieldProps) => (
   <>
     <label
@@ -28,7 +31,7 @@ export const FormField = ({
     </label>
     {type === 'textarea' ? (
       <textarea
-        className="form-field inverted"
+        className={clsx('form-field inverted', classes)}
         id={name as string}
         name={name as string}
         placeholder={placeholder}
@@ -40,7 +43,7 @@ export const FormField = ({
       />
     ) : (
       <input
-        className="form-field"
+        className={clsx('form-field', classes)}
         id={name as string}
         name={name as string}
         placeholder={placeholder}

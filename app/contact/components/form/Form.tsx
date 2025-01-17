@@ -32,14 +32,13 @@ export const Form = ({ onErrors }: FormProps) => {
         <Legend />
         <div className="pb-6 md:flex md:items-center md:justify-between md:gap-5">
           <FormField
+            classes="pb-6 md:pb-0"
             type="text"
             value={name}
             handleChange={handleChange}
             name="name"
             placeholder="Enter your name.."
           />
-          <br />
-          <br />
           <FormField
             type="email"
             value={email}
