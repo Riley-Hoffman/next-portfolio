@@ -32,7 +32,7 @@ export const Form = ({ onErrors }: FormProps) => {
         <Legend />
         <div className="pb-6 md:flex md:items-center md:justify-between md:gap-5">
           <FormField
-            classes="pb-6 md:pb-0"
+            classes="mb-6 md:mb-0"
             type="text"
             value={name}
             handleChange={handleChange}
