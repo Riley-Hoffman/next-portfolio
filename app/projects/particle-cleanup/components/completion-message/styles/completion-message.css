@@ -1,0 +1,3 @@
+.completion-message p {
+  @apply font-source-sans dark:text-siteblack;
+}

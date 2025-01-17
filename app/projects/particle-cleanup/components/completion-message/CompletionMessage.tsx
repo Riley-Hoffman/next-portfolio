@@ -11,32 +11,29 @@ export const CompletionMessage = ({
   medalDetails,
   time,
 }: CompletionMessageProps) => (
-  <div className="border-1 absolute inset-0 size-full">
-    <p
-      id="completionMessage"
-      ref={ref}
-      className="absolute z-10 m-0 flex size-full flex-col items-center justify-center bg-white p-0 text-center font-source-sans text-2xl dark:text-accentone-200"
-      tabIndex={-1}
-    >
-      All clean!{' '}
-      <small aria-live="polite">
+  <div className="completion-message border-1 inset-0 size-full absolute z-10 bg-white text-center" id="completionMessage"
+    ref={ref}
+    tabIndex={-1}>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <p className="text-2xl">All clean!</p>
+      <p aria-live="polite">
         Time taken:{' '}
         <span className="font-semibold" aria-live="polite">
           {time} seconds
         </span>
-      </small>
-      <span className="font-semibold uppercase" aria-live="polite">
+      </p>
+      <p className="font-semibold uppercase" aria-live="polite">
         {medalDetails && (
           <span className="text-xl md:text-2xl" aria-live="polite">
             {medalDetails.text} <br />
             <Icon
-              className="mx-auto mt-2 block animate-twirl text-6xl"
+              className="mt-2 block animate-twirl text-6xl"
               icon="fa6-solid:medal"
               color={medalDetails.color}
             />
           </span>
         )}
-      </span>
-    </p>
+      </p>
+    </div>
   </div>
 )

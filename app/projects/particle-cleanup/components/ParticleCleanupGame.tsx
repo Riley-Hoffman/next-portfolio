@@ -2,8 +2,9 @@
 import { useRef } from 'react'
 import { useParticleCleanupGame } from '../hooks/useParticleCleanupGame'
 import { PlayAgain } from './PlayAgain'
-import { CompletionMessage } from './CompletionMessage'
+import { CompletionMessage } from './completion-message/CompletionMessage'
 import '@/app/styles/overlay.css'
+import './completion-message/styles/completion-message.css'
 
 export const ParticleCleanupGame = () => {
   const completionMessageRef = useRef<HTMLParagraphElement | null>(null)
