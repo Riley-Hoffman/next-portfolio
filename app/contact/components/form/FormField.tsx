@@ -21,40 +21,40 @@ export const FormField = ({
   name,
   placeholder,
   classes,
-}: FormFieldProps) => (
-  <>
-    <label
-      className={clsx('mb-2 block text-xl capitalize', {
-        'lg:inline': type != 'textarea',
-      })}
-      htmlFor={name as string}
-    >
-      {name as string}:
-    </label>
-    {type != 'textarea' ? (
-      <input
-        className={clsx('form-field', classes)}
-        id={name as string}
-        name={name as string}
-        placeholder={placeholder}
-        type={type}
-        enterKeyHint="next"
-        required={true}
-        value={value}
-        onChange={handleChange(name)}
-      />
-    ) : (
-      <textarea
-        className="form-field"
-        id={name as string}
-        name={name as string}
-        placeholder={placeholder}
-        required={true}
-        value={value}
-        spellCheck={true}
-        rows={8}
-        onChange={handleChange(name)}
-      />
-    )}
-  </>
-)
+}: FormFieldProps) => {
+  const commonProps = {
+    className: clsx('form-field', classes),
+    id: name as string,
+    name: name as string,
+    placeholder,
+    required: true,
+    value,
+    onChange: handleChange(name),
+  }
+
+  return (
+    <>
+      <label
+        className={clsx('mb-2 block text-xl capitalize', {
+          'lg:inline': type !== 'textarea',
+        })}
+        htmlFor={name as string}
+      >
+        {name as string}:
+      </label>
+      {type !== 'textarea' ? (
+        <input
+          {...commonProps}
+          type={type}
+          enterKeyHint="next"
+        />
+      ) : (
+        <textarea
+          {...commonProps}
+          spellCheck={true}
+          rows={8}
+        />
+      )}
+    </>
+  )
+}
