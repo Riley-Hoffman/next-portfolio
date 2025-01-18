@@ -24,24 +24,14 @@ export const FormField = ({
 }: FormFieldProps) => (
   <>
     <label
-      className="mb-2 inline-block min-w-14 text-xl capitalize"
+      className={clsx('mb-2 block text-xl capitalize', {
+        'lg:inline': type != 'textarea',
+      })}
       htmlFor={name as string}
     >
       {name as string}:
     </label>
-    {type === 'textarea' ? (
-      <textarea
-        className={clsx('form-field inverted', classes)}
-        id={name as string}
-        name={name as string}
-        placeholder={placeholder}
-        required={true}
-        value={value}
-        spellCheck={true}
-        rows={8}
-        onChange={handleChange(name)}
-      />
-    ) : (
+    {type != 'textarea' ? (
       <input
         className={clsx('form-field', classes)}
         id={name as string}
@@ -51,6 +41,18 @@ export const FormField = ({
         enterKeyHint="next"
         required={true}
         value={value}
+        onChange={handleChange(name)}
+      />
+    ) : (
+      <textarea
+        className="form-field"
+        id={name as string}
+        name={name as string}
+        placeholder={placeholder}
+        required={true}
+        value={value}
+        spellCheck={true}
+        rows={8}
         onChange={handleChange(name)}
       />
     )}

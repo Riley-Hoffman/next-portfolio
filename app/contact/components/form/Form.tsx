@@ -30,23 +30,21 @@ export const Form = ({ onErrors }: FormProps) => {
     <form className="px-5 pb-10 pt-5" onSubmit={handleFormSubmit}>
       <fieldset className="pb-5">
         <Legend />
-        <div className="pb-6 md:flex md:items-center md:justify-between md:gap-5">
-          <FormField
-            classes="mb-6 md:mb-0"
-            type="text"
-            value={name}
-            handleChange={handleChange}
-            name="name"
-            placeholder="Enter your name.."
-          />
-          <FormField
-            type="email"
-            value={email}
-            handleChange={handleChange}
-            name="email"
-            placeholder="Enter your email.."
-          />
-        </div>
+        <FormField
+          classes="lg:mb-0 lg:mr-[5%]"
+          type="text"
+          value={name}
+          handleChange={handleChange}
+          name="name"
+          placeholder="Enter your name.."
+        />
+        <FormField
+          type="email"
+          value={email}
+          handleChange={handleChange}
+          name="email"
+          placeholder="Enter your email.."
+        />
         <FormField
           type="textarea"
           value={message}
