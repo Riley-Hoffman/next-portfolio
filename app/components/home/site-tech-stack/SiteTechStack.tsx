@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
 import packageJson from '@/package.json'
+import './styles/site-tech-stack.css'
 
 interface Tech {
   name: string
@@ -55,7 +56,7 @@ export const SiteTechStack = () => {
           {technologies.map((tech) => (
             <li key={tech.name} className="relative pt-8">
               <a
-                className="inline-block min-h-36 min-w-52 rounded-md bg-accentone-200 p-5 text-sm text-heading no-underline duration-0 focus-visible:bg-heading focus-visible:text-accentone-200 md:hover:bg-heading md:hover:text-accentone-200 md:focus-visible:bg-heading md:focus-visible:outline-none"
+                className="tech-button"
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
