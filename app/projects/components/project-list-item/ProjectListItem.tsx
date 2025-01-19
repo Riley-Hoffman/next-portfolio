@@ -1,7 +1,6 @@
 'use client'
-import { useEffect } from 'react'
 import clsx from 'clsx'
-import { useTriggerOnScroll } from '@/hooks/useTriggerOnScroll'
+import { useScrollAnimationJsOnly } from './hooks/useScrollAnimationJsOnly'
 import { BackgroundAccent } from '@/app/components/decorative/BackgroundAccent'
 
 interface ProjectListItemProps {
@@ -17,19 +16,7 @@ export const ProjectListItem = ({
   isFirst,
   children,
 }: ProjectListItemProps) => {
-  const elementsRef = useTriggerOnScroll()
-
-  useEffect(() => {
-    if (elementsRef.current) {
-      const element = elementsRef.current[elementsRef.current.length - 1]
-      if (element && animation) {
-        const animationClasses = animation.trim().split(/\s+/)
-        animationClasses.forEach((className) => {
-          element.classList.add(className)
-        })
-      }
-    }
-  }, [elementsRef, animation])
+  const animatedElement = useScrollAnimationJsOnly(animation)
 
   return (
     <li
@@ -45,11 +32,7 @@ export const ProjectListItem = ({
         },
         inverted
       )}
-      ref={(el) => {
-        if (el) {
-          elementsRef.current.push(el)
-        }
-      }}
+      ref={animatedElement}
     >
       {children}
       <BackgroundAccent classes="inset-0 rounded-t-full rounded-b-[14rem]" />
