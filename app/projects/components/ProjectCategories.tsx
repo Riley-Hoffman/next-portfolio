@@ -17,11 +17,11 @@ export const ProjectCategories = ({
 
   return (
     <>
-      {categories.map((category: string, idx: number) => (
+      {categories.map((category, index) => (
         <ProjectCategoryList
           key={category}
           category={category}
-          index={idx}
+          index={index}
           projects={initialProjects}
         />
       ))}
