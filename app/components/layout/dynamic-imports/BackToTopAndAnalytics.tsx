@@ -1,5 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { BackToTopButton } from '../BackToTopButton'
+import { BackToTopButton } from '../back-to-top-button/BackToTopButton'
 
 const BackToTopAndAnalytics = () => (
   <>

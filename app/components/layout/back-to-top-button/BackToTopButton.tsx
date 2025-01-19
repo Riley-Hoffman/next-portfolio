@@ -1,22 +1,9 @@
 'use client'
-import { useState } from 'react'
-import { useScrollHandler } from '@/hooks/useScrollHandler'
 import { Icon } from '@iconify/react'
+import { useBackToTopButton } from './hooks/useBackToTopButton'
 
 export const BackToTopButton = () => {
-  const [visible, setVisible] = useState(false)
-
-  useScrollHandler(() => {
-    if (window.scrollY > window.innerHeight / 2) {
-      setVisible(true)
-    } else {
-      setVisible(false)
-    }
-  })
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const { visible, scrollToTop } = useBackToTopButton()
 
   return visible ? (
     <button
