@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import { useBackToTopButton } from './hooks/useBackToTopButton'
 
 export const BackToTopButton = () => {
-  const { visible, scrollToTop } = useBackToTopButton(window.innerHeight / 2)
+  const { visible, scrollToTop } = useBackToTopButton()
 
   return visible ? (
     <button

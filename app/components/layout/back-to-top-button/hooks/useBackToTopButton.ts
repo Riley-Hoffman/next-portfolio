@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { isBrowser } from '@/lib/isBrowser'
 
-export const useBackToTopButton = (threshold: number) => {
+export const useBackToTopButton = () => {
   const [visible, setVisible] = useState(false)
   useEffect(() => {
     if (isBrowser()) {
       const handleScroll = () => {
-        if (window.scrollY > threshold) {
+        if (window.scrollY > window.innerHeight / 2) {
           setVisible(true)
         } else {
           setVisible(false)
@@ -16,7 +16,7 @@ export const useBackToTopButton = (threshold: number) => {
       window.addEventListener('scroll', handleScroll)
       return () => window.removeEventListener('scroll', handleScroll)
     }
-  }, [threshold])
+  }, [])
 
   const scrollToTop = () => {
     if (isBrowser()) {
