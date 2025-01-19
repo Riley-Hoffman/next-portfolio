@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { isBrowser } from '@/lib/isBrowser'
 
 export const useScrollHandler = (onScroll: () => void) => {
   const ticking = useRef(false)
@@ -14,7 +15,7 @@ export const useScrollHandler = (onScroll: () => void) => {
       }
     }
 
-    if (typeof window !== 'undefined') {
+    if (isBrowser()) {
       window.addEventListener('scroll', handleScroll)
       return () => {
         window.removeEventListener('scroll', handleScroll)

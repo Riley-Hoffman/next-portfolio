@@ -1,4 +1,5 @@
 import { useEffect, useRef, RefObject } from 'react'
+import { isBrowser } from '@/lib/isBrowser'
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -46,7 +47,7 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
 
     setTimeout(updateTriggerOnScroll, 100)
 
-    if (typeof window !== 'undefined') {
+    if (isBrowser()) {
       window.addEventListener('scroll', updateTriggerOnScroll)
       return () => {
         window.removeEventListener('scroll', updateTriggerOnScroll)
