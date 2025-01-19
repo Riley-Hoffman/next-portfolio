@@ -43,17 +43,9 @@ export const FormField = ({
         {name as string}:
       </label>
       {type !== 'textarea' ? (
-        <input
-          {...commonProps}
-          type={type}
-          enterKeyHint="next"
-        />
+        <input {...commonProps} type={type} enterKeyHint="next" />
       ) : (
-        <textarea
-          {...commonProps}
-          spellCheck={true}
-          rows={8}
-        />
+        <textarea {...commonProps} spellCheck={true} rows={8} />
       )}
     </>
   )

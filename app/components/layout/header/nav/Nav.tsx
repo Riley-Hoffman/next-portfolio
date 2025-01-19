@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRoutes } from '@/hooks/useRoutes'
-import { Hamburger } from './Hamburger'
+import { Hamburger } from './hamburger/Hamburger'
 import { NavListItem } from './NavListItem'
 import { useHideShowLinks } from './hooks/useHideShowLInks'
 
@@ -13,7 +13,7 @@ export const Nav = () => {
     <nav className="h-10 min-w-36 md:order-2">
       <Hamburger expanded={setIsExpanded} />
       <ul
-        className="shadow-[0_0.128px_1rem_-0.56rem] peer-aria-expanded:scale-100 "
+        className="shadow-[0_0.128px_1rem_-0.56rem] peer-aria-expanded:scale-100"
         aria-label="Menu Links"
       >
         {useRoutes('filtered').map(({ to, label }) => (
