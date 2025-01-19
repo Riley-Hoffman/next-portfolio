@@ -38,12 +38,9 @@ export const useHamburger = ({ expanded }: UseHamburgerProps) => {
     if (expanded) {
       expanded(isExpanded)
     }
-  }, [isExpanded, expanded])
-
-  useEffect(() => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [handleResize])
+  }, [isExpanded, expanded, handleResize])
 
   useEffect(() => {
     setIsExpanded(false)
