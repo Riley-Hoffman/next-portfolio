@@ -3,7 +3,6 @@ import { isBrowser } from '@/lib/isBrowser'
 
 export const useBackToTopButton = (threshold: number) => {
   const [visible, setVisible] = useState(false)
-  threshold = window.innerHeight / 2
   useEffect(() => {
     if (isBrowser()) {
       const handleScroll = () => {
