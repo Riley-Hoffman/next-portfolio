@@ -6,6 +6,7 @@ import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
 import { CarouselDataTypes } from './CarouselData'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import { carouselStyle } from './lib/carouselStyle'
 
 interface CarouselProps {
   slides: CarouselDataTypes[]
@@ -14,15 +15,7 @@ interface CarouselProps {
 export const Carousel = ({ slides }: CarouselProps) => {
   const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    const loadStyles = async () => {
-      await Promise.all([
-        import('swiper/css'),
-        import('swiper/css/navigation'),
-        import('swiper/css/pagination'),
-        import('./styles/custom-swiper.css'),
-      ])
-    }
-    loadStyles()
+    carouselStyle()
   }, [])
 
   return (
