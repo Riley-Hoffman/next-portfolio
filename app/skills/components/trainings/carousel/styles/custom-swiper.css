@@ -1,8 +1,8 @@
 .swiper-pagination {
-  @apply flex items-center justify-center gap-1;
+  @apply flex size-6 items-end justify-center gap-1;
 }
 .swiper-pagination-bullet {
-  @apply relative;
+  @apply relative aspect-square;
 }
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   @apply opacity-100;

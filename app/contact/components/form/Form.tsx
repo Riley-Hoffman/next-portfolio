@@ -64,7 +64,9 @@ export const Form = ({ onErrors }: FormProps) => {
           placeholder="Enter your message.."
         />
       </fieldset>
-      <button type="submit" className="button p-3">Submit</button>
+      <button type="submit" className="button p-3">
+        Submit
+      </button>
     </form>
   )
 }

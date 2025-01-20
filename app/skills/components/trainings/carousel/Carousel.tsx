@@ -28,10 +28,12 @@ export const Carousel = ({ slides }: CarouselProps) => {
         }}
         pagination={{
           clickable: true,
-          bulletClass: 'swiper-pagination-bullet md:tool-tip !size-6 !mx-3',
+          bulletClass: 'swiper-pagination-bullet !size-6 !mx-3',
           bulletActiveClass: 'swiper-pagination-bullet-active',
+          dynamicBullets: true,
+          dynamicMainBullets: 2,
           renderBullet: (index, className) =>
-            `<button class="${className}" aria-label="${slides[index]?.label || `Slide ${index + 1}`}"></button>`,
+            `<button class="${className}" aria-label="${`Slide ${index + 1}`}" title="${slides[index]?.label}"></button>`,
         }}
         mousewheel={{
           forceToAxis: true,
