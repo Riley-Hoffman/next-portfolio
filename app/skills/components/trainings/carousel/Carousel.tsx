@@ -30,8 +30,8 @@ export const Carousel = ({ slides }: CarouselProps) => {
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
-          prevEl: '.prev-btn',
-          nextEl: '.next-btn',
+          prevEl: '.carousel-button.prv',
+          nextEl: '.carousel-button.nxt',
         }}
         pagination={{
           clickable: true,

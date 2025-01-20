@@ -1,17 +1,9 @@
-import { useEffect, useRef } from 'react'
 import { Icon } from '@iconify/react'
 import { carouselButtonsConfig } from './constants/carouselButtonsConfig'
+import { useCarouselButtonVisibility } from './hooks/useCarouselButtonVisibility'
 
 export const CarouselButtons = () => {
-  const buttonsRef = useRef<(HTMLButtonElement | null)[]>([])
-
-  useEffect(() => {
-    buttonsRef.current.forEach((button) => {
-      if (button) {
-        button.classList.remove('hidden')
-      }
-    })
-  }, [])
+  const buttonsRef = useCarouselButtonVisibility()
 
   return carouselButtonsConfig.map((config, index) => (
     <button
@@ -22,8 +14,7 @@ export const CarouselButtons = () => {
       aria-label={config.label}
       className={`carousel-button hidden ${config.className}`}
     >
-      {' '}
-      <Icon icon={config.icon} />{' '}
+      <Icon icon={config.icon} />
     </button>
   ))
 }
