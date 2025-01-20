@@ -1,6 +1,5 @@
 import { Legend } from './Legend'
 import { FormField } from './FormField'
-import { SubmitButton } from './SubmitButton'
 import { useContactForm } from '../../hooks/useContactForm'
 
 export interface FormData {
@@ -53,7 +52,7 @@ export const Form = ({ onErrors }: FormProps) => {
           placeholder="Enter your message.."
         />
       </fieldset>
-      <SubmitButton handleSubmission={handleFormSubmit} />
+      <button type="submit" className="button p-3">Submit</button>
     </form>
   )
 }
