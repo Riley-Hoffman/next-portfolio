@@ -17,7 +17,6 @@ export const Form = ({ onErrors }: FormProps) => {
     formState: { name, email, message },
     handleChange,
     handleFormSubmit,
-    handleSubmission,
   } = useContactForm({
     initialFormState: {
       name: '',
@@ -26,19 +25,8 @@ export const Form = ({ onErrors }: FormProps) => {
     },
     onErrors,
   })
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const form = e.currentTarget as HTMLFormElement
-    const isValid = form.reportValidity()
-    if (!isValid) {
-      handleSubmission()
-      return
-    }
-    await handleFormSubmit(e)
-  }
   return (
-    <form className="px-5 pb-10 pt-5" noValidate onSubmit={onSubmit}>
+    <form className="px-5 pb-10 pt-5" noValidate onSubmit={handleFormSubmit}>
       <fieldset className="pb-5">
         <Legend />
         <FormField

@@ -15,7 +15,7 @@ export const useContactForm = ({
   const csrfSecretRef = useRef<string | null>(null)
   const router = useRouter()
 
-  const { formState, errors, handleChange, handleSubmission } =
+  const { formState, errors, handleChange, handleUserSubmission } =
     useFormValidation(initialFormState)
 
   useEffect(() => {
@@ -47,32 +47,38 @@ export const useContactForm = ({
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
-    if (!csrfTokenRef.current || !csrfSecretRef.current) {
-      console.error('CSRF token or secret is missing.')
+    const form = e.currentTarget as HTMLFormElement
+    const isValid = form.reportValidity()
+    if (!isValid) {
+      handleUserSubmission()
       return
-    }
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'csrf-token': csrfTokenRef.current,
-          'csrf-secret': csrfSecretRef.current,
-        },
-        body: JSON.stringify(formState),
-      })
-
-      const result = await response.json()
-      if (!response.ok) {
-        console.error('Form submission failed:', result.error)
-      } else {
-        console.log('Form submitted successfully:', result)
-        router.push('/thank-you')
+    } else {
+      if (!csrfTokenRef.current || !csrfSecretRef.current) {
+        console.error('CSRF token or secret is missing.')
+        return
       }
-    } catch (error) {
-      console.error('Error submitting form:', error)
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'csrf-token': csrfTokenRef.current,
+            'csrf-secret': csrfSecretRef.current,
+          },
+          body: JSON.stringify(formState),
+        })
+
+        const result = await response.json()
+        if (!response.ok) {
+          console.error('Form submission failed:', result.error)
+        } else {
+          console.log('Form submitted successfully:', result)
+          router.push('/thank-you')
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error)
+      }
     }
   }
 
@@ -80,7 +86,7 @@ export const useContactForm = ({
     formState,
     errors,
     handleChange,
-    handleSubmission,
+    handleUserSubmission,
     handleFormSubmit,
   }
 }
