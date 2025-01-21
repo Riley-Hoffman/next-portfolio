@@ -1,4 +1,5 @@
 import '@/app/styles/numbered-icons.css'
+import './styles/contact-content.css'
 
 interface ContactContentProps {
   errors: string[]

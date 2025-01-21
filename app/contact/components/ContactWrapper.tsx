@@ -1,6 +1,6 @@
 'use client'
 import { useState, useCallback } from 'react'
-import { ContactContent } from './ContactContent'
+import { ContactContent } from './content/ContactContent'
 import { Form } from './form/Form'
 
 export const ContactWrapper = () => {

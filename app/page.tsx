@@ -3,7 +3,10 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { CoverImage, CoverImageProps } from './components/home/CoverImage'
+import {
+  CoverImage,
+  CoverImageProps,
+} from './components/home/cover-image/CoverImage'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/MyJourney'
 import { SiteTechStack } from './components/home/site-tech-stack/SiteTechStack'

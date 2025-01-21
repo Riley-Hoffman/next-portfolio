@@ -10,6 +10,3 @@ input:first-of-type.form-field {
 textarea.form-field {
   @apply inverted w-full;
 }
-.contact-content * {
-  @apply text-accentone-300;
-}

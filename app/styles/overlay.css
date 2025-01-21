@@ -7,6 +7,6 @@
 .overlay:not(.light-overlay):before {
   @apply dark:bg-[radial-gradient(#000000bf_0%,#00000080_100%)];
 }
-.overlay > *:not(.absolute) {
+.overlay > *:not(.absolute, .cover-image) {
   @apply relative;
 }

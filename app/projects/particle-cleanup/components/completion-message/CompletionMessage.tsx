@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react'
+import './styles/completion-message.css'
 
 interface CompletionMessageProps {
   ref?: React.Ref<HTMLParagraphElement>

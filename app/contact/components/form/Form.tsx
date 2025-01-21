@@ -1,6 +1,7 @@
 import { Legend } from './Legend'
 import { FormField } from './FormField'
 import { useContactForm } from '../../hooks/useContactForm'
+import './styles/form.css'
 
 export interface FormData {
   name: string

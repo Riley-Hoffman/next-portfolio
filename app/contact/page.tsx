@@ -6,7 +6,6 @@ import {
 import { ContactWrapper } from './components/ContactWrapper'
 import { Sidebar } from './components/sidebar/Sidebar'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
-import './styles/form.css'
 
 const description =
   'Get in touch with web developer Riley Hoffman with the form on this page.'

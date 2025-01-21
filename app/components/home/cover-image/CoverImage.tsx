@@ -1,8 +1,9 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
+import './styles/cover-image.css'
 
 const LazyUseParallax = dynamic(
-  () => import('./dynamic-imports/LazyUseParallax'),
+  () => import('../dynamic-imports/LazyUseParallax'),
   {
     ssr: false,
   }
@@ -33,7 +34,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         sizes="100vw"
         alt=""
         fetchPriority="high"
-        className="absolute z-[1] h-[120vh] w-[130vw] max-w-none object-cover blur-[0.047rem] saturate-150 dark:hue-rotate-[266deg] sm:blur-0"
+        className="cover-image"
         style={{ transform: 'translate3d(-4rem, -8rem, 0px)' }}
       />
       <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
