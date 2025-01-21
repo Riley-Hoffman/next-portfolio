@@ -23,17 +23,20 @@ export const ProjectCategoryList = ({
         className="max-w-screen-xl pb-5 text-base"
         aria-label={`${category} Projects`}
       >
-        {filteredProjects.map((project, idx) => {
-          const originalIndex =
+        {filteredProjects.map((project, catindex) => {
+          const projectNumber =
             projects.findIndex((p) => p.title === project.title) + 1
           return (
             <ProjectListItem
               key={project.title}
-              inverted={originalIndex % 2 === 0 ? 'inverted' : ''}
+              inverted={projectNumber % 2 === 0 ? 'inverted' : ''}
               animation={project.animation}
               isFirst={index === 0 && project === filteredProjects[0]}
             >
-              <ProjectContent {...project} isFirst={index === 0 && idx === 0} />
+              <ProjectContent
+                {...project}
+                isFirst={index === 0 && catindex === 0}
+              />
             </ProjectListItem>
           )
         })}

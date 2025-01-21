@@ -4,7 +4,7 @@ export interface Skill {
   classes?: string
 }
 
-const sharedNoBgIconClasses = ' p-[0.313rem] rounded-2xl'
+const paddingRounding = ' p-[0.313rem] rounded-2xl'
 
 export const skillsData: Skill[] = [
   { skill: 'HTML5', icon: 'skill-icons:html' },
@@ -23,7 +23,7 @@ export const skillsData: Skill[] = [
   {
     skill: 'Rest API',
     icon: 'file-icons:api-blueprint',
-    classes: `${sharedNoBgIconClasses} bg-[#edff74] text-teal-800`,
+    classes: `${paddingRounding} bg-[#edff74] text-teal-800`,
   },
   { skill: 'Express', icon: 'skill-icons:expressjs-dark' },
   { skill: 'MongoDB', icon: 'skill-icons:mongodb' },
@@ -31,7 +31,7 @@ export const skillsData: Skill[] = [
   {
     skill: 'Firebase',
     icon: 'devicon:firebase',
-    classes: `${sharedNoBgIconClasses} bg-white`,
+    classes: `${paddingRounding} bg-white`,
   },
   { skill: 'Git', icon: 'skill-icons:git' },
   { skill: 'GitHub Actions', icon: 'skill-icons:githubactions-dark' },
@@ -40,11 +40,11 @@ export const skillsData: Skill[] = [
   {
     skill: 'WCAG',
     icon: 'file-icons:w3c',
-    classes: `${sharedNoBgIconClasses} bg-[#005a9c] text-white`,
+    classes: `${paddingRounding} bg-[#005a9c] text-white`,
   },
   {
     skill: 'SEO',
     icon: 'fluent:globe-search-20-filled',
-    classes: `${sharedNoBgIconClasses} bg-[#FBBC05] text-[#4285F4]`,
+    classes: `${paddingRounding} bg-[#FBBC05] text-[#4285F4]`,
   },
 ]

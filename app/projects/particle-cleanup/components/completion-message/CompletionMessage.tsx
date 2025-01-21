@@ -12,7 +12,7 @@ export const CompletionMessage = ({
   time,
 }: CompletionMessageProps) => (
   <div
-    className="completion-message border-1 absolute inset-0 z-10 size-full bg-white text-center"
+    className="completion-message absolute inset-0 z-10 size-full bg-white text-center"
     id="completionMessage"
     ref={ref}
     tabIndex={-1}

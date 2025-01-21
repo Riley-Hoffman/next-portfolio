@@ -20,10 +20,8 @@ export const FormField = ({
   handleChange,
   name,
   placeholder,
-  classes,
 }: FormFieldProps) => {
   const commonProps = {
-    className: clsx('form-field', classes),
     id: name as string,
     name: name as string,
     placeholder,
@@ -43,9 +41,19 @@ export const FormField = ({
         {name as string}:
       </label>
       {type !== 'textarea' ? (
-        <input {...commonProps} type={type} enterKeyHint="next" />
+        <input
+          {...commonProps}
+          className="form-field"
+          type={type}
+          enterKeyHint="next"
+        />
       ) : (
-        <textarea {...commonProps} spellCheck={true} rows={8} />
+        <textarea
+          {...commonProps}
+          className="form-field"
+          spellCheck={true}
+          rows={8}
+        />
       )}
     </>
   )

@@ -30,7 +30,6 @@ export const Form = ({ onErrors }: FormProps) => {
       <fieldset className="pb-5">
         <Legend />
         <FormField
-          classes="lg:mb-0 lg:mr-[5%]"
           type="text"
           value={name}
           handleChange={handleChange}
