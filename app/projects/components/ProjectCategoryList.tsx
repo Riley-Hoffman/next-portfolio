@@ -25,7 +25,7 @@ export const ProjectCategoryList = ({
       >
         {filteredProjects.map((project, catindex) => {
           const projectNumber =
-            projects.findIndex((p) => p.title === project.title) + 1
+            projects.findIndex((proj) => proj.title === project.title) + 1
           return (
             <ProjectListItem
               key={project.title}
