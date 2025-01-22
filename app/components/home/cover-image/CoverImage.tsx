@@ -2,12 +2,9 @@ import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import './styles/cover-image.css'
 
-const LazyParallax = dynamic(
-  () => import('./dynamic-imports/LazyParallax'),
-  {
-    ssr: false,
-  }
-)
+const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
+  ssr: false,
+})
 
 export interface CoverImageProps {
   coverImageData: {
