@@ -32,12 +32,12 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
   schemaType: 'WebPage',
 }
 
-export default function Skills() {
-  return (
-    <>
-      <SchemaGenerator schemaData={schemaData} />
-      <SkillsSection />
-      <TrainingsSection />
-    </>
-  )
-}
+const Skills = () => (
+  <>
+    <SchemaGenerator schemaData={schemaData} />
+    <SkillsSection />
+    <TrainingsSection />
+  </>
+)
+
+export default Skills

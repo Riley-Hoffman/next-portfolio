@@ -34,15 +34,15 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
   schemaType: 'ContactPage',
 }
 
-export default function Contact() {
-  return (
-    <>
-      <SchemaGenerator schemaData={schemaData} />
-      <h1 className="heading-one">Contact Me</h1>
-      <div className="max-w-5xl md:flex">
-        <ContactWrapper />
-        <Sidebar />
-      </div>
-    </>
-  )
-}
+const Contact = () => (
+  <>
+    <SchemaGenerator schemaData={schemaData} />
+    <h1 className="heading-one">Contact Me</h1>
+    <div className="max-w-5xl md:flex">
+      <ContactWrapper />
+      <Sidebar />
+    </div>
+  </>
+)
+
+export default Contact

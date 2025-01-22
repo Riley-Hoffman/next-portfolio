@@ -41,37 +41,36 @@ const technologies: Tech[] = [
     version: packageJson.dependencies.firebase,
   },
 ]
+const SiteTechStack = () => (
+  <>
+    <section className="gradient-border border-t-2 border-solid pb-12 pt-2 text-center">
+      <h2 className="reg-caps mb-1 font-inconsolata text-2xl">
+        Technologies Used To Build This Site
+      </h2>
+      <ul
+        className="block min-h-40 max-w-6xl sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5"
+        aria-label="Site tech stack."
+      >
+        {technologies.map((tech) => (
+          <li key={tech.name} className="relative pt-8">
+            <a
+              className="tech-button"
+              href={tech.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon={tech.logo} className="text-7xl" />
+              <span className="mt-2 block text-lg leading-none">
+                {tech.name}
+                <NewTabContent />
+              </span>
+              {tech.version}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </>
+)
 
-export const SiteTechStack = () => {
-  return (
-    <>
-      <section className="gradient-border border-t-2 border-solid pb-12 pt-2 text-center">
-        <h2 className="reg-caps mb-1 font-inconsolata text-2xl">
-          Technologies Used To Build This Site
-        </h2>
-        <ul
-          className="block min-h-40 max-w-6xl sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5"
-          aria-label="Site tech stack."
-        >
-          {technologies.map((tech) => (
-            <li key={tech.name} className="relative pt-8">
-              <a
-                className="tech-button"
-                href={tech.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon={tech.logo} className="text-7xl" />
-                <span className="mt-2 block text-lg leading-none">
-                  {tech.name}
-                  <NewTabContent />
-                </span>
-                {tech.version}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </>
-  )
-}
+export default SiteTechStack

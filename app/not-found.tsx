@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRoutes } from '@/hooks/useRoutes'
 
-export default function Custom404() {
+const Custom404 = () => {
   return (
     <>
       <h1 className="heading-one">Page Not Found</h1>
@@ -28,3 +28,5 @@ export default function Custom404() {
     </>
   )
 }
+
+export default Custom404

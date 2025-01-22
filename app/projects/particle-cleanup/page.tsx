@@ -34,17 +34,17 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
   schemaType: 'WebPage',
 }
 
-export default function ParticleCleanupWrapper() {
-  return (
-    <>
-      <SchemaGenerator schemaData={schemaData} />
-      <div className="pb-16">
-        <h1 className="heading-one">Particle Cleanup Game</h1>
-        <div className="max-w-screen-md">
-          <ParticleCleanupCopy />
-          <ParticleCleanupGame />
-        </div>
+const ParticleCleanupWrapper = () => (
+  <>
+    <SchemaGenerator schemaData={schemaData} />
+    <div className="pb-16">
+      <h1 className="heading-one">Particle Cleanup Game</h1>
+      <div className="max-w-screen-md">
+        <ParticleCleanupCopy />
+        <ParticleCleanupGame />
       </div>
-    </>
-  )
-}
+    </div>
+  </>
+)
+
+export default ParticleCleanupWrapper

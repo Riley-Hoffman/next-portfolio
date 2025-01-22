@@ -1,4 +1,5 @@
 'use client'
+import dynamic from 'next/dynamic'
 import {
   SchemaGenerator,
   SchemaGeneratorProps,
@@ -9,7 +10,6 @@ import {
 } from './components/home/cover-image/CoverImage'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
-import { SiteTechStack } from './components/home/site-tech-stack/SiteTechStack'
 import { baseDescription } from '@/constants/baseData'
 import '@/app/styles/overlay.css'
 
@@ -31,13 +31,17 @@ const coverImageData: CoverImageProps['coverImageData'] = {
   children: <FirstFoldContent />,
 }
 
-export default function Home() {
-  return (
-    <>
-      <SchemaGenerator schemaData={schemaData} />
-      <CoverImage coverImageData={coverImageData} />
-      <MyJourney />
-      <SiteTechStack />
-    </>
-  )
-}
+const LazySiteTechStack = dynamic(
+  () => import('./components/home/site-tech-stack/SiteTechStack')
+)
+
+const Home = () => (
+  <>
+    <SchemaGenerator schemaData={schemaData} />
+    <CoverImage coverImageData={coverImageData} />
+    <MyJourney />
+    <LazySiteTechStack />
+  </>
+)
+
+export default Home
