@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import './styles/cover-image.css'
 
-const LazyUseParallax = dynamic(
-  () => import('../dynamic-imports/LazyUseParallax'),
+const LazyParallax = dynamic(
+  () => import('./dynamic-imports/LazyParallax'),
   {
     ssr: false,
   }
@@ -40,7 +40,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
       <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
         {coverImageData.children}
       </div>
-      <LazyUseParallax parallaxRef={parallaxRef} />
+      <LazyParallax parallaxRef={parallaxRef} />
     </section>
   )
 }

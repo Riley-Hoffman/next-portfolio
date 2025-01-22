@@ -8,7 +8,7 @@ import {
   CoverImageProps,
 } from './components/home/cover-image/CoverImage'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
-import { MyJourney } from './components/home/MyJourney'
+import { MyJourney } from './components/home/my-journey/MyJourney'
 import { SiteTechStack } from './components/home/site-tech-stack/SiteTechStack'
 import { baseDescription } from '@/constants/baseData'
 import '@/app/styles/overlay.css'
