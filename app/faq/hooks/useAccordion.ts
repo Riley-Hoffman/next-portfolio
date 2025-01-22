@@ -47,7 +47,6 @@ export const useAccordion = (itemsLength: number) => {
   }, [accOpen, openIndex])
 
   return {
-    openIndex,
     accOpen,
     handleAccordionClick,
     buttonRefs,

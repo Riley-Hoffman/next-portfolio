@@ -41,6 +41,5 @@ export const useFormValidation = (initialState: FormData) => {
     errors,
     handleChange,
     handleUserSubmission,
-    submitted,
   }
 }

@@ -16,7 +16,6 @@ export const useThemeInfo = () => {
 
   return {
     isReady: true,
-    currentTheme,
     icon: currentTheme === 'dark' ? 'solar:sun-2-bold' : 'solar:moon-bold',
     label:
       currentTheme === 'dark'

@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useTimedEffect } from '@/hooks/useTimedEffect'
@@ -6,7 +6,7 @@ import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { triggerEffect } = useTimedEffect(1000)
+  const { triggerEffect, cleanup } = useTimedEffect(1000)
 
   const applyEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
@@ -14,6 +14,12 @@ export const LinkedInButton = () => {
       isCounting
     )
   }
+
+  useEffect(() => {
+    return () => {
+      cleanup()
+    }
+  }, [cleanup])
 
   return (
     <Link
