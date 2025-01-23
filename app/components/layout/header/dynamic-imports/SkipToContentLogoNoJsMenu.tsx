@@ -1,11 +1,13 @@
 import { SkipToContent } from '../SkipToContent'
 import { HeaderLogo } from '../HeaderLogo'
+import { NoJsMenu } from '../nav/NoJsMenu'
 
-const SkipToContentAndLogo = () => (
+const SkipToContentLogoNoJsMenu = () => (
   <>
     <SkipToContent />
     <HeaderLogo />
+    <NoJsMenu />
   </>
 )
 
-export default SkipToContentAndLogo
+export default SkipToContentLogoNoJsMenu
