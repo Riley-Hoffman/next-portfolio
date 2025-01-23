@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useTriggerOnScroll } from '@/hooks/useTriggerOnScroll'
 
-export const useScrollAnimationJsOnly = (animation?: string) => {
+export const useJsOnlyTriggerOnScroll = (animation?: string) => {
   const elementsRef = useTriggerOnScroll()
 
   useEffect(() => {
