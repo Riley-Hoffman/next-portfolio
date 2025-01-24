@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { DynamicThemeProvider } from '@/app/components/theme/DynamicThemeProvider'
 import { LayoutContent } from '@/app/components/layout/LayoutContent'
-import { IconLinks } from '@/app/components/IconLinks'
+import { IconLinks } from '@/app/components/layout/IconLinks'
 import {
   getBaseUrl,
   getPageTitle,

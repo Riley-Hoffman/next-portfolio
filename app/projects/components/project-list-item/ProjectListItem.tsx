@@ -1,7 +1,7 @@
 'use client'
 import clsx from 'clsx'
-import { BackgroundAccent } from '@/app/components/decorative/BackgroundAccent'
 import { useJsOnlyTriggerOnScroll } from './hooks/useJsOnlyTriggerOnScroll'
+import '@/app/styles/background-accent.css'
 
 interface ProjectListItemProps {
   inverted?: string
@@ -21,7 +21,7 @@ export const ProjectListItem = ({
   return (
     <li
       className={clsx(
-        'ease group gradient-border relative my-28 gap-14 border-t-8 border-solid md:flex',
+        'ease background-accent group gradient-border relative my-28 gap-14 border-t-8 border-solid after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex',
         {
           'transition-[left]': inverted,
           'transition-[right]': !inverted,
@@ -35,7 +35,6 @@ export const ProjectListItem = ({
       ref={animatedElement}
     >
       {children}
-      <BackgroundAccent classes="inset-0 rounded-t-full rounded-b-[14rem]" />
     </li>
   )
 }

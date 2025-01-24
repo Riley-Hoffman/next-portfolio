@@ -160,7 +160,4 @@
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl;
   }
-  .overlay:before {
-    @apply contrast-more:bg-[#ffffffa8] contrast-more:dark:bg-[#0000578f];
-  }
 }

@@ -10,3 +10,6 @@
 .overlay > *:not(.absolute, .cover-image) {
   @apply relative;
 }
+.overlay:before {
+  @apply contrast-more:bg-[#ffffffa8] contrast-more:dark:bg-[#0000578f];
+}
