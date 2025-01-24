@@ -18,7 +18,7 @@ export const useParallax = (
       const height = parallaxRef.current.offsetHeight - 18
       const translateX = -(height - window.scrollY) * velocity
       const translateY = -(height - window.scrollY) * (velocity + 0.1)
-      imgRef.current.style.transform = `translate3d(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem, 0)`
+      imgRef.current.style.transform = `translate(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem)`
       imgRef.current.style.willChange = 'transform'
     }
   }, [parallaxRef, prefersReducedMotion, velocity])
