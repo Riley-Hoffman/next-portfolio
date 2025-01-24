@@ -20,11 +20,6 @@ export const skillsData: Skill[] = [
   { skill: 'Wordpress', icon: 'skill-icons:wordpress' },
   { skill: 'PHP', icon: 'skill-icons:php-dark' },
   { skill: 'Node.js', icon: 'skill-icons:nodejs-dark' },
-  {
-    skill: 'Rest API',
-    icon: 'file-icons:api-blueprint',
-    classes: `${paddingRounding} bg-[#edff74] text-teal-800`,
-  },
   { skill: 'Express', icon: 'skill-icons:expressjs-dark' },
   { skill: 'MongoDB', icon: 'skill-icons:mongodb' },
   { skill: 'Elasticsearch', icon: 'skill-icons:elasticsearch-dark' },
@@ -46,5 +41,10 @@ export const skillsData: Skill[] = [
     skill: 'SEO',
     icon: 'fluent:globe-search-20-filled',
     classes: `${paddingRounding} bg-[#FBBC05] text-[#4285F4]`,
+  },
+  {
+    skill: 'Rest API',
+    icon: 'file-icons:api-blueprint',
+    classes: `${paddingRounding} bg-[#edff74] text-teal-800`,
   },
 ]
