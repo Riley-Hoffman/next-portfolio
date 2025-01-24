@@ -53,8 +53,8 @@ export const Carousel = ({ slides }: CarouselProps) => {
             'Trainings & Certifications Carousel',
         }}
       >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.src}>
             <a href={slide.url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={slide.src}

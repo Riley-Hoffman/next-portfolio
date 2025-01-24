@@ -25,7 +25,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
       >
         {[...Array(4)].map((_, index) => (
           <span
-            key={index}
+            key={`line-${index}`}
             className="hamburger-line group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:left-3 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:top-5 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:w-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:border-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:transition-none group-aria-expanded:[&:nth-child(2)]:rotate-45 group-aria-expanded:[&:nth-child(3)]:-rotate-45"
           ></span>
         ))}

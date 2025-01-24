@@ -22,7 +22,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
       {items.map((item, index) => {
         const isOpen = accOpen(index)
         return (
-          <li className="group" key={index}>
+          <li className="group" key={item.question}>
             <AccordionQuestion
               data={{
                 question: item.question,

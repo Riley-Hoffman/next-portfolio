@@ -7,7 +7,7 @@ export const CarouselButtons = () => {
 
   return carouselButtonsConfig.map((config, index) => (
     <button
-      key={index}
+      key={config.label}
       ref={(el) => {
         buttonsRef.current[index] = el
       }}

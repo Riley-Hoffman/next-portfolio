@@ -46,8 +46,8 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
           <h2 className="pl-2">Error processing form</h2>
         </div>
         <ol className="numbered-icons pb-6 pl-16 pr-5 text-xl">
-          {errors.map((error, index) => (
-            <li key={index}>{error}</li>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
           ))}
         </ol>
       </>
