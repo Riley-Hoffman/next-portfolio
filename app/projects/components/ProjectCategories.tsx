@@ -12,7 +12,7 @@ export const ProjectCategories = ({
   }
 
   const categories = Array.from(
-    new Set(initialProjects.map((p: Project) => p.category))
+    new Set(initialProjects.map((proj: Project) => proj.category))
   )
 
   return (
