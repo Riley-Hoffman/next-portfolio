@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
-import { DynamicThemeProvider } from '@/app/components/theme/DynamicThemeProvider'
-import { LayoutContent } from '@/app/components/layout/LayoutContent'
-import { IconLinks } from '@/app/components/layout/IconLinks'
+import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
+import { LayoutContent } from './components/layout/LayoutContent'
+import { IconLinks } from './components/layout/IconLinks/IconLinks'
+import { iconLinksData } from './components/layout/IconLinks/constants/IconLinksData'
 import {
   getBaseUrl,
   getPageTitle,
   baseDescription,
   getImageUrl,
 } from '@/constants/baseData'
-import '@/app/styles/globals.css'
+import './styles/globals.css'
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en">
     <head>
-      <IconLinks />
+      {iconLinksData.map((icon, index) => (
+        <IconLinks key={index} {...icon} />
+      ))}
       <meta
         name="theme-color"
         media="(prefers-color-scheme: light)"
