@@ -1,5 +1,3 @@
-import { AccordionIcon } from './AccordionIcon'
-
 type AccordionQuestionProps = {
   data: {
     question: string
@@ -18,7 +16,7 @@ export const AccordionQuestion = ({ data }: AccordionQuestionProps) => {
       onClick={onClick}
       aria-expanded={isOpen}
     >
-      <AccordionIcon />
+      <div className="plus-minus"></div>
       {question}
     </button>
   )

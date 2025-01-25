@@ -1,5 +1,5 @@
 .plus-minus {
-  @apply relative inline-block align-middle;
+  @apply relative mb-[0.063rem] mr-5 box-content inline-block rounded-full bg-heading p-3 align-middle text-xs text-accentone-300 duration-200 ease-in-out group-hover:bg-accenttwo-100 group-hover:text-heading group-focus-visible:bg-accenttwo-100 group-focus-visible:text-heading group-aria-expanded:bg-accenttwo-100 group-aria-expanded:text-heading;
 }
 .plus-minus:before,
 .plus-minus:after {
