@@ -5,7 +5,7 @@ export interface Icon {
   href: string
 }
 
-export const iconLinksData = [
+export const iconLinksData: Icon[] = [
   { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
   {
     rel: 'icon',
