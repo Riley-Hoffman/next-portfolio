@@ -16,7 +16,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
 
   return (
     <ul
-      className="mb-[calc(13vh+3rem)] mt-14 max-w-prose rounded-lg leading-loose shadow-[0.25rem_0.25rem_0_0] shadow-heading dark:shadow-gradientthree"
+      className="mb-[calc(13vh+3rem)] mt-14 max-w-prose rounded-lg leading-loose shadow-[0.25rem_0.25rem_0_0] shadow-heading py-px dark:shadow-gradientthree"
       aria-label={label}
     >
       {items.map((item, index) => {
