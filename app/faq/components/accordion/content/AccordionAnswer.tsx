@@ -12,7 +12,7 @@ export const AccordionAnswer = ({ data }: AccordionAnswerProps) => {
   const { answer, isOpen, contentRef } = data
   return (
     <p
-      className={clsx('overflow-hidden px-10 duration-500 ease-in-out', {
+      className={clsx('acc-answer', {
         'my-0 peer-[.init]:hidden': !isOpen,
       })}
       tabIndex={-1}

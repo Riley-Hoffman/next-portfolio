@@ -2,6 +2,7 @@
 import clsx from 'clsx'
 import { useJsOnlyTriggerOnScroll } from './hooks/useJsOnlyTriggerOnScroll'
 import '@/app/styles/background-accent.css'
+import './styles/project-list-item.css'
 
 interface ProjectListItemProps {
   inverted?: string
@@ -21,7 +22,7 @@ export const ProjectListItem = ({
   return (
     <li
       className={clsx(
-        'ease background-accent group gradient-border relative my-28 gap-14 border-t-8 border-solid after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex',
+        'project background-accent group',
         {
           'transition-[left]': inverted,
           'transition-[right]': !inverted,
