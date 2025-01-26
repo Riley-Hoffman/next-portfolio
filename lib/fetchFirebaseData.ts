@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, get, Database } from 'firebase/database'
 
-let db: Database
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
@@ -10,7 +9,7 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
-db = getDatabase(app)
+const db: Database = getDatabase(app)
 
 export async function fetchFirebaseData<T>(path: string): Promise<T[]> {
   try {

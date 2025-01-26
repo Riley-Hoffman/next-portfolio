@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
+import { Refs } from './useParticleCleanupGame'
 
 export const useInitializeAnimation = (
-  refs: React.RefObject<any>,
-  dispatch: React.Dispatch<any>,
+  refs: React.RefObject<Refs>,
   initParticles: (canvas: HTMLCanvasElement) => void,
   animateParticles: (
     ctx: CanvasRenderingContext2D,

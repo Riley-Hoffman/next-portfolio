@@ -120,7 +120,6 @@ export const useParticleCleanupGame = (
 
   const initializeAnimation = useInitializeAnimation(
     refs,
-    dispatch,
     initParticles,
     animateParticles
   )

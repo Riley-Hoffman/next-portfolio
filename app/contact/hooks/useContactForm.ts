@@ -73,7 +73,7 @@ export const useContactForm = ({
         if (!response.ok) {
           console.error('Form submission failed:', result.error)
         } else {
-          console.log('Form submitted successfully:', result)
+          console.info('Form submitted successfully:', result)
           router.push('/thank-you')
         }
       } catch (error) {

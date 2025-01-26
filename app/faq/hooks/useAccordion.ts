@@ -51,5 +51,6 @@ export const useAccordion = (itemsLength: number) => {
     handleAccordionClick,
     buttonRefs,
     contentRefs,
+    openIndex,
   }
 }

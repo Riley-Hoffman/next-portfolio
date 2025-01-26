@@ -76,7 +76,7 @@ describe('useParticleCleanupEvents', () => {
   })
 
   it('should call handleInteraction on event trigger', () => {
-    const { result } = renderHook(() =>
+    renderHook(() =>
       useParticleCleanupEvents(
         refs,
         handleInteraction,
@@ -96,7 +96,7 @@ describe('useParticleCleanupEvents', () => {
   })
 
   it('should call handleScroll on wheel event', () => {
-    const { result } = renderHook(() =>
+    renderHook(() =>
       useParticleCleanupEvents(
         refs,
         handleInteraction,
@@ -112,7 +112,7 @@ describe('useParticleCleanupEvents', () => {
   })
 
   it('should resize the canvas on window resize', () => {
-    const { result } = renderHook(() =>
+    renderHook(() =>
       useParticleCleanupEvents(
         refs,
         handleInteraction,

@@ -26,6 +26,7 @@ const compat = new FlatCompat({
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'tailwindcss/classnames-order': 'warn',

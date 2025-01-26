@@ -6,7 +6,7 @@ export const useReloadAnimation = (
   refs: React.RefObject<Refs>,
   initializeAnimation: () => void
 ) => {
-  const [gameData, dispatch] = useGameData()
+  const [, dispatch] = useGameData()
 
   const reloadAnimation = useCallback(() => {
     cancelAnimationFrame(refs.current.animationFrameId)
