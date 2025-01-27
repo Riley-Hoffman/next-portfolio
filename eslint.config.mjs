@@ -1,71 +1,98 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import js from '@eslint/js'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 import { FlatCompat } from '@eslint/eslintrc'
-import { fixupConfigRules } from '@eslint/compat'
+import nextPlugin from '@next/eslint-plugin-next'
+import typescriptParser from '@typescript-eslint/parser'
+import typescript from '@typescript-eslint/eslint-plugin'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import tailwindcss from 'eslint-plugin-tailwindcss'
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = dirname(__filename)
+
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-  root: true,
-  extends: [
-    'next/core-web-vitals',
-    'next/typescript',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:tailwindcss/recommended',
-    'prettier',
-  ],
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'tailwindcss'],
-  rules: {
-    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
-    '@typescript-eslint/no-unused-vars': 'warn',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-    'tailwindcss/classnames-order': 'warn',
-    'tailwindcss/no-custom-classname': 'off',
-    'jsx-quotes': ['error', 'prefer-double'],
-    quotes: [
-      'error',
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
-    ],
-  },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
-    },
-  ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
+  recommendedConfig: nextPlugin.configs['recommended'],
 })
 
-const patchedConfig = fixupConfigRules([
-  ...compat.extends('next/core-web-vitals'),
-])
+const eslintConfig = [
+  ...compat.extends(
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'next/core-web-vitals',
+    'next/typescript'
+  ),
+  {
+    files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
+    ignores: ['node_modules/', '.next/', '.netlify/', 'public/'],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      tailwindcss,
+    },
+    rules: {
+      'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+      'jsx-quotes': ['error', 'prefer-double'],
+      quotes: [
+        'error',
+        'single',
+        {
+          avoidEscape: true,
+          allowTemplateLiterals: true,
+        },
+      ],
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+  {
+    files: ['*.ts', '*.tsx'],
+    languageOptions: {
+      parser: typescriptParser,
+    },
+    plugins: {
+      '@typescript-eslint': typescript,
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 
-const config = [
-  ...patchedConfig,
-  { ignores: ['node_modules/', '.next/', '.netlify/', 'public/'] },
+  {
+    files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+    },
+  },
+  {
+    files: ['tailwind.config.{js,ts}', 'postcss.config.{js,ts}'],
+    plugins: {
+      tailwindcss,
+    },
+    rules: {
+      'tailwindcss/no-custom-classname': 'off',
+    },
+  },
 ]
 
-export default config
+export default eslintConfig

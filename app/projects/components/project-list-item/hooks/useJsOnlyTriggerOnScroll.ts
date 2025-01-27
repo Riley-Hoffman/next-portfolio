@@ -18,8 +18,8 @@ export const useJsOnlyTriggerOnScroll = (animation?: string) => {
   }, [elementsRef, animation])
 
   const animatedElement = (el: HTMLElement | null) => {
-    if (el && !elementsRef.current.includes(el as any)) {
-      elementsRef.current.push(el as any)
+    if (el && !elementsRef.current.includes(el as HTMLElement)) {
+      elementsRef.current.push(el as HTMLElement)
     }
   }
 

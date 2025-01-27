@@ -36,13 +36,13 @@ describe('useFormValidation', () => {
     act(() => {
       result.current.handleChange('name')({
         target: { value: 'John Doe' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('email')({
         target: { value: 'john@example.com' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('message')({
         target: { value: 'Hello, this is a message.' },
-      } as any)
+      } as React.ChangeEvent<HTMLTextAreaElement>)
     })
 
     expect(result.current.formState.name).toBe('John Doe')
@@ -60,13 +60,13 @@ describe('useFormValidation', () => {
     act(() => {
       result.current.handleChange('name')({
         target: { value: 'John Doe' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('email')({
         target: { value: 'invalid-email' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('message')({
         target: { value: 'Message content' },
-      } as any)
+      } as React.ChangeEvent<HTMLTextAreaElement>)
     })
 
     act(() => {
@@ -84,13 +84,13 @@ describe('useFormValidation', () => {
     act(() => {
       result.current.handleChange('name')({
         target: { value: 'John Doe' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('email')({
         target: { value: 'john.doe@example.com' },
-      } as any)
+      } as React.ChangeEvent<HTMLInputElement>)
       result.current.handleChange('message')({
         target: { value: 'Message content' },
-      } as any)
+      } as React.ChangeEvent<HTMLTextAreaElement>)
     })
 
     act(() => {
