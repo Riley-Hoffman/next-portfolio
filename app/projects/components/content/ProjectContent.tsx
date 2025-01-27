@@ -28,14 +28,11 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const renderLink = (
-    url: string,
-    content: React.ReactElement,
-    isInternal?: boolean
-  ) =>
+  const renderLink = (url: string, label: string, isInternal?: boolean) =>
     isInternal ? (
       <Link className={projectLinkClasses} href={url}>
-        {content}
+        <SrText />
+        {label}
       </Link>
     ) : (
       <a
@@ -44,22 +41,13 @@ export const ProjectContent = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        {content}
+        <SrText />
+        {label}
         <NewTabContent />
       </a>
     )
 
-  const liveContent = (
-    <>
-      <span className="sr-only">{title} </span>Live
-    </>
-  )
-
-  const repoContent = (
-    <>
-      <span className="sr-only">{title} </span>Repo
-    </>
-  )
+  const SrText = () => <span className="sr-only">{title} </span>
 
   return (
     <>
@@ -68,8 +56,8 @@ export const ProjectContent = ({
         <p className="mb-8 pb-4 font-poppins text-heading">{skills}</p>
         <p className="text-balance pb-4">{description}</p>
         <h4 className="mb-8 text-base">{title} Links:</h4>
-        {renderLink(liveUrl, liveContent, internal)}
-        {gitUrl && renderLink(gitUrl, repoContent)}
+        {renderLink(liveUrl, 'Live', internal)}
+        {gitUrl && renderLink(gitUrl, 'Repo')}
       </div>
       <div className="relative basis-2/4 text-center">
         <Image
