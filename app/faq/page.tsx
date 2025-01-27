@@ -1,11 +1,10 @@
 import { Metadata } from 'next'
-import { FaqSchema } from './components/accordion/schema/FaqSchema'
+import { FaqSchema, description } from './components/accordion/schema/FaqSchema'
 import { Accordion } from './components/accordion/Accordion'
 import {
   questions,
   answers,
 } from './components/accordion/constants/AccordionItems'
-import { description } from './components/accordion/schema/FaqSchema'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
 export const metadata: Metadata = {

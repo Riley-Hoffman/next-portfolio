@@ -42,6 +42,7 @@
     "@testing-library/react": "16.1.0",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
+    "@typescript-eslint/eslint-plugin": "8.21.0",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
     "csrf": "3.1.0",

@@ -1,7 +1,6 @@
 import { ProjectCatHeading } from './content/ProjectCatHeading'
 import { ProjectListItem } from './project-list-item/ProjectListItem'
-import { ProjectContent } from './content/ProjectContent'
-import { Project } from './content/ProjectContent'
+import { ProjectContent, Project } from './content/ProjectContent'
 
 export const ProjectCategoryList = ({
   category,
