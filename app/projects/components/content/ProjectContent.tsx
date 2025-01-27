@@ -28,6 +28,8 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
+  const SrText = () => <span className="sr-only">{title} </span>
+
   const renderLink = (url: string, label: string, isInternal?: boolean) =>
     isInternal ? (
       <Link className={projectLinkClasses} href={url}>
@@ -46,8 +48,6 @@ export const ProjectContent = ({
         <NewTabContent />
       </a>
     )
-
-  const SrText = () => <span className="sr-only">{title} </span>
 
   return (
     <>
