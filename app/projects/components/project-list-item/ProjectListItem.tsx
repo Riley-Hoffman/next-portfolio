@@ -1,6 +1,6 @@
 'use client'
 import clsx from 'clsx'
-import { useJsOnlyTriggerOnScroll } from './hooks/useJsOnlyTriggerOnScroll'
+import { useJsOnlyScrollAnimation } from './hooks/useJsOnlyScrollAnimation'
 import '@/app/styles/background-accent.css'
 import './styles/project-list-item.css'
 
@@ -17,7 +17,7 @@ export const ProjectListItem = ({
   isFirst,
   children,
 }: ProjectListItemProps) => {
-  const animatedElement = useJsOnlyTriggerOnScroll(animation)
+  const animatedElement = useJsOnlyScrollAnimation(animation)
 
   return (
     <li
