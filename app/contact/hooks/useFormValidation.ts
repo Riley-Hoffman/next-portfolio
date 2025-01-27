@@ -10,11 +10,13 @@ export const useFormValidation = (initialState: FormData) => {
     if (submitted) {
       const validateForm = () => {
         const { name, email, message } = formState
-        let newErrors = { name: '', email: '', message: '' }
-        if (name.trim() === '') newErrors.name = 'Please enter your name.'
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-          newErrors.email = 'Please enter a valid email address.'
-        if (message.trim() === '') newErrors.message = 'Please enter a message.'
+        const newErrors = {
+          name: name.trim() === '' ? 'Please enter your name.' : '',
+          email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            ? 'Please enter a valid email address.'
+            : '',
+          message: message.trim() === '' ? 'Please enter a message.' : '',
+        }
         setErrors(newErrors)
       }
       validateForm()

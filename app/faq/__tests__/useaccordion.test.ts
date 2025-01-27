@@ -3,7 +3,7 @@ import { useAccordion } from '../hooks/useAccordion'
 import { pxToRem } from '@/lib/pxToRem'
 
 jest.mock('@/hooks/useDebounce', () => ({
-  useDebounce: jest.fn().mockImplementation((cb, delay) => cb),
+  useDebounce: jest.fn().mockImplementation((cb) => cb),
 }))
 
 describe('useAccordion', () => {
