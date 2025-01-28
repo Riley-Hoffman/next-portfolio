@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const nextJest = require('next/jest.js')
 
 const createJestConfig = nextJest({
@@ -7,6 +8,7 @@ const createJestConfig = nextJest({
 const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  setupFiles: ['jest-canvas-mock'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
