@@ -27,9 +27,7 @@ export const useAccordion = (itemsLength: number) => {
   useEffect(() => {
     buttonRefs.current.forEach((button, index) => {
       if (!button) return
-      setTimeout(() => {
-        button.classList.toggle('init', !accOpen(index))
-      }, 500)
+      button.classList.toggle('init', !accOpen(index))
     })
 
     contentRefs.current.forEach((content, index) => {
