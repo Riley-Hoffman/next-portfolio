@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
 
 export interface Project {
@@ -15,7 +16,6 @@ export interface Project {
   category: string
   isFirst?: boolean
 }
-const projectLinkClasses = 'button mx-5 px-3 py-1 uppercase'
 
 export const ProjectContent = ({
   title,
@@ -28,6 +28,10 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
+  const projectLinkClasses = clsx('button mx-5 py-1 pl-3 uppercase', {
+    'pr-3': internal,
+    'pr-2': !internal,
+  })
   const SrText = () => <span className="sr-only">{title} </span>
 
   const renderLink = (url: string, label: string, isInternal?: boolean) =>
