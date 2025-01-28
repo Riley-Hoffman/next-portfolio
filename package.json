@@ -14,11 +14,7 @@
     "next.js",
     "typescript",
     "tailwind",
-    "firebase",
-    "swiper",
-    "wcag",
-    "aria",
-    "web accessibility"
+    "firebase"
   ],
   "author": "Riley Hoffman",
   "license": "ISC",
