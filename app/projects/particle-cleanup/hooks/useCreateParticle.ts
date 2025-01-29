@@ -9,8 +9,7 @@ export const useCreateParticle = () =>
     const color = colors[Math.floor(Math.random() * colors.length)]
     const weight = Math.random() * 0.5 + 0.5
     const isMobile = window.innerWidth <= 768
-    const speedFactor = (isMobile ? 0.8 : 1) * 0.5
-
+    const speedFactor = isMobile ? 0.48 : 0.6
     return new Particle(
       Math.random() * width,
       Math.random() * height,
