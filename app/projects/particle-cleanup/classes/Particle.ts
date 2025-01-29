@@ -47,7 +47,7 @@ export class Particle {
     const numVertices = this.getRandomInt(3, 8)
     for (let i = 0; i < numVertices; i++) {
       const angle = (i / numVertices) * Math.PI * 2
-      const radius = this.size * (Math.random() * 0.5 + 0.5)
+      const radius = this.size * (0.5 + Math.random() * 0.5)
       vertices.push(this.getVertex(angle, radius))
     }
     return vertices
