@@ -1,13 +1,11 @@
 'use client'
 import clsx from 'clsx'
 import { useJsOnlyScrollAnimation } from './hooks/useJsOnlyScrollAnimation'
+import { SharedProjectProps } from '../ProjectCategories'
 import '@/app/styles/background-accent.css'
 import './styles/project-list-item.css'
 
-export interface ProjectListItemProps {
-  inverted?: boolean
-  animation?: string
-  isFirst?: boolean
+interface ProjectListItemProps extends SharedProjectProps {
   children: React.ReactNode
 }
 

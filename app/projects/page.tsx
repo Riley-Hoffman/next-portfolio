@@ -39,7 +39,7 @@ export default async function ProjectsPage() {
     <>
       <SchemaGenerator schemaData={schemaData} />
       <h1 className="heading-one">Projects</h1>
-      <ProjectCategories initialProjects={projects ?? []} />
+      <ProjectCategories projects={projects ?? []} />
     </>
   )
 }

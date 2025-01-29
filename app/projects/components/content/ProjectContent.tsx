@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
-import { ProjectListItemProps } from '../project-list-item/ProjectListItem'
+import { SharedProjectProps } from '../ProjectCategories'
 
-export interface Project extends ProjectListItemProps {
+export interface Project extends SharedProjectProps {
   title: string
   skills: string
   description: string
@@ -65,9 +65,9 @@ export const ProjectContent = ({
       </div>
       <div className="relative basis-1/2">
         <Image
-          className={clsx('mx-auto w-[35.563rem] max-w-full', {
-            'md:mr-auto': inverted,
-            'md:ml-auto': !inverted,
+          className={clsx('w-[35.563rem] max-w-full', {
+            'md:!mr-auto': inverted,
+            'md:!ml-auto': !inverted,
           })}
           alt={alt}
           src={imgUrl}
