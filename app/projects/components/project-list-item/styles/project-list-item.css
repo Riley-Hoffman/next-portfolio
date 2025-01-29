@@ -1,5 +1,5 @@
 .project {
-  @apply relative my-28 gap-14 border-b-2 border-t-8 border-solid ease-in-out after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex md:border-2;
+  @apply relative my-28 gap-14 border-b-2 border-t-8 border-solid ease-in-out after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex lg:border-2;
 }
 .project:not(.inverted) {
   @apply transition-[right] duration-1000;
