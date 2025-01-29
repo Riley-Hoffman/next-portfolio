@@ -10,6 +10,7 @@ export interface Project {
   internal?: boolean
   liveUrl: string
   gitUrl?: string
+  inverted?: boolean
   imgUrl: string
   alt: string
   animation?: string
@@ -24,6 +25,7 @@ export const ProjectContent = ({
   internal,
   liveUrl,
   gitUrl,
+  inverted,
   alt,
   imgUrl,
   isFirst,
@@ -55,7 +57,7 @@ export const ProjectContent = ({
 
   return (
     <>
-      <div className="basis-2/4 pb-10 pt-5">
+      <div className="basis-1/2 pb-10 pt-5">
         <h3 className="pb-4 text-2xl">{title}</h3>
         <p className="mb-8 pb-4 font-poppins text-heading">{skills}</p>
         <p className="text-balance pb-4">{description}</p>
@@ -63,9 +65,12 @@ export const ProjectContent = ({
         {renderLink(liveUrl, 'Live', internal)}
         {gitUrl && renderLink(gitUrl, 'Repo')}
       </div>
-      <div className="relative basis-2/4 text-center">
+      <div className="relative basis-1/2">
         <Image
-          className="w-[35.563rem] max-w-full"
+          className={clsx('w-[35.563rem] max-w-full', {
+            'mr-auto': inverted,
+            'ml-auto': !inverted,
+          })}
           alt={alt}
           src={imgUrl}
           title={title}

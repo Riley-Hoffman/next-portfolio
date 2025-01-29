@@ -5,7 +5,7 @@ import '@/app/styles/background-accent.css'
 import './styles/project-list-item.css'
 
 interface ProjectListItemProps {
-  inverted?: string
+  inverted?: boolean
   animation?: string
   isFirst?: boolean
   children: React.ReactNode
@@ -21,18 +21,11 @@ export const ProjectListItem = ({
 
   return (
     <li
-      className={clsx(
-        'project background-accent group',
-        {
-          'transition-[left]': inverted,
-          'transition-[right]': !inverted,
-          'duration-1000': true,
-          'mt-12': isFirst,
-          'mt-0': !isFirst,
-          'flex-row-reverse': inverted,
-        },
-        inverted
-      )}
+      className={clsx('project background-accent group gradient-border', {
+        inverted: inverted,
+        'mt-12': isFirst,
+        'mt-0': !isFirst,
+      })}
       ref={animatedElement}
     >
       {children}

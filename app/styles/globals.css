@@ -111,7 +111,7 @@
   body {
     @apply contrast-more:!text-heading;
   }
-  :not(.flex) > [class*='max-'] {
+  :not(.flex) > [class*='max-']:not(img) {
     @apply mx-auto;
   }
   ::selection {

@@ -14,7 +14,6 @@ export const ProjectCategoryList = ({
   const filteredProjects = projects.filter(
     (project) => project.category === category
   )
-
   return (
     <section className="overflow-hidden first:pt-5 last:pb-20">
       <ProjectCatHeading category={category} />
@@ -25,15 +24,17 @@ export const ProjectCategoryList = ({
         {filteredProjects.map((project, catindex) => {
           const projectNumber =
             projects.findIndex((proj) => proj.title === project.title) + 1
+          const inverted = projectNumber % 2 === 0
           return (
             <ProjectListItem
               key={project.title}
-              inverted={projectNumber % 2 === 0 ? 'inverted' : ''}
+              inverted={inverted}
               animation={project.animation}
               isFirst={index === 0 && project === filteredProjects[0]}
             >
               <ProjectContent
                 {...project}
+                inverted={inverted}
                 isFirst={index === 0 && catindex === 0}
               />
             </ProjectListItem>

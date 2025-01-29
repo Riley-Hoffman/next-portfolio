@@ -1,3 +1,9 @@
 .project {
-  @apply gradient-border relative my-28 gap-14 border-t-8 border-solid ease-in-out after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex;
+  @apply relative my-28 gap-14 border-2 border-t-8 border-solid ease-in-out after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex;
+}
+.project:not(.inverted) {
+  @apply transition-[right] duration-1000;
+}
+.project.inverted {
+  @apply flex-row-reverse transition-[left] duration-1000;
 }
