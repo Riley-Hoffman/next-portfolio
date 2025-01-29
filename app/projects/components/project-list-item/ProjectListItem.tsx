@@ -4,7 +4,7 @@ import { useJsOnlyScrollAnimation } from './hooks/useJsOnlyScrollAnimation'
 import '@/app/styles/background-accent.css'
 import './styles/project-list-item.css'
 
-interface ProjectListItemProps {
+export interface ProjectListItemProps {
   inverted?: boolean
   animation?: string
   isFirst?: boolean

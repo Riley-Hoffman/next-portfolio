@@ -2,20 +2,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import { ProjectListItemProps } from '../project-list-item/ProjectListItem'
 
-export interface Project {
+export interface Project extends ProjectListItemProps {
   title: string
   skills: string
   description: string
   internal?: boolean
   liveUrl: string
   gitUrl?: string
-  inverted?: boolean
   imgUrl: string
   alt: string
-  animation?: string
   category: string
-  isFirst?: boolean
 }
 
 export const ProjectContent = ({
