@@ -1,15 +1,15 @@
 import clsx from 'clsx'
-import { FormData } from './Form'
+import { FormValue } from '../../types/FormValue.interface'
 
 interface FormFieldProps {
   type: 'text' | 'email' | 'textarea'
   value: string
   handleChange: (
-    field: keyof FormData
+    field: keyof FormValue
   ) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void
-  name: keyof FormData
+  name: keyof FormValue
   placeholder: string
   classes?: string
 }

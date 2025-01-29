@@ -3,12 +3,6 @@ import { FormField } from './FormField'
 import { useContactForm } from '../../hooks/useContactForm'
 import './styles/form.css'
 
-export interface FormData {
-  name: string
-  email: string
-  message: string
-}
-
 interface FormProps {
   onErrors: (errors: string[]) => void
 }

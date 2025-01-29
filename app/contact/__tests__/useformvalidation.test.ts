@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react'
 import { useFormValidation } from '../hooks/useFormValidation'
-import { FormData } from '../components/form/Form'
+import { FormValue } from '../types/FormValue.interface'
 
 describe('useFormValidation', () => {
-  let initialState: FormData
+  let initialState: FormValue
 
   beforeEach(() => {
     initialState = { name: '', email: '', message: '' }

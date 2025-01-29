@@ -1,14 +1,12 @@
-import type { Project } from './content/ProjectContent'
 import { ProjectCategoryList } from './ProjectCategoryList'
-import { ProjectError } from './ProjectError'
+import { ProjectError } from '../ProjectError'
+import type { Project } from '../Project.types'
 
-export interface SharedProjectProps {
-  inverted?: boolean
-  animation?: string
-  isFirst?: boolean
-}
-
-export const ProjectCategories = ({ projects }: { projects: Project[] }) => {
+export const ProjectCategoryRenderer = ({
+  projects,
+}: {
+  projects: Project[]
+}) => {
   if (!projects || projects.length === 0) {
     return <ProjectError />
   }

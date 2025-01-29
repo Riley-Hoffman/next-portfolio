@@ -2,19 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
-import { SharedProjectProps } from '../ProjectCategories'
-
-export interface Project extends SharedProjectProps {
-  title: string
-  skills: string
-  description: string
-  internal?: boolean
-  liveUrl: string
-  gitUrl?: string
-  imgUrl: string
-  alt: string
-  category: string
-}
+import { Project } from '../Project.types'
 
 export const ProjectContent = ({
   title,

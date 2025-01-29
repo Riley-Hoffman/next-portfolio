@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { FormData } from '../components/form/Form'
+import { FormValue } from '../types/FormValue.interface'
 
-export const useFormValidation = (initialState: FormData) => {
+export const useFormValidation = (initialState: FormValue) => {
   const [formState, setFormState] = useState(initialState)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({ name: '', email: '', message: '' })
@@ -24,7 +24,7 @@ export const useFormValidation = (initialState: FormData) => {
   }, [formState, submitted])
 
   const handleChange =
-    (field: keyof FormData) =>
+    (field: keyof FormValue) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormState((prevState) => ({
         ...prevState,
