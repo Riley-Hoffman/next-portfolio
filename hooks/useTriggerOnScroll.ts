@@ -45,7 +45,7 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
       })
     }
 
-    setTimeout(updateTriggerOnScroll, 100)
+    updateTriggerOnScroll()
 
     if (isBrowser()) {
       window.addEventListener('scroll', updateTriggerOnScroll)
