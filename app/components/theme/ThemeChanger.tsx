@@ -4,8 +4,6 @@ import { useThemeInfo } from './hooks/useThemeInfo'
 export const ThemeChanger = () => {
   const themeInfo = useThemeInfo()
 
-  if (!themeInfo.isReady) return null
-
   const { icon, label, toggleTheme } = themeInfo
 
   return (
