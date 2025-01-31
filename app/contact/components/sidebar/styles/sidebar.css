@@ -1,0 +1,3 @@
+.sidebar {
+  @apply mt-7 self-start bg-accentone-200 text-center md:sticky md:top-24 md:w-1/6 md:rounded-sm md:border-x md:border-b md:border-solid md:border-bordercolor;
+}
