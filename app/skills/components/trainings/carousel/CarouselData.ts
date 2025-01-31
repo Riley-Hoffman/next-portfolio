@@ -6,6 +6,11 @@ export interface CarouselDataTypes {
 
 export const CarouselData: CarouselDataTypes[] = [
   {
+    src: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learn-python-3.webp',
+    url: 'https://www.codecademy.com/profiles/RileyHoffman/certificates/6c152bd262967f8c941c9707ed636bda',
+    label: 'Learn Python 3',
+  },
+  {
     src: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnsqlcourse.webp',
     url: 'https://www.codecademy.com/profiles/RileyHoffman/certificates/042a4e5884e3eb6ea1f2a12be6abb851',
     label: 'Learn SQL',

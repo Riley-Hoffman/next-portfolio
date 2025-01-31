@@ -19,10 +19,10 @@ export const skillsData: Skill[] = [
   { skill: 'Tailwind CSS', icon: 'skill-icons:tailwindcss-dark' },
   { skill: 'Wordpress', icon: 'skill-icons:wordpress' },
   { skill: 'PHP', icon: 'skill-icons:php-dark' },
+  { skill: 'Python', icon: 'skill-icons:python-dark' },
   { skill: 'Node.js', icon: 'skill-icons:nodejs-dark' },
   { skill: 'Express', icon: 'skill-icons:expressjs-dark' },
   { skill: 'MongoDB', icon: 'skill-icons:mongodb' },
-  { skill: 'Elasticsearch', icon: 'skill-icons:elasticsearch-dark' },
   {
     skill: 'Firebase',
     icon: 'devicon:firebase',
