@@ -1,21 +1,11 @@
 'use client'
-import { useState, useCallback } from 'react'
 import { ContactContent } from './content/ContactContent'
 import { Form } from './form/Form'
+import { useFormErrors } from '../hooks/useFormErrors'
 
 export const ContactWrapper = () => {
-  const [formErrors, setFormErrors] = useState<string[]>([])
-  const handleErrors = useCallback(
-    (errors: string[]) => {
-      if (
-        errors.length !== formErrors.length ||
-        !errors.every((e, i) => e === formErrors[i])
-      ) {
-        setFormErrors(errors)
-      }
-    },
-    [formErrors]
-  )
+  const { formErrors, handleErrors } = useFormErrors()
+
   return (
     <div className="pt-7 md:w-5/6 md:pb-[13vh]">
       <ContactContent errors={formErrors} />
