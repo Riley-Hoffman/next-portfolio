@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import { getPageTitle, githubUrl, version } from '@/constants/baseData'
 
 export const Footer = () => (
-  <footer className="pad-wrap gradient-border min-h-24 border-t border-solid bg-accentone-300 py-7 contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between">
+  <footer className="pad-wrap gradient-border">
     <h2 className="sr-only">Footer</h2>
     <p className="font-urbanist">
       {getPageTitle()} <small>(v{version}) </small>
