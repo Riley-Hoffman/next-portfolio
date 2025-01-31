@@ -129,14 +129,29 @@
   :where(a, button, input, textarea):focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
   }
+  header {
+    @apply pad-wrap gradient-border sticky -top-8 left-0 right-0 z-30 flex min-h-28 items-center justify-between border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
+  }
+  header > button {
+    @apply m-0 pl-4 pr-0 text-center font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;
+  }
+  nav:not(.no-js-menu) ul {
+    @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-black transition-transform duration-200 ease-in-out sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
+  }
   header nav a {
     @apply inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
+  }
+  .hamburger {
+    @apply relative z-10 ml-auto block h-10 w-16 px-5 md:hidden;
+  }
+  .hamburger-line {
+    @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
   }
   body ::placeholder {
     @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
   }
   footer {
-    @apply min-h-24 border-t border-solid bg-accentone-300 py-7 contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between;
+    @apply pad-wrap gradient-border min-h-24 border-t border-solid bg-accentone-300 py-7 contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between;
   }
   footer p {
     @apply m-0 px-3 py-1 text-reduced;
@@ -150,9 +165,6 @@
   }
   .button.active {
     @apply contrast-more:!text-black contrast-more:dark:!text-white;
-  }
-  .hamburger-line {
-    @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
   }
   html [class*='iconify'] {
     @apply inline-block align-middle;

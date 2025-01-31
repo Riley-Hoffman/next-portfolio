@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic'
 import { SkipToContent } from './SkipToContent'
 import { HeaderLogo } from './HeaderLogo'
 import { NoJsMenu } from './nav/NoJsMenu'
-import './styles/header.css'
 
 const ThemeChangerAndNav = dynamic(
   () => import('./dynamic-imports/ThemeChangerNav'),

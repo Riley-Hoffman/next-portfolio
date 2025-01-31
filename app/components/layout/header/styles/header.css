@@ -1,7 +1,0 @@
-header {
-  @apply pad-wrap gradient-border sticky -top-8 left-0 right-0 z-30 flex min-h-28 items-center justify-between border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
-}
-
-nav:not(.no-js-menu) ul {
-  @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-black transition-transform duration-200 ease-in-out sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
-}
