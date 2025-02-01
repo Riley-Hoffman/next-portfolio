@@ -145,7 +145,10 @@
     @apply block md:inline;
   }
   nav:not(.no-js-menu) a {
-    @apply button inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
+    @apply button w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
+  }
+  nav:not(.no-js-menu) a:not(.hidden) {
+    @apply inline-block;
   }
   nav:not(.no-js-menu) a:not([target='blank']) {
     @apply button [&.active]:bg-accentone-300 [&.active]:text-heading hover:[&.active]:brightness-100;
