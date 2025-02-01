@@ -50,14 +50,9 @@ const config: Config = {
         'cut-corners':
           'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
       },
-      transitionTimingFunction: {
-        'steps-40-end': 'steps(40, end)',
-        'step-end-infinite': 'step-end infinite',
-        forwards: 'forwards',
-      },
       animation: {
         typetext:
-          'typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.5s forwards',
+          'typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.8s forwards',
         wiggle: 'wiggle 1s',
         twirl: 'twirl 1s infinite',
       },
@@ -79,7 +74,7 @@ const config: Config = {
           '50%': { borderColor: '#aab9bb' },
         },
         borderfade: {
-          to: { borderColor: 'transparent' },
+          to: { border: 'none' },
         },
       },
     },
@@ -179,6 +174,12 @@ const config: Config = {
               pointerEvents: 'auto',
             },
           },
+        },
+        '[class*="animate-typetext"]': {
+          animationComposition: 'add',
+          borderColor: 'transparent',
+          borderStyle: 'solid',
+          borderRightWidth: '2px',
         },
         '@media (max-width: 768px)': {
           '.hamburger-line': {
