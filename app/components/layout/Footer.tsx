@@ -4,11 +4,11 @@ import { getPageTitle, githubUrl, version } from '@/constants/baseData'
 
 export const Footer = () => (
   <footer>
-    <h2 className="sr-only">Footer</h2>
-    <p className="font-urbanist">
+    <h2>Footer</h2>
+    <p>
       {getPageTitle()} <small>(v{version}) </small>
       <a
-        className="group inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6"
+        className="group"
         href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -16,14 +16,12 @@ export const Footer = () => (
       >
         {' '}
         <Icon
-          className="ml-1 text-3xl group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200 md:text-base"
+          className="group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200"
           icon="cib:github"
         />
       </a>
     </p>
-    <Link className="mr-auto px-3 underline" href="/accessibility">
-      Accessibility
-    </Link>
+    <Link href="/accessibility">Accessibility</Link>
     <p>©{new Date().getFullYear()}</p>
   </footer>
 )

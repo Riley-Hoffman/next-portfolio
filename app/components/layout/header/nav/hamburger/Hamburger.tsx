@@ -31,7 +31,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         ))}
       </button>
       <button
-        className="closer fixed inset-0 hidden size-full cursor-default text-transparent peer-aria-expanded:block"
+        className="closer peer-aria-expanded:block"
         onClick={toggleMenu}
         aria-hidden={true}
       >

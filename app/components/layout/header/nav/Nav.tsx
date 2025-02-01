@@ -10,7 +10,7 @@ export const Nav = () => {
   const hide = useHideShowLinks(isExpanded, 500)
 
   return (
-    <nav className="h-10 min-w-36 md:order-2">
+    <nav>
       <Hamburger expanded={setIsExpanded} />
       <ul
         className="shadow-[0_0.128px_1rem_-0.56rem] peer-aria-expanded:scale-100"

@@ -20,10 +20,10 @@ export const NavListItem = ({
   const isActive = to && currentPath === to
 
   return (
-    <li className="block md:inline">
+    <li>
       {resume ? (
         <a
-          className={clsx('button', { hidden: hide })}
+          className={clsx({ hidden: hide })}
           href={resume}
           target="_blank"
           rel="noopener noreferrer"
@@ -32,13 +32,7 @@ export const NavListItem = ({
           <NewTabContent />
         </a>
       ) : (
-        <Link
-          className={clsx(
-            'button [&.active]:bg-accentone-300 [&.active]:text-heading hover:[&.active]:brightness-100',
-            { hidden: hide, active: isActive }
-          )}
-          href={to}
-        >
+        <Link className={clsx({ hidden: hide, active: isActive })} href={to}>
           {label}
         </Link>
       )}

@@ -135,11 +135,20 @@
   header > button {
     @apply m-0 pl-4 pr-0 text-center font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;
   }
+  nav:not(.no-js-menu) {
+    @apply h-10 min-w-36;
+  }
   nav:not(.no-js-menu) ul {
     @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-black transition-transform duration-200 ease-in-out sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
   }
-  header nav a {
-    @apply inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
+  nav:not(.no-js-menu) li {
+    @apply block md:inline;
+  }
+  nav:not(.no-js-menu) a {
+    @apply button inline-block w-full whitespace-nowrap py-3 pl-9 pr-9 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2 hover:[&.button]:bg-accentone-300;
+  }
+  nav:not(.no-js-menu) a:not([target='blank']) {
+    @apply button [&.active]:bg-accentone-300 [&.active]:text-heading hover:[&.active]:brightness-100;
   }
   .hamburger {
     @apply relative z-10 ml-auto block h-10 w-16 px-5 md:hidden;
@@ -147,14 +156,38 @@
   .hamburger-line {
     @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
   }
+  .closer {
+    @apply fixed inset-0 hidden size-full cursor-default text-transparent;
+  }
+  .theme-changer {
+    @apply relative mx-2 h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2 md:order-1;
+  }
+  .theme-changer svg {
+    @apply absolute left-1 top-1 h-6 w-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
+  }
   body ::placeholder {
     @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
   }
   footer {
     @apply pad-wrap gradient-border min-h-24 border-t border-solid bg-accentone-300 py-7 contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between;
   }
+  footer h2 {
+    @apply sr-only;
+  }
   footer p {
     @apply m-0 px-3 py-1 text-reduced;
+  }
+  footer p:first-of-type {
+    @apply font-urbanist;
+  }
+  footer p:first-of-type a {
+    @apply inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6;
+  }
+  footer p:first-of-type svg {
+    @apply ml-1 text-3xl md:text-base;
+  }
+  footer > a {
+    @apply mr-auto px-3 underline;
   }
   a > *,
   .button {
