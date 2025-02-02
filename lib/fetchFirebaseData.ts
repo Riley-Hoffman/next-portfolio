@@ -1,3 +1,4 @@
+'use server'
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, get, Database } from 'firebase/database'
 
