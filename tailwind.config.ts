@@ -55,6 +55,7 @@ const config: Config = {
           'typing 3.5s steps(40, end), blinkcaret 0.75s step-end infinite, borderfade 0s 1.8s forwards',
         wiggle: 'wiggle 1s',
         twirl: 'twirl 1s infinite',
+        delayedfadein: 'delayedfadein 1s',
       },
       keyframes: {
         wiggle: {
@@ -75,6 +76,11 @@ const config: Config = {
         },
         borderfade: {
           to: { border: 'none' },
+        },
+        delayedfadein: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
     },
