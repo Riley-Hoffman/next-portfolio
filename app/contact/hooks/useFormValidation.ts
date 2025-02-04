@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react'
 import { FormValue } from '../types/FormValue.interface'
+import isEmail from 'validator/lib/isEmail'
 
 export const useFormValidation = (initialState: FormValue) => {
   const [formState, setFormState] = useState(initialState)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({ name: '', email: '', message: '' })
-
   useEffect(() => {
     if (submitted) {
       const validateForm = () => {
         const { name, email, message } = formState
         const newErrors = {
           name: name.trim() === '' ? 'Please enter your name.' : '',
-          email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-            ? 'Please enter a valid email address.'
-            : '',
+          email: !isEmail(email) ? 'Please enter a valid email address.' : '',
           message: message.trim() === '' ? 'Please enter a message.' : '',
         }
         setErrors(newErrors)
