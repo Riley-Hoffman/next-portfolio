@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { inconsolata, poppins, sourcesans, urbanist } from '../fonts/fonts'
 import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import { IconLinks } from './components/layout/icon-links/IconLinks'
@@ -50,7 +51,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         content="#0d191c"
       />
     </head>
-    <body>
+    <body
+      className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable}`}
+    >
       <DynamicThemeProvider
         attribute="class"
         defaultTheme="system"

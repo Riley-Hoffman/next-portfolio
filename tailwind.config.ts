@@ -38,10 +38,10 @@ const config: Config = {
         siteblack: 'var(--color-siteblack)',
       },
       fontFamily: {
-        poppins: ['"Poppins", sans-serif'],
-        inconsolata: ['"Inconsolata", monospace'],
-        'source-sans': ['"Source Sans 3", sans-serif'],
-        urbanist: ['"Urbanist", sans-serif'],
+        poppins: ['var(--font-poppins)'],
+        inconsolata: ['var(--font-inconsolata)'],
+        sourcesans: ['var(--font-sourcesans)'],
+        urbanist: ['var(--font-urbanist)'],
       },
       fontSize: {
         reduced: '1.063rem',
