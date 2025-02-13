@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react'
 import '@/app/styles/numbered-icons.css'
 import './styles/contact-content.css'
 
@@ -27,22 +28,10 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
     {errors.length > 0 && (
       <>
         <div className="flex items-center pl-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-alert-circle"
-            width="40"
-            height="40"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" x2="12" y1="8" y2="12"></line>
-            <line x1="12" x2="12.01" y1="16" y2="16"></line>
-          </svg>
+          <Icon
+            icon="bi:exclamation-circle-fill"
+            className="ml-5 mr-px size-9"
+          />
           <h2 className="pl-2">Error processing form</h2>
         </div>
         <ol className="numbered-icons pb-6 pl-16 pr-5 text-xl">
