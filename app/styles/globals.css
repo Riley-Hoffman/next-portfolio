@@ -58,7 +58,7 @@
     @apply outline outline-2 outline-[#6f00f7];
   }
   header {
-    @apply pad-wrap gradient-border sticky -top-8 left-0 right-0 z-30 flex min-h-28 items-center justify-between border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
+    @apply pad-wrap gradient-border sticky -top-8 z-30 flex min-h-28 items-center justify-between border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
   }
   header > button {
     @apply m-0 pl-4 pr-0 font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;
@@ -94,7 +94,7 @@
     @apply relative mx-2 h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2 md:order-1;
   }
   .theme-changer svg {
-    @apply absolute left-1 top-1 size-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
+    @apply absolute inset-1 size-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
   }
   body ::placeholder {
     @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
