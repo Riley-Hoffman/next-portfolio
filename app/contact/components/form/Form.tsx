@@ -8,11 +8,7 @@ interface FormProps {
 }
 
 export const Form = ({ onErrors }: FormProps) => {
-  const {
-    formState: { name, email, message },
-    handleChange,
-    handleFormSubmit,
-  } = useContactForm({
+  const { formState, handleChange, handleFormSubmit } = useContactForm({
     initialFormState: {
       name: '',
       email: '',
@@ -20,31 +16,31 @@ export const Form = ({ onErrors }: FormProps) => {
     },
     onErrors,
   })
+
+  const fields: Array<{
+    type: 'text' | 'email' | 'textarea'
+    name: keyof typeof formState
+    placeholder: string
+  }> = [
+      { type: 'text', name: 'name', placeholder: 'Enter your name..' },
+      { type: 'email', name: 'email', placeholder: 'Enter your email..' },
+      { type: 'textarea', name: 'message', placeholder: 'Enter your message..' },
+    ]
+
   return (
     <form className="px-5 pb-10 pt-5" noValidate onSubmit={handleFormSubmit}>
       <fieldset className="pb-5">
         <Legend />
-        <FormField
-          type="text"
-          value={name}
-          handleChange={handleChange}
-          name="name"
-          placeholder="Enter your name.."
-        />
-        <FormField
-          type="email"
-          value={email}
-          handleChange={handleChange}
-          name="email"
-          placeholder="Enter your email.."
-        />
-        <FormField
-          type="textarea"
-          value={message}
-          handleChange={handleChange}
-          name="message"
-          placeholder="Enter your message.."
-        />
+        {fields.map(({ type, name, placeholder }) => (
+          <FormField
+            key={name}
+            type={type}
+            name={name}
+            value={formState[name]}
+            handleChange={handleChange}
+            placeholder={placeholder}
+          />
+        ))}
       </fieldset>
       <button type="submit" className="button p-3">
         Submit
