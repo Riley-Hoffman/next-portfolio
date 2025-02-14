@@ -17,11 +17,10 @@ export const ProjectCategoryRenderer = ({
 
   return (
     <>
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <ProjectCategoryList
           key={category}
           category={category}
-          index={index}
           projects={projects}
         />
       ))}

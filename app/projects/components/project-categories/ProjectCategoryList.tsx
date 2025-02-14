@@ -5,14 +5,12 @@ import { Project } from '../Project.types'
 
 export const ProjectCategoryList = ({
   category,
-  index,
   projects,
 }: {
   category: string
-  index: number
   projects: Project[]
 }) => {
-  const filteredProjects = projects.filter(
+  const projectsByCat = projects.filter(
     (project) => project.category === category
   )
   return (
@@ -22,7 +20,7 @@ export const ProjectCategoryList = ({
         className="max-w-screen-xl pb-5 text-base"
         aria-label={`${category} Projects`}
       >
-        {filteredProjects.map((project, catindex) => {
+        {projectsByCat.map((project, catindex) => {
           const projectNumber =
             projects.findIndex((proj) => proj.title === project.title) + 1
           const inverted = projectNumber % 2 === 0
@@ -31,12 +29,12 @@ export const ProjectCategoryList = ({
               key={project.title}
               inverted={inverted}
               animation={project.animation}
-              isFirst={index === 0 && project === filteredProjects[0]}
+              isFirst={project === projectsByCat[0]}
             >
               <ProjectContent
                 {...project}
                 inverted={inverted}
-                isFirst={index === 0 && catindex === 0}
+                isFirst={catindex === 0}
               />
             </ProjectListItem>
           )
