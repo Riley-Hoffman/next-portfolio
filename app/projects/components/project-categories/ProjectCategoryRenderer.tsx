@@ -1,6 +1,6 @@
 import { ProjectCategoryList } from './ProjectCategoryList'
 import { ProjectError } from '../ProjectError'
-import type { Project } from '../types/Project.types'
+import type { Project } from '../../types/Project.types'
 
 export const ProjectCategoryRenderer = ({
   projects,

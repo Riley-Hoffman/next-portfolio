@@ -1,7 +1,7 @@
 'use client'
 import clsx from 'clsx'
 import { useJsOnlyScrollAnimation } from './hooks/useJsOnlyScrollAnimation'
-import { SharedProjectProps } from '../types/Project.types'
+import { SharedProjectProps } from '../../types/Project.types'
 import '@/app/styles/background-accent.css'
 import './styles/project-list-item.css'
 
