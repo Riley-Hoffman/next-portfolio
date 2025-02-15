@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
-import { Project } from '../Project.types'
+import { Project } from '../types/Project.types'
 
 export const ProjectContent = ({
   title,
