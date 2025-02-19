@@ -12,7 +12,7 @@ export type Refs = {
   canvas: HTMLCanvasElement | null
   container: HTMLDivElement | null
   particlesArray: Particle[]
-  animationFrameId: number
+  animationFrameId: number | null
   allClean: boolean
   startTime: number | null
   elapsedTime: number
@@ -27,7 +27,7 @@ export const useParticleCleanupGame = (
     canvas: null,
     container: null,
     particlesArray: [],
-    animationFrameId: -1,
+    animationFrameId: null,
     allClean: false,
     startTime: null,
     elapsedTime: 0,
@@ -80,29 +80,37 @@ export const useParticleCleanupGame = (
 
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
-      refs.current.particlesArray = Array.from({ length: 150 }, () =>
-        createParticle(canvas)
-      )
+      if (canvas) {
+        refs.current.particlesArray = Array.from({ length: 150 }, () =>
+          createParticle(canvas)
+        )
+      }
     },
     [createParticle]
   )
 
   const handleGameCompletion = useCallback(() => {
-    if (!refs.current.allClean) {
-      refs.current.allClean = true
-      refs.current.elapsedTime = parseFloat(
-        ((Date.now() - refs.current.startTime!) / 1000).toFixed(1)
-      )
-      dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
-      completionMessageRef.current?.focus()
-      refs.current.container?.classList.add('done')
-    } else {
-      cancelAnimationFrame(refs.current.animationFrameId)
+    if (refs.current.allClean) {
+      return
     }
+
+    if (refs.current.startTime !== null) {
+      refs.current.elapsedTime = parseFloat(
+        ((Date.now() - refs.current.startTime) / 1000).toFixed(1)
+      )
+    }
+
+    refs.current.allClean = true
+    dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
+
+    completionMessageRef.current?.focus()
+    refs.current.container?.classList.add('done')
   }, [dispatch, completionMessageRef])
 
   const animateParticles = useCallback(
     (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      if (!ctx || !canvas) return
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       let remainingParticles = false
 

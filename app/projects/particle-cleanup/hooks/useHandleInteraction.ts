@@ -23,7 +23,8 @@ export const useHandleInteraction = (
 
         if (refs.current.cursorInsideCanvas !== isInside) {
           refs.current.cursorInsideCanvas = isInside
-          if (isInside && refs.current.container) {
+
+          if (isInside) {
             setTimeout(
               () =>
                 refs.current.container?.scrollIntoView({

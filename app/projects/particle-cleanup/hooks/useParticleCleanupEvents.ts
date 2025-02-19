@@ -3,7 +3,7 @@ import { useEffect, RefObject } from 'react'
 interface Refs {
   container: HTMLElement | null
   canvas: HTMLCanvasElement | null
-  animationFrameId: number
+  animationFrameId: number | null
 }
 
 type HandleInteraction = (event: Event, isInside: boolean) => void
@@ -19,6 +19,7 @@ export const useParticleCleanupEvents = (
   useEffect(() => {
     const localRefs = { ...refs.current }
     if (!localRefs.container || !localRefs.canvas) return
+
     const events: string[] = [
       'mousemove',
       'mouseleave',
@@ -39,9 +40,11 @@ export const useParticleCleanupEvents = (
       handler: EventListener,
       options?: AddEventListenerOptions
     ) => {
-      eventTypes.forEach((eventType) =>
-        element[`${action}EventListener`](eventType, handler, options)
-      )
+      if (element) {
+        eventTypes.forEach((eventType) => {
+          element[`${action}EventListener`](eventType, handler, options)
+        })
+      }
     }
 
     manageEventListeners('add', localRefs.container, events, handleEvent, {
@@ -60,6 +63,7 @@ export const useParticleCleanupEvents = (
     }
 
     window.addEventListener('resize', handleResize)
+
     return () => {
       if (localRefs.container) {
         manageEventListeners('remove', localRefs.container, events, handleEvent)
@@ -67,7 +71,10 @@ export const useParticleCleanupEvents = (
 
       window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('resize', handleResize)
-      cancelAnimationFrame(localRefs.animationFrameId)
+
+      if (typeof localRefs.animationFrameId === 'number') {
+        cancelAnimationFrame(localRefs.animationFrameId)
+      }
     }
   }, [refs, handleInteraction, handleScroll, initializeAnimation])
 }

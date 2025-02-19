@@ -14,10 +14,19 @@ export const useParallax = (
   const parallaxRef = externalRef ?? internalRef
 
   const updateImagePosition = useCallback(() => {
-    if (parallaxRef.current && imgRef.current && !prefersReducedMotion) {
-      const height = parallaxRef.current.offsetHeight - 18
-      const translateX = -(height - window.scrollY) * velocity
-      const translateY = -(height - window.scrollY) * (velocity + 0.1)
+    if (!parallaxRef.current || !imgRef.current || prefersReducedMotion) {
+      return
+    }
+
+    const height = parallaxRef.current.offsetHeight - 18
+    const scrollY = window.scrollY
+
+    if (scrollY < 0) return
+
+    const translateX = -(height - scrollY) * velocity
+    const translateY = -(height - scrollY) * (velocity + 0.1)
+
+    if (Number.isFinite(translateX) && Number.isFinite(translateY)) {
       imgRef.current.style.transform = `translate(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem)`
       imgRef.current.style.willChange = 'transform'
     }
@@ -26,10 +35,24 @@ export const useParallax = (
   useScrollHandler(updateImagePosition)
 
   useEffect(() => {
-    if (parallaxRef.current) {
-      imgRef.current = parallaxRef.current.querySelector('img')
+    const setImgRef = () => {
+      if (parallaxRef.current) {
+        const imgElement = parallaxRef.current.querySelector('img')
+        if (imgElement) {
+          imgRef.current = imgElement
+        }
+      }
     }
+
+    setImgRef()
     updateImagePosition()
+
+    return () => {
+      if (imgRef.current) {
+        imgRef.current.style.transform = ''
+        imgRef.current.style.willChange = ''
+      }
+    }
   }, [parallaxRef, updateImagePosition])
 
   return parallaxRef

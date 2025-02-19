@@ -4,24 +4,28 @@ import { isBrowser } from '@/lib/isBrowser'
 export const useScrollHandler = (onScroll: () => void) => {
   const ticking = useRef(false)
   const animationFrameId = useRef<number | null>(null)
+
   useEffect(() => {
+    if (!isBrowser()) {
+      return
+    }
+
     const handleScroll = () => {
       if (!ticking.current) {
+        ticking.current = true
         animationFrameId.current = window.requestAnimationFrame(() => {
           onScroll()
           ticking.current = false
         })
-        ticking.current = true
       }
     }
 
-    if (isBrowser()) {
-      window.addEventListener('scroll', handleScroll)
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-        if (animationFrameId.current !== null) {
-          window.cancelAnimationFrame(animationFrameId.current)
-        }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (animationFrameId.current !== null) {
+        window.cancelAnimationFrame(animationFrameId.current)
+        animationFrameId.current = null
       }
     }
   }, [onScroll])

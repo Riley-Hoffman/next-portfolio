@@ -31,10 +31,10 @@ export const useContactForm = ({
         const response = await fetch('/api/csrf-token')
         const data = await response.json()
 
-        if (data.token && data.secret) {
-          csrfTokenRef.current = data.token
-          csrfSecretRef.current = data.secret
-        } else {
+        csrfTokenRef.current = data.token ?? null
+        csrfSecretRef.current = data.secret ?? null
+
+        if (!csrfTokenRef.current || !csrfSecretRef.current) {
           console.error('Failed to fetch CSRF token and secret.')
         }
       } catch (error) {
