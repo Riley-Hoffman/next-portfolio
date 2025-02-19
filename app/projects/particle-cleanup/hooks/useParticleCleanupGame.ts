@@ -87,6 +87,20 @@ export const useParticleCleanupGame = (
     [createParticle]
   )
 
+  const handleGameCompletion = useCallback(() => {
+    if (!refs.current.allClean) {
+      refs.current.allClean = true
+      refs.current.elapsedTime = parseFloat(
+        ((Date.now() - refs.current.startTime!) / 1000).toFixed(1)
+      )
+      dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
+      completionMessageRef.current?.focus()
+      refs.current.container?.classList.add('done')
+    } else {
+      cancelAnimationFrame(refs.current.animationFrameId)
+    }
+  }, [dispatch, completionMessageRef])
+
   const animateParticles = useCallback(
     (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -98,24 +112,14 @@ export const useParticleCleanupGame = (
       })
 
       if (!remainingParticles) {
-        if (!refs.current.allClean) {
-          refs.current.allClean = true
-          refs.current.elapsedTime = parseFloat(
-            ((Date.now() - refs.current.startTime!) / 1000).toFixed(1)
-          )
-          dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
-          completionMessageRef.current?.focus()
-          refs.current.container?.classList.add('done')
-        } else {
-          cancelAnimationFrame(refs.current.animationFrameId)
-        }
+        handleGameCompletion()
       } else {
         refs.current.animationFrameId = requestAnimationFrame(() =>
           animateParticles(ctx, canvas)
         )
       }
     },
-    [mouse, dispatch, completionMessageRef]
+    [mouse, handleGameCompletion]
   )
 
   const initializeAnimation = useInitializeAnimation(
