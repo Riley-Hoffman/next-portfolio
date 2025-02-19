@@ -11,12 +11,10 @@ export const useHamburger = ({ expanded }: UseHamburgerProps) => {
   const location = usePathname()
 
   const updateAttributes = useCallback((newIsExpanded: boolean) => {
-    if (hamburgerRef.current) {
-      hamburgerRef.current.setAttribute(
-        'aria-expanded',
-        newIsExpanded.toString()
-      )
-    }
+    hamburgerRef.current?.setAttribute(
+      'aria-expanded',
+      newIsExpanded.toString()
+    )
   }, [])
 
   const toggleMenu = useCallback(() => {
@@ -35,9 +33,7 @@ export const useHamburger = ({ expanded }: UseHamburgerProps) => {
   }, [isExpanded, updateAttributes])
 
   useEffect(() => {
-    if (expanded) {
-      expanded(isExpanded)
-    }
+    expanded?.(isExpanded)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [isExpanded, expanded, handleResize])

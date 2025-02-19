@@ -5,9 +5,7 @@ export const useCarouselButtonVisibility = () => {
 
   useEffect(() => {
     buttonsRef.current.forEach((button) => {
-      if (button) {
-        button.classList.remove('hidden')
-      }
+      button?.classList.remove('hidden')
     })
   }, [])
 
