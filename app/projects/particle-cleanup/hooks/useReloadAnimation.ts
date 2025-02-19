@@ -9,15 +9,24 @@ export const useReloadAnimation = (
   const [, dispatch] = useGameData()
 
   const reloadAnimation = useCallback(() => {
-    cancelAnimationFrame(refs.current.animationFrameId)
-    Object.assign(refs.current, {
-      allClean: false,
-      startTime: null,
-      elapsedTime: 0,
-      cursorInsideCanvas: false,
-      particlesArray: [],
-      isMobile: null,
-    })
+    if (
+      refs.current?.animationFrameId !== null &&
+      refs.current?.animationFrameId !== undefined
+    ) {
+      cancelAnimationFrame(refs.current.animationFrameId)
+    }
+
+    if (refs.current) {
+      Object.assign(refs.current, {
+        allClean: false,
+        startTime: null,
+        elapsedTime: 0,
+        cursorInsideCanvas: false,
+        particlesArray: [],
+        isMobile: null,
+      })
+    }
+
     dispatch({ type: 'RESET_GAME' })
     initializeAnimation()
   }, [refs, initializeAnimation, dispatch])
