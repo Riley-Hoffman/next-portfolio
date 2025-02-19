@@ -1,28 +1,23 @@
-interface Position {
+interface Point {
   x: number
   y: number
 }
 
-interface Vertex {
-  x: number
-  y: number
-}
-
-export interface Mouse {
-  x: number
-  y: number
+export interface Mouse extends Point {
   radius: number
 }
 
 export class Particle {
-  position: Position
+  position: Point
   size: number
   color: string
   weight: number
-  direction: Position
-  vertices: Vertex[]
+  direction: Point
+  vertices: Point[]
   inCanvas: boolean
   speedFactor: number
+
+  private readonly canvasPadding = 7.4
 
   constructor(
     x: number,
@@ -42,40 +37,41 @@ export class Particle {
     this.speedFactor = speedFactor
   }
 
-  generateVertices(): Vertex[] {
-    const vertices: Vertex[] = []
+  private generateVertices(): Point[] {
     const numVertices = this.getRandomInt(3, 8)
-    for (let i = 0; i < numVertices; i++) {
+    return Array.from({ length: numVertices }, (_, i) => {
       const angle = (i / numVertices) * Math.PI * 2
       const radius = this.size * (0.5 + Math.random() * 0.5)
-      vertices.push(this.getVertex(angle, radius))
-    }
-    return vertices
+      return this.getVertex(angle, radius)
+    })
   }
 
-  getVertex(angle: number, radius: number): Vertex {
+  private getVertex(angle: number, radius: number): Point {
     return {
       x: Math.cos(angle) * radius,
       y: Math.sin(angle) * radius,
     }
   }
 
-  getRandomInt(min: number, max: number): number {
+  private getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  private getAbsoluteVertex(vertex: Point): Point {
+    return {
+      x: this.position.x + vertex.x,
+      y: this.position.y + vertex.y,
+    }
   }
 
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = this.color
     ctx.beginPath()
-    ctx.moveTo(
-      this.position.x + this.vertices[0].x,
-      this.position.y + this.vertices[0].y
-    )
+    const first = this.getAbsoluteVertex(this.vertices[0])
+    ctx.moveTo(first.x, first.y)
     for (let i = 1; i < this.vertices.length; i++) {
-      ctx.lineTo(
-        this.position.x + this.vertices[i].x,
-        this.position.y + this.vertices[i].y
-      )
+      const absVertex = this.getAbsoluteVertex(this.vertices[i])
+      ctx.lineTo(absVertex.x, absVertex.y)
     }
     ctx.closePath()
     ctx.fill()
@@ -92,20 +88,19 @@ export class Particle {
     this.draw(ctx)
   }
 
-  updateDirection(mouse: Mouse): void {
-    const { x: mouseX, y: mouseY, radius: mouseRadius } = mouse
-    const dx = mouseX - this.position.x
-    const dy = mouseY - this.position.y
+  private updateDirection(mouse: Mouse): void {
+    const dx = mouse.x - this.position.x
+    const dy = mouse.y - this.position.y
     const distance = Math.sqrt(dx * dx + dy * dy)
 
-    if (distance < mouseRadius) {
-      this.applyMouseEffect(dx, dy, distance, mouseRadius)
+    if (distance < mouse.radius) {
+      this.applyMouseEffect(dx, dy, distance, mouse.radius)
     } else {
       this.dampenDirection()
     }
   }
 
-  applyMouseEffect(
+  private applyMouseEffect(
     dx: number,
     dy: number,
     distance: number,
@@ -118,27 +113,29 @@ export class Particle {
     }
     const force = (mouseRadius - adjustedDistance) / mouseRadius + 0.5
     const magnitude = force * this.weight * 5 * this.speedFactor
-    this.direction.x = forceDirection.x * magnitude
-    this.direction.y = forceDirection.y * magnitude
+    this.direction = {
+      x: forceDirection.x * magnitude,
+      y: forceDirection.y * magnitude,
+    }
   }
 
-  dampenDirection(): void {
+  private dampenDirection(): void {
     this.direction.x *= 0.95 * this.speedFactor
     this.direction.y *= 0.95 * this.speedFactor
   }
 
-  updatePosition(): void {
+  private updatePosition(): void {
     this.position.x += this.direction.x
     this.position.y += this.direction.y
   }
 
-  checkCanvasBounds(canvas: HTMLCanvasElement): void {
+  private checkCanvasBounds(canvas: HTMLCanvasElement): void {
     const { width, height } = canvas
     if (
-      this.position.x < -7.4 ||
-      this.position.x > width + 7.4 ||
-      this.position.y < -7.4 ||
-      this.position.y > height + 7.4
+      this.position.x < -this.canvasPadding ||
+      this.position.x > width + this.canvasPadding ||
+      this.position.y < -this.canvasPadding ||
+      this.position.y > height + this.canvasPadding
     ) {
       this.inCanvas = false
     }
