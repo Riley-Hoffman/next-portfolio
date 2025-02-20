@@ -5,12 +5,11 @@ export const useThemeInfo = () => {
 
   const currentTheme = theme === 'system' ? resolvedTheme : theme
 
+  const isDarkTheme = currentTheme === 'dark'
+
   return {
-    icon: currentTheme === 'dark' ? 'solar:sun-2-bold' : 'solar:moon-bold',
-    label:
-      currentTheme === 'dark'
-        ? 'Switch to Light Theme'
-        : 'Switch to Dark Theme',
-    toggleTheme: () => setTheme(currentTheme === 'light' ? 'dark' : 'light'),
+    icon: isDarkTheme ? 'solar:sun-2-bold' : 'solar:moon-bold',
+    label: isDarkTheme ? 'Switch to Light Theme' : 'Switch to Dark Theme',
+    toggleTheme: () => setTheme(isDarkTheme ? 'light' : 'dark'),
   }
 }
