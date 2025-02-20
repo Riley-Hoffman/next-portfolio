@@ -46,9 +46,10 @@ describe('useAccordion', () => {
       focus: jest.fn(),
     }
 
-    result.current.buttonRefs.current[0] =
+    result.current.buttonRefs[0].current =
       mockButtonRef as unknown as HTMLButtonElement
-    result.current.contentRefs.current[0] =
+
+    result.current.contentRefs[0].current =
       mockContentRef as unknown as HTMLDivElement
 
     act(() => {
@@ -80,7 +81,8 @@ describe('useAccordion', () => {
     const mockButtonRef = {
       classList: { contains: jest.fn(), toggle: jest.fn() },
     }
-    result.current.buttonRefs.current[0] =
+
+    result.current.buttonRefs[0].current =
       mockButtonRef as unknown as HTMLButtonElement
 
     expect(mockButtonRef.classList.toggle).not.toHaveBeenCalled()
