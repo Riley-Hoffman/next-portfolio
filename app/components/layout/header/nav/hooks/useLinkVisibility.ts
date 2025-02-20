@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { useDebounce } from '@/hooks/useDebounce'
 
-export const useHideShowLinks = (isExpanded: boolean, timeout: number) => {
+export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
   const [hide, setHide] = useState<boolean>(false)
   const timeoutId = useRef<NodeJS.Timeout | null>(null)
 

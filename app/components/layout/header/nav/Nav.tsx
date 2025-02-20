@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { useRoutes } from '@/hooks/useRoutes'
 import { Hamburger } from './hamburger/Hamburger'
 import { NavListItem } from './NavListItem'
-import { useHideShowLinks } from './hooks/useHideShowLinks'
+import { useLinkVisibility } from './hooks/useLinkVisibility'
 
 export const Nav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
-  const hide = useHideShowLinks(isExpanded, 500)
+  const hide = useLinkVisibility(isExpanded, 500)
 
   return (
     <nav>
