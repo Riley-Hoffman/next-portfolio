@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react'
 import { isBrowser } from '@/lib/isBrowser'
+import { useDebounce } from '@/hooks/useDebounce'
 
 export const useBackToTopButton = () => {
   const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    if (isBrowser()) {
-      const handleScroll = () => {
-        if (window.scrollY > window.innerHeight / 2) {
-          setVisible(true)
-        } else {
-          setVisible(false)
-        }
-      }
 
-      window.addEventListener('scroll', handleScroll)
-      return () => window.removeEventListener('scroll', handleScroll)
+  const handleScroll = () => {
+    setVisible(window.scrollY > window.innerHeight / 2)
+  }
+
+  const debouncedHandleScroll = useDebounce(handleScroll, 100)
+
+  useEffect(() => {
+    if (!isBrowser()) return
+
+    window.addEventListener('scroll', debouncedHandleScroll)
+    return () => {
+      window.removeEventListener('scroll', debouncedHandleScroll)
     }
-  }, [])
+  }, [debouncedHandleScroll])
 
   const scrollToTop = () => {
     if (isBrowser()) {
