@@ -2,20 +2,27 @@ import { useEffect, useState } from 'react'
 import { isBrowser } from '@/lib/isBrowser'
 
 export const useReducedMotion = (): boolean => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(
+    () => {
+      if (isBrowser()) {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      }
+      return false
+    }
+  )
+
   useEffect(() => {
-    if (isBrowser()) {
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-      setPrefersReducedMotion(mediaQuery.matches)
+    if (!isBrowser()) return
 
-      const handler = (event: MediaQueryListEvent) => {
-        setPrefersReducedMotion(event.matches)
-      }
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const handler = (event: MediaQueryListEvent) => {
+      setPrefersReducedMotion(event.matches)
+    }
 
-      mediaQuery.addEventListener('change', handler)
-      return () => {
-        mediaQuery.removeEventListener('change', handler)
-      }
+    mediaQuery.addEventListener('change', handler)
+
+    return () => {
+      mediaQuery.removeEventListener('change', handler)
     }
   }, [])
 

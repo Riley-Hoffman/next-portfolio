@@ -11,40 +11,25 @@ type HTMLElementWithDataset = HTMLElement & {
 export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
   const elementsRef = useRef<HTMLElementWithDataset[]>([])
 
-  const getActiveState = (rect: DOMRect, distance: number) => {
-    const isActive = rect.top < distance
-    const newActiveState = isActive ? 'true' : 'false'
-
-    if (!isActive) {
-      return 'false'
-    }
-
-    return newActiveState
+  const getActiveState = (rect: DOMRect, distance: number): string => {
+    return rect.top < distance ? 'true' : 'false'
   }
 
   useEffect(() => {
-    const updateElementActivation = (
-      element: HTMLElementWithDataset,
-      rect: DOMRect,
-      distance: number
-    ) => {
+    const updateElementActivation = (element: HTMLElementWithDataset): void => {
+      const rect = element.getBoundingClientRect()
+      const distance = parseInt(element.dataset.distance ?? '800', 10)
       const newActiveState = getActiveState(rect, distance)
 
       if (element.dataset.active !== newActiveState) {
         element.dataset.active = newActiveState
       }
     }
-
     const updateTriggerOnScroll = () => {
       requestAnimationFrame(() => {
-        elementsRef.current.forEach((element) => {
-          const rect = element.getBoundingClientRect()
-          const distance = parseInt(element.dataset.distance ?? '800', 10)
-          updateElementActivation(element, rect, distance)
-        })
+        elementsRef.current.forEach(updateElementActivation)
       })
     }
-
     updateTriggerOnScroll()
 
     if (isBrowser()) {
