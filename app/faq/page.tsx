@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Metadata } from 'next'
 import { FaqSchema, description } from './components/accordion/schema/FaqSchema'
 import { Accordion } from './components/accordion/Accordion'
@@ -23,18 +24,22 @@ export const metadata: Metadata = {
   },
 }
 
-const Faq = () => (
-  <>
-    <FaqSchema />
-    <h1 className="heading-one">Frequently Asked Questions</h1>
-    <Accordion
-      items={questions.map((question, index) => ({
+const Faq = () => {
+  const items = useMemo(
+    () =>
+      questions.map((question, index) => ({
         question,
         answer: answers[index],
-      }))}
-      label="Frequently Asked Questions"
-    />
-  </>
-)
+      })),
+    []
+  )
+  return (
+    <>
+      <FaqSchema />
+      <h1 className="heading-one">Frequently Asked Questions</h1>
+      <Accordion items={items} label="Frequently Asked Questions" />
+    </>
+  )
+}
 
 export default Faq

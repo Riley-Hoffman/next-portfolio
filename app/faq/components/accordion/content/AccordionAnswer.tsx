@@ -8,16 +8,15 @@ type AccordionAnswerProps = {
   }
 }
 
+const getAnswerClasses = (isOpen: boolean) =>
+  clsx('acc-answer', {
+    'my-0 peer-[.init]:hidden': !isOpen,
+  })
+
 export const AccordionAnswer = ({ data }: AccordionAnswerProps) => {
   const { answer, isOpen, contentRef } = data
   return (
-    <p
-      className={clsx('acc-answer', {
-        'my-0 peer-[.init]:hidden': !isOpen,
-      })}
-      tabIndex={-1}
-      ref={contentRef}
-    >
+    <p className={getAnswerClasses(isOpen)} tabIndex={-1} ref={contentRef}>
       {answer}
     </p>
   )

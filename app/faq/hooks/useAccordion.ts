@@ -1,6 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { useDebounce } from '@/hooks/useDebounce'
 import { pxToRem } from '@/lib/pxToRem'
+
+const createRefs = <T extends HTMLElement>(
+  length: number
+): React.RefObject<T | null>[] => {
+  return Array.from({ length }, () => useRef<T>(null))
+}
 
 export const useAccordion = (itemsLength: number) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -10,27 +15,22 @@ export const useAccordion = (itemsLength: number) => {
     [openIndex]
   )
 
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(
-    Array(itemsLength).fill(null)
-  )
-  const contentRefs = useRef<(HTMLDivElement | null)[]>(
-    Array(itemsLength).fill(null)
-  )
+  const buttonRefs = createRefs<HTMLButtonElement>(itemsLength)
+  const contentRefs = createRefs<HTMLDivElement>(itemsLength)
 
-  const handleAccordionClick = useDebounce(
-    useCallback((index: number) => {
-      setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
-    }, []),
-    500
-  )
+  const handleAccordionClick = useCallback((index: number) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
+  }, [])
 
   useEffect(() => {
-    buttonRefs.current.forEach((button, index) => {
+    buttonRefs.forEach((buttonRef, index) => {
+      const button = buttonRef.current
       if (!button) return
       button.classList.toggle('init', !accOpen(index))
     })
 
-    contentRefs.current.forEach((content, index) => {
+    contentRefs.forEach((contentRef, index) => {
+      const content = contentRef.current
       if (!content) return
       if (accOpen(index)) {
         content.style.maxHeight = `${pxToRem(content.scrollHeight) + 2.75}rem`
@@ -39,10 +39,10 @@ export const useAccordion = (itemsLength: number) => {
       }
     })
 
-    if (openIndex !== null && contentRefs.current[openIndex]) {
-      contentRefs.current[openIndex]?.focus()
+    if (openIndex !== null && contentRefs[openIndex].current) {
+      contentRefs[openIndex].current.focus()
     }
-  }, [accOpen, openIndex])
+  }, [accOpen, buttonRefs, contentRefs, openIndex])
 
   return {
     accOpen,

@@ -3,6 +3,7 @@ import { useAccordion } from '../../hooks/useAccordion'
 import { AccordionItem } from './constants/AccordionItems'
 import { AccordionQuestion } from './content/AccordionQuestion'
 import { AccordionAnswer } from './content/AccordionAnswer'
+import { useDebounce } from '@/hooks/useDebounce'
 import './styles/accordion.css'
 
 type AccordionProps = {
@@ -13,6 +14,10 @@ type AccordionProps = {
 export const Accordion = ({ items, label }: AccordionProps) => {
   const { accOpen, handleAccordionClick, buttonRefs, contentRefs } =
     useAccordion(items.length)
+
+  const debouncedHandleAccordionClick = useDebounce((index: number) => {
+    handleAccordionClick(index)
+  }, 500)
 
   return (
     <ul
@@ -27,9 +32,9 @@ export const Accordion = ({ items, label }: AccordionProps) => {
               data={{
                 question: item.question,
                 isOpen,
-                onClick: () => handleAccordionClick(index),
+                onClick: () => debouncedHandleAccordionClick(index),
                 buttonRef: (el) => {
-                  buttonRefs.current[index] = el
+                  buttonRefs[index].current = el
                 },
               }}
             />
@@ -38,7 +43,7 @@ export const Accordion = ({ items, label }: AccordionProps) => {
                 answer: item.answer,
                 isOpen,
                 contentRef: (el) => {
-                  contentRefs.current[index] = el
+                  contentRefs[index].current = el
                 },
               }}
             />
