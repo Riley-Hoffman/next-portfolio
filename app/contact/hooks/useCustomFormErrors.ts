@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { FormValue } from '../types/FormValue.interface'
 import isEmail from 'validator/lib/isEmail'
 
-export const useFormValidation = (initialState: FormValue) => {
+export const useCustomFormErrors = (initialState: FormValue) => {
   const [formState, setFormState] = useState(initialState)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Record<keyof FormValue, string>>({
@@ -11,7 +11,7 @@ export const useFormValidation = (initialState: FormValue) => {
     message: '',
   })
 
-  const validateForm = useCallback(() => {
+  const assignFormErrors = useCallback(() => {
     const { name, email, message } = formState
     const newErrors = {
       name: name.trim() === '' ? 'Please enter your name.' : '',
@@ -23,9 +23,9 @@ export const useFormValidation = (initialState: FormValue) => {
 
   useEffect(() => {
     if (submitted) {
-      validateForm()
+      assignFormErrors()
     }
-  }, [formState, submitted, validateForm])
+  }, [formState, submitted, assignFormErrors])
 
   const handleChange =
     (field: keyof FormValue) =>
@@ -41,15 +41,15 @@ export const useFormValidation = (initialState: FormValue) => {
       setErrors((prevErrors) => ({ ...prevErrors, [field]: '' }))
     }
 
-  const handleUserSubmission = () => {
+  const handleInvalidSubmission = () => {
     setSubmitted(true)
-    validateForm()
+    assignFormErrors()
   }
 
   return {
     formState,
     errors,
     handleChange,
-    handleUserSubmission,
+    handleInvalidSubmission,
   }
 }

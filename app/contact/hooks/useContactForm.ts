@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { useFormValidation } from './useFormValidation'
+import { useCustomFormErrors } from './useCustomFormErrors'
 
 interface UseContactFormParams {
   initialFormState: { name: string; email: string; message: string }
@@ -15,77 +15,75 @@ export const useContactForm = ({
   const csrfSecretRef = useRef<string | null>(null)
   const router = useRouter()
 
-  const { formState, errors, handleChange, handleUserSubmission } =
-    useFormValidation(initialFormState)
+  const { formState, errors, handleChange, handleInvalidSubmission } =
+    useCustomFormErrors(initialFormState)
 
   useEffect(() => {
-    if (Object.values(errors).some((error) => error)) {
-      const errorMessages = Object.values(errors).filter(Boolean) as string[]
+    const errorMessages = Object.values(errors).filter(Boolean) as string[]
+    if (errorMessages.length > 0) {
       onErrors(errorMessages)
     }
   }, [errors, onErrors])
 
-  useEffect(() => {
-    const fetchCsrfToken = async () => {
-      try {
-        const response = await fetch('/api/csrf-token')
-        const data = await response.json()
+  const fetchCsrfToken = async () => {
+    try {
+      const response = await fetch('/api/csrf-token')
+      const data = await response.json()
+      csrfTokenRef.current = data.token ?? null
+      csrfSecretRef.current = data.secret ?? null
 
-        csrfTokenRef.current = data.token ?? null
-        csrfSecretRef.current = data.secret ?? null
-
-        if (!csrfTokenRef.current || !csrfSecretRef.current) {
-          console.error('Failed to fetch CSRF token and secret.')
-        }
-      } catch (error) {
-        console.error('Error fetching CSRF token:', error)
+      if (!csrfTokenRef.current || !csrfSecretRef.current) {
+        console.error('Failed to fetch CSRF token and secret.')
       }
+    } catch (error) {
+      console.error('Error fetching CSRF token:', error)
     }
+  }
 
+  useEffect(() => {
     fetchCsrfToken()
   }, [])
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const form = e.currentTarget as HTMLFormElement
-    const isValid = form.reportValidity()
-    if (!isValid) {
-      handleUserSubmission()
+
+    if (!e.currentTarget.reportValidity()) {
+      handleInvalidSubmission()
       return
-    } else {
-      if (!csrfTokenRef.current || !csrfSecretRef.current) {
-        console.error('CSRF token or secret is missing.')
-        return
-      }
+    }
 
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'csrf-token': csrfTokenRef.current,
-            'csrf-secret': csrfSecretRef.current,
-          },
-          body: JSON.stringify(formState),
-        })
+    if (!csrfTokenRef.current || !csrfSecretRef.current) {
+      console.error('CSRF token or secret is missing.')
+      return
+    }
 
-        const result = await response.json()
-        if (!response.ok) {
-          console.error('Form submission failed:', result.error)
-        } else {
-          console.info('Form submitted successfully:', result)
-          router.push('/thank-you')
-        }
-      } catch (error) {
-        console.error('Error submitting form:', error)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'csrf-token': csrfTokenRef.current,
+          'csrf-secret': csrfSecretRef.current,
+        },
+        body: JSON.stringify(formState),
+      })
+
+      const result = await response.json()
+      if (!response.ok) {
+        console.error('Form submission failed:', result.error)
+      } else {
+        console.info('Form submitted successfully:', result)
+        router.push('/thank-you')
       }
+    } catch (error) {
+      console.error('Error submitting form:', error)
     }
   }
 
   return {
     formState,
     handleChange,
-    handleUserSubmission,
+    handleInvalidSubmission,
     handleFormSubmit,
   }
 }

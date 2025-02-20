@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react'
-import { useFormValidation } from '../hooks/useFormValidation'
+import { useCustomFormErrors } from '../hooks/useCustomFormErrors'
 import { FormValue } from '../types/FormValue.interface'
 
-describe('useFormValidation', () => {
+describe('useCustomFormErrors', () => {
   let initialState: FormValue
 
   beforeEach(() => {
@@ -10,17 +10,17 @@ describe('useFormValidation', () => {
   })
 
   it('should initialize form state correctly', () => {
-    const { result } = renderHook(() => useFormValidation(initialState))
+    const { result } = renderHook(() => useCustomFormErrors(initialState))
     expect(result.current.formState.name).toBe('')
     expect(result.current.formState.email).toBe('')
     expect(result.current.formState.message).toBe('')
   })
 
   it('should show validation errors when the form is submitted with empty fields', async () => {
-    const { result } = renderHook(() => useFormValidation(initialState))
+    const { result } = renderHook(() => useCustomFormErrors(initialState))
 
     act(() => {
-      result.current.handleUserSubmission()
+      result.current.handleInvalidSubmission()
     })
 
     expect(result.current.errors.name).toBe('Please enter your name.')
@@ -31,7 +31,7 @@ describe('useFormValidation', () => {
   })
 
   it('should clear errors and update form state when the user changes input fields', async () => {
-    const { result } = renderHook(() => useFormValidation(initialState))
+    const { result } = renderHook(() => useCustomFormErrors(initialState))
 
     act(() => {
       result.current.handleChange('name')({
@@ -55,7 +55,7 @@ describe('useFormValidation', () => {
   })
 
   it('should validate email format', async () => {
-    const { result } = renderHook(() => useFormValidation(initialState))
+    const { result } = renderHook(() => useCustomFormErrors(initialState))
 
     act(() => {
       result.current.handleChange('name')({
@@ -70,7 +70,7 @@ describe('useFormValidation', () => {
     })
 
     act(() => {
-      result.current.handleUserSubmission()
+      result.current.handleInvalidSubmission()
     })
 
     expect(result.current.errors.email).toBe(
@@ -79,7 +79,7 @@ describe('useFormValidation', () => {
   })
 
   it('should not show email error if a valid email is entered', async () => {
-    const { result } = renderHook(() => useFormValidation(initialState))
+    const { result } = renderHook(() => useCustomFormErrors(initialState))
 
     act(() => {
       result.current.handleChange('name')({
@@ -94,7 +94,7 @@ describe('useFormValidation', () => {
     })
 
     act(() => {
-      result.current.handleUserSubmission()
+      result.current.handleInvalidSubmission()
     })
 
     expect(result.current.errors.email).toBe('')
