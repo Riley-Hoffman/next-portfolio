@@ -15,10 +15,12 @@ export const LinkedInButton = () => {
     )
   }
 
+  const handleMouseEnter = () => {
+    triggerEffect(applyEffect)
+  }
+
   useEffect(() => {
-    return () => {
-      cleanup()
-    }
+    return cleanup
   }, [cleanup])
 
   return (
@@ -28,7 +30,7 @@ export const LinkedInButton = () => {
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
       target="_blank"
       rel="noopener noreferrer"
-      onMouseEnter={() => triggerEffect(applyEffect)}
+      onMouseEnter={handleMouseEnter} // Moved function outside
     >
       <Icon
         className="mr-6 box-content bg-accentone-300 p-2 text-5xl text-heading group-hover:bg-heading group-hover:text-accentone-300 dark:bg-[#292d11]"
