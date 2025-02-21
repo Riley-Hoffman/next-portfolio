@@ -1,11 +1,8 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { HamburgerProps } from '../Hamburger'
 
-interface UseHamburgerProps {
-  expanded?: (isExpanded: boolean) => void
-}
-
-export const useHamburger = ({ expanded }: UseHamburgerProps) => {
+export const useHamburger = ({ expanded }: HamburgerProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
   const hamburgerRef = useRef<HTMLButtonElement | null>(null)
   const location = usePathname()

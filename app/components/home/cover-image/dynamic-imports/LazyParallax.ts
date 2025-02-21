@@ -1,10 +1,10 @@
 import { useParallax } from '@/hooks/useParallax'
 
-interface LazyParallaxProps {
+const LazyUseParallax = ({
+  parallaxRef,
+}: {
   parallaxRef: React.RefObject<HTMLDivElement | null>
-}
-
-const LazyUseParallax = ({ parallaxRef }: LazyParallaxProps) => {
+}) => {
   useParallax(0.1, parallaxRef)
   return null
 }

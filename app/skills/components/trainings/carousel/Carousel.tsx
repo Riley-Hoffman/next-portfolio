@@ -8,11 +8,7 @@ import { CarouselDataTypes } from './CarouselData'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
 import { carouselStyle } from './lib/carouselStyle'
 
-interface CarouselProps {
-  slides: CarouselDataTypes[]
-}
-
-export const Carousel = ({ slides }: CarouselProps) => {
+export const Carousel = ({ slides }: { slides: CarouselDataTypes[] }) => {
   const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     carouselStyle()

@@ -1,10 +1,6 @@
 import { Icon } from '@iconify/react'
 
-interface NewTabContentProps {
-  icon?: boolean
-}
-
-export const NewTabContent = ({ icon = true }: NewTabContentProps) => {
+export const NewTabContent = ({ icon = true }: { icon?: boolean }) => {
   return (
     <>
       <span className="sr-only"> (Opens in a new tab)</span>

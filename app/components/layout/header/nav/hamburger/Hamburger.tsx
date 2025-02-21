@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useHamburger } from './hooks/useHamburger'
 
-interface HamburgerProps {
+export interface HamburgerProps {
   expanded?: (isExpanded: boolean) => void
 }
 
