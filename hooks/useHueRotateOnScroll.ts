@@ -1,19 +1,17 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 import { useScrollHandler } from '@/hooks/useScrollHandler'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useDebounce } from '@/hooks/useDebounce'
 
 export const useHueRotateOnScroll = (
   sectionRef: React.RefObject<HTMLElement | null>
 ) => {
   const scrollRef = useRef<number>(0)
   const prefersReducedMotion = useReducedMotion()
+  const [hueFilter, setHueFilter] = useState<string>('')
 
-  useScrollHandler(() => {
-    if (
-      typeof window === 'undefined' ||
-      !sectionRef.current ||
-      prefersReducedMotion
-    ) {
+  const applyHueRotate = useCallback(() => {
+    if (typeof window === 'undefined' || prefersReducedMotion) {
       return
     }
 
@@ -22,10 +20,26 @@ export const useHueRotateOnScroll = (
 
     if (scrollRef.current !== scrollY) {
       scrollRef.current = scrollY
+      setHueFilter(newFilter)
     }
+  }, [prefersReducedMotion])
 
-    if (sectionRef.current.style.filter !== newFilter) {
-      sectionRef.current.style.filter = newFilter
+  const debouncedApplyHueRotate = useDebounce(applyHueRotate, 100)
+
+  useScrollHandler(debouncedApplyHueRotate)
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      sectionRef.current.style.filter = hueFilter
     }
-  })
+  }, [hueFilter, sectionRef])
+
+  useEffect(() => {
+    const currentSection = sectionRef.current
+    return () => {
+      if (currentSection) {
+        currentSection.style.filter = ''
+      }
+    }
+  }, [sectionRef])
 }
