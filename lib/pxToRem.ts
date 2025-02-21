@@ -1,4 +1,4 @@
-export const getRootFontSize = () => {
+const getRootFontSize = () => {
   return parseFloat(getComputedStyle(document.documentElement).fontSize)
 }
 
