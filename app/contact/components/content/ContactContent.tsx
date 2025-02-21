@@ -14,14 +14,14 @@ export const ContactContent = ({ errors }: ContactContentProps) => (
           Write me a message...
         </h2>
         <p className="text-xl">
-          I&apos;d love to know your ideas, questions, or information.
+          I would love to read your ideas, questions, or information!
         </p>
         <h3 className="mb-0 font-inconsolata uppercase tracking-widest">
           Reports:
         </h3>
         <p className="mt-0 text-base">
           Did you find a bug or accessibility issue while browsing this site?
-          <span className="block">Your report is appreciated!</span>
+          <span className="block">Your report is appreciated.</span>
         </p>
       </>
     )}
