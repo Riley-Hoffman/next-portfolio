@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react'
+import { MedalCriteria } from './MedalCriteria'
 
 export const ParticleCleanupCopy = () => (
   <>
@@ -11,20 +11,22 @@ export const ParticleCleanupCopy = () => (
       className="numbered-icons icon-color mb-1 pl-10 pr-5 text-xl sm:flex md:text-2xl"
       aria-label="Medal Criteria"
     >
-      <li className="before:bg-[#8a7400] before:text-[#fbfdff]">
-        <span className="sr-only">Gold, Less Than 15 seconds.</span>
-        <span aria-hidden={true}>
-          <Icon icon="hugeicons:less-than" /> 15s &nbsp;&nbsp;
-        </span>
-      </li>
-      <li className="before:bg-[#737373] before:text-[#fbfdff]">
-        <span className="sr-only">Silver, 15 to 20 seconds.</span>
-        <span aria-hidden={true}>15s-20s &nbsp;&nbsp;</span>
-      </li>
-      <li className="before:bg-[#a2652a] before:text-[#fbfdff]">
-        <span className="sr-only">Bronze, 21 to 25 seconds.</span>
-        <span aria-hidden={true}>21s-25s &nbsp;&nbsp;</span>
-      </li>
+      <MedalCriteria
+        bgClass="before:bg-[#8a7400]"
+        srText="Gold, Less Than 15 seconds."
+        ariaText="15s"
+        icon="hugeicons:less-than"
+      />
+      <MedalCriteria
+        bgClass="before:bg-[#737373]"
+        srText="Silver, 15 to 20 seconds."
+        ariaText="15s-20s"
+      />
+      <MedalCriteria
+        bgClass="before:bg-[#a2652a]"
+        srText="Bronze, 21 to 25 seconds."
+        ariaText="21s-25s"
+      />
     </ol>
   </>
 )
