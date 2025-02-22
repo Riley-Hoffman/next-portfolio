@@ -22,11 +22,11 @@ export const CompletionMessage = ({
       <p className="text-2xl">All clean!</p>
       <p aria-live="polite">
         Time taken:{' '}
-        <span className="font-semibold" aria-live="polite">
+        <span className="block text-xl md:inline" aria-live="polite">
           {time} seconds
         </span>
       </p>
-      <p className="font-semibold uppercase" aria-live="polite">
+      <p className="uppercase" aria-live="polite">
         {medalDetails && (
           <span className="text-xl md:text-2xl" aria-live="polite">
             {medalDetails.text} <br />

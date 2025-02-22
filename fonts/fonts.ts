@@ -15,7 +15,7 @@ export const poppins = Poppins({
   variable: '--font-poppins',
 })
 export const sourcesans = Source_Sans_3({
-  weight: ['400', '600'],
+  weight: ['400'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
