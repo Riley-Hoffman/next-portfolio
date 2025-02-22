@@ -16,7 +16,7 @@ export const Nav = () => {
         className="shadow-[0_0.128px_1rem_-0.56rem] peer-aria-expanded:scale-100"
         aria-label="Menu Links"
       >
-        {useRoutes('filtered').map(({ to, label }) => (
+        {useRoutes('main').map(({ to, label }) => (
           <NavListItem key={to} to={to} label={label} hide={hide} />
         ))}
         <NavListItem resume="/riley-hoffman-resume.pdf" hide={hide} />

@@ -3,30 +3,30 @@ import { useMemo } from 'react'
 interface Route {
   to: string
   label: string
-  includeInFilter: boolean
+  mainRoute: boolean
 }
 
 export const RouteList: Route[] = [
-  { to: '/', label: 'Home', includeInFilter: true },
-  { to: '/projects/', label: 'Projects', includeInFilter: true },
+  { to: '/', label: 'Home', mainRoute: true },
+  { to: '/projects/', label: 'Projects', mainRoute: true },
   {
     to: '/projects/particle-cleanup/',
     label: 'Particle Cleanup Game',
-    includeInFilter: false,
+    mainRoute: false,
   },
-  { to: '/skills/', label: 'Skills', includeInFilter: true },
-  { to: '/faq/', label: 'FAQ', includeInFilter: true },
-  { to: '/contact/', label: 'Contact', includeInFilter: true },
-  { to: '/accessibility/', label: 'Accessibility', includeInFilter: false },
+  { to: '/skills/', label: 'Skills', mainRoute: true },
+  { to: '/faq/', label: 'FAQ', mainRoute: true },
+  { to: '/contact/', label: 'Contact', mainRoute: true },
+  { to: '/accessibility/', label: 'Accessibility', mainRoute: false },
 ]
 
-type FilterMode = 'all' | 'filtered'
+type allOrMain = 'all' | 'main'
 
-export const useRoutes = (filterMode: FilterMode): Route[] => {
+export const useRoutes = (routes: allOrMain): Route[] => {
   return useMemo(() => {
-    if (filterMode === 'filtered') {
-      return RouteList.filter((route) => route.includeInFilter)
+    if (routes === 'main') {
+      return RouteList.filter((route) => route.mainRoute)
     }
     return RouteList
-  }, [filterMode])
+  }, [routes])
 }
