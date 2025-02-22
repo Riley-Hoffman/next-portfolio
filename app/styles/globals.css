@@ -45,10 +45,6 @@
   ::selection {
     @apply bg-[rgba(58,_178,_215,_0.52)];
   }
-  h1:not(#_),
-  h2:not(#_) {
-    @apply leading-normal;
-  }
   p:not(#_, .text-5xl, .text-4xl),
   ol:not(#_, .text-5xl, .text-4xl),
   ul:not(#_, .text-5xl, .text-4xl) {
@@ -137,6 +133,6 @@
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .heading-one {
-    @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl;
+    @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
   }
 }
