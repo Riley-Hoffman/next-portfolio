@@ -6,7 +6,6 @@ import {
 import { ParticleCleanupCopy } from './components/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from './components/ParticleCleanupGame'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
-import '@/app/styles/numbered-icons.css'
 
 const description =
   'How quickly can you clear all the particles from the board using your cursor or finger?'

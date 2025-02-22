@@ -1,4 +1,5 @@
 import { MedalCriteria } from './MedalCriteria'
+import '@/app/styles/numbered-icons.css'
 
 export const ParticleCleanupCopy = () => (
   <>
