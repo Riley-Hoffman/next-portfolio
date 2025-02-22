@@ -1,9 +1,8 @@
-import { Icon } from '@iconify/react'
-import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import { TechItem } from './TechItem'
 import packageJson from '@/package.json'
 import './styles/site-tech-stack.css'
 
-interface Tech {
+export interface Tech {
   name: string
   logo: string
   url: string
@@ -52,21 +51,7 @@ const SiteTechStack = () => (
         aria-label="Site tech stack."
       >
         {technologies.map((tech) => (
-          <li key={tech.name} className="relative pt-8">
-            <a
-              className="tech-button"
-              href={tech.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon icon={tech.logo} className="text-7xl" />
-              <span className="mt-2 block text-lg leading-none">
-                {tech.name}
-                <NewTabContent />
-              </span>
-              {tech.version}
-            </a>
-          </li>
+          <TechItem key={tech.name} {...tech} />
         ))}
       </ul>
     </section>
