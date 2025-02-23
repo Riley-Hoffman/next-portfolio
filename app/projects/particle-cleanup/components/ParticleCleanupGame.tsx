@@ -10,6 +10,34 @@ export const ParticleCleanupGame = () => {
   const { refs, gameData, medalDetails, reloadAnimation } =
     useParticleCleanupGame(completionMessageRef)
 
+  const renderCompletionMessage = () => {
+    if (refs.current.allClean) {
+      return (
+        <CompletionMessage
+          medalDetails={medalDetails}
+          time={gameData.time}
+          ref={completionMessageRef}
+        />
+      )
+    }
+    return null
+  }
+
+  const renderCursorMessage = () => {
+    if (
+      gameData.gameInProgress &&
+      !refs.current.allClean &&
+      !gameData.cursorMessageRead
+    ) {
+      return (
+        <div className="sr-only" aria-live="assertive">
+          {gameData.cursorMessage}
+        </div>
+      )
+    }
+    return null
+  }
+
   return (
     <>
       <div
@@ -26,27 +54,22 @@ export const ParticleCleanupGame = () => {
             refs.current.canvas = el
           }}
         />
-        {refs.current.allClean && (
-          <CompletionMessage
-            medalDetails={medalDetails}
-            time={gameData.time}
-            ref={completionMessageRef}
-          />
-        )}
+        {renderCompletionMessage()}
         <noscript>
           <p className="relative z-10 text-center">
             JavaScript is required to play this game.
           </p>
         </noscript>
+        {gameData.gameInProgress &&
+          !refs.current.allClean &&
+          !gameData.cursorMessageRead && (
+            <div className="sr-only" aria-live="assertive">
+              {gameData.cursorMessage}
+            </div>
+          )}
+        {renderCursorMessage()}
+        <PlayAgain reloadAnimation={reloadAnimation} />
       </div>
-      {gameData.gameInProgress &&
-        !refs.current.allClean &&
-        !gameData.cursorMessageRead && (
-          <div className="sr-only" aria-live="assertive">
-            {gameData.cursorMessage}
-          </div>
-        )}
-      <PlayAgain reloadAnimation={reloadAnimation} />
     </>
   )
 }
