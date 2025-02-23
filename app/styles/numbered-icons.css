@@ -1,9 +1,8 @@
 ol.numbered-icons li {
-  counter-increment: circle;
-  @apply relative py-3 pl-5;
+  @apply counter-increment-circle relative py-3 pl-5;
 }
 ol.numbered-icons li:before {
-  @apply absolute -left-5 top-1/2 mr-5 flex size-7 -translate-y-1/2 items-center justify-center rounded-full p-1 font-poppins text-base font-semibold content-[counter(circle)_''];
+  @apply absolute -left-5 top-1/2 mr-5 flex size-7 -translate-y-1/2 items-center justify-center rounded-full p-1 font-poppins text-base font-semibold;
 }
 ol.numbered-icons li:not([class*='before:bg-']):before {
   @apply bg-accenttwo-100;
