@@ -21,7 +21,7 @@ export const FormField = ({
   name,
   placeholder,
 }: FormFieldProps) => {
-  const commonProps = {
+  const formFieldProps = {
     id: name as string,
     name: name as string,
     placeholder,
@@ -42,14 +42,14 @@ export const FormField = ({
       </label>
       {type !== 'textarea' ? (
         <input
-          {...commonProps}
+          {...formFieldProps}
           className="form-field"
           type={type}
           enterKeyHint="next"
         />
       ) : (
         <textarea
-          {...commonProps}
+          {...formFieldProps}
           className="form-field"
           spellCheck={true}
           rows={8}
