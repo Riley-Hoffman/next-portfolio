@@ -60,16 +60,16 @@ export const ParticleCleanupGame = () => {
             JavaScript is required to play this game.
           </p>
         </noscript>
-        {gameData.gameInProgress &&
-          !refs.current.allClean &&
-          !gameData.cursorMessageRead && (
-            <div className="sr-only" aria-live="assertive">
-              {gameData.cursorMessage}
-            </div>
-          )}
-        {renderCursorMessage()}
-        <PlayAgain reloadAnimation={reloadAnimation} />
       </div>
+      {gameData.gameInProgress &&
+        !refs.current.allClean &&
+        !gameData.cursorMessageRead && (
+          <div className="sr-only" aria-live="assertive">
+            {gameData.cursorMessage}
+          </div>
+        )}
+      {renderCursorMessage()}
+      <PlayAgain reloadAnimation={reloadAnimation} />
     </>
   )
 }
