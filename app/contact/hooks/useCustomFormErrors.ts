@@ -25,7 +25,7 @@ export const useCustomFormErrors = (initialState: FormValue) => {
     if (submitted) {
       assignFormErrors()
     }
-  }, [formState, submitted, assignFormErrors])
+  }, [submitted, assignFormErrors])
 
   const handleChange =
     (field: keyof FormValue) =>

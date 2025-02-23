@@ -20,7 +20,7 @@ export const useContactForm = ({
 
   useEffect(() => {
     const errorMessages = Object.values(errors).filter(Boolean) as string[]
-    if (errorMessages.length > 0) {
+    if (errorMessages.length) {
       onErrors(errorMessages)
     }
   }, [errors, onErrors])

@@ -5,7 +5,7 @@ export const useJsOnlyScrollAnimation = (animation?: string) => {
   const elementsRef = useTriggerOnScroll()
 
   useEffect(() => {
-    if (elementsRef.current.length > 0 && animation) {
+    if (elementsRef.current.length && animation) {
       elementsRef.current.forEach((element) => {
         const animationClasses = animation.trim().split(/\s+/)
         animationClasses.forEach((className) => {

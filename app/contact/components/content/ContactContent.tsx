@@ -1,10 +1,9 @@
-import { Icon } from '@iconify/react'
-import '@/app/styles/numbered-icons.css'
+import { ErrorList } from './ErrorList'
 import './styles/contact-content.css'
 
 export const ContactContent = ({ errors }: { errors: string[] }) => (
   <div className="contact-content border-accenttwo -[0.188rem_0.125rem_0_0] mb-10 min-h-72 max-w-[calc(100%-1.563rem)] rounded-t-md bg-heading shadow shadow-accentone-300 dark:shadow-accentone-200 sm:min-h-64">
-    {errors.length === 0 && (
+    {errors.length < 1 ? (
       <>
         <h2 className="mb-1 inline-block w-80 whitespace-nowrap font-medium tracking-widest motion-safe:animate-typetext">
           Write me a message...
@@ -20,22 +19,8 @@ export const ContactContent = ({ errors }: { errors: string[] }) => (
           <span className="block">Your report is appreciated.</span>
         </p>
       </>
-    )}
-    {errors.length > 0 && (
-      <>
-        <div className="flex items-center pl-5">
-          <Icon
-            icon="bi:exclamation-circle-fill"
-            className="ml-5 mr-px size-9"
-          />
-          <h2 className="pl-2">Error processing form</h2>
-        </div>
-        <ol className="numbered-icons pb-6 pl-16 pr-5 text-xl">
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ol>
-      </>
+    ) : (
+      <ErrorList errors={errors} />
     )}
   </div>
 )
