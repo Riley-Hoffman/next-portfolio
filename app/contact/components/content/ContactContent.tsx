@@ -3,7 +3,7 @@ import './styles/contact-content.css'
 
 export const ContactContent = ({ errors }: { errors: string[] }) => (
   <div className="contact-content border-accenttwo -[0.188rem_0.125rem_0_0] mb-10 min-h-72 max-w-[calc(100%-1.563rem)] rounded-t-md bg-heading shadow shadow-accentone-300 dark:shadow-accentone-200 sm:min-h-64">
-    {errors.length < 1 ? (
+    {!errors.length ? (
       <>
         <h2 className="mb-1 inline-block w-80 whitespace-nowrap font-medium tracking-widest motion-safe:animate-typetext">
           Write me a message...
