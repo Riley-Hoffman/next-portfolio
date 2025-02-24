@@ -1,22 +1,22 @@
 'use client'
 import { useAccordion } from '../../hooks/useAccordion'
-import { AccordionItem } from './constants/AccordionItems'
-import { AccordionQuestion } from './content/AccordionQuestion'
-import { AccordionAnswer } from './content/AccordionAnswer'
+import { AccItem } from './constants/AccItems'
+import { AccQuestion } from './content/AccQuestion'
+import { AccAnswer } from './content/AccAnswer'
 import { useDebounce } from '@/hooks/useDebounce'
 import './styles/accordion.css'
 
-type AccordionProps = {
-  items: AccordionItem[]
+interface AccProps {
+  items: AccItem[]
   label: string
 }
 
-export const Accordion = ({ items, label }: AccordionProps) => {
-  const { accOpen, handleAccordionClick, buttonRefs, contentRefs } =
+export const Accordion = ({ items, label }: AccProps) => {
+  const { accOpen, handleAccClick, buttonRefs, contentRefs } =
     useAccordion(items.length)
 
-  const debouncedHandleAccordionClick = useDebounce((index: number) => {
-    handleAccordionClick(index)
+  const debouncedHandleAccClick = useDebounce((index: number) => {
+    handleAccClick(index)
   }, 500)
 
   return (
@@ -28,17 +28,17 @@ export const Accordion = ({ items, label }: AccordionProps) => {
         const isOpen = accOpen(index)
         return (
           <li className="group" key={item.question}>
-            <AccordionQuestion
+            <AccQuestion
               data={{
                 question: item.question,
                 isOpen,
-                onClick: () => debouncedHandleAccordionClick(index),
+                onAccClick: () => debouncedHandleAccClick(index),
                 buttonRef: (el) => {
                   buttonRefs[index].current = el
                 },
               }}
             />
-            <AccordionAnswer
+            <AccAnswer
               data={{
                 answer: item.answer,
                 isOpen,

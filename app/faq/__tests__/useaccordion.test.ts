@@ -16,17 +16,17 @@ describe('useAccordion', () => {
     expect(result.current.accOpen(0)).toBe(false)
   })
 
-  it('should toggle openIndex when handleAccordionClick is called', () => {
+  it('should toggle openIndex when handleAccClick is called', () => {
     const { result } = renderHook(() => useAccordion(itemsLength))
 
     act(() => {
-      result.current.handleAccordionClick(1)
+      result.current.handleAccClick(1)
     })
 
     expect(result.current.openIndex).toBe(1)
 
     act(() => {
-      result.current.handleAccordionClick(1)
+      result.current.handleAccClick(1)
     })
 
     expect(result.current.openIndex).toBeNull()
@@ -53,7 +53,7 @@ describe('useAccordion', () => {
       mockContentRef as unknown as HTMLDivElement
 
     act(() => {
-      result.current.handleAccordionClick(0)
+      result.current.handleAccClick(0)
     })
 
     jest.advanceTimersByTime(500)
@@ -65,7 +65,7 @@ describe('useAccordion', () => {
     expect(mockContentRef.focus).toHaveBeenCalled()
 
     act(() => {
-      result.current.handleAccordionClick(0)
+      result.current.handleAccClick(0)
     })
 
     jest.advanceTimersByTime(500)
@@ -88,7 +88,7 @@ describe('useAccordion', () => {
     expect(mockButtonRef.classList.toggle).not.toHaveBeenCalled()
 
     act(() => {
-      result.current.handleAccordionClick(0)
+      result.current.handleAccClick(0)
     })
 
     jest.advanceTimersByTime(500)
@@ -98,20 +98,20 @@ describe('useAccordion', () => {
     jest.clearAllMocks()
 
     act(() => {
-      result.current.handleAccordionClick(0)
+      result.current.handleAccClick(0)
     })
 
     jest.advanceTimersByTime(500)
     expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith('init', true)
   })
 
-  it('should handle debouncing of handleAccordionClick', () => {
+  it('should handle debouncing of handleAccClick', () => {
     jest.useFakeTimers()
 
     const { result } = renderHook(() => useAccordion(itemsLength))
 
     act(() => {
-      result.current.handleAccordionClick(1)
+      result.current.handleAccClick(1)
     })
 
     jest.advanceTimersByTime(500)
@@ -119,7 +119,7 @@ describe('useAccordion', () => {
     expect(result.current.openIndex).toBe(1)
 
     act(() => {
-      result.current.handleAccordionClick(1)
+      result.current.handleAccClick(1)
     })
 
     jest.advanceTimersByTime(500)

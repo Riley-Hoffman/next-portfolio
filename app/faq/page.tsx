@@ -4,7 +4,7 @@ import { Accordion } from './components/accordion/Accordion'
 import {
   questions,
   answers,
-} from './components/accordion/constants/AccordionItems'
+} from './components/accordion/constants/AccItems'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { FAQPage, WithContext } from 'schema-dts'
-import { questions, answers } from '../../accordion/constants/AccordionItems'
+import { questions, answers } from '../constants/AccItems'
 import {
   getBaseUrl,
   getPageTitle,

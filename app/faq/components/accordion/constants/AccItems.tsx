@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-export interface AccordionItem {
+export interface AccItem {
   question: string
   answer: React.ReactElement<{ children: React.ReactNode }>
 }
 
-const ACCORDION_ITEMS: AccordionItem[] = [
+const ACC_ITEMS: AccItem[] = [
   {
     question: 'Are you available for freelance work?',
     answer: (
@@ -48,5 +48,5 @@ const ACCORDION_ITEMS: AccordionItem[] = [
   },
 ]
 
-export const questions = ACCORDION_ITEMS.map((item) => item.question)
-export const answers = ACCORDION_ITEMS.map((item) => item.answer)
+export const questions = ACC_ITEMS.map((item) => item.question)
+export const answers = ACC_ITEMS.map((item) => item.answer)

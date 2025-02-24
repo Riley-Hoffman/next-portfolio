@@ -18,7 +18,7 @@ export const useAccordion = (itemsLength: number) => {
   const buttonRefs = createRefs<HTMLButtonElement>(itemsLength)
   const contentRefs = createRefs<HTMLDivElement>(itemsLength)
 
-  const handleAccordionClick = useCallback((index: number) => {
+  const handleAccClick = useCallback((index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
   }, [])
 
@@ -46,7 +46,7 @@ export const useAccordion = (itemsLength: number) => {
 
   return {
     accOpen,
-    handleAccordionClick,
+    handleAccClick,
     buttonRefs,
     contentRefs,
     openIndex,

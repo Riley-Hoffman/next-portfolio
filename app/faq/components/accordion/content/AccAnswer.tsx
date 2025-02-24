@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-type AccordionAnswerProps = {
+type AccAnswerProps = {
   data: {
     answer: React.ReactNode
     isOpen: boolean
@@ -13,7 +13,7 @@ const getAnswerClasses = (isOpen: boolean) =>
     'my-0 peer-[.init]:hidden': !isOpen,
   })
 
-export const AccordionAnswer = ({ data }: AccordionAnswerProps) => {
+export const AccAnswer = ({ data }: AccAnswerProps) => {
   const { answer, isOpen, contentRef } = data
   return (
     <p className={getAnswerClasses(isOpen)} tabIndex={-1} ref={contentRef}>
