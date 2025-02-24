@@ -102,10 +102,13 @@
     @apply sr-only;
   }
   footer p {
-    @apply m-0 px-3 py-1 text-reduced;
+    @apply m-0 py-1 text-reduced;
+  }
+  footer p:last-of-type {
+    @apply md:pr-16;
   }
   footer p:first-of-type {
-    @apply font-urbanist;
+    @apply font-urbanist md:pl-16 md:pr-0;
   }
   footer p:first-of-type a {
     @apply inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6;
@@ -114,7 +117,7 @@
     @apply ml-1 text-3xl md:text-base;
   }
   footer > a {
-    @apply mr-auto px-3 underline;
+    @apply mr-auto inline-block px-5 py-2 underline;
   }
   a > *,
   .button {
