@@ -21,8 +21,8 @@ export const CompletionMessage = ({
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <p className="text-2xl">All clean!</p>
       <p aria-live="polite">
-        Time taken:{' '}
-        <span className="block text-xl md:inline" aria-live="polite">
+        Time taken:
+        <span className="block text-xl md:ml-2 md:inline" aria-live="polite">
           {time} seconds
         </span>
       </p>

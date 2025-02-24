@@ -14,7 +14,6 @@ export const Footer = () => (
         rel="noopener noreferrer"
         aria-label="Site repo on GitHub (Opens in a new tab)"
       >
-        {' '}
         <Icon
           className="group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200"
           icon="cib:github"
