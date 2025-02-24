@@ -3,7 +3,7 @@ import { inconsolata, poppins, sourcesans, urbanist } from '../fonts/fonts'
 import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import { IconLinks } from './components/layout/icon-links/IconLinks'
-import { iconLinksData } from './components/layout/icon-links/constants/IconLinksData'
+import { ICON_LINKS_DATA } from './components/layout/icon-links/constants/IconLinksData'
 import {
   getBaseUrl,
   getPageTitle,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en">
     <head>
-      {iconLinksData.map((icon, index) => (
+      {ICON_LINKS_DATA.map((icon, index) => (
         <IconLinks key={index} {...icon} />
       ))}
       <meta
