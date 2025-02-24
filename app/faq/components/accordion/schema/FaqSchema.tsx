@@ -9,7 +9,7 @@ import {
   getImageUrl,
 } from '@/constants/baseData'
 
-export const description =
+export const DESCRIPTION =
   'Find the answers to my most frequently asked questions.'
 
 const SchemaInjector = dynamic(
@@ -22,7 +22,7 @@ const faqSchemaData: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   name: getPageTitle('FAQ'),
-  description: description,
+  description: DESCRIPTION,
   image: getImageUrl(),
   url: `${getBaseUrl('/faq')}`,
   datePublished: '2024-07-29T09:25:01.340Z',

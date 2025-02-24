@@ -13,10 +13,10 @@ import { MyJourney } from './components/home/my-journey/MyJourney'
 import { BASE_DESCRIPTION } from '@/constants/baseData'
 import '@/app/styles/overlay.css'
 
-const description = BASE_DESCRIPTION
+const DESCRIPTION = BASE_DESCRIPTION
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: '',
-  description,
+  description: DESCRIPTION,
   urlPath: '',
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'WebPage',

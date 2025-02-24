@@ -8,11 +8,11 @@ import { ProjectCategoryRenderer } from './components/project-categories/Project
 import { Project } from './types/Project.types'
 import { getBaseUrl, getPageTitle, getImageUrl } from '@/constants/baseData'
 
-const description = `View past projects by ${getPageTitle()}.`
+const DESCRIPTION = `View past projects by ${getPageTitle()}.`
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/projects')}`),
   alternates: {
     canonical: '/',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 }
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: 'Projects',
-  description,
+  description: DESCRIPTION,
   urlPath: '/projects',
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'WebPage',

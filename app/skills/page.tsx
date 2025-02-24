@@ -7,11 +7,11 @@ import { SkillsSection } from './components/skills/SkillsSection'
 import { TrainingsSection } from './components/trainings/TrainingsSection'
 import { getBaseUrl, getPageTitle, getImageUrl } from '@/constants/baseData'
 
-const description = `My skills. ${getPageTitle()}.`
+const DESCRIPTION = `My skills. ${getPageTitle()}.`
 
 export const metadata: Metadata = {
   title: 'Skills',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/skills')}`),
   alternates: {
     canonical: '/',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 }
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: 'Skills',
-  description,
+  description: DESCRIPTION,
   urlPath: '/skills',
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'WebPage',

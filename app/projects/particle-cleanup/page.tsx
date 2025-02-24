@@ -7,12 +7,12 @@ import { ParticleCleanupCopy } from './components/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from './components/ParticleCleanupGame'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
-const description =
+const DESCRIPTION =
   'How quickly can you clear all the particles from the board using your cursor or finger?'
 
 export const metadata: Metadata = {
   title: 'Particle Cleanup Game',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/projects/particle-cleanup')}`),
   alternates: {
     canonical: '/',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 }
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: 'Particle Cleanup Game',
-  description,
+  description: DESCRIPTION,
   urlPath: '/projects/particle-cleanup',
   publishDate: '2024-08-05T09:25:01.340Z',
   schemaType: 'WebPage',

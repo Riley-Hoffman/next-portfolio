@@ -7,12 +7,12 @@ import { ContactWrapper } from './components/ContactWrapper'
 import { Sidebar } from './components/sidebar/Sidebar'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
-const description =
+const DESCRIPTION =
   'Get in touch with web developer Riley Hoffman with the form on this page.'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/contact')}`),
   alternates: {
     canonical: '/',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: 'Contact',
-  description,
+  description: DESCRIPTION,
   urlPath: '/contact',
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'ContactPage',

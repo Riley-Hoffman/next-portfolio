@@ -6,12 +6,12 @@ import {
 } from '@/app/components/schema/SchemaGenerator'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
-const description =
+const DESCRIPTION =
   'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'
 
 export const metadata: Metadata = {
   title: 'Accessibility',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/accessibility')}`),
   alternates: {
     canonical: '/',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: 'Accessibility',
-  description,
+  description: DESCRIPTION,
   urlPath: '/accessibility',
   publishDate: '2024-08-07T09:25:01.340Z',
   schemaType: 'WebPage',
