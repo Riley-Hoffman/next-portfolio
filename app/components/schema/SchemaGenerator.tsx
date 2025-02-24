@@ -5,10 +5,10 @@ import { WithContext, WebPage, ContactPage } from 'schema-dts'
 import {
   getPageTitle,
   getBaseUrl,
-  author,
+  AUTHOR,
   getImageUrl,
-  githubUrl,
-  linkedInUrl,
+  GITHUB_URL,
+  LINKEDIN_URL,
 } from '@/constants/baseData'
 
 export interface SchemaGeneratorProps {
@@ -46,14 +46,14 @@ const generateSchema = ({
   datePublished: publishDate,
   mainEntity: {
     '@type': 'Person',
-    name: author,
+    name: AUTHOR,
     url: getBaseUrl(),
     jobTitle: 'Web Developer',
-    sameAs: [linkedInUrl, githubUrl],
+    sameAs: [LINKEDIN_URL, GITHUB_URL],
   },
   author: {
     '@type': 'Person',
-    name: author,
+    name: AUTHOR,
   },
 })
 

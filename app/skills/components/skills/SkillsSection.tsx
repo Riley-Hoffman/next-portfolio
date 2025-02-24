@@ -1,4 +1,4 @@
-import { skillsData } from './SkillsData'
+import { SKILLS_DATA } from './SkillsData'
 import { SkillItem } from './SkillItem'
 import '@/app/styles/background-accent.css'
 
@@ -10,7 +10,7 @@ export const SkillsSection = () => (
         className="mt-12 grid grid-cols-2 justify-items-center gap-x-6 gap-y-16 py-14 sm:grid-cols-3 md:grid-cols-4"
         aria-label="Skills"
       >
-        {skillsData.map((skill, index) => (
+        {SKILLS_DATA.map((skill, index) => (
           <SkillItem key={index} {...skill} />
         ))}
       </ul>

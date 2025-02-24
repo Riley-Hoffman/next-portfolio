@@ -1,11 +1,11 @@
 import { Icon } from '@iconify/react'
-import { carouselButtonsConfig } from './constants/carouselButtonsConfig'
+import { CAROUSEL_BUTTONS_CONFIG } from './constants/carouselButtonsConfig'
 import { useCarouselButtonVisibility } from './hooks/useCarouselButtonVisibility'
 
 export const CarouselButtons = () => {
   const buttonsRef = useCarouselButtonVisibility()
 
-  return carouselButtonsConfig.map((config, index) => (
+  return CAROUSEL_BUTTONS_CONFIG.map((config, index) => (
     <button
       key={config.label}
       ref={(el) => {

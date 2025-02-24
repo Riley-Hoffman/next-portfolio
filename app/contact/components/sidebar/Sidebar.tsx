@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
-import { sidebarLinks } from './constants/SidebarLinks'
+import { SIDEBAR_LINKS } from './constants/sidebarLinks'
 import './styles/sidebar.css'
 
 export const Sidebar = () => (
   <aside className="sidebar">
     <h3 className="mx-auto my-0 bg-heading text-accentone-200">Links</h3>
-    {sidebarLinks.map(({ name, url }, index) => (
+    {SIDEBAR_LINKS.map(({ name, url }, index) => (
       <a
         key={name}
         className={clsx(

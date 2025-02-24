@@ -10,10 +10,10 @@ import {
 } from './components/home/cover-image/CoverImage'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
-import { baseDescription } from '@/constants/baseData'
+import { BASE_DESCRIPTION } from '@/constants/baseData'
 import '@/app/styles/overlay.css'
 
-const description = baseDescription
+const description = BASE_DESCRIPTION
 const schemaData: SchemaGeneratorProps['schemaData'] = {
   title: '',
   description,

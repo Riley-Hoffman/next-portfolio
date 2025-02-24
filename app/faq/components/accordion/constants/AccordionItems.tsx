@@ -5,7 +5,7 @@ export interface AccordionItem {
   answer: React.ReactElement<{ children: React.ReactNode }>
 }
 
-const accordionItems: AccordionItem[] = [
+const ACCORDION_ITEMS: AccordionItem[] = [
   {
     question: 'Are you available for freelance work?',
     answer: (
@@ -48,5 +48,5 @@ const accordionItems: AccordionItem[] = [
   },
 ]
 
-export const questions = accordionItems.map((item) => item.question)
-export const answers = accordionItems.map((item) => item.answer)
+export const questions = ACCORDION_ITEMS.map((item) => item.question)
+export const answers = ACCORDION_ITEMS.map((item) => item.answer)

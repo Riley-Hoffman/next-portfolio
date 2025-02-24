@@ -1,7 +1,7 @@
-import { githubUrl, linkedInUrl, codeacademyUrl } from '@/constants/baseData'
+import { GITHUB_URL, LINKEDIN_URL, CODEACADEMY_URL } from '@/constants/baseData'
 
-export const sidebarLinks = [
-  { name: 'GitHub', url: githubUrl },
-  { name: 'LinkedIn', url: linkedInUrl },
-  { name: 'Codecademy', url: codeacademyUrl },
+export const SIDEBAR_LINKS = [
+  { name: 'GitHub', url: GITHUB_URL },
+  { name: 'LinkedIn', url: LINKEDIN_URL },
+  { name: 'Codecademy', url: CODEACADEMY_URL },
 ]

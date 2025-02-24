@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
-import { CarouselDataTypes } from './CarouselData'
+import { CAROUSEL_DATATypes } from './carouselData'
 import { NewTabContent } from '@/app/components/utils/NewTabContent'
 import { carouselStyle } from './lib/carouselStyle'
 
-export const Carousel = ({ slides }: { slides: CarouselDataTypes[] }) => {
+export const Carousel = ({ slides }: { slides: CAROUSEL_DATATypes[] }) => {
   const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     carouselStyle()

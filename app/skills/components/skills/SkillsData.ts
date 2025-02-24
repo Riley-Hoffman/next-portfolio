@@ -4,9 +4,9 @@ export interface Skill {
   classes?: string
 }
 
-const paddingRounding = ' p-[0.313rem] rounded-2xl'
+const PADDING_ROUNDING = ' p-[0.313rem] rounded-2xl'
 
-export const skillsData: Skill[] = [
+export const SKILLS_DATA: Skill[] = [
   { skill: 'HTML5', icon: 'skill-icons:html' },
   { skill: 'CSS3', icon: 'skill-icons:css' },
   { skill: 'Javascript + ES6', icon: 'skill-icons:javascript' },
@@ -26,7 +26,7 @@ export const skillsData: Skill[] = [
   {
     skill: 'Firebase',
     icon: 'devicon:firebase',
-    classes: `${paddingRounding} bg-white`,
+    classes: `${PADDING_ROUNDING} bg-white`,
   },
   { skill: 'Git', icon: 'skill-icons:git' },
   { skill: 'GitHub Actions', icon: 'skill-icons:githubactions-dark' },
@@ -35,16 +35,16 @@ export const skillsData: Skill[] = [
   {
     skill: 'WCAG',
     icon: 'file-icons:w3c',
-    classes: `${paddingRounding} bg-[#005a9c] text-white`,
+    classes: `${PADDING_ROUNDING} bg-[#005a9c] text-white`,
   },
   {
     skill: 'SEO',
     icon: 'fluent:globe-search-20-filled',
-    classes: `${paddingRounding} bg-[#FBBC05] text-[#4285F4]`,
+    classes: `${PADDING_ROUNDING} bg-[#FBBC05] text-[#4285F4]`,
   },
   {
     skill: 'Rest API',
     icon: 'file-icons:api-blueprint',
-    classes: `${paddingRounding} bg-[#edff74] text-teal-800`,
+    classes: `${PADDING_ROUNDING} bg-[#edff74] text-teal-800`,
   },
 ]

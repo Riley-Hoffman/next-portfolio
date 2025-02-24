@@ -7,7 +7,7 @@ import { iconLinksData } from './components/layout/icon-links/constants/IconLink
 import {
   getBaseUrl,
   getPageTitle,
-  baseDescription,
+  BASE_DESCRIPTION,
   getImageUrl,
 } from '@/constants/baseData'
 import './styles/globals.css'
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `%s - ${getPageTitle()}`,
     default: getPageTitle(),
   },
-  description: baseDescription,
+  description: BASE_DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl()}`),
   alternates: {
     canonical: '/',

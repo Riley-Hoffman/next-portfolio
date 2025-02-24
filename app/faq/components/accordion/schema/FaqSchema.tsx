@@ -5,7 +5,7 @@ import { questions, answers } from '../../accordion/constants/AccordionItems'
 import {
   getBaseUrl,
   getPageTitle,
-  author,
+  AUTHOR,
   getImageUrl,
 } from '@/constants/baseData'
 
@@ -36,7 +36,7 @@ const faqSchemaData: WithContext<FAQPage> = {
   })),
   author: {
     '@type': 'Person',
-    name: author,
+    name: AUTHOR,
   },
 }
 

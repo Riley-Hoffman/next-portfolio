@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
-import { getPageTitle, githubUrl, version } from '@/constants/baseData'
+import { getPageTitle, GITHUB_URL, VERSION } from '@/constants/baseData'
 
 export const Footer = () => (
   <footer>
     <h2>Footer</h2>
     <p>
-      {getPageTitle()} <small>(v{version}) </small>
+      {getPageTitle()} <small>(v{VERSION}) </small>
       <a
         className="group"
-        href={githubUrl}
+        href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Site repo on GitHub (Opens in a new tab)"
