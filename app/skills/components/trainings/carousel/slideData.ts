@@ -1,10 +1,10 @@
-export interface CAROUSEL_DATATypes {
+export interface SlideDataTypes {
   src: string
   url: string
   label: string
 }
 
-export const CAROUSEL_DATA: CAROUSEL_DATATypes[] = [
+export const SLIDE_DATA: SlideDataTypes[] = [
   {
     src: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnexpress.webp',
     url: 'https://www.codecademy.com/profiles/RileyHoffman/certificates/85396dd6e2e850ab34e904243aa464c6',
