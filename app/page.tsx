@@ -14,7 +14,7 @@ import { BASE_DESCRIPTION } from '@/constants/baseData'
 import '@/app/styles/overlay.css'
 
 const DESCRIPTION = BASE_DESCRIPTION
-const schemaData: SchemaGeneratorProps['schemaData'] = {
+const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
   title: '',
   description: DESCRIPTION,
   urlPath: '',
@@ -37,7 +37,7 @@ const LazySiteTechStack = dynamic(
 
 const Home = () => (
   <>
-    <SchemaGenerator schemaData={schemaData} />
+    <SchemaGenerator schemaData={SCHEMA_DATA} />
     <CoverImage coverImageData={coverImageData} />
     <MyJourney />
     <LazySiteTechStack />

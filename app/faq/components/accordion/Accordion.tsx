@@ -12,8 +12,9 @@ interface AccProps {
 }
 
 export const Accordion = ({ items, label }: AccProps) => {
-  const { accOpen, handleAccClick, buttonRefs, contentRefs } =
-    useAccordion(items.length)
+  const { accOpen, handleAccClick, buttonRefs, contentRefs } = useAccordion(
+    items.length
+  )
 
   const debouncedHandleAccClick = useDebounce((index: number) => {
     handleAccClick(index)

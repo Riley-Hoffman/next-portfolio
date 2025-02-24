@@ -1,15 +1,12 @@
 import { Metadata } from 'next'
-import { FaqSchema, description } from './components/accordion/schema/FaqSchema'
+import { FaqSchema, DESCRIPTION } from './components/accordion/schema/FaqSchema'
 import { Accordion } from './components/accordion/Accordion'
-import {
-  questions,
-  answers,
-} from './components/accordion/constants/AccItems'
+import { QUESTIONS, ANSWERS } from './components/accordion/constants/AccItems'
 import { getBaseUrl, getImageUrl } from '@/constants/baseData'
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: description,
+  description: DESCRIPTION,
   metadataBase: new URL(`${getBaseUrl('/faq')}`),
   alternates: {
     canonical: '/',
@@ -29,9 +26,9 @@ const Faq = () => {
       <FaqSchema />
       <h1 className="heading-one">Frequently Asked Questions</h1>
       <Accordion
-        items={questions.map((question, index) => ({
+        items={QUESTIONS.map((question, index) => ({
           question,
-          answer: answers[index],
+          answer: ANSWERS[index],
         }))}
         label="Frequently Asked Questions"
       />

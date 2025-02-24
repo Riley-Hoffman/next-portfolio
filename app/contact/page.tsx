@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 }
 
-const schemaData: SchemaGeneratorProps['schemaData'] = {
+const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
   title: 'Contact',
   description: DESCRIPTION,
   urlPath: '/contact',
@@ -36,7 +36,7 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
 
 const Contact = () => (
   <>
-    <SchemaGenerator schemaData={schemaData} />
+    <SchemaGenerator schemaData={SCHEMA_DATA} />
     <h1 className="heading-one">Contact Me</h1>
     <div className="max-w-5xl md:flex">
       <ContactWrapper />

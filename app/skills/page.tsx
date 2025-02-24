@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: `${getBaseUrl('/skills')}`,
   },
 }
-const schemaData: SchemaGeneratorProps['schemaData'] = {
+const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
   title: 'Skills',
   description: DESCRIPTION,
   urlPath: '/skills',
@@ -34,7 +34,7 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
 
 const Skills = () => (
   <>
-    <SchemaGenerator schemaData={schemaData} />
+    <SchemaGenerator schemaData={SCHEMA_DATA} />
     <SkillsSection />
     <TrainingsSection />
   </>

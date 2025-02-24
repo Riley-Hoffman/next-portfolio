@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 }
 
-const schemaData: SchemaGeneratorProps['schemaData'] = {
+const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
   title: 'Accessibility',
   description: DESCRIPTION,
   urlPath: '/accessibility',
@@ -35,7 +35,7 @@ const schemaData: SchemaGeneratorProps['schemaData'] = {
 
 const Accessibility = () => (
   <>
-    <SchemaGenerator schemaData={schemaData} />
+    <SchemaGenerator schemaData={SCHEMA_DATA} />
     <h1 className="heading-one">Accessibility</h1>
     <div className="max-w-screen-md pb-[13vh] pt-7">
       <h2>My Commitment</h2>

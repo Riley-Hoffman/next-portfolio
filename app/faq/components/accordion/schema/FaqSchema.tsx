@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { FAQPage, WithContext } from 'schema-dts'
-import { questions, answers } from '../constants/AccItems'
+import { QUESTIONS, ANSWERS } from '../constants/AccItems'
 import {
   getBaseUrl,
   getPageTitle,
@@ -26,12 +26,12 @@ const faqSchemaData: WithContext<FAQPage> = {
   image: getImageUrl(),
   url: `${getBaseUrl('/faq')}`,
   datePublished: '2024-07-29T09:25:01.340Z',
-  mainEntity: questions.map((question, index) => ({
+  mainEntity: QUESTIONS.map((question, index) => ({
     '@type': 'Question',
     name: question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `${answers[index].props.children}`,
+      text: `${ANSWERS[index].props.children}`,
     },
   })),
   author: {

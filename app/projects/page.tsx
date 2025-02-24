@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: `${getBaseUrl('/projects')}`,
   },
 }
-const schemaData: SchemaGeneratorProps['schemaData'] = {
+const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
   title: 'Projects',
   description: DESCRIPTION,
   urlPath: '/projects',
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
   const projects = (await fetchFirebaseData<Project[]>('/projects')).flat()
   return (
     <>
-      <SchemaGenerator schemaData={schemaData} />
+      <SchemaGenerator schemaData={SCHEMA_DATA} />
       <h1 className="heading-one">Projects</h1>
       <ProjectCategoryRenderer projects={projects ?? []} />
     </>

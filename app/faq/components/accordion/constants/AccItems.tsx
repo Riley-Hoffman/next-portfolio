@@ -48,5 +48,5 @@ const ACC_ITEMS: AccItem[] = [
   },
 ]
 
-export const questions = ACC_ITEMS.map((item) => item.question)
-export const answers = ACC_ITEMS.map((item) => item.answer)
+export const QUESTIONS = ACC_ITEMS.map((item) => item.question)
+export const ANSWERS = ACC_ITEMS.map((item) => item.answer)
