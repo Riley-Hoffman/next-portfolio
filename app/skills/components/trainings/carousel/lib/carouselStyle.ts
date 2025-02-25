@@ -3,6 +3,6 @@ export const carouselStyle = async () => {
     import('swiper/css'),
     import('swiper/css/navigation'),
     import('swiper/css/pagination'),
-    import('../styles/custom-swiper.css'),
+    import('../styles/carousel.css'),
   ])
 }
