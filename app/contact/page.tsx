@@ -3,9 +3,9 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { ContactWrapper } from './components/ContactWrapper'
-import { Sidebar } from './components/sidebar/Sidebar'
-import { getBaseUrl, getImageUrl } from '@/constants/baseData'
+import { ContactWrapper } from '@/app/components/contact/ContactWrapper'
+import { Sidebar } from '@/app/components/contact/sidebar/Sidebar'
+import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'Get in touch with web developer Riley Hoffman with the form on this page.'

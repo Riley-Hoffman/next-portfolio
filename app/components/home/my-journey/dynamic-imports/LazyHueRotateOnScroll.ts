@@ -1,4 +1,4 @@
-import { useHueRotateOnScroll } from '@/hooks/useHueRotateOnScroll'
+import { useHueRotateOnScroll } from '@/app/hooks/shared/useHueRotateOnScroll'
 
 const LazyHueRotateOnScroll = ({
   sectionRef,

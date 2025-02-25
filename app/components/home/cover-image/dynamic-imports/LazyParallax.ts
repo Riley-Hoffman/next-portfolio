@@ -1,4 +1,4 @@
-import { useParallax } from '@/hooks/useParallax'
+import { useParallax } from '@/app/hooks/shared/useParallax'
 
 const LazyUseParallax = ({
   parallaxRef,

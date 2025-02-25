@@ -1,6 +1,6 @@
 import { TechItem } from './TechItem'
 import packageJson from '@/package.json'
-import './styles/site-tech-stack.css'
+import '@/app/styles/home/site-tech-stack.css'
 
 export interface Tech {
   name: string

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useHamburger } from './hooks/useHamburger'
+import { useHamburger } from '@/app/hooks/nav/useHamburger'
 
 export interface HamburgerProps {
   expanded?: (isExpanded: boolean) => void

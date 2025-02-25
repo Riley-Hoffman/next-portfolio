@@ -3,9 +3,9 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { SkillsSection } from './components/skills/SkillsSection'
-import { TrainingsSection } from './components/trainings/TrainingsSection'
-import { getBaseUrl, getPageTitle, getImageUrl } from '@/constants/baseData'
+import { SkillsSection } from '@/app/components/skills/skills/SkillsSection'
+import { TrainingsSection } from '@/app/components/skills/trainings/TrainingsSection'
+import { getBaseUrl, getPageTitle, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION = `My skills. ${getPageTitle()}.`
 

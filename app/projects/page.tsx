@@ -3,10 +3,10 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { fetchFirebaseData } from '@/lib/fetchFirebaseData'
-import { ProjectCategoryRenderer } from './components/project-categories/ProjectCategoryRenderer'
-import { Project } from './types/Project.types'
-import { getBaseUrl, getPageTitle, getImageUrl } from '@/constants/baseData'
+import { fetchFirebaseData } from '@/app/utils/fetchFirebaseData'
+import { ProjectCategoryRenderer } from '@/app/components/projects/project-categories/ProjectCategoryRenderer'
+import { Project } from '@/app/types/projects/Project.types'
+import { getBaseUrl, getPageTitle, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION = `View past projects by ${getPageTitle()}.`
 

@@ -3,9 +3,9 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { ParticleCleanupCopy } from './components/content/ParticleCleanupCopy'
-import { ParticleCleanupGame } from './components/ParticleCleanupGame'
-import { getBaseUrl, getImageUrl } from '@/constants/baseData'
+import { ParticleCleanupCopy } from '@/app/components/projects/particle-cleanup/content/ParticleCleanupCopy'
+import { ParticleCleanupGame } from '@/app/components/projects/particle-cleanup/ParticleCleanupGame'
+import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'How quickly can you clear all the particles from the board using your cursor or finger?'

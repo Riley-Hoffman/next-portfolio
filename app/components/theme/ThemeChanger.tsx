@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { useThemeInfo } from './hooks/useThemeInfo'
+import { useThemeInfo } from '@/app/hooks/theme/useThemeInfo'
 
 export const ThemeChanger = () => {
   const themeInfo = useThemeInfo()

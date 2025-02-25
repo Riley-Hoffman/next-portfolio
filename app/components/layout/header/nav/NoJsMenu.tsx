@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { useRoutes } from '@/hooks/useRoutes'
-import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import { useRoutes } from '@/app/hooks/shared/useRoutes'
+import { NewTabContent } from '@/app/components/shared/NewTabContent'
 
 const NO_JS_MENU_LINK_CLASSES = 'button p-2 py-1 md:py-2 md:px-3'
 

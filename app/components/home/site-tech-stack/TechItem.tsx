@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
 import { Tech } from './SiteTechStack'
-import { NewTabContent } from '@/app/components/utils/NewTabContent'
+import { NewTabContent } from '@/app/components/shared/NewTabContent'
 
 export const TechItem = ({ name, logo, url, version }: Tech) => (
   <>

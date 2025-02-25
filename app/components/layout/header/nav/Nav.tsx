@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useRoutes } from '@/hooks/useRoutes'
+import { useRoutes } from '@/app/hooks/shared/useRoutes'
 import { Hamburger } from './hamburger/Hamburger'
 import { NavListItem } from './NavListItem'
-import { useLinkVisibility } from './hooks/useLinkVisibility'
+import { useLinkVisibility } from '@/app/hooks/nav/useLinkVisibility'
 
 export const Nav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)

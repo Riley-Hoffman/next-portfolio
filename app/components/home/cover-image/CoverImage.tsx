@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import './styles/cover-image.css'
+import '@/app/styles/home/cover-image.css'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
   ssr: false,

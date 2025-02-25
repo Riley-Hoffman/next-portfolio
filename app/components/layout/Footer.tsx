@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
-import { getPageTitle, GITHUB_URL, VERSION } from '@/constants/baseData'
+import { getPageTitle, GITHUB_URL, VERSION } from '@/app/constants/baseData'
 
 export const Footer = () => (
   <footer>

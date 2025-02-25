@@ -1,4 +1,4 @@
-import { ThemeChanger } from '../../../theme/ThemeChanger'
+import { ThemeChanger } from '@/app/components/theme/ThemeChanger'
 import { Nav } from '../nav/Nav'
 
 const ThemeChangerNav = () => (

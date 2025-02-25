@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { inconsolata, poppins, sourcesans, urbanist } from '../fonts/fonts'
+import { inconsolata, poppins, sourcesans, urbanist } from './fonts/fonts'
 import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import { IconLinks } from './components/layout/icon-links/IconLinks'
@@ -9,7 +9,7 @@ import {
   getPageTitle,
   BASE_DESCRIPTION,
   getImageUrl,
-} from '@/constants/baseData'
+} from '@/app/constants/baseData'
 import './styles/globals.css'
 
 export const metadata: Metadata = {
