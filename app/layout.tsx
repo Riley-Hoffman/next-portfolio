@@ -3,7 +3,7 @@ import { inconsolata, poppins, sourcesans, urbanist } from './fonts/fonts'
 import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import { IconLinks } from './components/layout/icon-links/IconLinks'
-import { ICON_LINKS_DATA } from './components/layout/icon-links/constants/iconLinksData'
+import { ICON_LINKS_DATA } from './components/layout/icon-links/constants/iconLinkAttributes'
 import {
   getBaseUrl,
   getPageTitle,
