@@ -48,7 +48,7 @@ describe('useTimedEffect', () => {
     })
 
     act(() => {
-      result.current.cleanup()
+      result.current.clearTimer()
     })
 
     jest.advanceTimersByTime(1000)
