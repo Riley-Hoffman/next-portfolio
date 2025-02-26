@@ -23,8 +23,9 @@ export const useParallax = (
 
     if (scrollY < 0) return
 
-    const translateX = -(height - scrollY) * velocity
-    const translateY = -(height - scrollY) * (velocity + 0.1)
+    const amountScrolled = height - scrollY
+    const translateX = -amountScrolled * velocity
+    const translateY = -amountScrolled * (velocity + 0.1)
 
     if (Number.isFinite(translateX) && Number.isFinite(translateY)) {
       imgRef.current.style.transform = `translate(${pxToRem(translateX)}rem, ${pxToRem(translateY)}rem)`
