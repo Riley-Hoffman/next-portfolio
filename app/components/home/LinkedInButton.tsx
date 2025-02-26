@@ -6,7 +6,7 @@ import { NewTabContent } from '@/app/components/shared/NewTabContent'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { triggerEffect, cleanup } = useTimedEffect(1000)
+  const { triggerEffect, clearTimer } = useTimedEffect(1000)
 
   const applyEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
@@ -20,8 +20,8 @@ export const LinkedInButton = () => {
   }
 
   useEffect(() => {
-    return cleanup
-  }, [cleanup])
+    return clearTimer
+  }, [clearTimer])
 
   return (
     <Link
