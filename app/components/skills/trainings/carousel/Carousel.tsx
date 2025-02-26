@@ -11,7 +11,9 @@ import { carouselStyle } from '@/app/utils/carouselStyle'
 export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
   const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    carouselStyle()
+    (async () => {
+      await carouselStyle()
+    })()
   }, [])
 
   return (
