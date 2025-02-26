@@ -1,11 +1,11 @@
 import { useHueRotateOnScroll } from '@/app/hooks/shared/useHueRotateOnScroll'
 
 const LazyHueRotateOnScroll = ({
-  sectionRef,
+  hueElRef,
 }: {
-  sectionRef: React.RefObject<HTMLElement | null>
+  hueElRef: React.RefObject<HTMLElement | null>
 }) => {
-  useHueRotateOnScroll(sectionRef)
+  useHueRotateOnScroll(hueElRef)
   return null
 }
 

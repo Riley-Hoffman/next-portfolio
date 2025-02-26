@@ -4,11 +4,11 @@ import { useReducedMotion } from './useReducedMotion'
 import { useDebounce } from './useDebounce'
 
 export const useHueRotateOnScroll = (
-  sectionRef: React.RefObject<HTMLElement | null>
+  hueElRef: React.RefObject<HTMLElement | null>
 ) => {
   const scrollRef = useRef<number>(0)
   const prefersReducedMotion = useReducedMotion()
-  const [hueFilter, setHueFilter] = useState<string>('')
+  const [hueFilter, setHueFilter] = useState('')
 
   const applyHueRotate = useCallback(() => {
     if (typeof window === 'undefined' || prefersReducedMotion) {
@@ -25,21 +25,17 @@ export const useHueRotateOnScroll = (
   }, [prefersReducedMotion])
 
   const debouncedApplyHueRotate = useDebounce(applyHueRotate, 100)
-
   useScrollHandler(debouncedApplyHueRotate)
 
   useEffect(() => {
-    if (sectionRef.current) {
-      sectionRef.current.style.filter = hueFilter
+    const element = hueElRef.current
+    if (element) {
+      element.style.filter = hueFilter
     }
-  }, [hueFilter, sectionRef])
-
-  useEffect(() => {
-    const currentSection = sectionRef.current
     return () => {
-      if (currentSection) {
-        currentSection.style.filter = ''
+      if (element) {
+        element.style.filter = ''
       }
     }
-  }, [sectionRef])
+  }, [hueFilter, hueElRef])
 }

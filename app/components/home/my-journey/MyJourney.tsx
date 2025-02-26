@@ -8,11 +8,11 @@ const LazyHueRotateOnScroll = dynamic(
 )
 
 export const MyJourney = () => {
-  const sectionRef = useRef<HTMLElement | null>(null)
+  const hueElRef = useRef<HTMLElement | null>(null)
   return (
     <>
       <section
-        ref={sectionRef}
+        ref={hueElRef}
         className="pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark md:flex md:items-center"
       >
         <figure itemScope itemType="https://schema.org/ImageObject">
@@ -57,7 +57,7 @@ export const MyJourney = () => {
           <LinkedInButton />
         </div>
       </section>
-      <LazyHueRotateOnScroll sectionRef={sectionRef} />
+      <LazyHueRotateOnScroll hueElRef={hueElRef} />
     </>
   )
 }
