@@ -12,11 +12,10 @@ export const useReloadAnimation = (
     if (
       refs.current?.animationFrameId !== null &&
       refs.current?.animationFrameId !== undefined
-    ) {
+    )
       cancelAnimationFrame(refs.current.animationFrameId)
-    }
 
-    if (refs.current) {
+    if (refs.current)
       Object.assign(refs.current, {
         allClean: false,
         startTime: null,
@@ -25,7 +24,6 @@ export const useReloadAnimation = (
         particlesArray: [],
         isMobile: null,
       })
-    }
 
     dispatch({ type: 'RESET_GAME' })
     initializeAnimation()

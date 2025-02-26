@@ -14,9 +14,7 @@ export const useParallax = (
   const parallaxRef = externalRef ?? internalRef
 
   const updateImagePosition = useCallback(() => {
-    if (!parallaxRef.current || !imgRef.current || prefersReducedMotion) {
-      return
-    }
+    if (!parallaxRef.current || !imgRef.current || prefersReducedMotion) return
 
     const height = parallaxRef.current.offsetHeight - 18
     const scrollY = window.scrollY
@@ -37,9 +35,7 @@ export const useParallax = (
     const setImgRef = () => {
       if (parallaxRef.current) {
         const imgElement = parallaxRef.current.querySelector('img')
-        if (imgElement) {
-          imgRef.current = imgElement
-        }
+        if (imgElement) imgRef.current = imgElement
       }
     }
 

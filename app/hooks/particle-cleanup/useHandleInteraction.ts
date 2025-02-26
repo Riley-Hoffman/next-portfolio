@@ -17,14 +17,13 @@ export const useHandleInteraction = (
         : (event as MouseEvent)
 
       if (clientX !== undefined && clientY !== undefined) {
-        if (['mousemove', 'touchmove'].includes(event.type)) {
+        if (['mousemove', 'touchmove'].includes(event.type))
           updateCursorPosition(clientX, clientY)
-        }
 
         if (refs.current.cursorInsideCanvas !== isInside) {
           refs.current.cursorInsideCanvas = isInside
 
-          if (isInside) {
+          if (isInside)
             setTimeout(
               () =>
                 refs.current.container?.scrollIntoView({
@@ -33,18 +32,14 @@ export const useHandleInteraction = (
                 }),
               100
             )
-          }
 
-          if (gameData.gameInProgress) {
+          if (gameData.gameInProgress)
             sayMessageTemporarily(
               `Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`
             )
-          }
         }
 
-        if (isTouchEvent) {
-          event.preventDefault()
-        }
+        if (isTouchEvent) event.preventDefault()
       }
     },
     [refs, updateCursorPosition, gameData.gameInProgress, sayMessageTemporarily]

@@ -24,9 +24,7 @@ type allOrMain = 'all' | 'main'
 
 export const useRoutes = (routes: allOrMain): Route[] => {
   return useMemo(() => {
-    if (routes === 'main') {
-      return RouteList.filter((route) => route.mainRoute)
-    }
+    if (routes === 'main') return RouteList.filter((route) => route.mainRoute)
     return RouteList
   }, [routes])
 }

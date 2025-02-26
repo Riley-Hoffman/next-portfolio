@@ -39,9 +39,8 @@ export const useAccordion = (itemsLength: number) => {
       }
     })
 
-    if (openIndex !== null && contentRefs[openIndex].current) {
+    if (openIndex !== null && contentRefs[openIndex].current)
       contentRefs[openIndex].current.focus()
-    }
   }, [accOpen, buttonRefs, contentRefs, openIndex])
 
   return {

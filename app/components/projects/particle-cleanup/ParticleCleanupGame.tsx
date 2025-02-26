@@ -11,16 +11,14 @@ export const ParticleCleanupGame = () => {
     useParticleCleanupGame(completionMessageRef)
 
   const renderCompletionMessage = () => {
-    if (refs.current.allClean) {
-      return (
-        <CompletionMessage
-          medalDetails={medalDetails}
-          time={gameData.time}
-          ref={completionMessageRef}
-        />
-      )
-    }
-    return null
+    if (!refs.current.allClean) return null
+    return (
+      <CompletionMessage
+        medalDetails={medalDetails}
+        time={gameData.time}
+        ref={completionMessageRef}
+      />
+    )
   }
 
   const renderCursorMessage = () => {

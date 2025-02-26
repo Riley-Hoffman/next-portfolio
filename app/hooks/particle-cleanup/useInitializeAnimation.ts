@@ -12,9 +12,8 @@ export const useInitializeAnimation = (
   const initializeAnimation = useCallback(() => {
     const ctx = refs.current.canvas?.getContext('2d')
 
-    if (refs.current.container?.classList.contains('done')) {
+    if (refs.current.container?.classList.contains('done'))
       refs.current.container.classList.remove('done')
-    }
 
     if (refs.current.container) {
       const { width, height } = refs.current.container.getBoundingClientRect()
@@ -28,9 +27,7 @@ export const useInitializeAnimation = (
 
       if (refs.current.canvas) {
         initParticles(refs.current.canvas)
-        if (ctx) {
-          animateParticles(ctx, refs.current.canvas)
-        }
+        if (ctx) animateParticles(ctx, refs.current.canvas)
       }
     }
   }, [initParticles, animateParticles, refs])

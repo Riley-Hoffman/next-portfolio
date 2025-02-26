@@ -21,9 +21,8 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
       const distance = parseInt(element.dataset.distance ?? '800', 10)
       const newActiveState = getActiveState(rect, distance)
 
-      if (element.dataset.active !== newActiveState) {
+      if (element.dataset.active !== newActiveState)
         element.dataset.active = newActiveState
-      }
     }
     const updateTriggerOnScroll = () => {
       requestAnimationFrame(() => {

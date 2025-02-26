@@ -22,9 +22,7 @@ export const DynamicThemeProvider = ({
     setIsMounted(true)
   }, [])
 
-  if (!isMounted) {
-    return <div className="animate-delayedfadein">{children}</div>
-  }
+  if (!isMounted) return <div className="animate-delayedfadein">{children}</div>
 
   return (
     <NextThemesProvider

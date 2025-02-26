@@ -40,11 +40,10 @@ export const useParticleCleanupEvents = (
       handler: EventListener,
       options?: AddEventListenerOptions
     ) => {
-      if (element) {
+      if (element)
         eventTypes.forEach((eventType) => {
           element[`${action}EventListener`](eventType, handler, options)
         })
-      }
     }
 
     manageEventListeners('add', localRefs.container, events, handleEvent, {
@@ -65,16 +64,14 @@ export const useParticleCleanupEvents = (
     window.addEventListener('resize', handleResize)
 
     return () => {
-      if (localRefs.container) {
+      if (localRefs.container)
         manageEventListeners('remove', localRefs.container, events, handleEvent)
-      }
 
       window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('resize', handleResize)
 
-      if (typeof localRefs.animationFrameId === 'number') {
+      if (typeof localRefs.animationFrameId === 'number')
         cancelAnimationFrame(localRefs.animationFrameId)
-      }
     }
   }, [refs, handleInteraction, handleScroll, initializeAnimation])
 }

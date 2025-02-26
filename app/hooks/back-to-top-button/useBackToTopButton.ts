@@ -21,9 +21,7 @@ export const useBackToTopButton = () => {
   }, [debouncedHandleScroll])
 
   const scrollToTop = () => {
-    if (isBrowser()) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
+    if (isBrowser()) window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return { visible, scrollToTop }

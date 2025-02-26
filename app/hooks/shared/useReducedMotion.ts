@@ -4,9 +4,8 @@ import { isBrowser } from '@/app/utils/isBrowser'
 export const useReducedMotion = (): boolean => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(
     () => {
-      if (isBrowser()) {
+      if (isBrowser())
         return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      }
       return false
     }
   )

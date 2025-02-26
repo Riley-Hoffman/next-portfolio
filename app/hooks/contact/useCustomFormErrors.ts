@@ -22,9 +22,7 @@ export const useCustomFormErrors = (initialState: FormValue) => {
   }, [formState])
 
   useEffect(() => {
-    if (submitted) {
-      assignFormErrors()
-    }
+    if (submitted) assignFormErrors()
   }, [submitted, assignFormErrors])
 
   const handleChange =

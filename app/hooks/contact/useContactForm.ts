@@ -20,9 +20,7 @@ export const useContactForm = ({
 
   useEffect(() => {
     const errorMessages = Object.values(errors).filter(Boolean) as string[]
-    if (errorMessages.length) {
-      onErrors(errorMessages)
-    }
+    if (errorMessages.length) onErrors(errorMessages)
   }, [errors, onErrors])
 
   const fetchCsrfToken = async () => {
@@ -32,9 +30,8 @@ export const useContactForm = ({
       csrfTokenRef.current = data.token ?? null
       csrfSecretRef.current = data.secret ?? null
 
-      if (!csrfTokenRef.current || !csrfSecretRef.current) {
+      if (!csrfTokenRef.current || !csrfSecretRef.current)
         console.error('Failed to fetch CSRF token and secret.')
-      }
     } catch (error) {
       console.error('Error fetching CSRF token:', error)
     }

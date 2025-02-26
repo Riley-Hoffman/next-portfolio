@@ -47,9 +47,7 @@ export const useParticleCleanupGame = (
         mouse.x = clientX - rect.left
         mouse.y = clientY - rect.top
 
-        if (refs.current.startTime === null) {
-          refs.current.startTime = Date.now()
-        }
+        if (refs.current.startTime === null) refs.current.startTime = Date.now()
       }
     },
     [mouse]
@@ -71,34 +69,29 @@ export const useParticleCleanupGame = (
 
   const handleScroll = useCallback(
     (event: Event) => {
-      if (gameData.gameInProgress && refs.current.cursorInsideCanvas) {
+      if (gameData.gameInProgress && refs.current.cursorInsideCanvas)
         event.preventDefault()
-      }
     },
     [gameData.gameInProgress]
   )
 
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
-      if (canvas) {
+      if (canvas)
         refs.current.particlesArray = Array.from({ length: 150 }, () =>
           createParticle(canvas)
         )
-      }
     },
     [createParticle]
   )
 
   const handleGameCompletion = useCallback(() => {
-    if (refs.current.allClean) {
-      return
-    }
+    if (refs.current.allClean) return
 
-    if (refs.current.startTime !== null) {
+    if (refs.current.startTime !== null)
       refs.current.elapsedTime = parseFloat(
         ((Date.now() - refs.current.startTime) / 1000).toFixed(1)
       )
-    }
 
     refs.current.allClean = true
     dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })

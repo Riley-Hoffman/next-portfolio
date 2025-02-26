@@ -5,19 +5,30 @@ export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
   const [hide, setHide] = useState<boolean>(false)
   const timeoutId = useRef<NodeJS.Timeout | null>(null)
 
-  const handleHideShowLinks = useCallback(() => {
-    if (timeoutId.current) {
-      clearTimeout(timeoutId.current)
-    }
+  const manageTimeout = useCallback(
+    (shouldSet: boolean) => {
+      if (timeoutId.current) {
+        clearTimeout(timeoutId.current)
+        timeoutId.current = null
+      }
+      if (shouldSet) {
+        timeoutId.current = setTimeout(() => {
+          setHide(true)
+        }, timeout)
+      } else {
+        setHide(false)
+      }
+    },
+    [timeout]
+  )
 
+  const handleHideShowLinks = useCallback(() => {
     if (window.innerWidth <= 700 && !isExpanded) {
-      timeoutId.current = setTimeout(() => {
-        setHide(true)
-      }, timeout)
+      manageTimeout(true)
     } else {
-      setHide(false)
+      manageTimeout(false)
     }
-  }, [isExpanded, timeout])
+  }, [isExpanded, manageTimeout])
 
   const debouncedHandleHideShowLinks = useDebounce(handleHideShowLinks, 100)
 
@@ -27,11 +38,9 @@ export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
 
     return () => {
       window.removeEventListener('resize', debouncedHandleHideShowLinks)
-      if (timeoutId.current) {
-        clearTimeout(timeoutId.current)
-      }
+      manageTimeout(false)
     }
-  }, [debouncedHandleHideShowLinks, handleHideShowLinks])
+  }, [debouncedHandleHideShowLinks, handleHideShowLinks, manageTimeout])
 
   return hide
 }
