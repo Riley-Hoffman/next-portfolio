@@ -4,7 +4,7 @@ import csrf from 'csrf'
 
 const csrfProtection = new csrf()
 
-export async function GET() {
+export const GET = async () => {
   const secret = csrfProtection.secretSync()
   const token = csrfProtection.create(secret)
 

@@ -31,7 +31,7 @@ const sendMail = async (name: string, email: string, message: string) => {
   })
 }
 
-export async function POST(request: Request) {
+export const POST = async (request: Request) => {
   try {
     const csrfTokenFromRequest = request.headers.get('csrf-token')
     const secretFromRequest = request.headers.get('csrf-secret')

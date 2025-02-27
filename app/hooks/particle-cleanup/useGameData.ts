@@ -18,7 +18,7 @@ const initialGameData: GameData = {
   cursorMessage: '',
 }
 
-function reducer(gameData: GameData, action: Action): GameData {
+const reducer = (gameData: GameData, action: Action): GameData => {
   switch (action.type) {
     case 'START_GAME':
       return {
@@ -42,7 +42,7 @@ function reducer(gameData: GameData, action: Action): GameData {
   }
 }
 
-export function useGameData() {
+export const useGameData = () => {
   const [gameData, dispatch] = useReducer(reducer, initialGameData)
   return [gameData, dispatch] as const
 }
