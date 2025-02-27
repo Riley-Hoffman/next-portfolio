@@ -14,12 +14,12 @@ export const useReducedMotion = (): boolean => {
     if (!isBrowser()) return
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
     const handler = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(event.matches)
     }
 
     mediaQuery.addEventListener('change', handler)
-
     return () => mediaQuery.removeEventListener('change', handler)
   }, [])
 

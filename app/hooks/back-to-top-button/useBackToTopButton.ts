@@ -13,7 +13,6 @@ export const useBackToTopButton = () => {
 
   useEffect(() => {
     if (!isBrowser()) return
-
     window.addEventListener('scroll', debouncedHandleScroll)
     return () => window.removeEventListener('scroll', debouncedHandleScroll)
   }, [debouncedHandleScroll])
