@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { SIDEBAR_EXTERNAL_LINKS } from './constants/sidebarExternalLinks'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import '@/app/styles/contact/sidebar.css'
 
 export const Sidebar = () => (
@@ -14,8 +15,7 @@ export const Sidebar = () => (
           index === 0 ? 'pb-2 pt-3' : 'pb-3 pt-2'
         )}
         href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...EXTERNAL_LINK_ATTR}
       >
         {name} <NewTabContent />
       </a>

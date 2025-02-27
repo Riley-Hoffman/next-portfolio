@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useTimedEffect } from '@/app/hooks/shared/useTimedEffect'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
@@ -28,9 +29,8 @@ export const LinkedInButton = () => {
       ref={buttonRef}
       className="group button m-5 inline-block pr-6 text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseEnter={handleMouseEnter} // Moved function outside
+      onMouseEnter={handleMouseEnter}
+      {...EXTERNAL_LINK_ATTR}
     >
       <Icon
         className="mr-6 box-content bg-accentone-300 p-2 text-5xl text-heading group-hover:bg-heading group-hover:text-accentone-300 dark:bg-[#292d11]"

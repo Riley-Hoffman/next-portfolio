@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { getPageTitle, GITHUB_URL, VERSION } from '@/app/constants/baseData'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 export const Footer = () => (
   <footer>
@@ -10,9 +11,8 @@ export const Footer = () => (
       <a
         className="group"
         href={GITHUB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="Site repo on GitHub (Opens in a new tab)"
+        {...EXTERNAL_LINK_ATTR}
       >
         <Icon
           className="group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200"

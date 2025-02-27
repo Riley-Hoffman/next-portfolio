@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 interface NavListItemProps {
   to?: string
@@ -25,8 +26,7 @@ export const NavListItem = ({
         <a
           className={clsx({ hidden: hide })}
           href={resume}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...EXTERNAL_LINK_ATTR}
         >
           Resume
           <NewTabContent />

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { Project } from '@/app/types/projects/Project.types'
 
 export const ProjectContent = ({
@@ -32,8 +33,7 @@ export const ProjectContent = ({
       <a
         className={projectLinkClasses}
         href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...EXTERNAL_LINK_ATTR}
       >
         <SrText />
         {label}

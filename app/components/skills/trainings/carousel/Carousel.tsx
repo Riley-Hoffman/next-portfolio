@@ -6,12 +6,13 @@ import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
 import { SlideDataTypes } from './constants/slideData'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
+import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
   const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -53,7 +54,7 @@ export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.src}>
-            <a href={slide.url} target="_blank" rel="noopener noreferrer">
+            <a href={slide.url} {...EXTERNAL_LINK_ATTR}>
               <Image
                 src={slide.src}
                 alt={slide.label}
