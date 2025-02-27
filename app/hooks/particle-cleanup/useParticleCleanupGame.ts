@@ -41,10 +41,9 @@ export const useParticleCleanupGame = (
     [mouse]
   )
 
-  const sayMessageTemporarily = useCallback(
+  const sayCursorMessage = useCallback(
     (message: string) => {
       dispatch({ type: 'SET_CURSOR_MESSAGE', message })
-      setTimeout(() => dispatch({ type: 'MARK_MESSAGE_READ' }), 100)
     },
     [dispatch]
   )
@@ -52,7 +51,7 @@ export const useParticleCleanupGame = (
   const handleInteraction = useHandleInteraction(
     refs,
     updateCursorPosition,
-    sayMessageTemporarily
+    sayCursorMessage
   )
 
   const handleScroll = useCallback(
