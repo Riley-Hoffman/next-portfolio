@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
 import { useGameData } from './useGameData'
-import { Refs } from './useParticleCleanupGame'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 export const useHandleInteraction = (
-  refs: React.RefObject<Refs>,
+  refs: React.RefObject<ParticleCleanupRefs>,
   updateCursorPosition: (clientX: number, clientY: number) => void,
   sayMessageTemporarily: (message: string) => void
 ) => {

@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 
-export type GameData = {
+export interface GameData {
   time: number | null
   gameInProgress: boolean
   cursorMessage: string

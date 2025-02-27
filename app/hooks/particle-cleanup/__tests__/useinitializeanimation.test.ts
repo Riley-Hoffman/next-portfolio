@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react'
 import 'jest-canvas-mock'
 import { useInitializeAnimation } from '../useInitializeAnimation'
-import { Refs } from '../useParticleCleanupGame'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 describe('useInitializeAnimation', () => {
-  let refs: React.RefObject<Refs>
+  let refs: React.RefObject<ParticleCleanupRefs>
   let initParticles: jest.Mock
   let animateParticles: jest.Mock
 

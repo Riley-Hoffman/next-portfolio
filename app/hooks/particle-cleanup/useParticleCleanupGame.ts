@@ -6,24 +6,12 @@ import { useInitializeAnimation } from './useInitializeAnimation'
 import { useMedalDetails } from './useMedalDetails'
 import { useReloadAnimation } from './useReloadAnimation'
 import { useParticleCleanupEvents } from './useParticleCleanupEvents'
-import { Particle } from '@/app/classes/particle-cleanup/Particle'
-
-export type Refs = {
-  canvas: HTMLCanvasElement | null
-  container: HTMLDivElement | null
-  particlesArray: Particle[]
-  animationFrameId: number | null
-  allClean: boolean
-  startTime: number | null
-  elapsedTime: number
-  cursorInsideCanvas: boolean
-  isMobile: boolean | null
-}
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 export const useParticleCleanupGame = (
   completionMessageRef: React.RefObject<HTMLParagraphElement | null>
 ) => {
-  const refs = useRef<Refs>({
+  const refs = useRef<ParticleCleanupRefs>({
     canvas: null,
     container: null,
     particlesArray: [],

@@ -1,17 +1,12 @@
 import { useEffect, RefObject } from 'react'
-
-interface Refs {
-  container: HTMLElement | null
-  canvas: HTMLCanvasElement | null
-  animationFrameId: number | null
-}
+import { SharedParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 type HandleInteraction = (event: Event, isInside: boolean) => void
 type HandleScroll = (event: Event) => void
 type InitializeAnimation = () => void
 
 export const useParticleCleanupEvents = (
-  refs: RefObject<Refs>,
+  refs: RefObject<SharedParticleCleanupRefs>,
   handleInteraction: HandleInteraction,
   handleScroll: HandleScroll,
   initializeAnimation: InitializeAnimation

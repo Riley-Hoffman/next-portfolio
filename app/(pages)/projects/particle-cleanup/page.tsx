@@ -3,8 +3,8 @@ import {
   SchemaGenerator,
   SchemaGeneratorProps,
 } from '@/app/components/schema/SchemaGenerator'
-import { ParticleCleanupCopy } from '@/app/components/projects/particle-cleanup/content/ParticleCleanupCopy'
-import { ParticleCleanupGame } from '@/app/components/projects/particle-cleanup/ParticleCleanupGame'
+import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
+import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
 import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =
