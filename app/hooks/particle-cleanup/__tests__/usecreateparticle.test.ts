@@ -56,13 +56,13 @@ describe('useCreateParticle', () => {
     const { result: desktopResult } = renderHook(() => useCreateParticle())
     const desktopParticle = desktopResult.current(mockCanvas)
 
-    expect(desktopParticle.speedFactor).toBeCloseTo(0.6)
+    expect(desktopParticle.speedFactor).toBeCloseTo(0.65)
 
     global.innerWidth = 600
     const { result: mobileResult } = renderHook(() => useCreateParticle())
     const mobileParticle = mobileResult.current(mockCanvas)
 
-    expect(mobileParticle.speedFactor).toBeCloseTo(0.48)
+    expect(mobileParticle.speedFactor).toBeCloseTo(0.53)
   })
 
   it('should create a particle with a random color', () => {
