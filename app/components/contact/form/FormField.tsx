@@ -11,7 +11,6 @@ interface FormFieldProps {
   ) => void
   name: keyof FormValue
   placeholder: string
-  classes?: string
 }
 
 export const FormField = ({
@@ -28,6 +27,7 @@ export const FormField = ({
     required: true,
     value,
     onChange: handleChange(name),
+    className: 'form-field',
   }
 
   return (
@@ -41,19 +41,9 @@ export const FormField = ({
         {name as string}:
       </label>
       {type !== 'textarea' ? (
-        <input
-          {...formFieldProps}
-          className="form-field"
-          type={type}
-          enterKeyHint="next"
-        />
+        <input {...formFieldProps} type={type} enterKeyHint="next" />
       ) : (
-        <textarea
-          {...formFieldProps}
-          className="form-field"
-          spellCheck={true}
-          rows={8}
-        />
+        <textarea {...formFieldProps} spellCheck rows={8} />
       )}
     </>
   )
