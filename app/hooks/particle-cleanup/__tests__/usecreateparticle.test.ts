@@ -25,7 +25,6 @@ describe('useCreateParticle', () => {
     time: null,
     gameInProgress: false,
     cursorMessage: '',
-    cursorMessageRead: false,
   }
 
   it('should create a particle with random values', () => {

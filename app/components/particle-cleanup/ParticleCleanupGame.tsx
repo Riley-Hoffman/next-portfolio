@@ -22,11 +22,7 @@ export const ParticleCleanupGame = () => {
   }
 
   const renderCursorMessage = () => {
-    if (
-      gameData.gameInProgress &&
-      !refs.current.allClean &&
-      !gameData.cursorMessageRead
-    ) {
+    if (gameData.gameInProgress && !refs.current.allClean) {
       return (
         <div className="sr-only" aria-live="assertive">
           {gameData.cursorMessage}
@@ -59,13 +55,6 @@ export const ParticleCleanupGame = () => {
           </p>
         </noscript>
       </div>
-      {gameData.gameInProgress &&
-        !refs.current.allClean &&
-        !gameData.cursorMessageRead && (
-          <div className="sr-only" aria-live="assertive">
-            {gameData.cursorMessage}
-          </div>
-        )}
       {renderCursorMessage()}
       <PlayAgain reloadAnimation={reloadAnimation} />
     </>

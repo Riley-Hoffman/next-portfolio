@@ -6,7 +6,6 @@ describe('useGameData', () => {
     time: null,
     gameInProgress: true,
     cursorMessage: '',
-    cursorMessageRead: true,
   }
 
   it('should initialize with default game data', () => {
@@ -73,27 +72,6 @@ describe('useGameData', () => {
     expect(gameData).toEqual({
       ...initialGameData,
       cursorMessage: 'New message',
-      cursorMessageRead: false,
-    })
-  })
-
-  it('should handle MARK_MESSAGE_READ action', () => {
-    const { result } = renderHook(() => useGameData())
-    const [, dispatch] = result.current
-
-    act(() => {
-      dispatch({ type: 'SET_CURSOR_MESSAGE', message: 'New message' })
-    })
-
-    act(() => {
-      dispatch({ type: 'MARK_MESSAGE_READ' })
-    })
-
-    const [gameData] = result.current
-    expect(gameData).toEqual({
-      ...initialGameData,
-      cursorMessage: 'New message',
-      cursorMessageRead: true,
     })
   })
 })

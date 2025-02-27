@@ -4,7 +4,6 @@ export interface GameData {
   time: number | null
   gameInProgress: boolean
   cursorMessage: string
-  cursorMessageRead: boolean
 }
 
 type Action =
@@ -12,13 +11,11 @@ type Action =
   | { type: 'END_GAME'; time: number }
   | { type: 'RESET_GAME' }
   | { type: 'SET_CURSOR_MESSAGE'; message: string }
-  | { type: 'MARK_MESSAGE_READ' }
 
 const initialGameData: GameData = {
   time: null,
   gameInProgress: true,
   cursorMessage: '',
-  cursorMessageRead: true,
 }
 
 function reducer(gameData: GameData, action: Action): GameData {
@@ -28,7 +25,6 @@ function reducer(gameData: GameData, action: Action): GameData {
         ...gameData,
         gameInProgress: true,
         cursorMessage: '',
-        cursorMessageRead: true,
       }
     case 'END_GAME':
       return { ...gameData, time: action.time, gameInProgress: false }
@@ -40,10 +36,7 @@ function reducer(gameData: GameData, action: Action): GameData {
       return {
         ...gameData,
         cursorMessage: action.message,
-        cursorMessageRead: false,
       }
-    case 'MARK_MESSAGE_READ':
-      return { ...gameData, cursorMessageRead: true }
     default:
       return gameData
   }

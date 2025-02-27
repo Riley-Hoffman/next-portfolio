@@ -30,11 +30,7 @@ export const ProjectContent = ({
         {label}
       </Link>
     ) : (
-      <a
-        className={projectLinkClasses}
-        href={url}
-        {...EXTERNAL_LINK_ATTR}
-      >
+      <a className={projectLinkClasses} href={url} {...EXTERNAL_LINK_ATTR}>
         <SrText />
         {label}
         <NewTabContent />
