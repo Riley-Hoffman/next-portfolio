@@ -33,9 +33,7 @@ export const useTriggerOnScroll = (): RefObject<HTMLElementWithDataset[]> => {
 
     if (isBrowser()) {
       window.addEventListener('scroll', updateTriggerOnScroll)
-      return () => {
-        window.removeEventListener('scroll', updateTriggerOnScroll)
-      }
+      return () => window.removeEventListener('scroll', updateTriggerOnScroll)
     }
   }, [])
 

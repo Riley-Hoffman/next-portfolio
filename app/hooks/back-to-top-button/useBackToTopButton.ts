@@ -15,9 +15,7 @@ export const useBackToTopButton = () => {
     if (!isBrowser()) return
 
     window.addEventListener('scroll', debouncedHandleScroll)
-    return () => {
-      window.removeEventListener('scroll', debouncedHandleScroll)
-    }
+    return () => window.removeEventListener('scroll', debouncedHandleScroll)
   }, [debouncedHandleScroll])
 
   const scrollToTop = () => {
