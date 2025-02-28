@@ -11,10 +11,10 @@ interface ProjectListItemProps extends SharedProjectProps {
 
 export const ProjectListItem = ({
   inverted,
-  animation,
   isFirst,
+  animation,
   children,
-}: ProjectListItemProps) => {
+}: ProjectListItemProps & { animation: string }) => {
   const animatedElement = useJsOnlyScrollAnimation(animation)
 
   return (

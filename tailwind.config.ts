@@ -3,12 +3,6 @@ import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
   content: ['./app/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
-  safelist: [
-    'motion-safe:md:left-[-200%]',
-    '[&[data-active="true"]]:left-0',
-    'motion-safe:md:right-[-200%]',
-    '[&[data-active="true"]]:right-0',
-  ],
   darkMode: 'class',
   theme: {
     extend: {

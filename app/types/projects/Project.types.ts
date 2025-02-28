@@ -1,6 +1,5 @@
 export interface SharedProjectProps {
   inverted?: boolean
-  animation?: string
   isFirst?: boolean
 }
 
