@@ -25,11 +25,10 @@ export const ProjectCategoryList = ({
             projects.findIndex((proj) => proj.title === project.title) + 1
           const inverted = projectNumber % 2 === 0
           let animation = ''
-          if (projectNumber > 1) {
+          if (projectNumber > 1)
             animation = inverted
               ? 'motion-safe:md:left-[-200%] [&[data-active="true"]]:left-0'
               : 'motion-safe:md:right-[-200%] [&[data-active="true"]]:right-0'
-          }
           return (
             <ProjectListItem
               key={project.title}
