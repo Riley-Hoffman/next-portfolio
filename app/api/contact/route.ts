@@ -10,25 +10,32 @@ const handleError = (message: string, status: number) =>
   NextResponse.json({ success: false, error: message }, { status })
 
 const sendMail = async (name: string, email: string, message: string) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  })
-
   const emailHtml = contactEmailTemplate({ name, email, message })
 
-  await transporter.sendMail({
-    from: email,
-    to: process.env.EMAIL_USER,
-    subject: `New contact form submission from '${name}' on rileyhoffman.com`,
-    text: message,
-    html: emailHtml,
-  })
+  if (
+    !process.env.EMAIL_HOST ||
+    !process.env.EMAIL_PORT ||
+    !process.env.EMAIL_USER ||
+    !process.env.EMAIL_PASS
+  ) {
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    })
+
+    await transporter.sendMail({
+      from: email,
+      to: process.env.EMAIL_USER,
+      subject: `New contact form submission from '${name}' on rileyhoffman.com`,
+      text: message,
+      html: emailHtml,
+    })
+  }
 }
 
 export const POST = async (request: Request) => {
