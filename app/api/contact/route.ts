@@ -1,7 +1,6 @@
-'use server'
-import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { NextRequest, NextResponse } from 'next/server'
 import csrf from 'csrf'
+import nodemailer from 'nodemailer'
 import { contactEmailTemplate } from '@/app/utils/contactEmailTemplate'
 
 const csrfProtection = new csrf()
@@ -12,42 +11,42 @@ const handleError = (message: string, status: number) =>
 const sendMail = async (name: string, email: string, message: string) => {
   const emailHtml = contactEmailTemplate({ name, email, message })
 
-  if (
-    !process.env.EMAIL_HOST ||
-    !process.env.EMAIL_PORT ||
-    !process.env.EMAIL_USER ||
-    !process.env.EMAIL_PASS
-  ) {
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
-
-    await transporter.sendMail({
-      from: email,
-      to: process.env.EMAIL_USER,
-      subject: `New contact form submission from '${name}' on rileyhoffman.com`,
-      text: message,
-      html: emailHtml,
-    })
+  const { EMAIL_HOST, EMAIL_PORT, EMAIL_USER, EMAIL_PASS } = process.env
+  if (!EMAIL_HOST || !EMAIL_PORT || !EMAIL_USER || !EMAIL_PASS) {
+    throw new Error('One or more email environment variables are missing')
   }
+
+  const transporter = nodemailer.createTransport({
+    host: EMAIL_HOST,
+    port: parseInt(EMAIL_PORT),
+    secure: false,
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASS,
+    },
+  })
+
+  await transporter.sendMail({
+    from: email,
+    to: EMAIL_USER,
+    subject: `New contact form submission from '${name}' on your site`,
+    text: message,
+    html: emailHtml,
+  })
 }
 
-export const POST = async (request: Request) => {
+export const POST = async (request: NextRequest) => {
   try {
     const csrfTokenFromRequest = request.headers.get('csrf-token')
-    const secretFromRequest = request.headers.get('csrf-secret')
+    const secretFromCookie = request.cookies.get('csrf-secret')?.value
 
-    if (!csrfTokenFromRequest || !secretFromRequest)
+    if (!csrfTokenFromRequest || !secretFromCookie) {
       return handleError('CSRF token or secret is missing', 403)
+    }
 
-    if (!csrfProtection.verify(secretFromRequest, csrfTokenFromRequest))
+    if (!csrfProtection.verify(secretFromCookie, csrfTokenFromRequest)) {
       return handleError('Invalid CSRF token', 403)
+    }
 
     const { name, email, message } = await request.json()
     await sendMail(name, email, message)

@@ -12,7 +12,6 @@ export const useContactForm = ({
   onErrors,
 }: UseContactFormParams) => {
   const csrfTokenRef = useRef<string | null>(null)
-  const csrfSecretRef = useRef<string | null>(null)
   const router = useRouter()
 
   const { formState, errors, handleChange, handleInvalidSubmission } =
@@ -28,10 +27,8 @@ export const useContactForm = ({
       const response = await fetch('/api/csrf-token')
       const data = await response.json()
       csrfTokenRef.current = data.token ?? null
-      csrfSecretRef.current = data.secret ?? null
 
-      if (!csrfTokenRef.current || !csrfSecretRef.current)
-        console.error('Failed to fetch CSRF token and secret.')
+      if (!csrfTokenRef.current) console.error('Failed to fetch CSRF token.')
     } catch (error) {
       console.error('Error fetching CSRF token:', error)
     }
@@ -49,8 +46,8 @@ export const useContactForm = ({
       return
     }
 
-    if (!csrfTokenRef.current || !csrfSecretRef.current) {
-      console.error('CSRF token or secret is missing.')
+    if (!csrfTokenRef.current) {
+      console.error('CSRF token is missing.')
       return
     }
 
@@ -60,7 +57,6 @@ export const useContactForm = ({
         headers: {
           'Content-Type': 'application/json',
           'csrf-token': csrfTokenRef.current,
-          'csrf-secret': csrfSecretRef.current,
         },
         body: JSON.stringify(formState),
       })
