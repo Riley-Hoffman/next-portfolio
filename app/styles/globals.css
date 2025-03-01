@@ -84,7 +84,7 @@
     @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 border-solid brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
   }
   .closer {
-    @apply fixed inset-0 hidden size-full cursor-default text-transparent;
+    @apply fixed inset-0 block size-full cursor-default text-transparent;
   }
   .theme-changer {
     @apply relative mx-2 h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2 md:order-1;

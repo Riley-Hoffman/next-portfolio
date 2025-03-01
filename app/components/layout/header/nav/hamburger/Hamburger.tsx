@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { HamburgerLine } from './HamburgerLine'
 import { useHamburger } from '@/app/hooks/nav/useHamburger'
 
 export interface HamburgerProps {
@@ -7,6 +8,16 @@ export interface HamburgerProps {
 
 export const Hamburger = ({ expanded }: HamburgerProps) => {
   const { isExpanded, toggleMenu, hamburgerRef } = useHamburger({ expanded })
+
+  const commonClasses = `
+    group-aria-expanded:rotate-4 
+    group-aria-expanded:left-3 
+    group-aria-expanded:top-5 
+    group-aria-expanded:w-0 
+    group-aria-expanded:-rotate-45 
+    group-aria-expanded:border-0 
+    group-aria-expanded:transition-none
+  `
 
   return (
     <>
@@ -23,20 +34,16 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         ref={hamburgerRef}
         className="hamburger group peer"
       >
-        {[...Array(4)].map((_, index) => (
-          <span
-            key={`line-${index}`}
-            className="hamburger-line group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:left-3 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:top-5 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:w-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:border-0 group-aria-expanded:[&:not(:nth-child(2),:nth-child(3))]:transition-none group-aria-expanded:[&:nth-child(2)]:rotate-45 group-aria-expanded:[&:nth-child(3)]:-rotate-45"
-          ></span>
-        ))}
+        <HamburgerLine classes={commonClasses} />
+        <HamburgerLine classes="group-aria-expanded:-rotate-45" />
+        <HamburgerLine classes="group-aria-expanded:rotate-45" />
+        <HamburgerLine classes={commonClasses} />
       </button>
-      <button
-        className="closer peer-aria-expanded:block"
-        onClick={toggleMenu}
-        aria-hidden={true}
-      >
-        Close Menu on Background Click
-      </button>
+      {isExpanded && (
+        <button className="closer" onClick={toggleMenu} aria-hidden={true}>
+          Close Menu on Background Click
+        </button>
+      )}
     </>
   )
 }
