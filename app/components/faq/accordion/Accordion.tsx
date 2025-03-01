@@ -25,13 +25,13 @@ export const Accordion = ({ items, label }: AccProps) => {
       className="mb-[calc(13vh+3rem)] mt-14 max-w-prose rounded-lg py-px leading-loose shadow-[0.25rem_0.25rem_0_0] shadow-heading dark:shadow-gradientthree"
       aria-label={label}
     >
-      {items.map((item, index) => {
+      {items.map(({ question, answer }, index) => {
         const isOpen = accOpen(index)
         return (
-          <li className="group" key={item.question}>
+          <li className="group" key={question}>
             <AccQuestion
               data={{
-                question: item.question,
+                question,
                 isOpen,
                 onAccClick: () => debouncedHandleAccClick(index),
                 buttonRef: (el) => {
@@ -41,7 +41,7 @@ export const Accordion = ({ items, label }: AccProps) => {
             />
             <AccAnswer
               data={{
-                answer: item.answer,
+                answer,
                 isOpen,
                 contentRef: (el) => {
                   contentRefs[index].current = el

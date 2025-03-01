@@ -14,13 +14,13 @@ const Custom404 = () => {
           Please select one of the available pages below:
         </p>
         <ul className="px-5 md:text-2xl" aria-label="Available pages">
-          {useRoutes('all').map((route) => (
-            <li className="py-1 md:py-2" key={route.to}>
-              <h3 className="my-1 px-1 text-lg">{route.label}:</h3>
+          {useRoutes('all').map(({ to, label }) => (
+            <li className="py-1 md:py-2" key={to}>
+              <h3 className="my-1 px-1 text-lg">{label}:</h3>
               <Link
                 className="button block w-fit px-2 py-1"
-                href={route.to}
-              >{`${route.to}`}</Link>
+                href={to}
+              >{`${to}`}</Link>
             </li>
           ))}
         </ul>

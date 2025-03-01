@@ -8,10 +8,10 @@ export const NoJsMenu = () => (
   <noscript>
     <nav className="no-js-menu px-4" aria-label="No JS Menu Links">
       <ul className="flex flex-wrap justify-center gap-x-0 gap-y-2 bg-heading py-2 md:gap-0">
-        {useRoutes('main').map((route) => (
-          <li key={route.to}>
-            <Link className={NO_JS_MENU_LINK_CLASSES} href={route.to}>
-              {route.label}
+        {useRoutes('main').map(({ to, label }) => (
+          <li key={to}>
+            <Link className={NO_JS_MENU_LINK_CLASSES} href={to}>
+              {label}
             </Link>
           </li>
         ))}

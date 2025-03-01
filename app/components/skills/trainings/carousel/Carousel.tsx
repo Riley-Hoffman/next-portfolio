@@ -52,12 +52,12 @@ export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
             'Trainings & Certifications Carousel',
         }}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.src}>
-            <a href={slide.url} {...EXTERNAL_LINK_ATTR}>
+        {slides.map(({ src, url, label }) => (
+          <SwiperSlide key={src}>
+            <a href={url} {...EXTERNAL_LINK_ATTR}>
               <Image
-                src={slide.src}
-                alt={slide.label}
+                src={src}
+                alt={label}
                 className="w-[56.25rem]"
                 width={900}
                 height={695}

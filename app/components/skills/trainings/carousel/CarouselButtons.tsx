@@ -5,16 +5,16 @@ import { useCarouselButtonVisibility } from '@/app/hooks/carousel/useCarouselBut
 export const CarouselButtons = () => {
   const buttonsRef = useCarouselButtonVisibility()
 
-  return CAROUSEL_BUTTONS_CONFIG.map((config, index) => (
+  return CAROUSEL_BUTTONS_CONFIG.map(({ label, className, icon }, index) => (
     <button
-      key={config.label}
+      key={label}
       ref={(el) => {
         buttonsRef.current[index] = el
       }}
-      aria-label={config.label}
-      className={`carousel-button hidden ${config.className}`}
+      aria-label={label}
+      className={`carousel-button hidden ${className}`}
     >
-      <Icon icon={config.icon} />
+      <Icon icon={icon} />
     </button>
   ))
 }
