@@ -57,7 +57,7 @@ const Accessibility = () => (
       <p>
         Your feedback is invaluable in helping me enhance the accessibility of
         my website. If you encounter any difficulties accessing any part of the
-        site, please feel free to <Link href="/contact">reach out to me</Link>.
+        site, please feel free to <Link href="/contact/">reach out to me</Link>.
       </p>
     </div>
   </>

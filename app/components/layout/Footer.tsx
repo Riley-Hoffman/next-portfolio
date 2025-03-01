@@ -20,7 +20,7 @@ export const Footer = () => (
         />
       </a>
     </p>
-    <Link href="/accessibility">Accessibility</Link>
+    <Link href="/accessibility/">Accessibility</Link>
     <p>©{new Date().getFullYear()}</p>
   </footer>
 )

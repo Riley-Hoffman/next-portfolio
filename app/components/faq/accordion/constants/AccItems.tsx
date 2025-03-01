@@ -10,7 +10,7 @@ const ACC_ITEMS: AccItem[] = [
     question: 'Are you available for freelance work?',
     answer: (
       <>
-        Absolutely! Feel free to <Link href="/contact">get in touch</Link> to
+        Absolutely! Feel free to <Link href="/contact/">get in touch</Link> to
         discuss your project needs and pricing structure.
       </>
     ),
