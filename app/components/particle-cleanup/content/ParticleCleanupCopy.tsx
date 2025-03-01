@@ -1,5 +1,5 @@
-import { MedalCriteria } from './MedalCriteria';
-import '@/app/styles/shared/numbered-icons.css';
+import { MedalCriteria } from './MedalCriteria'
+import '@/app/styles/shared/numbered-icons.css'
 
 const medalData = [
   {
@@ -18,7 +18,7 @@ const medalData = [
     srText: 'Bronze, 21 to 25 seconds.',
     time: '21s-25s',
   },
-];
+]
 
 export const ParticleCleanupCopy = () => (
   <>
@@ -42,4 +42,4 @@ export const ParticleCleanupCopy = () => (
       ))}
     </ol>
   </>
-);
+)
