@@ -20,7 +20,7 @@ export const FormField = ({
   name,
   placeholder,
 }: FormFieldProps) => {
-  const formFieldProps = {
+  const fieldAttributes = {
     id: name as string,
     name: name as string,
     placeholder,
@@ -30,20 +30,22 @@ export const FormField = ({
     className: 'form-field',
   }
 
+  const isTextarea = type === 'textarea'
+
   return (
     <>
       <label
         className={clsx('mb-2 block text-xl capitalize', {
-          'lg:inline': type !== 'textarea',
+          'lg:inline': !isTextarea,
         })}
         htmlFor={name as string}
       >
         {name as string}:
       </label>
-      {type !== 'textarea' ? (
-        <input {...formFieldProps} type={type} enterKeyHint="next" />
+      {isTextarea ? (
+        <textarea {...fieldAttributes} spellCheck rows={8} />
       ) : (
-        <textarea {...formFieldProps} spellCheck rows={8} />
+        <input {...fieldAttributes} type={type} enterKeyHint="next" />
       )}
     </>
   )
