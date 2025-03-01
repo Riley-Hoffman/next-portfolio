@@ -57,20 +57,13 @@ export class Particle {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
-  getAbsoluteVertex(vertex: Point): Point {
-    return {
-      x: this.position.x + vertex.x,
-      y: this.position.y + vertex.y,
-    }
-  }
-
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = this.color
     ctx.beginPath()
     const first = this.getAbsoluteVertex(this.vertices[0])
     ctx.moveTo(first.x, first.y)
-    for (let i = 1; i < this.vertices.length; i++) {
-      const absVertex = this.getAbsoluteVertex(this.vertices[i])
+    for (const vertex of this.vertices.slice(1)) {
+      const absVertex = this.getAbsoluteVertex(vertex)
       ctx.lineTo(absVertex.x, absVertex.y)
     }
     ctx.closePath()
@@ -131,13 +124,17 @@ export class Particle {
 
   checkCanvasBounds(canvas: HTMLCanvasElement): void {
     const { width, height } = canvas
-    if (
-      this.position.x < -this.canvasPadding ||
-      this.position.x > width + this.canvasPadding ||
-      this.position.y < -this.canvasPadding ||
-      this.position.y > height + this.canvasPadding
-    ) {
-      this.inCanvas = false
+    this.inCanvas =
+      this.position.x >= -this.canvasPadding &&
+      this.position.x <= width + this.canvasPadding &&
+      this.position.y >= -this.canvasPadding &&
+      this.position.y <= height + this.canvasPadding
+  }
+
+  getAbsoluteVertex(vertex: Point): Point {
+    return {
+      x: this.position.x + vertex.x,
+      y: this.position.y + vertex.y,
     }
   }
 }
