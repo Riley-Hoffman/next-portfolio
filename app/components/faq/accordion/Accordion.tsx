@@ -7,13 +7,13 @@ import { useDebounce } from '@/app/hooks/shared/useDebounce'
 import '@/app/styles/faq/accordion.css'
 
 interface AccProps {
-  items: AccItem[]
+  accItems: AccItem[]
   label: string
 }
 
-export const Accordion = ({ items, label }: AccProps) => {
+export const Accordion = ({ accItems, label }: AccProps) => {
   const { accOpen, handleAccClick, buttonRefs, contentRefs } = useAccordion(
-    items.length
+    accItems.length
   )
 
   const debouncedHandleAccClick = useDebounce((index: number) => {
@@ -25,7 +25,7 @@ export const Accordion = ({ items, label }: AccProps) => {
       className="mb-[calc(13vh+3rem)] mt-14 max-w-prose rounded-lg py-px leading-loose shadow-[0.25rem_0.25rem_0_0] shadow-heading dark:shadow-gradientthree"
       aria-label={label}
     >
-      {items.map(({ question, answer }, index) => {
+      {accItems.map(({ question, answer }, index) => {
         const isOpen = accOpen(index)
         return (
           <li className="group" key={question}>

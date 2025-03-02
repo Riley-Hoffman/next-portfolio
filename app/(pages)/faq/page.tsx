@@ -29,7 +29,7 @@ const Faq = () => {
       <FaqSchema />
       <h1 className="heading-one">Frequently Asked Questions</h1>
       <Accordion
-        items={QUESTIONS.map((question, index) => ({
+        accItems={QUESTIONS.map((question, index) => ({
           question,
           answer: HTML_ANSWERS[index],
         }))}
