@@ -15,9 +15,10 @@ const getAnswerClasses = (isOpen: boolean) =>
 
 export const AccAnswer = ({ data }: AccAnswerProps) => {
   const { answer, isOpen, contentRef } = data
+
   return (
-    <p className={getAnswerClasses(isOpen)} tabIndex={-1} ref={contentRef}>
+    <div className={getAnswerClasses(isOpen)} tabIndex={-1} ref={contentRef}>
       {answer}
-    </p>
+    </div>
   )
 }

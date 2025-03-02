@@ -3,7 +3,7 @@ import { FaqSchema, DESCRIPTION } from '@/app/components/faq/schema/FaqSchema'
 import { Accordion } from '@/app/components/faq/accordion/Accordion'
 import {
   QUESTIONS,
-  ANSWERS,
+  HTML_ANSWERS,
 } from '@/app/components/faq/accordion/constants/AccItems'
 import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
@@ -31,7 +31,7 @@ const Faq = () => {
       <Accordion
         items={QUESTIONS.map((question, index) => ({
           question,
-          answer: ANSWERS[index],
+          answer: HTML_ANSWERS[index],
         }))}
         label="Frequently Asked Questions"
       />

@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { FAQPage, WithContext } from 'schema-dts'
-import { QUESTIONS, ANSWERS } from '../accordion/constants/AccItems'
+import { QUESTIONS, PLAIN_TEXT_ANSWERS } from '../accordion/constants/AccItems'
 import {
   getBaseUrl,
   getPageTitle,
@@ -31,7 +31,7 @@ const faqSchemaData: WithContext<FAQPage> = {
     name: question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `${ANSWERS[index].props.children}`,
+      text: PLAIN_TEXT_ANSWERS[index],
     },
   })),
   author: {
