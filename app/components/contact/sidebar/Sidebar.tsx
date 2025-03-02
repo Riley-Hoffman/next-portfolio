@@ -7,11 +7,7 @@ export const Sidebar = () => (
   <aside className="sidebar">
     <h3>Links</h3>
     {SIDEBAR_EXTERNAL_LINKS.map(({ name, url }) => (
-      <a
-        key={name}
-        href={url}
-        {...EXTERNAL_LINK_ATTR}
-      >
+      <a key={name} href={url} {...EXTERNAL_LINK_ATTR}>
         {name} <NewTabContent />
       </a>
     ))}
