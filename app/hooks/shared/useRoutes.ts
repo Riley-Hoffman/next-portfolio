@@ -6,7 +6,7 @@ interface Route {
   mainRoute: boolean
 }
 
-export const RouteList: Route[] = [
+export const ROUTE_LIST: Route[] = [
   { to: '/', label: 'Home', mainRoute: true },
   { to: '/projects/', label: 'Projects', mainRoute: true },
   {
@@ -24,7 +24,7 @@ type allOrMain = 'all' | 'main'
 
 export const useRoutes = (routes: allOrMain): Route[] => {
   return useMemo(() => {
-    if (routes === 'main') return RouteList.filter((route) => route.mainRoute)
-    return RouteList
+    if (routes === 'main') return ROUTE_LIST.filter((route) => route.mainRoute)
+    return ROUTE_LIST
   }, [routes])
 }
