@@ -6,7 +6,6 @@ import { useLinkVisibility } from '@/app/hooks/nav/useLinkVisibility'
 
 export const Nav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
-
   const hide = useLinkVisibility(isExpanded, 500)
 
   return (

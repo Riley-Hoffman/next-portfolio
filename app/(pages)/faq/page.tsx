@@ -23,20 +23,18 @@ export const metadata: Metadata = {
   },
 }
 
-const Faq = () => {
-  return (
-    <>
-      <FaqSchema />
-      <h1 className="heading-one">Frequently Asked Questions</h1>
-      <Accordion
-        accItems={QUESTIONS.map((question, index) => ({
-          question,
-          answer: HTML_ANSWERS[index],
-        }))}
-        label="Frequently Asked Questions"
-      />
-    </>
-  )
-}
+const Faq = () => (
+  <>
+    <FaqSchema />
+    <h1 className="heading-one">Frequently Asked Questions</h1>
+    <Accordion
+      accItems={QUESTIONS.map((question, index) => ({
+        question,
+        answer: HTML_ANSWERS[index],
+      }))}
+      label="Frequently Asked Questions"
+    />
+  </>
+)
 
 export default Faq
