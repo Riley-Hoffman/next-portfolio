@@ -17,7 +17,9 @@ const Custom404 = () => {
         <ul className="px-5 md:text-2xl" aria-label="Available pages">
           {ALL_ROUTES.map(({ to, label }) => (
             <li className="py-1 md:py-2" key={to}>
-              <span className="my-1 px-1 text-lg font-poppins block">{label}:</span>
+              <span className="my-1 block px-1 font-poppins text-lg">
+                {label}:
+              </span>
               <Link
                 className="button block w-fit px-2 py-1"
                 href={to}
