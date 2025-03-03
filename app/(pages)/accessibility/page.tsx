@@ -37,7 +37,7 @@ const Accessibility = () => (
   <>
     <SchemaGenerator schemaData={SCHEMA_DATA} />
     <h1 className="heading-one">Accessibility</h1>
-    <div className="max-w-screen-md pb-[13vh] pt-7">
+    <div className="max-w-screen-md pb-24 pt-7">
       <h2>My Commitment</h2>
       <p>
         As a dedicated web developer, I am committed to creating an accessible
