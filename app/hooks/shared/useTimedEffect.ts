@@ -4,7 +4,7 @@ export const useTimedEffect = (duration: number = 1000) => {
   const isCounting = useRef(false)
   const timeoutId = useRef<NodeJS.Timeout | null>(null)
 
-  const clearTimer = useCallback(() => {
+  const stopEffect = useCallback(() => {
     if (timeoutId.current) {
       clearTimeout(timeoutId.current)
       timeoutId.current = null
@@ -28,11 +28,11 @@ export const useTimedEffect = (duration: number = 1000) => {
   )
 
   useEffect(() => {
-    return clearTimer
-  }, [clearTimer])
+    return stopEffect
+  }, [stopEffect])
 
   return {
     triggerEffect,
-    clearTimer,
+    stopEffect,
   }
 }

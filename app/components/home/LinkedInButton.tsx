@@ -7,29 +7,29 @@ import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { triggerEffect, clearTimer } = useTimedEffect(1000)
+  const { triggerEffect, stopEffect } = useTimedEffect(1000)
 
-  const applyEffect = (isCounting: boolean) => {
+  const toggleWiggleEffect = (isCounting: boolean) => {
     buttonRef.current?.classList.toggle(
       'motion-safe:animate-wiggle',
       isCounting
     )
   }
 
-  const handleMouseEnter = () => {
-    triggerEffect(applyEffect)
+  const handleMouseEnterWiggle = () => {
+    triggerEffect(toggleWiggleEffect)
   }
 
   useEffect(() => {
-    return clearTimer
-  }, [clearTimer])
+    return stopEffect
+  }, [stopEffect])
 
   return (
     <Link
       ref={buttonRef}
       className="group button m-5 inline-block pr-6 text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnterWiggle}
       {...EXTERNAL_LINK_ATTR}
     >
       <Icon
