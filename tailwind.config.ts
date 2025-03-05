@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         heading: 'var(--color-heading)',
-        textcolor: 'var(--color-textcolor)',
+        text: 'var(--color-text)',
         accentone: {
           100: 'var(--color-accentone-100)',
           200: 'var(--color-accentone-200)',
@@ -86,7 +86,7 @@ const config: Config = {
           backgroundColor: 'whitesmoke',
         },
         body: {
-          color: theme('colors.textcolor'),
+          color: theme('colors.text'),
           fontFamily: theme('fontFamily.inconsolata'),
           textWrap: 'pretty',
         },

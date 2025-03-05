@@ -1,5 +1,6 @@
 .sidebar {
-  @apply mt-7 self-start bg-accentone-200 pb-1 text-center md:sticky md:top-24 md:w-1/6 md:rounded-sm md:border-x md:border-b md:border-solid md:border-bordercolor;
+  @apply mt-7 self-start bg-accentone-200 pb-1 text-center md:sticky md:top-24;
+  @apply md:w-1/6 md:rounded-sm md:border-x md:border-b md:border-solid md:border-bordercolor;
 }
 .sidebar h3 {
   @apply mx-auto mb-1 mt-0 bg-heading text-accentone-200;

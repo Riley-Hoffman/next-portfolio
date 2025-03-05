@@ -7,5 +7,6 @@ export const useThemeInfo = () => {
   const icon = isDarkTheme ? 'solar:sun-2-bold' : 'solar:moon-bold'
   const label = isDarkTheme ? 'Switch to Light Theme' : 'Switch to Dark Theme'
   const toggleTheme = () => setTheme(isDarkTheme ? 'light' : 'dark')
+
   return { icon, label, toggleTheme }
 }

@@ -31,8 +31,6 @@ export const contactEmailTemplate = ({
         margin: 0;
         padding: 0;
         width: 100%;
-        background-color: #f4f4f4;
-        font-family: Arial, sans-serif;
       }
       h1 {
         font-size: 1.875rem;
@@ -45,7 +43,7 @@ export const contactEmailTemplate = ({
         line-height: 1.5;
       }
       strong {
-        font-size: 110%;
+        font-size: 1.2375rem;
       }
       table {
         border-collapse: collapse;
@@ -54,7 +52,6 @@ export const contactEmailTemplate = ({
       .email-container {
         max-width: 600px;
         margin: 0 auto;
-        background-color: #ffffff;
       }
       .email-header {
         background-color: #eee2f3;

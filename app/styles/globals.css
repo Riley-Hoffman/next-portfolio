@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --color-heading: #12121c;
-    --color-textcolor: #2d2b34;
+    --color-text: #2d2b34;
     --color-accentone-100: #f5eef7;
     --color-accentone-200: #eee3f2;
     --color-accentone-300: #e5d4ed;
@@ -19,7 +19,7 @@
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
-    --color-textcolor: #d2d4cb;
+    --color-text: #d2d4cb;
     --color-accentone-100: #081011;
     --color-accentone-200: #0d191c;
     --color-accentone-300: #12272b;
@@ -45,16 +45,12 @@
   ::selection {
     @apply bg-[rgba(58,_178,_215,_0.52)];
   }
-  p:not(#_, .text-5xl, .text-4xl),
-  ol:not(#_, .text-5xl, .text-4xl),
-  ul:not(#_, .text-5xl, .text-4xl) {
-    @apply leading-7;
-  }
   :where(a, button, input, textarea):focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
   }
   header {
-    @apply pad-wrap gradient-border sticky -top-8 z-30 flex min-h-28 items-center justify-between border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
+    @apply pad-wrap gradient-border sticky -top-8 z-30 flex min-h-28 items-center justify-between;
+    @apply border-solid py-6 shadow-heading contrast-more:bg-white contrast-more:dark:bg-black;
   }
   header > button {
     @apply m-0 pl-4 pr-0 font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;

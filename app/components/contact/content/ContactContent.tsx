@@ -14,7 +14,7 @@ export const ContactContent = ({ errors }: { errors: string[] }) => (
         <h3 className="mb-0 font-inconsolata uppercase tracking-widest">
           Reports:
         </h3>
-        <p className="mt-0 text-base">
+        <p className="mt-0 text-base leading-7">
           Did you find a bug or accessibility issue while browsing this site?
           <span className="block">Your report is appreciated.</span>
         </p>
