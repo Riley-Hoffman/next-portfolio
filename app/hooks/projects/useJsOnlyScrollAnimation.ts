@@ -2,23 +2,24 @@ import { useEffect } from 'react'
 import { useTriggerOnScroll } from '@/app/hooks/shared/useTriggerOnScroll'
 
 export const useJsOnlyScrollAnimation = (animation?: string) => {
-  const elementsRef = useTriggerOnScroll()
+  const elementRef = useTriggerOnScroll()
 
   useEffect(() => {
-    if (elementsRef.current.length && animation)
-      elementsRef.current.forEach((element) => {
-        const animationClasses = animation.trim().split(/\s+/)
-        animationClasses.forEach((className) => {
-          if (!element.classList.contains(className)) {
-            element.classList.add(className)
-          }
-        })
+    const el = elementRef.current
+    if (el && animation) {
+      const animationClasses = animation.trim().split(/\s+/)
+      animationClasses.forEach((className) => {
+        if (!el.classList.contains(className)) {
+          el.classList.add(className)
+        }
       })
-  }, [elementsRef, animation])
+    }
+  }, [elementRef, animation])
 
   const animatedElement = (el: HTMLElement | null) => {
-    if (el && !elementsRef.current.includes(el as HTMLElement))
-      elementsRef.current.push(el as HTMLElement)
+    if (el && elementRef.current !== el) {
+      elementRef.current = el as HTMLElement
+    }
   }
 
   return animatedElement
