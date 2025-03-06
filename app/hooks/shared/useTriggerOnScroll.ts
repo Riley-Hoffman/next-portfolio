@@ -29,9 +29,7 @@ export const useTriggerOnScroll =
 
     const updateTriggerOnScroll = () => {
       requestAnimationFrame(() => {
-        if (elementsRef.current) {
-          updateElementActivation(elementsRef.current)
-        }
+        if (elementsRef.current) updateElementActivation(elementsRef.current)
       })
     }
 

@@ -6,9 +6,7 @@ export const useScrollHandler = (onScroll: () => void) => {
   const animationFrameId = useRef<number | null>(null)
 
   useEffect(() => {
-    if (!isBrowser()) {
-      return
-    }
+    if (!isBrowser()) return
 
     const handleScroll = () => {
       if (!ticking.current) {

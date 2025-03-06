@@ -64,10 +64,11 @@ export const useParticleCleanupGame = (
 
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
-      if (canvas)
+      if (canvas) {
         refs.current.particlesArray = Array.from({ length: 150 }, () =>
           createParticle(canvas)
         )
+      }
     },
     [createParticle]
   )
