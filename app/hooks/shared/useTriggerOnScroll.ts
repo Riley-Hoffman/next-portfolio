@@ -1,6 +1,7 @@
 import { useEffect, useRef, RefObject } from 'react'
 import { isBrowser } from '@/app/utils/isBrowser'
 import { useDebounce } from './useDebounce'
+
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
     active?: string
