@@ -1,6 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { HamburgerProps } from '@/app/components/layout/header/nav/hamburger/Hamburger'
+import { useDebounce } from '../shared/useDebounce'
+
+const BREAKPOINT_WIDTH = 700
 
 export const useHamburger = ({ expanded }: HamburgerProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -23,17 +26,19 @@ export const useHamburger = ({ expanded }: HamburgerProps) => {
   }, [updateAttributes])
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth > 700 && isExpanded) {
+    if (window.innerWidth > BREAKPOINT_WIDTH && isExpanded) {
       setIsExpanded(false)
       updateAttributes(false)
     }
   }, [isExpanded, updateAttributes])
 
+  const debouncedHandleResize = useDebounce(handleResize, 300)
+
   useEffect(() => {
     expanded?.(isExpanded)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [isExpanded, expanded, handleResize])
+    window.addEventListener('resize', debouncedHandleResize)
+    return () => window.removeEventListener('resize', debouncedHandleResize)
+  }, [isExpanded, expanded, debouncedHandleResize])
 
   useEffect(() => {
     setIsExpanded(false)
