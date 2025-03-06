@@ -14,17 +14,27 @@ export const useParallax = (
   const parallaxRef = externalRef ?? internalRef
 
   const updateImagePosition = useCallback(() => {
-    if (!parallaxRef.current || !imgRef.current || prefersReducedMotion) return
-
-    const height = parallaxRef.current.offsetHeight - 18
+    if (!parallaxRef.current) {
+      console.warn('Parallax reference is not set.')
+      return
+    }
+    if (!imgRef.current) {
+      console.warn('Image reference is not set.')
+      return
+    }
+    if (prefersReducedMotion) {
+      console.info('User prefers reduced motion.')
+      return
+    }
+    const height = parallaxRef.current.offsetHeight
     const scrollY = window.scrollY
 
     if (scrollY < 0) return
 
     const translate = -(height - scrollY) * velocity
-
     if (Number.isFinite(translate)) {
-      imgRef.current.style.transform = `translate(${pxToRem(translate)}rem, ${pxToRem(translate)}rem)`
+      const translateRem = pxToRem(translate)
+      imgRef.current.style.transform = `translate(${translateRem}rem, ${translateRem}rem)`
       imgRef.current.style.willChange = 'transform'
     }
   }, [parallaxRef, prefersReducedMotion, velocity])
@@ -35,7 +45,9 @@ export const useParallax = (
     const setImgRef = () => {
       if (parallaxRef.current) {
         const imgElement = parallaxRef.current.querySelector('img')
-        if (imgElement) imgRef.current = imgElement
+        if (imgElement !== null) {
+          imgRef.current = imgElement
+        }
       }
     }
 
@@ -48,7 +60,7 @@ export const useParallax = (
         imgRef.current.style.willChange = ''
       }
     }
-  }, [parallaxRef, updateImagePosition])
+  }, [parallaxRef, updateImagePosition, prefersReducedMotion])
 
   return parallaxRef
 }
