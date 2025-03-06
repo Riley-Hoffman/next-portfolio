@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 interface Route {
   to: string
   label: string
-  mainRoute: boolean
+  mainRoute?: boolean
 }
 
 export const ROUTE_LIST: Route[] = [
@@ -12,12 +12,11 @@ export const ROUTE_LIST: Route[] = [
   {
     to: '/projects/particle-cleanup/',
     label: 'Particle Cleanup Game',
-    mainRoute: false,
   },
   { to: '/skills/', label: 'Skills', mainRoute: true },
   { to: '/faq/', label: 'FAQ', mainRoute: true },
   { to: '/contact/', label: 'Contact', mainRoute: true },
-  { to: '/accessibility/', label: 'Accessibility', mainRoute: false },
+  { to: '/accessibility/', label: 'Accessibility' },
 ]
 
 type allOrMain = 'all' | 'main'
