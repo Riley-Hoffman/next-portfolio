@@ -18,7 +18,7 @@ const sendMail = async (name: string, email: string, message: string) => {
 
   const transporter = nodemailer.createTransport({
     host: EMAIL_HOST,
-    port: parseInt(EMAIL_PORT),
+    port: parseInt(EMAIL_PORT, 10),
     secure: false,
     auth: {
       user: EMAIL_USER,
@@ -26,13 +26,19 @@ const sendMail = async (name: string, email: string, message: string) => {
     },
   })
 
-  await transporter.sendMail({
-    from: email,
-    to: EMAIL_USER,
-    subject: `New contact form submission from '${name}' on your site`,
-    text: message,
-    html: emailHtml,
-  })
+  try {
+    await transporter.sendMail({
+      from: EMAIL_USER,
+      replyTo: email,
+      to: EMAIL_USER,
+      subject: `New contact form submission from '${name}' on your site`,
+      text: message,
+      html: emailHtml,
+    })
+  } catch (error) {
+    console.error('Error sending email:', error)
+    throw new Error('Failed to send email')
+  }
 }
 
 export const POST = async (request: NextRequest) => {
