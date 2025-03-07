@@ -2,8 +2,7 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { HamburgerProps } from '@/app/components/layout/header/nav/hamburger/Hamburger'
 import { useDebounce } from '../shared/useDebounce'
-
-const BREAKPOINT_WIDTH = 700
+import { MD } from '@/app/constants/breakpoints'
 
 export const useHamburger = ({ expanded }: HamburgerProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -26,7 +25,7 @@ export const useHamburger = ({ expanded }: HamburgerProps) => {
   }, [updateAttributes])
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth > BREAKPOINT_WIDTH && isExpanded) {
+    if (window.innerWidth > MD && isExpanded) {
       setIsExpanded(false)
       updateAttributes(false)
     }

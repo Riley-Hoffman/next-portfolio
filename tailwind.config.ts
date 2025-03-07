@@ -125,8 +125,8 @@ const config: Config = {
           },
         },
         '.pad-wrap': {
-          paddingLeft: 'calc(50% - 640px)',
-          paddingRight: 'calc(50% - 640px)',
+          paddingLeft: `calc(50% - ${parseInt(theme('screens.xl'), 10) / 2}px)`,
+          paddingRight: `calc(50% - ${parseInt(theme('screens.xl'), 10) / 2}px)`,
         },
         '.gradient-border': {
           borderImageSlice: '1',

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { useDebounce } from '../shared/useDebounce'
+import { MD } from '@/app/constants/breakpoints'
 
 export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
   const [hide, setHide] = useState<boolean>(false)
@@ -23,7 +24,7 @@ export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
   )
 
   const handleHideShowLinks = useCallback(() => {
-    if (window.innerWidth <= 700 && !isExpanded) {
+    if (window.innerWidth <= MD && !isExpanded) {
       manageTimeout(true)
     } else {
       manageTimeout(false)

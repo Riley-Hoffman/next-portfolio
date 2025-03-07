@@ -6,7 +6,7 @@ const Custom404 = () => {
   return (
     <>
       <h1 className="heading-one">Page Not Found</h1>
-      <div className="max-w-screen-md pb-[20vh] pt-8">
+      <div className="max-w-screen-md pb-40 pt-8">
         <h2 className="text-4xl">404</h2>
         <p className="mb-0 text-xl">
           Sorry, the document you requested is not available.
