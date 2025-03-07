@@ -89,6 +89,7 @@ const config: Config = {
       const gradientThreeColor = theme('colors.gradientthree')!
       const spacing2 = theme('spacing.2')
       const spacing5 = theme('spacing.5')
+      const crossThemeBlack = '#12121c'
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -150,7 +151,7 @@ const config: Config = {
           '&:before': {
             borderRight: `${spacing2} solid transparent`,
             borderLeft: `${spacing2} solid transparent`,
-            borderTop: `${spacing2} solid #12121c`,
+            borderTop: `${spacing2} solid ${crossThemeBlack}`,
             content: '""',
             opacity: '0',
             pointerEvents: 'none',
@@ -160,7 +161,7 @@ const config: Config = {
             left: '0',
           },
           '&:after': {
-            backgroundColor: '#12121c',
+            backgroundColor: crossThemeBlack,
             borderRadius: '0.375rem',
             color: '#f5f5f5',
             content: 'attr(aria-label)',
