@@ -49,10 +49,6 @@ export const contactEmailTemplate = ({
         border-collapse: collapse;
         width: 100%;
       }
-      .email-container {
-        max-width: 600px;
-        margin: 0 auto;
-      }
       .email-header {
         background-color: #eee2f3;
         border-bottom: 0.125rem solid #ae4971;
@@ -72,15 +68,10 @@ export const contactEmailTemplate = ({
         text-align: center;
         font-size: 0.75rem;
       }
-      @media screen and (max-width: 600px) {
-        .email-container {
-          width: 100%;
-        }
-      }
     </style>
   </head>
   <body>
-    <table role="presentation" class="email-container">
+    <table role="presentation">
       <tr>
         <td class="email-header">
           <h1>Contact Form Submission</h1>
