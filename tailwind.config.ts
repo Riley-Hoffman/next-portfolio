@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import { XL } from './app/constants/breakpoints'
 
 const config: Config = {
   content: ['./app/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -81,6 +82,7 @@ const config: Config = {
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
+      const padWrapPadding = `calc(50% - ${XL / 2}px)`
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -125,8 +127,8 @@ const config: Config = {
           },
         },
         '.pad-wrap': {
-          paddingLeft: `calc(50% - ${parseInt(theme('screens.xl'), 10) / 2}px)`,
-          paddingRight: `calc(50% - ${parseInt(theme('screens.xl'), 10) / 2}px)`,
+          paddingLeft: padWrapPadding,
+          paddingRight: padWrapPadding,
         },
         '.gradient-border': {
           borderImageSlice: '1',
