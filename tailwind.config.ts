@@ -141,9 +141,9 @@ const config: Config = {
         '.gradient-border': {
           borderImageSlice: '1',
           borderImageSource: `linear-gradient(90deg,${gradientOneColor} 0%,${gradientTwoColor} 50%,${gradientThreeColor} 70%)`,
-          '&.inverted': {
-            borderImageSource: `linear-gradient(90deg,${gradientThreeColor} 0%,${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
-          },
+        },
+        '.inverted': {
+          borderImageSource: `linear-gradient(90deg,${gradientThreeColor} 0%,${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
         },
         '.tool-tip': {
           '&:not(.fixed,.absolute)': {
