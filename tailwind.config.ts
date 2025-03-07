@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
-import { XL } from './app/constants/breakpoints'
 
 const config: Config = {
   content: ['./app/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -82,7 +81,12 @@ const config: Config = {
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
-      const padWrapPadding = `calc(50% - ${XL / 2}px)`
+      const xlScreenWidth = parseInt(theme('screens.xl'), 10)
+      const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
+      const headingColor = theme('colors.heading')!
+      const gradientOneColor = theme('colors.gradientone')!
+      const gradientTwoColor = theme('colors.gradienttwo')!
+      const gradientThreeColor = theme('colors.gradientthree')!
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -93,7 +97,7 @@ const config: Config = {
           textWrap: 'pretty',
         },
         ':where(h1,h2,h3,h4,h5,h6,label,legend)': {
-          color: theme('colors.heading'),
+          color: headingColor,
           fontFamily: theme('fontFamily.poppins'),
         },
         'h1,h2': {
@@ -117,13 +121,13 @@ const config: Config = {
           opacity: '0.9',
         },
         '.button': {
-          backgroundColor: theme('colors.heading'),
+          backgroundColor: headingColor,
           color: theme('colors.accentone.200'),
           fontFamily: 'inherit',
           textDecoration: 'none',
           '&:hover, &:focus-visible': {
             backgroundColor: theme('colors.accentone.100'),
-            color: theme('colors.heading'),
+            color: headingColor,
           },
         },
         '.pad-wrap': {
@@ -132,10 +136,10 @@ const config: Config = {
         },
         '.gradient-border': {
           borderImageSlice: '1',
-          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientone')} 0%,${theme('colors.gradienttwo')} 50%,${theme('colors.gradientthree')} 70%)`,
+          borderImageSource: `linear-gradient(90deg,${gradientOneColor} 0%,${gradientTwoColor} 50%,${gradientThreeColor} 70%)`,
         },
         '.inverted': {
-          borderImageSource: `linear-gradient(90deg,${theme('colors.gradientthree')},${theme('colors.gradienttwo')} 50%,${theme('colors.gradientone')} 70%)`,
+          borderImageSource: `linear-gradient(90deg,${gradientThreeColor},${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
         },
         '.tool-tip': {
           '&:not(.fixed,.absolute)': {
