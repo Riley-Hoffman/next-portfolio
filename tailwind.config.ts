@@ -87,6 +87,8 @@ const config: Config = {
       const gradientOneColor = theme('colors.gradientone')!
       const gradientTwoColor = theme('colors.gradienttwo')!
       const gradientThreeColor = theme('colors.gradientthree')!
+      const spacing2 = theme('spacing.2')
+      const spacing5 = theme('spacing.5')
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -101,7 +103,7 @@ const config: Config = {
           fontFamily: theme('fontFamily.poppins'),
         },
         'h1,h2': {
-          fontSize: '1.5rem',
+          fontSize: theme('spacing.6'),
         },
         ':where(h1,h2):not(.reg-caps)': {
           fontVariant: 'small-caps',
@@ -110,8 +112,8 @@ const config: Config = {
           fontSize: '1.125rem',
         },
         'p,h1,h2,h3,h4,h5,h6': {
-          margin: '1.25rem 0',
-          padding: '0 1.25rem',
+          margin: `${spacing5} 0`,
+          padding: `0 ${spacing5}`,
         },
         ':where(p,li) a:not(.button,.no-underline)': {
           textDecoration: 'underline',
@@ -146,9 +148,9 @@ const config: Config = {
             position: 'relative',
           },
           '&:before': {
-            borderRight: '0.5rem solid transparent',
-            borderLeft: '0.5rem solid transparent',
-            borderTop: '0.5rem solid #12121c',
+            borderRight: `${spacing2} solid transparent`,
+            borderLeft: `${spacing2} solid transparent`,
+            borderTop: `${spacing2} solid #12121c`,
             content: '""',
             opacity: '0',
             pointerEvents: 'none',
@@ -162,7 +164,7 @@ const config: Config = {
             borderRadius: '0.375rem',
             color: '#f5f5f5',
             content: 'attr(aria-label)',
-            fontSize: '0.75rem',
+            fontSize: theme('spacing.3'),
             opacity: '0',
             padding: '0.25rem 0.375rem',
             pointerEvents: 'none',
