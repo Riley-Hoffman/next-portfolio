@@ -33,7 +33,6 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         alt=""
         fetchPriority="high"
         className="cover-image"
-        style={{ transform: 'translate(-4.1rem, -8.2rem)' }}
       />
       <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
         {coverImageData.children}
