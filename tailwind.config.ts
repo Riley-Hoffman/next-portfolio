@@ -90,6 +90,7 @@ const config: Config = {
       const gradientThreeColor = theme('colors.gradientthree')!
       const spacing2 = theme('spacing.2')
       const spacing5 = theme('spacing.5')
+      const toolTipTransition = 'opacity 0.2s'
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -140,9 +141,9 @@ const config: Config = {
         '.gradient-border': {
           borderImageSlice: '1',
           borderImageSource: `linear-gradient(90deg,${gradientOneColor} 0%,${gradientTwoColor} 50%,${gradientThreeColor} 70%)`,
-        },
-        '.inverted': {
-          borderImageSource: `linear-gradient(90deg,${gradientThreeColor},${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
+          '&.inverted': {
+            borderImageSource: `linear-gradient(90deg,${gradientThreeColor} 0%,${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
+          },
         },
         '.tool-tip': {
           '&:not(.fixed,.absolute)': {
@@ -156,7 +157,7 @@ const config: Config = {
             opacity: '0',
             pointerEvents: 'none',
             position: 'absolute',
-            transition: 'opacity 0.2s',
+            transition: toolTipTransition,
             top: '0',
             left: '0',
           },
@@ -171,7 +172,7 @@ const config: Config = {
             pointerEvents: 'none',
             position: 'absolute',
             transform: 'translateY(-100%) translateX(-50%)',
-            transition: 'opacity 0.2s',
+            transition: toolTipTransition,
             top: '1px',
             left: '50%',
             width: '6.25rem',
