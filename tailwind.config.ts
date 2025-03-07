@@ -84,12 +84,12 @@ const config: Config = {
       const xlScreenWidth = parseInt(theme('screens.xl'), 10)
       const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
       const headingColor = theme('colors.heading')!
+      const crossThemeBlack = '#12121c'
       const gradientOneColor = theme('colors.gradientone')!
       const gradientTwoColor = theme('colors.gradienttwo')!
       const gradientThreeColor = theme('colors.gradientthree')!
       const spacing2 = theme('spacing.2')
       const spacing5 = theme('spacing.5')
-      const crossThemeBlack = '#12121c'
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
