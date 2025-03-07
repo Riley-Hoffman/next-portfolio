@@ -22,7 +22,6 @@ describe('useParticleCleanupEvents', () => {
         startTime: null,
         elapsedTime: 0,
         cursorInsideCanvas: false,
-        isMobile: null,
       },
     }
     handleInteraction = jest.fn()

@@ -12,5 +12,4 @@ export interface ParticleCleanupRefs extends SharedParticleCleanupRefs {
   startTime: number | null
   elapsedTime: number
   cursorInsideCanvas: boolean
-  isMobile: boolean | null
 }

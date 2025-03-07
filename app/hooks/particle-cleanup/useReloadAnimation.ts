@@ -22,7 +22,6 @@ export const useReloadAnimation = (
         elapsedTime: 0,
         cursorInsideCanvas: false,
         particlesArray: [],
-        isMobile: null,
       })
 
     dispatch({ type: 'RESET_GAME' })

@@ -20,7 +20,6 @@ export const useParticleCleanupGame = (
     startTime: null,
     elapsedTime: 0,
     cursorInsideCanvas: false,
-    isMobile: null,
   })
 
   const [gameData, dispatch] = useGameData()

@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import '@/app/styles/home/cover-image.css'
+import { MD, LG } from '@/app/constants/breakpoints'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
   ssr: false,
@@ -25,7 +26,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={coverImageData.highResSrc}
-        srcSet={`${coverImageData.lowResSrc} 768w, ${coverImageData.highResSrc} 1024w`}
+        srcSet={`${coverImageData.lowResSrc} ${MD}w, ${coverImageData.highResSrc} ${LG}w`}
         width={coverImageData.width}
         height={coverImageData.height}
         sizes="100vw"

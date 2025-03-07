@@ -23,8 +23,6 @@ export const useInitializeAnimation = (
         refs.current.canvas.height = height
       }
 
-      refs.current.isMobile = window.innerWidth <= 768
-
       if (refs.current.canvas) {
         initParticles(refs.current.canvas)
         if (ctx) animateParticles(ctx, refs.current.canvas)

@@ -31,7 +31,6 @@ describe('useInitializeAnimation', () => {
       current: {
         canvas: document.createElement('canvas'),
         container: containerElement,
-        isMobile: false,
         particlesArray: [],
         animationFrameId: 0,
         allClean: false,
@@ -57,8 +56,6 @@ describe('useInitializeAnimation', () => {
     expect(refs.current.container?.getBoundingClientRect).toHaveBeenCalled()
     expect(refs.current.canvas?.width).toBe(800)
     expect(refs.current.canvas?.height).toBe(600)
-
-    expect(refs.current.isMobile).toBe(window.innerWidth <= 768)
 
     expect(refs.current.container?.classList.contains).toHaveBeenCalledWith(
       'done'

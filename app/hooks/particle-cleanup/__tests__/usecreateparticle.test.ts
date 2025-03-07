@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react'
 import { useCreateParticle } from '../useCreateParticle'
 import { Particle } from '@/app/classes/particle-cleanup/Particle'
 import { useGameData, GameData } from '../useGameData'
+import { LG } from '@/app/constants/breakpoints'
 
 jest.mock('@/app/classes/particle-cleanup/Particle', () => ({
   Particle: jest
@@ -51,7 +52,7 @@ describe('useCreateParticle', () => {
 
     const mockCanvas = { width: 800, height: 600 } as HTMLCanvasElement
 
-    global.innerWidth = 1024
+    global.innerWidth = LG
     const { result: desktopResult } = renderHook(() => useCreateParticle())
     const desktopParticle = desktopResult.current(mockCanvas)
 
