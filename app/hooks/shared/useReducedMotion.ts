@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { isBrowser } from '@/app/utils/isBrowser'
 
 export const useReducedMotion = (): boolean => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(
-    () => {
-      if (isBrowser()) {
-        return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      }
-      return false
+  const initialPreference = useMemo(() => {
+    if (isBrowser()) {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches
     }
-  )
+    return false
+  }, [])
+
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    useState<boolean>(initialPreference)
 
   useEffect(() => {
     if (!isBrowser()) return

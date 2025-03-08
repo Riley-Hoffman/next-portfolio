@@ -1,28 +1,13 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
-import { useTimedEffect } from '@/app/hooks/shared/useTimedEffect'
+import { useHoverWiggle } from '@/app/hooks/shared/useHoverWiggle'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { triggerEffect, stopEffect } = useTimedEffect(1000)
-
-  const toggleWiggleEffect = (isCounting: boolean) => {
-    buttonRef.current?.classList.toggle(
-      'motion-safe:animate-wiggle',
-      isCounting
-    )
-  }
-
-  const handleMouseEnterWiggle = () => {
-    triggerEffect(toggleWiggleEffect)
-  }
-
-  useEffect(() => {
-    return stopEffect
-  }, [stopEffect])
+  const { handleMouseEnterWiggle } = useHoverWiggle(buttonRef as React.RefObject<HTMLAnchorElement>)
 
   return (
     <Link

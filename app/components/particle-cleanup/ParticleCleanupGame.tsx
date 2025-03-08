@@ -6,9 +6,11 @@ import { CompletionMessage } from './content/CompletionMessage'
 import '@/app/styles/shared/overlay.css'
 
 export const ParticleCleanupGame = () => {
-  const completionMessageRef = useRef<HTMLParagraphElement | null>(null)
+  const completionMessageRef = useRef<HTMLParagraphElement>(null)
   const { refs, gameData, medalDetails, reloadAnimation } =
-    useParticleCleanupGame(completionMessageRef)
+    useParticleCleanupGame(
+      completionMessageRef as React.RefObject<HTMLParagraphElement>
+    )
 
   const renderCompletionMessage = () => {
     if (!refs.current.allClean) return null

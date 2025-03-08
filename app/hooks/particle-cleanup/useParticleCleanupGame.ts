@@ -9,7 +9,7 @@ import { useParticleCleanupEvents } from './useParticleCleanupEvents'
 import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 export const useParticleCleanupGame = (
-  completionMessageRef: React.RefObject<HTMLParagraphElement | null>
+  completionMessageRef: React.RefObject<HTMLParagraphElement>
 ) => {
   const refs = useRef<ParticleCleanupRefs>({
     canvas: null,

@@ -37,7 +37,9 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
       <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
         {coverImageData.children}
       </div>
-      <LazyParallax parallaxRef={parallaxRef} />
+      <LazyParallax
+        parallaxRef={parallaxRef as React.RefObject<HTMLDivElement>}
+      />
     </section>
   )
 }
