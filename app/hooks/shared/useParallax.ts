@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useMemo } from 'react'
 import { useReducedMotion } from './useReducedMotion'
 import { useScrollHandler } from './useScrollHandler'
 import { pxToRem } from '@/app/utils/pxToRem'
@@ -11,32 +11,40 @@ export const useParallax = (
   const internalRef = useRef<HTMLDivElement>(null)
   const imgRef = useRef<HTMLImageElement | null>(null)
 
-  const parallaxRef = externalRef ?? internalRef
+  const parallaxRef = useMemo(
+    () => externalRef ?? internalRef,
+    [externalRef, internalRef]
+  )
 
   const updateImagePosition = useCallback(() => {
     if (!parallaxRef.current) {
-      console.warn('Parallax reference is not set.')
+      console.error('Parallax reference is not set.')
       return
     }
     if (!imgRef.current) {
-      console.warn('Image reference is not set.')
+      console.error('Image reference is not set.')
       return
     }
     if (prefersReducedMotion) {
-      console.info('User prefers reduced motion.')
+      console.warn('User prefers reduced motion.')
       return
     }
     const height = parallaxRef.current.offsetHeight
     const scrollY = window.scrollY
-
-    if (scrollY < 0) return
-
-    const translate = -(height - scrollY) * velocity
-    if (Number.isFinite(translate)) {
-      const translateRem = pxToRem(translate)
-      imgRef.current.style.transform = `translate(${translateRem}rem, ${translateRem}rem)`
-      imgRef.current.style.willChange = 'transform'
+    if (scrollY < 0) {
+      return
     }
+
+    const translate = Math.max(
+      -(height - scrollY) * velocity,
+      -height * velocity
+    )
+    const translateRem = pxToRem(translate)
+    requestAnimationFrame(() => {
+      if (imgRef.current) {
+        imgRef.current.style.cssText = `transform: translate(${translateRem}rem, ${translateRem}rem); will-change: transform;`
+      }
+    })
   }, [parallaxRef, prefersReducedMotion, velocity])
 
   useScrollHandler(updateImagePosition)
@@ -47,6 +55,8 @@ export const useParallax = (
         const imgElement = parallaxRef.current.querySelector('img')
         if (imgElement !== null) {
           imgRef.current = imgElement
+        } else {
+          console.error('Image element not found in parallax container.')
         }
       }
     }
@@ -58,6 +68,7 @@ export const useParallax = (
       if (imgRef.current) {
         imgRef.current.style.transform = ''
         imgRef.current.style.willChange = ''
+        imgRef.current = null
       }
     }
   }, [parallaxRef, updateImagePosition, prefersReducedMotion])
