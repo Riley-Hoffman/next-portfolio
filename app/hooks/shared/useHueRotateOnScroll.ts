@@ -11,7 +11,7 @@ export const useHueRotateOnScroll = (
   const [hueFilter, setHueFilter] = useState('')
 
   const updateHueRotation = useCallback(() => {
-    if (typeof window === undefined || prefersReducedMotion) return
+    if (typeof window === 'undefined' || prefersReducedMotion) return
 
     const scrollY = window.scrollY
     const hueRotation = scrollY / 2.7
