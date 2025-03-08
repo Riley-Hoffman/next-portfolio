@@ -7,7 +7,9 @@ import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 
 export const LinkedInButton = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { handleMouseEnterWiggle } = useHoverWiggle(buttonRef as React.RefObject<HTMLAnchorElement>)
+  const { handleMouseEnterWiggle } = useHoverWiggle(
+    buttonRef as React.RefObject<HTMLAnchorElement>
+  )
 
   return (
     <Link

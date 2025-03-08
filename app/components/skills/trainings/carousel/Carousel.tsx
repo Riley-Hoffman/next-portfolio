@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
@@ -10,7 +10,6 @@ import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
-  const swiperContainerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     ;(async () => {
       await carouselStyle()
@@ -18,7 +17,7 @@ export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
   }, [])
 
   return (
-    <div className="relative max-w-7xl" ref={swiperContainerRef}>
+    <div className="relative max-w-7xl">
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
