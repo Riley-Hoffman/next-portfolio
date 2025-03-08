@@ -3,30 +3,29 @@ import { useReducedMotion } from './useReducedMotion'
 import { useScrollHandler } from './useScrollHandler'
 import { pxToRem } from '@/app/utils/pxToRem'
 
+const useParallaxRef = (externalRef?: React.RefObject<HTMLDivElement>) => {
+  const internalRef = useRef<HTMLDivElement>(null)
+  return useMemo(() => externalRef ?? internalRef, [externalRef, internalRef])
+}
+
 export const useParallax = (
   velocity: number = 0.1,
   externalRef?: React.RefObject<HTMLDivElement>
 ): React.RefObject<HTMLDivElement | null> => {
   const prefersReducedMotion = useReducedMotion()
-  const internalRef = useRef<HTMLDivElement>(null)
   const imgRef = useRef<HTMLImageElement | null>(null)
-
-  const parallaxRef = useMemo(
-    () => externalRef ?? internalRef,
-    [externalRef, internalRef]
-  )
+  const parallaxRef = useParallaxRef(externalRef)
 
   const updateImagePosition = useCallback(() => {
+    if (prefersReducedMotion) {
+      return
+    }
     if (!parallaxRef.current) {
       console.error('Parallax reference is not set.')
       return
     }
     if (!imgRef.current) {
       console.error('Image reference is not set.')
-      return
-    }
-    if (prefersReducedMotion) {
-      console.warn('User prefers reduced motion.')
       return
     }
     const height = parallaxRef.current.offsetHeight
@@ -42,7 +41,11 @@ export const useParallax = (
     const translateRem = pxToRem(translate)
     requestAnimationFrame(() => {
       if (imgRef.current) {
-        imgRef.current.style.cssText = `transform: translate(${translateRem}rem, ${translateRem}rem); will-change: transform;`
+        const cssText = `
+        transform: translate(${translateRem}rem, ${translateRem}rem); 
+        will-change: transform;
+        `
+        imgRef.current.style.cssText = cssText
       }
     })
   }, [parallaxRef, prefersReducedMotion, velocity])
@@ -56,7 +59,10 @@ export const useParallax = (
         if (imgElement !== null) {
           imgRef.current = imgElement
         } else {
-          console.error('Image element not found in parallax container.')
+          console.error(
+            'Image element not found in parallax container. Current parallaxRef:',
+            parallaxRef.current
+          )
         }
       }
     }
