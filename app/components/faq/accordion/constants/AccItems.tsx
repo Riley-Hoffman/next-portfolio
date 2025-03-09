@@ -1,12 +1,7 @@
 import Link from 'next/link'
+import { FaqItem } from '@/app/types/faq/FaqItem.interface'
 
-export interface AccItem {
-  question: string
-  answer: React.ReactNode
-  plainTextAnswer?: string
-}
-
-const ACC_ITEMS: AccItem[] = [
+const Q_AND_A: FaqItem[] = [
   {
     question: 'Are you available for freelance work?',
     plainTextAnswer:
@@ -62,6 +57,6 @@ const ACC_ITEMS: AccItem[] = [
   },
 ]
 
-export const QUESTIONS = ACC_ITEMS.map((item) => item.question)
-export const HTML_ANSWERS = ACC_ITEMS.map((item) => item.answer)
-export const PLAIN_TEXT_ANSWERS = ACC_ITEMS.map((item) => item.plainTextAnswer)
+export const QUESTIONS = Q_AND_A.map((item) => item.question)
+export const HTML_ANSWERS = Q_AND_A.map((item) => item.answer)
+export const PLAIN_TEXT_ANSWERS = Q_AND_A.map((item) => item.plainTextAnswer)

@@ -1,9 +1,4 @@
-export interface IconLink {
-  rel: string
-  type?: string
-  sizes?: string
-  href: string
-}
+import { IconLink } from '@/app/types/IconLink.interface'
 
 export const ICON_LINKS_DATA: IconLink[] = [
   { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },

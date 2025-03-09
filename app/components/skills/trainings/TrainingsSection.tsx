@@ -1,5 +1,5 @@
 import { Carousel } from './carousel/Carousel'
-import { SLIDE_DATA } from './carousel/constants/slideData'
+import { SLIDE_DATA } from '@/app/constants/carousel/slideData'
 
 export const TrainingsSection = () => (
   <section className="gradient-border border-t-2 border-solid bg-accentone-100 pb-16 pt-7">

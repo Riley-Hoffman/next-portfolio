@@ -1,13 +1,13 @@
 'use client'
 import { useAccordion } from '@/app/hooks/faq/accordion/useAccordion'
-import { AccItem } from './constants/AccItems'
+import { FaqItem } from '@/app/types/faq/FaqItem.interface'
 import { AccQuestion } from './content/AccQuestion'
 import { AccAnswer } from './content/AccAnswer'
 import { useDebounce } from '@/app/hooks/shared/useDebounce'
 import '@/app/styles/faq/accordion.css'
 
 interface AccProps {
-  accItems: AccItem[]
+  accItems: FaqItem[]
   label: string
 }
 

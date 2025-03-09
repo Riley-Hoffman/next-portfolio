@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { Tech } from './SiteTechStack'
+import { Tech } from '@/app/types/home/Tech.interface'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 

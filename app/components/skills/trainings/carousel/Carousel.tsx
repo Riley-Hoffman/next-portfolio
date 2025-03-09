@@ -4,14 +4,14 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
-import { SlideDataTypes } from './constants/slideData'
+import { SlideData } from '@/app/types/carousel/SlideData.interface'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 
-export const Carousel = ({ slides }: { slides: SlideDataTypes[] }) => {
+export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])

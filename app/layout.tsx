@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { inconsolata, poppins, sourcesans, urbanist } from './fonts/fonts'
 import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
-import { IconLinks } from './components/layout/icon-links/IconLinks'
-import { ICON_LINKS_DATA } from './components/layout/icon-links/constants/iconLinkAttributes'
+import { IconLinks } from './components/layout/IconLinks'
+import { ICON_LINKS_DATA } from './constants/icon-links/iconLinkAttributes'
 import {
   getBaseUrl,
   getPageTitle,

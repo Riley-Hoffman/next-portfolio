@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { CAROUSEL_BUTTONS_CONFIG } from './constants/carouselButtonsConfig'
+import { CAROUSEL_BUTTONS_CONFIG } from '@/app/constants/carousel/carouselButtonsConfig'
 import { useCarouselButtonVisibility } from '@/app/hooks/carousel/useCarouselButtonVisibility'
 
 export const CarouselButtons = () => {

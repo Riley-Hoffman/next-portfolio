@@ -1,10 +1,6 @@
-export interface SlideDataTypes {
-  src: string
-  url: string
-  label: string
-}
+import { SlideData } from '@/app/types/carousel/SlideData.interface'
 
-export const SLIDE_DATA: SlideDataTypes[] = [
+export const SLIDE_DATA: SlideData[] = [
   {
     src: 'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/learnexpress.webp',
     url: 'https://www.codecademy.com/profiles/RileyHoffman/certificates/85396dd6e2e850ab34e904243aa464c6',
