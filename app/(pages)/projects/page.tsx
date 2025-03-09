@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import {
-  SchemaGenerator,
-  SchemaGeneratorProps,
-} from '@/app/components/schema/SchemaGenerator'
+import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { fetchFirebaseData } from '@/app/utils/fetchFirebaseData'
 import { ProjectCategoryRenderer } from '@/app/components/projects/project-categories/ProjectCategoryRenderer'
 import { Project } from '@/app/types/projects/Project.types'

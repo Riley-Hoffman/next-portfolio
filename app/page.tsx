@@ -1,13 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic'
-import {
-  SchemaGenerator,
-  SchemaGeneratorProps,
-} from '@/app/components/schema/SchemaGenerator'
-import {
-  CoverImage,
-  CoverImageProps,
-} from './components/home/cover-image/CoverImage'
+import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
+import { SchemaGeneratorProps } from './types/schema/SchemaGeneratorProps.interface'
+import { CoverImage } from './components/home/cover-image/CoverImage'
+import { CoverImageProps } from './types/home/CoverImageProps.interface'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
 import { BASE_DESCRIPTION } from '@/app/constants/baseData'

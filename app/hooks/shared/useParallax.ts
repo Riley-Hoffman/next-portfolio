@@ -70,7 +70,9 @@ export const useParallax = (
     }
 
     setImgRef()
-    updateImagePosition()
+    if (parallaxRef.current && imgRef.current) {
+      updateImagePosition()
+    }
 
     return () => {
       if (imgRef.current) {

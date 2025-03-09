@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import {
-  SchemaGenerator,
-  SchemaGeneratorProps,
-} from '@/app/components/schema/SchemaGenerator'
+import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { SkillsSection } from '@/app/components/skills/skills/SkillsSection'
 import { TrainingsSection } from '@/app/components/skills/trainings/TrainingsSection'
 import { getBaseUrl, getPageTitle, getImageUrl } from '@/app/constants/baseData'

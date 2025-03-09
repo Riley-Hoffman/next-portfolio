@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  SchemaGenerator,
-  SchemaGeneratorProps,
-} from '@/app/components/schema/SchemaGenerator'
+import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =

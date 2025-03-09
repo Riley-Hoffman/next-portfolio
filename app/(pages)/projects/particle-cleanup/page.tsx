@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import {
-  SchemaGenerator,
-  SchemaGeneratorProps,
-} from '@/app/components/schema/SchemaGenerator'
+import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
 import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'

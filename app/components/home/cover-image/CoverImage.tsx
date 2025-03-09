@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
+import { CoverImageProps } from '@/app/types/home/CoverImageProps.interface'
 import '@/app/styles/home/cover-image.css'
 import { MD, LG } from '@/app/constants/breakpoints'
 
@@ -7,15 +8,6 @@ const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
   ssr: false,
 })
 
-export interface CoverImageProps {
-  coverImageData: {
-    width: number
-    height: number
-    highResSrc: string
-    lowResSrc: string
-    children: React.ReactNode
-  }
-}
 export const CoverImage = ({ coverImageData }: CoverImageProps) => {
   const parallaxRef = useRef<HTMLDivElement>(null)
   return (

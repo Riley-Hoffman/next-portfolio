@@ -10,18 +10,9 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
 } from '@/app/constants/baseData'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 
 const SchemaInjector = dynamic(() => import('./SchemaInjector'), { ssr: false })
-
-interface SchemaGeneratorProps {
-  schemaData: {
-    title: string
-    description: string
-    urlPath: string
-    publishDate?: string
-    schemaType: 'WebPage' | 'ContactPage'
-  }
-}
 
 type SchemaMap = {
   WebPage: WebPage
