@@ -1,8 +1,4 @@
-export interface Skill {
-  skill: string
-  icon: string
-  classes?: string
-}
+import { Skill } from '@/app/types/skills/Skill.interface'
 
 const PADDING_ROUNDING = ' p-[0.313rem] rounded-2xl'
 

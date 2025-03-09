@@ -11,7 +11,7 @@ import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])

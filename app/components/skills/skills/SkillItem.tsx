@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { Icon } from '@iconify/react'
-import { Skill } from './SkillsData'
+import { Skill } from '@/app/types/skills/Skill.interface'
 
 export const SkillItem = ({ skill, icon, classes }: Skill) => (
   <li className="min-h-11 text-center">
