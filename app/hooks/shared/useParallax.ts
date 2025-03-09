@@ -8,10 +8,12 @@ const useParallaxRef = (externalRef?: React.RefObject<HTMLDivElement>) => {
   return useMemo(() => externalRef ?? internalRef, [externalRef, internalRef])
 }
 
+type UseParallaxReturn = React.RefObject<HTMLDivElement | null>
+
 export const useParallax = (
   velocity: number = 0.1,
   externalRef?: React.RefObject<HTMLDivElement>
-): React.RefObject<HTMLDivElement | null> => {
+): UseParallaxReturn => {
   const prefersReducedMotion = useReducedMotion()
   const imgRef = useRef<HTMLImageElement | null>(null)
   const parallaxRef = useParallaxRef(externalRef)

@@ -11,7 +11,9 @@ import {
   LINKEDIN_URL,
 } from '@/app/constants/baseData'
 
-export interface SchemaGeneratorProps {
+const SchemaInjector = dynamic(() => import('./SchemaInjector'), { ssr: false })
+
+interface SchemaGeneratorProps {
   schemaData: {
     title: string
     description: string
@@ -26,7 +28,9 @@ type SchemaMap = {
   ContactPage: ContactPage
 }
 
-const SchemaInjector = dynamic(() => import('./SchemaInjector'), { ssr: false })
+type GeneratedSchema = WithContext<
+  SchemaMap[SchemaGeneratorProps['schemaData']['schemaType']]
+>
 
 const generateSchema = ({
   schemaType,
@@ -34,9 +38,7 @@ const generateSchema = ({
   description,
   urlPath,
   publishDate,
-}: SchemaGeneratorProps['schemaData']): WithContext<
-  SchemaMap[typeof schemaType]
-> => ({
+}: SchemaGeneratorProps['schemaData']): GeneratedSchema => ({
   '@context': 'https://schema.org',
   '@type': schemaType,
   name: getPageTitle(title),

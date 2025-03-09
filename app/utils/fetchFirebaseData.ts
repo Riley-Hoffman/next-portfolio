@@ -12,7 +12,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db: Database = getDatabase(app)
 
-export const fetchFirebaseData = async <T>(path: string): Promise<T[]> => {
+type FetchFirebaseDataReturn<T> = Promise<T[]>
+
+export const fetchFirebaseData = async <T>(
+  path: string
+): FetchFirebaseDataReturn<T> => {
   try {
     const snapshot = await get(ref(db, path))
     return snapshot.exists() ? snapshot.val() : []
