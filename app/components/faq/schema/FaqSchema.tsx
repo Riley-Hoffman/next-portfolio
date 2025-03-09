@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { FAQPage, WithContext } from 'schema-dts'
-import { QUESTIONS, PLAIN_TEXT_ANSWERS } from '../accordion/constants/AccItems'
+import { QUESTIONS, PLAIN_TEXT_ANSWERS } from '@/app/constants/faq/faqItems'
 import {
   getBaseUrl,
   getPageTitle,

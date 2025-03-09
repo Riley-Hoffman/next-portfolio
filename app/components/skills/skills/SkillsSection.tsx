@@ -1,4 +1,4 @@
-import { SKILLS_DATA } from './SkillsData'
+import { SKILLS_DATA } from '@/app/constants/skills/skillsData'
 import { SkillItem } from './SkillItem'
 import '@/app/styles/shared/background-accent.css'
 
