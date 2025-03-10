@@ -20,7 +20,7 @@ describe('useCustomFormErrors', () => {
     const { result } = renderHook(() => useCustomFormErrors(initialState))
 
     act(() => {
-      result.current.handleInvalidSubmission()
+      result.current.handleInvalid()
     })
 
     expect(result.current.errors.name).toBe('Please enter your name.')
@@ -70,7 +70,7 @@ describe('useCustomFormErrors', () => {
     })
 
     act(() => {
-      result.current.handleInvalidSubmission()
+      result.current.handleInvalid()
     })
 
     expect(result.current.errors.email).toBe(
@@ -94,7 +94,7 @@ describe('useCustomFormErrors', () => {
     })
 
     act(() => {
-      result.current.handleInvalidSubmission()
+      result.current.handleInvalid()
     })
 
     expect(result.current.errors.email).toBe('')

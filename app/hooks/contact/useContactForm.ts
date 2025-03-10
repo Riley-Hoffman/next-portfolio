@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCustomFormErrors } from './useCustomFormErrors'
 
@@ -12,9 +12,10 @@ export const useContactForm = ({
   onErrors,
 }: UseContactFormParams) => {
   const csrfTokenRef = useRef<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
 
-  const { formState, errors, handleChange, handleInvalidSubmission } =
+  const { formState, errors, handleChange, handleInvalid } =
     useCustomFormErrors(initialFormState)
 
   useEffect(() => {
@@ -34,23 +35,28 @@ export const useContactForm = ({
     }
   }
 
-  useEffect(() => {
-    fetchCsrfToken()
-  }, [])
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    if (isSubmitting) {
+      return
+    }
+
     if (!e.currentTarget.reportValidity()) {
-      handleInvalidSubmission()
+      handleInvalid()
       return
     }
 
     if (!csrfTokenRef.current) {
-      console.error('CSRF token is missing.')
+      await fetchCsrfToken()
+    }
+
+    if (!csrfTokenRef.current) {
+      console.error('CSRF token is still missing after fetch.')
       return
     }
 
+    setIsSubmitting(true)
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -76,7 +82,7 @@ export const useContactForm = ({
   return {
     formState,
     handleChange,
-    handleInvalidSubmission,
-    handleFormSubmit,
+    handleInvalid,
+    handleSubmit,
   }
 }

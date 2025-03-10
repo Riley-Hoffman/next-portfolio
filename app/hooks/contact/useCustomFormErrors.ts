@@ -39,7 +39,7 @@ export const useCustomFormErrors = (initialState: FormValue) => {
       setErrors((prevErrors) => ({ ...prevErrors, [field]: '' }))
     }
 
-  const handleInvalidSubmission = () => {
+  const handleInvalid = () => {
     setSubmitted(true)
     assignFormErrors()
   }
@@ -48,6 +48,6 @@ export const useCustomFormErrors = (initialState: FormValue) => {
     formState,
     errors,
     handleChange,
-    handleInvalidSubmission,
+    handleInvalid,
   }
 }
