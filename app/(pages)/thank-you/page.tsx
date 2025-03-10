@@ -1,19 +1,10 @@
-import type { Metadata } from 'next'
-import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
+import { createMetadata } from '@/app/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Thank You',
   description: 'Thank you for contacting Riley Hoffman - Web Developer.',
-  metadataBase: new URL(`${getBaseUrl('/thank-you')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    images: getImageUrl(),
-    title: 'Thank You',
-    url: `${getBaseUrl('/thank-you')}`,
-  },
-}
+  path: '/thank-you',
+})
 
 const ThankYou = () => (
   <>

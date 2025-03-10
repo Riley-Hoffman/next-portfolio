@@ -1,32 +1,23 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
+import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
-import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'
+const TITLE = 'Accessibility'
+const PATH = '/accessibility'
 
-export const metadata: Metadata = {
-  title: 'Accessibility',
+export const metadata = createMetadata({
+  title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl('/accessibility')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: 'Accessibility',
-    url: `${getBaseUrl('/accessibility')}`,
-  },
-}
+  path: PATH,
+})
 
 const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
-  title: 'Accessibility',
+  title: TITLE,
   description: DESCRIPTION,
-  urlPath: '/accessibility',
+  urlPath: PATH,
   publishDate: '2024-08-07T09:25:01.340Z',
   schemaType: 'WebPage',
 }

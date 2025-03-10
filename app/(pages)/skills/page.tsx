@@ -1,31 +1,24 @@
-import type { Metadata } from 'next'
+import { createMetadata } from '@/app/utils/metadata';
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { SkillsSection } from '@/app/components/skills/skills/SkillsSection'
 import { TrainingsSection } from '@/app/components/skills/trainings/TrainingsSection'
-import { getBaseUrl, getPageTitle, getImageUrl } from '@/app/constants/baseData'
+import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION = `My skills. ${getPageTitle()}.`
+const TITLE = 'Skills'
+const PATH = '/skills'
 
-export const metadata: Metadata = {
-  title: 'Skills',
+export const metadata = createMetadata({
+  title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl('/skills')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: 'Skills',
-    url: `${getBaseUrl('/skills')}`,
-  },
-}
+  path: PATH,
+})
+
 const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
-  title: 'Skills',
+  title: TITLE,
   description: DESCRIPTION,
-  urlPath: '/skills',
+  urlPath: PATH,
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'WebPage',
 }

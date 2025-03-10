@@ -1,24 +1,13 @@
-import { Metadata } from 'next'
-import { FaqSchema, DESCRIPTION } from '@/app/components/faq/schema/FaqSchema'
+import { createMetadata } from '@/app/utils/metadata'
+import { FaqSchema } from '@/app/components/faq/schema/FaqSchema'
 import { Accordion } from '@/app/components/faq/accordion/Accordion'
 import { QUESTIONS, HTML_ANSWERS } from '@/app/constants/faq/faqItems'
-import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'FAQ',
-  description: DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl('/faq')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: 'FAQ',
-    url: `${getBaseUrl('/faq')}`,
-  },
-}
+  description: 'Find the answers to my most frequently asked questions.',
+  path: '/contact',
+})
 
 const Faq = () => (
   <>

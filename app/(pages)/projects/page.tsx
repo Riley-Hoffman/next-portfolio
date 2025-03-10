@@ -1,32 +1,25 @@
-import type { Metadata } from 'next'
+import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { fetchFirebaseData } from '@/app/utils/fetchFirebaseData'
 import { ProjectCategoryRenderer } from '@/app/components/projects/project-categories/ProjectCategoryRenderer'
 import { Project } from '@/app/types/projects/Project.types'
-import { getBaseUrl, getPageTitle, getImageUrl } from '@/app/constants/baseData'
+import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION = `View past projects by ${getPageTitle()}.`
+const TITLE = 'Projects'
+const PATH = '/projects'
 
-export const metadata: Metadata = {
-  title: 'Projects',
+export const metadata = createMetadata({
+  title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl('/projects')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: 'Projects',
-    url: `${getBaseUrl('/projects')}`,
-  },
-}
+  path: PATH,
+})
+
 const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
-  title: 'Projects',
+  title: TITLE,
   description: DESCRIPTION,
-  urlPath: '/projects',
+  urlPath: PATH,
   publishDate: '2024-07-04T09:25:01.340Z',
   schemaType: 'WebPage',
 }

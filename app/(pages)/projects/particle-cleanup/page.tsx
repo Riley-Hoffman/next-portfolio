@@ -1,32 +1,24 @@
-import type { Metadata } from 'next'
+import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
-import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'How quickly can you clear all the particles from the board using your cursor or finger?'
+const TITLE = 'Particle Cleanup Game'
+const PATH = '/projects/particle-cleanup'
 
-export const metadata: Metadata = {
-  title: 'Particle Cleanup Game',
+export const metadata = createMetadata({
+  title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl('/projects/particle-cleanup')}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: 'Particle Cleanup Game',
-    url: `${getBaseUrl('/projects/particle-cleanup')}`,
-  },
-}
+  path: PATH,
+})
+
 const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
-  title: 'Particle Cleanup Game',
+  title: TITLE,
   description: DESCRIPTION,
-  urlPath: '/projects/particle-cleanup',
+  urlPath: PATH,
   publishDate: '2024-08-05T09:25:01.340Z',
   schemaType: 'WebPage',
 }
