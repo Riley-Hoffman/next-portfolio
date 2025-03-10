@@ -1,7 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { useScrollHandler } from './useScrollHandler'
 import { useReducedMotion } from './useReducedMotion'
-import { useDebounce } from './useDebounce'
 
 export const useHueRotateOnScroll = (
   hueElRef: React.RefObject<HTMLElement>
@@ -23,8 +22,7 @@ export const useHueRotateOnScroll = (
     }
   }, [prefersReducedMotion])
 
-  const debouncedUpdateHueRotation = useDebounce(updateHueRotation, 100)
-  useScrollHandler(debouncedUpdateHueRotation)
+  useScrollHandler(updateHueRotation)
 
   const prevFilterRef = useRef<string>('')
 
