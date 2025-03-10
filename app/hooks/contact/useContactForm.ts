@@ -16,7 +16,7 @@ export const useContactForm = ({
   const router = useRouter()
 
   const { formState, errors, handleChange, handleInvalid } =
-    useCustomFormErrors(initialFormState)
+    useCustomFormErrors(initialFormState, isSubmitting)
 
   useEffect(() => {
     const errorMessages = Object.values(errors).filter(Boolean) as string[]

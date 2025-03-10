@@ -4,20 +4,26 @@ import { FormValue } from '@/app/types/contact/FormValue.interface'
 
 describe('useCustomFormErrors', () => {
   let initialState: FormValue
+  let isSubmitting: boolean
 
   beforeEach(() => {
     initialState = { name: '', email: '', message: '' }
+    isSubmitting = false
   })
 
   it('should initialize form state correctly', () => {
-    const { result } = renderHook(() => useCustomFormErrors(initialState))
+    const { result } = renderHook(() =>
+      useCustomFormErrors(initialState, isSubmitting)
+    )
     expect(result.current.formState.name).toBe('')
     expect(result.current.formState.email).toBe('')
     expect(result.current.formState.message).toBe('')
   })
 
   it('should show validation errors when the form is submitted with empty fields', async () => {
-    const { result } = renderHook(() => useCustomFormErrors(initialState))
+    const { result } = renderHook(() =>
+      useCustomFormErrors(initialState, isSubmitting)
+    )
 
     act(() => {
       result.current.handleInvalid()
@@ -31,7 +37,9 @@ describe('useCustomFormErrors', () => {
   })
 
   it('should clear errors and update form state when the user changes input fields', async () => {
-    const { result } = renderHook(() => useCustomFormErrors(initialState))
+    const { result } = renderHook(() =>
+      useCustomFormErrors(initialState, isSubmitting)
+    )
 
     act(() => {
       result.current.handleChange('name')({
@@ -55,7 +63,9 @@ describe('useCustomFormErrors', () => {
   })
 
   it('should validate email format', async () => {
-    const { result } = renderHook(() => useCustomFormErrors(initialState))
+    const { result } = renderHook(() =>
+      useCustomFormErrors(initialState, isSubmitting)
+    )
 
     act(() => {
       result.current.handleChange('name')({
@@ -79,7 +89,9 @@ describe('useCustomFormErrors', () => {
   })
 
   it('should not show email error if a valid email is entered', async () => {
-    const { result } = renderHook(() => useCustomFormErrors(initialState))
+    const { result } = renderHook(() =>
+      useCustomFormErrors(initialState, isSubmitting)
+    )
 
     act(() => {
       result.current.handleChange('name')({

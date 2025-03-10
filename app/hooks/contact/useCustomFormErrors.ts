@@ -2,9 +2,11 @@ import { useState, useEffect, useCallback } from 'react'
 import { FormValue } from '@/app/types/contact/FormValue.interface'
 import isEmail from 'validator/lib/isEmail'
 
-export const useCustomFormErrors = (initialState: FormValue) => {
+export const useCustomFormErrors = (
+  initialState: FormValue,
+  isSubmitting: boolean
+) => {
   const [formState, setFormState] = useState(initialState)
-  const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Record<keyof FormValue, string>>({
     name: '',
     email: '',
@@ -22,8 +24,8 @@ export const useCustomFormErrors = (initialState: FormValue) => {
   }, [formState])
 
   useEffect(() => {
-    if (submitted) assignFormErrors()
-  }, [submitted, assignFormErrors])
+    if (isSubmitting) assignFormErrors()
+  }, [isSubmitting, assignFormErrors])
 
   const handleChange =
     (field: keyof FormValue) =>
@@ -35,12 +37,10 @@ export const useCustomFormErrors = (initialState: FormValue) => {
         [field]: value,
       }))
 
-      setSubmitted(false)
       setErrors((prevErrors) => ({ ...prevErrors, [field]: '' }))
     }
 
   const handleInvalid = () => {
-    setSubmitted(true)
     assignFormErrors()
   }
 
