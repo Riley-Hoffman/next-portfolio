@@ -1,6 +1,5 @@
-import { useEffect, useRef, RefObject } from 'react'
-import { isBrowser } from '@/app/utils/isBrowser'
-import { useDebounce } from './useDebounce'
+import { useRef, RefObject } from 'react'
+import { useScrollHandler } from './useScrollHandler'
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -28,23 +27,13 @@ export const useTriggerOnScroll = (): UseTriggerOnScrollReturn => {
     }
   }
 
-  const updateTriggerOnScroll = () => {
-    requestAnimationFrame(() => {
-      if (elementsRef.current) updateElementActivation(elementsRef.current)
-    })
+  const handleScroll = () => {
+    if (elementsRef.current) {
+      updateElementActivation(elementsRef.current)
+    }
   }
 
-  const debouncedUpdateTriggerOnScroll = useDebounce(updateTriggerOnScroll, 100)
-
-  useEffect(() => {
-    if (isBrowser()) {
-      window.addEventListener('scroll', debouncedUpdateTriggerOnScroll)
-      debouncedUpdateTriggerOnScroll()
-      return () => {
-        window.removeEventListener('scroll', debouncedUpdateTriggerOnScroll)
-      }
-    }
-  }, [debouncedUpdateTriggerOnScroll])
+  useScrollHandler(handleScroll)
 
   return elementsRef
 }
