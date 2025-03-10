@@ -1,4 +1,4 @@
-import { createMetadata } from '@/app/utils/metadata';
+import { createMetadata } from '@/app/utils/metadata'
 
 export const metadata = createMetadata({
   title: 'Thank You',

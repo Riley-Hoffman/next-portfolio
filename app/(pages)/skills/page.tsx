@@ -1,4 +1,4 @@
-import { createMetadata } from '@/app/utils/metadata';
+import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
 import { SkillsSection } from '@/app/components/skills/skills/SkillsSection'
