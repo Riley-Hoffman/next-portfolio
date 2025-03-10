@@ -137,4 +137,7 @@
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl;
     @apply contrast-more:bg-white dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
   }
+  .back-to-top {
+    @apply button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-300 px-2 py-2 md:tool-tip hover:border-heading focus-visible:border-heading;
+  }
 }

@@ -146,7 +146,7 @@ const config: Config = {
           borderImageSource: `linear-gradient(90deg,${gradientThreeColor} 0%,${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
         },
         '.tool-tip': {
-          '&:not(.fixed,.absolute)': {
+          '&:not(.back-to-top)': {
             position: 'relative',
           },
           '&:before': {
