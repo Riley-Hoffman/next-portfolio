@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { isBrowser } from '@/app/utils/isBrowser'
 
-export const useScrollHandler = (onScroll: () => void) => {
+export const useScrollHandler = (
+  onScroll: (scrollY?: number) => void,
+  returnScrollY = false
+) => {
   const ticking = useRef(false)
   const animationFrameId = useRef<number | null>(null)
 
@@ -12,7 +15,8 @@ export const useScrollHandler = (onScroll: () => void) => {
       if (!ticking.current) {
         ticking.current = true
         animationFrameId.current = window.requestAnimationFrame(() => {
-          onScroll()
+          const scrollY = returnScrollY ? window.scrollY : undefined
+          onScroll(scrollY)
           ticking.current = false
         })
       }
@@ -26,5 +30,5 @@ export const useScrollHandler = (onScroll: () => void) => {
         animationFrameId.current = null
       }
     }
-  }, [onScroll])
+  }, [onScroll, returnScrollY])
 }

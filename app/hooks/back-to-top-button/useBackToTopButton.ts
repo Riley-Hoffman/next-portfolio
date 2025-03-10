@@ -5,11 +5,11 @@ import { useScrollHandler } from '../shared/useScrollHandler'
 export const useBackToTopButton = () => {
   const [visible, setVisible] = useState(false)
 
-  const handleScroll = () => {
-    setVisible(window.scrollY > window.innerHeight / 2)
+  const handleScroll = (scrollY: number = 0) => {
+    setVisible(scrollY > window.innerHeight / 2)
   }
 
-  useScrollHandler(handleScroll)
+  useScrollHandler(handleScroll, true)
 
   const scrollToTop = () => {
     if (isBrowser()) window.scrollTo({ top: 0, behavior: 'smooth' })

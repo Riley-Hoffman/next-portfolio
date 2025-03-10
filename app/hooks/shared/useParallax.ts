@@ -18,41 +18,40 @@ export const useParallax = (
   const imgRef = useRef<HTMLImageElement | null>(null)
   const parallaxRef = useParallaxRef(externalRef)
 
-  const updateImagePosition = useCallback(() => {
-    if (prefersReducedMotion) {
-      return
-    }
-    if (!parallaxRef.current) {
-      console.error('Parallax reference is not set.')
-      return
-    }
-    if (!imgRef.current) {
-      console.error('Image reference is not set.')
-      return
-    }
-    const height = parallaxRef.current.offsetHeight
-    const scrollY = window.scrollY
-    if (scrollY < 0) {
-      return
-    }
+  const updateImagePosition = useCallback(
+    (scrollY: number = 0) => {
+      if (prefersReducedMotion) {
+        return
+      }
+      if (!parallaxRef.current) {
+        console.error('Parallax reference is not set.')
+        return
+      }
+      if (!imgRef.current) {
+        console.error('Image reference is not set.')
+        return
+      }
+      const height = parallaxRef.current.offsetHeight
 
-    const translate = Math.max(
-      -(height - scrollY) * velocity,
-      -height * velocity
-    )
-    const translateRem = pxToRem(translate)
-    requestAnimationFrame(() => {
-      if (imgRef.current) {
-        const cssText = `
+      const translate = Math.max(
+        -(height - scrollY) * velocity,
+        -height * velocity
+      )
+      const translateRem = pxToRem(translate)
+      requestAnimationFrame(() => {
+        if (imgRef.current) {
+          const cssText = `
         transform: translate(${translateRem}rem, ${translateRem}rem); 
         will-change: transform;
         `
-        imgRef.current.style.cssText = cssText
-      }
-    })
-  }, [parallaxRef, prefersReducedMotion, velocity])
+          imgRef.current.style.cssText = cssText
+        }
+      })
+    },
+    [parallaxRef, prefersReducedMotion, velocity]
+  )
 
-  useScrollHandler(updateImagePosition)
+  useScrollHandler(updateImagePosition, true)
 
   useEffect(() => {
     const setImgRef = () => {
