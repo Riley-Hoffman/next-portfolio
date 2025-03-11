@@ -19,9 +19,9 @@ export const ROUTE_LIST: Route[] = [
   { to: '/accessibility/', label: 'Accessibility' },
 ]
 
-type allOrMain = 'all' | 'main'
+type RouteScope = 'all' | 'main'
 
-export const useRoutes = (routes: allOrMain): Route[] => {
+export const useRoutes = (routes: RouteScope): Route[] => {
   return useMemo(() => {
     if (routes === 'main') return ROUTE_LIST.filter((route) => route.mainRoute)
     return ROUTE_LIST
