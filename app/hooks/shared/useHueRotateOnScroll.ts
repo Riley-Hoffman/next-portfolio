@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
-import { useScrollHandler } from './useScrollHandler'
+import { useScroll } from './useScroll'
 import { useReducedMotion } from './useReducedMotion'
 
 export const useHueRotateOnScroll = (
@@ -24,7 +24,7 @@ export const useHueRotateOnScroll = (
     [prefersReducedMotion]
   )
 
-  useScrollHandler(updateHueRotation, true)
+  useScroll(updateHueRotation)
 
   const prevFilterRef = useRef<string>('')
 

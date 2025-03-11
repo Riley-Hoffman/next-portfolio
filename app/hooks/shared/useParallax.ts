@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useMemo } from 'react'
 import { useReducedMotion } from './useReducedMotion'
-import { useScrollHandler } from './useScrollHandler'
+import { useScroll } from './useScroll'
 import { pxToRem } from '@/app/utils/pxToRem'
 
 const useParallaxRef = (externalRef?: React.RefObject<HTMLDivElement>) => {
@@ -51,7 +51,7 @@ export const useParallax = (
     [parallaxRef, prefersReducedMotion, velocity]
   )
 
-  useScrollHandler(updateImagePosition, true)
+  useScroll(updateImagePosition)
 
   useEffect(() => {
     const setImgRef = () => {

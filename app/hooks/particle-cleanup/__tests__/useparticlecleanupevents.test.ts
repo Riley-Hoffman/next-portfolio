@@ -8,7 +8,7 @@ import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanu
 describe('useParticleCleanupEvents', () => {
   let refs: React.RefObject<ParticleCleanupRefs>
   let handleInteraction: jest.Mock
-  let handleScroll: jest.Mock
+  let onScrollHandler: jest.Mock
   let initializeAnimation: jest.Mock
 
   beforeEach(() => {
@@ -25,7 +25,7 @@ describe('useParticleCleanupEvents', () => {
       },
     }
     handleInteraction = jest.fn()
-    handleScroll = jest.fn()
+    onScrollHandler = jest.fn()
     initializeAnimation = jest.fn()
   })
 
@@ -50,7 +50,7 @@ describe('useParticleCleanupEvents', () => {
         useParticleCleanupEvents(
           refs,
           handleInteraction,
-          handleScroll,
+          onScrollHandler,
           initializeAnimation
         )
       )
@@ -58,7 +58,7 @@ describe('useParticleCleanupEvents', () => {
       expect(addEventListenerSpy).toHaveBeenCalledTimes(5) // 'mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'
       expect(windowAddEventListenerSpy).toHaveBeenCalledWith(
         'wheel',
-        handleScroll,
+        onScrollHandler,
         { passive: false }
       )
       expect(windowAddEventListenerSpy).toHaveBeenCalledWith(
@@ -72,7 +72,7 @@ describe('useParticleCleanupEvents', () => {
       expect(removeEventListenerSpy).toHaveBeenCalledTimes(5)
       expect(windowRemoveEventListenerSpy).toHaveBeenCalledWith(
         'wheel',
-        handleScroll
+        onScrollHandler
       )
       expect(windowRemoveEventListenerSpy).toHaveBeenCalledWith(
         'resize',
@@ -88,7 +88,7 @@ describe('useParticleCleanupEvents', () => {
         useParticleCleanupEvents(
           refs,
           handleInteraction,
-          handleScroll,
+          onScrollHandler,
           initializeAnimation
         )
       )
@@ -104,12 +104,12 @@ describe('useParticleCleanupEvents', () => {
     }
   })
 
-  it('should call handleScroll on wheel event', () => {
+  it('should call onScrollHandler on wheel event', () => {
     renderHook(() =>
       useParticleCleanupEvents(
         refs,
         handleInteraction,
-        handleScroll,
+        onScrollHandler,
         initializeAnimation
       )
     )
@@ -117,7 +117,7 @@ describe('useParticleCleanupEvents', () => {
     const wheelEvent = new Event('wheel')
     window.dispatchEvent(wheelEvent)
 
-    expect(handleScroll).toHaveBeenCalledWith(wheelEvent)
+    expect(onScrollHandler).toHaveBeenCalledWith(wheelEvent)
   })
 
   it('should resize the canvas on window resize', () => {
@@ -126,7 +126,7 @@ describe('useParticleCleanupEvents', () => {
         useParticleCleanupEvents(
           refs,
           handleInteraction,
-          handleScroll,
+          onScrollHandler,
           initializeAnimation
         )
       )

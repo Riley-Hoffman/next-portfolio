@@ -53,7 +53,7 @@ export const useParticleCleanupGame = (
     sayCursorMessage
   )
 
-  const handleScroll = useCallback(
+  const onScrollHandler = useCallback(
     (event: Event) => {
       if (gameData.gameInProgress && refs.current.cursorInsideCanvas)
         event.preventDefault()
@@ -121,7 +121,7 @@ export const useParticleCleanupGame = (
   useParticleCleanupEvents(
     refs,
     handleInteraction,
-    handleScroll,
+    onScrollHandler,
     initializeAnimation
   )
 

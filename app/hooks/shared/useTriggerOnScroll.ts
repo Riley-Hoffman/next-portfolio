@@ -1,5 +1,5 @@
 import { useRef, RefObject } from 'react'
-import { useScrollHandler } from './useScrollHandler'
+import { useScroll } from './useScroll'
 
 type HTMLElementWithDataset = HTMLElement & {
   dataset: DOMStringMap & {
@@ -27,13 +27,13 @@ export const useTriggerOnScroll = (): UseTriggerOnScrollReturn => {
     }
   }
 
-  const handleScroll = () => {
+  const onScrollHandler = () => {
     if (elementsRef.current) {
       updateElementActivation(elementsRef.current)
     }
   }
 
-  useScrollHandler(handleScroll)
+  useScroll(onScrollHandler, false)
 
   return elementsRef
 }
