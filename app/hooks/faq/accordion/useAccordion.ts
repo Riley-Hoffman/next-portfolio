@@ -38,9 +38,9 @@ export const useAccordion = (itemsLength: number) => {
         content.style.maxHeight = '0rem'
       }
     })
-
-    if (openIndex !== null && contentRefs[openIndex].current)
-      contentRefs[openIndex].current.focus()
+    if (openIndex !== null) {
+      contentRefs[openIndex]?.current?.focus()
+    }
   }, [accOpen, buttonRefs, contentRefs, openIndex])
 
   return {
