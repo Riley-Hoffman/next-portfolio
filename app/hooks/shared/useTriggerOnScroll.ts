@@ -27,13 +27,13 @@ export const useTriggerOnScroll = (): UseTriggerOnScrollReturn => {
     }
   }
 
-  const onScrollHandler = () => {
+  const handleOnScroll = () => {
     if (elementsRef.current) {
       updateElementActivation(elementsRef.current)
     }
   }
 
-  useScroll(onScrollHandler, false)
+  useScroll(handleOnScroll, false)
 
   return elementsRef
 }

@@ -2,13 +2,13 @@ import { useEffect, RefObject } from 'react'
 import { SharedParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
 type HandleInteraction = (event: Event, isInside: boolean) => void
-type HandleScroll = (event: Event) => void
+type HandleOnScroll = (event: Event) => void
 type InitializeAnimation = () => void
 
 export const useParticleCleanupEvents = (
   refs: RefObject<SharedParticleCleanupRefs>,
   handleInteraction: HandleInteraction,
-  onScrollHandler: HandleScroll,
+  handleOnScroll: HandleOnScroll,
   initializeAnimation: InitializeAnimation
 ) => {
   useEffect(() => {
@@ -45,7 +45,7 @@ export const useParticleCleanupEvents = (
     manageEventListeners('add', localRefs.container, events, handleEvent, {
       passive: false,
     })
-    window.addEventListener('wheel', onScrollHandler, { passive: false })
+    window.addEventListener('wheel', handleOnScroll, { passive: false })
 
     initializeAnimation()
 
@@ -64,11 +64,11 @@ export const useParticleCleanupEvents = (
         manageEventListeners('remove', localRefs.container, events, handleEvent)
       }
 
-      window.removeEventListener('wheel', onScrollHandler)
+      window.removeEventListener('wheel', handleOnScroll)
       window.removeEventListener('resize', handleResize)
 
       if (typeof localRefs.animationFrameId === 'number')
         cancelAnimationFrame(localRefs.animationFrameId)
     }
-  }, [refs, handleInteraction, onScrollHandler, initializeAnimation])
+  }, [refs, handleInteraction, handleOnScroll, initializeAnimation])
 }

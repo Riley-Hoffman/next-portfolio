@@ -10,7 +10,7 @@ export const useScroll = (
 
   useEffect(() => {
     if (isBrowser()) {
-      const onScrollHandler = () => {
+      const handleOnScroll = () => {
         if (!ticking.current) {
           ticking.current = true
           animationFrameId.current = window.requestAnimationFrame(() => {
@@ -21,9 +21,9 @@ export const useScroll = (
         }
       }
 
-      window.addEventListener('scroll', onScrollHandler, { passive: true })
+      window.addEventListener('scroll', handleOnScroll, { passive: true })
       return () => {
-        window.removeEventListener('scroll', onScrollHandler)
+        window.removeEventListener('scroll', handleOnScroll)
         if (animationFrameId.current !== null) {
           window.cancelAnimationFrame(animationFrameId.current)
           animationFrameId.current = null
