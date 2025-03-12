@@ -1,4 +1,4 @@
-import { useRef, RefObject } from 'react'
+import { useRef, useCallback, RefObject } from 'react'
 import { useScroll } from './useScroll'
 
 type HTMLElementWithDataset = HTMLElement & {
@@ -17,15 +17,18 @@ export const useTriggerOnScroll = (): UseTriggerOnScrollReturn => {
     return (rect.top < distance).toString()
   }
 
-  const updateElementActivation = (element: HTMLElementWithDataset): void => {
-    const rect = element.getBoundingClientRect()
-    const distance = parseInt(element.dataset.distance ?? '800', 10)
-    const newActiveState = getActiveState(rect, distance)
+  const updateElementActivation = useCallback(
+    (element: HTMLElementWithDataset): void => {
+      const rect = element.getBoundingClientRect()
+      const distance = parseInt(element.dataset.distance ?? '800', 10)
+      const newActiveState = getActiveState(rect, distance)
 
-    if (element.dataset.active !== newActiveState) {
-      element.dataset.active = newActiveState
-    }
-  }
+      if (element.dataset.active !== newActiveState) {
+        element.dataset.active = newActiveState
+      }
+    },
+    []
+  )
 
   const handleOnScroll = () => {
     if (elementsRef.current) {
