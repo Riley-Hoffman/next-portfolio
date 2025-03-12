@@ -1,29 +1,32 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useSyncExternalStore } from 'react'
 import { isBrowser } from '@/app/utils/isBrowser'
 
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
+
+const getReducedMotionPreference = (): boolean => {
+  return isBrowser() ? window.matchMedia(REDUCED_MOTION_QUERY).matches : false
+}
+
+const subscribe = (callback: () => void): (() => void) => {
+  if (!isBrowser()) return () => {}
+
+  const mediaQuery = window.matchMedia(REDUCED_MOTION_QUERY)
+  const handler = () => {
+    callback()
+  }
+
+  mediaQuery.addEventListener('change', handler)
+
+  return () => {
+    mediaQuery.removeEventListener('change', handler)
+  }
+}
+
 export const useReducedMotion = (): boolean => {
-  const initialPreference = useMemo(() => {
-    if (isBrowser()) {
-      return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    }
-    return false
-  }, [])
-
-  const [prefersReducedMotion, setPrefersReducedMotion] =
-    useState<boolean>(initialPreference)
-
-  useEffect(() => {
-    if (!isBrowser()) return
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-
-    const handler = (event: MediaQueryListEvent) => {
-      setPrefersReducedMotion(event.matches)
-    }
-
-    mediaQuery.addEventListener('change', handler)
-    return () => mediaQuery.removeEventListener('change', handler)
-  }, [])
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribe,
+    getReducedMotionPreference
+  )
 
   return prefersReducedMotion
 }
