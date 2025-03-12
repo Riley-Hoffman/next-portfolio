@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { useTriggerOnScroll } from '@/app/hooks/shared/useTriggerOnScroll'
+import { useScrollActivation } from '@/app/hooks/shared/useScrollActivation'
 
 export const useJsOnlyScrollAnimation = (animation?: string) => {
-  const elementRef = useTriggerOnScroll()
+  const elementRef = useScrollActivation()
 
   useEffect(() => {
     const el = elementRef.current

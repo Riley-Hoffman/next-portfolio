@@ -22,8 +22,8 @@ export const ProjectCategoryList = ({
     const animation =
       projectNumber > 1
         ? inverted
-          ? 'motion-safe:md:left-[-200%] [&[data-active="true"]]:left-0'
-          : 'motion-safe:md:right-[-200%] [&[data-active="true"]]:right-0'
+          ? 'motion-safe:md:left-[-200%] [&.active]:left-0'
+          : 'motion-safe:md:right-[-200%] [&.active]:right-0'
         : ''
 
     return (
