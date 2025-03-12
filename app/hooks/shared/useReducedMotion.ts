@@ -7,6 +7,10 @@ const getReducedMotionPreference = (): boolean => {
   return isBrowser() ? window.matchMedia(REDUCED_MOTION_QUERY).matches : false
 }
 
+const getServerSnapshot = (): boolean => {
+  return false
+}
+
 const subscribe = (callback: () => void): (() => void) => {
   if (!isBrowser()) return () => {}
 
@@ -25,7 +29,8 @@ const subscribe = (callback: () => void): (() => void) => {
 export const useReducedMotion = (): boolean => {
   const prefersReducedMotion = useSyncExternalStore(
     subscribe,
-    getReducedMotionPreference
+    getReducedMotionPreference,
+    getServerSnapshot
   )
 
   return prefersReducedMotion
