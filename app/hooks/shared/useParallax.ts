@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useRef, useMemo } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useReducedMotion } from './useReducedMotion'
 import { useScroll } from './useScroll'
 import { pxToRem } from '@/app/utils/pxToRem'
 
 const useParallaxRef = (externalRef?: React.RefObject<HTMLDivElement>) => {
   const internalRef = useRef<HTMLDivElement>(null)
-  return useMemo(() => externalRef ?? internalRef, [externalRef, internalRef])
+  return externalRef ?? internalRef
 }
 
 type UseParallaxReturn = React.RefObject<HTMLDivElement | null>
@@ -40,11 +40,8 @@ export const useParallax = (
       const translateRem = pxToRem(translate)
       requestAnimationFrame(() => {
         if (imgRef.current) {
-          const cssText = `
-        transform: translate(${translateRem}rem, ${translateRem}rem); 
-        will-change: transform;
-        `
-          imgRef.current.style.cssText = cssText
+          imgRef.current.style.transform = `translate(${translateRem}rem, ${translateRem}rem)`
+          imgRef.current.style.willChange = 'transform'
         }
       })
     },
@@ -57,7 +54,7 @@ export const useParallax = (
     const setImgRef = () => {
       if (parallaxRef.current) {
         const imgElement = parallaxRef.current.querySelector('img')
-        if (imgElement !== null) {
+        if (imgElement) {
           imgRef.current = imgElement
         } else {
           console.error(
