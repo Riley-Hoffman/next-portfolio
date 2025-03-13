@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useGameData } from './useGameData'
 import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
 
@@ -8,25 +8,34 @@ export const useReloadAnimation = (
 ) => {
   const [, dispatch] = useGameData()
 
-  const reloadAnimation = useCallback(() => {
-    if (
-      refs.current?.animationFrameId !== null &&
-      refs.current?.animationFrameId !== undefined
-    )
-      cancelAnimationFrame(refs.current.animationFrameId)
+  useEffect(() => {
+    const currentRefs = refs.current
+    return () => {
+      if (currentRefs?.animationFrameId != null) {
+        cancelAnimationFrame(currentRefs.animationFrameId)
+      }
+    }
+  }, [refs])
 
-    if (refs.current)
-      Object.assign(refs.current, {
-        allClean: false,
-        startTime: null,
-        elapsedTime: 0,
-        cursorInsideCanvas: false,
-        particlesArray: [],
-      })
+  const reloadAnimation = useCallback(() => {
+    const currentRefs = refs.current
+    if (!currentRefs) return
+
+    if (currentRefs.animationFrameId != null) {
+      cancelAnimationFrame(currentRefs.animationFrameId)
+    }
+
+    Object.assign(currentRefs, {
+      allClean: false,
+      startTime: null,
+      elapsedTime: 0,
+      cursorInsideCanvas: false,
+      particlesArray: [],
+    })
 
     dispatch({ type: 'RESET_GAME' })
     initializeAnimation()
-  }, [refs, initializeAnimation, dispatch])
+  }, [refs, dispatch, initializeAnimation])
 
   return reloadAnimation
 }
