@@ -37,10 +37,13 @@ export const useParallax = (
         -(height - scrollY) * velocity,
         -height * velocity
       )
+
       const translateRem = pxToRem(translate)
+      const transformValue = `translate(${translateRem}rem, ${translateRem}rem)`
+
       requestAnimationFrame(() => {
         if (imgRef.current) {
-          imgRef.current.style.transform = `translate(${translateRem}rem, ${translateRem}rem)`
+          imgRef.current.style.transform = transformValue
           imgRef.current.style.willChange = 'transform'
         }
       })
