@@ -7,29 +7,20 @@ type HTMLElementWithDistance = HTMLElement & {
   }
 }
 
-type UseScrollActivationReturn = RefObject<HTMLElementWithDistance | null>
+export const useScrollActivation =
+  (): RefObject<HTMLElementWithDistance | null> => {
+    const elementRef = useRef<HTMLElementWithDistance>(null)
 
-export const useScrollActivation = (): UseScrollActivationReturn => {
-  const elementRef = useRef<HTMLElementWithDistance>(null)
+    const checkActivation = useCallback(() => {
+      const element = elementRef.current
+      if (!element) return
 
-  const updateActivation = useCallback(
-    (element: HTMLElementWithDistance): void => {
-      const rect = element.getBoundingClientRect()
+      const { top } = element.getBoundingClientRect()
       const distance = parseInt(element.dataset.distance ?? '800', 10)
-      const isActive = rect.top < distance
+      element.classList.toggle('active', top < distance)
+    }, [])
 
-      element.classList.toggle('active', isActive)
-    },
-    []
-  )
+    useScroll(checkActivation)
 
-  const handleOnScroll = () => {
-    if (elementRef.current) {
-      updateActivation(elementRef.current)
-    }
+    return elementRef
   }
-
-  useScroll(handleOnScroll, false)
-
-  return elementRef
-}

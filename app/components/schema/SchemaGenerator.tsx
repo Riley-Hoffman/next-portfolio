@@ -19,17 +19,15 @@ type SchemaMap = {
   ContactPage: ContactPage
 }
 
-type GeneratedSchema = WithContext<
-  SchemaMap[SchemaGeneratorProps['schemaData']['schemaType']]
->
-
 const generateSchema = ({
   schemaType,
   title,
   description,
   urlPath,
   publishDate,
-}: SchemaGeneratorProps['schemaData']): GeneratedSchema => ({
+}: SchemaGeneratorProps['schemaData']): WithContext<
+  SchemaMap[typeof schemaType]
+> => ({
   '@context': 'https://schema.org',
   '@type': schemaType,
   name: getPageTitle(title),

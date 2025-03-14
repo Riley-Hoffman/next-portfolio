@@ -84,7 +84,7 @@ const config: Config = {
       const xlScreenWidth = parseInt(theme('screens.xl'), 10)
       const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
       const headingColor = theme('colors.heading')!
-      const crossThemeBlack = '#12121c'
+      const globalBlack = '#12121c'
       const gradientOneColor = theme('colors.gradientone')!
       const gradientTwoColor = theme('colors.gradienttwo')!
       const gradientThreeColor = theme('colors.gradientthree')!
@@ -152,7 +152,7 @@ const config: Config = {
           '&:before': {
             borderRight: `${spacing2} solid transparent`,
             borderLeft: `${spacing2} solid transparent`,
-            borderTop: `${spacing2} solid ${crossThemeBlack}`,
+            borderTop: `${spacing2} solid ${globalBlack}`,
             content: '""',
             opacity: '0',
             pointerEvents: 'none',
@@ -162,7 +162,7 @@ const config: Config = {
             left: '0',
           },
           '&:after': {
-            backgroundColor: crossThemeBlack,
+            backgroundColor: globalBlack,
             borderRadius: '0.375rem',
             color: '#f5f5f5',
             content: 'attr(aria-label)',
