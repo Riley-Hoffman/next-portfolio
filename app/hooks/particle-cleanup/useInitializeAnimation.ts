@@ -9,26 +9,27 @@ export const useInitializeAnimation = (
     canvas: HTMLCanvasElement
   ) => void
 ) => {
+  const currentRefs = refs.current
   const initializeAnimation = useCallback(() => {
-    const ctx = refs.current.canvas?.getContext('2d')
+    const ctx = currentRefs.canvas?.getContext('2d')
 
-    if (refs.current.container?.classList.contains('done'))
-      refs.current.container.classList.remove('done')
+    if (currentRefs.container?.classList.contains('done'))
+      currentRefs.container.classList.remove('done')
 
-    if (refs.current.container) {
-      const { width, height } = refs.current.container.getBoundingClientRect()
+    if (currentRefs.container) {
+      const { width, height } = currentRefs.container.getBoundingClientRect()
 
-      if (refs.current.canvas) {
-        refs.current.canvas.width = width
-        refs.current.canvas.height = height
+      if (currentRefs.canvas) {
+        currentRefs.canvas.width = width
+        currentRefs.canvas.height = height
       }
 
-      if (refs.current.canvas) {
-        initParticles(refs.current.canvas)
-        if (ctx) animateParticles(ctx, refs.current.canvas)
+      if (currentRefs.canvas) {
+        initParticles(currentRefs.canvas)
+        if (ctx) animateParticles(ctx, currentRefs.canvas)
       }
     }
-  }, [initParticles, animateParticles, refs])
+  }, [initParticles, animateParticles, currentRefs])
 
   return initializeAnimation
 }

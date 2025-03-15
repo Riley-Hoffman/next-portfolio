@@ -13,9 +13,10 @@ export const useParallax = ({
 
   const updateImageStyles = useCallback(
     (transformValue: string, willChangeValue: string) => {
-      if (imgRef.current) {
-        imgRef.current.style.transform = transformValue
-        imgRef.current.style.willChange = willChangeValue
+      const image = imgRef.current
+      if (image) {
+        image.style.transform = transformValue
+        image.style.willChange = willChangeValue
       }
     },
     [imgRef]
