@@ -1,11 +1,10 @@
-import { useParallax } from '@/app/hooks/shared/useParallax'
+import { useParallax, ParallaxRefs } from '@/app/hooks/shared/useParallax'
 
-const LazyUseParallax = ({
-  parallaxRef,
-}: {
-  parallaxRef: React.RefObject<HTMLDivElement>
-}) => {
-  useParallax(0.1, parallaxRef)
+const LazyUseParallax = ({ containerRef, imgRef }: ParallaxRefs) => {
+  useParallax({
+    containerRef: containerRef,
+    imgRef: imgRef,
+  })
   return null
 }
 
