@@ -2,15 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { useReducedMotion } from './useReducedMotion'
 import { useScroll } from './useScroll'
 import { pxToRem } from '@/app/utils/pxToRem'
-
-export interface ParallaxRefs {
-  containerRef: React.RefObject<HTMLDivElement>
-  imgRef: React.RefObject<HTMLImageElement>
-}
-
-interface UseParallaxProps extends ParallaxRefs {
-  velocity?: number
-}
+import { UseParallaxProps } from '@/app/types/parallax/Parallax.types'
 
 export const useParallax = ({
   velocity = 0.1,
