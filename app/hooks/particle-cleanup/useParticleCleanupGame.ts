@@ -60,7 +60,7 @@ export const useParticleCleanupGame = (
 
   const handleOnScroll = useCallback(
     (event: Event) => {
-      if (gameData.gameInProgress && gameRefs.current.cursorInsideCanvas)
+      if (gameData.gameInProgress && getCurrentGameRefs().cursorInsideCanvas)
         event.preventDefault()
     },
     [gameData.gameInProgress]
@@ -69,7 +69,7 @@ export const useParticleCleanupGame = (
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
-        gameRefs.current.particlesArray = Array.from({ length: 150 }, () =>
+        getCurrentGameRefs().particlesArray = Array.from({ length: 150 }, () =>
           createParticle(canvas)
         )
       }
@@ -133,7 +133,7 @@ export const useParticleCleanupGame = (
   )
 
   const medalDetails = useMedalDetails(
-    gameRefs.current.allClean ? gameData.time : null
+    getCurrentGameRefs().allClean ? gameData.time : null
   )
 
   return {

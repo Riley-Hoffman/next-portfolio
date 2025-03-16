@@ -1,27 +1,29 @@
 import { useEffect, useRef, useCallback } from 'react'
 
 export const useScroll = (onScroll: (scrollY?: number) => void) => {
-  const ticking = useRef(false)
+  const tickingRef = useRef(false)
   const animationFrameId = useRef<number | null>(null)
 
   const handleOnScroll = useCallback(() => {
-    if (!ticking.current) {
-      ticking.current = true
+    let isTicking = tickingRef.current
+    if (!isTicking) {
+      isTicking = true
       animationFrameId.current = window.requestAnimationFrame(() => {
         const scrollY = window.scrollY
         onScroll(scrollY)
-        ticking.current = false
+        isTicking = false
       })
     }
   }, [onScroll])
 
   useEffect(() => {
+    let currentAnimFrame = animationFrameId.current
     window.addEventListener('scroll', handleOnScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleOnScroll)
-      if (animationFrameId.current !== null) {
-        window.cancelAnimationFrame(animationFrameId.current)
-        animationFrameId.current = null
+      if (currentAnimFrame !== null) {
+        window.cancelAnimationFrame(currentAnimFrame)
+        currentAnimFrame = null
       }
     }
   }, [handleOnScroll, onScroll])

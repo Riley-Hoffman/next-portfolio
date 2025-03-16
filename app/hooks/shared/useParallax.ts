@@ -15,8 +15,9 @@ export const useParallax = ({
     (transformValue: string, willChangeValue: string) => {
       const image = imgRef.current
       if (image) {
-        image.style.transform = transformValue
-        image.style.willChange = willChangeValue
+        const imageStyle = image.style
+        imageStyle.transform = transformValue
+        imageStyle.willChange = willChangeValue
       }
     },
     [imgRef]
@@ -24,11 +25,12 @@ export const useParallax = ({
 
   const updateImagePosition = useCallback(
     (scrollY: number = 0) => {
-      if (prefersReducedMotion || !containerRef.current || !imgRef.current) {
+      const container = containerRef.current
+      if (prefersReducedMotion || !container || !imgRef.current) {
         return
       }
 
-      const height = containerRef.current.offsetHeight
+      const height = container.offsetHeight
       const translate = Math.max(
         -(height - scrollY) * velocity,
         -height * velocity
