@@ -11,7 +11,7 @@ import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanu
 export const useParticleCleanupGame = (
   completionMessageRef: React.RefObject<HTMLParagraphElement>
 ) => {
-  const refs = useRef<ParticleCleanupRefs>({
+  const gameRefs = useRef<ParticleCleanupRefs>({
     canvas: null,
     container: null,
     particlesArray: [],
@@ -27,14 +27,19 @@ export const useParticleCleanupGame = (
 
   const mouse = useMemo(() => ({ x: 0, y: 0, radius: 150 }), [])
 
+  const getCurrentGameRefs = () => gameRefs.current
+
   const updateCursorPosition = useCallback(
     (clientX: number, clientY: number) => {
-      if (refs.current.canvas) {
-        const rect = refs.current.canvas.getBoundingClientRect()
+      const canvas = getCurrentGameRefs().canvas
+      let startTime = getCurrentGameRefs().startTime
+
+      if (canvas) {
+        const rect = canvas.getBoundingClientRect()
         mouse.x = clientX - rect.left
         mouse.y = clientY - rect.top
 
-        if (refs.current.startTime === null) refs.current.startTime = Date.now()
+        if (startTime === null) startTime = Date.now()
       }
     },
     [mouse]
@@ -48,14 +53,14 @@ export const useParticleCleanupGame = (
   )
 
   const handleInteraction = useHandleInteraction(
-    refs,
+    gameRefs,
     updateCursorPosition,
     sayCursorMessage
   )
 
   const handleOnScroll = useCallback(
     (event: Event) => {
-      if (gameData.gameInProgress && refs.current.cursorInsideCanvas)
+      if (gameData.gameInProgress && gameRefs.current.cursorInsideCanvas)
         event.preventDefault()
     },
     [gameData.gameInProgress]
@@ -64,7 +69,7 @@ export const useParticleCleanupGame = (
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
-        refs.current.particlesArray = Array.from({ length: 150 }, () =>
+        gameRefs.current.particlesArray = Array.from({ length: 150 }, () =>
           createParticle(canvas)
         )
       }
@@ -73,18 +78,20 @@ export const useParticleCleanupGame = (
   )
 
   const handleGameCompletion = useCallback(() => {
-    if (refs.current.allClean) return
+    let allClean = getCurrentGameRefs().allClean
+    const startTime = getCurrentGameRefs().startTime
+    let elapsedTime = getCurrentGameRefs().elapsedTime
 
-    if (refs.current.startTime !== null)
-      refs.current.elapsedTime = parseFloat(
-        ((Date.now() - refs.current.startTime) / 1000).toFixed(1)
-      )
+    if (allClean) return
 
-    refs.current.allClean = true
-    dispatch({ type: 'END_GAME', time: refs.current.elapsedTime })
+    if (startTime !== null)
+      elapsedTime = parseFloat(((Date.now() - startTime) / 1000).toFixed(1))
+
+    allClean = true
+    dispatch({ type: 'END_GAME', time: elapsedTime })
 
     completionMessageRef.current?.focus()
-    refs.current.container?.classList.add('done')
+    getCurrentGameRefs().container?.classList.add('done')
   }, [dispatch, completionMessageRef])
 
   const animateParticles = useCallback(
@@ -94,7 +101,7 @@ export const useParticleCleanupGame = (
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       let remainingParticles = false
 
-      refs.current.particlesArray.forEach((particle) => {
+      getCurrentGameRefs().particlesArray.forEach((particle) => {
         particle.update(ctx, mouse, canvas)
         if (particle.inCanvas) remainingParticles = true
       })
@@ -102,7 +109,7 @@ export const useParticleCleanupGame = (
       if (!remainingParticles) {
         handleGameCompletion()
       } else {
-        refs.current.animationFrameId = requestAnimationFrame(() =>
+        getCurrentGameRefs().animationFrameId = requestAnimationFrame(() =>
           animateParticles(ctx, canvas)
         )
       }
@@ -111,26 +118,26 @@ export const useParticleCleanupGame = (
   )
 
   const initializeAnimation = useInitializeAnimation(
-    refs,
+    gameRefs,
     initParticles,
     animateParticles
   )
 
-  const reloadAnimation = useReloadAnimation(refs, initializeAnimation)
+  const reloadAnimation = useReloadAnimation(gameRefs, initializeAnimation)
 
   useParticleCleanupEvents(
-    refs,
+    gameRefs,
     handleInteraction,
     handleOnScroll,
     initializeAnimation
   )
 
   const medalDetails = useMedalDetails(
-    refs.current.allClean ? gameData.time : null
+    gameRefs.current.allClean ? gameData.time : null
   )
 
   return {
-    refs,
+    gameRefs,
     gameData,
     medalDetails,
     reloadAnimation,

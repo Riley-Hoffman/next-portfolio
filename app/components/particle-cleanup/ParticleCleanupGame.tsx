@@ -7,13 +7,14 @@ import '@/app/styles/shared/overlay.css'
 
 export const ParticleCleanupGame = () => {
   const completionMessageRef = useRef<HTMLParagraphElement>(null)
-  const { refs, gameData, medalDetails, reloadAnimation } =
+  const { gameRefs, gameData, medalDetails, reloadAnimation } =
     useParticleCleanupGame(
       completionMessageRef as React.RefObject<HTMLParagraphElement>
     )
+  const currentGameRefs = gameRefs.current
 
   const renderCompletionMessage = () => {
-    if (!refs.current.allClean) return null
+    if (!currentGameRefs.allClean) return null
     return (
       <CompletionMessage
         medalDetails={medalDetails}
@@ -24,7 +25,7 @@ export const ParticleCleanupGame = () => {
   }
 
   const renderCursorMessage = () => {
-    if (gameData.gameInProgress && !refs.current.allClean) {
+    if (gameData.gameInProgress && !currentGameRefs.allClean) {
       return (
         <div className="sr-only" aria-live="assertive">
           {gameData.cursorMessage}
@@ -38,7 +39,7 @@ export const ParticleCleanupGame = () => {
     <>
       <div
         ref={(el) => {
-          refs.current.container = el
+          currentGameRefs.container = el
         }}
         className="overlay light-overlay rounded-x-sm mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-br-sm border-2 border-solid border-[#2b2b64] bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
         role="application"
@@ -47,7 +48,7 @@ export const ParticleCleanupGame = () => {
         <canvas
           className="absolute inset-0 z-10 w-full drop-shadow-[0.063rem_0.063rem_0_#00000061]"
           ref={(el) => {
-            refs.current.canvas = el
+            currentGameRefs.canvas = el
           }}
         />
         {renderCompletionMessage()}
