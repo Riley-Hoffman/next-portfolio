@@ -11,14 +11,13 @@ export const useHueRotateOnScroll = (
 
   const updateHueRotation = useCallback(
     (scrollY: number = 0) => {
-      let currentScrollRef = scrollRef.current
       if (typeof window === 'undefined' || prefersReducedMotion) return
 
       const hueRotation = scrollY / 2.7
       const newFilter = `hue-rotate(${hueRotation}deg)`
 
-      if (currentScrollRef !== scrollY) {
-        currentScrollRef = scrollY
+      if (scrollRef.current !== scrollY) {
+        scrollRef.current = scrollY
         setHueFilter(newFilter)
       }
     },
@@ -32,10 +31,9 @@ export const useHueRotateOnScroll = (
   useEffect(() => {
     const element = hueElRef.current
     const elementStyle = element.style
-    let prevHueFilter = prevFilterRef.current
-    if (element && prevHueFilter !== hueFilter) {
+    if (element && prevFilterRef.current !== hueFilter) {
       elementStyle.filter = hueFilter
-      prevHueFilter = hueFilter
+      prevFilterRef.current = hueFilter
     }
     return () => {
       if (element) elementStyle.filter = ''

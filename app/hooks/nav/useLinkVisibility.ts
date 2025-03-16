@@ -8,14 +8,14 @@ export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
 
   const manageTimeout = useCallback(
     (shouldSet: boolean) => {
-      let currentTimeoutId = timeoutId.current
+      const currentTimeoutId = timeoutId.current
 
       if (currentTimeoutId) {
         clearTimeout(currentTimeoutId)
-        currentTimeoutId = null
+        timeoutId.current = null
       }
       if (shouldSet) {
-        currentTimeoutId = setTimeout(() => {
+        timeoutId.current = setTimeout(() => {
           setHide(true)
         }, timeout)
       } else {

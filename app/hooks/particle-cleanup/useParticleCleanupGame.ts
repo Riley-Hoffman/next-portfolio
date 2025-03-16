@@ -32,14 +32,14 @@ export const useParticleCleanupGame = (
   const updateCursorPosition = useCallback(
     (clientX: number, clientY: number) => {
       const canvas = getCurrentGameRefs().canvas
-      let startTime = getCurrentGameRefs().startTime
 
       if (canvas) {
         const rect = canvas.getBoundingClientRect()
         mouse.x = clientX - rect.left
         mouse.y = clientY - rect.top
 
-        if (startTime === null) startTime = Date.now()
+        if (getCurrentGameRefs().startTime === null)
+          getCurrentGameRefs().startTime = Date.now()
       }
     },
     [mouse]
@@ -78,17 +78,17 @@ export const useParticleCleanupGame = (
   )
 
   const handleGameCompletion = useCallback(() => {
-    let allClean = getCurrentGameRefs().allClean
     const startTime = getCurrentGameRefs().startTime
-    let elapsedTime = getCurrentGameRefs().elapsedTime
 
-    if (allClean) return
+    if (getCurrentGameRefs().allClean) return
 
     if (startTime !== null)
-      elapsedTime = parseFloat(((Date.now() - startTime) / 1000).toFixed(1))
+      getCurrentGameRefs().elapsedTime = parseFloat(
+        ((Date.now() - startTime) / 1000).toFixed(1)
+      )
 
-    allClean = true
-    dispatch({ type: 'END_GAME', time: elapsedTime })
+    getCurrentGameRefs().allClean = true
+    dispatch({ type: 'END_GAME', time: getCurrentGameRefs().elapsedTime })
 
     completionMessageRef.current?.focus()
     getCurrentGameRefs().container?.classList.add('done')

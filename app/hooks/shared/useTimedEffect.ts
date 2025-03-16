@@ -5,25 +5,21 @@ export const useTimedEffect = (duration: number = 1000) => {
   const timeoutId = useRef<NodeJS.Timeout | null>(null)
 
   const stopEffect = useCallback(() => {
-    let timeout = timeoutId.current
-
-    if (timeout) {
-      clearTimeout(timeout)
-      timeout = null
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current)
+      timeoutId.current = null
     }
   }, [])
 
   const triggerEffect = useCallback(
     (applyEffect: (state: boolean) => void) => {
-      let counting = isCounting.current
+      if (isCounting.current) return
 
-      if (counting) return
-
-      counting = true
+      isCounting.current = true
       applyEffect(true)
 
       timeoutId.current = setTimeout(() => {
-        counting = false
+        isCounting.current = false
         applyEffect(false)
         timeoutId.current = null
       }, duration)
