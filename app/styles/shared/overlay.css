@@ -2,14 +2,14 @@
   @apply relative;
 }
 .overlay:before {
-  @apply absolute inset-0 z-20 size-full bg-[radial-gradient(#ffffffbd_0%,#ffffff7f_100%)] content-[''];
+  @apply absolute inset-0 z-20 size-full bg-white opacity-50 content-[''];
 }
 .overlay:not(.light-overlay):before {
-  @apply dark:bg-[radial-gradient(#000000bf_0%,#00000080_100%)];
+  @apply dark:bg-black;
 }
 .overlay > *:not(.absolute, .cover-image) {
   @apply relative;
 }
 .overlay:before {
-  @apply contrast-more:bg-[#ffffffa8] contrast-more:dark:bg-[#0000578f];
+  @apply contrast-more:opacity-75;
 }
