@@ -28,7 +28,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         className="cover-image"
         ref={parallaxImgref}
       />
-      <div className="z-10 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-[calc(18vh)] md:translate-y-5">
+      <div className="z-20 mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36 md:translate-y-5">
         {coverImageData.children}
       </div>
       <LazyParallax
