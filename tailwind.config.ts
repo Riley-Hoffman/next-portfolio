@@ -185,18 +185,6 @@ const config: Config = {
             },
           },
         },
-        '[class*="animate-typetext"]': {
-          animationComposition: 'add',
-          borderColor: 'transparent',
-          borderStyle: 'solid',
-          borderRightWidth: '2px',
-        },
-        '.counter-increment-circle': {
-          counterIncrement: 'circle',
-          '&:before': {
-            content: 'counter(circle)',
-          },
-        },
       })
     }),
   ],
