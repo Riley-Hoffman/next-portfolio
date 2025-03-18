@@ -1,8 +1,21 @@
 import { Icon } from '@iconify/react'
 
-export const NewTabContent = ({ icon = true }: { icon?: boolean }) => (
+interface NewTabContentProps {
+  icon?: boolean
+  hideIconOnMobile?: boolean
+}
+
+export const NewTabContent = ({
+  icon = true,
+  hideIconOnMobile = false,
+}: NewTabContentProps) => (
   <>
     <span className="sr-only"> (Opens in a new tab)</span>
-    {icon && <Icon className="ml-0.5" icon="fluent:window-new-16-regular" />}
+    {icon && (
+      <Icon
+        className={`ml-0.5 ${hideIconOnMobile ? 'hidden sm:inline-block' : ''}`}
+        icon="fluent:window-new-16-regular"
+      />
+    )}
   </>
 )

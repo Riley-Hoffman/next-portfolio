@@ -14,7 +14,7 @@ export const LinkedInButton = () => {
   return (
     <Link
       ref={buttonRef}
-      className="group button m-5 inline-block pr-6 text-lg"
+      className="group button mx-5 my-7 block w-80 max-w-[calc(100%-40px)] pr-6 sm:text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
       onMouseEnter={handleMouseEnterWiggle}
       {...EXTERNAL_LINK_ATTR}
@@ -24,7 +24,7 @@ export const LinkedInButton = () => {
         icon="fa6-brands:linkedin-in"
       />
       Follow me on LinkedIn
-      <NewTabContent />
+      <NewTabContent hideIconOnMobile={true} />
     </Link>
   )
 }
