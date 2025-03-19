@@ -3,7 +3,7 @@ import { ProjectListItem } from '../ProjectListItem'
 import { ProjectContent } from '../content/ProjectContent'
 import { Project } from '@/app/types/projects/Project.types'
 
-export const ProjectCategoryList = ({
+export const ProjectList = ({
   category,
   projects,
 }: {
@@ -14,7 +14,7 @@ export const ProjectCategoryList = ({
     (project) => project.category === category
   )
 
-  const projectList = projectsByCat.map((project, index) => {
+  const projectListItems = projectsByCat.map((project, index) => {
     const projectNumber =
       projects.findIndex((proj) => proj.title === project.title) + 1
     const inverted = projectNumber % 2 === 0
@@ -49,7 +49,7 @@ export const ProjectCategoryList = ({
         className="max-w-screen-xl pb-5 text-base"
         aria-label={`${category} Projects`}
       >
-        {projectList}
+        {projectListItems}
       </ul>
     </section>
   )

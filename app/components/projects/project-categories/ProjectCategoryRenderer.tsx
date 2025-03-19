@@ -1,4 +1,4 @@
-import { ProjectCategoryList } from './ProjectCategoryList'
+import { ProjectList } from './ProjectList'
 import { ProjectError } from '../ProjectError'
 import type { Project } from '@/app/types/projects/Project.types'
 
@@ -16,11 +16,7 @@ export const ProjectCategoryRenderer = ({
   return (
     <>
       {categories.map((category) => (
-        <ProjectCategoryList
-          key={category}
-          category={category}
-          projects={projects}
-        />
+        <ProjectList key={category} category={category} projects={projects} />
       ))}
     </>
   )
