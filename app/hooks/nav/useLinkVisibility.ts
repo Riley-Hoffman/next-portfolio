@@ -3,35 +3,27 @@ import { useDebounce } from '../shared/useDebounce'
 import { MD } from '@/app/constants/breakpoints'
 
 export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
-  const [hide, setHide] = useState<boolean>(false)
+  const [hide, setHide] = useState(false)
   const timeoutId = useRef<NodeJS.Timeout | null>(null)
 
-  const manageTimeout = useCallback(
+  const setHideWithTimeout = useCallback(
     (shouldSet: boolean) => {
-      const currentTimeoutId = timeoutId.current
-
-      if (currentTimeoutId) {
-        clearTimeout(currentTimeoutId)
+      if (timeoutId.current) {
+        clearTimeout(timeoutId.current)
         timeoutId.current = null
       }
-      if (shouldSet) {
-        timeoutId.current = setTimeout(() => {
-          setHide(true)
-        }, timeout)
-      } else {
+      if (shouldSet && !hide) {
+        timeoutId.current = setTimeout(() => setHide(true), timeout)
+      } else if (!shouldSet && hide) {
         setHide(false)
       }
     },
-    [timeout]
+    [timeout, hide]
   )
 
   const handleHideShowLinks = useCallback(() => {
-    if (window.innerWidth <= MD && !isExpanded) {
-      manageTimeout(true)
-    } else {
-      manageTimeout(false)
-    }
-  }, [isExpanded, manageTimeout])
+    setHideWithTimeout(window.innerWidth <= MD && !isExpanded)
+  }, [isExpanded, setHideWithTimeout])
 
   const debouncedHandleHideShowLinks = useDebounce(handleHideShowLinks, 100)
 
@@ -41,9 +33,8 @@ export const useLinkVisibility = (isExpanded: boolean, timeout: number) => {
 
     return () => {
       window.removeEventListener('resize', debouncedHandleHideShowLinks)
-      manageTimeout(false)
     }
-  }, [debouncedHandleHideShowLinks, handleHideShowLinks, manageTimeout])
+  }, [debouncedHandleHideShowLinks, handleHideShowLinks])
 
   return hide
 }
