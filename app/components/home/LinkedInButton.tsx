@@ -14,7 +14,7 @@ export const LinkedInButton = () => {
   return (
     <Link
       ref={buttonRef}
-      className="group button mx-5 my-7 block w-80 max-w-[calc(100%-40px)] pr-6 sm:text-lg"
+      className="button group mx-5 my-7 block w-80 max-w-[calc(100%-40px)] pr-6 sm:text-lg"
       href="https://www.linkedin.com/in/riley-hoffman-014623213"
       onMouseEnter={handleMouseEnterWiggle}
       {...EXTERNAL_LINK_ATTR}

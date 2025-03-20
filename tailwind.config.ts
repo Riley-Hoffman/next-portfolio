@@ -124,16 +124,6 @@ const config: Config = {
           color: theme('colors.accenttwo.200'),
           opacity: '0.9',
         },
-        '.button': {
-          backgroundColor: headingColor,
-          color: theme('colors.accentone.200'),
-          fontFamily: 'inherit',
-          textDecoration: 'none',
-          '&:hover, &:focus-visible': {
-            backgroundColor: theme('colors.accentone.100'),
-            color: headingColor,
-          },
-        },
         '.pad-wrap': {
           paddingLeft: padWrapPadding,
           paddingRight: padWrapPadding,

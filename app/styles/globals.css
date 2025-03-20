@@ -30,23 +30,20 @@
     --color-gradienttwo: #51b6b6;
     --color-gradientone: #22728b;
   }
-  html {
-    @apply contrast-more:bg-white;
-  }
   html.dark {
-    @apply bg-siteblack contrast-more:bg-black;
+    @apply bg-siteblack;
   }
   body {
-    @apply contrast-more:!text-heading;
+    @apply contrast-more:font-medium;
   }
   :not(.flex) > [class*='max-']:not(img, [class*='mx-']) {
     @apply mx-auto;
   }
-  ::selection {
-    @apply bg-[rgba(58,_178,_215,_0.52)];
-  }
   :where(a, button, input, textarea):focus-visible {
     @apply outline outline-2 outline-[#6f00f7];
+  }
+  body ::placeholder {
+    @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
   }
   header {
     @apply pad-wrap gradient-border sticky -top-8 z-30 flex min-h-28 items-center justify-between;
@@ -89,9 +86,6 @@
   .theme-changer svg {
     @apply absolute inset-1 size-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
   }
-  body ::placeholder {
-    @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
-  }
   footer {
     @apply pad-wrap gradient-border min-h-24 border-t border-solid bg-accentone-300 py-7;
     @apply contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between;
@@ -122,7 +116,8 @@
     @apply transition-[color,background-color] duration-200 ease-in-out;
   }
   .button {
-    @apply contrast-more:!text-white contrast-more:hover:!text-black contrast-more:dark:!text-black contrast-more:dark:hover:!text-white;
+    @apply bg-heading text-accentone-200 no-underline hover:bg-accentone-100 hover:text-heading;
+    @apply contrast-more:text-white contrast-more:hover:text-black contrast-more:dark:text-black contrast-more:dark:hover:text-white;
   }
   .button.active {
     @apply contrast-more:!text-black contrast-more:dark:!text-white;
