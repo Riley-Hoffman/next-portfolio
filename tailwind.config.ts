@@ -1,17 +1,23 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 
+const BACKGROUNDS = {
+  wood: "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wood-background.webp')",
+  diamonds:
+    "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds.svg')",
+  diamondsdark:
+    "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds-dark.svg')",
+}
+
 const config: Config = {
   content: ['./app/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
-        wood: "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/wood-background.webp')",
-        diamonds:
-          "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds.svg')",
-        diamondsdark:
-          "url('https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/diamonds-dark.svg')",
+        wood: BACKGROUNDS.wood,
+        diamonds: BACKGROUNDS.diamonds,
+        diamondsdark: BACKGROUNDS.diamondsdark,
       },
       colors: {
         heading: 'var(--color-heading)',
@@ -81,16 +87,15 @@ const config: Config = {
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
+      const GLOBAL_BLACK = '#12121c'
+      const TOOL_TIP_TRANSITION = 'opacity 0.2s'
       const xlScreenWidth = parseInt(theme('screens.xl'), 10)
       const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
-      const headingColor = theme('colors.heading')!
-      const globalBlack = '#12121c'
       const gradientOneColor = theme('colors.gradientone')!
       const gradientTwoColor = theme('colors.gradienttwo')!
       const gradientThreeColor = theme('colors.gradientthree')!
       const spacing2 = theme('spacing.2')
       const spacing5 = theme('spacing.5')
-      const toolTipTransition = 'opacity 0.2s'
       addComponents({
         html: {
           backgroundColor: 'whitesmoke',
@@ -101,7 +106,7 @@ const config: Config = {
           textWrap: 'pretty',
         },
         ':where(h1,h2,h3,h4,h5,h6,label,legend)': {
-          color: headingColor,
+          color: theme('colors.heading'),
           fontFamily: theme('fontFamily.poppins'),
         },
         'h1,h2': {
@@ -142,17 +147,17 @@ const config: Config = {
           '&:before': {
             borderRight: `${spacing2} solid transparent`,
             borderLeft: `${spacing2} solid transparent`,
-            borderTop: `${spacing2} solid ${globalBlack}`,
+            borderTop: `${spacing2} solid ${GLOBAL_BLACK}`,
             content: '""',
             opacity: '0',
             pointerEvents: 'none',
             position: 'absolute',
-            transition: toolTipTransition,
+            transition: TOOL_TIP_TRANSITION,
             top: '0',
             left: '0',
           },
           '&:after': {
-            backgroundColor: globalBlack,
+            backgroundColor: GLOBAL_BLACK,
             borderRadius: '0.375rem',
             color: '#f5f5f5',
             content: 'attr(aria-label)',
@@ -162,7 +167,7 @@ const config: Config = {
             pointerEvents: 'none',
             position: 'absolute',
             transform: 'translateY(-100%) translateX(-50%)',
-            transition: toolTipTransition,
+            transition: TOOL_TIP_TRANSITION,
             top: '1px',
             left: '50%',
             width: '6.25rem',
