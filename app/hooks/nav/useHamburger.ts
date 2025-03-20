@@ -9,27 +9,19 @@ export const useHamburger = ({ expanded }: HamburgerProps) => {
   const hamburgerRef = useRef<HTMLButtonElement | null>(null)
   const location = usePathname()
 
-  const updateAttributes = useCallback((newIsExpanded: boolean) => {
-    hamburgerRef.current?.setAttribute(
-      'aria-expanded',
-      newIsExpanded.toString()
-    )
-  }, [])
+  useEffect(() => {
+    hamburgerRef.current?.setAttribute('aria-expanded', isExpanded.toString())
+  }, [isExpanded])
 
   const toggleMenu = useCallback(() => {
-    setIsExpanded((prevState) => {
-      const newIsExpanded = !prevState
-      updateAttributes(newIsExpanded)
-      return newIsExpanded
-    })
-  }, [updateAttributes])
+    setIsExpanded((prevState) => !prevState)
+  }, [])
 
   const handleResize = useCallback(() => {
     if (window.innerWidth > MD && isExpanded) {
       setIsExpanded(false)
-      updateAttributes(false)
     }
-  }, [isExpanded, updateAttributes])
+  }, [isExpanded])
 
   const debouncedHandleResize = useDebounce(handleResize, 300)
 
@@ -41,8 +33,7 @@ export const useHamburger = ({ expanded }: HamburgerProps) => {
 
   useEffect(() => {
     setIsExpanded(false)
-    updateAttributes(false)
-  }, [location, updateAttributes])
+  }, [location])
 
   return { isExpanded, toggleMenu, hamburgerRef }
 }
