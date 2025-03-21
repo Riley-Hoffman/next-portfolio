@@ -12,7 +12,7 @@ const ThemeChangerAndNav = dynamic(
 )
 
 export const Header = () => (
-  <header className="border-b-2 border-t-[2rem] bg-[#f4eef6] dark:bg-[#0b1109]">
+  <header>
     <SkipToContent />
     <HeaderLogo />
     <ThemeChangerAndNav />

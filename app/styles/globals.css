@@ -47,7 +47,7 @@
   }
   header {
     @apply pad-wrap gradient-border sticky -top-8 z-30 flex min-h-28 items-center justify-between;
-    @apply border-solid py-6 shadow-heading;
+    @apply border-b-2 border-t-[2rem] border-solid bg-accentone-100 py-6 shadow-heading;
   }
   header > button {
     @apply m-0 pl-4 pr-0 font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;
