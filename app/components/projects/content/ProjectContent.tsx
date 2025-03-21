@@ -50,8 +50,8 @@ export const ProjectContent = ({
       <div className="relative basis-1/2">
         <Image
           className={clsx('w-[35.563rem] max-w-full', {
-            'md:!mr-auto': inverted,
-            'md:!ml-auto': !inverted,
+            'md:mr-auto': inverted,
+            'md:ml-auto': !inverted,
           })}
           alt={alt}
           src={imgUrl}
