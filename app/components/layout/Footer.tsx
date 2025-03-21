@@ -15,7 +15,7 @@ export const Footer = () => (
         {...EXTERNAL_LINK_ATTR}
       >
         <Icon
-          className="group-hover:text-accenttwo-200 group-focus-visible:text-accenttwo-200"
+          className="group-hover:text-accenttwo-200"
           icon="cib:github"
         />
       </a>
