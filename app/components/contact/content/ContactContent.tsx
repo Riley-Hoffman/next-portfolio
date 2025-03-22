@@ -3,7 +3,7 @@ import '@/app/styles/contact/contact-content.css'
 import '@/app/styles/shared/typetext.css'
 
 export const ContactContent = ({ errors }: { errors: string[] }) => (
-  <div className="contact-content border-accenttwo -[0.188rem_0.125rem_0_0] mb-10 min-h-72 max-w-[calc(100%-1.563rem)] rounded-t-md bg-heading text-accentone-300 shadow shadow-accentone-300 dark:shadow-accentone-200 sm:min-h-64">
+  <div className="contact-content max-w-[calc(100%-1.563rem)]">
     {!errors.length ? (
       <>
         <h2 className="mb-1 w-80 motion-safe:animate-typetext">

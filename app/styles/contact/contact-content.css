@@ -1,3 +1,6 @@
-.contact-content :where(h2, h3) {
+.contact-content {
+  @apply mb-10 min-h-72 rounded-t-md bg-heading pb-px sm:min-h-64;
+}
+.contact-content * {
   @apply text-accentone-300;
 }

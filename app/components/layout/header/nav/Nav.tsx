@@ -12,10 +12,7 @@ export const Nav = () => {
   return (
     <nav>
       <Hamburger expanded={setIsExpanded} />
-      <ul
-        className="shadow-[0_0.128px_1rem_-0.56rem] peer-aria-expanded:scale-100"
-        aria-label="Menu Links"
-      >
+      <ul className="peer-aria-expanded:scale-100" aria-label="Menu Links">
         {MAIN_ROUTES.map(({ to, label }) => (
           <NavListItem key={to} to={to} label={label} hide={hide} />
         ))}
