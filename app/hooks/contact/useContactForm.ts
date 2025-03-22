@@ -39,18 +39,14 @@ export const useContactForm = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (isSubmitting) {
-      return
-    }
+    if (isSubmitting) return
 
     if (!e.currentTarget.reportValidity()) {
       handleInvalid()
       return
     }
 
-    if (!currentToken) {
-      await fetchCsrfToken()
-    }
+    if (!currentToken) await fetchCsrfToken()
 
     if (!currentToken) {
       console.error('CSRF token is still missing after fetch.')
