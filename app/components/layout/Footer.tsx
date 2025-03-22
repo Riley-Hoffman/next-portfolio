@@ -14,10 +14,7 @@ export const Footer = () => (
         aria-label="Site repo on GitHub (Opens in a new tab)"
         {...EXTERNAL_LINK_ATTR}
       >
-        <Icon
-          className="group-hover:text-accenttwo-200"
-          icon="cib:github"
-        />
+        <Icon className="group-hover:text-accenttwo-200" icon="cib:github" />
       </a>
     </p>
     <Link href="/accessibility/">Accessibility</Link>
