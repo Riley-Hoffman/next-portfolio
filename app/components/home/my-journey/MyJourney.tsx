@@ -15,7 +15,7 @@ export const MyJourney = () => {
   return (
     <section
       ref={hueElRef}
-      className="pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 contrast-more:bg-none dark:bg-diamondsdark md:flex md:items-center"
+      className="pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 dark:bg-diamondsdark md:flex md:items-center"
     >
       <figure itemScope itemType="https://schema.org/ImageObject">
         <Image
@@ -32,7 +32,7 @@ export const MyJourney = () => {
         </figcaption>
       </figure>
       <div
-        className={`m-6 border-2 ${LIGHT_BORDER} bg-[whitesmoke] py-6 leading-7 contrast-more:bg-white ${DARK_BORDER} dark:bg-siteblack md:w-2/3 lg:px-[8%]`}
+        className={`m-6 border-2 ${LIGHT_BORDER} bg-[whitesmoke] py-6 leading-7 ${DARK_BORDER} dark:bg-siteblack md:w-2/3 lg:px-[8%]`}
       >
         <h2>My Journey</h2>
         <p>

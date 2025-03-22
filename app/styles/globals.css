@@ -88,7 +88,7 @@
   }
   footer {
     @apply pad-wrap gradient-border min-h-24 border-t border-solid bg-accentone-300 py-7;
-    @apply contrast-more:bg-white dark:bg-accentone-200 md:flex md:items-center md:justify-between;
+    @apply contrast-more:bg-accentone-100 dark:bg-accentone-200 md:flex md:items-center md:justify-between;
   }
   footer h2 {
     @apply sr-only;
