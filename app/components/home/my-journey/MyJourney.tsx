@@ -9,6 +9,9 @@ const LazyHueRotateOnScroll = dynamic(
 
 export const MyJourney = () => {
   const hueElRef = useRef<HTMLElement>(null)
+  const LIGHT_BORDER_COLOR = '[#d6d2ee]'
+  const DARK_BORDER_COLOR = '[#292d11]'
+
   return (
     <section
       ref={hueElRef}
@@ -16,7 +19,7 @@ export const MyJourney = () => {
     >
       <figure itemScope itemType="https://schema.org/ImageObject">
         <Image
-          className="size-96 max-w-full rounded-3xl object-cover drop-shadow-[0_0_0.063rem_#877ADB] dark:drop-shadow-[0_0_0.063rem_#788524]"
+          className={`size-96 max-w-full rounded-3xl object-cover border-${LIGHT_BORDER_COLOR} dark:border-${DARK_BORDER_COLOR} border`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
           width={384}
           height={452}
@@ -28,7 +31,7 @@ export const MyJourney = () => {
           Photo by Kristen Mommertz
         </figcaption>
       </figure>
-      <div className="m-6 border-2 border-[#d6d2ee] bg-[whitesmoke] py-6 leading-7 contrast-more:bg-white dark:border-[#292d11] dark:bg-siteblack md:w-2/3 lg:px-[8%]">
+      <div className={`m-6 border-2 border-${LIGHT_BORDER_COLOR} bg-[whitesmoke] py-6 leading-7 contrast-more:bg-white dark:border-${DARK_BORDER_COLOR} dark:bg-siteblack md:w-2/3 lg:px-[8%]`}>
         <h2>My Journey</h2>
         <p>
           My career journey began in customer service, tech support, and
