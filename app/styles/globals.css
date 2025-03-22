@@ -121,7 +121,7 @@
   html [class*='iconify']:not(.hidden) {
     @apply inline;
   }
-  .tab-focus-button {
+  .skip-to-content {
     @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .heading-one {

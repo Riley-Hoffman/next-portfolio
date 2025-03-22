@@ -1,5 +1,5 @@
 export const SkipToContent = () => (
-  <a href="#main" className="tab-focus-button">
+  <a href="#main" className="skip-to-content">
     Skip To Content
   </a>
 )
