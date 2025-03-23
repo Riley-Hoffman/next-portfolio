@@ -8,7 +8,6 @@ export const useHandleInteraction = (
   sayMessageTemporarily: (message: string) => void
 ) => {
   const [gameData] = useGameData()
-  const currentRefs = refs.current
 
   const handleInteraction = useCallback(
     (event: Event, isInside: boolean) => {
@@ -22,13 +21,13 @@ export const useHandleInteraction = (
           updateCursorPosition(clientX, clientY)
         }
 
-        if (currentRefs.cursorInsideCanvas !== isInside) {
-          currentRefs.cursorInsideCanvas = isInside
+        if (refs.current.cursorInsideCanvas !== isInside) {
+          refs.current.cursorInsideCanvas = isInside
 
           if (isInside) {
             setTimeout(
               () =>
-                currentRefs.container?.scrollIntoView({
+                refs.current.container?.scrollIntoView({
                   block: 'center',
                   behavior: 'smooth',
                 }),
@@ -46,12 +45,7 @@ export const useHandleInteraction = (
         if (isTouchEvent) event.preventDefault()
       }
     },
-    [
-      currentRefs,
-      updateCursorPosition,
-      gameData.gameInProgress,
-      sayMessageTemporarily,
-    ]
+    [refs, updateCursorPosition, gameData.gameInProgress, sayMessageTemporarily]
   )
 
   return handleInteraction

@@ -1,4 +1,4 @@
-import { useRef, useCallback, useMemo } from 'react'
+import { useRef, useCallback } from 'react'
 import { useGameData } from './useGameData'
 import { useCreateParticle } from './useCreateParticle'
 import { useHandleInteraction } from './useHandleInteraction'
@@ -25,24 +25,23 @@ export const useParticleCleanupGame = (
   const [gameData, dispatch] = useGameData()
   const createParticle = useCreateParticle()
 
-  const mouse = useMemo(() => ({ x: 0, y: 0, radius: 150 }), [])
-
-  const getCurrentGameRefs = () => gameRefs.current
+  const mouseRef = useRef({ x: 0, y: 0, radius: 150 })
 
   const updateCursorPosition = useCallback(
     (clientX: number, clientY: number) => {
-      const canvas = getCurrentGameRefs().canvas
+      const { canvas, startTime } = gameRefs.current
 
       if (canvas) {
         const rect = canvas.getBoundingClientRect()
-        mouse.x = clientX - rect.left
-        mouse.y = clientY - rect.top
+        mouseRef.current.x = clientX - rect.left
+        mouseRef.current.y = clientY - rect.top
 
-        if (getCurrentGameRefs().startTime === null)
-          getCurrentGameRefs().startTime = Date.now()
+        if (startTime === null) {
+          gameRefs.current.startTime = Date.now()
+        }
       }
     },
-    [mouse]
+    []
   )
 
   const sayCursorMessage = useCallback(
@@ -60,8 +59,9 @@ export const useParticleCleanupGame = (
 
   const handleOnScroll = useCallback(
     (event: Event) => {
-      if (gameData.gameInProgress && getCurrentGameRefs().cursorInsideCanvas)
+      if (gameData.gameInProgress && gameRefs.current.cursorInsideCanvas) {
         event.preventDefault()
+      }
     },
     [gameData.gameInProgress]
   )
@@ -69,7 +69,7 @@ export const useParticleCleanupGame = (
   const initParticles = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
-        getCurrentGameRefs().particlesArray = Array.from({ length: 150 }, () =>
+        gameRefs.current.particlesArray = Array.from({ length: 150 }, () =>
           createParticle(canvas)
         )
       }
@@ -78,20 +78,21 @@ export const useParticleCleanupGame = (
   )
 
   const handleGameCompletion = useCallback(() => {
-    const startTime = getCurrentGameRefs().startTime
+    const { startTime, allClean } = gameRefs.current
 
-    if (getCurrentGameRefs().allClean) return
+    if (allClean) return
 
-    if (startTime !== null)
-      getCurrentGameRefs().elapsedTime = parseFloat(
+    if (startTime !== null) {
+      gameRefs.current.elapsedTime = parseFloat(
         ((Date.now() - startTime) / 1000).toFixed(1)
       )
+    }
 
-    getCurrentGameRefs().allClean = true
-    dispatch({ type: 'END_GAME', time: getCurrentGameRefs().elapsedTime })
+    gameRefs.current.allClean = true
+    dispatch({ type: 'END_GAME', time: gameRefs.current.elapsedTime })
 
     completionMessageRef.current?.focus()
-    getCurrentGameRefs().container?.classList.add('done')
+    gameRefs.current.container?.classList.add('done')
   }, [dispatch, completionMessageRef])
 
   const animateParticles = useCallback(
@@ -101,20 +102,20 @@ export const useParticleCleanupGame = (
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       let remainingParticles = false
 
-      getCurrentGameRefs().particlesArray.forEach((particle) => {
-        particle.update(ctx, mouse, canvas)
+      gameRefs.current.particlesArray.forEach((particle) => {
+        particle.update(ctx, mouseRef.current, canvas)
         if (particle.inCanvas) remainingParticles = true
       })
 
       if (!remainingParticles) {
         handleGameCompletion()
       } else {
-        getCurrentGameRefs().animationFrameId = requestAnimationFrame(() =>
+        gameRefs.current.animationFrameId = requestAnimationFrame(() =>
           animateParticles(ctx, canvas)
         )
       }
     },
-    [mouse, handleGameCompletion]
+    [handleGameCompletion]
   )
 
   const initializeAnimation = useInitializeAnimation(
@@ -133,7 +134,7 @@ export const useParticleCleanupGame = (
   )
 
   const medalDetails = useMedalDetails(
-    getCurrentGameRefs().allClean ? gameData.time : null
+    gameRefs.current.allClean ? gameData.time : null
   )
 
   return {
