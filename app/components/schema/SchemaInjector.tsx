@@ -8,13 +8,15 @@ interface SchemaInjectorProps<T extends Thing> {
 
 const SchemaInjector = <T extends Thing>({
   structuredData,
-}: SchemaInjectorProps<T>) => (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: DOMPurify.sanitize(JSON.stringify(structuredData)),
-    }}
-  />
-)
+}: SchemaInjectorProps<T>) => {
+  const sanitizedData = DOMPurify.sanitize(JSON.stringify(structuredData))
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: sanitizedData }}
+    />
+  )
+}
 
 export default SchemaInjector
