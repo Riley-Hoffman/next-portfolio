@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --color-heading: #12121c;
-    --color-text: #2d2b34;
+    --color-text: #222027;
     --color-accentone-100: #f5eef7;
     --color-accentone-200: #eee3f2;
     --color-accentone-300: #e5d4ed;
@@ -19,7 +19,7 @@
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
-    --color-text: #d2d4cb;
+    --color-text: #e4e6dd;
     --color-accentone-100: #081011;
     --color-accentone-200: #0d191c;
     --color-accentone-300: #12272b;

@@ -52,7 +52,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
       />
     </head>
     <body
-      className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable}`}
+      className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable} antialiased contrast-more:subpixel-antialiased`}
     >
       <DynamicThemeProvider
         attribute="class"
