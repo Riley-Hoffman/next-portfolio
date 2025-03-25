@@ -11,7 +11,6 @@ interface ProjectListItemProps extends SharedProjectProps {
 
 export const ProjectListItem = ({
   inverted,
-  isFirst,
   animation,
   children,
 }: ProjectListItemProps & { animation: string }) => {
@@ -21,8 +20,6 @@ export const ProjectListItem = ({
     <li
       className={clsx('project background-accent group gradient-border', {
         inverted: inverted,
-        'mt-12': isFirst,
-        'mt-0': !isFirst,
       })}
       ref={animatedElement}
     >

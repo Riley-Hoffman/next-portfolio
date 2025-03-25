@@ -30,7 +30,6 @@ export const ProjectList = ({
       <ProjectListItem
         key={project.title}
         inverted={inverted}
-        isFirst={index === 0}
         animation={animation}
       >
         <ProjectContent
@@ -43,7 +42,7 @@ export const ProjectList = ({
   })
 
   return (
-    <section className="overflow-hidden first:pt-5 last:pb-20">
+    <section className="overflow-hidden first-of-type:pt-5">
       <ProjectCatHeading category={category} />
       <ul
         className="max-w-screen-xl pb-5 text-base"
