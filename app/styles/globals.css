@@ -103,7 +103,7 @@
     @apply font-urbanist md:pl-16 md:pr-0;
   }
   footer p:first-of-type a {
-    @apply inline-block min-h-full no-underline md:tool-tip md:min-h-5 md:min-w-6;
+    @apply inline-block size-6 min-h-full no-underline md:tool-tip;
   }
   footer p:first-of-type svg {
     @apply ml-1 text-3xl md:text-base;

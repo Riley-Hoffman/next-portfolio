@@ -8,3 +8,6 @@
 .project.active {
   @apply duration-1000;
 }
+.project a {
+  @apply text-base;
+}

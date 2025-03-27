@@ -17,21 +17,18 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const projectLinkClasses = clsx('button mx-5 py-1 pl-3 uppercase', {
+  const projectLinkClasses = clsx('button m-5 block py-1 pl-3', {
     'pr-3': internal,
     'pr-2': !internal,
   })
-  const SrText = () => <span className="sr-only">{title} </span>
 
   const renderLink = (url: string, label: string, isInternal?: boolean) =>
     isInternal ? (
       <Link className={projectLinkClasses} href={url}>
-        <SrText />
         {label}
       </Link>
     ) : (
       <a className={projectLinkClasses} href={url} {...EXTERNAL_LINK_ATTR}>
-        <SrText />
         {label}
         <NewTabContent />
       </a>
@@ -44,8 +41,8 @@ export const ProjectContent = ({
         <p className="mb-8 pb-4 font-poppins text-heading">{skills}</p>
         <p className="text-balance pb-4">{description}</p>
         <h4 className="mb-8 text-base">{title} Links:</h4>
-        {renderLink(liveUrl, 'Live', internal)}
-        {gitUrl && renderLink(gitUrl, 'Repo')}
+        {renderLink(liveUrl, `Visit ${title}`, internal)}
+        {gitUrl && renderLink(gitUrl, `${title} Repo`)}
       </div>
       <div className="relative basis-1/2">
         <Image

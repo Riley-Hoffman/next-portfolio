@@ -44,10 +44,7 @@ export const ProjectList = ({
   return (
     <section className="overflow-hidden first-of-type:pt-5">
       <ProjectCatHeading category={category} />
-      <ul
-        className="max-w-screen-xl pb-5 text-base"
-        aria-label={`${category} Projects`}
-      >
+      <ul className="max-w-screen-xl pb-5" aria-label={`${category} Projects`}>
         {projectListItems}
       </ul>
     </section>
