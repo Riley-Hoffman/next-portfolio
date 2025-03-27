@@ -37,6 +37,9 @@ export const ParticleCleanupGame = () => {
 
   return (
     <>
+      <noscript>
+        <p className="text-black">JavaScript is required to play this game.</p>
+      </noscript>
       <div
         ref={(el) => {
           currentGameRefs.container = el
@@ -52,11 +55,6 @@ export const ParticleCleanupGame = () => {
           }}
         />
         {renderCompletionMessage()}
-        <noscript>
-          <p className="relative z-10 text-center">
-            JavaScript is required to play this game.
-          </p>
-        </noscript>
       </div>
       {renderCursorMessage()}
       <PlayAgain reloadAnimation={reloadAnimation} />
