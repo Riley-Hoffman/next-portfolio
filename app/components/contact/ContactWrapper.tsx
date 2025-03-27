@@ -7,7 +7,7 @@ export const ContactWrapper = () => {
   const { formErrors, handleErrors } = useFormErrors()
 
   return (
-    <div className="pt-7 md:w-5/6">
+    <div className="pt-2 md:w-5/6">
       <ContactContent errors={formErrors} />
       <Form onErrors={handleErrors} />
     </div>

@@ -18,9 +18,12 @@ export const ProjectListItem = ({
 
   return (
     <li
-      className={clsx('project background-accent group gradient-border', {
-        inverted: inverted,
-      })}
+      className={clsx(
+        'project background-accent group gradient-border overflow-hidden',
+        {
+          inverted: inverted,
+        }
+      )}
       ref={animatedElement}
     >
       {children}

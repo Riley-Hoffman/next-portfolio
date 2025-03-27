@@ -3,7 +3,7 @@ import '@/app/styles/contact/contact-content.css'
 import '@/app/styles/shared/typetext.css'
 
 export const ContactContent = ({ errors }: { errors: string[] }) => (
-  <div className="contact-content max-w-[calc(100%-1.563rem)]">
+  <div className="contact-content">
     {!errors.length ? (
       <>
         <h2 className="mb-1 w-80 motion-safe:animate-typetext">
