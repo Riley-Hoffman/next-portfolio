@@ -17,7 +17,7 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const projectLinkClasses = clsx('button m-5 block py-1 pl-3', {
+  const projectLinkClasses = clsx('button m-5 block w-fit py-1 pl-3', {
     'pr-3': internal,
     'pr-2': !internal,
   })
