@@ -11,7 +11,7 @@ import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -26,7 +26,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
         }}
         pagination={{
           clickable: true,
-          bulletClass: 'swiper-pagination-bullet !size-6 !mx-3',
+          bulletClass: 'swiper-pagination-bullet',
           bulletActiveClass: 'swiper-pagination-bullet-active',
           dynamicBullets: true,
           dynamicMainBullets: 2,
@@ -57,7 +57,6 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
               <Image
                 src={src}
                 alt={label}
-                className="w-[56.25rem]"
                 width={900}
                 height={695}
                 loading="eager"
