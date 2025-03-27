@@ -2,13 +2,13 @@
   @apply relative;
 }
 .overlay:before {
-  @apply absolute inset-0 z-20 size-full bg-white opacity-50 content-[''];
+  @apply absolute-full z-20 bg-white opacity-50 content-[''];
 }
 .overlay:not(.light-overlay):before {
   @apply dark:bg-black;
 }
-.overlay > *:not(.absolute, .cover-image) {
-  @apply relative;
+.overlay > *:not(.cover-image) {
+  @apply z-30;
 }
 .overlay:before {
   @apply contrast-more:opacity-75;

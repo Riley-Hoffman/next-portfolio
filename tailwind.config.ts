@@ -140,6 +140,11 @@ const config: Config = {
         '.inverted': {
           borderImageSource: `linear-gradient(90deg,${gradientThreeColor} 0%,${gradientTwoColor} 50%,${gradientOneColor} 70%)`,
         },
+        '.absolute-full': {
+          inset: '0',
+          position: 'absolute',
+          size: '100%',
+        },
         '.tool-tip': {
           '&:not(.back-to-top)': {
             position: 'relative',
