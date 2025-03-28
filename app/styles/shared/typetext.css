@@ -1,4 +1,4 @@
 [class*='animate-typetext'] {
   animation-composition: add;
-  @apply inline-block whitespace-nowrap border-r-2 border-solid border-transparent font-medium tracking-widest;
+  @apply inline-block whitespace-nowrap border-r-2 border-transparent font-medium tracking-widest;
 }

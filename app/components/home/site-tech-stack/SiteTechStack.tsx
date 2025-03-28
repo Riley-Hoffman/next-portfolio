@@ -4,7 +4,7 @@ import '@/app/styles/home/site-tech-stack.css'
 
 const SiteTechStack = () => (
   <>
-    <section className="gradient-border border-t-2 border-solid pb-12 pt-2 text-center">
+    <section className="gradient-border border-t-2 pb-12 pt-2 text-center">
       <h2 className="reg-caps mb-1 font-inconsolata text-2xl">
         Technologies Used To Build This Site
       </h2>

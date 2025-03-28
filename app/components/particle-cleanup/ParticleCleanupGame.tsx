@@ -44,7 +44,7 @@ export const ParticleCleanupGame = () => {
         ref={(el) => {
           currentGameRefs.container = el
         }}
-        className="overlay light-overlay rounded-x-sm mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-br-sm border-2 border-solid border-[#2b2b64] bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
+        className="overlay light-overlay rounded-x-sm mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-br-sm border-2 border-[#2b2b64] bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
         role="application"
         aria-label="Cleanup Game"
       >

@@ -13,7 +13,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
   const parallaxImgref = useRef<HTMLImageElement>(null)
   return (
     <section
-      className="overlay gradient-border inverted overflow-hidden border-b-4 border-solid"
+      className="overlay gradient-border inverted overflow-hidden border-b-4"
       ref={parallaxContainerRef}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}

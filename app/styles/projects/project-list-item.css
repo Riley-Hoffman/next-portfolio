@@ -1,5 +1,5 @@
 .project {
-  @apply relative my-20 flex flex-col-reverse gap-14 border-b-2 border-t-8 border-solid leading-7;
+  @apply relative my-20 flex flex-col-reverse gap-14 border-b-2 border-t-8 leading-7;
   @apply ease-in-out after:inset-0 after:rounded-b-[14rem] after:rounded-t-full md:flex-row lg:border-x-2;
 }
 .project.inverted {
