@@ -26,12 +26,10 @@ const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
 const ParticleCleanupWrapper = () => (
   <>
     <SchemaGenerator schemaData={SCHEMA_DATA} />
-    <div className="pb-16">
-      <h1 className="heading-one">Particle Cleanup Game</h1>
-      <div className="max-w-screen-md">
-        <ParticleCleanupCopy />
-        <ParticleCleanupGame />
-      </div>
+    <h1 className="heading-one">Particle Cleanup Game</h1>
+    <div className="max-w-screen-md pb-16">
+      <ParticleCleanupCopy />
+      <ParticleCleanupGame />
     </div>
   </>
 )

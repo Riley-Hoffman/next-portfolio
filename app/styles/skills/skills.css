@@ -1,0 +1,3 @@
+.skills.background-accent {
+  @apply relative mt-12 grid grid-cols-2 gap-x-6 gap-y-16 py-14 after:inset-12 after:rounded-full sm:grid-cols-3 md:grid-cols-4;
+}
