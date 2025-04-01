@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react'
-import '@/app/styles/particle-cleanup/completion-message.css'
 
 interface CompletionMessageProps {
   ref?: React.Ref<HTMLParagraphElement>
@@ -13,12 +12,12 @@ export const CompletionMessage = ({
   time,
 }: CompletionMessageProps) => (
   <div
-    className="completion-message absolute-full z-20 bg-white text-center"
+    className="completion-message"
     id="completionMessage"
     ref={ref}
     tabIndex={-1}
   >
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div>
       <p className="text-2xl">All clean!</p>
       <p aria-live="polite">
         Time taken:

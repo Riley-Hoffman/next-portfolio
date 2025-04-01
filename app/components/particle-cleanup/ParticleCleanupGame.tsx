@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useParticleCleanupGame } from '@/app/hooks/particle-cleanup/useParticleCleanupGame'
 import { PlayAgain } from './PlayAgain'
 import { CompletionMessage } from './content/CompletionMessage'
+import '@/app/styles/particle-cleanup/particle-cleanup.css'
 import '@/app/styles/shared/overlay.css'
 
 export const ParticleCleanupGame = () => {
@@ -44,12 +45,11 @@ export const ParticleCleanupGame = () => {
         ref={(el) => {
           currentGameRefs.container = el
         }}
-        className="overlay light-overlay rounded-x-sm mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-br-sm border-2 border-[#2b2b64] bg-wood bg-cover bg-right pt-28 [&.done]:cursor-default"
+        className="game-container overlay light-overlay"
         role="application"
         aria-label="Cleanup Game"
       >
         <canvas
-          className="absolute-full drop-shadow-[0.063rem_0.063rem_0_#00000061]"
           ref={(el) => {
             currentGameRefs.canvas = el
           }}
