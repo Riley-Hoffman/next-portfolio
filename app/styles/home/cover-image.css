@@ -1,6 +1,0 @@
-.cover-image {
-  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover blur-[0.047rem] dark:hue-rotate-[266deg] sm:blur-0;
-}
-.cover-image + div > *:not([class*='bg-']) {
-  @apply drop-shadow-[0_0_10px_white] dark:drop-shadow-[0_0_10px_black];
-}

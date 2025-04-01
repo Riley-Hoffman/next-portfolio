@@ -1,21 +1,18 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { CoverImageProps } from '@/app/types/home/CoverImageProps.interface'
-import '@/app/styles/home/cover-image.css'
+import '@/app/styles/home/cover.css'
 import { MD, LG } from '@/app/constants/breakpoints'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
   ssr: false,
 })
 
-export const CoverImage = ({ coverImageData }: CoverImageProps) => {
+export const Cover = ({ coverImageData }: CoverImageProps) => {
   const parallaxContainerRef = useRef<HTMLDivElement>(null)
   const parallaxImgref = useRef<HTMLImageElement>(null)
   return (
-    <section
-      className="overlay gradient-border inverted overflow-hidden border-b-4"
-      ref={parallaxContainerRef}
-    >
+    <section className="cover-container overlay" ref={parallaxContainerRef}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={coverImageData.highResSrc}
@@ -28,9 +25,7 @@ export const CoverImage = ({ coverImageData }: CoverImageProps) => {
         className="cover-image"
         ref={parallaxImgref}
       />
-      <div className="relative mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36 md:translate-y-5">
-        {coverImageData.children}
-      </div>
+      <div>{coverImageData.children}</div>
       <LazyParallax
         containerRef={parallaxContainerRef as React.RefObject<HTMLDivElement>}
         imgRef={parallaxImgref as React.RefObject<HTMLImageElement>}

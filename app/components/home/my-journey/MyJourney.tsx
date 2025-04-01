@@ -17,9 +17,13 @@ export const MyJourney = () => {
       ref={hueElRef}
       className="pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 dark:bg-diamondsdark md:flex md:items-center"
     >
-      <figure itemScope itemType="https://schema.org/ImageObject">
+      <figure
+        className="relative mx-auto block w-fit"
+        itemScope
+        itemType="https://schema.org/ImageObject"
+      >
         <Image
-          className={`size-96 max-w-full rounded-3xl border object-cover ${LIGHT_BORDER} ${DARK_BORDER}`}
+          className={`size-96 max-w-full rounded-3xl border border-b-[2rem] object-cover ${LIGHT_BORDER} ${DARK_BORDER}`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
           width={384}
           height={452}
@@ -27,7 +31,7 @@ export const MyJourney = () => {
           priority={false}
           itemProp="contentUrl"
         />
-        <figcaption className="sr-only" itemProp="creditText">
+        <figcaption className="absolute bottom-1 left-5" itemProp="creditText">
           Photo by Kristen Mommertz
         </figcaption>
       </figure>

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
 import { SchemaGeneratorProps } from './types/schema/SchemaGeneratorProps.interface'
-import { CoverImage } from './components/home/cover-image/CoverImage'
+import { Cover } from './components/home/cover/Cover'
 import { CoverImageProps } from './types/home/CoverImageProps.interface'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
@@ -34,7 +34,7 @@ const LazySiteTechStack = dynamic(
 const Home = () => (
   <>
     <SchemaGenerator schemaData={SCHEMA_DATA} />
-    <CoverImage coverImageData={coverImageData} />
+    <Cover coverImageData={coverImageData} />
     <MyJourney />
     <LazySiteTechStack />
   </>
