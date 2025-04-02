@@ -1,4 +1,0 @@
-a.tech-button {
-  @apply inline-block min-h-36 min-w-52 rounded-md bg-accentone-200 p-5 text-sm text-heading;
-  @apply no-underline duration-0 md:hover:bg-heading md:hover:text-accentone-200;
-}

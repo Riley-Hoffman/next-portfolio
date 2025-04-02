@@ -28,7 +28,7 @@ const coverImageData: CoverImageProps['coverImageData'] = {
 }
 
 const LazySiteTechStack = dynamic(
-  () => import('./components/home/site-tech-stack/SiteTechStack')
+  () => import('./components/home/site-tech/SiteTech')
 )
 
 const Home = () => (

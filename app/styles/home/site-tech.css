@@ -1,0 +1,22 @@
+.site-tech {
+  @apply gradient-border border-t-2 pb-12 pt-2 text-center;
+}
+.site-tech h2 {
+  @apply mb-1 font-inconsolata text-2xl;
+}
+.site-tech ul {
+  @apply min-h-40 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5;
+}
+.site-tech li {
+  @apply pt-8;
+}
+.site-tech a {
+  @apply inline-block min-h-36 min-w-52 rounded-md bg-accentone-200 p-5 text-sm text-heading;
+  @apply no-underline duration-0 md:hover:bg-heading md:hover:text-accentone-200;
+}
+.site-tech a > svg {
+  @apply text-7xl;
+}
+.site-tech a > span {
+  @apply mt-2 block text-lg;
+}
