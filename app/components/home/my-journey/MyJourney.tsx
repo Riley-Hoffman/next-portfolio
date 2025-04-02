@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { LinkedInButton } from '../LinkedInButton'
+import '@/app/styles/home/my-journey.css'
 
 const LazyHueRotateOnScroll = dynamic(
   () => import('./dynamic-imports/LazyHueRotateOnScroll')
@@ -13,17 +14,10 @@ export const MyJourney = () => {
   const DARK_BORDER = 'dark:border-[#292d11]'
 
   return (
-    <section
-      ref={hueElRef}
-      className="pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 dark:bg-diamondsdark md:flex md:items-center"
-    >
-      <figure
-        className="relative mx-auto block w-fit"
-        itemScope
-        itemType="https://schema.org/ImageObject"
-      >
+    <section ref={hueElRef} className="my-journey">
+      <figure itemScope itemType="https://schema.org/ImageObject">
         <Image
-          className={`size-96 max-w-full rounded-3xl border border-b-[2rem] object-cover ${LIGHT_BORDER} ${DARK_BORDER}`}
+          className={`max-w-full ${LIGHT_BORDER} ${DARK_BORDER}`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
           width={384}
           height={452}
@@ -31,13 +25,9 @@ export const MyJourney = () => {
           priority={false}
           itemProp="contentUrl"
         />
-        <figcaption className="absolute bottom-1 left-5" itemProp="creditText">
-          Photo by Kristen Mommertz
-        </figcaption>
+        <figcaption itemProp="creditText">Photo by Kristen Mommertz</figcaption>
       </figure>
-      <div
-        className={`m-6 border-2 ${LIGHT_BORDER} bg-[whitesmoke] py-6 leading-7 ${DARK_BORDER} dark:bg-siteblack md:w-2/3 lg:px-[8%]`}
-      >
+      <div className={`${LIGHT_BORDER} ${DARK_BORDER}`}>
         <h2>My Journey</h2>
         <p>
           My career journey began in customer service, tech support, and various
