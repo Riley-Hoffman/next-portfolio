@@ -1,4 +1,3 @@
-import { Legend } from './Legend'
 import { FormField } from './FormField'
 import { useContactForm } from '@/app/hooks/contact/useContactForm'
 import '@/app/styles/contact/form.css'
@@ -22,15 +21,15 @@ export const Form = ({ onErrors }: FormProps) => {
     name: keyof typeof formState
     placeholder: string
   }> = [
-    { type: 'text', name: 'name', placeholder: 'Enter your name..' },
-    { type: 'email', name: 'email', placeholder: 'Enter your email..' },
-    { type: 'textarea', name: 'message', placeholder: 'Enter your message..' },
-  ]
+      { type: 'text', name: 'name', placeholder: 'Enter your name..' },
+      { type: 'email', name: 'email', placeholder: 'Enter your email..' },
+      { type: 'textarea', name: 'message', placeholder: 'Enter your message..' },
+    ]
 
   return (
     <form className="px-5 pb-10 pt-5" noValidate onSubmit={handleSubmit}>
       <fieldset className="pb-5">
-        <Legend />
+        <legend className="sr-only">Contact Info and Message</legend>
         {fields.map(({ type, name, placeholder }) => (
           <FormField
             key={name}
