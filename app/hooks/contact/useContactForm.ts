@@ -27,12 +27,19 @@ export const useContactForm = ({
   const fetchCsrfToken = async () => {
     try {
       const response = await fetch('/api/csrf-token')
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
       const data = await response.json()
-      csrfTokenRef.current = data.token ?? null
+      const newToken = data.token ?? null
+      csrfTokenRef.current = newToken
 
-      if (!currentToken) console.error('Failed to fetch CSRF token.')
+      if (!newToken) {
+        throw new Error('No token received from server')
+      }
     } catch (error) {
       console.error('Error fetching CSRF token:', error)
+      throw error
     }
   }
 
@@ -46,33 +53,40 @@ export const useContactForm = ({
       return
     }
 
-    if (!currentToken) await fetchCsrfToken()
-
-    if (!currentToken) {
-      console.error('CSRF token is still missing after fetch.')
-      return
-    }
-
     setIsSubmitting(true)
     try {
+      if (!currentToken) {
+        await fetchCsrfToken()
+      }
+
+      if (!csrfTokenRef.current) {
+        throw new Error('Failed to obtain CSRF token')
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'csrf-token': currentToken,
+          'csrf-token': csrfTokenRef.current,
         },
         body: JSON.stringify(formState),
       })
 
-      const result = await response.json()
       if (!response.ok) {
-        console.error('Form submission failed:', result.error)
-      } else {
-        console.info('Form submitted successfully:', result)
-        router.push('/thank-you')
+        const result = await response.json()
+        throw new Error(result.error || 'Form submission failed')
       }
+
+      const result = await response.json()
+      console.info('Form submitted successfully:', result)
+      router.push('/thank-you')
     } catch (error) {
       console.error('Error submitting form:', error)
+      onErrors([
+        error instanceof Error ? error.message : 'An unexpected error occurred',
+      ])
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
