@@ -10,7 +10,7 @@ const Custom404 = () => {
       <h1 className="heading-one">Page Not Found</h1>
       <div className="max-w-screen-md pb-40 pt-8">
         <div className="pb-7 text-center">
-          <div className="text-primary-600 dark:text-primary-400 text-6xl font-bold" aria-hidden="true">
+          <div className="text-primary-600 dark:text-primary-400 text-6xl font-bold" aria-hidden={true}>
             404
           </div>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
