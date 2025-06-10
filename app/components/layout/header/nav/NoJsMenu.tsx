@@ -5,11 +5,11 @@ import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 
 const NO_JS_MENU_LINK_CLASSES = 'button px-2 py-1 md:px-3 md:py-2'
 
-export const NoJsMenu = ({}: EmptyObject) => {
+export const NoJsMenu = ({ }: EmptyObject) => {
   const MAIN_ROUTES = useRoutes('main')
   return (
     <noscript>
-      <nav className="no-js-menu px-4" aria-label="No JS Menu Links">
+      <nav className="px-4" aria-label="No JS Menu Links">
         <ul className="flex flex-wrap justify-center gap-y-2 bg-heading py-2">
           {MAIN_ROUTES.map(({ to, label }) => (
             <li key={to}>

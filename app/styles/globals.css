@@ -52,23 +52,23 @@
   header > button {
     @apply m-0 pl-4 pr-0 font-urbanist font-medium uppercase tracking-wider text-heading md:font-normal lg:text-2xl;
   }
-  nav:not(.no-js-menu) {
+  header > nav {
     @apply h-10 min-w-36;
   }
-  nav:not(.no-js-menu) ul {
+  header > nav ul {
     @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.128px_1rem_-0.56rem] shadow-black;
     @apply transition-transform sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
   }
-  nav:not(.no-js-menu) li {
+  header > nav li {
     @apply block md:inline;
   }
-  nav:not(.no-js-menu) a {
+  header > nav a {
     @apply button w-full whitespace-nowrap px-9 py-3 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
   }
-  nav:not(.no-js-menu) a:not(.hidden) {
+  header > nav a:not(.hidden) {
     @apply inline-block;
   }
-  nav:not(.no-js-menu) a:not([target='blank']) {
+  header > nav a:not([target='blank']) {
     @apply button [&.active]:bg-accentone-300 [&.active]:text-heading;
   }
   .hamburger {
