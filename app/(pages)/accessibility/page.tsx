@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
 
 const DESCRIPTION =
   'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'

@@ -3,7 +3,7 @@
  */
 import { renderHook } from '@testing-library/react'
 import { useParticleCleanupEvents } from '../useParticleCleanupEvents'
-import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanup.types'
 
 describe('useParticleCleanupEvents', () => {
   let refs: React.RefObject<ParticleCleanupRefs>

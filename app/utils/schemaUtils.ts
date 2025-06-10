@@ -7,7 +7,7 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
 } from '@/app/constants/baseData'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
 
 export type SchemaMap = {
   WebPage: WebPage

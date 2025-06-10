@@ -1,5 +1,5 @@
 import { useEffect, RefObject } from 'react'
-import { SharedParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
+import { SharedParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanup.types'
 
 type HandleInteraction = (event: Event, isInside: boolean) => void
 type HandleOnScroll = (event: Event) => void

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/navigation'
+import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 
-export const HeaderLogo = () => {
+export const HeaderLogo = ({ }: EmptyObject) => {
   const router = useRouter()
 
   return (

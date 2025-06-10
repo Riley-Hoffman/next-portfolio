@@ -6,7 +6,7 @@ import { useInitializeAnimation } from './useInitializeAnimation'
 import { useMedalDetails } from './useMedalDetails'
 import { useReloadAnimation } from './useReloadAnimation'
 import { useParticleCleanupEvents } from './useParticleCleanupEvents'
-import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanup.types'
 
 export const useParticleCleanupGame = (
   completionMessageRef: React.RefObject<HTMLParagraphElement>

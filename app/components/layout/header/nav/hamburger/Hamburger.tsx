@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { HamburgerLine } from './HamburgerLine'
 import { useHamburger } from '@/app/hooks/nav/useHamburger'
-import { HamburgerProps } from '@/app/types/nav/HamburgerProps.interface'
+import { HamburgerProps } from '@/app/types/nav/Hamburger.interface'
 
 export const Hamburger = ({ expanded }: HamburgerProps) => {
   const { isExpanded, toggleMenu, hamburgerRef } = useHamburger({ expanded })

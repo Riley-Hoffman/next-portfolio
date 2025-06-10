@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { HamburgerProps } from '@/app/types/nav/HamburgerProps.interface'
+import { HamburgerProps } from '@/app/types/nav/Hamburger.interface'
 import { useDebounce } from '../shared/useDebounce'
 import { MD } from '@/app/constants/breakpoints'
 

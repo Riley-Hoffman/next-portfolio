@@ -1,6 +1,6 @@
 import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
 import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
 

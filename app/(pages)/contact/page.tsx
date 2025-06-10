@@ -1,6 +1,6 @@
 import { createMetadata } from '@/app/utils/metadata'
 import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGeneratorProps.interface'
+import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
 import { ContactWrapper } from '@/app/components/contact/ContactWrapper'
 import { Sidebar } from '@/app/components/contact/sidebar/Sidebar'
 

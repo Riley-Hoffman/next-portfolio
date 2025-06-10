@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanup.types'
 
 export const useInitializeAnimation = (
   refs: React.RefObject<ParticleCleanupRefs>,

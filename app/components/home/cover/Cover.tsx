@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import { CoverImageProps } from '@/app/types/home/CoverImageProps.interface'
+import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
 import '@/app/styles/home/cover.css'
 import { MD, LG } from '@/app/constants/breakpoints'
 

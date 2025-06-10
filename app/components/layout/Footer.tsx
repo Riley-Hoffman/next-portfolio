@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { getPageTitle, GITHUB_URL, VERSION } from '@/app/constants/baseData'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
+import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 
-export const Footer = () => (
+export const Footer = ({ }: EmptyObject) => (
   <footer>
     <h2>Footer</h2>
     <p>

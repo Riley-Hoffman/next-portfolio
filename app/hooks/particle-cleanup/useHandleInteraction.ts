@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useGameData } from './useGameData'
-import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanupRefs.types'
+import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanup.types'
 
 export const useHandleInteraction = (
   refs: React.RefObject<ParticleCleanupRefs>,
