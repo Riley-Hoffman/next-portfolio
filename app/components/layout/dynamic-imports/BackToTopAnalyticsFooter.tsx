@@ -3,7 +3,7 @@ import { BackToTopButton } from '../BackToTopButton'
 import { Footer } from '../Footer'
 import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 
-const BackToTopAnalyticsFooter = ({ }: EmptyObject) => (
+const BackToTopAnalyticsFooter = ({}: EmptyObject) => (
   <>
     <BackToTopButton />
     <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS!} />
