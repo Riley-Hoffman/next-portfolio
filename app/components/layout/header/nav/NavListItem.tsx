@@ -32,7 +32,11 @@ export const NavListItem = ({
           <NewTabContent />
         </a>
       ) : (
-        <Link className={clsx({ hidden: hide, active: isActive })} href={to}>
+        <Link
+          className={clsx({ hidden: hide, active: isActive })}
+          href={to}
+          aria-current={isActive ? 'page' : undefined}
+        >
           {label}
         </Link>
       )}
