@@ -7,11 +7,9 @@ import '@/app/styles/particle-cleanup/particle-cleanup.css'
 import '@/app/styles/shared/overlay.css'
 
 export const ParticleCleanupGame = () => {
-  const completionMessageRef = useRef<HTMLParagraphElement>(null)
+  const completionMessageRef = useRef<HTMLParagraphElement>(null!)
   const { gameRefs, gameData, medalDetails, reloadAnimation } =
-    useParticleCleanupGame(
-      completionMessageRef as React.RefObject<HTMLParagraphElement>
-    )
+    useParticleCleanupGame(completionMessageRef)
   const currentGameRefs = gameRefs.current
 
   const renderCompletionMessage = () => {

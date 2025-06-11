@@ -18,7 +18,7 @@ export const Accordion = ({ accItems, label }: AccProps) => {
 
   const debouncedHandleAccClick = useDebounce((index: number) => {
     handleAccClick(index)
-  }, 500)
+  }, 200)
 
   return (
     <ul
@@ -27,6 +27,9 @@ export const Accordion = ({ accItems, label }: AccProps) => {
     >
       {accItems.map(({ question, answer }, index) => {
         const isOpen = accOpen(index)
+        const questionId = `question-${index}`
+        const answerId = `answer-${index}`
+
         return (
           <li className="group" key={question}>
             <AccQuestion
@@ -37,6 +40,8 @@ export const Accordion = ({ accItems, label }: AccProps) => {
                 buttonRef: (el) => {
                   buttonRefs[index].current = el
                 },
+                questionId,
+                answerId,
               }}
             />
             <AccAnswer
@@ -46,6 +51,8 @@ export const Accordion = ({ accItems, label }: AccProps) => {
                 contentRef: (el) => {
                   contentRefs[index].current = el
                 },
+                answerId,
+                questionId,
               }}
             />
           </li>

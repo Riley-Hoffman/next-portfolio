@@ -6,17 +6,17 @@ import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import '@/app/styles/home/linkedin-button.css'
 
+const LINKEDIN_URL = 'https://www.linkedin.com/in/riley-hoffman-014623213'
+
 export const LinkedInButton = () => {
-  const buttonRef = useRef<HTMLAnchorElement>(null)
-  const { handleMouseEnterWiggle } = useHoverWiggle(
-    buttonRef as React.RefObject<HTMLAnchorElement>
-  )
+  const buttonRef = useRef<HTMLAnchorElement>(null!)
+  const { handleMouseEnterWiggle } = useHoverWiggle(buttonRef)
 
   return (
     <Link
       ref={buttonRef}
       className="linkedin-button button group"
-      href="https://www.linkedin.com/in/riley-hoffman-014623213"
+      href={LINKEDIN_URL}
       onMouseEnter={handleMouseEnterWiggle}
       {...EXTERNAL_LINK_ATTR}
     >

@@ -7,7 +7,7 @@ interface FormProps {
 }
 
 export const Form = ({ onErrors }: FormProps) => {
-  const { formState, handleChange, handleSubmit } = useContactForm({
+  const { formState, errors, handleChange, handleSubmit } = useContactForm({
     initialFormState: {
       name: '',
       email: '',
@@ -38,6 +38,7 @@ export const Form = ({ onErrors }: FormProps) => {
             value={formState[name]}
             handleChange={handleChange}
             placeholder={placeholder}
+            error={errors[name]}
           />
         ))}
       </fieldset>

@@ -92,6 +92,7 @@ export const useContactForm = ({
 
   return {
     formState,
+    errors,
     handleChange,
     handleInvalid,
     handleSubmit,

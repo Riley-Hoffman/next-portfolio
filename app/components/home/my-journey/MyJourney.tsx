@@ -9,7 +9,7 @@ const LazyHueRotateOnScroll = dynamic(
 )
 
 export const MyJourney = () => {
-  const hueElRef = useRef<HTMLElement>(null)
+  const hueElRef = useRef<HTMLElement>(null!)
   const LIGHT_BORDER = 'border-[#d6d2ee]'
   const DARK_BORDER = 'dark:border-[#292d11]'
 
@@ -54,9 +54,7 @@ export const MyJourney = () => {
         </p>
         <LinkedInButton />
       </div>
-      <LazyHueRotateOnScroll
-        hueElRef={hueElRef as React.RefObject<HTMLElement>}
-      />
+      <LazyHueRotateOnScroll hueElRef={hueElRef} />
     </section>
   )
 }
