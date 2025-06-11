@@ -21,7 +21,7 @@ const Custom404 = () => {
             moved.
           </p>
         </div>
-        <div className="mb-12 max-w-lg bg-gray-50 px-7 py-4 text-left dark:bg-gray-800 md:rounded-lg">
+        <section className="mb-12 max-w-lg bg-gray-50 px-7 py-4 text-left dark:bg-gray-800 md:rounded-lg">
           <h2 className="mb-4 px-0 text-2xl font-semibold">What you can do:</h2>
           <ul
             className="list-disc space-y-4 pl-4"
@@ -38,8 +38,8 @@ const Custom404 = () => {
             </li>
           </ul>
           <BackButton />
-        </div>
-        <div className="max-w-lg border border-gray-200 p-6 text-center dark:border-gray-700 md:rounded-lg">
+        </section>
+        <section className="max-w-lg border border-gray-200 p-6 text-center dark:border-gray-700 md:rounded-lg">
           <h2 className="mb-4 text-2xl font-semibold">Available Pages:</h2>
           <nav>
             <ul className="space-y-4" aria-label="Available pages">
@@ -70,7 +70,7 @@ const Custom404 = () => {
               </Link>
             </p>
           </div>
-        </div>
+        </section>
       </div>
     </>
   )
