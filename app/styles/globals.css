@@ -63,7 +63,10 @@
     @apply block md:inline;
   }
   header > nav a {
-    @apply button w-full whitespace-nowrap px-9 py-3 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
+    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
+  }
+  header > nav a:focus-visible {
+    @apply z-10;
   }
   header > nav a:not(.hidden) {
     @apply inline-block;
