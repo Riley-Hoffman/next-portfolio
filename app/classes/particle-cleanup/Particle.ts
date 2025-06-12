@@ -32,18 +32,32 @@ export class Particle {
     this.color = color
     this.weight = weight
     this.direction = { x: 0, y: 0 }
-    this.vertices = this.generateVertices()
+    this.vertices = this.generateStarVertices()
     this.inCanvas = true
     this.speedFactor = speedFactor
   }
 
-  generateVertices(): Point[] {
-    const numVertices = this.getRandomInt(3, 8)
-    return Array.from({ length: numVertices }, (_, i) => {
-      const angle = (i / numVertices) * Math.PI * 2
-      const radius = this.size * (0.5 + Math.random() * 0.5)
-      return this.getVertex(angle, radius)
-    })
+  generateStarVertices(): Point[] {
+    const numPoints = this.getRandomInt(5, 8)
+    const vertices: Point[] = []
+    const outerRadius = this.size * 0.8
+    const innerRadius = outerRadius * (0.3 + Math.random() * 0.2)
+    const noise = 0.1
+    const rotation = Math.random() * Math.PI * 2
+
+    for (let i = 0; i < numPoints * 2; i++) {
+      const angle = (i / (numPoints * 2)) * Math.PI * 2 + rotation
+      const radius = i % 2 === 0 ? outerRadius : innerRadius
+      const noiseX = (Math.random() - 0.5) * noise * radius
+      const noiseY = (Math.random() - 0.5) * noise * radius
+      const vertex = this.getVertex(angle, radius)
+      vertices.push({
+        x: vertex.x + noiseX,
+        y: vertex.y + noiseY,
+      })
+    }
+
+    return vertices
   }
 
   getVertex(angle: number, radius: number): Point {
@@ -62,10 +76,17 @@ export class Particle {
     ctx.beginPath()
     const first = this.getAbsoluteVertex(this.vertices[0])
     ctx.moveTo(first.x, first.y)
-    for (const vertex of this.vertices.slice(1)) {
-      const absVertex = this.getAbsoluteVertex(vertex)
-      ctx.lineTo(absVertex.x, absVertex.y)
+
+    for (let i = 1; i < this.vertices.length; i++) {
+      const current = this.getAbsoluteVertex(this.vertices[i])
+      const prev = this.getAbsoluteVertex(this.vertices[i - 1])
+
+      const cp1x = prev.x + (current.x - prev.x) * 0.5
+      const cp1y = prev.y + (current.y - prev.y) * 0.5
+
+      ctx.quadraticCurveTo(cp1x, cp1y, current.x, current.y)
     }
+
     ctx.closePath()
     ctx.fill()
   }

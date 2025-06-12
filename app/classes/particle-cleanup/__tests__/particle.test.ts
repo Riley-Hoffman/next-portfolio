@@ -7,6 +7,7 @@ const mockCtx = {
   lineTo: jest.fn(),
   closePath: jest.fn(),
   fill: jest.fn(),
+  quadraticCurveTo: jest.fn(),
 }
 
 const mockCanvas = {
@@ -30,10 +31,10 @@ describe('Particle class', () => {
     expect(particle.inCanvas).toBe(true)
   })
 
-  test('generateVertices should create the correct number of vertices', () => {
-    const vertices = particle.generateVertices()
-    expect(vertices.length).toBeGreaterThanOrEqual(3)
-    expect(vertices.length).toBeLessThanOrEqual(8)
+  test('generateStarVertices should create the correct number of vertices', () => {
+    const vertices = particle.generateStarVertices()
+    expect(vertices.length).toBeGreaterThanOrEqual(10) // 5 points * 2 vertices
+    expect(vertices.length).toBeLessThanOrEqual(16) // 8 points * 2 vertices
   })
 
   test('updatePosition should change the position based on direction', () => {
@@ -70,7 +71,7 @@ describe('Particle class', () => {
       particle.position.x + particle.vertices[0].x,
       particle.position.y + particle.vertices[0].y
     )
-    expect(mockCtx.lineTo).toHaveBeenCalled()
+    expect(mockCtx.quadraticCurveTo).toHaveBeenCalled()
     expect(mockCtx.closePath).toHaveBeenCalled()
     expect(mockCtx.fill).toHaveBeenCalled()
   })
