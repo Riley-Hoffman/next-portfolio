@@ -4,10 +4,15 @@ import { useThemeInfo } from '@/app/hooks/theme/useThemeInfo'
 export const ThemeChanger = () => {
   const themeInfo = useThemeInfo()
 
-  const { icon, label, toggleTheme } = themeInfo
+  const { icon, label, toggleTheme, isDarkTheme } = themeInfo
 
   return (
-    <button onClick={toggleTheme} className="theme-changer" aria-label={label}>
+    <button
+      onClick={toggleTheme}
+      className="theme-changer"
+      aria-label={label}
+      aria-pressed={isDarkTheme}
+    >
       <Icon icon={icon} />
     </button>
   )

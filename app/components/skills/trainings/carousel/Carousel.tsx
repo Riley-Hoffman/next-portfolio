@@ -14,7 +14,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])
@@ -70,6 +70,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
           containerRole: 'region',
           containerRoleDescriptionMessage:
             'Trainings & Certifications Carousel',
+          itemRoleDescriptionMessage: 'slide',
         }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper

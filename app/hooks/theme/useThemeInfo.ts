@@ -8,5 +8,5 @@ export const useThemeInfo = () => {
   const label = isDarkTheme ? 'Switch to Light Theme' : 'Switch to Dark Theme'
   const toggleTheme = () => setTheme(isDarkTheme ? 'light' : 'dark')
 
-  return { icon, label, toggleTheme }
+  return { icon, label, toggleTheme, isDarkTheme }
 }

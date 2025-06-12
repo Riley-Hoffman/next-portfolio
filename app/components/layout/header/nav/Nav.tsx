@@ -10,9 +10,12 @@ export const Nav = () => {
   const hide = useLinkVisibility(isExpanded, 500)
 
   return (
-    <nav>
+    <nav aria-label="Main menu">
       <Hamburger expanded={setIsExpanded} />
-      <ul className="peer-aria-expanded:scale-100" aria-label="Menu Links">
+      <ul
+        className="peer-aria-expanded:scale-100"
+        aria-label="Main navigation links"
+      >
         {MAIN_ROUTES.map(({ to, label }) => (
           <NavListItem key={to} to={to} label={label} hide={hide} />
         ))}
