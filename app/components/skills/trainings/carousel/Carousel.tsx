@@ -1,7 +1,8 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import type { Swiper as SwiperInstance } from 'swiper'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
 import { SlideData } from '@/app/types/carousel/SlideData.interface'
@@ -10,10 +11,30 @@ import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
+  const swiperRef = useRef<SwiperInstance | null>(null)
+
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
+  }, [])
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!swiperRef.current) return
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          swiperRef.current.slidePrev()
+          break
+        case 'ArrowRight':
+          swiperRef.current.slideNext()
+          break
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
   return (
@@ -49,6 +70,9 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
           containerRole: 'region',
           containerRoleDescriptionMessage:
             'Trainings & Certifications Carousel',
+        }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper
         }}
       >
         {slides.map(({ src, url, label }) => (
