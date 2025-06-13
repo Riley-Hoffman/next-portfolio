@@ -88,7 +88,7 @@ const config: Config = {
   plugins: [
     plugin(function ({ addComponents, theme }) {
       const GLOBAL_BLACK = '#12121c'
-      const TOOL_TIP_TRANSITION = 'opacity 0.2s'
+      const TOOL_TIP_TRANSITION = 'opacity 0.3s'
       const xlScreenWidth = parseInt(theme('screens.xl'), 10)
       const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
       const gradientOneColor = theme('colors.gradientone')!

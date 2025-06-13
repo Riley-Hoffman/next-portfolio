@@ -30,6 +30,7 @@
     --color-gradienttwo: #51b6b6;
     --color-gradientone: #22728b;
   }
+
   html.dark {
     @apply bg-siteblack;
   }
@@ -40,7 +41,7 @@
     @apply mx-auto;
   }
   :where(a, button, input, textarea):focus-visible {
-    @apply outline outline-4 outline-[#ff8800];
+    @apply outline outline-4 outline-offset-2 outline-[#ff8800];
   }
   body ::placeholder {
     @apply contrast-more:text-black contrast-more:opacity-100 dark:text-accenttwo-100;
@@ -63,7 +64,9 @@
     @apply block md:inline;
   }
   header > nav a {
-    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider hover:brightness-90 md:w-auto md:px-4 md:py-2;
+    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider transition-all duration-300;
+    @apply hover:brightness-90 md:w-auto md:px-4 md:py-2;
+    @apply hover:translate-y-[-2px];
   }
   header > nav a:focus-visible {
     @apply z-10;
@@ -118,7 +121,9 @@
     @apply transition-[color,background-color];
   }
   .button {
-    @apply bg-heading text-accentone-200 no-underline md:hover:bg-accentone-100 md:hover:text-heading;
+    @apply bg-heading text-accentone-200 no-underline transition-all duration-300 ease-in-out;
+    @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-sm;
+    @apply active:scale-95 dark:shadow-text;
   }
   [class*='iconify']:not(.hidden) {
     @apply inline;
@@ -129,8 +134,11 @@
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl;
     @apply dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
+    @apply font-bold tracking-tight;
   }
   .back-to-top {
-    @apply button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-300 px-2 py-2 md:tool-tip md:hover:border-heading;
+    @apply button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-300 px-2 py-2;
+    @apply md:tool-tip md:hover:border-heading;
+    @apply md:hover:translate-y-[-2px];
   }
 }
