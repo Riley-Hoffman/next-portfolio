@@ -22,6 +22,7 @@ const config: Config = {
       colors: {
         heading: 'var(--color-heading)',
         text: 'var(--color-text)',
+        hovershadow: 'var(--color-hovershadow)',
         accentone: {
           100: 'var(--color-accentone-100)',
           200: 'var(--color-accentone-200)',

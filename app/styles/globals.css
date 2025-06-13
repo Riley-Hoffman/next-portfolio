@@ -6,6 +6,7 @@
   :root {
     --color-heading: #12121c;
     --color-text: #222027;
+    --color-hovershadow: rgba(34, 32, 39, 0.1);
     --color-accentone-100: #f5eef7;
     --color-accentone-200: #eee3f2;
     --color-accentone-300: #e5d4ed;
@@ -20,6 +21,7 @@
   :root[class~='dark'] {
     --color-heading: #edede3;
     --color-text: #e4e6dd;
+    --color-hovershadow: rgba(228, 230, 221, 0.1);
     --color-accentone-100: #081011;
     --color-accentone-200: #0d191c;
     --color-accentone-300: #12272b;
@@ -57,7 +59,7 @@
     @apply h-10 min-w-36;
   }
   header > nav ul {
-    @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.128px_1rem_-0.56rem] shadow-black;
+    @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.128px_1rem_-0.56rem] shadow-hovershadow;
     @apply transition-transform sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
   }
   header > nav li {
@@ -122,8 +124,8 @@
   }
   .button {
     @apply bg-heading text-accentone-200 no-underline transition-all duration-300 ease-in-out;
-    @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-sm;
-    @apply active:scale-95 dark:shadow-text;
+    @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-md;
+    @apply active:scale-95 dark:shadow-hovershadow;
   }
   [class*='iconify']:not(.hidden) {
     @apply inline;
