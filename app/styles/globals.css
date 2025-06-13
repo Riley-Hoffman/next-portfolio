@@ -59,7 +59,7 @@
     @apply h-10 min-w-36;
   }
   header > nav ul {
-    @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.128px_1rem_-0.56rem] shadow-hovershadow;
+    @apply shadow-hovershadow relative right-0 top-6 z-20 m-0 origin-right scale-x-0 text-base shadow-[0_0.128px_1rem_-0.56rem];
     @apply transition-transform sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
   }
   header > nav li {
@@ -124,8 +124,8 @@
   }
   .button {
     @apply bg-heading text-accentone-200 no-underline transition-all duration-300 ease-in-out;
-    @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-md;
-    @apply active:scale-95 dark:shadow-hovershadow;
+    @apply md:hover:shadow-hovershadow md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-[0_0.313rem_0.625rem_-0.313rem];
+    @apply dark:shadow-hovershadow active:scale-95;
   }
   [class*='iconify']:not(.hidden) {
     @apply inline;
