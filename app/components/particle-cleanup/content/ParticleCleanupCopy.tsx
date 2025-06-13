@@ -24,7 +24,7 @@ export const ParticleCleanupCopy = () => (
   <>
     <h2>React, TSX, SCSS</h2>
     <p>
-      How quickly can you clear all the particles from the board using your
+      How quickly can you clear all the stars from the board using your
       cursor or finger?
     </p>
     <ol
