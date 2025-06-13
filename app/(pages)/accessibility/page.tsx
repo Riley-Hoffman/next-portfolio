@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { createMetadata } from '@/app/utils/metadata'
-import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
+import { SchemaFactory } from '@/app/utils/schemaFactory'
+import SchemaInjector from '@/app/components/schema/SchemaInjector'
 
 const DESCRIPTION =
   'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'
@@ -14,17 +14,16 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
+const schemaData = SchemaFactory.createWebPage({
   title: TITLE,
   description: DESCRIPTION,
   urlPath: PATH,
   publishDate: '2024-08-07T09:25:01.340Z',
-  schemaType: 'WebPage',
-}
+})
 
 const Accessibility = () => (
   <>
-    <SchemaGenerator schemaData={SCHEMA_DATA} />
+    <SchemaInjector structuredData={schemaData} />
     <h1 className="heading-one">Accessibility</h1>
     <div className="max-w-screen-md pb-24 pt-7">
       <h2>My Commitment</h2>

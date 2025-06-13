@@ -1,6 +1,6 @@
 'use client'
 import { Thing, WithContext } from 'schema-dts'
-import DOMPurify from 'dompurify'
+import { useEffect, useState } from 'react'
 
 interface SchemaInjectorProps<T extends Thing> {
   structuredData: WithContext<T>
@@ -9,7 +9,21 @@ interface SchemaInjectorProps<T extends Thing> {
 const SchemaInjector = <T extends Thing>({
   structuredData,
 }: SchemaInjectorProps<T>) => {
-  const sanitizedData = DOMPurify.sanitize(JSON.stringify(structuredData))
+  const [sanitizedData, setSanitizedData] = useState<string>('')
+
+  useEffect(() => {
+    // Import DOMPurify dynamically only on the client side
+    import('dompurify').then((DOMPurify) => {
+      const sanitized = DOMPurify.default.sanitize(
+        JSON.stringify(structuredData)
+      )
+      setSanitizedData(sanitized)
+    })
+  }, [structuredData])
+
+  if (!sanitizedData) {
+    return null
+  }
 
   return (
     <script

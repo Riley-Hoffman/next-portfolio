@@ -1,6 +1,6 @@
 import { createMetadata } from '@/app/utils/metadata'
-import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
+import { SchemaFactory } from '@/app/utils/schemaFactory'
+import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { ContactWrapper } from '@/app/components/contact/ContactWrapper'
 import { Sidebar } from '@/app/components/contact/sidebar/Sidebar'
 
@@ -15,17 +15,16 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
+const schemaData = SchemaFactory.createContactPage({
   title: TITLE,
   description: DESCRIPTION,
   urlPath: PATH,
   publishDate: '2024-07-04T09:25:01.340Z',
-  schemaType: 'ContactPage',
-}
+})
 
 const Contact = () => (
   <>
-    <SchemaGenerator schemaData={SCHEMA_DATA} />
+    <SchemaInjector structuredData={schemaData} />
     <h1 className="heading-one">Contact Me</h1>
     <div className="max-w-5xl md:flex">
       <ContactWrapper />

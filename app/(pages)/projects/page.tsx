@@ -1,6 +1,6 @@
 import { createMetadata } from '@/app/utils/metadata'
-import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
+import { SchemaFactory } from '@/app/utils/schemaFactory'
+import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { fetchFirebaseData } from '@/app/utils/fetchFirebaseData'
 import { ProjectCategoryRenderer } from '@/app/components/projects/project-categories/ProjectCategoryRenderer'
 import { Project } from '@/app/types/projects/Project.types'
@@ -16,19 +16,18 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
+const schemaData = SchemaFactory.createWebPage({
   title: TITLE,
   description: DESCRIPTION,
   urlPath: PATH,
   publishDate: '2024-07-04T09:25:01.340Z',
-  schemaType: 'WebPage',
-}
+})
 
 export default async function ProjectsPage() {
   const projects = (await fetchFirebaseData<Project[]>('/projects')).flat()
   return (
     <>
-      <SchemaGenerator schemaData={SCHEMA_DATA} />
+      <SchemaInjector structuredData={schemaData} />
       <h1 className="heading-one">Projects</h1>
       <ProjectCategoryRenderer projects={projects ?? []} />
     </>

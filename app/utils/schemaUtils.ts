@@ -1,4 +1,4 @@
-import { WithContext, WebPage, ContactPage } from 'schema-dts'
+import { WithContext, WebPage, ContactPage, FAQPage } from 'schema-dts'
 import {
   getPageTitle,
   getBaseUrl,
@@ -12,9 +12,25 @@ import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interfa
 export type SchemaMap = {
   WebPage: WebPage
   ContactPage: ContactPage
+  FAQPage: FAQPage
 }
 
-const createPersonEntity = (): {
+const validateSchemaData = (data: SchemaGeneratorProps['schemaData']) => {
+  if (!data.title && data.schemaType !== 'WebPage') {
+    throw new Error('Title is required for non-WebPage schemas')
+  }
+  if (!data.description) {
+    throw new Error('Description is required for all schemas')
+  }
+  if (!data.urlPath && data.schemaType !== 'WebPage') {
+    throw new Error('URL path is required for non-WebPage schemas')
+  }
+  if (!data.publishDate) {
+    throw new Error('Publish date is required for all schemas')
+  }
+}
+
+export const createPersonEntity = (): {
   '@type': 'Person'
   name: string
   url: string
@@ -36,14 +52,18 @@ export const generateSchema = ({
   publishDate,
 }: SchemaGeneratorProps['schemaData']): WithContext<
   SchemaMap[typeof schemaType]
-> => ({
-  '@context': 'https://schema.org',
-  '@type': schemaType,
-  name: getPageTitle(title),
-  description,
-  image: getImageUrl(),
-  url: getBaseUrl(urlPath),
-  datePublished: publishDate,
-  mainEntity: createPersonEntity(),
-  author: createPersonEntity(),
-})
+> => {
+  validateSchemaData({ schemaType, title, description, urlPath, publishDate })
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': schemaType,
+    name: getPageTitle(title),
+    description,
+    image: getImageUrl(),
+    url: getBaseUrl(urlPath),
+    datePublished: publishDate,
+    mainEntity: createPersonEntity(),
+    author: createPersonEntity(),
+  }
+}

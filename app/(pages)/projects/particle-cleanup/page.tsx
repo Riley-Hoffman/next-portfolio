@@ -1,11 +1,11 @@
 import { createMetadata } from '@/app/utils/metadata'
-import { SchemaGenerator } from '@/app/components/schema/SchemaGenerator'
-import { SchemaGeneratorProps } from '@/app/types/schema/SchemaGenerator.interface'
+import { SchemaFactory } from '@/app/utils/schemaFactory'
+import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
 
 const DESCRIPTION =
-  'How quickly can you clear all the particles from the board using your cursor or finger?'
+  'How quickly can you clear all the stars from the board using your cursor or finger?'
 const TITLE = 'Particle Cleanup Game'
 const PATH = '/projects/particle-cleanup'
 
@@ -15,17 +15,16 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const SCHEMA_DATA: SchemaGeneratorProps['schemaData'] = {
+const schemaData = SchemaFactory.createWebPage({
   title: TITLE,
   description: DESCRIPTION,
   urlPath: PATH,
   publishDate: '2024-08-05T09:25:01.340Z',
-  schemaType: 'WebPage',
-}
+})
 
 const ParticleCleanupWrapper = () => (
   <>
-    <SchemaGenerator schemaData={SCHEMA_DATA} />
+    <SchemaInjector structuredData={schemaData} />
     <h1 className="heading-one">Particle Cleanup Game</h1>
     <div className="max-w-screen-md pb-16">
       <ParticleCleanupCopy />
