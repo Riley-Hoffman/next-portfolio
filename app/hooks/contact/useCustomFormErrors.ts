@@ -44,10 +44,20 @@ export const useCustomFormErrors = (
     assignFormErrors()
   }
 
+  const resetForm = useCallback(() => {
+    setFormState(initialState)
+    setErrors({
+      name: '',
+      email: '',
+      message: '',
+    })
+  }, [initialState])
+
   return {
     formState,
     errors,
     handleChange,
     handleInvalid,
+    resetForm,
   }
 }

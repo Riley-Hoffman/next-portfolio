@@ -2,9 +2,19 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCustomFormErrors } from './useCustomFormErrors'
 
+interface FormState {
+  name: string
+  email: string
+  message: string
+}
+
 interface UseContactFormParams {
-  initialFormState: { name: string; email: string; message: string }
+  initialFormState: FormState
   onErrors: (errors: string[]) => void
+}
+
+interface FormError extends Error {
+  code?: string
 }
 
 export const useContactForm = ({
@@ -16,7 +26,7 @@ export const useContactForm = ({
   const router = useRouter()
   const currentToken = csrfTokenRef.current
 
-  const { formState, errors, handleChange, handleInvalid } =
+  const { formState, errors, handleChange, handleInvalid, resetForm } =
     useCustomFormErrors(initialFormState, isSubmitting)
 
   useEffect(() => {
@@ -35,7 +45,9 @@ export const useContactForm = ({
       csrfTokenRef.current = newToken
 
       if (!newToken) {
-        throw new Error('No token received from server')
+        const error = new Error('No token received from server') as FormError
+        error.code = 'TOKEN_MISSING'
+        throw error
       }
     } catch (error) {
       console.error('Error fetching CSRF token:', error)
@@ -60,7 +72,9 @@ export const useContactForm = ({
       }
 
       if (!csrfTokenRef.current) {
-        throw new Error('Failed to obtain CSRF token')
+        const error = new Error('Failed to obtain CSRF token') as FormError
+        error.code = 'TOKEN_MISSING'
+        throw error
       }
 
       const response = await fetch('/api/contact', {
@@ -74,11 +88,16 @@ export const useContactForm = ({
 
       if (!response.ok) {
         const result = await response.json()
-        throw new Error(result.error || 'Form submission failed')
+        const error = new Error(
+          result.error || 'Form submission failed'
+        ) as FormError
+        error.code = 'SUBMISSION_FAILED'
+        throw error
       }
 
       const result = await response.json()
       console.info('Form submitted successfully:', result)
+      resetForm()
       router.push('/thank-you')
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -96,5 +115,7 @@ export const useContactForm = ({
     handleChange,
     handleInvalid,
     handleSubmit,
+    isSubmitting,
+    resetForm,
   }
 }
