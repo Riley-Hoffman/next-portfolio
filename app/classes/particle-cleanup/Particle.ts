@@ -1,3 +1,5 @@
+import { PARTICLE_CONFIG } from '@/app/constants/particle-cleanup/particleConfig'
+
 interface Point {
   x: number
   y: number
@@ -17,7 +19,7 @@ export class Particle {
   inCanvas: boolean
   speedFactor: number
 
-  readonly canvasPadding = 7.4
+  readonly canvasPadding = PARTICLE_CONFIG.canvasPadding
 
   constructor(
     x: number,
@@ -120,13 +122,22 @@ export class Particle {
     distance: number,
     mouseRadius: number
   ): void {
-    const adjustedDistance = Math.max(distance, 50)
+    const adjustedDistance = Math.max(
+      distance,
+      PARTICLE_CONFIG.mouseEffect.minDistance
+    )
     const forceDirection = {
       x: -dx / adjustedDistance,
       y: -dy / adjustedDistance,
     }
-    const force = (mouseRadius - adjustedDistance) / mouseRadius + 0.5
-    const magnitude = force * this.weight * 5 * this.speedFactor
+    const force =
+      (mouseRadius - adjustedDistance) / mouseRadius +
+      PARTICLE_CONFIG.mouseEffect.baseForce
+    const magnitude =
+      force *
+      this.weight *
+      PARTICLE_CONFIG.mouseEffect.forceMultiplier *
+      this.speedFactor
     this.direction = {
       x: forceDirection.x * magnitude,
       y: forceDirection.y * magnitude,

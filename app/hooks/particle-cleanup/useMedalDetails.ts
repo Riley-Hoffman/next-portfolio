@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { MEDAL_CONFIG } from '@/app/constants/particle-cleanup/medalConfig'
 
 interface Medal {
   cutoff: number
@@ -8,12 +9,24 @@ interface Medal {
 
 export const useMedalDetails = (time: number | null) => {
   const getMedalDetails = useCallback((time: number | null): Medal | null => {
-    if (time === null || time > 25) return null
+    if (time === null || time > MEDAL_CONFIG.bronze.cutoff) return null
 
     const medals: Medal[] = [
-      { cutoff: 15, text: 'Gold Medal', color: '#8A7400' },
-      { cutoff: 21, text: 'Silver Medal', color: '#737373' },
-      { cutoff: 26, text: 'Bronze Medal', color: '#A2652A' },
+      {
+        cutoff: MEDAL_CONFIG.gold.cutoff,
+        text: MEDAL_CONFIG.gold.text,
+        color: MEDAL_CONFIG.gold.color,
+      },
+      {
+        cutoff: MEDAL_CONFIG.silver.cutoff,
+        text: MEDAL_CONFIG.silver.text,
+        color: MEDAL_CONFIG.silver.color,
+      },
+      {
+        cutoff: MEDAL_CONFIG.bronze.cutoff,
+        text: MEDAL_CONFIG.bronze.text,
+        color: MEDAL_CONFIG.bronze.color,
+      },
     ]
 
     return medals.find((medal) => time < medal.cutoff) || null

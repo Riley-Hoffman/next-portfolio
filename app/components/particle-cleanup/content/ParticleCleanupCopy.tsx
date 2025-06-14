@@ -1,22 +1,30 @@
 import { MedalCriteria } from './MedalCriteria'
 import '@/app/styles/shared/numbered-icons.css'
+import { MEDAL_CONFIG } from '@/app/constants/particle-cleanup/medalConfig'
 
-const medalData = [
+type MedalDisplayData = {
+  bgClass: string
+  srText: string
+  time: string
+  icon?: string
+}
+
+const medalData: MedalDisplayData[] = [
   {
-    bgClass: 'before:bg-[#8a7400]',
-    srText: 'Gold, Less Than 15 seconds.',
-    time: '15s',
-    icon: 'hugeicons:less-than',
+    bgClass: MEDAL_CONFIG.gold.bgClass,
+    srText: MEDAL_CONFIG.gold.srText,
+    time: MEDAL_CONFIG.gold.time,
+    icon: MEDAL_CONFIG.gold.icon,
   },
   {
-    bgClass: 'before:bg-[#737373]',
-    srText: 'Silver, 15 to 20 seconds.',
-    time: '15s-20s',
+    bgClass: MEDAL_CONFIG.silver.bgClass,
+    srText: MEDAL_CONFIG.silver.srText,
+    time: MEDAL_CONFIG.silver.time,
   },
   {
-    bgClass: 'before:bg-[#a2652a]',
-    srText: 'Bronze, 21 to 25 seconds.',
-    time: '21s-25s',
+    bgClass: MEDAL_CONFIG.bronze.bgClass,
+    srText: MEDAL_CONFIG.bronze.srText,
+    time: MEDAL_CONFIG.bronze.time,
   },
 ]
 
