@@ -12,15 +12,27 @@ export const createMetadata = ({
   description,
   path,
 }: PageMetadataProps): Metadata => ({
-  title,
+  title: {
+    template: `%s - ${title}`,
+    default: title,
+  },
   description,
   metadataBase: new URL(getBaseUrl(path)),
   alternates: {
     canonical: '/',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_CA',
     images: getImageUrl(),
-    title,
+    title: {
+      template: `%s - ${title}`,
+      default: title,
+    },
     url: getBaseUrl(path),
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#eee3f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#0d191c' },
+  ],
 })

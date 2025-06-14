@@ -4,35 +4,15 @@ import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import { IconLinks } from './components/layout/IconLinks'
 import { ICON_LINK_ATTRIBUTES } from './constants/icon-links/iconLinkAttributes'
-import {
-  getBaseUrl,
-  getPageTitle,
-  BASE_DESCRIPTION,
-  getImageUrl,
-} from '@/app/constants/baseData'
+import { getPageTitle, BASE_DESCRIPTION } from '@/app/constants/baseData'
+import { createMetadata } from './utils/metadata'
 import './styles/globals.css'
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s - ${getPageTitle()}`,
-    default: getPageTitle(),
-  },
+export const metadata: Metadata = createMetadata({
+  title: getPageTitle(),
   description: BASE_DESCRIPTION,
-  metadataBase: new URL(`${getBaseUrl()}`),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    images: getImageUrl(),
-    title: {
-      template: `%s - ${getPageTitle()}`,
-      default: `${getPageTitle()}`,
-    },
-    url: getBaseUrl(),
-  },
-}
+  path: '/',
+})
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en">
