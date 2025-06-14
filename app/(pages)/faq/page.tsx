@@ -6,7 +6,7 @@ import { QUESTIONS, HTML_ANSWERS } from '@/app/constants/faq/faqItems'
 export const metadata = createMetadata({
   title: 'FAQ',
   description: 'Find the answers to my most frequently asked questions.',
-  path: '/contact',
+  path: '/faq',
 })
 
 const Faq = () => (

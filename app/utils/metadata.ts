@@ -12,10 +12,7 @@ export const createMetadata = ({
   description,
   path,
 }: PageMetadataProps): Metadata => ({
-  title: {
-    template: `%s - ${title}`,
-    default: title,
-  },
+  title,
   description,
   metadataBase: new URL(getBaseUrl(path)),
   alternates: {
@@ -25,10 +22,7 @@ export const createMetadata = ({
     type: 'website',
     locale: 'en_CA',
     images: getImageUrl(),
-    title: {
-      template: `%s - ${title}`,
-      default: title,
-    },
+    title,
     url: getBaseUrl(path),
   },
   themeColor: [
