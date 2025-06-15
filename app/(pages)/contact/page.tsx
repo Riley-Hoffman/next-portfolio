@@ -3,10 +3,11 @@ import { SchemaFactory } from '@/app/utils/schemaFactory'
 import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { ContactWrapper } from '@/app/components/contact/ContactWrapper'
 import { Sidebar } from '@/app/components/contact/sidebar/Sidebar'
+import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'Get in touch with web developer Riley Hoffman with the form on this page.'
-const TITLE = 'Contact'
+const TITLE = getPageTitle('Contact')
 const PATH = '/contact'
 
 export const metadata = createMetadata({

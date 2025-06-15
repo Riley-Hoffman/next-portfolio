@@ -6,7 +6,7 @@ import { TrainingsSection } from '@/app/components/skills/trainings/TrainingsSec
 import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION = `My skills. ${getPageTitle()}.`
-const TITLE = 'Skills'
+const TITLE = getPageTitle('Skills')
 const PATH = '/skills'
 
 export const metadata = createMetadata({

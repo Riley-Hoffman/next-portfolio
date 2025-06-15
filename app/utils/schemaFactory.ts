@@ -1,5 +1,5 @@
 import { WithContext, WebPage, ContactPage, FAQPage } from 'schema-dts'
-import { getPageTitle, getBaseUrl, getImageUrl } from '@/app/constants/baseData'
+import { getBaseUrl, getImageUrl } from '@/app/constants/baseData'
 import { createPersonEntity } from './schemaUtils'
 
 type BaseSchemaData = {
@@ -14,7 +14,7 @@ export class SchemaFactory {
     return {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: getPageTitle(data.title),
+      name: data.title,
       description: data.description,
       image: getImageUrl(),
       url: getBaseUrl(data.urlPath),
@@ -28,7 +28,7 @@ export class SchemaFactory {
     return {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      name: getPageTitle(data.title),
+      name: data.title,
       description: data.description,
       image: getImageUrl(),
       url: getBaseUrl(data.urlPath),
@@ -45,7 +45,7 @@ export class SchemaFactory {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      name: getPageTitle(data.title),
+      name: data.title,
       description: data.description,
       image: getImageUrl(),
       url: getBaseUrl(data.urlPath),

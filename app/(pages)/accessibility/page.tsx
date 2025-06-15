@@ -2,10 +2,11 @@ import Link from 'next/link'
 import { createMetadata } from '@/app/utils/metadata'
 import { SchemaFactory } from '@/app/utils/schemaFactory'
 import SchemaInjector from '@/app/components/schema/SchemaInjector'
+import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION =
   'As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users.'
-const TITLE = 'Accessibility'
+const TITLE = getPageTitle('Accessibility')
 const PATH = '/accessibility'
 
 export const metadata = createMetadata({

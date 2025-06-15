@@ -1,7 +1,8 @@
 import { createMetadata } from '@/app/utils/metadata'
+import { getPageTitle } from '@/app/constants/baseData'
 
 export const metadata = createMetadata({
-  title: 'Thank You',
+  title: getPageTitle('Thank You'),
   description: 'Thank you for contacting Riley Hoffman - Web Developer.',
   path: '/thank-you',
 })

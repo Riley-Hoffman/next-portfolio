@@ -7,7 +7,7 @@ import { Project } from '@/app/types/projects/Project.types'
 import { getPageTitle } from '@/app/constants/baseData'
 
 const DESCRIPTION = `View past projects by ${getPageTitle()}.`
-const TITLE = 'Projects'
+const TITLE = getPageTitle('Projects')
 const PATH = '/projects'
 
 export const metadata = createMetadata({

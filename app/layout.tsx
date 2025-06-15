@@ -13,10 +13,7 @@ import './styles/globals.css'
 const ICONS_PATH = '/icons'
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Riley Hoffman - Web Developer',
-    template: '%s - Riley Hoffman - Web Developer',
-  },
+  title: getPageTitle(),
   description: BASE_DESCRIPTION,
   metadataBase: new URL(getBaseUrl()),
   alternates: {

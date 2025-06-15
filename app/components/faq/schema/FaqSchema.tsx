@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic'
 import { SchemaFactory } from '@/app/utils/schemaFactory'
 import { QUESTIONS, PLAIN_TEXT_ANSWERS } from '@/app/constants/faq/faqItems'
+import { getPageTitle } from '@/app/constants/baseData'
 
 export const DESCRIPTION =
   'Find the answers to my most frequently asked questions.'
@@ -15,7 +16,7 @@ const SchemaInjector = dynamic(
 
 const faqSchemaData = SchemaFactory.createFAQPage(
   {
-    title: 'FAQ',
+    title: getPageTitle('FAQ'),
     description: DESCRIPTION,
     urlPath: '/faq',
     publishDate: '2024-07-29T09:25:01.340Z',
