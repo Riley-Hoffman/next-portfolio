@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { inconsolata, poppins, sourcesans, urbanist } from './fonts/fonts'
-import { DynamicThemeProvider } from './components/theme/DynamicThemeProvider'
+import { NextThemeProvider } from './components/theme/NextThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
 import {
   getBaseUrl,
@@ -57,17 +57,13 @@ export const metadata: Metadata = {
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
-  <html lang="en">
+  <html lang="en" suppressHydrationWarning>
     <body
       className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable} antialiased contrast-more:subpixel-antialiased`}
     >
-      <DynamicThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-      >
+      <NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <LayoutContent>{children}</LayoutContent>
-      </DynamicThemeProvider>
+      </NextThemeProvider>
     </body>
   </html>
 )
