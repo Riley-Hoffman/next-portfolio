@@ -1,10 +1,16 @@
-import Head from 'next/head'
+import { useEffect } from 'react'
 import { HamburgerLine } from './HamburgerLine'
 import { useHamburger } from '@/app/hooks/nav/useHamburger'
 import { HamburgerProps } from '@/app/types/nav/Hamburger.interface'
 
 export const Hamburger = ({ expanded }: HamburgerProps) => {
   const { isExpanded, toggleMenu, hamburgerRef } = useHamburger({ expanded })
+
+  useEffect(() => {
+    if (hamburgerRef.current) {
+      hamburgerRef.current.classList.remove('hidden')
+    }
+  }, [hamburgerRef])
 
   const commonClasses = `
     group-aria-expanded:rotate-4 
@@ -18,18 +24,13 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
 
   return (
     <>
-      <Head>
-        <noscript>
-          <style>{`.hamburger { display: none; }`}</style>
-        </noscript>
-      </Head>
       <button
         id="hamburger"
         aria-expanded={isExpanded}
         aria-label={isExpanded ? 'Close Menu' : 'Open Menu'}
         onClick={toggleMenu}
         ref={hamburgerRef}
-        className="hamburger group peer"
+        className="hamburger group peer hidden"
       >
         <HamburgerLine classes={commonClasses} />
         <HamburgerLine classes="group-aria-expanded:-rotate-45" />
