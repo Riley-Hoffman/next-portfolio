@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import type { ThemeProviderProps } from 'next-themes'
 
-const NextThemesProvider = dynamic(
+const NextThemeProvider = dynamic(
   () => import('next-themes').then((e) => e.ThemeProvider),
   {
     ssr: false,
@@ -25,12 +25,12 @@ export const DynamicThemeProvider = ({
   if (!isMounted) return <div className="animate-delayedfadein">{children}</div>
 
   return (
-    <NextThemesProvider
+    <NextThemeProvider
       attribute={attribute}
       defaultTheme={defaultTheme}
       enableSystem={enableSystem}
     >
       {children}
-    </NextThemesProvider>
+    </NextThemeProvider>
   )
 }
