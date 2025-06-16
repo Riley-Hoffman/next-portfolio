@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { inconsolata, poppins, sourcesans, urbanist } from './fonts/fonts'
 import { NextThemeProvider } from './components/theme/NextThemeProvider'
 import { LayoutContent } from './components/layout/LayoutContent'
@@ -26,10 +26,6 @@ export const metadata: Metadata = {
     title: getPageTitle(),
     url: getBaseUrl(),
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#eee3f2' },
-    { media: '(prefers-color-scheme: dark)', color: '#0d191c' },
-  ],
   icons: {
     icon: [
       { url: `${ICONS_PATH}/favicon.ico`, type: 'image/x-icon' },
@@ -54,6 +50,13 @@ export const metadata: Metadata = {
     ],
     apple: `${ICONS_PATH}/apple-touch-icon.png`,
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#eee3f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#0d191c' },
+  ],
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
