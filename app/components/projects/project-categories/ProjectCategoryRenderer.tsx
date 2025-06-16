@@ -13,11 +13,24 @@ export const ProjectCategoryRenderer = ({
     new Set(projects.map((proj: Project) => proj.category))
   )
 
+  let globalIndex = 0
   return (
     <>
-      {categories.map((category) => (
-        <ProjectList key={category} category={category} projects={projects} />
-      ))}
+      {categories.map((category) => {
+        const categoryProjects = projects.filter(
+          (proj) => proj.category === category
+        )
+        const currentIndex = globalIndex
+        globalIndex += categoryProjects.length
+        return (
+          <ProjectList
+            key={category}
+            category={category}
+            projects={projects}
+            globalIndex={currentIndex}
+          />
+        )
+      })}
     </>
   )
 }

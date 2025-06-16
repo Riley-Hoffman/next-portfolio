@@ -6,9 +6,11 @@ import { Project } from '@/app/types/projects/Project.types'
 export const ProjectList = ({
   category,
   projects,
+  globalIndex,
 }: {
   category: string
   projects: Project[]
+  globalIndex: number
 }) => {
   const projectsByCat = projects.filter(
     (project) => project.category === category
@@ -35,7 +37,7 @@ export const ProjectList = ({
         <ProjectContent
           {...project}
           inverted={inverted}
-          isFirst={index === 0}
+          isFirst={globalIndex + index === 0}
         />
       </ProjectListItem>
     )
