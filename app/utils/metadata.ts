@@ -26,9 +26,5 @@ export const createMetadata = ({
       title: `${title} - Riley Hoffman - Web Developer`,
       url: getBaseUrl(path),
     },
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#eee3f2' },
-      { media: '(prefers-color-scheme: dark)', color: '#0d191c' },
-    ],
   }
 }
