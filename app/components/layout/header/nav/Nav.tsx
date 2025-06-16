@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRoutes } from '@/app/hooks/shared/useRoutes'
-import { Hamburger } from './hamburger/Hamburger'
+import { Hamburger } from './Hamburger'
 import { NavListItem } from './NavListItem'
 import { useLinkVisibility } from '@/app/hooks/nav/useLinkVisibility'
 

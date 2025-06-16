@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { HamburgerLine } from './HamburgerLine'
 import { useHamburger } from '@/app/hooks/nav/useHamburger'
 import { HamburgerProps } from '@/app/types/nav/Hamburger.interface'
 
@@ -32,10 +31,10 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         ref={hamburgerRef}
         className="hamburger group peer hidden"
       >
-        <HamburgerLine classes={commonClasses} />
-        <HamburgerLine classes="group-aria-expanded:-rotate-45" />
-        <HamburgerLine classes="group-aria-expanded:rotate-45" />
-        <HamburgerLine classes={commonClasses} />
+        <span className={`hamburger-line ${commonClasses}`}></span>
+        <span className="hamburger-line group-aria-expanded:-rotate-45"></span>
+        <span className="hamburger-line group-aria-expanded:rotate-45"></span>
+        <span className={`hamburger-line ${commonClasses}`}></span>
       </button>
       {isExpanded && (
         <button className="closer" onClick={toggleMenu} aria-hidden={true}>
