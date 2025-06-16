@@ -22,7 +22,6 @@ export const MyJourney = () => {
           width={384}
           height={452}
           alt="Riley with a flower behind his ear. Shot in black and white."
-          priority={false}
           itemProp="contentUrl"
         />
         <figcaption itemProp="creditText">Photo by Kristen Mommertz</figcaption>
