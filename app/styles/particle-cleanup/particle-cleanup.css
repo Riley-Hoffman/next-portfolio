@@ -1,5 +1,5 @@
 :root {
-  --pcg-purple: #2b2b64;
+  --pcg-purple: var(--color-particle-purple);
 }
 .game-container {
   @apply mx-5 h-[31.25rem] cursor-grabbing overflow-hidden rounded-br-sm border-2 border-[var(--pcg-purple)];

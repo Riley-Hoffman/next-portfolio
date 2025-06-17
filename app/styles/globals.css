@@ -17,6 +17,11 @@
     --color-gradienttwo: #ae4971;
     --color-gradientone: #a8a1d9;
     --color-siteblack: #0a0a0a;
+    --color-form-bg-light: #f8f3f9;
+    --color-form-bg-dark: #f3f9f6;
+    --color-accordion-border-light: #e1d7ee;
+    --color-accordion-border-dark: #1e2811;
+    --color-particle-purple: #2b2b64;
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
@@ -66,9 +71,9 @@
     @apply block md:inline;
   }
   header > nav a {
-    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider transition-all duration-300;
+    @apply button transition-standard relative w-full whitespace-nowrap px-9 py-3 tracking-wider;
     @apply hover:brightness-90 md:w-auto md:px-4 md:py-2;
-    @apply hover:translate-y-[-2px];
+    @apply hover-lift;
   }
   header > nav a:focus-visible {
     @apply z-10;
@@ -78,21 +83,6 @@
   }
   header > nav a:not([target='blank']) {
     @apply button [&.active]:bg-accentone-300 [&.active]:text-heading;
-  }
-  .hamburger {
-    @apply relative z-10 ml-auto block h-10 w-16 px-5 md:hidden;
-  }
-  .hamburger-line {
-    @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
-  }
-  .closer {
-    @apply fixed inset-0 block size-full cursor-default text-transparent;
-  }
-  .theme-changer {
-    @apply relative mx-2 h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2 md:order-1;
-  }
-  .theme-changer svg {
-    @apply absolute inset-1 size-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
   }
   footer {
     @apply pad-wrap gradient-border min-h-24 border-t bg-accentone-300 py-7;
@@ -122,25 +112,49 @@
   :where(a > *, .button) {
     @apply transition-[color,background-color];
   }
+  [class*='iconify']:not(.hidden) {
+    @apply inline;
+  }
+}
+
+@layer components {
+  .transition-standard {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .hover-lift {
+    @apply hover:translate-y-[-2px];
+  }
+  .hamburger {
+    @apply relative z-10 ml-auto block h-10 w-16 px-5 md:hidden;
+  }
+  .hamburger-line {
+    @apply gradient-border absolute top-4 block w-7 rotate-0 border-2 brightness-90 duration-200 ease-in-out first:top-2 last:top-6;
+  }
+  .closer {
+    @apply fixed inset-0 block size-full cursor-default text-transparent;
+  }
+  .theme-changer {
+    @apply relative mx-2 h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2 md:order-1;
+  }
+  .theme-changer svg {
+    @apply absolute inset-1 size-6 rounded-full bg-accenttwo-200 p-1 text-accentone-100 transition-transform dark:translate-x-8 dark:text-siteblack;
+  }
   .button {
     @apply bg-heading text-accentone-200 no-underline transition-all duration-300 ease-in-out;
     @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-[0_0.313rem_0.625rem_-0.313rem] md:hover:shadow-hovershadow;
     @apply active:scale-95 dark:shadow-hovershadow;
-  }
-  [class*='iconify']:not(.hidden) {
-    @apply inline;
-  }
-  .skip-to-content {
-    @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .heading-one {
     @apply gradient-border inverted mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10 text-center text-3xl;
     @apply dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
     @apply font-bold tracking-tight;
   }
+  .skip-to-content {
+    @apply button sr-only focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
+  }
   .back-to-top {
     @apply button fixed bottom-5 right-5 z-20 rounded-md border-2 border-accentone-300 px-2 py-2;
     @apply md:tool-tip md:hover:border-heading;
-    @apply md:hover:translate-y-[-2px];
+    @apply md:hover:hover-lift;
   }
 }

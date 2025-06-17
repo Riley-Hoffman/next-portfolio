@@ -1,6 +1,9 @@
+.form-bg {
+  @apply bg-[var(--color-form-bg-light)] dark:bg-[var(--color-form-bg-dark)];
+}
 .form-field {
-  @apply gradient-border border-2 bg-[#f8f3f9] p-2 font-sourcesans caret-[#12121c];
-  @apply focus-visible:border-0 focus-visible:p-[0.625rem] dark:bg-[#F3F9F6] dark:text-[#12121c];
+  @apply form-bg gradient-border border-2 p-2 font-sourcesans caret-[#12121c];
+  @apply focus-visible:border-0 focus-visible:p-[0.625rem] dark:text-[#12121c];
 }
 input.form-field {
   @apply mb-6 w-full lg:ml-3 lg:inline-block lg:w-[38%];
