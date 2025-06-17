@@ -12,7 +12,6 @@ const SchemaInjector = <T extends Thing>({
   const [sanitizedData, setSanitizedData] = useState<string>('')
 
   useEffect(() => {
-    // Import DOMPurify dynamically only on the client side
     import('dompurify').then((DOMPurify) => {
       const sanitized = DOMPurify.default.sanitize(
         JSON.stringify(structuredData)
