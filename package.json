@@ -5,6 +5,18 @@
   "description": "A portfolio site for web developer Riley Hoffman made with React, Next.js, Typescript, and Tailwind.",
   "homepage": "https://rileyhoffman.com",
   "main": "layout.tsx",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Riley-Hoffman/next-portfolio.git"
