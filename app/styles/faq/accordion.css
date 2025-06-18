@@ -1,5 +1,11 @@
+:root {
+  --color-accordion-border: #e1d7ee;
+}
+:root[class~='dark'] {
+  --color-accordion-border: #1e2811;
+}
 .accordion-border {
-  @apply border-[var(--color-accordion-border-light)] dark:border-[var(--color-accordion-border-dark)];
+  @apply border-[var(--color-accordion-border)];
 }
 
 .acc-button {

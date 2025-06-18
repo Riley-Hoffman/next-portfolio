@@ -1,5 +1,11 @@
+:root {
+  --color-form-bg: #f8f3f9;
+}
+:root[class~='dark'] {
+  --color-form-bg: #f3f9f6;
+}
 .form-bg {
-  @apply bg-[var(--color-form-bg-light)] dark:bg-[var(--color-form-bg-dark)];
+  @apply bg-[var(--color-form-bg)];
 }
 .form-field {
   @apply form-bg gradient-border border-2 p-2 font-sourcesans caret-[#12121c];

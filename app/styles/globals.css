@@ -17,11 +17,6 @@
     --color-gradienttwo: #ae4971;
     --color-gradientone: #a8a1d9;
     --color-siteblack: #0a0a0a;
-    --color-form-bg-light: #f8f3f9;
-    --color-form-bg-dark: #f3f9f6;
-    --color-accordion-border-light: #e1d7ee;
-    --color-accordion-border-dark: #1e2811;
-    --color-particle-purple: #2b2b64;
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
