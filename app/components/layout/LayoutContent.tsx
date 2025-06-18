@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic'
 import { Header } from './header/Header'
-import { LayoutContentProps } from '@/app/types/layout/LayoutContent.interface'
+
+interface LayoutContentProps {
+  children: React.ReactNode
+}
 
 const BackToTopAnalyticsFooter = dynamic(
   () => import('./dynamic-imports/BackToTopAnalyticsFooter')
