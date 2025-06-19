@@ -66,7 +66,7 @@
     @apply block md:inline;
   }
   header > nav a {
-    @apply button transition-standard relative w-full whitespace-nowrap px-9 py-3 tracking-wider;
+    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider;
     @apply md:w-auto md:px-4 md:py-2 md:hover:brightness-90;
     @apply hover-lift;
   }
@@ -113,9 +113,6 @@
 }
 
 @layer components {
-  .transition-standard {
-    @apply transition-all duration-300 ease-in-out;
-  }
   .hover-lift {
     @apply md:hover:translate-y-[-2px];
   }

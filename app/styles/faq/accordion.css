@@ -11,7 +11,6 @@
 .acc-button {
   @apply accordion-border w-full border-b;
   @apply bg-accentone-200 px-5 py-6 text-left text-xl font-medium leading-9;
-  @apply transition-standard;
   @apply group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0 aria-expanded:border-b-0;
   @apply dark:text-[#d2d4cb];
 }
