@@ -7,6 +7,9 @@ const nextConfig = {
   experimental: {
     esmExternals: true,
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 }
 
 module.exports = nextConfig
