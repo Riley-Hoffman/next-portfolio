@@ -8,16 +8,15 @@ export const useParallax = ({
   velocity = 0.1,
   containerRef,
   imgRef,
-}: UseParallaxProps): React.RefObject<HTMLDivElement> => {
+}: UseParallaxProps): void => {
   const prefersReducedMotion = useReducedMotion()
 
   const updateImageStyles = useCallback(
     (transformValue: string, willChangeValue: string) => {
       const image = imgRef.current
       if (image) {
-        const imageStyle = image.style
-        imageStyle.transform = transformValue
-        imageStyle.willChange = willChangeValue
+        image.style.transform = transformValue
+        image.style.willChange = willChangeValue
       }
     },
     [imgRef]
@@ -26,9 +25,7 @@ export const useParallax = ({
   const updateImagePosition = useCallback(
     (scrollY: number = 0) => {
       const container = containerRef.current
-      if (prefersReducedMotion || !container || !imgRef.current) {
-        return
-      }
+      if (prefersReducedMotion || !container || !imgRef.current) return
 
       const height = container.offsetHeight
       const translate = Math.max(
@@ -42,22 +39,21 @@ export const useParallax = ({
         updateImageStyles(transformValue, 'transform')
       })
     },
-    [imgRef, containerRef, prefersReducedMotion, updateImageStyles, velocity]
+    [containerRef, imgRef, prefersReducedMotion, updateImageStyles, velocity]
   )
 
-  useScroll(updateImagePosition)
-
   useEffect(() => {
+    if (prefersReducedMotion) {
+      updateImageStyles('', '')
+      return
+    }
     if (imgRef.current) {
       updateImagePosition()
-    } else {
-      console.error('Image element reference is null or undefined.')
     }
-
     return () => {
       updateImageStyles('', '')
     }
-  }, [imgRef, updateImagePosition, prefersReducedMotion, updateImageStyles])
+  }, [prefersReducedMotion, updateImagePosition, updateImageStyles, imgRef])
 
-  return containerRef
+  useScroll(updateImagePosition)
 }
