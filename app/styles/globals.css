@@ -66,8 +66,8 @@
     @apply block md:inline;
   }
   header > nav a {
-    @apply button relative w-full whitespace-nowrap px-9 py-3 tracking-wider;
-    @apply md:w-auto md:px-2 md:py-2 md:hover:brightness-90 xl:px-4;
+    @apply button relative w-full min-w-[10ch] whitespace-nowrap px-9 py-3 text-center;
+    @apply tracking-wider md:w-auto md:px-2 md:py-2 md:hover:brightness-90 xl:px-4;
     @apply hover-lift;
   }
   header > nav a:focus-visible {
