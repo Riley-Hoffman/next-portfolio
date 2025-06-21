@@ -7,14 +7,14 @@ interface Route {
 }
 
 export const ROUTE_LIST: Route[] = [
-  { to: '/', label: '\u00A0Home\u00A0', mainRoute: true },
+  { to: '/', label: 'Home', mainRoute: true },
   { to: '/projects/', label: 'Projects', mainRoute: true },
   {
     to: '/projects/particle-cleanup/',
     label: 'Particle Cleanup Game',
   },
   { to: '/skills/', label: 'Skills', mainRoute: true },
-  { to: '/faq/', label: '\u00A0FAQ\u00A0', mainRoute: true },
+  { to: '/faq/', label: 'FAQ', mainRoute: true },
   { to: '/contact/', label: 'Contact', mainRoute: true },
   { to: '/accessibility/', label: 'Accessibility' },
 ]
