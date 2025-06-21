@@ -30,13 +30,12 @@ export const useHueRotateOnScroll = (
 
   useEffect(() => {
     const element = hueElRef.current
-    const elementStyle = element.style
     if (element && prevFilterRef.current !== hueFilter) {
-      elementStyle.filter = hueFilter
+      element.style.filter = hueFilter
       prevFilterRef.current = hueFilter
     }
     return () => {
-      if (element) elementStyle.filter = ''
+      if (element) element.style.filter = ''
     }
   }, [hueFilter, hueElRef])
 }
