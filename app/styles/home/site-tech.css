@@ -11,8 +11,8 @@
   @apply pt-8;
 }
 .site-tech a {
-  @apply inline-block min-h-36 min-w-52 rounded-md bg-accentone-200 p-5 text-sm text-heading;
-  @apply no-underline duration-0 md:hover:bg-heading md:hover:text-accentone-200;
+  @apply inline-block w-full min-h-36 md:min-w-52 bg-accentone-200 p-5 text-sm text-heading;
+  @apply rounded-md no-underline duration-0 md:hover:bg-heading md:hover:text-accentone-200;
 }
 .site-tech a > svg {
   @apply text-7xl;
