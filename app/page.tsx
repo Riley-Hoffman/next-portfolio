@@ -10,6 +10,7 @@ import { BASE_DESCRIPTION } from '@/app/constants/baseData'
 import '@/app/styles/shared/overlay.css'
 
 const DESCRIPTION = BASE_DESCRIPTION
+
 const schemaData = SchemaFactory.createWebPage({
   title: '',
   description: DESCRIPTION,

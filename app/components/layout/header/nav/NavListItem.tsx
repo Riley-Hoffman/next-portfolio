@@ -19,6 +19,7 @@ export const NavListItem = ({
 }: NavListItemProps) => {
   const currentPath = usePathname()
   const isActive = to && currentPath === to
+  const ariaCurrent = isActive ? 'page' : undefined
 
   return (
     <li>
@@ -35,7 +36,7 @@ export const NavListItem = ({
         <Link
           className={clsx({ hidden: hide, active: isActive })}
           href={to}
-          aria-current={isActive ? 'page' : undefined}
+          aria-current={ariaCurrent}
         >
           {label}
         </Link>

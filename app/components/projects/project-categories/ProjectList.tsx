@@ -19,6 +19,7 @@ export const ProjectList = ({
   const projectListItems = projectsByCat.map((project, index) => {
     const projectAnimates =
       projects.findIndex((proj) => proj.title === project.title) + 1 > 1
+
     const inverted =
       (projects.findIndex((proj) => proj.title === project.title) + 1) % 2 === 0
 
@@ -28,17 +29,15 @@ export const ProjectList = ({
         : 'motion-safe:md:right-[-200%] [&.active]:right-0'
       : ''
 
+    const isFirst = globalIndex + index === 0
+
     return (
       <ProjectListItem
         key={project.title}
         inverted={inverted}
         animation={animation}
       >
-        <ProjectContent
-          {...project}
-          inverted={inverted}
-          isFirst={globalIndex + index === 0}
-        />
+        <ProjectContent {...project} inverted={inverted} isFirst={isFirst} />
       </ProjectListItem>
     )
   })
