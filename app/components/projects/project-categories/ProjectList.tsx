@@ -17,16 +17,16 @@ export const ProjectList = ({
   )
 
   const projectListItems = projectsByCat.map((project, index) => {
-    const projectNumber =
-      projects.findIndex((proj) => proj.title === project.title) + 1
-    const inverted = projectNumber % 2 === 0
+    const projectAnimates =
+      projects.findIndex((proj) => proj.title === project.title) + 1 > 1
+    const inverted =
+      (projects.findIndex((proj) => proj.title === project.title) + 1) % 2 === 0
 
-    const animation =
-      projectNumber > 1
-        ? inverted
-          ? 'motion-safe:md:left-[-200%] [&.active]:left-0'
-          : 'motion-safe:md:right-[-200%] [&.active]:right-0'
-        : ''
+    const animation = projectAnimates
+      ? inverted
+        ? 'motion-safe:md:left-[-200%] [&.active]:left-0'
+        : 'motion-safe:md:right-[-200%] [&.active]:right-0'
+      : ''
 
     return (
       <ProjectListItem
