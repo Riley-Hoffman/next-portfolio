@@ -44,5 +44,5 @@ const reducer = (gameData: GameData, action: Action): GameData => {
 
 export const useGameData = () => {
   const [gameData, dispatch] = useReducer(reducer, initialGameData)
-  return [gameData, dispatch] as const
+  return [gameData, dispatch]
 }

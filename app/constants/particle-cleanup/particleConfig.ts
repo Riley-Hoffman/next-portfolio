@@ -18,4 +18,4 @@ export const PARTICLE_CONFIG = {
     baseForce: 0.5,
     forceMultiplier: 5,
   },
-} as const
+}

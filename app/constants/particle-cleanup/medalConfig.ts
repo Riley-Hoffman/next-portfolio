@@ -24,4 +24,4 @@ export const MEDAL_CONFIG = {
     srText: 'Bronze, 21 to 25 seconds.',
     time: '21s-25s',
   },
-} as const
+}
