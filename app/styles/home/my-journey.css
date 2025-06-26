@@ -1,5 +1,8 @@
 .my-journey {
-  @apply pad-wrap bg-diamonds pb-10 pt-16 motion-reduce:hue-rotate-0 dark:bg-diamondsdark md:flex md:items-center;
+  @apply pad-wrap;
+  @apply bg-diamonds pb-10 pt-16;
+  @apply motion-reduce:hue-rotate-0 dark:bg-diamondsdark;
+  @apply md:flex md:items-center;
 }
 .my-journey figure {
   @apply relative mx-auto block w-fit;
@@ -11,6 +14,7 @@
   @apply absolute bottom-1 left-5;
 }
 .my-journey > div {
-  @apply mx-auto my-6 w-96 max-w-full rounded-3xl border-2 bg-[whitesmoke] py-6 leading-7;
+  @apply mx-auto my-6 w-96 max-w-full py-6;
+  @apply rounded-3xl border-2 bg-[whitesmoke] leading-7;
   @apply dark:bg-siteblack md:mx-6 md:w-2/3 lg:px-[8%];
 }

@@ -8,15 +8,18 @@
   @apply bg-[var(--color-form-bg)];
 }
 .form-field {
-  @apply form-bg gradient-border border-2 p-2 font-sourcesans caret-[#12121c];
+  @apply form-bg gradient-border;
+  @apply border-2 p-2 font-sourcesans caret-[#12121c];
   @apply focus-visible:border-0 focus-visible:p-[0.625rem] dark:text-[#12121c];
 }
 input.form-field {
-  @apply mb-6 w-full lg:ml-3 lg:inline-block lg:w-[38%];
+  @apply mb-6 w-full;
+  @apply lg:ml-3 lg:inline-block lg:w-[38%];
 }
 input:first-of-type.form-field {
   @apply lg:mb-0 lg:mr-[5%];
 }
 textarea.form-field {
-  @apply inverted w-full;
+  @apply inverted;
+  @apply w-full;
 }

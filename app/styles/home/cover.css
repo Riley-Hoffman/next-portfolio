@@ -1,20 +1,28 @@
 .cover-container {
-  @apply gradient-border inverted overflow-hidden border-b-4;
+  @apply gradient-border inverted;
+  @apply overflow-hidden border-b-4;
 }
 .cover-image {
-  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover blur-[0.047rem] dark:hue-rotate-[266deg] sm:blur-0;
+  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover blur-[0.047rem];
+  @apply dark:hue-rotate-[266deg] sm:blur-0;
 }
 .cover-container div {
-  @apply relative mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36 md:translate-y-5;
+  @apply relative mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36;
+  @apply md:translate-y-5;
 }
 .cover-container div > *:not(:last-child) {
-  @apply drop-shadow-[0_0_10px_white] dark:drop-shadow-[0_0_10px_black];
+  @apply drop-shadow-[0_0_10px_white];
+  @apply dark:drop-shadow-[0_0_10px_black];
 }
 .cover-container div p:last-child {
-  @apply relative mx-5 mt-8 rounded-sm border border-bordercolor bg-accentone-100 px-4 py-3 font-medium leading-7 before:absolute before:-top-8 before:left-0 before:h-3 before:w-5 before:bg-accenttwo-200 md:w-3/5;
+  @apply relative mx-5 mt-8 rounded-sm border border-bordercolor bg-accentone-100 px-4 py-3;
+  @apply font-medium leading-7;
+  @apply before:absolute before:-top-8 before:left-0 before:h-3 before:w-5 before:bg-accenttwo-200;
+  @apply md:w-3/5;
 }
 .cover-container h1 {
-  @apply m-0 text-3xl font-semibold md:text-4xl;
+  @apply m-0 text-3xl font-semibold;
+  @apply md:text-4xl;
 }
 .cover-container h1 + p {
   @apply m-0;

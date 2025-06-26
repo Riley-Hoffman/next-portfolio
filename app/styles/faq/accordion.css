@@ -9,9 +9,11 @@
 }
 
 .acc-button {
-  @apply accordion-border w-full border-b;
-  @apply bg-accentone-200 px-5 py-6 text-left text-xl font-medium leading-9;
-  @apply group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0 aria-expanded:border-b-0;
+  @apply accordion-border;
+  @apply w-full border-b bg-accentone-200 px-5 py-6;
+  @apply text-left text-xl font-medium leading-9;
+  @apply group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0;
+  @apply aria-expanded:border-b-0;
   @apply dark:text-[#d2d4cb];
 }
 .acc-answer {
@@ -28,7 +30,9 @@
 }
 .plus-minus:before,
 .plus-minus:after {
-  @apply absolute inset-1/2 h-0.5 w-2 -translate-x-1/2 -translate-y-1/2 bg-[currentColor] transition-transform duration-300 ease-in-out content-[''];
+  @apply bg-[currentColor] content-[''];
+  @apply absolute inset-1/2 h-0.5 w-2 -translate-x-1/2 -translate-y-1/2;
+  @apply transition-transform duration-300 ease-in-out;
 }
 .plus-minus:after {
   @apply h-2 w-0.5 rotate-0;

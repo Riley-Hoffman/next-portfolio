@@ -1,18 +1,22 @@
 .site-tech {
-  @apply gradient-border border-t-2 pb-12 pt-2 text-center;
+  @apply gradient-border;
+  @apply border-t-2 pb-12 pt-2 text-center;
 }
 .site-tech h2 {
   @apply mb-1 font-inconsolata text-2xl;
 }
 .site-tech ul {
-  @apply min-h-40 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5;
+  @apply min-h-40;
+  @apply sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5;
 }
 .site-tech li {
   @apply pt-8;
 }
 .site-tech a {
-  @apply inline-block min-h-36 w-full bg-accentone-200 p-5 text-sm text-heading md:min-w-52;
-  @apply rounded-md no-underline transition duration-300 md:hover:bg-heading md:hover:text-accentone-200;
+  @apply inline-block transition duration-300;
+  @apply min-h-36 w-full rounded-md bg-accentone-200 p-5;
+  @apply text-sm text-heading no-underline;
+  @apply md:min-w-52 md:hover:bg-heading md:hover:text-accentone-200;
 }
 .site-tech a > svg {
   @apply text-7xl;
