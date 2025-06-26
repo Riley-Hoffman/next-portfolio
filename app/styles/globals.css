@@ -167,10 +167,9 @@
     @apply focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .back-to-top {
-    @apply button;
+    @apply button hover-lift;
     @apply fixed bottom-5 right-5 z-20;
     @apply rounded-md border-2 border-accentone-300 px-2 py-2;
-    @apply md:hover:hover-lift;
     @apply md:tool-tip md:hover:border-heading;
   }
 }
