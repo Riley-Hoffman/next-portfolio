@@ -4,16 +4,10 @@
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   @apply opacity-100;
 }
-.light .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  @apply bg-heading;
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  @apply bg-siteblack;
 }
-.dark .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  @apply bg-gradienttwo;
-}
-.light .swiper-pagination-bullet-active {
-  @apply bg-accenttwo-200;
-}
-.dark .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   @apply bg-gradientone;
 }
 button.carousel-button {
