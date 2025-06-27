@@ -51,7 +51,6 @@ const Custom404 = () => {
             Need help?{' '}
             <Link
               href="/contact"
-              className="text-primary-600 dark:text-primary-400 hover:underline"
             >
               Contact us
             </Link>
