@@ -7,16 +7,17 @@
     --color-heading: #12121c;
     --color-text: #222027;
     --color-hovershadow: rgba(34, 32, 39, 0.1);
-    --color-accentone-100: #f5eef7;
-    --color-accentone-200: #eee3f2;
-    --color-accentone-300: #e5d4ed;
-    --color-accenttwo-100: #d4c6eb;
-    --color-accenttwo-200: #745492;
-    --color-bordercolor: #73738c;
-    --color-gradientthree: #794e8e;
-    --color-gradienttwo: #ae4971;
-    --color-gradientone: #a8a1d9;
+    --color-accentone-100: #f0e0fa;
+    --color-accentone-200: #e3c6f2;
+    --color-accentone-300: #cfa3e6;
+    --color-accenttwo-100: #b39ddb;
+    --color-accenttwo-200: #562dc5;
+    --color-bordercolor: #5e5e8c;
+    --color-gradientthree: #8e24aa;
+    --color-gradienttwo: #d81b60;
+    --color-gradientone: #7e57c2;
     --color-siteblack: #0a0a0a;
+    --color-whitesmoke: #f5f5f5;
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
@@ -37,7 +38,7 @@
     @apply bg-siteblack;
   }
   body {
-    @apply contrast-more:font-medium;
+    @apply contrast-more:font-semibold;
   }
   :not(.flex) > [class*='max-']:not(img, [class*='mx-']) {
     @apply mx-auto;
@@ -46,8 +47,7 @@
     @apply outline outline-4 outline-offset-2 outline-[#ff8800];
   }
   body ::placeholder {
-    @apply contrast-more:text-black contrast-more:opacity-100;
-    @apply dark:text-accenttwo-100;
+    @apply contrast-more:opacity-100;
   }
   header {
     @apply pad-wrap gradient-border;
@@ -56,7 +56,7 @@
   }
   header > button {
     @apply m-0 pl-4 pr-0;
-    @apply font-urbanist font-medium uppercase tracking-wider text-heading;
+    @apply font-urbanist uppercase tracking-wider text-heading;
     @apply md:font-normal lg:text-2xl;
   }
   header > nav {
@@ -148,17 +148,17 @@
   }
   .theme-changer svg {
     @apply absolute inset-1 size-6 rounded-full;
-    @apply bg-accenttwo-200 p-1 text-accentone-100 transition-transform;
+    @apply bg-accenttwo-200 p-1 text-whitesmoke transition-transform;
     @apply dark:translate-x-8 dark:text-siteblack;
   }
   .button {
-    @apply bg-heading text-accentone-200 no-underline transition duration-300 ease-in-out;
+    @apply bg-heading text-accentone-100 no-underline transition duration-300 ease-in-out;
     @apply active:scale-95 dark:shadow-hovershadow md:hover:shadow-hovershadow;
     @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-[0_0.313rem_0.625rem_-0.313rem];
   }
   .heading-one {
     @apply gradient-border inverted;
-    @apply mb-7 mt-0 border-b-2 bg-[#eee2f3] px-5 py-10;
+    @apply mb-7 mt-0 border-b-2 bg-accentone-100 px-5 py-10;
     @apply text-center text-3xl font-bold tracking-tight;
     @apply dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
   }

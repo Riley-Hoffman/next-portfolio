@@ -1,7 +1,7 @@
 import { Inconsolata, Poppins, Source_Sans_3, Urbanist } from 'next/font/google'
 
 export const inconsolata = Inconsolata({
-  weight: ['400', '500'],
+  weight: ['500', '600'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',

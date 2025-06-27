@@ -1,20 +1,13 @@
-:root {
-  --color-accordion-border: #e1d7ee;
-}
-:root[class~='dark'] {
-  --color-accordion-border: #1e2811;
-}
 .accordion-border {
-  @apply border-[var(--color-accordion-border)];
+  @apply border-accentone-300;
 }
 
 .acc-button {
   @apply accordion-border;
   @apply w-full border-b bg-accentone-200 px-5 py-6;
-  @apply text-left text-xl font-medium leading-9;
+  @apply text-left text-xl font-semibold leading-9;
   @apply group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0;
   @apply aria-expanded:border-b-0;
-  @apply dark:text-[#d2d4cb];
 }
 .acc-answer {
   @apply overflow-hidden duration-500 ease-in-out;

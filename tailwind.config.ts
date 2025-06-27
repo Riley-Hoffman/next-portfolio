@@ -37,6 +37,7 @@ const config: Config = {
         gradienttwo: 'var(--color-gradienttwo)',
         gradientone: 'var(--color-gradientone)',
         siteblack: 'var(--color-siteblack)',
+        whitesmoke: 'var(--color-whitesmoke)',
       },
       fontFamily: {
         poppins: ['var(--font-poppins)'],
@@ -99,12 +100,13 @@ const config: Config = {
       const spacing5 = theme('spacing.5')
       addComponents({
         html: {
-          backgroundColor: 'whitesmoke',
+          backgroundColor: theme('whitesmoke'),
         },
         body: {
           color: theme('colors.text'),
           fontFamily: theme('fontFamily.inconsolata'),
           textWrap: 'pretty',
+          fontWeight: '500',
         },
         ':where(h1,h2,h3,h4,h5,h6,label,legend)': {
           color: theme('colors.heading'),
@@ -127,8 +129,8 @@ const config: Config = {
           textDecoration: 'underline',
         },
         'main ::placeholder': {
-          color: theme('colors.accenttwo.200'),
-          opacity: '0.9',
+          color: '#000000',
+          opacity: '0.8',
         },
         '.pad-wrap': {
           paddingLeft: padWrapPadding,

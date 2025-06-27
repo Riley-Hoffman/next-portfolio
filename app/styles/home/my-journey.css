@@ -15,6 +15,6 @@
 }
 .my-journey > div {
   @apply mx-auto my-6 w-96 max-w-full py-6;
-  @apply rounded-3xl border-2 bg-[whitesmoke] leading-7;
+  @apply rounded-3xl border-2 bg-whitesmoke leading-7;
   @apply dark:bg-siteblack md:mx-6 md:w-2/3 lg:px-[8%];
 }

@@ -18,6 +18,7 @@
 }
 button.carousel-button {
   @apply absolute top-1/2 z-10 -translate-y-1/2 transform px-4 py-1;
-  @apply rounded-full bg-accentone-200 shadow-heading transition-shadow;
-  @apply active:scale-95 active:shadow-none dark:shadow-gradientthree;
+  @apply rounded-full bg-accentone-200 shadow-heading transition;
+  @apply hover:bg-accenttwo-200 hover:text-whitesmoke active:scale-95 active:shadow-none;
+  @apply dark:shadow-gradientone dark:hover:text-siteblack;
 }

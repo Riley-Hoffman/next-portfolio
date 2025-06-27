@@ -3,5 +3,5 @@
   @apply sm:min-h-64;
 }
 .contact-content * {
-  @apply text-accentone-300;
+  @apply font-semibold text-accentone-200;
 }
