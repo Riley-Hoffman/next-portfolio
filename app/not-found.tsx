@@ -9,7 +9,7 @@ const Custom404 = () => {
     <>
       <h1 className="heading-one">Page Not Found</h1>
       <div className="py-7 text-center">
-        <div className="text-6xl" aria-hidden={true}>
+        <div className="text-6xl text-heading" aria-hidden={true}>
           404
         </div>
         <p className="mt-4 text-xl">
