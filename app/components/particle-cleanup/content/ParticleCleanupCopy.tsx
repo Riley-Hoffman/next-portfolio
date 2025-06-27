@@ -39,7 +39,7 @@ export const ParticleCleanupCopy = () => (
       or finger?
     </p>
     <ol
-      className="numbered-icons icon-color mb-1 pl-10 pr-5 text-xl sm:flex md:text-2xl"
+      className="numbered-icons icon-color mb-1 pl-10 pr-5 py-3 text-xl sm:flex md:text-2xl"
       aria-label="Medal Criteria"
     >
       {medalData.map(({ bgClass, srText, time, icon }) => (

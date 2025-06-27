@@ -1,6 +1,6 @@
 ol.numbered-icons li {
   counter-increment: circle;
-  @apply relative py-3 pl-5;
+  @apply relative pl-5;
 }
 ol.numbered-icons li:before {
   content: counter(circle);
