@@ -6,7 +6,6 @@
   :root {
     --color-heading: #12121c;
     --color-text: #222027;
-    --color-hovershadow: rgba(34, 32, 39, 0.1);
     --color-accentone-100: #f0e0fa;
     --color-accentone-200: #e3c6f2;
     --color-accentone-300: #cfa3e6;
@@ -22,7 +21,6 @@
   :root[class~='dark'] {
     --color-heading: #edede3;
     --color-text: #e4e6dd;
-    --color-hovershadow: rgba(228, 230, 221, 0.1);
     --color-accentone-100: #081011;
     --color-accentone-200: #0d191c;
     --color-accentone-300: #12272b;
@@ -65,7 +63,7 @@
   }
   header > nav ul {
     @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0;
-    @apply text-base shadow-[0_0.128px_1rem_-0.56rem] shadow-hovershadow transition-transform;
+    @apply text-base shadow-lg shadow-black/10 transition-transform;
     @apply sm:w-52 md:static md:w-auto md:scale-x-100 md:shadow-none;
   }
   header > nav li {
@@ -153,14 +151,15 @@
   }
   .button {
     @apply bg-heading text-accentone-100 no-underline transition duration-300 ease-in-out;
-    @apply active:scale-95 dark:shadow-hovershadow md:hover:shadow-hovershadow;
-    @apply md:hover:bg-accentone-100 md:hover:text-heading md:hover:shadow-[0_0.313rem_0.625rem_-0.313rem];
+    @apply active:scale-95;
+    @apply md:hover:bg-accentone-100 md:hover:text-heading;
+    @apply md:hover:shadow-sm md:hover:shadow-black/10 md:dark:hover:shadow-white/10;
   }
   .heading-one {
     @apply gradient-border inverted;
     @apply mb-7 mt-0 border-b-2 bg-accentone-100 px-5 py-10;
     @apply text-center text-3xl font-bold tracking-tight;
-    @apply dark:bg-[#0c1b1d] md:text-5xl md:leading-normal;
+    @apply md:text-5xl md:leading-normal;
   }
   .skip-to-content {
     @apply button sr-only;
