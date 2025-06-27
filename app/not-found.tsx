@@ -34,7 +34,7 @@ const Custom404 = () => {
           <ul className="space-y-4" aria-label="Available pages">
             {ALL_ROUTES.map(({ to, label }) => (
               <li key={to} className="flex flex-col items-center space-y-1">
-                <span className="font-poppins text-lg">{label}:</span>
+                <span className="font-poppins text-lg text-heading">{label}:</span>
                 <Link
                   href={to}
                   className="button px-4 py-2"
