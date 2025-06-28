@@ -82,8 +82,7 @@
   header > nav a:not(.hidden) {
     @apply inline-block;
   }
-  header > nav a:not([target='blank']) {
-    @apply button;
+  header > nav a:not([target='_blank']) {
     @apply [&.active]:bg-accentone-300 [&.active]:text-heading;
   }
   footer {

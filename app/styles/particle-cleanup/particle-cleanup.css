@@ -2,10 +2,15 @@
   --pg-purple: #2b2b64;
 }
 .game-container {
-  @apply cursor-grabbing overflow-hidden;
+  @apply overflow-hidden;
   @apply mx-5 h-[31.25rem] rounded-br-sm border-2 border-[var(--pg-purple)] pt-28;
   @apply bg-wood bg-cover bg-right;
-  @apply [&.done]:cursor-default;
+}
+.game-container:not(.done) {
+  @apply cursor-grabbing;
+}
+.game-container.done {
+  @apply cursor-default;
 }
 .game-container canvas {
   @apply absolute-full drop-shadow-[0.063rem_0.063rem_0_#00000061];
