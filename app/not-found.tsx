@@ -31,10 +31,10 @@ const Custom404 = () => {
       <section className="mb-36 max-w-lg border border-bordercolor p-6 text-center md:rounded-lg">
         <h2 className="mb-4">Available Pages:</h2>
         <nav>
-          <ul className="space-y-4" aria-label="Available pages">
+          <ul className="space-y-5" aria-label="Available pages">
             {ALL_ROUTES.map(({ to, label }) => (
-              <li key={to} className="flex flex-col items-center space-y-1">
-                <span className="font-poppins text-lg text-heading">
+              <li key={to}>
+                <span className="block mb-2 font-poppins text-lg text-heading">
                   {label}:
                 </span>
                 <Link
