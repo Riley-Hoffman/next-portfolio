@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { BackButton } from './components/not-found/BackButton'
+import { PathnameDisplay } from './components/shared/PathnameDisplay'
 import { useRoutes } from './hooks/shared/useRoutes'
 
 const Custom404 = () => {
@@ -13,7 +14,7 @@ const Custom404 = () => {
           404
         </div>
         <p className="mt-4 text-xl">
-          Oops! The page you are looking for does not exist or has been moved.
+          Oops! The page <PathnameDisplay /> does not exist or has been moved.
         </p>
       </div>
       <section className="mb-12 max-w-lg bg-accentone-100 px-7 py-4 text-left md:rounded-lg">
