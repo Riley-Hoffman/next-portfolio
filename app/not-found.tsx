@@ -34,7 +34,7 @@ const Custom404 = () => {
           <ul className="space-y-5" aria-label="Available pages">
             {ALL_ROUTES.map(({ to, label }) => (
               <li key={to}>
-                <span className="block mb-2 font-poppins text-lg text-heading">
+                <span className="mb-2 block font-poppins text-lg text-heading">
                   {label}:
                 </span>
                 <Link
