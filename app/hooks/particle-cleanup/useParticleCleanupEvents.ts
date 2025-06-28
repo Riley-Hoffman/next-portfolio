@@ -3,7 +3,7 @@ import { SharedParticleCleanupRefs } from '@/app/types/particle-cleanup/Particle
 
 type HandleInteraction = (event: Event, isInside: boolean) => void
 type HandleOnScroll = (event: Event) => void
-type InitializeAnimation = () => void
+type InitializeAnimation = (isNewGame?: boolean) => void
 
 export const useParticleCleanupEvents = (
   refs: RefObject<SharedParticleCleanupRefs>,
@@ -47,7 +47,7 @@ export const useParticleCleanupEvents = (
     })
     window.addEventListener('wheel', handleOnScroll, { passive: false })
 
-    initializeAnimation()
+    initializeAnimation(false)
 
     const handleResize = () => {
       const containerRect = localRefs.container?.getBoundingClientRect()

@@ -4,7 +4,7 @@ import { ParticleCleanupRefs } from '@/app/types/particle-cleanup/ParticleCleanu
 
 export const useReloadAnimation = (
   refs: React.RefObject<ParticleCleanupRefs>,
-  initializeAnimation: () => void
+  initializeAnimation: (isNewGame: boolean) => void
 ) => {
   const [, dispatch] = useGameData()
 
@@ -33,7 +33,7 @@ export const useReloadAnimation = (
     })
 
     dispatch({ type: 'RESET_GAME' })
-    initializeAnimation()
+    initializeAnimation(true)
   }, [refs, dispatch, initializeAnimation])
 
   return reloadAnimation

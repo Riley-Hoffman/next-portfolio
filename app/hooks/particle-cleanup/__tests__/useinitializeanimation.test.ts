@@ -51,16 +51,11 @@ describe('useInitializeAnimation', () => {
 
     const initializeAnimation = result.current
 
-    initializeAnimation()
+    initializeAnimation(false)
 
     expect(refs.current.container?.getBoundingClientRect).toHaveBeenCalled()
     expect(refs.current.canvas?.width).toBe(800)
     expect(refs.current.canvas?.height).toBe(600)
-
-    expect(refs.current.container?.classList.contains).toHaveBeenCalledWith(
-      'done'
-    )
-    expect(refs.current.container?.classList.remove).not.toHaveBeenCalled()
 
     expect(initParticles).toHaveBeenCalledWith(refs.current.canvas)
     expect(animateParticles).toHaveBeenCalledWith(
@@ -69,7 +64,7 @@ describe('useInitializeAnimation', () => {
     )
   })
 
-  it("should remove 'done' class if present", () => {
+  it("should remove 'done' class if present when starting new game", () => {
     jest
       .spyOn(refs.current.container!.classList, 'contains')
       .mockReturnValueOnce(true)
@@ -80,10 +75,26 @@ describe('useInitializeAnimation', () => {
 
     const initializeAnimation = result.current
 
-    initializeAnimation()
+    initializeAnimation(true)
 
     expect(refs.current.container?.classList.remove).toHaveBeenCalledWith(
       'done'
     )
+  })
+
+  it("should not remove 'done' class when not starting new game", () => {
+    jest
+      .spyOn(refs.current.container!.classList, 'contains')
+      .mockReturnValueOnce(true)
+
+    const { result } = renderHook(() =>
+      useInitializeAnimation(refs, initParticles, animateParticles)
+    )
+
+    const initializeAnimation = result.current
+
+    initializeAnimation(false)
+
+    expect(refs.current.container?.classList.remove).not.toHaveBeenCalled()
   })
 })
