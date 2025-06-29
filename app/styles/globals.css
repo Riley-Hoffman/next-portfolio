@@ -152,6 +152,9 @@
     @apply bg-accenttwo-200 p-1 text-whitesmoke transition-transform;
     @apply dark:translate-x-8 dark:text-siteblack;
   }
+  .theme-changer:hover svg {
+    @apply md:outline md:outline-1 md:outline-accenttwo-200;
+  }
   .button {
     @apply bg-heading text-accentone-100 no-underline transition duration-300 ease-in-out;
     @apply active:scale-95;
