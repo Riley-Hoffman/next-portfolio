@@ -21,7 +21,7 @@ export const LinkedInButton = () => {
       {...EXTERNAL_LINK_ATTR}
     >
       <Icon
-        className="group-hover:bg-heading group-hover:text-accentone-300"
+        className="md:group-hover:bg-heading md:group-hover:text-accentone-300 dark:md:group-hover:bg-heading"
         icon="fa6-brands:linkedin-in"
       />
       Follow me on LinkedIn

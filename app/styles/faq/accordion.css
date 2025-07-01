@@ -18,7 +18,7 @@
 .plus-minus {
   @apply relative mb-[0.063rem] mr-5 box-content inline-block rounded-full;
   @apply bg-heading p-3 align-middle text-xs text-accentone-300 duration-200 ease-in-out;
-  @apply group-hover:bg-accenttwo-100 group-hover:text-heading;
+  @apply md:group-hover:bg-accenttwo-100 md:group-hover:text-heading;
   @apply group-aria-expanded:bg-accenttwo-100 group-aria-expanded:text-heading;
 }
 .plus-minus:before,
