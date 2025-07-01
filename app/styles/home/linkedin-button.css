@@ -1,5 +1,5 @@
 .linkedin-button {
-  @apply mx-5 my-7 block w-80 max-w-[calc(100%-2.5rem)] pr-6;
+  @apply mx-5 my-7 block w-80 max-w-[calc(100%-2.5rem)];
   @apply sm:text-lg;
 }
 .linkedin-button > svg:first-child {

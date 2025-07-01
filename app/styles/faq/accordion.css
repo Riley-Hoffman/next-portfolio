@@ -4,7 +4,7 @@
 
 .acc-button {
   @apply accordion-border;
-  @apply w-full border-b bg-accentone-200 px-5 py-6;
+  @apply w-full border-b bg-accentone-200 p-6;
   @apply text-left text-xl font-semibold leading-9;
   @apply group-first:rounded-t-lg group-last:rounded-b-lg group-last:border-b-0;
   @apply aria-expanded:border-b-0;

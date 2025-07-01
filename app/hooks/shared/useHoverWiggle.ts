@@ -6,7 +6,7 @@ export const useHoverWiggle = (
 ) => {
   const { triggerEffect, stopEffect } = useTimedEffect(1000)
 
-  const WIGGLE_CLASS_NAME = 'motion-safe:animate-wiggle'
+  const WIGGLE_CLASS_NAME = 'motion-safe:md:animate-wiggle'
 
   const toggleWiggleEffect = () => {
     buttonRef.current?.classList.toggle(WIGGLE_CLASS_NAME)

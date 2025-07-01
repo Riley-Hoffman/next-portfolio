@@ -174,7 +174,7 @@
   .back-to-top {
     @apply button hover-lift;
     @apply fixed bottom-5 right-5 z-20;
-    @apply rounded-md border-2 border-accentone-300 px-2 py-2;
+    @apply rounded-md border-2 border-accentone-300 p-2;
     @apply md:tool-tip md:hover:border-heading;
   }
 }
