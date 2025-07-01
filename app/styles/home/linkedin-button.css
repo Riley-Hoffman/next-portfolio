@@ -5,6 +5,6 @@
 .linkedin-button > svg:first-child {
   @apply mr-6 box-content p-2 text-5xl text-heading;
 }
-.linkedin-button:not(:hover) > svg:first-child {
+.linkedin-button > svg:first-child {
   @apply bg-accentone-300 dark:bg-[#292d11];
 }
