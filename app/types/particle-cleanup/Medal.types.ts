@@ -1,12 +1,11 @@
 interface Medal {
   name: string
+  color: string
 }
 export interface MedalDisplay extends Medal {
   cutoff: number
-  color: string
 }
-export interface MedalRequirements extends Medal {
-  bgClass: string
+export interface MedalCriteriaData extends Medal {
   srText: string
   time: string
 }

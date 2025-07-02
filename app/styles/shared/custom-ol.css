@@ -1,18 +1,14 @@
-.custom-counter li {
+.custom-ol li {
   counter-increment: circle;
-}
-.custom-counter li:before {
-  content: counter(circle);
-}
-.custom-bullet li {
   @apply relative pl-5;
 }
-.custom-bullet li:before {
+.custom-ol li:before {
+  content: counter(circle);
   @apply absolute -left-5 top-1/2 -translate-y-1/2;
   @apply flex items-center justify-center;
   @apply mr-5 size-7 rounded-full p-1;
   @apply font-poppins text-base font-semibold;
 }
-.custom-bullet li:not([class*='before:bg-']):before {
+.custom-ol li:not([class*='before:bg-']):before {
   @apply bg-accenttwo-100;
 }
