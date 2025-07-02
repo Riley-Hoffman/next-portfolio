@@ -49,11 +49,9 @@ const Custom404 = () => {
             ))}
           </ul>
         </nav>
-        <div className="mt-10 text-sm">
-          <p>
-            Need help? <Link href="/contact">Contact us</Link>
-          </p>
-        </div>
+        <p className="mt-10">
+          Need help? <Link href="/contact">Contact us</Link>
+        </p>
       </section>
     </>
   )
