@@ -1,23 +1,21 @@
-import { Icon } from '@iconify/react'
 import clsx from 'clsx'
-
-interface MedalCriteriaProps {
-  bgClass: string
-  srText: string
-  time: string
-  icon?: string
-}
+import { MedalRequirements } from '@/app/types/particle-cleanup/Medal.types'
 
 export const MedalCriteria = ({
+  name,
   bgClass,
   srText,
   time,
-  icon,
-}: MedalCriteriaProps) => (
-  <li className={clsx('mr-9 before:text-[#fbfdff]', bgClass)}>
-    <span className="sr-only">{srText}</span>
-    <span aria-hidden={true}>
-      {icon && <Icon icon={icon} />} {time}
+}: MedalRequirements) => (
+  <li
+    className={clsx(
+      'before:text-[#fbfdff]) mr-9 before:content-["✔"]',
+      bgClass
+    )}
+  >
+    <span className="sr-only">
+      {name}, {srText}.
     </span>
+    <span aria-hidden={true}>{time}</span>
   </li>
 )

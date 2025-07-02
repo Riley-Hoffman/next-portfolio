@@ -1,14 +1,18 @@
-ol.numbered-icons li {
+.custom-counter li {
   counter-increment: circle;
+}
+.custom-counter li:before {
+  content: counter(circle);
+}
+.custom-bullet li {
   @apply relative pl-5;
 }
-ol.numbered-icons li:before {
-  content: counter(circle);
+.custom-bullet li:before {
   @apply absolute -left-5 top-1/2 -translate-y-1/2;
   @apply flex items-center justify-center;
   @apply mr-5 size-7 rounded-full p-1;
   @apply font-poppins text-base font-semibold;
 }
-ol.numbered-icons li:not([class*='before:bg-']):before {
+.custom-bullet li:not([class*='before:bg-']):before {
   @apply bg-accenttwo-100;
 }

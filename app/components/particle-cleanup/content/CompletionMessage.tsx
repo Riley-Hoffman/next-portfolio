@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react'
 
 interface CompletionMessageProps {
   ref?: React.Ref<HTMLParagraphElement>
-  medalDetails: { text: string; color: string } | null
+  medalDetails: { name: string; color: string } | null
   time: number | null
 }
 
@@ -28,7 +28,7 @@ export const CompletionMessage = ({
       <p className="uppercase" aria-live="polite">
         {medalDetails && (
           <span className="text-xl md:text-2xl" aria-live="polite">
-            {medalDetails.text} <br />
+            {medalDetails.name} <br />
             <Icon
               className="mt-2 block animate-twirl text-6xl"
               icon="fa6-solid:medal"

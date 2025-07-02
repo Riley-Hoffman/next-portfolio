@@ -28,7 +28,7 @@ describe('useMedalDetails', () => {
 
     expect(result.current).toEqual({
       cutoff: 15,
-      text: 'Gold Medal',
+      name: 'Gold Medal',
       color: '#8A7400',
     })
   })
@@ -40,7 +40,7 @@ describe('useMedalDetails', () => {
 
     expect(result.current).toEqual({
       cutoff: 21,
-      text: 'Silver Medal',
+      name: 'Silver Medal',
       color: '#737373',
     })
   })
@@ -52,7 +52,7 @@ describe('useMedalDetails', () => {
 
     expect(result.current).toEqual({
       cutoff: 26,
-      text: 'Bronze Medal',
+      name: 'Bronze Medal',
       color: '#A2652A',
     })
   })
