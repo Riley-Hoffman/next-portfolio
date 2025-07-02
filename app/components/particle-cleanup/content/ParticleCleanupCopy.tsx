@@ -8,26 +8,23 @@ type MedalDisplayData = {
   time: string
   icon?: string
 }
-const goldConfig = MEDAL_CONFIG.gold
-const silverConfig = MEDAL_CONFIG.silver
-const bronzeConfig = MEDAL_CONFIG.bronze
 
 const medalData: MedalDisplayData[] = [
   {
-    bgClass: goldConfig.bgClass,
-    srText: goldConfig.srText,
-    time: goldConfig.time,
-    icon: goldConfig.icon,
+    bgClass: MEDAL_CONFIG.gold.bgClass,
+    srText: MEDAL_CONFIG.gold.srText,
+    time: MEDAL_CONFIG.gold.time,
+    icon: MEDAL_CONFIG.gold.icon,
   },
   {
-    bgClass: silverConfig.bgClass,
-    srText: silverConfig.srText,
-    time: silverConfig.time,
+    bgClass: MEDAL_CONFIG.silver.bgClass,
+    srText: MEDAL_CONFIG.silver.srText,
+    time: MEDAL_CONFIG.silver.time,
   },
   {
-    bgClass: bronzeConfig.bgClass,
-    srText: bronzeConfig.srText,
-    time: bronzeConfig.time,
+    bgClass: MEDAL_CONFIG.bronze.bgClass,
+    srText: MEDAL_CONFIG.bronze.srText,
+    time: MEDAL_CONFIG.bronze.time,
   },
 ]
 
