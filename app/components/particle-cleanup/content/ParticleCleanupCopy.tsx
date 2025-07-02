@@ -1,27 +1,8 @@
 import { MedalCriteria } from './MedalCriteria'
-import { MEDAL_CONFIG } from '@/app/constants/particle-cleanup/medalConfig'
+import { getMedalCriteriaArray } from '@/app/constants/particle-cleanup/medalConfig'
 import { MedalCriteriaData } from '@/app/types/particle-cleanup/Medal.types'
 
-const medalData: MedalCriteriaData[] = [
-  {
-    name: MEDAL_CONFIG.gold.name,
-    color: MEDAL_CONFIG.gold.color,
-    srText: MEDAL_CONFIG.gold.srText,
-    time: MEDAL_CONFIG.gold.time,
-  },
-  {
-    name: MEDAL_CONFIG.silver.name,
-    color: MEDAL_CONFIG.silver.color,
-    srText: MEDAL_CONFIG.silver.srText,
-    time: MEDAL_CONFIG.silver.time,
-  },
-  {
-    name: MEDAL_CONFIG.bronze.name,
-    color: MEDAL_CONFIG.bronze.color,
-    srText: MEDAL_CONFIG.bronze.srText,
-    time: MEDAL_CONFIG.bronze.time,
-  },
-]
+const medalData: MedalCriteriaData[] = getMedalCriteriaArray()
 
 export const ParticleCleanupCopy = () => (
   <>
