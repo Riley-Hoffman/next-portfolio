@@ -16,7 +16,7 @@
   @apply absolute-full drop-shadow-[0.063rem_0.063rem_0_#00000061];
 }
 .play-again {
-  @apply mx-5 mb-5 mt-0 rounded-b-sm bg-[var(--pg-purple)] p-3;
+  @apply m-5 mt-0 rounded-b-sm bg-[var(--pg-purple)] p-3;
   @apply font-[Verdana,Geneva,sans-serif] text-white;
   @apply md:hover:bg-[#121226];
 }

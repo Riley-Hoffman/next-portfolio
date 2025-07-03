@@ -27,7 +27,7 @@ export const Form = ({ onErrors }: FormProps) => {
   ]
 
   return (
-    <form className="px-5 pb-10 pt-5" noValidate onSubmit={handleSubmit}>
+    <form className="p-5 pb-10" noValidate onSubmit={handleSubmit}>
       <fieldset className="pb-5">
         <legend className="sr-only">Contact Info and Message</legend>
         {fields.map(({ type, name, placeholder }) => (
