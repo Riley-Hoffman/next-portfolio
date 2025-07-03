@@ -16,7 +16,6 @@
 }
 .cover-container div p:last-child {
   @apply relative mx-5 mt-8 rounded-sm border-2 border-bordercolor bg-whitesmoke p-4;
-  @apply leading-7;
   @apply before:absolute before:-top-8 before:left-0 before:h-3 before:w-5 before:bg-accenttwo-200;
   @apply dark:bg-accentone-100;
   @apply md:w-3/5;

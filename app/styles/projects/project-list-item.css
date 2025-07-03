@@ -1,6 +1,6 @@
 .project {
   @apply relative flex flex-col-reverse gap-14 ease-in-out;
-  @apply my-20 border-b-2 border-t-8 leading-7;
+  @apply my-20 border-b-2 border-t-8;
   @apply after:inset-0 after:rounded-b-[14rem] after:rounded-t-full;
   @apply md:flex-row lg:border-x-2;
 }
