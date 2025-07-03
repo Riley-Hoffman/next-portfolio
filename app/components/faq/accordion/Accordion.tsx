@@ -22,7 +22,7 @@ export const Accordion = ({ accItems, label }: AccProps) => {
 
   return (
     <ul
-      className="mb-36 mt-24 max-w-prose rounded-lg py-px leading-loose shadow-[0.25rem_0.25rem_0_0] shadow-gradientone"
+      className="mb-36 mt-24 max-w-prose rounded-lg py-px shadow-[0.25rem_0.25rem_0_0] shadow-gradientone"
       aria-label={label}
     >
       {accItems.map(({ question, answer }, index) => {
