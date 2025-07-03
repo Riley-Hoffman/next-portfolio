@@ -1,5 +1,5 @@
 .sidebar {
-  @apply mt-7 self-start bg-accentone-200 pb-1 text-center;
+  @apply mt-5 self-start bg-accentone-200 pb-1 text-center;
   @apply md:rounded-sm md:border-x md:border-b md:border-bordercolor;
   @apply md:sticky md:top-24 md:w-1/6;
 }
