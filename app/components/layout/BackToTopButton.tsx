@@ -1,11 +1,10 @@
 'use client'
 import { Icon } from '@iconify/react'
-import { useBackToTopButton } from '@/app/hooks/back-to-top-button/useBackToTopButton'
+import { useBackToTopVisible } from '@/app/hooks/back-to-top-button/useBackToTopVisible'
+import { scrollToTop } from '@/app/utils/scrollToTop'
 
-export const BackToTopButton = () => {
-  const { visible, scrollToTop } = useBackToTopButton()
-
-  return visible ? (
+export const BackToTopButton = () =>
+  useBackToTopVisible() ? (
     <button
       onClick={scrollToTop}
       className="back-to-top"
@@ -14,4 +13,3 @@ export const BackToTopButton = () => {
       <Icon className="text-2xl" icon="fluent:chevron-circle-up-32-filled" />
     </button>
   ) : null
-}

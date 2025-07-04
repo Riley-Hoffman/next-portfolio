@@ -1,8 +1,7 @@
 import { useState, useCallback } from 'react'
-import { isBrowser } from '@/app/utils/isBrowser'
 import { useScroll } from '../shared/useScroll'
 
-export const useBackToTopButton = () => {
+export const useBackToTopVisible = () => {
   const [visible, setVisible] = useState(false)
 
   const handleOnScroll = useCallback((scrollY: number = 0) => {
@@ -12,9 +11,5 @@ export const useBackToTopButton = () => {
 
   useScroll(handleOnScroll)
 
-  const scrollToTop = () => {
-    if (isBrowser()) window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  return { visible, scrollToTop }
+  return visible
 }
