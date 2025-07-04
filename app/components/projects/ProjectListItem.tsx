@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import { useJsOnlyScrollAnimation } from '@/app/hooks/projects/useJsOnlyScrollAnimation'
 import { SharedProjectProps } from '@/app/types/projects/Project.types'
 import '@/app/styles/shared/background-accent.css'
-import '@/app/styles/projects/project-list-item.css'
 
 interface ProjectListItemProps extends SharedProjectProps {
   children: React.ReactNode
@@ -18,12 +17,9 @@ export const ProjectListItem = ({
 
   return (
     <li
-      className={clsx(
-        'project background-accent group gradient-border overflow-hidden',
-        {
-          inverted: inverted,
-        }
-      )}
+      className={clsx('project background-accent group gradient-border', {
+        inverted: inverted,
+      })}
       ref={animatedElement}
     >
       {children}

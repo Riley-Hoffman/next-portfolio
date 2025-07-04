@@ -17,15 +17,11 @@ export const ProjectContent = ({
   imgUrl,
   isFirst,
 }: Project) => {
-  const projectLinkClasses = 'button m-5 block w-fit py-1 px-3'
-
   const renderLink = (url: string, label: string, isInternal?: boolean) =>
     isInternal ? (
-      <Link className={projectLinkClasses} href={url}>
-        {label}
-      </Link>
+      <Link href={url}>{label}</Link>
     ) : (
-      <a className={projectLinkClasses} href={url} {...EXTERNAL_LINK_ATTR}>
+      <a href={url} {...EXTERNAL_LINK_ATTR}>
         {label}
         <NewTabContent />
       </a>
@@ -33,15 +29,15 @@ export const ProjectContent = ({
 
   return (
     <>
-      <div className="basis-1/2 pb-10 pt-5">
-        <h3 className="pb-4 text-2xl">{title}</h3>
-        <p className="mb-8 font-poppins text-heading">{skills}</p>
-        <p className="text-balance pb-4">{description}</p>
-        <h4 className="mb-8 text-base">{title} Links:</h4>
+      <div>
+        <h3>{title}</h3>
+        <p>{skills}</p>
+        <p>{description}</p>
+        <h4>{title} Links:</h4>
         {renderLink(liveUrl, `Visit ${title}`, internal)}
         {gitUrl && renderLink(gitUrl, `${title} Repo`)}
       </div>
-      <div className="relative basis-1/2">
+      <div>
         <Image
           className={clsx('lg:size-full', {
             'md:mr-auto': inverted,

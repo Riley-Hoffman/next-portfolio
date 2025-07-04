@@ -2,6 +2,7 @@ import { ProjectCatHeading } from '../content/ProjectCatHeading'
 import { ProjectListItem } from '../ProjectListItem'
 import { ProjectContent } from '../content/ProjectContent'
 import { Project } from '@/app/types/projects/Project.types'
+import '@/app/styles/projects/projects.css'
 
 export const ProjectList = ({
   category,
