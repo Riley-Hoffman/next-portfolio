@@ -7,21 +7,14 @@ export const useBackToTopButton = () => {
 
   const handleOnScroll = useCallback((scrollY: number = 0) => {
     const shouldBeVisible = scrollY > window.innerHeight / 2
-    setVisible((prevVisible) => {
-      return prevVisible !== shouldBeVisible ? shouldBeVisible : prevVisible
-    })
+    setVisible(shouldBeVisible)
   }, [])
 
   useScroll(handleOnScroll)
 
-  const scrollToPosition = (
-    top: number,
-    behavior: ScrollBehavior = 'smooth'
-  ) => {
-    if (isBrowser()) window.scrollTo({ top, behavior })
+  const scrollToTop = () => {
+    if (isBrowser()) window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
-  const scrollToTop = () => scrollToPosition(0)
 
   return { visible, scrollToTop }
 }
