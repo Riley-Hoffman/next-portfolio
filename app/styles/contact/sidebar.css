@@ -4,8 +4,8 @@
   @apply md:sticky md:top-24 md:w-1/6;
 }
 .sidebar h3 {
-  @apply mx-auto mb-1 mt-0 bg-heading text-accentone-200;
+  @apply mx-auto my-0 bg-heading text-accentone-200;
 }
 .sidebar a {
-  @apply block py-3 font-urbanist no-underline;
+  @apply block py-3 font-urbanist text-base no-underline;
 }
