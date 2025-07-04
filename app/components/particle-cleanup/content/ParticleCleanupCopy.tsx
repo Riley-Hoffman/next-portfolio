@@ -11,10 +11,7 @@ export const ParticleCleanupCopy = () => (
       How quickly can you clear all the stars from the board using your cursor
       or finger?
     </p>
-    <ul
-      className="mb-1 px-5 py-3 text-xl sm:flex md:text-2xl"
-      aria-label="Medal Criteria"
-    >
+    <ul aria-label="Medal Criteria">
       {medalData.map(({ name, color, srText, time }) => (
         <MedalCriteria
           key={srText}

@@ -26,7 +26,7 @@ const ParticleCleanupWrapper = () => (
   <>
     <SchemaInjector structuredData={schemaData} />
     <h1 className="heading-one">Particle Cleanup Game</h1>
-    <div className="max-w-screen-md pb-16">
+    <div className="max-w-screen-md px-5 pb-16">
       <ParticleCleanupCopy />
       <ParticleCleanupGame />
     </div>

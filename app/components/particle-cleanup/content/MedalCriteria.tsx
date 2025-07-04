@@ -7,9 +7,9 @@ export const MedalCriteria = ({
   srText,
   time,
 }: MedalCriteriaData) => (
-  <li className="mr-9">
-    <Icon className="mr-3 text-4xl" icon="fa6-solid:medal" color={color} />
+  <li>
+    <Icon icon="fa6-solid:medal" color={color} />
     <span className="sr-only">{`${name}, ${srText}.`}</span>
-    <span aria-hidden={true}>{time}</span>
+    <span aria-hidden={true}> {time}</span>
   </li>
 )

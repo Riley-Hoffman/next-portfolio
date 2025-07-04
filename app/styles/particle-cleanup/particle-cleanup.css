@@ -1,9 +1,23 @@
 :root {
   --pg-purple: #2b2b64;
 }
+main h2,
+main p {
+  @apply px-0;
+}
+ul[aria-label='Medal Criteria'] {
+  @apply mb-1 space-y-2 py-3 text-xl;
+  @apply sm:flex md:space-y-0 md:text-2xl;
+}
+ul[aria-label='Medal Criteria'] li {
+  @apply mr-9;
+}
+ul[aria-label='Medal Criteria'] svg {
+  @apply text-4xl;
+}
 .game-container {
   @apply overflow-hidden;
-  @apply mx-5 h-[31.25rem] rounded-br-sm border-2 border-[var(--pg-purple)] pt-28;
+  @apply h-[31.25rem] rounded-br-sm border-2 border-bordercolor pt-28;
   @apply bg-wood bg-cover bg-right;
 }
 .game-container:not(.done) {
@@ -16,9 +30,7 @@
   @apply absolute-full drop-shadow-[0.063rem_0.063rem_0_#00000061];
 }
 .play-again {
-  @apply m-5 mt-0 rounded-b-sm bg-[var(--pg-purple)] p-3;
-  @apply font-[Verdana,Geneva,sans-serif] text-white;
-  @apply md:hover:bg-[#121226];
+  @apply button mt-0 w-full rounded-b-sm p-3 md:w-fit;
 }
 .completion-message {
   @apply absolute-full z-20 bg-white text-center;
