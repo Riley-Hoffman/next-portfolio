@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react'
 import { CAROUSEL_BUTTONS_CONFIG } from '@/app/constants/carousel/carouselButtonsConfig'
 import { useCarouselButtonVisibility } from '@/app/hooks/carousel/useCarouselButtonVisibility'
 
@@ -14,7 +13,7 @@ export const CarouselButtons = () => {
       aria-label={label}
       className={`carousel-button hidden ${classes}`}
     >
-      <Icon icon={icon} />
+      {icon}
     </button>
   ))
 }

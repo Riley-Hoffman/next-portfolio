@@ -10,6 +10,6 @@ export const BackToTopButton = () =>
       className="back-to-top"
       aria-label="Back to Top"
     >
-      <Icon className="text-2xl" icon="fluent:chevron-circle-up-32-filled" />
+      <Icon className="text-2xl" icon="jam:chevron-circle-up-f" />
     </button>
   ) : null
