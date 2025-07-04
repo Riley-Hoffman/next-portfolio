@@ -1,5 +1,5 @@
 .contact-content {
-  @apply m-5 min-h-72 rounded-t-md bg-heading pb-px;
+  @apply m-5 min-h-80 rounded-t-md bg-heading;
   @apply sm:min-h-64;
 }
 .contact-content * {
