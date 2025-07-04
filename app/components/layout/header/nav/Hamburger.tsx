@@ -12,9 +12,6 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   }, [hamburgerRef])
 
   const commonClasses = `
-    group-aria-expanded:rotate-4 
-    group-aria-expanded:left-3 
-    group-aria-expanded:top-5 
     group-aria-expanded:w-0 
     group-aria-expanded:-rotate-45 
     group-aria-expanded:border-0 
