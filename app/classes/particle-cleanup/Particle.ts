@@ -1,4 +1,5 @@
 import { PARTICLE_CONFIG } from '@/app/constants/particle-cleanup/particleConfig'
+import { isEven } from '@/app/utils/isEven'
 
 interface Point {
   x: number
@@ -49,7 +50,7 @@ export class Particle {
 
     for (let i = 0; i < numPoints * 2; i++) {
       const angle = (i / (numPoints * 2)) * Math.PI * 2 + rotation
-      const radius = i % 2 === 0 ? outerRadius : innerRadius
+      const radius = isEven(i) ? outerRadius : innerRadius
       const noiseX = (Math.random() - 0.5) * noise * radius
       const noiseY = (Math.random() - 0.5) * noise * radius
       const vertex = this.getVertex(angle, radius)
