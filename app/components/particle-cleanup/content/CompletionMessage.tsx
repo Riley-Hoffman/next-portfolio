@@ -11,11 +11,7 @@ export const CompletionMessage = ({
   medalDetails,
   time,
 }: CompletionMessageProps) => (
-  <div
-    className="completion-message"
-    ref={ref}
-    tabIndex={-1}
-  >
+  <div className="completion-message" ref={ref} tabIndex={-1}>
     <div>
       <p className="text-2xl">All clean!</p>
       <p aria-live="polite">

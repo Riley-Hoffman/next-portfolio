@@ -23,7 +23,11 @@ const getProjectIndex = (project: Project, allProjects: Project[]): number => {
   return allProjects.findIndex((p) => p.title === project.title)
 }
 
-export const ProjectList = ({ category, projects, globalIndex }: ProjectListProps) => {
+export const ProjectList = ({
+  category,
+  projects,
+  globalIndex,
+}: ProjectListProps) => {
   const categoryProjects = projects.filter(
     (project) => project.category === category
   )
