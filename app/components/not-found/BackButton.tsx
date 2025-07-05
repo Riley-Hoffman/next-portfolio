@@ -2,7 +2,7 @@
 import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 import { useRouter } from 'next/navigation'
 
-export const BackButton = ({}: EmptyObject) => {
+export const BackButton = ({ }: EmptyObject) => {
   const router = useRouter()
 
   return (
@@ -10,6 +10,7 @@ export const BackButton = ({}: EmptyObject) => {
       onClick={() => router.back()}
       className="button my-6 w-full p-3 md:w-auto"
       aria-label="Go back to previous page"
+      role="link"
     >
       ← Go Back
     </button>
