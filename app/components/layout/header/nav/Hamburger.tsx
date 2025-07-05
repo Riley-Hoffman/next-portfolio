@@ -21,7 +21,6 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
   return (
     <>
       <button
-        id="hamburger"
         aria-expanded={isExpanded}
         aria-label={isExpanded ? 'Close Menu' : 'Open Menu'}
         onClick={toggleMenu}

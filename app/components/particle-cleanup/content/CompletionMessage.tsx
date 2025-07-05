@@ -13,7 +13,6 @@ export const CompletionMessage = ({
 }: CompletionMessageProps) => (
   <div
     className="completion-message"
-    id="completionMessage"
     ref={ref}
     tabIndex={-1}
   >
