@@ -14,7 +14,7 @@ export const ParticleCleanupCopy = () => (
     <ul aria-label="Medal Criteria">
       {medalData.map(({ name, color, srText, time }) => (
         <MedalCriteria
-          key={srText}
+          key={name}
           name={name}
           color={color}
           srText={srText}

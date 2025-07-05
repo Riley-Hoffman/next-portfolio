@@ -43,7 +43,7 @@ export const ParticleCleanupGame = () => {
         ref={(el) => {
           currentGameRefs.container = el
         }}
-        className="game-container overlay light-overlay"
+        className="game-container overlay"
         role="application"
         aria-label="Cleanup Game"
       >

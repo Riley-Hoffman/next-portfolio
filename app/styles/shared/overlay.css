@@ -4,9 +4,6 @@
 .overlay:before {
   @apply absolute-full z-20 bg-white opacity-50 content-[''];
 }
-.overlay:not(.light-overlay):before {
-  @apply dark:bg-black;
-}
 .overlay > *:not(.cover-image) {
   @apply z-30;
 }
