@@ -30,7 +30,7 @@ export const ProjectList = ({ category, projects, globalIndex }: ProjectListProp
 
   const projectListItems = categoryProjects.map((project, localIndex) => {
     const projectIndex = getProjectIndex(project, projects)
-    const isInverted = (projectIndex + 1) % 2 === 0
+    const isInverted = isEven(projectIndex + 1)
     const animation = getAnimationClass(projectIndex)
     const isFirst = globalIndex + localIndex === 0
 
