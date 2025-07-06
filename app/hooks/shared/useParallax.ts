@@ -8,6 +8,7 @@ export const useParallax = ({
   velocity = 0.1,
   containerRef,
   imgRef,
+  onReady,
 }: UseParallaxProps): void => {
   const prefersReducedMotion = useReducedMotion()
 
@@ -37,9 +38,17 @@ export const useParallax = ({
 
       requestAnimationFrame(() => {
         updateImageStyles(transformValue, 'transform')
+        if (onReady) onReady()
       })
     },
-    [containerRef, imgRef, prefersReducedMotion, updateImageStyles, velocity]
+    [
+      containerRef,
+      imgRef,
+      prefersReducedMotion,
+      updateImageStyles,
+      velocity,
+      onReady,
+    ]
   )
 
   useEffect(() => {
