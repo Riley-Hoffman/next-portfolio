@@ -17,7 +17,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [isReady, onReady] = useReady()
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])

@@ -28,7 +28,7 @@ export const AccAnswer = ({ data }: AccAnswerProps) => {
     <>
       <div
         className={clsx(getAnswerClasses(isOpen), {
-          'hidden': !isReady,
+          hidden: !isReady,
         })}
         tabIndex={-1}
         ref={contentRef}
@@ -38,9 +38,7 @@ export const AccAnswer = ({ data }: AccAnswerProps) => {
       >
         {answer}
       </div>
-      <noscript>
-        {answer}
-      </noscript>
+      <noscript>{answer}</noscript>
     </>
   )
 }
