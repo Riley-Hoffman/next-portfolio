@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,13 +10,14 @@ import { SlideData } from '@/app/types/carousel/SlideData.interface'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { carouselStyle } from '@/app/utils/carouselStyle'
+import { useReady } from '@/app/hooks/shared/useReady'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
-  const [isReady, setIsReady] = useState(false)
+  const [isReady, onReady] = useReady()
 
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -82,7 +83,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
         }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper
-          setIsReady(true)
+          onReady()
         }}
       >
         {slides.map(({ src, url, label }) => (

@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
 import '@/app/styles/home/cover.css'
 import { MD, LG } from '@/app/constants/breakpoints'
+import { useReady } from '@/app/hooks/shared/useReady'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
   ssr: false,
@@ -11,7 +12,7 @@ const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
 export const Cover = ({ coverImageData }: CoverImageProps) => {
   const parallaxContainerRef = useRef<HTMLDivElement>(null!)
   const parallaxImgref = useRef<HTMLImageElement>(null!)
-  const [parallaxReady, setParallaxReady] = useState(false)
+  const [parallaxReady, onParallaxReady] = useReady()
 
   return (
     <section className="cover-container overlay" ref={parallaxContainerRef}>
@@ -46,7 +47,7 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
       <LazyParallax
         containerRef={parallaxContainerRef}
         imgRef={parallaxImgref}
-        onReady={() => setParallaxReady(true)}
+        onReady={onParallaxReady}
       />
     </section>
   )
