@@ -1,6 +1,7 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperInstance } from 'swiper'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
@@ -12,6 +13,7 @@ import { carouselStyle } from '@/app/utils/carouselStyle'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
+  const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     ;(async () => {
@@ -38,7 +40,13 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   }, [])
 
   return (
-    <div className="relative max-w-7xl">
+    <div
+      className={clsx('relative max-w-7xl', {
+        'pointer-events-none max-h-72 opacity-0 sm:max-h-[589.3px] md:max-h-[487.2px]':
+          !isReady,
+      })}
+      aria-busy={!isReady}
+    >
       <Swiper
         modules={[Navigation, Pagination, A11y, Mousewheel]}
         navigation={{
@@ -52,7 +60,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
           dynamicBullets: true,
           dynamicMainBullets: 2,
           renderBullet: (index, className) =>
-            `<button class="${className}" aria-label="${`Slide ${index + 1}`}" title="${slides[index]?.label}"></button>`,
+            `<button class="${className}" aria-label="${`Slide ${index + 1}`}", title="${slides[index]?.label}"></button>`,
         }}
         mousewheel={{
           forceToAxis: true,
@@ -74,6 +82,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
         }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper
+          setIsReady(true)
         }}
       >
         {slides.map(({ src, url, label }) => (
