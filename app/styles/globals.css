@@ -47,8 +47,11 @@
   body ::placeholder {
     @apply contrast-more:opacity-100;
   }
-  header {
+  header,
+  footer {
     @apply pad-wrap gradient-border;
+  }
+  header {
     @apply sticky -top-8 z-50 flex min-h-[7.625rem] items-center justify-between;
     @apply border-b-2 border-t-[2rem] bg-accentone-100 py-6;
   }
@@ -90,7 +93,6 @@
     @apply bg-accentone-300 text-heading shadow-none;
   }
   footer {
-    @apply pad-wrap gradient-border;
     @apply min-h-24 border-t bg-accentone-300 py-7;
     @apply contrast-more:bg-accentone-100 dark:bg-accentone-200;
     @apply md:flex md:items-center md:justify-between;
@@ -155,6 +157,7 @@
   .theme-changer:hover svg {
     @apply md:outline md:outline-1 md:outline-accenttwo-200;
   }
+
   .button {
     @apply bg-heading text-accentone-100 no-underline transition duration-300 ease-in-out;
     @apply active:scale-95;
@@ -167,12 +170,16 @@
     @apply text-center text-3xl font-bold tracking-tight;
     @apply md:text-5xl md:leading-normal;
   }
+  .skip-to-content,
+  .back-to-top {
+    @apply button;
+  }
   .skip-to-content {
-    @apply button sr-only;
+    @apply sr-only;
     @apply focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
   }
   .back-to-top {
-    @apply button hover-lift;
+    @apply hover-lift;
     @apply fixed bottom-5 right-5 z-20;
     @apply rounded-md border-2 border-accentone-300 p-2;
     @apply md:tool-tip md:hover:border-heading;

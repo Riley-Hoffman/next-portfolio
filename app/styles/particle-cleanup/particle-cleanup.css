@@ -23,14 +23,18 @@ ul[aria-label='Medal Criteria'] svg {
 .game-container.done {
   @apply cursor-default;
 }
+.completion-message,
 .game-container canvas {
-  @apply absolute-full drop-shadow-[0.063rem_0.063rem_0_#00000061];
+  @apply absolute-full;
+}
+.game-container canvas {
+  @apply drop-shadow-[0.063rem_0.063rem_0_#00000061];
 }
 .play-again {
   @apply button mt-0 w-full rounded-b-sm p-3 md:w-fit;
 }
 .completion-message {
-  @apply absolute-full z-20 bg-white text-center;
+  @apply z-20 bg-white text-center;
 }
 .completion-message > div {
   @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;

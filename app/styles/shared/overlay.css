@@ -3,10 +3,8 @@
 }
 .overlay:before {
   @apply absolute-full z-20 bg-white opacity-50 content-[''];
+  @apply contrast-more:opacity-75;
 }
 .overlay > *:not(.cover-image) {
   @apply z-30;
-}
-.overlay:before {
-  @apply contrast-more:opacity-75;
 }
