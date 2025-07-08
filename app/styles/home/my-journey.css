@@ -18,7 +18,8 @@
   @apply md:rounded-3xl;
 }
 .my-journey > div {
-  @apply mx-auto mt-0 min-h-[45.5rem] w-96 max-w-full py-6 md:my-6;
+  @apply mx-auto mt-0 min-h-[45.5rem] w-96 max-w-full py-6;
   @apply rounded-b-3xl border-2 bg-whitesmoke;
-  @apply dark:bg-siteblack md:mx-6 md:w-2/3 lg:px-[8%];
+  @apply dark:bg-siteblack;
+  @apply md:mx-6 md:my-6 md:w-2/3 lg:px-[8%];
 }
