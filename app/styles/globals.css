@@ -36,7 +36,8 @@
     @apply bg-siteblack;
   }
   body {
-    @apply contrast-more:font-semibold;
+    @apply antialiased;
+    @apply contrast-more:font-semibold contrast-more:subpixel-antialiased;
   }
   :not(.flex) > [class*='max-']:not(img, [class*='mx-']) {
     @apply mx-auto;

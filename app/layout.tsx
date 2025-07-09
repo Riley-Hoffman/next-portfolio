@@ -62,7 +62,7 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en" suppressHydrationWarning>
     <body
-      className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable} antialiased contrast-more:subpixel-antialiased`}
+      className={`${inconsolata.variable} ${poppins.variable} ${sourcesans.variable} ${urbanist.variable}`}
     >
       <NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <LayoutContent>{children}</LayoutContent>
