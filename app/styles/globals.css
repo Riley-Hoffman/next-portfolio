@@ -140,7 +140,11 @@
   .hamburger-line {
     @apply gradient-border;
     @apply absolute top-4 block w-7 rotate-0 border-2 brightness-90 duration-200 ease-in-out;
-    @apply first:top-2 last:top-6;
+    @apply first:top-2 last:top-6 group-aria-expanded:[&:nth-child(2)]:-rotate-45 group-aria-expanded:[&:nth-child(3)]:rotate-45;
+  }
+  .hamburger-line:first-child,
+  .hamburger-line:last-child {
+    @apply group-aria-expanded:w-0 group-aria-expanded:-rotate-45 group-aria-expanded:border-0 group-aria-expanded:transition-none;
   }
   .closer {
     @apply fixed inset-0 block size-full cursor-default text-transparent;

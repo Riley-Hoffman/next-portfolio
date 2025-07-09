@@ -11,13 +11,6 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
     }
   }, [hamburgerRef])
 
-  const commonClasses = `
-    group-aria-expanded:w-0 
-    group-aria-expanded:-rotate-45 
-    group-aria-expanded:border-0 
-    group-aria-expanded:transition-none
-  `
-
   return (
     <>
       <button
@@ -27,10 +20,9 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         ref={hamburgerRef}
         className="hamburger group peer hidden"
       >
-        <span className={`hamburger-line ${commonClasses}`}></span>
-        <span className="hamburger-line group-aria-expanded:-rotate-45"></span>
-        <span className="hamburger-line group-aria-expanded:rotate-45"></span>
-        <span className={`hamburger-line ${commonClasses}`}></span>
+        {Array.from({ length: 4 }).map((_, i) => (
+          <span className="hamburger-line" key={i}></span>
+        ))}
       </button>
       {isExpanded && (
         <button className="closer" onClick={toggleMenu} aria-hidden={true}>
