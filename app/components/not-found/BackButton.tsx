@@ -1,8 +1,7 @@
 'use client'
-import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 import { useRouter } from 'next/navigation'
 
-export const BackButton = ({}: EmptyObject) => {
+export const BackButton = () => {
   const router = useRouter()
 
   return (

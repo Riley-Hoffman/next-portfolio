@@ -1,8 +1,7 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import { EmptyObject } from '@/app/types/shared/EmptyObject.type'
 
-export const PathnameDisplay = ({}: EmptyObject) => {
+export const PathnameDisplay = () => {
   const pathname = usePathname()
 
   return (
