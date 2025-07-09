@@ -21,10 +21,7 @@ export const Accordion = ({ accItems, label }: AccProps) => {
   }, 200)
 
   return (
-    <ul
-      className="mb-36 mt-24 max-w-prose rounded-lg py-px shadow-[0.25rem_0.25rem_0_0] shadow-gradientone"
-      aria-label={label}
-    >
+    <ul className="max-w-prose" aria-label={label}>
       {accItems.map(({ question, answer }, index) => {
         const isOpen = accOpen(index)
         const questionId = `question-${index}`
