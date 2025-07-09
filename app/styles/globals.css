@@ -114,9 +114,12 @@
     @apply inline-block size-6 min-h-full no-underline;
     @apply md:tool-tip;
   }
-  footer p:first-of-type svg {
+  footer a svg {
     @apply ml-1 text-3xl;
     @apply md:text-base;
+  }
+  footer a:hover svg {
+    @apply md:text-accenttwo-200;
   }
   footer > a {
     @apply mr-auto inline-block px-5 py-2 underline;
@@ -140,11 +143,14 @@
   .hamburger-line {
     @apply gradient-border;
     @apply absolute top-4 block w-7 rotate-0 border-2 brightness-90 duration-200 ease-in-out;
-    @apply first:top-2 last:top-6 group-aria-expanded:[&:nth-child(2)]:-rotate-45 group-aria-expanded:[&:nth-child(3)]:rotate-45;
+    @apply first:top-2 last:top-6;
   }
-  .hamburger-line:first-child,
-  .hamburger-line:last-child {
-    @apply group-aria-expanded:w-0 group-aria-expanded:-rotate-45 group-aria-expanded:border-0 group-aria-expanded:transition-none;
+  .hamburger[aria-expanded='true'] .hamburger-line {
+    @apply [&:nth-child(2)]:-rotate-45 [&:nth-child(3)]:rotate-45;
+  }
+  .hamburger[aria-expanded='true'] .hamburger-line:first-child,
+  .hamburger[aria-expanded='true'] .hamburger-line:last-child {
+    @apply w-0 -rotate-45 border-0 transition-none;
   }
   .closer {
     @apply fixed inset-0 block size-full cursor-default text-transparent;

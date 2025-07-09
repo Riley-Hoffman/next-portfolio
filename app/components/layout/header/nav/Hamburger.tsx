@@ -18,7 +18,7 @@ export const Hamburger = ({ expanded }: HamburgerProps) => {
         aria-label={isExpanded ? 'Close Menu' : 'Open Menu'}
         onClick={toggleMenu}
         ref={hamburgerRef}
-        className="hamburger group peer hidden"
+        className="hamburger peer hidden"
       >
         {Array.from({ length: 4 }).map((_, i) => (
           <span className="hamburger-line" key={i}></span>

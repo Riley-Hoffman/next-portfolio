@@ -14,7 +14,7 @@ type AccAnswerProps = {
 
 const getAnswerClasses = (isOpen: boolean) =>
   clsx('acc-answer', {
-    'my-0 peer-[.init]:hidden': !isOpen,
+    'peer-[.init]:hidden': !isOpen,
   })
 
 export const AccAnswer = ({ data }: AccAnswerProps) => {

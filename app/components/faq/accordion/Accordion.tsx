@@ -31,7 +31,7 @@ export const Accordion = ({ accItems, label }: AccProps) => {
         const answerId = `answer-${index}`
 
         return (
-          <li className="group" key={question}>
+          <li key={question}>
             <AccQuestion
               data={{
                 question,

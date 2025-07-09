@@ -14,7 +14,7 @@ export const AccQuestion = ({ data }: AccQuestionProps) => {
   return (
     <button
       ref={buttonRef}
-      className="acc-button"
+      className="acc-button peer"
       onClick={onAccClick}
       aria-expanded={isOpen}
       aria-controls={answerId}

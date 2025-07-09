@@ -15,15 +15,12 @@ export const LinkedInButton = () => {
   return (
     <Link
       ref={buttonRef}
-      className="linkedin-button button group"
+      className="linkedin-button button"
       href={LINKEDIN_URL}
       onMouseEnter={handleMouseEnterWiggle}
       {...EXTERNAL_LINK_ATTR}
     >
-      <Icon
-        className="md:group-hover:bg-heading md:group-hover:text-accentone-300 dark:md:group-hover:bg-heading"
-        icon="fa6-brands:linkedin-in"
-      />
+      <Icon icon="fa6-brands:linkedin-in" />
       Follow me on LinkedIn
       <NewTabContent hideIconOnMobile={true} />
     </Link>

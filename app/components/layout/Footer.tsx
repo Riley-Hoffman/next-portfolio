@@ -10,12 +10,11 @@ export const Footer = ({}: EmptyObject) => (
     <p>
       {getPageTitle()} <small>(v{VERSION}) </small>
       <a
-        className="group"
         href={GITHUB_URL}
         aria-label="Site repo on GitHub (Opens in a new tab)"
         {...EXTERNAL_LINK_ATTR}
       >
-        <Icon className="md:group-hover:text-accenttwo-200" icon="cib:github" />
+        <Icon icon="cib:github" />
       </a>
     </p>
     <Link href="/accessibility/">Accessibility</Link>
