@@ -1,20 +1,21 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import clsx from 'clsx'
+import { ResponsiveImage } from '../../shared/ResponsiveImage'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { Project } from '@/app/types/projects/Project.types'
 
 export const ProjectContent = ({
-  title,
-  skills,
+  alt,
+  blurDataUrl,
   description,
+  gitUrl,
+  imgUrl,
   internal,
   liveUrl,
-  gitUrl,
+  skills,
+  title,
   inverted,
-  alt,
-  imgUrl,
   isFirst,
 }: Project) => {
   const renderLink = (url: string, label: string, isInternal?: boolean) =>
@@ -38,7 +39,7 @@ export const ProjectContent = ({
         {gitUrl && renderLink(gitUrl, `${title} Repo`)}
       </div>
       <div>
-        <Image
+        <ResponsiveImage
           className={clsx('lg:size-full', {
             'md:mr-auto': inverted,
             'md:ml-auto': !inverted,
@@ -49,6 +50,8 @@ export const ProjectContent = ({
           height={569}
           width={569}
           priority={isFirst}
+          placeholder="blur"
+          blurDataURL={blurDataUrl}
         />
       </div>
     </>

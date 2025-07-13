@@ -7,6 +7,7 @@ import { CoverImageProps } from './types/home/CoverImage.interface'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
 import { BASE_DESCRIPTION } from '@/app/constants/baseData'
+import { cloudsBlurData } from './constants/blurDataUrls'
 import '@/app/styles/shared/overlay.css'
 
 const DESCRIPTION = BASE_DESCRIPTION
@@ -21,10 +22,9 @@ const schemaData = SchemaFactory.createWebPage({
 const coverImageData: CoverImageProps['coverImageData'] = {
   width: 1920,
   height: 1080,
-  highResSrc:
+  src:
     'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds5.webp',
-  lowResSrc:
-    'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds4.webp',
+  blurDataUrl: cloudsBlurData,
   children: <FirstFoldContent />,
 }
 

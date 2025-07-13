@@ -1,14 +1,15 @@
 'use client'
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperInstance } from 'swiper'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
+import { ResponsiveImage } from '@/app/components/shared/ResponsiveImage'
 import { CarouselButtons } from './CarouselButtons'
 import { SlideData } from '@/app/types/carousel/SlideData.interface'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
+import { certificateBlurData } from '@/app/constants/blurDataUrls'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 import { useReady } from '@/app/hooks/shared/useReady'
 
@@ -89,12 +90,13 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
         {slides.map(({ src, url, label }) => (
           <SwiperSlide key={src}>
             <a href={url} {...EXTERNAL_LINK_ATTR}>
-              <Image
+              <ResponsiveImage
                 src={src}
                 alt={label}
                 width={900}
                 height={695}
-                loading="eager"
+                placeholder="blur"
+                blurDataURL={certificateBlurData}
               />
               <NewTabContent icon={false} />
             </a>

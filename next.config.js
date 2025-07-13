@@ -1,11 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   experimental: {
     esmExternals: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+        pathname: '/rileyhoffmandotcom.appspot.com/**',
+      },
+    ],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

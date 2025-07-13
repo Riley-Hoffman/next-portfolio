@@ -2,8 +2,8 @@ export interface CoverImageProps {
   coverImageData: {
     width: number
     height: number
-    highResSrc: string
-    lowResSrc: string
+    src: string
+    blurDataUrl: string
     children: React.ReactNode
   }
 }

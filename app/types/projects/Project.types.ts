@@ -4,13 +4,14 @@ export interface SharedProjectProps {
 }
 
 export interface Project extends SharedProjectProps {
-  title: string
-  skills: string
+  alt: string
+  blurDataUrl: string
+  category: string
   description: string
-  internal?: boolean
-  liveUrl: string
   gitUrl?: string
   imgUrl: string
-  alt: string
-  category: string
+  internal?: boolean
+  liveUrl: string
+  title: string
+  skills: string
 }

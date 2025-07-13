@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
+import { ResponsiveImage } from '@/app/components/shared/ResponsiveImage'
 import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
 import '@/app/styles/home/cover.css'
-import { MD, LG } from '@/app/constants/breakpoints'
 import { useReady } from '@/app/hooks/shared/useReady'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {
@@ -20,20 +20,17 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
         <style>
           {`
             .cover-container {
-              background-image: url('${coverImageData.highResSrc}');
+              background-image: url('${coverImageData.src}');
               background-size: cover;
               background-position: center;
             }
           `}
         </style>
       </noscript>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={coverImageData.highResSrc}
-        srcSet={`${coverImageData.lowResSrc} ${MD}w, ${coverImageData.highResSrc} ${LG}w`}
+      <ResponsiveImage
+        src={coverImageData.src}
         width={coverImageData.width}
         height={coverImageData.height}
-        sizes="100vw"
         alt=""
         fetchPriority="high"
         className="cover-image"
@@ -42,6 +39,7 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
           opacity: parallaxReady ? 1 : 0,
           transition: 'opacity 0.3s ease',
         }}
+        blurDataURL={coverImageData.blurDataUrl}
       />
       <div>{coverImageData.children}</div>
       <LazyParallax

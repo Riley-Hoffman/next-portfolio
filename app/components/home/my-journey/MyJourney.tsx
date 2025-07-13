@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
+import { ResponsiveImage } from '@/app/components/shared/ResponsiveImage'
 import { LinkedInButton } from '../LinkedInButton'
+import { headshotBlurData } from '@/app/constants/blurDataUrls'
 import '@/app/styles/home/my-journey.css'
 
 const LazyHueRotateOnScroll = dynamic(
@@ -16,12 +17,13 @@ export const MyJourney = () => {
   return (
     <section ref={hueElRef} className="my-journey">
       <figure itemScope itemType="https://schema.org/ImageObject">
-        <Image
+        <ResponsiveImage
           className={`max-w-full ${LIGHT_BORDER} ${DARK_BORDER}`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
           width={384}
           height={452}
           alt="Riley with a flower behind his ear. Shot in black and white."
+          blurDataURL={headshotBlurData}
           itemProp="contentUrl"
         />
         <figcaption itemProp="creditText">Photo by Kristen Mommertz</figcaption>
