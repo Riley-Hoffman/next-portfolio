@@ -20,8 +20,8 @@ const schemaData = SchemaFactory.createWebPage({
 })
 
 const coverImageData: CoverImageProps['coverImageData'] = {
-  width: 1920,
-  height: 1080,
+  width: 1602,
+  height: 901,
   src:
     'https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/clouds5.webp',
   blurDataUrl: cloudsBlurData,
