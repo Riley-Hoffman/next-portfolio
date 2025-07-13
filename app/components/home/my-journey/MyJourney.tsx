@@ -1,7 +1,8 @@
 import { useRef } from 'react'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { ResponsiveImage } from '@/app/components/shared/ResponsiveImage'
 import { LinkedInButton } from '../LinkedInButton'
+import { SM, LG } from '@/app/constants/breakpoints'
 import { headshotBlurData } from '@/app/constants/blurDataUrls'
 import '@/app/styles/home/my-journey.css'
 
@@ -17,13 +18,15 @@ export const MyJourney = () => {
   return (
     <section ref={hueElRef} className="my-journey">
       <figure itemScope itemType="https://schema.org/ImageObject">
-        <ResponsiveImage
+        <Image
           className={`max-w-full ${LIGHT_BORDER} ${DARK_BORDER}`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
           width={384}
           height={452}
           alt="Riley with a flower behind his ear. Shot in black and white."
+          sizes={`(max-width: ${SM}) 100vw, (max-width: ${LG}) 50vw, 33vw`}
           blurDataURL={headshotBlurData}
+          placeholder="blur"
           itemProp="contentUrl"
         />
         <figcaption itemProp="creditText">Photo by Kristen Mommertz</figcaption>

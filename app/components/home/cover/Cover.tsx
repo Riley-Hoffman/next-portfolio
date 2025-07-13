@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import { ResponsiveImage } from '@/app/components/shared/ResponsiveImage'
+import Image from 'next/image'
 import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
 import '@/app/styles/home/cover.css'
 import { useReady } from '@/app/hooks/shared/useReady'
@@ -27,18 +27,20 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
           `}
         </style>
       </noscript>
-      <ResponsiveImage
+      <Image
         src={coverImageData.src}
         width={coverImageData.width}
         height={coverImageData.height}
         alt=""
         fetchPriority="high"
         className="cover-image"
+        sizes="100vw"
         ref={parallaxImgref}
         style={{
           opacity: parallaxReady ? 1 : 0,
           transition: 'opacity 0.3s ease',
         }}
+        placeholder="blur"
         blurDataURL={coverImageData.blurDataUrl}
       />
       <div>{coverImageData.children}</div>
