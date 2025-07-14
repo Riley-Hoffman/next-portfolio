@@ -41,7 +41,7 @@ export const ProjectContent = ({
       </div>
       <div>
         <Image
-          className={clsx('lg:size-full', {
+          className={clsx({
             'md:mr-auto': inverted,
             'md:ml-auto': !inverted,
           })}
@@ -50,7 +50,7 @@ export const ProjectContent = ({
           title={title}
           height={569}
           width={569}
-          sizes={`(max-width: ${SM}) 100vw, (max-width: ${MD}) 75vw, (max-width: ${LG}) 50vw, 28vw`}
+          sizes={`(max-width: ${SM}) 100vw, (max-width: ${MD}) 75vw, (max-width: ${LG}) 50vw, 30vw`}
           priority={isFirst}
           placeholder="blur"
           blurDataURL={blurDataUrl}
