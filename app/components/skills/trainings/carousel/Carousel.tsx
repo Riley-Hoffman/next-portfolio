@@ -20,7 +20,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -98,8 +98,6 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
             index === activeIndex ||
             index === (activeIndex + 1) % slides.length ||
             index === (activeIndex - 1 + slides.length) % slides.length
-
-          console.log(isActiveOrNearby, index, activeIndex, slides.length)
 
           return (
             <SwiperSlide key={src}>
