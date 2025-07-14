@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -17,9 +17,10 @@ import { useReady } from '@/app/hooks/shared/useReady'
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
   const [isReady, onReady] = useReady()
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])
@@ -85,25 +86,39 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
         }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper
+          setActiveIndex(swiper.realIndex)
           onReady()
         }}
+        onSlideChange={(swiper) => {
+          setActiveIndex(swiper.realIndex)
+        }}
       >
-        {slides.map(({ src, url, label }) => (
-          <SwiperSlide key={src}>
-            <a href={url} {...EXTERNAL_LINK_ATTR}>
-              <Image
-                src={src}
-                alt={label}
-                width={900}
-                height={695}
-                sizes={`(max-width: ${MD}) 100vw, (max-width: ${LG}) 49vw, 38vw`}
-                placeholder="blur"
-                blurDataURL={certificateBlurData}
-              />
-              <NewTabContent icon={false} />
-            </a>
-          </SwiperSlide>
-        ))}
+        {slides.map(({ src, url, label }, index) => {
+          const isActiveOrNearby =
+            index === activeIndex ||
+            index === (activeIndex + 1) % slides.length ||
+            index === (activeIndex - 1 + slides.length) % slides.length
+
+          console.log(isActiveOrNearby, index, activeIndex, slides.length)
+
+          return (
+            <SwiperSlide key={src}>
+              <a href={url} {...EXTERNAL_LINK_ATTR}>
+                <Image
+                  src={src}
+                  alt={label}
+                  width={900}
+                  height={695}
+                  sizes={`(max-width: ${MD}) 100vw, (max-width: ${LG}) 49vw, 38vw`}
+                  placeholder="blur"
+                  blurDataURL={certificateBlurData}
+                  loading={isActiveOrNearby ? 'eager' : 'lazy'}
+                />
+                <NewTabContent icon={false} />
+              </a>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
       <div role="group" aria-label="Carousel controls">
         <CarouselButtons />
