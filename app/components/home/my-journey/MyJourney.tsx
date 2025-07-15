@@ -21,10 +21,10 @@ export const MyJourney = () => {
         <Image
           className={`max-w-full ${LIGHT_BORDER} ${DARK_BORDER}`}
           src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
-          width={384}
-          height={452}
+          width={382}
+          height={384}
           alt="Riley with a flower behind his ear. Shot in black and white."
-          sizes={`(max-width: ${SM}) 100vw, (max-width: ${LG}) 50vw, 33vw`}
+          sizes={`(max-width: ${SM}) 100vw, (max-width: ${LG}) 50vw, 382px`}
           blurDataURL={headshotBlurData}
           placeholder="blur"
           itemProp="contentUrl"

@@ -107,7 +107,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
                   alt={label}
                   width={900}
                   height={695}
-                  sizes={`(max-width: ${MD}) 100vw, (max-width: ${LG}) 49vw, 38vw`}
+                  sizes={`(max-width: ${MD}) 100vw, (max-width: ${LG}) 49vw, 630px`}
                   placeholder="blur"
                   blurDataURL={certificateBlurData}
                   loading={isActiveOrNearby ? 'eager' : 'lazy'}
