@@ -129,8 +129,7 @@ const config: Config = {
           textDecoration: 'underline',
         },
         'main ::placeholder': {
-          color: '#000000',
-          opacity: '0.8',
+          color: 'rgba(0, 0, 0, 0.8)',
         },
         '.pad-wrap': {
           paddingLeft: padWrapPadding,
