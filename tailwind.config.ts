@@ -88,10 +88,10 @@ const config: Config = {
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
-      const GLOBAL_BLACK = '#12121c'
       const TOOL_TIP_TRANSITION = 'opacity 0.3s'
       const xlScreenWidth = parseInt(theme('screens.xl'), 10)
       const padWrapPadding = `calc(50% - ${xlScreenWidth / 2}px)`
+      const accentTwo200 = theme('colors.accenttwo.200')!
       const gradientOneColor = theme('colors.gradientone')!
       const gradientTwoColor = theme('colors.gradienttwo')!
       const gradientThreeColor = theme('colors.gradientthree')!
@@ -155,7 +155,7 @@ const config: Config = {
           '&:before': {
             borderRight: `${spacing2} solid transparent`,
             borderLeft: `${spacing2} solid transparent`,
-            borderTop: `${spacing2} solid ${GLOBAL_BLACK}`,
+            borderTop: `${spacing2} solid ${accentTwo200}`,
             content: '""',
             opacity: '0',
             pointerEvents: 'none',
@@ -165,9 +165,9 @@ const config: Config = {
             left: '0',
           },
           '&:after': {
-            backgroundColor: GLOBAL_BLACK,
+            backgroundColor: `${accentTwo200}`,
             borderRadius: '0.375rem',
-            color: '#f5f5f5',
+            color: theme('colors.accentone.100'),
             content: 'attr(aria-label)',
             fontSize: theme('spacing.3'),
             opacity: '0',
