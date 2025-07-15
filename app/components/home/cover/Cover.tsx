@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { SM, MD } from '@/app/constants/breakpoints'
 import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
 import '@/app/styles/home/cover.css'
 import { useReady } from '@/app/hooks/shared/useReady'
@@ -34,7 +35,7 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
         alt=""
         fetchPriority="high"
         className="cover-image"
-        sizes="100vw"
+        sizes={`(max-width: ${SM}) 800px, (max-width: ${MD}) 1700px, 1920px`}
         ref={parallaxImgref}
         style={{
           opacity: parallaxReady ? 1 : 0,
