@@ -36,7 +36,6 @@ const config: Config = {
         gradienttwo: 'var(--color-gradienttwo)',
         gradientone: 'var(--color-gradientone)',
         siteblack: 'var(--color-siteblack)',
-        whitesmoke: 'var(--color-whitesmoke)',
       },
       fontFamily: {
         poppins: ['var(--font-poppins)'],
@@ -98,9 +97,6 @@ const config: Config = {
       const spacing2 = theme('spacing.2')
       const spacing5 = theme('spacing.5')
       addComponents({
-        html: {
-          backgroundColor: theme('whitesmoke'),
-        },
         body: {
           color: theme('colors.text'),
           fontFamily: theme('fontFamily.inconsolata'),

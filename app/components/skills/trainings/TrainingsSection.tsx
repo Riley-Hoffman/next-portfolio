@@ -15,7 +15,7 @@ export const TrainingsSection = () => (
           }
         `}
       </style>
-      <div className="max-w-md rounded bg-whitesmoke p-4 shadow">
+      <div className="max-w-md rounded bg-white p-4 shadow">
         <p className="mb-2">
           JavaScript is disabled. You can view my certificates and trainings on
           these platforms:

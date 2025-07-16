@@ -16,7 +16,6 @@
     --color-gradienttwo: #d81b60;
     --color-gradientone: #7e57c2;
     --color-siteblack: #0a0a0a;
-    --color-whitesmoke: #f5f5f5;
   }
   :root[class~='dark'] {
     --color-heading: #edede3;
@@ -31,7 +30,6 @@
     --color-gradienttwo: #51b6b6;
     --color-gradientone: #22728b;
   }
-
   html.dark {
     @apply bg-siteblack;
   }
@@ -162,7 +160,7 @@
   }
   .theme-changer svg {
     @apply absolute inset-1 size-6 rounded-full;
-    @apply bg-accenttwo-200 p-1 text-whitesmoke transition-transform;
+    @apply bg-accenttwo-200 p-1 text-white transition-transform;
     @apply dark:translate-x-8 dark:text-siteblack;
   }
   .theme-changer:hover svg {
