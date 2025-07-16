@@ -15,8 +15,8 @@ const getAnimationClass = (projectIndex: number): string => {
   if (projectIndex === 0) return ''
 
   return isEven(projectIndex)
-    ? 'motion-safe:md:left-[-200%] [&.active]:left-0'
-    : 'motion-safe:md:right-[-200%] [&.active]:right-0'
+    ? 'motion-safe:lg:left-[-200%] [&.active]:left-0'
+    : 'motion-safe:lg:right-[-200%] [&.active]:right-0'
 }
 
 const getProjectIndex = (project: Project, allProjects: Project[]): number => {

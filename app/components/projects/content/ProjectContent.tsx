@@ -42,8 +42,8 @@ export const ProjectContent = ({
       <div>
         <Image
           className={clsx({
-            'md:mr-auto': inverted,
-            'md:ml-auto': !inverted,
+            'lg:mr-auto': inverted,
+            'lg:ml-auto': !inverted,
           })}
           alt={alt}
           src={imgUrl}

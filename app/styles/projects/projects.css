@@ -5,19 +5,19 @@ main h2 {
   @apply relative flex flex-col-reverse gap-14 ease-in-out;
   @apply my-20 border-b-2 border-t-8;
   @apply after:inset-0 after:rounded-t-full;
-  @apply md:flex-row lg:border-x-2;
+  @apply lg:flex-row lg:border-x-2;
 }
 .project.inverted {
-  @apply md:flex-row-reverse;
+  @apply lg:flex-row-reverse;
 }
 .project.active {
   @apply duration-1000;
 }
 .project > div:first-child {
-  @apply basis-1/2 pb-10 pt-5;
+  @apply basis-5/12 pb-10 pt-5;
 }
 .project > div:last-child {
-  @apply relative basis-1/2;
+  @apply relative basis-7/12;
 }
 .project h3 {
   @apply pb-4 text-2xl;
