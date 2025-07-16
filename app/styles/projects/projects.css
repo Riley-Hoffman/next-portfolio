@@ -14,7 +14,8 @@ main h2 {
   @apply duration-1000;
 }
 .project > div:first-child {
-  @apply basis-5/12 pb-8 pt-5;
+  @apply basis-5/12 pb-8;
+  @apply lg:pt-5;
 }
 .project > div:last-child {
   @apply relative basis-7/12;
