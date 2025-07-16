@@ -20,7 +20,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])
