@@ -9,7 +9,7 @@
   @apply aria-expanded:border-b-0;
 }
 h1 + ul {
-  @apply mb-36 mt-24 rounded-lg py-px shadow-[0.25rem_0.25rem_0] shadow-gradientone;
+  @apply mb-36 mt-24 rounded-lg shadow-[0.25rem_0.25rem_0] shadow-gradientone;
 }
 li:first-child .acc-button {
   @apply rounded-t-lg;

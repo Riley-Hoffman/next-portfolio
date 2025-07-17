@@ -100,7 +100,7 @@
     @apply sr-only;
   }
   footer p {
-    @apply m-0 py-1 text-reduced;
+    @apply m-0 text-reduced;
   }
   footer p:last-of-type {
     @apply md:pr-16;
