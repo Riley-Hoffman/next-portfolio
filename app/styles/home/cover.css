@@ -4,7 +4,7 @@
   @apply dark:before:bg-black;
 }
 .cover-container .cover-image {
-  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover blur-[0.047rem];
+  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover;
   @apply dark:hue-rotate-[266deg] sm:blur-0;
 }
 .cover-container div {
