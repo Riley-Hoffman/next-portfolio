@@ -8,7 +8,7 @@
   @apply dark:hue-rotate-[266deg];
 }
 .cover-container div {
-  @apply relative mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36;
+  @apply relative mx-auto min-h-[75vh] max-w-screen-xl py-36;
   @apply md:translate-y-5;
 }
 .cover-container h1 {
