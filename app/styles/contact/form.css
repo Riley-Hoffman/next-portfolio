@@ -1,7 +1,7 @@
 .form-field {
   @apply gradient-border;
-  @apply border-2 p-2 font-sourcesans caret-[#12121c];
-  @apply focus-visible:border-0 focus-visible:p-[0.625rem] dark:text-[#12121c];
+  @apply border-2 p-2 font-sourcesans text-siteblack;
+  @apply focus-visible:border-0 focus-visible:p-[0.625rem];
 }
 input.form-field {
   @apply mb-6 w-full;
