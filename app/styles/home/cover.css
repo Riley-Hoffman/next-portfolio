@@ -5,7 +5,7 @@
 }
 .cover-container .cover-image {
   @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover;
-  @apply dark:hue-rotate-[266deg] sm:blur-0;
+  @apply dark:hue-rotate-[266deg];
 }
 .cover-container div {
   @apply relative mx-auto min-h-[75vh] max-w-screen-xl pb-24 pt-36;
