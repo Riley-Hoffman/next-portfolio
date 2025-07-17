@@ -1,7 +1,6 @@
 .accordion-border {
   @apply border-accentone-300;
 }
-
 .acc-button {
   @apply accordion-border;
   @apply w-full border-b bg-accentone-200 p-6;
