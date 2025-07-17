@@ -14,13 +14,14 @@
 }
 .site-tech a {
   @apply inline-block transition duration-300;
-  @apply min-h-40 w-full rounded-md bg-accentone-200 p-5;
+  @apply min-h-40 w-full min-w-52 bg-accentone-200 p-5;
   @apply text-sm text-heading no-underline;
-  @apply md:min-w-52 md:hover:bg-heading md:hover:text-accentone-200;
+  @apply md:hover:bg-heading md:hover:text-accentone-200;
+  @apply sm:rounded-md;
 }
 .site-tech a > svg {
   @apply text-6xl;
 }
 .site-tech a > span {
-  @apply mt-2 block text-lg;
+  @apply block text-lg;
 }
