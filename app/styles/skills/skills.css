@@ -1,6 +1,6 @@
 .skills {
   @apply relative mt-12 grid grid-cols-2 gap-x-6 gap-y-16 py-14;
-  @apply after:inset-12 after:rounded-full;
+  @apply after:absolute after:inset-12 after:-z-10 after:rounded-full after:bg-accentone-100;
   @apply sm:grid-cols-3 md:grid-cols-4;
 }
 .skills li {
