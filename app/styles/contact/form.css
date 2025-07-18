@@ -8,10 +8,10 @@
 }
 input.form-field {
   @apply mb-6;
-  @apply lg:ml-3 lg:w-[38%];
+  @apply lg:ml-5 lg:w-72;
 }
 input:first-of-type.form-field {
-  @apply lg:mr-[5%];
+  @apply mr-16;
 }
 textarea.form-field {
   @apply inverted;
