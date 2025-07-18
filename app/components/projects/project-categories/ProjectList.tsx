@@ -3,7 +3,6 @@ import { ProjectListItem } from '../ProjectListItem'
 import { ProjectContent } from '../content/ProjectContent'
 import { Project } from '@/app/types/projects/Project.types'
 import { isEven } from '@/app/utils/isEven'
-import '@/app/styles/projects/projects.css'
 
 interface ProjectListProps {
   category: string

@@ -4,6 +4,8 @@ import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { ContactWrapper } from '@/app/components/contact/ContactWrapper'
 import { Sidebar } from '@/app/components/contact/sidebar/Sidebar'
 import { getPageTitle } from '@/app/constants/baseData'
+import '@/app/styles/contact.css'
+import '@/app/styles/shared/typetext.css'
 
 const DESCRIPTION =
   'Get in touch with web developer Riley Hoffman with the form on this page.'

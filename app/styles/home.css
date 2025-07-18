@@ -1,0 +1,96 @@
+.cover-container {
+  @apply gradient-border inverted;
+  @apply overflow-hidden border-b-4;
+  @apply dark:before:bg-black;
+}
+.cover-container .cover-image {
+  @apply absolute z-10 min-h-[120%] w-[120%] max-w-none object-cover;
+  @apply dark:hue-rotate-[266deg];
+}
+.cover-container div {
+  @apply relative mx-auto min-h-[75vh] max-w-screen-xl py-36;
+  @apply md:translate-y-5;
+}
+.cover-container h1 {
+  @apply m-0 text-3xl font-semibold;
+  @apply md:text-4xl;
+}
+.cover-container h1,
+.cover-container p:first-of-type {
+  @apply drop-shadow-[0_0_10px_var(--color-accentone-100)];
+}
+.cover-container p:first-of-type {
+  @apply m-0 font-semibold;
+}
+.cover-container p:last-child {
+  @apply relative mx-5 mt-8 rounded-sm border-2 border-bordercolor bg-white p-4;
+  @apply before:absolute before:-top-8 before:left-0 before:h-3 before:w-5 before:bg-accenttwo-200;
+  @apply dark:bg-accentone-100;
+  @apply md:w-3/5;
+}
+
+.linkedin-button {
+  @apply mx-5 my-7 block w-80 max-w-[calc(100%-2.5rem)];
+  @apply sm:text-lg;
+}
+.linkedin-button > svg:first-child {
+  @apply mr-6 box-content p-2 text-5xl text-heading;
+  @apply bg-accentone-300 dark:bg-[#292d11];
+}
+.linkedin-button:hover > svg:first-child {
+  @apply md:bg-heading md:text-accentone-300 dark:md:bg-heading;
+}
+
+.my-journey {
+  @apply pad-wrap;
+  @apply bg-diamonds pb-10 pt-16;
+  @apply motion-reduce:hue-rotate-0 dark:bg-diamondsdark;
+  @apply md:flex md:items-center;
+}
+.my-journey figure {
+  @apply relative mx-auto block w-fit;
+}
+.my-journey img {
+  @apply size-96 rounded-t-3xl border border-b-[2rem] object-cover;
+}
+.my-journey figcaption {
+  @apply absolute bottom-1 left-5;
+}
+.my-journey img,
+.my-journey > div {
+  @apply md:rounded-3xl;
+}
+.my-journey > div {
+  @apply mx-auto mt-0 min-h-[45.5rem] w-96 max-w-full py-6;
+  @apply rounded-b-3xl border-2 bg-white;
+  @apply dark:bg-siteblack;
+  @apply md:mx-6 md:my-6 md:w-2/3 lg:px-[8%];
+}
+
+.site-tech {
+  @apply gradient-border;
+  @apply border-t-2 pb-12 pt-2 text-center;
+}
+.site-tech h2 {
+  @apply mb-1 font-inconsolata text-2xl;
+}
+.site-tech ul {
+  @apply min-h-40;
+  @apply sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5;
+}
+.site-tech li {
+  @apply pt-8;
+}
+.site-tech a {
+  @apply inline-block transition duration-300;
+  @apply min-h-40 w-full min-w-52 bg-accentone-200 p-5;
+  @apply text-sm text-heading no-underline;
+  @apply md:hover:bg-heading md:hover:text-accentone-200;
+  @apply sm:rounded-md;
+}
+.site-tech a > svg {
+  @apply text-6xl;
+}
+.site-tech a > span {
+  @apply block text-lg;
+}

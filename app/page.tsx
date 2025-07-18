@@ -8,7 +8,9 @@ import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
 import { BASE_DESCRIPTION } from '@/app/constants/baseData'
 import { cloudsBlurData } from './constants/blurDataUrls'
+import '@/app/styles/home.css'
 import '@/app/styles/shared/overlay.css'
+import '@/app/styles/shared/typetext.css'
 
 const DESCRIPTION = BASE_DESCRIPTION
 

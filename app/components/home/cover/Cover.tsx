@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { SM, MD } from '@/app/constants/breakpoints'
 import { CoverImageProps } from '@/app/types/home/CoverImage.interface'
-import '@/app/styles/home/cover.css'
 import { useReady } from '@/app/hooks/shared/useReady'
 
 const LazyParallax = dynamic(() => import('./dynamic-imports/LazyParallax'), {

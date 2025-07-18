@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic'
 import { LinkedInButton } from '../LinkedInButton'
 import { SM, LG } from '@/app/constants/breakpoints'
 import { headshotBlurData } from '@/app/constants/blurDataUrls'
-import '@/app/styles/home/my-journey.css'
 
 const LazyHueRotateOnScroll = dynamic(
   () => import('./dynamic-imports/LazyHueRotateOnScroll')

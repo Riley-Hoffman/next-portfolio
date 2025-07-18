@@ -1,6 +1,5 @@
 import { SKILLS_DATA } from '@/app/constants/skills/skillsData'
 import { SkillItem } from './SkillItem'
-import '@/app/styles/skills/skills.css'
 
 export const SkillsSection = () => (
   <>

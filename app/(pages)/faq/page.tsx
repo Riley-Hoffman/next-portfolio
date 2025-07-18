@@ -3,6 +3,7 @@ import { FaqSchema } from '@/app/components/faq/schema/FaqSchema'
 import { Accordion } from '@/app/components/faq/accordion/Accordion'
 import { QUESTIONS, HTML_ANSWERS } from '@/app/constants/faq/faqItems'
 import { getPageTitle } from '@/app/constants/baseData'
+import '@/app/styles/faq.css'
 
 export const metadata = createMetadata({
   title: getPageTitle('FAQ'),

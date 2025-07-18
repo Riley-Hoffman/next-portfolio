@@ -1,6 +1,5 @@
 import { FormField } from './FormField'
 import { useContactForm } from '@/app/hooks/contact/useContactForm'
-import '@/app/styles/contact/form.css'
 
 interface FormProps {
   onErrors: (errors: string[]) => void

@@ -1,5 +1,3 @@
-import '@/app/styles/shared/typetext.css'
-
 export const FirstFoldContent = () => (
   <>
     <h1>Riley Hoffman</h1>

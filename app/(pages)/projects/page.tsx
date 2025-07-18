@@ -5,6 +5,7 @@ import { fetchFirebaseData } from '@/app/utils/fetchFirebaseData'
 import { ProjectCategoryRenderer } from '@/app/components/projects/project-categories/ProjectCategoryRenderer'
 import { Project } from '@/app/types/projects/Project.types'
 import { getPageTitle } from '@/app/constants/baseData'
+import '@/app/styles/projects.css'
 
 const DESCRIPTION = `View past projects by ${getPageTitle()}.`
 const TITLE = getPageTitle('Projects')

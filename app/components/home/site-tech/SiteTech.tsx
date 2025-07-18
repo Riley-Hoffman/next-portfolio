@@ -1,6 +1,5 @@
 import { TechItem } from './TechItem'
 import { TECHNOLOGIES } from '@/app/constants/home/technologies'
-import '@/app/styles/home/site-tech.css'
 
 const SiteTech = () => (
   <>

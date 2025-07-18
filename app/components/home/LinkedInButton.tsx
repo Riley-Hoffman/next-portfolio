@@ -4,7 +4,6 @@ import { Icon } from '@iconify/react'
 import { useHoverWiggle } from '@/app/hooks/shared/useHoverWiggle'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
-import '@/app/styles/home/linkedin-button.css'
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/riley-hoffman-014623213'
 

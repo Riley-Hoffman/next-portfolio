@@ -3,5 +3,4 @@ export const carouselStyle = () =>
     import('swiper/css'),
     import('swiper/css/navigation'),
     import('swiper/css/pagination'),
-    import('@/app/styles/carousel/carousel.css'),
   ])

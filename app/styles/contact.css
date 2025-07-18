@@ -1,0 +1,71 @@
+.contact-content {
+  @apply m-5 min-h-80 rounded-t-md bg-heading;
+  @apply sm:min-h-64;
+}
+.contact-content > h2 {
+  @apply mb-1 w-80;
+}
+.contact-content > h2 + p {
+  @apply text-xl;
+}
+.contact-content > h3 {
+  @apply mb-0 font-inconsolata uppercase tracking-widest;
+}
+.contact-content > p:last-child {
+  @apply mt-0 text-base;
+}
+.contact-content > p:last-child span {
+  @apply block;
+}
+.contact-content * {
+  @apply font-semibold text-accentone-200;
+}
+
+.form-field {
+  @apply gradient-border;
+  @apply border-2 p-2 font-sourcesans text-siteblack;
+  @apply focus-visible:border-0 focus-visible:p-[0.625rem];
+}
+.form-field {
+  @apply w-full;
+}
+input.form-field {
+  @apply mb-6;
+  @apply lg:ml-5 lg:w-72;
+}
+input:first-of-type.form-field {
+  @apply mr-16;
+}
+textarea.form-field {
+  @apply inverted;
+}
+
+.sidebar {
+  @apply mt-5 self-start bg-accentone-200 pb-1 text-center;
+  @apply md:rounded-sm md:border-x md:border-b md:border-bordercolor;
+  @apply md:sticky md:top-24 md:w-1/6;
+}
+.sidebar h3 {
+  @apply mx-auto my-0 bg-heading text-accentone-200;
+}
+.sidebar a {
+  @apply block py-3 font-urbanist text-base no-underline;
+}
+
+.error-list {
+  @apply space-y-6 px-5 text-xl;
+}
+.error-list li {
+  counter-increment: circle;
+  @apply relative pl-5;
+  @apply before:text-heading;
+}
+.error-list li:before {
+  @apply absolute -left-5 top-1/2 -translate-y-1/2 content-[counter(circle)];
+  @apply flex items-center justify-center;
+  @apply mr-5 size-7 rounded-full p-1;
+  @apply font-poppins text-base font-semibold;
+}
+.error-list li:not([class*='before:bg-']):before {
+  @apply bg-accenttwo-100;
+}

@@ -4,6 +4,7 @@ import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { SkillsSection } from '@/app/components/skills/skills/SkillsSection'
 import { TrainingsSection } from '@/app/components/skills/trainings/TrainingsSection'
 import { getPageTitle } from '@/app/constants/baseData'
+import '@/app/styles/skills.css'
 
 const DESCRIPTION = `My skills. ${getPageTitle()}.`
 const TITLE = getPageTitle('Skills')
