@@ -1,5 +1,5 @@
-main h2,
-main p {
+.particle-tech,
+.particle-tech + p {
   @apply px-0;
 }
 ul[aria-label='Medal Criteria'] {

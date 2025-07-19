@@ -6,7 +6,7 @@ const medalData: MedalCriteriaData[] = getMedalCriteriaArray()
 
 export const ParticleCleanupCopy = () => (
   <>
-    <h2>React, TSX, SCSS</h2>
+    <h2 className="particle-tech">React, TSX, Tailwind</h2>
     <p>
       How quickly can you clear all the stars from the board using your cursor
       or finger?
