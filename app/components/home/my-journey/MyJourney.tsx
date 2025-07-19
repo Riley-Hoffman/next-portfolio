@@ -25,6 +25,7 @@ export const MyJourney = () => {
           alt="Riley with a flower behind his ear. Shot in black and white."
           sizes={`(max-width: ${SM}) 100vw, (max-width: ${LG}) 50vw, 382px`}
           blurDataURL={headshotBlurData}
+          quality={80}
           placeholder="blur"
           itemProp="contentUrl"
         />
