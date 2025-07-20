@@ -193,4 +193,18 @@
     @apply rounded-md border-2 border-accentone-300 p-2;
     @apply md:tool-tip md:hover:border-heading;
   }
+  .animate-typetext {
+    animation-composition: add;
+    @apply inline-block whitespace-nowrap border-r-2 border-transparent tracking-widest;
+  }
+  .overlay {
+    @apply relative;
+  }
+  .overlay:before {
+    @apply absolute-full z-20 bg-white opacity-50 content-[''];
+    @apply contrast-more:opacity-75;
+  }
+  .overlay > *:not(.cover-image) {
+    @apply z-30;
+  }
 }

@@ -4,7 +4,6 @@ import SchemaInjector from '@/app/components/schema/SchemaInjector'
 import { ParticleCleanupCopy } from '@/app/components/particle-cleanup/content/ParticleCleanupCopy'
 import { ParticleCleanupGame } from '@/app/components/particle-cleanup/ParticleCleanupGame'
 import '@/app/styles/particle-cleanup.css'
-import '@/app/styles/shared/overlay.css'
 
 const DESCRIPTION =
   'How quickly can you clear all the stars from the board using your cursor or finger?'
