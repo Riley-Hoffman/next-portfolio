@@ -32,6 +32,7 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
         width={coverImageData.width}
         height={coverImageData.height}
         alt=""
+        loading="eager"
         fetchPriority="high"
         className="cover-image"
         sizes={`(max-width: ${SM}) 800px, (max-width: ${MD}) 1700px, 1920px`}
