@@ -25,7 +25,7 @@ const schemaData = SchemaFactory.createWebPage({
 })
 
 export default async function ProjectsPage() {
-  const projects = (await fetchFirebaseData<Project[]>('/projects')).flat()
+  const projects = (await fetchFirebaseData<Project[]>(PATH)).flat()
   return (
     <>
       <SchemaInjector structuredData={schemaData} />
