@@ -6,14 +6,14 @@ import { Cover } from './components/home/cover/Cover'
 import { CoverImageProps } from './types/home/CoverImage.interface'
 import { FirstFoldContent } from './components/home/FirstFoldContent'
 import { MyJourney } from './components/home/my-journey/MyJourney'
-import { BASE_DESCRIPTION } from '@/app/constants/baseData'
+import { getPageTitle, BASE_DESCRIPTION } from '@/app/constants/baseData'
 import { cloudsBlurData } from './constants/blurDataUrls'
 import '@/app/styles/home.css'
 
 const DESCRIPTION = BASE_DESCRIPTION
 
 const schemaData = SchemaFactory.createWebPage({
-  title: '',
+  title: getPageTitle(),
   description: DESCRIPTION,
   urlPath: '',
   publishDate: '2024-07-04T09:25:01.340Z',
