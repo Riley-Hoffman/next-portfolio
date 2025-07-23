@@ -176,7 +176,7 @@
   .heading-one {
     @apply gradient-border inverted;
     @apply mb-7 mt-0 border-b-2 bg-accentone-100 px-5 py-10;
-    @apply text-center text-3xl font-bold tracking-tight;
+    @apply text-center text-3xl font-bold;
     @apply md:text-5xl md:leading-normal;
   }
   .skip-to-content,
