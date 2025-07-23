@@ -92,7 +92,7 @@
     @apply bg-accentone-300 text-heading shadow-none;
   }
   footer {
-    @apply min-h-24 border-t bg-accentone-300 py-7;
+    @apply border-t bg-accentone-300 py-7;
     @apply contrast-more:bg-accentone-100 dark:bg-accentone-200;
     @apply md:flex md:items-center md:justify-between;
   }
