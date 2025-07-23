@@ -66,7 +66,7 @@
   header > nav ul {
     @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0;
     @apply text-base shadow-lg shadow-black/10 transition-transform;
-    @apply md:static md:w-auto md:scale-x-100 md:shadow-none;
+    @apply md:static md:scale-x-100 md:shadow-none;
   }
   header > nav li {
     @apply block;
