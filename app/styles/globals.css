@@ -195,7 +195,7 @@
     @apply md:hover:border-heading;
   }
   .animate-typetext {
-    @apply inline-block whitespace-nowrap border-r-2 border-transparent tracking-widest;
+    @apply inline-block whitespace-nowrap border-r-2 tracking-widest;
   }
   .overlay {
     @apply relative;
