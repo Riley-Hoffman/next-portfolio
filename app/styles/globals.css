@@ -141,7 +141,7 @@
   }
   .hamburger-line {
     @apply gradient-border;
-    @apply absolute top-4 block w-7 rotate-0 border-2 brightness-90 duration-200 ease-in-out;
+    @apply absolute top-4 block w-7 rotate-0 border-2 brightness-90 transition-all;
     @apply first:top-2 last:top-6;
   }
   .hamburger[aria-expanded='true'] .hamburger-line {
@@ -168,7 +168,7 @@
   }
 
   .button {
-    @apply bg-heading text-accentone-100 no-underline transition duration-300 ease-in-out;
+    @apply bg-heading text-accentone-100 no-underline transition;
     @apply active:scale-95;
     @apply md:hover:bg-accentone-100 md:hover:text-heading;
     @apply md:hover:shadow-sm md:hover:shadow-black/10 md:dark:hover:shadow-white/10;
