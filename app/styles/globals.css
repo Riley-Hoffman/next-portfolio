@@ -191,10 +191,10 @@
     @apply hover-lift;
     @apply fixed bottom-5 right-5 z-20;
     @apply rounded-md border-2 border-accentone-300 p-2;
-    @apply md:tool-tip md:hover:border-heading;
+    @apply md:tool-tip;
+    @apply md:hover:border-heading;
   }
   .animate-typetext {
-    animation-composition: add;
     @apply inline-block whitespace-nowrap border-r-2 border-transparent tracking-widest;
   }
   .overlay {
