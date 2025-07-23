@@ -52,7 +52,7 @@
   }
   header {
     @apply sticky -top-8 z-50 flex min-h-[7.625rem] items-center justify-between;
-    @apply border-b-2 border-t-[2rem] bg-accentone-100 py-6;
+    @apply border-b-2 border-t-[2rem] bg-accentone-100 py-5;
   }
   header > button {
     @apply m-0 pl-4 pr-0;
@@ -60,11 +60,11 @@
     @apply md:font-normal lg:text-2xl;
   }
   header > nav {
-    @apply h-10;
+    @apply h-12;
     @apply md:min-w-36;
   }
   header > nav ul {
-    @apply relative right-0 top-6 z-20 m-0 origin-right scale-x-0;
+    @apply relative right-0 top-7 z-20 m-0 origin-right scale-x-0;
     @apply text-base shadow-lg shadow-black/10 transition-transform;
     @apply md:static md:scale-x-100 md:shadow-none;
   }
@@ -76,7 +76,7 @@
     @apply button;
     @apply relative w-full min-w-[11ch] px-9 py-3;
     @apply whitespace-nowrap text-center tracking-wider;
-    @apply md:w-auto md:px-2 md:py-2 xl:px-4;
+    @apply md:w-auto md:p-3;
   }
   header > nav a:not(.active) {
     @apply hover-lift;
@@ -136,7 +136,7 @@
     @apply md:hover:translate-y-[-2px];
   }
   .hamburger {
-    @apply relative z-10 ml-auto block h-10 w-16 px-5;
+    @apply relative top-1 z-10 ml-auto block h-10 w-16 px-5;
     @apply md:hidden;
   }
   .hamburger-line {
