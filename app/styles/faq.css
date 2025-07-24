@@ -7,7 +7,7 @@
   @apply border-b;
 }
 h1 + ul {
-  @apply mb-36 mt-24 rounded-lg shadow-[0.25rem_0.25rem_0] shadow-gradientone;
+  @apply mb-[20vh] mt-[15vh] rounded-lg shadow-[0.25rem_0.25rem_0] shadow-gradientone;
 }
 li:first-child .acc-button {
   @apply rounded-t-lg;
