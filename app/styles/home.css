@@ -51,11 +51,8 @@
   @apply relative mx-auto block w-fit;
 }
 .my-journey img {
-  @apply h-96 rounded-t-3xl border border-b-[2rem] object-cover;
+  @apply h-96 rounded-t-3xl border-8 object-cover;
   @apply md:w-auto lg:w-96;
-}
-.my-journey figcaption {
-  @apply absolute bottom-1 left-5;
 }
 .my-journey img,
 .my-journey > div {

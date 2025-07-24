@@ -19,17 +19,16 @@ export const MyJourney = () => {
       <figure itemScope itemType="https://schema.org/ImageObject">
         <Image
           className={`max-w-full ${LIGHT_BORDER} ${DARK_BORDER}`}
-          src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot.webp"
+          src="https://storage.googleapis.com/rileyhoffmandotcom.appspot.com/headshot2025.webp"
           width={382}
           height={384}
-          alt="Riley with a flower behind his ear. Shot in black and white."
-          sizes={`(max-width: ${SM}) 100vw, (max-width: ${LG}) 50vw, 382px`}
+          alt="A black and white photo of Riley Hoffman in a black tshirt."
+          sizes={`(max-width: ${SM}px) 100vw, (max-width: ${LG}px) 50vw, 382px`}
           blurDataURL={headshotBlurData}
-          quality={80}
+          quality={93}
           placeholder="blur"
           itemProp="contentUrl"
         />
-        <figcaption itemProp="creditText">Photo by Kristen Mommertz</figcaption>
       </figure>
       <div className={`${LIGHT_BORDER} ${DARK_BORDER}`}>
         <h2>My Journey</h2>

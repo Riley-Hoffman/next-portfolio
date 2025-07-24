@@ -20,7 +20,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -46,7 +46,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   return (
     <div
       className={clsx('relative max-w-7xl', {
-        'pointer-events-none max-h-72 opacity-0 sm:max-h-[589.3px] md:max-h-[487.2px]':
+        'pointer-events-none max-h-72 opacity-0 sm:max-h-[589.3px] md:max-h-[487.2px] h-':
           !isReady,
       })}
       aria-busy={!isReady}
@@ -107,7 +107,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
                   alt={label}
                   width={900}
                   height={695}
-                  sizes={`(max-width: ${MD}) 100vw, (max-width: ${LG}) 49vw, 630px`}
+                  sizes={`(max-width: ${MD}px) 100vw, (max-width: ${LG}px) 49vw, 630px`}
                   placeholder="blur"
                   blurDataURL={certificateBlurData}
                   loading={isActiveOrNearby ? 'eager' : 'lazy'}

@@ -35,7 +35,7 @@ export const Cover = ({ coverImageData }: CoverImageProps) => {
         loading="eager"
         fetchPriority="high"
         className="cover-image"
-        sizes={`(max-width: ${SM}) 800px, (max-width: ${MD}) 1700px, 1920px`}
+        sizes={`(max-width: ${SM}px) 800px, (max-width: ${MD}px) 1700px, 1920px`}
         ref={parallaxImgref}
         style={{
           opacity: parallaxReady ? 1 : 0,
