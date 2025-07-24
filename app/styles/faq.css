@@ -1,11 +1,10 @@
-.accordion-border {
-  @apply border-accentone-300;
-}
 .acc-button {
-  @apply accordion-border;
-  @apply w-full border-b bg-accentone-200 p-6;
+  @apply border-accentone-300;
+  @apply w-full bg-accentone-200 p-6;
   @apply text-left text-xl font-semibold leading-9;
-  @apply aria-expanded:border-b-0;
+}
+.acc-button:not(:last-child) {
+  @apply border-b;
 }
 h1 + ul {
   @apply mb-36 mt-24 rounded-lg shadow-[0.25rem_0.25rem_0] shadow-gradientone;
@@ -14,7 +13,7 @@ li:first-child .acc-button {
   @apply rounded-t-lg;
 }
 li:last-child .acc-button {
-  @apply rounded-b-lg border-b-0;
+  @apply rounded-b-lg;
 }
 .acc-answer {
   @apply overflow-hidden duration-500;
@@ -24,23 +23,19 @@ li:last-child .acc-button {
 }
 .plus-minus {
   @apply relative mb-[0.063rem] mr-5 box-content inline-block rounded-full;
-  @apply bg-heading p-3 align-middle text-xs text-accentone-300 transition-colors;
-}
-.acc-button[aria-expanded='true'] .plus-minus {
-  @apply bg-accenttwo-100 text-heading;
+  @apply bg-heading p-3 align-middle transition-colors;
+  @apply md:group-hover:bg-accenttwo-100;
+  @apply before:h-0.5 before:w-2;
+  @apply after:h-2 after:w-0.5;
 }
 .plus-minus:before,
 .plus-minus:after {
-  @apply bg-[currentColor] content-[''];
-  @apply absolute inset-1/2 h-0.5 w-2 -translate-x-1/2 -translate-y-1/2;
+  @apply content-[''];
+  @apply absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 bg-accentone-300;
   @apply transition-transform;
+  @apply md:group-hover:bg-heading;
 }
-.acc-button:hover .plus-minus {
+.acc-button[aria-expanded='true'] .plus-minus {
   @apply bg-accenttwo-100 text-heading;
-}
-.plus-minus:after {
-  @apply h-2 w-0.5 rotate-0;
-}
-[aria-expanded='true'] .plus-minus:after {
-  @apply rotate-90;
+  @apply after:rotate-90;
 }
