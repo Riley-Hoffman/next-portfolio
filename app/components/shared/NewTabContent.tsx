@@ -13,7 +13,7 @@ export const NewTabContent = ({
     <span className="sr-only"> (Opens in a new tab)</span>
     {icon && (
       <Icon
-        className={`ml-0.5 ${hideIconOnMobile ? 'hidden sm:inline-block' : ''}`}
+        className={`ml-1 ${hideIconOnMobile ? 'hidden sm:inline-block' : ''}`}
         icon="fluent:window-new-16-regular"
       />
     )}

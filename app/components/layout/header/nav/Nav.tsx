@@ -19,7 +19,7 @@ export const Nav = () => {
         {MAIN_ROUTES.map(({ to, label }) => (
           <NavListItem key={to} to={to} label={label} hide={hide} />
         ))}
-        <NavListItem resume="/riley-hoffman-resume.pdf" hide={hide} />
+        <NavListItem to="/riley-hoffman-resume.pdf" hide={hide} />
       </ul>
     </nav>
   )

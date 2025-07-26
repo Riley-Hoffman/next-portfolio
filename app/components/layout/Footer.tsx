@@ -1,22 +1,20 @@
-import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { getPageTitle, GITHUB_URL, VERSION } from '@/app/constants/baseData'
-import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 export const Footer = () => (
   <footer>
     <h2>Footer</h2>
     <p>
       {getPageTitle()} <small>(v{VERSION}) </small>
-      <a
+      <LinkWrapper
         href={GITHUB_URL}
         aria-label="Site repo on GitHub (Opens in a new tab)"
-        {...EXTERNAL_LINK_ATTR}
       >
         <Icon icon="cib:github" />
-      </a>
+      </LinkWrapper>
     </p>
-    <Link href="/accessibility/">Accessibility</Link>
+    <LinkWrapper href="/accessibility/">Accessibility</LinkWrapper>
     <p>©{new Date().getFullYear()}</p>
   </footer>
 )

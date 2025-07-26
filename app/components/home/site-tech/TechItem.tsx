@@ -1,19 +1,15 @@
 import { Icon } from '@iconify/react'
 import { Tech } from '@/app/types/home/Tech.interface'
-import { NewTabContent } from '@/app/components/shared/NewTabContent'
-import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 export const TechItem = ({ name, logo, url, version }: Tech) => (
   <>
     <li key={name}>
-      <a href={url} {...EXTERNAL_LINK_ATTR}>
+      <LinkWrapper href={url}>
         <Icon icon={logo} />
-        <span>
-          {name}
-          <NewTabContent />
-        </span>
+        <span>{name}</span>
         {version}
-      </a>
+      </LinkWrapper>
     </li>
   </>
 )

@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import { useRoutes } from '@/app/hooks/shared/useRoutes'
-import { NewTabContent } from '@/app/components/shared/NewTabContent'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 const NO_JS_MENU_LINK_CLASSES = 'button px-2 py-1 md:px-3 md:py-2'
 
@@ -12,18 +11,18 @@ export const NoJsMenu = () => {
         <ul className="flex flex-wrap justify-center gap-y-2 bg-heading py-2">
           {MAIN_ROUTES.map(({ to, label }) => (
             <li key={to}>
-              <Link className={NO_JS_MENU_LINK_CLASSES} href={to}>
+              <LinkWrapper className={NO_JS_MENU_LINK_CLASSES} href={to}>
                 {label}
-              </Link>
+              </LinkWrapper>
             </li>
           ))}
           <li>
-            <a
+            <LinkWrapper
               className={NO_JS_MENU_LINK_CLASSES}
               href="/riley-hoffman-resume.pdf"
             >
-              Resume <NewTabContent icon={false} />
-            </a>
+              Resume
+            </LinkWrapper>
           </li>
         </ul>
       </nav>

@@ -7,12 +7,11 @@ import type { Swiper as SwiperInstance } from 'swiper'
 import { Pagination, Navigation, A11y, Mousewheel } from 'swiper/modules'
 import { CarouselButtons } from './CarouselButtons'
 import { SlideData } from '@/app/types/carousel/SlideData.interface'
-import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { MD, LG } from '@/app/constants/breakpoints'
-import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { certificateBlurData } from '@/app/constants/blurDataUrls'
 import { carouselStyle } from '@/app/utils/carouselStyle'
 import { useReady } from '@/app/hooks/shared/useReady'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
@@ -20,7 +19,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await carouselStyle()
     })()
   }, [])
@@ -46,7 +45,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   return (
     <div
       className={clsx('relative max-w-7xl', {
-        'pointer-events-none max-h-72 opacity-0 sm:max-h-[589.3px] md:max-h-[487.2px] h-':
+        'h- pointer-events-none max-h-72 opacity-0 sm:max-h-[589.3px] md:max-h-[487.2px]':
           !isReady,
       })}
       aria-busy={!isReady}
@@ -101,7 +100,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
 
           return (
             <SwiperSlide key={src}>
-              <a href={url} {...EXTERNAL_LINK_ATTR}>
+              <LinkWrapper href={url}>
                 <Image
                   src={src}
                   alt={label}
@@ -112,8 +111,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
                   blurDataURL={certificateBlurData}
                   loading={isActiveOrNearby ? 'eager' : 'lazy'}
                 />
-                <NewTabContent icon={false} />
-              </a>
+              </LinkWrapper>
             </SwiperSlide>
           )
         })}

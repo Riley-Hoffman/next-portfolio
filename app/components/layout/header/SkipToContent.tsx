@@ -1,5 +1,7 @@
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
+
 export const SkipToContent = () => (
-  <a href="#main" className="skip-to-content">
+  <LinkWrapper href="#main" className="skip-to-content">
     Skip To Content
-  </a>
+  </LinkWrapper>
 )

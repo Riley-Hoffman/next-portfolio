@@ -1,10 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import clsx from 'clsx'
-import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { SM, MD } from '@/app/constants/breakpoints'
-import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
 import { Project } from '@/app/types/projects/Project.types'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 export const ProjectContent = ({
   alt,
@@ -19,15 +17,11 @@ export const ProjectContent = ({
   inverted,
   isFirst,
 }: Project) => {
-  const renderLink = (url: string, label: string, isInternal?: boolean) =>
-    isInternal ? (
-      <Link href={url}>{label}</Link>
-    ) : (
-      <a href={url} {...EXTERNAL_LINK_ATTR}>
-        {label}
-        <NewTabContent />
-      </a>
-    )
+  const renderLink = (url: string, label: string, isInternal?: boolean) => (
+    <LinkWrapper href={url} showNewTabIcon={!isInternal}>
+      {label}
+    </LinkWrapper>
+  )
 
   return (
     <>

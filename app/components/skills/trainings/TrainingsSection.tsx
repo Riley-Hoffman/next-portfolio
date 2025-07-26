@@ -1,7 +1,7 @@
 import { Carousel } from './carousel/Carousel'
 import { SLIDE_DATA } from '@/app/constants/carousel/slideData'
 import { NOSCRIPT_LINKS } from './constants/noscriptLinks'
-import { EXTERNAL_LINK_ATTR } from '@/app/constants/externalLinkAttr'
+import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
 export const TrainingsSection = () => (
   <section className="gradient-border overflow-hidden border-t-2 bg-accentone-100 pb-16 pt-7">
@@ -23,9 +23,9 @@ export const TrainingsSection = () => (
         <ul className="list-inside list-disc">
           {NOSCRIPT_LINKS.map((link) => (
             <li key={link.url}>
-              <a href={link.url} {...EXTERNAL_LINK_ATTR}>
+              <LinkWrapper href={link.url} showNewTabIcon={true}>
                 {link.name}
-              </a>
+              </LinkWrapper>
             </li>
           ))}
         </ul>
