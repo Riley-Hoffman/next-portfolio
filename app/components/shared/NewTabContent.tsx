@@ -1,17 +1,13 @@
 import { Icon } from '@iconify/react'
-
-interface NewTabContentProps {
-  icon?: boolean
-  hideIconOnMobile?: boolean
-}
+import { NewTabContentProps } from '@/app/types/new-tab-content/NewTabContent'
 
 export const NewTabContent = ({
-  icon = true,
+  showNewTabIcon = true,
   hideIconOnMobile = false,
 }: NewTabContentProps) => (
   <>
-    <span className="sr-only"> (Opens in a new tab)</span>
-    {icon && (
+    <span className="sr-only">(Opens in a new tab)</span>
+    {showNewTabIcon && (
       <Icon
         className={`ml-1 ${hideIconOnMobile ? 'hidden sm:inline-block' : ''}`}
         icon="fluent:window-new-16-regular"
