@@ -166,7 +166,6 @@
   .theme-changer:hover svg {
     @apply md:outline md:outline-1 md:outline-accenttwo-200;
   }
-
   .button {
     @apply bg-heading text-accentone-100 no-underline transition;
     @apply active:scale-95;
@@ -193,6 +192,9 @@
     @apply rounded-md border-2 border-accentone-300 p-2;
     @apply md:tool-tip;
     @apply md:hover:border-heading;
+  }
+  .back-to-top:after {
+    @apply md:-left-2;
   }
   .animate-typetext {
     @apply inline-block whitespace-nowrap border-r-2 tracking-widest;
