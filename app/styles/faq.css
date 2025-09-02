@@ -21,9 +21,14 @@ li:last-child .acc-button {
 .acc-answer > * {
   @apply px-10;
 }
+.plus-minus,
+.acc-button[aria-expanded='true'] .plus-minus:before,
+.acc-button[aria-expanded='true'] .plus-minus:after {
+  @apply bg-heading;
+}
 .plus-minus {
-  @apply relative mb-[0.063rem] mr-5 box-content inline-block rounded-full;
-  @apply bg-heading p-3 align-middle transition-colors;
+  @apply relative mb-[0.063rem] mr-5 inline-block rounded-full;
+  @apply p-3 align-middle transition-colors;
   @apply md:group-hover:bg-accenttwo-100;
   @apply before:h-0.5 before:w-2;
   @apply after:h-2 after:w-0.5;
@@ -36,6 +41,6 @@ li:last-child .acc-button {
   @apply md:group-hover:bg-heading;
 }
 .acc-button[aria-expanded='true'] .plus-minus {
-  @apply bg-accenttwo-100 text-heading;
+  @apply bg-accenttwo-100;
   @apply after:rotate-90;
 }
