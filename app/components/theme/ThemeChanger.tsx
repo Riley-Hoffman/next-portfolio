@@ -10,8 +10,9 @@ export const ThemeChanger = () => {
     <button
       onClick={toggleTheme}
       className="theme-changer"
+      role="switch"
       aria-label={label}
-      aria-pressed={isDarkTheme}
+      aria-checked={isDarkTheme}
     >
       <Icon icon={icon} />
     </button>
