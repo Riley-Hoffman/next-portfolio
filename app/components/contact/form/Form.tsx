@@ -1,8 +1,9 @@
 import { FormField } from './FormField'
 import { useContactForm } from '@/app/hooks/contact/useContactForm'
+import type { NamedError } from '@/app/types/contact/NamedError.interface'
 
 interface FormProps {
-  onErrors: (errors: string[]) => void
+  onErrors: (errors: NamedError[]) => void
 }
 
 export const Form = ({ onErrors }: FormProps) => {

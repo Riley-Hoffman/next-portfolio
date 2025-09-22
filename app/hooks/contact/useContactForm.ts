@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCustomFormErrors } from './useCustomFormErrors'
+import type { NamedError } from '@/app/types/contact/NamedError.interface'
 
 interface FormState {
   name: string
@@ -10,7 +11,7 @@ interface FormState {
 
 interface UseContactFormParams {
   initialFormState: FormState
-  onErrors: (errors: string[]) => void
+  onErrors: (errors: NamedError[]) => void
 }
 
 interface FormError extends Error {
@@ -30,8 +31,13 @@ export const useContactForm = ({
     useCustomFormErrors(initialFormState, isSubmitting)
 
   useEffect(() => {
-    const errorMessages = Object.values(errors).filter(Boolean) as string[]
-    if (errorMessages.length) onErrors(errorMessages)
+    const namedErrors: NamedError[] = Object.entries(errors)
+      .filter(([, message]) => Boolean(message))
+      .map(([name, message]) => ({
+        name: name as keyof FormState,
+        message: message as string,
+      })) as NamedError[]
+    if (namedErrors.length) onErrors(namedErrors)
   }, [errors, onErrors])
 
   const fetchCsrfToken = async () => {
@@ -102,7 +108,13 @@ export const useContactForm = ({
     } catch (error) {
       console.error('Error submitting form:', error)
       onErrors([
-        error instanceof Error ? error.message : 'An unexpected error occurred',
+        {
+          name: 'form',
+          message:
+            error instanceof Error
+              ? error.message
+              : 'An unexpected error occurred',
+        },
       ])
     } finally {
       setIsSubmitting(false)

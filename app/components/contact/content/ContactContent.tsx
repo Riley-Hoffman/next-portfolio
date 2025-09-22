@@ -1,6 +1,7 @@
 import { ErrorList } from './ErrorList'
+import type { NamedError } from '@/app/types/contact/NamedError.interface'
 
-export const ContactContent = ({ errors }: { errors: string[] }) => (
+export const ContactContent = ({ errors }: { errors: NamedError[] }) => (
   <div className="contact-content">
     {!errors.length ? (
       <>
