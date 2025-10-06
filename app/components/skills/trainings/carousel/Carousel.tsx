@@ -19,7 +19,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       await carouselStyle()
     })()
   }, [])
@@ -63,7 +63,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
           dynamicBullets: true,
           dynamicMainBullets: 2,
           renderBullet: (index, className) =>
-            `<button class="${className}" aria-label="${`Slide ${index + 1}`}", title="${slides[index]?.label}"></button>`,
+            `<button class="${className}" aria-label="${`Slide ${index + 1}`}" title="${slides[index]?.label}"></button>`,
         }}
         mousewheel={{
           forceToAxis: true,
