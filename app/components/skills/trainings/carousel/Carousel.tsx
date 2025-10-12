@@ -116,7 +116,7 @@ export const Carousel = ({ slides }: { slides: SlideData[] }) => {
           )
         })}
       </Swiper>
-      <div role="group" aria-label="Carousel controls">
+      <div role="group" aria-roledescription="Carousel controls">
         <CarouselButtons />
       </div>
     </div>

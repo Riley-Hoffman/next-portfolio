@@ -4,13 +4,12 @@ type AccQuestionProps = {
     isOpen: boolean
     onAccClick: () => void
     buttonRef: React.Ref<HTMLButtonElement>
-    questionId: string
     answerId: string
   }
 }
 
 export const AccQuestion = ({ data }: AccQuestionProps) => {
-  const { question, isOpen, onAccClick, buttonRef, questionId, answerId } = data
+  const { question, isOpen, onAccClick, buttonRef, answerId } = data
   return (
     <button
       ref={buttonRef}
@@ -18,7 +17,6 @@ export const AccQuestion = ({ data }: AccQuestionProps) => {
       onClick={onAccClick}
       aria-expanded={isOpen}
       aria-controls={answerId}
-      id={questionId}
     >
       <div className="plus-minus"></div>
       {question}

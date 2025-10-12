@@ -23,7 +23,6 @@ export const Accordion = ({ accItems, label }: AccProps) => {
     <ul className="max-w-prose" aria-label={label}>
       {accItems.map(({ question, answer }, index) => {
         const isOpen = accOpen(index)
-        const questionId = `question-${index}`
         const answerId = `answer-${index}`
 
         return (
@@ -36,7 +35,6 @@ export const Accordion = ({ accItems, label }: AccProps) => {
                 buttonRef: (el) => {
                   buttonRefs[index].current = el
                 },
-                questionId,
                 answerId,
               }}
             />
@@ -48,7 +46,6 @@ export const Accordion = ({ accItems, label }: AccProps) => {
                   contentRefs[index].current = el
                 },
                 answerId,
-                questionId,
               }}
             />
           </li>

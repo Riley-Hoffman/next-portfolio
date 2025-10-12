@@ -8,7 +8,6 @@ type AccAnswerProps = {
     isOpen: boolean
     contentRef: React.Ref<HTMLDivElement>
     answerId: string
-    questionId: string
   }
 }
 
@@ -18,7 +17,7 @@ const getAnswerClasses = (isOpen: boolean) =>
   })
 
 export const AccAnswer = ({ data }: AccAnswerProps) => {
-  const { answer, isOpen, contentRef, answerId, questionId } = data
+  const { answer, isOpen, contentRef, answerId } = data
   const [isReady, onReady] = useReady()
   useEffect(() => {
     onReady()
@@ -34,7 +33,7 @@ export const AccAnswer = ({ data }: AccAnswerProps) => {
         ref={contentRef}
         id={answerId}
         role="region"
-        aria-labelledby={questionId}
+        aria-roledescription="Answer"
       >
         {answer}
       </div>
