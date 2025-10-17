@@ -29,7 +29,6 @@ export const AccAnswer = ({ data }: AccAnswerProps) => {
         className={clsx(getAnswerClasses(isOpen), {
           hidden: !isReady,
         })}
-        tabIndex={-1}
         ref={contentRef}
         id={answerId}
         role="region"

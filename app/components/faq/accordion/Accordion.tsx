@@ -26,7 +26,7 @@ export const Accordion = ({ accItems, label }: AccProps) => {
         const answerId = `answer-${index}`
 
         return (
-          <li key={question}>
+          <li key={question} aria-live="polite">
             <AccQuestion
               data={{
                 question,

@@ -43,7 +43,6 @@ describe('useAccordion', () => {
     const mockContentRef = {
       style: { maxHeight: '' },
       scrollHeight: 100,
-      focus: jest.fn(),
     }
 
     result.current.buttonRefs[0].current =
@@ -62,7 +61,6 @@ describe('useAccordion', () => {
       `${pxToRem(mockContentRef.scrollHeight) + 2.75}rem`
     )
     expect(mockButtonRef.classList.toggle).toHaveBeenCalledWith('init', false)
-    expect(mockContentRef.focus).toHaveBeenCalled()
 
     act(() => {
       result.current.handleAccClick(0)
