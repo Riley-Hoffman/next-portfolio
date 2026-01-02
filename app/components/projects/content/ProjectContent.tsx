@@ -18,7 +18,7 @@ export const ProjectContent = ({
   isFirst,
 }: Project) => {
   const renderLink = (url: string, label: string, isInternal?: boolean) => (
-    <LinkWrapper href={url} showNewTabIcon={!isInternal}>
+    <LinkWrapper href={url} className="button" showNewTabIcon={!isInternal}>
       {label}
     </LinkWrapper>
   )

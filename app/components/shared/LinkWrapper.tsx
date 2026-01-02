@@ -4,8 +4,9 @@ import { NewTabContentProps } from '@/app/types/new-tab-content/NewTabContent'
 
 interface LinkWrapperProps
   extends NewTabContentProps,
-    React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
+  className?: string
   children: React.ReactNode
 }
 
@@ -18,6 +19,7 @@ const isExternal = (href: string): boolean => {
 
 export const LinkWrapper = ({
   href,
+  className,
   children,
   showNewTabIcon = false,
   hideIconOnMobile = false,
@@ -25,7 +27,7 @@ export const LinkWrapper = ({
 }: LinkWrapperProps) => {
   if (isExternal(href)) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" {...rest}>
+      <a href={href} className={className} target="_blank" rel="noopener noreferrer" {...rest}>
         {children}
         <NewTabContent
           hideIconOnMobile={hideIconOnMobile}
@@ -42,7 +44,7 @@ export const LinkWrapper = ({
     : href
 
   return (
-    <Link href={normalizedHref} {...rest}>
+    <Link href={normalizedHref} className={className} {...rest}>
       {children}
     </Link>
   )

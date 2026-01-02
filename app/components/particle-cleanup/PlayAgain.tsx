@@ -3,7 +3,7 @@ type PlayAgainProps = {
 }
 
 export const PlayAgain = ({ reloadAnimation }: PlayAgainProps) => (
-  <button className="play-again" onClick={reloadAnimation}>
+  <button className="play-again button" onClick={reloadAnimation}>
     Play Again
   </button>
 )

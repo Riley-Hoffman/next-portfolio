@@ -1,5 +1,3 @@
-@import './components.css';
-
 .particle-tech,
 .particle-tech + p {
   @apply px-0;
@@ -33,7 +31,7 @@ ul[aria-label='Medal Criteria'] svg {
   @apply drop-shadow-[0.063rem_0.063rem_0_#00000061];
 }
 .play-again {
-  @apply button mt-0 w-full rounded-b-sm p-3 md:w-fit;
+  @apply mt-0 w-full rounded-b-sm p-3 md:w-fit;
 }
 .completion-message {
   @apply z-20 bg-white text-center;
