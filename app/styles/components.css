@@ -1,0 +1,81 @@
+@tailwind components;
+
+@layer components {
+  .hover-lift {
+    @apply md:hover:translate-y-[-2px];
+  }
+  .hamburger {
+    @apply relative top-1 z-10 ml-auto block h-10 w-16 px-5;
+    @apply md:hidden;
+  }
+  .hamburger-line {
+    @apply gradient-border;
+    @apply absolute top-4 block w-7 rotate-0 border-2 brightness-90 transition-all;
+    @apply first:top-2 last:top-6;
+  }
+  .hamburger[aria-expanded='true'] .hamburger-line {
+    @apply [&:nth-child(2)]:-rotate-45 [&:nth-child(3)]:rotate-45;
+  }
+  .hamburger[aria-expanded='true'] .hamburger-line:first-child,
+  .hamburger[aria-expanded='true'] .hamburger-line:last-child {
+    @apply w-0 -rotate-45 border-0 transition-none;
+  }
+  .closer {
+    @apply fixed inset-0 block size-full cursor-default text-transparent;
+  }
+  .theme-changer {
+    @apply relative ml-2 mr-auto h-8 w-16 rounded-3xl bg-accentone-300 px-4 py-2;
+    @apply md:order-1 md:mx-2;
+  }
+  .theme-changer svg {
+    @apply absolute inset-1 size-6 rounded-full;
+    @apply bg-accenttwo-200 p-1 text-white transition-transform;
+    @apply dark:translate-x-8 dark:text-siteblack;
+  }
+  .theme-changer:hover svg {
+    @apply md:outline md:outline-1 md:outline-accenttwo-200;
+  }
+  .button {
+    @apply bg-heading text-accentone-100 no-underline transition;
+    @apply active:scale-95;
+    @apply md:hover:bg-accentone-100 md:hover:text-heading;
+    @apply md:hover:shadow-sm md:hover:shadow-black/10 md:dark:hover:shadow-white/10;
+  }
+  .heading-one {
+    @apply gradient-border inverted;
+    @apply mb-7 mt-0 border-b-2 bg-accentone-100 px-5 py-10;
+    @apply text-center text-3xl font-bold;
+    @apply md:text-5xl;
+  }
+  .skip-to-content,
+  .back-to-top {
+    @apply button;
+  }
+  .skip-to-content {
+    @apply sr-only;
+    @apply focus:not-sr-only focus:absolute focus:left-4 focus:p-4;
+  }
+  .back-to-top {
+    @apply hover-lift;
+    @apply fixed bottom-5 right-5 z-20;
+    @apply rounded-md border-2 border-accentone-300 p-2;
+    @apply md:tool-tip;
+    @apply md:hover:border-heading;
+  }
+  .back-to-top:after {
+    @apply md:-left-2;
+  }
+  .animate-typetext {
+    @apply inline-block whitespace-nowrap border-r-2 tracking-widest;
+  }
+  .overlay {
+    @apply relative;
+  }
+  .overlay:before {
+    @apply absolute-full z-20 bg-white opacity-50 content-[''];
+    @apply contrast-more:opacity-75;
+  }
+  .overlay > *:not(.cover-image) {
+    @apply z-30;
+  }
+}

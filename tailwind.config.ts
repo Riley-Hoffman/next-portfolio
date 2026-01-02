@@ -143,6 +143,13 @@ const config: Config = {
           position: 'absolute',
           size: '100%',
         },
+        '.hover-lift': {
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            '&:hover': {
+              transform: 'translateY(-2px)',
+            },
+          },
+        },
         '.tool-tip': {
           '&:not(.back-to-top)': {
             position: 'relative',

@@ -8,7 +8,8 @@ import {
   getPageTitle,
   BASE_DESCRIPTION,
 } from '@/app/constants/baseData'
-import './styles/globals.css'
+import './styles/globals.css';
+import './styles/components.css';
 
 const ICONS_PATH = '/icons'
 
