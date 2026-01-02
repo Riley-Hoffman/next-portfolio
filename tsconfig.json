@@ -11,11 +11,11 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "node16",
+    "module": "esnext",
     "typeRoots": [
       "node_modules/@types"
     ],
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
