@@ -38,7 +38,7 @@
   @apply bg-accentone-300 dark:bg-[#292d11];
 }
 .linkedin-button:hover > svg:first-child {
-  @apply md:bg-heading md:text-accentone-300 dark:md:bg-heading;
+  @apply md:bg-heading md:text-accentone-300;
 }
 
 .my-journey {

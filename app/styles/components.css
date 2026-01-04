@@ -29,8 +29,8 @@
   }
   .theme-changer svg {
     @apply absolute inset-1 size-6 rounded-full;
-    @apply bg-accenttwo-200 p-1 text-white transition-transform;
-    @apply dark:translate-x-8 dark:text-siteblack;
+    @apply bg-accenttwo-200 p-1 text-accentone-100 transition-transform;
+    @apply dark:translate-x-8;
   }
   .theme-changer:hover svg {
     @apply md:outline md:outline-1 md:outline-accenttwo-200;

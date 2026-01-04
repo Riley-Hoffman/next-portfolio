@@ -33,5 +33,5 @@ button.carousel-button {
   @apply rounded-full bg-accentone-200 shadow-heading transition;
   @apply active:scale-95 active:shadow-none;
   @apply dark:shadow-gradientone;
-  @apply md:hover:bg-accenttwo-200 md:hover:text-white dark:md:hover:text-siteblack;
+  @apply md:hover:bg-accenttwo-200 md:hover:text-accentone-100;
 }
