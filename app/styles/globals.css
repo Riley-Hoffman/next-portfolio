@@ -79,6 +79,7 @@
   }
   header > nav a:not(.active) {
     @apply hover-lift;
+    @apply bg-accentone-200;
     @apply md:hover:brightness-90;
   }
   header > nav a:focus-visible {
