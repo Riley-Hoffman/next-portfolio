@@ -8,8 +8,14 @@ export const useHoverWiggle = (
 
   const WIGGLE_CLASS_NAME = 'motion-safe:md:animate-wiggle'
 
-  const toggleWiggleEffect = () => {
-    buttonRef.current?.classList.toggle(WIGGLE_CLASS_NAME)
+  const toggleWiggleEffect = (state: boolean) => {
+    if (buttonRef.current) {
+      if (state) {
+        buttonRef.current.classList.add(WIGGLE_CLASS_NAME)
+      } else {
+        buttonRef.current.classList.remove(WIGGLE_CLASS_NAME)
+      }
+    }
   }
 
   const handleMouseEnterWiggle = () => {

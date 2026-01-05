@@ -11,6 +11,7 @@ export const LinkedInButton = () => {
 
   return (
     <LinkWrapper
+      ref={buttonRef}
       className="linkedin-button button"
       href={LINKEDIN_URL}
       onMouseEnter={handleMouseEnterWiggle}

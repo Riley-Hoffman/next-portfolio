@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { forwardRef } from 'react'
 import { NewTabContent } from '@/app/components/shared/NewTabContent'
 import { NewTabContentProps } from '@/app/types/new-tab-content/NewTabContent'
 
@@ -17,17 +18,17 @@ const isExternal = (href: string): boolean => {
   return !INTERNAL_DOMAINS.some((domain) => href.startsWith(domain))
 }
 
-export const LinkWrapper = ({
+export const LinkWrapper = forwardRef<HTMLAnchorElement, LinkWrapperProps>(({
   href,
   className,
   children,
   showNewTabIcon = false,
   hideIconOnMobile = false,
   ...rest
-}: LinkWrapperProps) => {
+}, ref) => {
   if (isExternal(href)) {
     return (
-      <a href={href} className={className} target="_blank" rel="noopener noreferrer" {...rest}>
+      <a ref={ref} href={href} className={className} target="_blank" rel="noopener noreferrer" {...rest}>
         {children}
         <NewTabContent
           hideIconOnMobile={hideIconOnMobile}
@@ -44,8 +45,10 @@ export const LinkWrapper = ({
     : href
 
   return (
-    <Link href={normalizedHref} className={className} {...rest}>
+    <Link ref={ref} href={normalizedHref} className={className} {...rest}>
       {children}
     </Link>
   )
-}
+})
+
+LinkWrapper.displayName = 'LinkWrapper'
