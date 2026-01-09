@@ -1,9 +1,9 @@
 import { SIDEBAR_EXTERNAL_LINKS } from './constants/sidebarExternalLinks'
 import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 export const Sidebar = () => (
-  <aside className="sidebar">
+  <nav className="sidebar" aria-label="External Links">
     <h3>Links</h3>
-    <ul aria-label="External Links">
+    <ul>
       {SIDEBAR_EXTERNAL_LINKS.map(({ name, url }) => (
         <li key={name}>
           <LinkWrapper href={url} showNewTabIcon={true}>
@@ -12,5 +12,5 @@ export const Sidebar = () => (
         </li>
       ))}
     </ul>
-  </aside>
+  </nav>
 )
