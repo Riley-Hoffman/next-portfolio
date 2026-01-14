@@ -1,8 +1,9 @@
+"use cache"
 import { Icon } from '@iconify/react'
 import { getPageTitle, GITHUB_URL, VERSION } from '@/app/constants/baseData'
 import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 
-export const Footer = () => (
+export const Footer = async () => (
   <footer>
     <h2>Footer</h2>
     <p>

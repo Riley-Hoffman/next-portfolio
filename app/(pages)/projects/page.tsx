@@ -1,3 +1,4 @@
+'use cache'
 import { createMetadata } from '@/app/utils/metadata'
 import { SchemaFactory } from '@/app/utils/schemaFactory'
 import SchemaInjector from '@/app/components/schema/SchemaInjector'
