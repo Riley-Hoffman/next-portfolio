@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Carousel } from './carousel/Carousel'
 import { SLIDE_DATA } from '@/app/constants/carousel/slideData'
 import { NOSCRIPT_LINKS } from './constants/noscriptLinks'
@@ -6,7 +7,9 @@ import { LinkWrapper } from '@/app/components/shared/LinkWrapper'
 export const TrainingsSection = () => (
   <section className="gradient-border overflow-hidden border-t-2 bg-accentone-100 pb-16 pt-7">
     <h2 className="max-w-fit pb-5">Trainings & Certifications</h2>
-    <Carousel slides={SLIDE_DATA} />
+    <Suspense fallback={<div className="h-72 animate-pulse bg-gray-200" aria-busy="true" />}>
+      <Carousel slides={SLIDE_DATA} />
+    </Suspense>
     <noscript>
       <style>
         {`
