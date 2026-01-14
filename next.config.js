@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     esmExternals: true,
   },
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
