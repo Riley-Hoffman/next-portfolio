@@ -25,7 +25,6 @@ export const MyJourney = () => {
           alt="A black and white photo of Riley Hoffman in a black tshirt."
           sizes={`(max-width: ${SM}px) 100vw, (max-width: ${LG}px) 50vw, 382px`}
           blurDataURL={headshotBlurData}
-          quality={93}
           placeholder="blur"
           itemProp="contentUrl"
         />
