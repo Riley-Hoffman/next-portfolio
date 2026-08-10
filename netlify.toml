@@ -1,12 +1,6 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[context.production]
-  environment = { NODE_ENV = "production" }
-
-[context.deploy-preview]
-  environment = { NODE_ENV = "development" }
-  
 [build.cache]
   paths = [
     ".next/cache",
